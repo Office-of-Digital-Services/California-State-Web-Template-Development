@@ -1,6 +1,6 @@
-# California State Web Template Source
+# California State Web Template Development
 
-This repository contains the source code for the California State Web Template, an HTML template and website standard offered by the California Department of Technology to state agencies and departments within the State of California and beyond.
+This repository contains the development source code for the California State Web Template, an HTML template and website standard offered by the California Department of Technology to state agencies and departments within the State of California and beyond.
 
 The California State Web Template is designed to promote a responsive and standard look and feel to ensure a uniform user experience across state entities. The web template includes many usability, security and accessibility requirements and is updated regularly to meet evolving industry standards and best practices.
 
