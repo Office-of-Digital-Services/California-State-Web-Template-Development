@@ -5,13 +5,6 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-    <!-- BEGIN STATE_TEMPLATE -->
-
-    <!-- STATE_TEMPLATE *** HEAD references ***
-    Include links to stylesheet and custom theme.
-    -->
-    <!-- <link rel="stylesheet" href="/ca_state_template/css/cagov.core.min.css"/> -->
-    <!-- <link rel="stylesheet" href="/ca_state_template/css/colortheme-oceanside.min.css"/> -->
 
     {% include "../head-js-css.njk" %}
   </head>
@@ -33,7 +26,6 @@
       </div>
     </header>
     {% block content -%} {{ content | safe }} {%- endblock -%} {%- include
-    "modules/site-footer.html" -%} {%- include "../global-footer.njk" -%} {%-
-    include "../scripts.njk" -%}
+    "../global-footer.njk" -%} {%- include "../scripts.njk" -%}
   </body>
 </html>

@@ -32,10 +32,10 @@ module.exports = function (
   config.templateFormats = ["html", "njk", "11ty.js"];
 
   config.dir = {
-    data: config.dir.data,
     // site content pages
     input: "sample_site/pages",
     // site structure pages (path is realtive to input directory)
+    data: "../_data",
     includes: "../_includes",
     layouts: "../_includes/layouts",
     // site final outpuut directory
