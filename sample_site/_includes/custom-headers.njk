@@ -1,0 +1,34 @@
+{%- if page.fileSlug == "serp" -%}
+<!--hiding search page from indexing-->
+<meta name="robots" content="noindex" />
+
+<script>
+  // Search ID
+  var cx = '05e92f21f387b4800'; // Update this value with your search engine unique ID. Submit a request to the CDT Service Desk if you don't already know your unique search engine ID.
+  var gcse = document.createElement('script');
+  gcse.type = 'text/javascript';
+  gcse.async = true;
+  gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+  var s = document.getElementsByTagName('script');
+  s[s.length - 1]
+    .parentNode
+    .insertBefore(gcse, s[s.length - 1]);
+</script>
+
+<!--hiding search link from page navigation sinse the search box is already open-->
+<style>
+  #nav-item-search,
+  .mobile-controls .toggle-search {
+    display: none;
+  }
+
+  .mobile-controls .mobile-header-icons {
+    display: none;
+  }
+  .search-textfield {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #72717c;
+  }
+</style>
+{%- endif -%}
