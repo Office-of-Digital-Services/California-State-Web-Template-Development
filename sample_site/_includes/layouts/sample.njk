@@ -2,8 +2,43 @@
 
 <div id="main-content" class="main-content">
   <div class="container p-t-md">
-    <h1>Sample for {{ title | title }}</h1>
-    <main class="main-primary" id="main">{{ content | safe }}</main>
+    <main class="main-primary" id="main">
+      <nav aria-label="You are here" class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="/index.html" title="Home page">Home</a>
+          </li>
+          <li>Samples</li>
+          <li>{{title | title}}</li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="col-lg-3" role="complementary">
+          <!-- Side navigation -->
+          <nav
+            aria-labelledby="navigation-list"
+            class="side-navigation sticky-6">
+            <ul class="list-navigation">
+              {%- for entry in collections.all %} {%- if entry.data.tags ==
+              "sample" -%}
+              <li>
+                <a
+                  href="{{ entry.url }}"
+                  class="{{ 'active' if entry.url == page.url }}">
+                  {{- entry.data.title | title -}}
+                </a>
+              </li>
+              {%- endif %} {%- endfor %}
+            </ul>
+          </nav>
+        </div>
+        <div class="col-lg-9 p-b-lg">
+          <h1>Sample for {{ title | title }}</h1>
+
+          {{ content | safe }}
+        </div>
+      </div>
+    </main>
   </div>
 </div>
 {%- endblock -%}
