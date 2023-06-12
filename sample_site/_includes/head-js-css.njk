@@ -1,17 +1,26 @@
+<!-- BEGIN STATE_TEMPLATE -->
+
+<!-- STATE_TEMPLATE *** HEAD references ***
+    
+Include links to stylesheet and custom theme.
+    
+<link rel="stylesheet" href="/ca_state_template/css/cagov.core.min.css"/>
+<link rel="stylesheet" href="/ca_state_template/css/colortheme-oceanside.min.css"/>
+
+You may also use the CDN instead of using the local folder...
+
+<link rel="stylesheet" href="{{ general.CdnPath }}css/cagov.core.min.css"/>
+<link rel="stylesheet" href="{{ general.CdnPath }}css/colortheme-oceanside.min.css"/>
+
+-->
+
 <link rel="stylesheet" href="/ca_state_template/css/cagov.core.min.css" />
-{% if colortheme -%}
-<link rel="stylesheet" href="{{ colortheme }}" />
-{% else -%}
 <link
   rel="stylesheet"
   href="/ca_state_template/css/colortheme-oceanside.min.css" />
-{% endif -%}
 
 <!-- END STATE_TEMPLATE -->
 
-{% if customcss -%}
-<link rel="stylesheet" href="{{ customcss }}" />
-{% endif -%}
 <link
   rel="apple-touch-icon-precomposed"
   sizes="100x100"
