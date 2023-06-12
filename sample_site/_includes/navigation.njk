@@ -7,7 +7,7 @@
       <a class="first-level-link" href="/">Home</a>
     </li>
     <li class="nav-item">
-      <a class="first-level-link active" href="/visual-design.html">Samples</a>
+      <a class="first-level-link active">Samples</a>
       <div class="sub-nav">
         <ul class="second-level-nav">
           {%- for entry in collections.all %} {%- if entry.data.tags == "sample"
@@ -20,6 +20,9 @@
           {%- endif %} {%- endfor %}
         </ul>
       </div>
+    </li>
+    <li class="nav-item">
+      <a class="first-level-link" href="/basic/about">About</a>
     </li>
   </ul>
 </nav>
