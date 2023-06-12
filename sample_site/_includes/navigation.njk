@@ -1,0 +1,25 @@
+<nav
+  id="navigation"
+  class="main-navigation dropdown"
+  aria-label="Main navigation">
+  <ul id="nav_list" class="top-level-nav">
+    <li class="nav-item">
+      <a class="first-level-link" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="first-level-link active" href="/visual-design.html">Samples</a>
+      <div class="sub-nav">
+        <ul class="second-level-nav">
+          {%- for entry in collections.all %} {%- if entry.data.tags == "sample"
+          -%}
+          <li class="unit1">
+            <a class="second-level-link" href="{{entry.url}}"
+              >{{- entry.data.title | title -}}</a
+            >
+          </li>
+          {%- endif %} {%- endfor %}
+        </ul>
+      </div>
+    </li>
+  </ul>
+</nav>

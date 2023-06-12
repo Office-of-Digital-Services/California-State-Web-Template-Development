@@ -1,0 +1,53 @@
+{
+  "version": 1.1,
+  "globalAttributes": [
+    {
+      "name": "data-aria-accordion",
+      "description": "this is required for a accordion-list",
+      "references": [
+        {
+          "name": "Reference - State Template Accordion (Accordion List)",
+          "url": "https://template.webstandards.ca.gov/components/accordion.html#Accordion-list"
+        }
+      ]
+    },
+    {
+      "name": "data-default",
+      "description": "the default tab to be displayed",
+      "references": [
+        {
+          "name": "Reference - State Template Accordion (Accordion List)",
+          "url": "https://template.webstandards.ca.gov/components/accordion.html#Accordion-list"
+        }
+      ],
+      "values": [
+        {
+          "name": "none",
+          "description": "nothing is selected"
+        }
+      ]
+    },
+    {
+      "name": "data-aria-accordion-heading",
+      "description": "the heading for a accordion-list",
+      "references": [
+        {
+          "name": "Reference - State Template Accordion (Accordion List)",
+          "url": "https://template.webstandards.ca.gov/components/accordion.html#Accordion-list"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "cagov-accordion",
+      "description": "Accordions are expandable sections of content. Each section contains a summary element and more body text when opened.\n\nAccordions keep pages clean by hiding information that most people do not need to see.\n\nSample usage:\n```html\n<cagov-accordion>\n  <details>\n    <summary>Add a short, descriptive heading for your topic</summary>\n    <div class=\"accordion-body\">\n      <p>Once open, the content within the accordion should describe the topic in more detail. It should not repeat the heading.</p>\n      <p>This part of the accordion is a great place to link to other resources. Remember, important information and calls to action should live outside of the accordion.</p>\n    </div>\n  </details>\n</cagov-accordion>\n```",
+      "references": [
+        {
+          "name": "Reference - State Template Accordion (Basic)",
+          "url": "https://template.webstandards.ca.gov/components/accordion.html#Basic-accordion"
+        }
+      ]
+    }
+  ]
+}
