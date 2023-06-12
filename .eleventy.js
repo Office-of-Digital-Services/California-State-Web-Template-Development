@@ -12,7 +12,7 @@ module.exports = function (
 
   userConfig.addPassthroughCopy({
     "src/fonts": "ca_state_template/fonts",
-    "src/html-data": "ca_state_template/html-data",
+    //"src/html-data": "ca_state_template/html-data",
     "src/root": "ca_state_template",
     "sample_site/images": "images",
     "sample_site/siteRoot": "/"
