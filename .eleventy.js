@@ -43,8 +43,9 @@ module.exports = function (
     output: "_site"
   };
 
+  //Adding a transform to make the output work as non-server static files
   userConfig.addTransform(
-    "fixPaths",
+    "staticPaths",
     /**
      * @param {string} content
      * @param {string} outputPath
