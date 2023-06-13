@@ -210,8 +210,7 @@ a.second-level-link {
   $nav-unit-base: 65px;
 
   .unit1 {
-    height: $nav-unit-base;
-    overflow: hidden !important;
+    min-height: $nav-unit-base;
   }
 
   .unit2 {
