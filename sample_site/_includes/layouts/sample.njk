@@ -32,9 +32,10 @@
           </nav>
         </div>
         <div class="col-lg-9 p-b-lg">
-          <h1 class="mt-lg-0">Sample for {{ title | title }}</h1>
-
+          <h1 class="mt-lg-0">{{ title | title }}</h1>
+          <!-- BEGIN SAMPLE CONTENT -->
           {{ content | safe }}
+          <!-- END SAMPLE CONTENT -->
         </div>
       </div>
     </main>
