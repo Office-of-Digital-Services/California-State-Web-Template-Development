@@ -9,8 +9,11 @@ module.exports = {
       }.html`,
     title: data =>
       `${
-        /** @type {import("@11ty/eleventy/src/Template")} */ (data.page)
-          .fileSlug
+        /** @type {import("@11ty/eleventy/src/Template")} */ (
+          data.page
+        ).fileSlug
+          .toString()
+          .replace(/-/g, " ")
       }`
   }
 };

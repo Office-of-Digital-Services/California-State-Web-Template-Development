@@ -19,8 +19,7 @@
             aria-labelledby="navigation-list"
             class="side-navigation sticky-6">
             <ul class="list-navigation">
-              {%- for entry in collections.all %} {%- if entry.data.tags ==
-              "sample" -%}
+              {%- for entry in collections.all | allSamples %}
               <li>
                 <a
                   href="{{ entry.url }}"
@@ -28,7 +27,7 @@
                   {{- entry.data.title | title -}}
                 </a>
               </li>
-              {%- endif %} {%- endfor %}
+              {%- endfor %}
             </ul>
           </nav>
         </div>

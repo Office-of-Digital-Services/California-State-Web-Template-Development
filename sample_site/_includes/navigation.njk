@@ -7,19 +7,11 @@
       <a class="first-level-link" href="/index.html">Home</a>
     </li>
     <li class="nav-item">
-      <a class="first-level-link active">Samples</a>
-      <div class="sub-nav">
-        <ul class="second-level-nav">
-          {%- for entry in collections.all %} {%- if entry.data.tags == "sample"
-          -%}
-          <li class="unit1">
-            <a class="second-level-link" href="{{entry.url}}"
-              >{{- entry.data.title | title -}}</a
-            >
-          </li>
-          {%- endif %} {%- endfor %}
-        </ul>
-      </div>
+      <a
+        class="first-level-link"
+        href="{{(collections.all | allSamples)[0].url}}"
+        >Samples</a
+      >
     </li>
     <li class="nav-item">
       <a class="first-level-link" href="/contact.html">Contact Us</a>

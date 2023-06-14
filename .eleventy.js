@@ -14,6 +14,17 @@ module.exports = function (
     "sample_site/siteRoot": "/"
   });
 
+  //Sorted list of all the samples
+  userConfig.addFilter(
+    "allSamples",
+    (/** @type {{data:{title:string, tags:string}}[]} */ values) => {
+      return values
+        .slice()
+        .filter(x => x.data.tags == "sample")
+        .sort((a, b) => (a.data.title || "").localeCompare(b.data.title));
+    }
+  );
+
   //Start with default config, easier to configure 11ty later
   const config = defaultConfig(userConfig);
 
