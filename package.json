@@ -1,5 +1,5 @@
 {
-  "name": "cagov-template-development",
+  "name": "@cagovweb/state-template",
   "version": "6.2.0",
   "repository": {
     "type": "git",
@@ -45,9 +45,22 @@
     "build:sass-trinity": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/ca_state_template/css/colortheme-trinity.css",
     "build:sass-trinity-min": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/ca_state_template/css/colortheme-trinity.min.css --style compressed",
     "start": "run-p watch:*",
-    "build": "run-p build:*"
+    "build": "run-p build:*",
+    "NPM Publish (dry run)": "npm publish --dry-run",
+    "NPM Publish (view package)": "npm pack",
+    "NPM Publish": "npm publish"
   },
-  "author": "",
+  "author": {
+    "name": "Carter Medlin",
+    "email": "carter.medlin@state.ca.gov",
+    "url": "https://github.com/carterm"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "_site/ca_state_template"
+  ],
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
