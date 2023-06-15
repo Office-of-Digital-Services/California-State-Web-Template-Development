@@ -19,8 +19,7 @@
             aria-labelledby="navigation-list"
             class="side-navigation sticky-6">
             <ul class="list-navigation">
-              {%- for entry in collections.all %} {%- if entry.data.tags ==
-              "sample" -%}
+              {%- for entry in collections.all | allSamples %}
               <li>
                 <a
                   href="{{ entry.url }}"
@@ -28,14 +27,15 @@
                   {{- entry.data.title | title -}}
                 </a>
               </li>
-              {%- endif %} {%- endfor %}
+              {%- endfor %}
             </ul>
           </nav>
         </div>
         <div class="col-lg-9 p-b-lg">
-          <h1 class="mt-lg-0">Sample for {{ title | title }}</h1>
-
-          {{ content | safe }}
+          <h1 class="mt-lg-0">{{ title | title }}</h1>
+          <!-- BEGIN SAMPLE CONTENT -->
+          {{ content | SampleCodeUseMainSiteImages | safe }}
+          <!-- END SAMPLE CONTENT -->
         </div>
       </div>
     </main>

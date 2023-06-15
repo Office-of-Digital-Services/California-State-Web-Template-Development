@@ -1,5 +1,5 @@
 //@ts-check
-
+const docSiteUrl = "https://template.webstandards.ca.gov/";
 const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 const path = require("path");
 
@@ -13,6 +13,26 @@ module.exports = function (
     "sample_site/images": "images",
     "sample_site/siteRoot": "/"
   });
+
+  //Sorted list of all the samples
+  userConfig.addFilter(
+    "allSamples",
+    (/** @type {{data:{title:string, tags:string}}[]} */ values) => {
+      return values
+        .slice()
+        .filter(x => x.data.tags == "sample")
+        .sort((a, b) => (a.data.title || "").localeCompare(b.data.title));
+    }
+  );
+
+  //Automatically uses the template site URL for images inside sample content
+  userConfig.addFilter(
+    "SampleCodeUseMainSiteImages",
+    (/** @type {string} */ content) =>
+      content
+        .replace(/="\/images\//g, `="${docSiteUrl}images/`)
+        .replace(/url\(\'\/images\//g, `url('${docSiteUrl}images/`)
+  );
 
   //Start with default config, easier to configure 11ty later
   const config = defaultConfig(userConfig);

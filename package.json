@@ -5,6 +5,11 @@
     "type": "git",
     "url": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
   },
+  "bugs": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/issues",
+  "keywords": [
+    "California",
+    "Template"
+  ],
   "description": "CA State Web Template Development",
   "scripts": {
     "watch:js": "rollup --config rollup.config.js --watch",
@@ -42,7 +47,6 @@
     "start": "run-p watch:*",
     "build": "run-p build:*"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
