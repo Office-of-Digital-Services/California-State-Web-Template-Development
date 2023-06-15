@@ -29,7 +29,9 @@ module.exports = function (
   userConfig.addFilter(
     "SampleCodeUseMainSiteImages",
     (/** @type {string} */ content) =>
-      content.replace(/="\/images\//g, `="${docSiteUrl}images/`)
+      content
+        .replace(/="\/images\//g, `="${docSiteUrl}images/`)
+        .replace(/url\(\'\/images\//g, `url('${docSiteUrl}images/`)
   );
 
   //Start with default config, easier to configure 11ty later
