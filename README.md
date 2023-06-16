@@ -10,7 +10,7 @@ The state web template is an open source project which you can find on the [CA O
 
 You can use this repository to download, clone, fork or contribute to the development of the state web template. You can also browse the components, search icons, explore color themes and learn what's new in the latest version of the template.
 
-To download or clone this repository, click on the green **Code** button on the top right corner of this page. You can also use the command line to clone the repository using `git clone https://github.com/Office-of-Digital-Services/California-State-Web-Template-Source.git`.
+To download or clone this repository, click on the green **Code** button on the top right corner of this page. You can also use the command line to clone the repository using `git clone https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git`.
 
 To fork this repository, click on the **Fork** button on the top right corner of this page. This will create a copy of this repository in your own GitHub account that you can modify and customize.
 
@@ -24,4 +24,4 @@ You can also visit [template.webstandards.ca.gov](https://template.webstandards.
 
 ## License
 
-The state web template is licensed under the MIT License. See [LICENSE](https://github.com/Office-of-Digital-Services/California-State-Web-Template-Source/blob/master/LICENSE) for details.
+The state web template is licensed under the MIT License. See [LICENSE](https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/blob/main/LICENSE) for details.
