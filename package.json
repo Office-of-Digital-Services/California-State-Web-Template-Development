@@ -1,16 +1,19 @@
 {
   "name": "cagov-template-development",
   "version": "6.2.0",
+  "description": "CA State Web Template Development Project",
+  "author": {
+    "name": "Carter Medlin",
+    "email": "carter.medlin@state.ca.gov",
+    "url": "https://github.com/carterm"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
   },
   "bugs": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/issues",
-  "keywords": [
-    "California",
-    "Template"
-  ],
-  "description": "CA State Web Template Development",
+  "license": "MIT",
+  "homepage": "https://template.webstandards.ca.gov/",
   "scripts": {
     "watch:js": "rollup --config rollup.config.js --watch",
     "watch:eleventy": "npx @11ty/eleventy --serve",
@@ -45,10 +48,10 @@
     "build:sass-trinity": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/ca_state_template/css/colortheme-trinity.css",
     "build:sass-trinity-min": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/ca_state_template/css/colortheme-trinity.min.css --style compressed",
     "start": "run-p watch:*",
-    "build": "run-p build:*"
+    "build": "run-p build:*",
+    "GIT cleanup": "git clean -fd"
   },
-  "author": "",
-  "license": "ISC",
+  "private": true,
   "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",

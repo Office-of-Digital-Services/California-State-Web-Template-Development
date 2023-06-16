@@ -1,0 +1,38 @@
+{
+  "name": "@cagovweb/state-template",
+  "version": "1.0.0",
+  "description": "CA State Web Template NPM Package",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
+  },
+  "bugs": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/issues",
+  "homepage": "https://template.webstandards.ca.gov/",
+  "keywords": [
+    "California",
+    "State",
+    "sacramento",
+    "CA",
+    "Government",
+    "gov",
+    "Template"
+  ],
+  "author": {
+    "name": "Carter Medlin",
+    "email": "carter.medlin@state.ca.gov",
+    "url": "https://github.com/carterm"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "beta"
+  },
+  "scripts": {
+    "NPM Publish (dry run)": "npm publish --dry-run",
+    "NPM Publish (view package)": "npm pack",
+    "NPM publish": "npm publish",
+    "prepack": "mkdir -p dist && cp -r ../_site/ca_state_template/* ./dist",
+    "postpack": "rm -rf ./dist"
+  },
+  "license": "MIT",
+  "type": "commonjs"
+}
