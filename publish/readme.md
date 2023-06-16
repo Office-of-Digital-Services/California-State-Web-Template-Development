@@ -1,4 +1,4 @@
-# California State Web Template Development
+# California State Web Template NPM Package
 
 This repository contains the development source code for the California State Web Template, an HTML template and website standard offered by the California Department of Technology to state agencies and departments within the State of California and beyond.
 
@@ -15,3 +15,9 @@ You can also visit [template.webstandards.ca.gov](https://template.webstandards.
 ## License
 
 The state web template is licensed under the MIT License. See [LICENSE](https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/blob/main/LICENSE) for details.
+
+## Status
+
+[![npm version](https://img.shields.io/npm/v/@cagovweb/state-template?logo=npm&logoColor=fff)](https://www.npmjs.com/package/@cagovweb/state-template)
+[![template version](https://img.shields.io/github/package-json/v/Office-of-Digital-Services/California-State-Web-Template-Development?label=template&logo=github)](https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/blob/main/package.json)
+[![license](https://img.shields.io/github/license/Office-of-Digital-Services/California-State-Web-Template-Development?logo=github)](https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/blob/main/publish/LICENSE)
