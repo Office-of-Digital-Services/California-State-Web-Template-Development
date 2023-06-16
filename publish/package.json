@@ -1,6 +1,7 @@
 {
   "name": "@cagovweb/state-template",
   "version": "6.2.0",
+  "description": "CA State Web Template NPM Package",
   "repository": {
     "type": "git",
     "url": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
@@ -11,7 +12,6 @@
     "California",
     "Template"
   ],
-  "description": "CA State Web Template NPM Package",
   "author": {
     "name": "Carter Medlin",
     "email": "carter.medlin@state.ca.gov",
@@ -21,6 +21,9 @@
     "access": "public"
   },
   "scripts": {
+    "NPM Publish (dry run)": "npm publish --dry-run",
+    "NPM Publish (view package)": "npm pack",
+    "NPM publish": "npm publish",
     "prepack": "mkdir -p dist && cp -r ../_site/ca_state_template/* ./dist",
     "postpack": "rm -rf ./dist"
   },

@@ -1,6 +1,7 @@
 {
-  "name": "@cagovweb/state-template",
+  "name": "cagov-template-development",
   "version": "6.2.0",
+  "description": "CA State Web Template Development Project",
   "author": {
     "name": "Carter Medlin",
     "email": "carter.medlin@state.ca.gov",
@@ -11,7 +12,6 @@
     "url": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
   },
   "bugs": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/issues",
-  "description": "CA State Web Template Development Project",
   "license": "MIT",
   "homepage": "https://template.webstandards.ca.gov/",
   "scripts": {
@@ -49,9 +49,6 @@
     "build:sass-trinity-min": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/ca_state_template/css/colortheme-trinity.min.css --style compressed",
     "start": "run-p watch:*",
     "build": "run-p build:*",
-    "NPM Publish (dry run)": "npm publish publish/ --dry-run",
-    "NPM Publish (view package)": "npm pack publish/",
-    "NPM publish": "npm publish publish/",
     "GIT cleanup": "git clean -fd"
   },
   "private": true,
