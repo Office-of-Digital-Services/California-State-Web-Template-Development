@@ -6,6 +6,7 @@
     "url": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
   },
   "bugs": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/issues",
+  "homepage": "https://template.webstandards.ca.gov/",
   "keywords": [
     "California",
     "Template"
@@ -23,6 +24,6 @@
     "prepack": "mkdir -p dist && cp -r ../_site/ca_state_template/* ./dist",
     "postpack": "rm -rf ./dist"
   },
-  "license": "ISC",
+  "license": "MIT",
   "type": "commonjs"
 }

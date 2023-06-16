@@ -1,12 +1,19 @@
 {
   "name": "@cagovweb/state-template",
   "version": "6.2.0",
+  "author": {
+    "name": "Carter Medlin",
+    "email": "carter.medlin@state.ca.gov",
+    "url": "https://github.com/carterm"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
   },
   "bugs": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/issues",
   "description": "CA State Web Template Development Project",
+  "license": "MIT",
+  "homepage": "https://template.webstandards.ca.gov/",
   "scripts": {
     "watch:js": "rollup --config rollup.config.js --watch",
     "watch:eleventy": "npx @11ty/eleventy --serve",
@@ -47,13 +54,7 @@
     "NPM publish": "npm publish publish/",
     "GIT cleanup": "git clean -fd"
   },
-  "author": {
-    "name": "Carter Medlin",
-    "email": "carter.medlin@state.ca.gov",
-    "url": "https://github.com/carterm"
-  },
   "private": true,
-  "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0",
