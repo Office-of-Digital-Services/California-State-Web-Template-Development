@@ -19,11 +19,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "fonts/*",
-    "js/*",
-    "css/*"
-  ],
+  "scripts": {
+    "prepack": "mkdir -p dist && cp -r ../_site/ca_state_template/* ./dist",
+    "postpack": "rm -rf ./dist"
+  },
   "license": "ISC",
   "type": "commonjs"
 }
