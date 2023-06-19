@@ -53,7 +53,7 @@
   },
   "private": true,
   "type": "commonjs",
-  "devDependencies": {
+  "dependencies": {
     "@11ty/eleventy": "^2.0.0",
     "eslint": "8.41.0",
     "eslint-config-prettier": "^8.8.0",
