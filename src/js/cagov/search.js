@@ -31,7 +31,7 @@
   // header, contains nav, search form, etc, unique
   const headerHeight = /** @type {HTMLElement} */ (
     document.querySelector(".global-header")
-  ).offsetHeight; // header height
+  )?.offsetHeight; // header height
 
   /** @type {HTMLElement} */
   const utility = document.querySelector(".utility-header"); // utility header, unique
@@ -53,7 +53,7 @@
   // Full width navigation
   const navigationHeight = document
     .querySelector(".navigation-search")
-    .classList.contains("full-width-nav")
+    ?.classList.contains("full-width-nav")
     ? 82
     : 0;
 

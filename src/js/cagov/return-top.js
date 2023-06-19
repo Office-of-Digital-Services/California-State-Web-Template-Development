@@ -2,7 +2,7 @@
 const returnTop = document.querySelector(".return-top");
 
 // Add on-click event
-returnTop.addEventListener("click", goToTopFunction);
+if (returnTop) returnTop.addEventListener("click", goToTopFunction);
 
 function goToTopFunction() {
   document.body.scrollTop = 0; // For Safari
