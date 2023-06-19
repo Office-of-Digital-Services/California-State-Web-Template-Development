@@ -1,10 +1,40 @@
 # California State Web Template NPM Package
 
-This repository contains the development source code for the California State Web Template, an HTML template and website standard offered by the California Department of Technology to state agencies and departments within the State of California and beyond.
+This is the NPM Package for the California State Web Template, an HTML template and website standard offered by the California Department of Technology to state agencies and departments within the State of California and beyond.
 
 The California State Web Template is designed to promote a responsive and standard look and feel to ensure a uniform user experience across state entities. The web template includes many usability, security and accessibility requirements and is updated regularly to meet evolving industry standards and best practices.
 
 The state web template is an open source project which you can find on the [CA Office of Digital Services GitHub repository](https://github.com/Office-of-Digital-Services). There are various technology versions of the web template available for consumption. Collaboration is highly encouraged and user feedback and contributions are always considered and often implemented.
+
+## How to use
+
+### Eleventy
+
+**`.eleventy.js`** [(see reference)](https://www.11ty.dev/docs/copy/)
+
+```javascript
+module.exports = function(eleventyConfig) {
+  // Copy state template core files to site output
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/@cagovweb/state-template/dist": "state-template"
+  });
+};
+```
+
+At references in your template files
+
+```html
+<head>
+  ...
+  <link rel="stylesheet" href="state-template/css/cagov.core.min.css"/>
+  <link rel="stylesheet" href="state-template/css/colortheme-oceanside.min.css"/>
+</head>
+
+<body>
+  ...
+  <script src="state-template/js/cagov.core.min.js"></script>
+</body>
+```
 
 ## Documentation
 
