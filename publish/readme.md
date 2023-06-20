@@ -10,6 +10,17 @@ This package is based on Bootstrap v5.1.3
 
 ## How to use
 
+### React
+
+```javascript
+//Core CSS first
+import "@cagovweb/state-template/dist/css/cagov.core.css";
+//Choose Theme
+import "@cagovweb/state-template/dist/css/colortheme-oceanside.css";
+//Core JS last
+import "@cagovweb/state-template/dist/js/cagov.core.js";
+```
+
 ### Eleventy
 
 **`.eleventy.js`** [(see reference)](https://www.11ty.dev/docs/copy/)
