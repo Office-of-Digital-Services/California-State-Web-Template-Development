@@ -8,11 +8,11 @@
   let curScroll;
   let direction = 0;
   let prevDirection = 0;
-  const headerAlert = document.querySelector("header .alert");
-  const header = document.querySelector(".utility-header");
-  const mainheader = document.querySelector("header");
 
   const checkScroll = () => {
+    const headerAlert = document.querySelector("header .alert");
+    const header = document.querySelector(".utility-header");
+    const mainheader = document.querySelector("header");
     /*
      ** Find the direction of scroll
      ** 0 - initial, 1 - up, 2 - down
