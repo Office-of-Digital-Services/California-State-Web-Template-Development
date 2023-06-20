@@ -17,8 +17,8 @@
   "scripts": {
     "watch:js": "rollup --config rollup.config.js --watch",
     "watch:eleventy": "npx @11ty/eleventy --serve",
-    "watch:sass": "npx sass --no-source-map src/scss/cagov.core.scss:_site/ca_state_template/css/cagov.core.min.css --watch  --style compressed",
-    "watch:sass-oceanside": "npx sass --no-source-map src/scss/colortheme/oceanside-import.scss:_site/ca_state_template/css/colortheme-oceanside.min.css --watch --style compressed",
+    "watch:sass": "npx sass --quiet --no-source-map src/scss/cagov.core.scss:_site/ca_state_template/css/cagov.core.min.css --watch  --style compressed",
+    "watch:sass-oceanside": "npx sass --quiet --no-source-map src/scss/colortheme/oceanside-import.scss:_site/ca_state_template/css/colortheme-oceanside.min.css --watch --style compressed",
     "build:js": "rollup --config rollup.config.js",
     "build:eleventy": "npx @11ty/eleventy",
     "build:sass": "npx sass --no-source-map src/scss/cagov.core.scss:_site/ca_state_template/css/cagov.core.css",
@@ -55,6 +55,7 @@
   "type": "commonjs",
   "dependencies": {
     "@11ty/eleventy": "^2.0.0",
+    "bootstrap": "^5.1.3",
     "eslint": "8.41.0",
     "eslint-config-prettier": "^8.8.0",
     "npm-run-all": "^4.1.5",
