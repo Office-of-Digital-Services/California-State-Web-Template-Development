@@ -7,6 +7,7 @@
   const navButton = document.querySelector(".toggle-menu");
   const navSearchCont = document.querySelector(".navigation-search");
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
+  if (!mobileCntls) return;
   const mainCont = document.querySelector(".main-content");
   const footerGlobal = document.querySelector("footer");
   const footerSite = document.querySelector(".site-footer");
@@ -20,7 +21,7 @@
   );
   const siteBranding = document.querySelector(".branding");
   const utilityLinks = document.querySelector(".settings-links");
-  let mobileControlsDisplay = getComputedStyle(mobileCntls).display;
+  let mobileControlsDisplay = window.getComputedStyle(mobileCntls).display;
   let allNavLinks;
   let allUtilityLinks;
   // We need timeout here to make sure navigation is created first (becasue naviagion.js is creating button elements dynamicaly) and then we can assign all thise links to our variable

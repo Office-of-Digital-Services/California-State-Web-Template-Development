@@ -12,7 +12,8 @@
   sidenavigation?.setAttribute("id", "side-navigation");
   const topposition = localStorage.getItem("sidebar-scroll");
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
-  let mobileControlsDisplay = getComputedStyle(mobileCntls).display; // Side nav height vs viewport
+  if (!mobileCntls) return;
+  let mobileControlsDisplay = window.getComputedStyle(mobileCntls).display; // Side nav height vs viewport
   const siteHeaderHeight = siteHeader ? siteHeader.clientHeight : 0;
   const mobileView$3 = () =>
     getComputedStyle(document.querySelector(".global-header .mobile-controls"))[

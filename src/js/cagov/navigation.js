@@ -535,9 +535,9 @@
       item.replaceWith(newDiv);
     });
 
-    const singleLevel = navigationJS.classList.contains("singleLevel");
+    const singleLevel = navigationJS?.classList.contains("singleLevel");
     const setActiveLinkByFolder =
-      navigationJS.classList.contains("auto-highlight");
+      navigationJS?.classList.contains("auto-highlight");
 
     const navItemsJS = document.querySelectorAll(".main-navigation .nav-item");
 
@@ -582,7 +582,7 @@
       // if the target of the click isn't the navigation container nor a descendant of the navigation
       if (
         navContainer !== e.target &&
-        !navContainer.contains(/**@type {Node} */ (e.target))
+        !navContainer?.contains(/**@type {Node} */ (e.target))
       ) {
         NavReset();
       }
