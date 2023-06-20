@@ -1,13 +1,12 @@
 //@ts-check
-const returnTop = document.querySelector(".return-top");
-
-// Add on-click event
-if (returnTop) returnTop.addEventListener("click", goToTopFunction);
-
-function goToTopFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+window.addEventListener("load", () =>
+  document.querySelectorAll(".return-top").forEach(returnTop =>
+    returnTop.addEventListener("click", () => {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    })
+  )
+);
 
 // If an user scrolls down the page for more than 400px activate back to top button
 // othervise keep it invisible
