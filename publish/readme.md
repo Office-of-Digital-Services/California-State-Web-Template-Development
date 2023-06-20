@@ -6,6 +6,8 @@ The California State Web Template is designed to promote a responsive and standa
 
 The state web template is an open source project which you can find on the [CA Office of Digital Services GitHub repository](https://github.com/Office-of-Digital-Services). There are various technology versions of the web template available for consumption. Collaboration is highly encouraged and user feedback and contributions are always considered and often implemented.
 
+This package is based on Bootstrap v5.1.3
+
 ## How to use
 
 ### Eleventy
@@ -51,3 +53,5 @@ The state web template is licensed under the MIT License. See [LICENSE](https://
 [![npm version](https://img.shields.io/npm/v/@cagovweb/state-template?logo=npm&logoColor=fff)](https://www.npmjs.com/package/@cagovweb/state-template)
 [![template version](https://img.shields.io/github/package-json/v/Office-of-Digital-Services/California-State-Web-Template-Development?label=template&logo=github)](https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/blob/main/package.json)
 [![license](https://img.shields.io/github/license/Office-of-Digital-Services/California-State-Web-Template-Development?logo=github)](https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/blob/main/publish/LICENSE)
+[![CSS gzip size](https://img.badgesize.io/Office-of-Digital-Services/California-State-Web-Template-HTML/main/ca_state_template/css/cagov.core.min.css?compression=gzip&label=CSS%20gzip%20size)](https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML/blob/main/ca_state_template/css/cagov.core.min.css)
+[![JS gzip size](https://img.badgesize.io/Office-of-Digital-Services/California-State-Web-Template-HTML/main/ca_state_template/js/cagov.core.min.js?compression=gzip&label=JS%20gzip%20size)](https://github.com/Office-of-Digital-Services/California-State-Web-Template-HTML/blob/main/ca_state_template/js/cagov.core.min.js)
