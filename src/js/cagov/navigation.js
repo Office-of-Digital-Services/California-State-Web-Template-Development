@@ -550,19 +550,25 @@
         : null; // Regex for finding the index of the default main list item
 
     navItemsJS.forEach(navItem => {
+      /** @type {HTMLElement | null} */
       const link = navItem.querySelector(".first-level-btn, .first-level-link");
+      if (link) {
+        if (reMainNav) {
+          if (link.textContent && link.textContent.match(reMainNav)) {
+            navItem.classList.add("active");
+          }
+        } else if (setActiveLinkByFolder && link.getAttribute("href")) {
+          const arrNavLink = link.getAttribute("href")?.split("/");
+          const arrCurrentURL = location.href.split("/");
 
-      if (reMainNav) {
-        if (link.textContent.match(reMainNav)) {
-          navItem.classList.add("active");
-        }
-      } else if (setActiveLinkByFolder && link.getAttribute("href")) {
-        const arrNavLink = link.getAttribute("href").split("/");
-        const arrCurrentURL = location.href.split("/");
-
-        if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) {
-          // folder of current URL matches this nav link
-          navItem.classList.add("active");
+          if (
+            arrNavLink &&
+            arrNavLink.length > 4 &&
+            arrCurrentURL[3] === arrNavLink[3]
+          ) {
+            // folder of current URL matches this nav link
+            navItem.classList.add("active");
+          }
         }
       }
     });
@@ -585,7 +591,7 @@
       const itemCount = el.querySelectorAll(".second-level-nav > li").length;
       if (itemCount <= 2) {
         const subnav = el.querySelector(".sub-nav");
-        subnav.classList.add("with-few-items");
+        if (subnav) subnav.classList.add("with-few-items");
       }
     });
 
@@ -615,12 +621,14 @@
   window.addEventListener("resize", () => {
     document
       .querySelector(".toggle-menu")
-      .setAttribute("aria-expanded", "false");
+      ?.setAttribute("aria-expanded", "false");
 
     //Collapse the nav when narrow
     const nav = document.querySelector("#navigation");
-    nav.classList.remove("show");
-    nav.setAttribute("aria-hidden", "true");
+    if (nav) {
+      nav.classList.remove("show");
+      nav.setAttribute("aria-hidden", "true");
+    }
 
     NavReset();
   });
