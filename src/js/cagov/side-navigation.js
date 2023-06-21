@@ -4,7 +4,7 @@
  SIDE NAVIGATION - /source/js/cagov/side-navigation.js
 ----------------------------------------- */
 
-(() => {
+window.addEventListener("load", () => {
   const siteHeader = document.querySelector("header");
   const sidenavigation = document.querySelector(".side-navigation");
   if (!sidenavigation || !siteHeader) return;
@@ -179,4 +179,4 @@
     }
   });
   sidenavOverflow();
-})();
+});
