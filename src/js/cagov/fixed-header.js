@@ -1,7 +1,7 @@
 //@ts-check
 
 /* sticky header / hiding official header on scroll */
-(() => {
+window.addEventListener("load", () => {
   const doc = document.documentElement;
 
   let prevScroll = window.scrollY || doc.scrollTop;
@@ -9,10 +9,12 @@
   let direction = 0;
   let prevDirection = 0;
 
-  const checkScroll = () => {
-    const headerAlert = document.querySelector("header .alert");
-    const header = document.querySelector(".utility-header");
-    const mainheader = document.querySelector("header");
+  const headerAlert = document.querySelector("header .alert");
+  const header = document.querySelector(".utility-header");
+  const mainheader = document.querySelector("header");
+  if (!header || !mainheader) return;
+
+  window.addEventListener("scroll", () => {
     /*
      ** Find the direction of scroll
      ** 0 - initial, 1 - up, 2 - down
@@ -31,7 +33,7 @@
       // Toggle Header
       if (direction === 2 && curScroll > 40) {
         const hiddenheight =
-          header.clientHeight + (headerAlert ? headerAlert.clientHeight : 0);
+          header.clientHeight + (headerAlert?.clientHeight || 0);
 
         mainheader.style.top = `-${hiddenheight}px`;
         prevDirection = direction;
@@ -45,9 +47,7 @@
     }
 
     prevScroll = curScroll;
-  };
-
-  window.addEventListener("scroll", checkScroll);
-})();
+  });
+});
 
 // retain scroll position
