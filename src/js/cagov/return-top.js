@@ -1,12 +1,28 @@
 //@ts-check
-window.addEventListener("load", () =>
+window.addEventListener("load", () => {
   document.querySelectorAll(".return-top").forEach(returnTop =>
     returnTop.addEventListener("click", () => {
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     })
-  )
-);
+  );
+
+  // Back to top link in the global footer
+  document
+    .querySelectorAll("a[href='#skip-to-content']")
+    .forEach(backToTop =>
+      backToTop.addEventListener("click", backToTopFunction)
+    );
+
+  /**
+   * @param {Event} event
+   */
+  const backToTopFunction = event => {
+    event.preventDefault();
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  };
+});
 
 // If an user scrolls down the page for more than 400px activate back to top button
 // othervise keep it invisible
@@ -18,6 +34,8 @@ window.addEventListener(
   "scroll",
   () => {
     const returnTopButton = document.querySelector(".return-top");
+    if (!returnTopButton) return;
+
     const st = window.pageYOffset || document.documentElement.scrollTop;
     if (st > lastScrollTop) {
       // downscroll code
@@ -48,24 +66,10 @@ window.addEventListener(
 );
 
 // Hittin' rock bottom
-window.onscroll = () => {
+window.addEventListener("scroll", () => {
   const returnTopButton = document.querySelector(".return-top");
+  if (!returnTopButton) return;
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     returnTopButton.classList.add("is-visible");
   }
-};
-
-// Back to top link in the global footer
-const backToTop = document.querySelector("a[href='#skip-to-content']");
-if (backToTop) {
-  backToTop.addEventListener("click", backToTopFunction);
-}
-
-/**
- * @param {Event} event
- */
-function backToTopFunction(event) {
-  event.preventDefault();
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+});
