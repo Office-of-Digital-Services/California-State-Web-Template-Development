@@ -7,7 +7,8 @@
 (() => {
   const siteHeader = document.querySelector("header");
   const sidenavigation = document.querySelector(".side-navigation");
-  let allSidenavLinks = sidenavigation?.querySelectorAll(".side-navigation a");
+  const allSidenavLinks =
+    sidenavigation?.querySelectorAll(".side-navigation a");
   const mainContentSideNavCont = sidenavigation?.closest("div");
   sidenavigation?.setAttribute("id", "side-navigation");
   const topposition = localStorage.getItem("sidebar-scroll");

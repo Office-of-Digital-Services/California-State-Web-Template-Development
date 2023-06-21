@@ -286,7 +286,7 @@
         !doc.getElementById(thisAccordion).hasAttribute("data-multi")
       ) {
         // swap expanded when there is a single constant panel
-        for (let trigger of triggers) {
+        for (const trigger of triggers)
           if (thisTrigger !== trigger) {
             isCurrent(trigger, false);
             const getID = trigger.getAttribute("aria-controls");
@@ -294,7 +294,6 @@
             ariaExpanded(trigger, false);
             ariaHidden(doc.getElementById(getID), true);
           }
-        }
       }
     }
   };

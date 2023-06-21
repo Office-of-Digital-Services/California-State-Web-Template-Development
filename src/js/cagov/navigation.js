@@ -92,10 +92,8 @@
    * @return {String} the value of attribute data-hashtooltip-id
    */
   const searchParentHashId = (el, hashId) => {
-    let found = false;
-
     let parentElement = el;
-    while (parentElement && !found) {
+    while (parentElement) {
       if (parentElement.hasAttribute(hashId)) {
         return parentElement.getAttribute(hashId);
       } else {
@@ -111,10 +109,8 @@
    * @param {String} hashId
    */
   const searchParent = (el, parentClass, hashId) => {
-    let found = false;
-
     let parentElement = el;
-    while (parentElement && !found) {
+    while (parentElement) {
       if (
         parentElement.classList.contains(parentClass) &&
         parentElement.getAttribute(DATA_HASH_ID) === hashId
@@ -652,4 +648,7 @@
       }
     }
   };
+
+  addActive();
+  alert("test");
 })();
