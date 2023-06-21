@@ -2,26 +2,11 @@
 
 window.addEventListener("load", () => {
   // VARIABLES
-  const bodyCont = document.body;
-  const mainNav = document.querySelector(".main-navigation");
-  if (!mainNav) return;
   const navButton = document.querySelector(".toggle-menu");
   if (!navButton) return;
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
   if (!mobileCntls) return;
-  const mainCont = document.querySelector(".main-content");
-  const footerGlobal = document.querySelector("footer");
-  const footerSite = document.querySelector(".site-footer");
-  const headerutility = document.querySelector(".utility-header");
-  const regularHeader = document.querySelector("header");
-  const headerutilityLinksCont = document.querySelector(
-    ".utility-header .container .flex-row"
-  );
-  const navButtonCont = document.querySelector(
-    ".mobile-controls .main-nav-icons"
-  );
-  const siteBranding = document.querySelector(".branding");
-  const utilityLinks = document.querySelector(".settings-links");
+
   let mobileControlsDisplay = window.getComputedStyle(mobileCntls).display;
 
   const getAllNavLinks = () =>
@@ -46,10 +31,41 @@ window.addEventListener("load", () => {
 
   // move mobile navigation toggle button back into mobile controls container
   const moveNavToggleButtonToMobileControlsContainer = () => {
+    const navButtonCont = document.querySelector(
+      ".mobile-controls .main-nav-icons"
+    );
     setTimeout(() => {
       navButton.setAttribute("aria-expanded", "false");
       navButtonCont?.append(navButton);
     }, 300);
+  };
+
+  const xhide = (/** @type {boolean} */ hide) => {
+    const mainCont = document.querySelector(".main-content");
+    const footerGlobal = document.querySelector("footer");
+    const footerSite = document.querySelector(".site-footer");
+    const headerutility = document.querySelector(".utility-header");
+    const siteBranding = document.querySelector(".branding");
+    const regularHeader = document.querySelector("header");
+
+    if (hide) {
+      console.log("hiding");
+      mainCont?.setAttribute("aria-hidden", "true");
+      footerGlobal?.setAttribute("aria-hidden", "true");
+      footerSite?.setAttribute("aria-hidden", "true");
+      headerutility?.setAttribute("aria-hidden", "true");
+      siteBranding?.setAttribute("aria-hidden", "true");
+      regularHeader?.classList.add("nav-overlay");
+    } else {
+      //show
+      console.log("showing");
+      mainCont?.removeAttribute("aria-hidden");
+      footerGlobal?.removeAttribute("aria-hidden");
+      footerSite?.removeAttribute("aria-hidden");
+      headerutility?.removeAttribute("aria-hidden");
+      siteBranding?.removeAttribute("aria-hidden");
+      regularHeader?.classList.remove("nav-overlay");
+    }
   };
 
   // Button click open and close menu function
@@ -61,48 +77,27 @@ window.addEventListener("load", () => {
     // Open
     if (navSearchCont?.classList.contains("visible")) {
       navButton.setAttribute("aria-expanded", "true");
-      bodyCont?.classList.add("overflow-hidden");
+      document.body.classList.add("overflow-hidden");
       navSearchCont?.setAttribute("aria-hidden", "false");
       // make links focusable
-      getAllNavLinks().forEach(el => {
-        el.removeAttribute("tabindex");
-      });
-      getAllUtilityLinks().forEach(el => {
-        el.removeAttribute("tabindex");
-      });
+      getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
+      getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
       // make all the rest of the links not focusable
-      getAllBodyLinks().forEach(el => {
-        el.setAttribute("tabindex", "-1");
-      });
+      getAllBodyLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       // Hide all the website areas (add aria-hidden)
-      mainCont?.setAttribute("aria-hidden", "true");
-      footerGlobal?.setAttribute("aria-hidden", "true");
-      footerSite?.setAttribute("aria-hidden", "true");
-      headerutility?.setAttribute("aria-hidden", "true");
-      siteBranding?.setAttribute("aria-hidden", "true");
-      regularHeader?.classList.add("nav-overlay");
+      xhide(true);
+
       // Close
     } else {
       navButton.setAttribute("aria-expanded", "false");
-      bodyCont?.classList.remove("overflow-hidden");
+      document.body.classList.remove("overflow-hidden");
       navSearchCont?.setAttribute("aria-hidden", "true");
       // removing focus
-      getAllNavLinks().forEach(el => {
-        el.setAttribute("tabindex", "-1");
-      });
-      getAllUtilityLinks().forEach(el => {
-        el.setAttribute("tabindex", "-1");
-      });
-      getAllBodyLinks().forEach(el => {
-        el.removeAttribute("tabindex");
-      });
+      getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
+      getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
+      getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
       // remove aria hidden for the rest of the site
-      mainCont?.removeAttribute("aria-hidden");
-      footerGlobal?.removeAttribute("aria-hidden");
-      footerSite?.removeAttribute("aria-hidden");
-      headerutility?.removeAttribute("aria-hidden");
-      siteBranding?.removeAttribute("aria-hidden");
-      regularHeader?.classList.remove("nav-overlay");
+      xhide(false);
       moveNavToggleButtonToMobileControlsContainer();
     }
   };
@@ -110,57 +105,42 @@ window.addEventListener("load", () => {
   // Default state for mobile
   const mobileNavDefault = () => {
     moveNavToggleButtonToMobileControlsContainer();
-    if (utilityLinks) mainNav.before(utilityLinks);
-    bodyCont.classList.remove("overflow-hidden");
+    const mainNav = document.querySelector(".main-navigation");
+    const utilityLinks = document.querySelector(".settings-links");
+    if (mainNav && utilityLinks) mainNav.before(utilityLinks);
+    document.body.classList.remove("overflow-hidden");
 
     const navSearchCont = document.querySelector(".navigation-search");
     navSearchCont?.classList.add("not-visible");
     navSearchCont?.classList.remove("visible");
     navSearchCont?.setAttribute("aria-hidden", "true");
     // removing focus
-    getAllNavLinks().forEach(el => {
-      el.setAttribute("tabindex", "-1");
-    });
-    getAllUtilityLinks().forEach(el => {
-      el.setAttribute("tabindex", "-1");
-    });
-    getAllBodyLinks().forEach(el => {
-      el.removeAttribute("tabindex");
-    });
+    getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
+    getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
+    getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
-    mainCont?.removeAttribute("aria-hidden");
-    footerGlobal?.removeAttribute("aria-hidden");
-    footerSite?.removeAttribute("aria-hidden");
-    headerutility?.removeAttribute("aria-hidden");
-    siteBranding?.removeAttribute("aria-hidden");
-    regularHeader?.classList.remove("nav-overlay");
+    xhide(false);
   };
 
   // Default state for desktop
   const desktopNavDefault = () => {
     moveNavToggleButtonToMobileControlsContainer();
-    if (utilityLinks) headerutilityLinksCont?.append(utilityLinks);
-    bodyCont.classList.remove("overflow-hidden");
+    const utilityLinks = document.querySelector(".settings-links");
+    const headerutilityLinksCont = document.querySelector(
+      ".utility-header .container .flex-row"
+    );
+    if (utilityLinks && headerutilityLinksCont)
+      headerutilityLinksCont.append(utilityLinks);
+    document.body.classList.remove("overflow-hidden");
     const navSearchCont = document.querySelector(".navigation-search");
     navSearchCont?.classList.remove("visible");
     navSearchCont?.classList.remove("not-visible");
     navSearchCont?.setAttribute("aria-hidden", "false");
-    getAllNavLinks().forEach(el => {
-      el.removeAttribute("tabindex");
-    });
-    getAllUtilityLinks().forEach(el => {
-      el.removeAttribute("tabindex");
-    });
-    getAllBodyLinks().forEach(el => {
-      el.removeAttribute("tabindex");
-    });
+    getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
+    getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
+    getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
-    mainCont?.removeAttribute("aria-hidden");
-    footerGlobal?.removeAttribute("aria-hidden");
-    footerSite?.removeAttribute("aria-hidden");
-    headerutility?.removeAttribute("aria-hidden");
-    siteBranding?.removeAttribute("aria-hidden");
-    regularHeader?.classList.remove("nav-overlay");
+    xhide(false);
   };
 
   // Button Click event
