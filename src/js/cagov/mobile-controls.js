@@ -1,10 +1,12 @@
 //@ts-check
 
-(() => {
+window.addEventListener("load", () => {
   // VARIABLES
-  const bodyCont = document.querySelector("body");
+  const bodyCont = document.body;
   const mainNav = document.querySelector(".main-navigation");
+  if (!mainNav) return;
   const navButton = document.querySelector(".toggle-menu");
+  if (!navButton) return;
   const navSearchCont = document.querySelector(".navigation-search");
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
   if (!mobileCntls) return;
@@ -22,7 +24,9 @@
   const siteBranding = document.querySelector(".branding");
   const utilityLinks = document.querySelector(".settings-links");
   let mobileControlsDisplay = window.getComputedStyle(mobileCntls).display;
+  /** @type {NodeListOf<Element>} */
   let allNavLinks;
+  /** @type {NodeListOf<Element>} */
   let allUtilityLinks;
   // We need timeout here to make sure navigation is created first (becasue naviagion.js is creating button elements dynamicaly) and then we can assign all thise links to our variable
   setTimeout(() => {
@@ -44,29 +48,15 @@
   mobileItemsCont.setAttribute("class", "nav-drawer");
 
   // move mobile navigation toggle button back into mobile controls container
-  function moveNavToggleButtonToMobileControlsContainer() {
+  const moveNavToggleButtonToMobileControlsContainer = () => {
     setTimeout(() => {
       navButton.setAttribute("aria-expanded", "false");
       navButtonCont?.append(navButton);
     }, 300);
-  }
-
-  // ONLOAD
-  window.onload = function () {
-    // move duplicated logo to navigation drawer section
-    navSearchCont?.prepend(mobileItemsCont);
-
-    // if mobile
-    if (mobileControlsDisplay == "block") {
-      mobileNavDefault();
-      // if desktop
-    } else {
-      desktopNavDefault();
-    }
   };
 
   // Button click open and close menu function
-  function openMenu() {
+  const openMenu = () => {
     mobileItemsCont.append(navButton);
     navSearchCont?.classList.toggle("visible");
     navSearchCont?.classList.toggle("not-visible");
@@ -117,13 +107,13 @@
       regularHeader?.classList.remove("nav-overlay");
       moveNavToggleButtonToMobileControlsContainer();
     }
-  }
+  };
 
   // Default state for mobile
-  function mobileNavDefault() {
+  const mobileNavDefault = () => {
     moveNavToggleButtonToMobileControlsContainer();
-    mainNav?.before(utilityLinks);
-    bodyCont?.classList.remove("overflow-hidden");
+    if (utilityLinks) mainNav.before(utilityLinks);
+    bodyCont.classList.remove("overflow-hidden");
     navSearchCont?.classList.add("not-visible");
     navSearchCont?.classList.remove("visible");
     navSearchCont?.setAttribute("aria-hidden", "true");
@@ -144,13 +134,13 @@
     headerutility?.removeAttribute("aria-hidden");
     siteBranding?.removeAttribute("aria-hidden");
     regularHeader?.classList.remove("nav-overlay");
-  }
+  };
 
   // Default state for desktop
-  function desktopNavDefault() {
+  const desktopNavDefault = () => {
     moveNavToggleButtonToMobileControlsContainer();
-    headerutilityLinksCont?.append(utilityLinks);
-    bodyCont?.classList.remove("overflow-hidden");
+    if (utilityLinks) headerutilityLinksCont?.append(utilityLinks);
+    bodyCont.classList.remove("overflow-hidden");
     navSearchCont?.classList.remove("visible");
     navSearchCont?.classList.remove("not-visible");
     navSearchCont?.setAttribute("aria-hidden", "false");
@@ -170,7 +160,7 @@
     headerutility?.removeAttribute("aria-hidden");
     siteBranding?.removeAttribute("aria-hidden");
     regularHeader?.classList.remove("nav-overlay");
-  }
+  };
 
   // Button Click event
   navButton.addEventListener("click", openMenu);
@@ -187,4 +177,16 @@
       desktopNavDefault();
     }
   });
-})();
+
+  // ONLOAD
+  // move duplicated logo to navigation drawer section
+  navSearchCont?.prepend(mobileItemsCont);
+
+  // if mobile
+  if (mobileControlsDisplay == "block") {
+    mobileNavDefault();
+    // if desktop
+  } else {
+    desktopNavDefault();
+  }
+});
