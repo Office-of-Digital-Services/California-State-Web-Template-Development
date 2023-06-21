@@ -515,16 +515,10 @@
     }
   }
 
-  const isDocumentReady = (
-    /** @type {{ (): void; (this: Document, ev: Event): any; }} */ callbackFunction
-  ) => {
-    if (document.readyState != "loading") callbackFunction();
-    else document.addEventListener("DOMContentLoaded", callbackFunction);
-  };
-
   // Remove href if <a> has a link
-  isDocumentReady(() => {
+  window.addEventListener("load", () => {
     const navigationJS = document.querySelector(".main-navigation");
+    if (!navigationJS) return;
 
     const subnavbtnJS = document.querySelectorAll(
       ".main-navigation .nav-item a.has-sub-btn"
@@ -537,9 +531,9 @@
       item.replaceWith(newDiv);
     });
 
-    const singleLevel = navigationJS?.classList.contains("singleLevel");
+    const singleLevel = navigationJS.classList.contains("singleLevel");
     const setActiveLinkByFolder =
-      navigationJS?.classList.contains("auto-highlight");
+      navigationJS.classList.contains("auto-highlight");
 
     const navItemsJS = document.querySelectorAll(".main-navigation .nav-item");
 
@@ -617,6 +611,8 @@
         el.appendChild(carrot);
       });
     }
+
+    addActive();
   });
 
   // Do Navigation Reset function on window resize uless it's mobile device.
@@ -656,5 +652,4 @@
       }
     }
   };
-  addActive();
 })();
