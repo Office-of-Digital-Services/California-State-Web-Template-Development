@@ -648,7 +648,4 @@
       }
     }
   };
-
-  addActive();
-  alert("test");
 })();
