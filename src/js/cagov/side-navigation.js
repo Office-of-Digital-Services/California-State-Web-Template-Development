@@ -7,34 +7,33 @@
 (() => {
   const siteHeader = document.querySelector("header");
   const sidenavigation = document.querySelector(".side-navigation");
-  const allSidenavLinks =
-    sidenavigation?.querySelectorAll(".side-navigation a");
-  const mainContentSideNavCont = sidenavigation?.closest("div");
-  sidenavigation?.setAttribute("id", "side-navigation");
+  if (!sidenavigation || !siteHeader) return;
+  const allSidenavLinks = sidenavigation.querySelectorAll(".side-navigation a");
+  const mainContentSideNavCont = sidenavigation.closest("div");
+  sidenavigation.setAttribute("id", "side-navigation");
   const topposition = localStorage.getItem("sidebar-scroll");
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
   if (!mobileCntls) return;
   let mobileControlsDisplay = window.getComputedStyle(mobileCntls).display; // Side nav height vs viewport
   const siteHeaderHeight = siteHeader ? siteHeader.clientHeight : 0;
   const mobileView$3 = () =>
-    getComputedStyle(document.querySelector(".global-header .mobile-controls"))[
-      "display"
-    ] !== "none";
+    getComputedStyle(mobileCntls)["display"] !== "none";
   let timeout = 0;
   const delay = 250; // delay between calls
-  let mobileSideNavDiv;
-  let mobileSideNavCont;
-  let sidenavToggleBtn;
+  /** @type {HTMLElement} */
+  let mobileSideNavDiv,
+    /** @type {HTMLDivElement} */ mobileSideNavCont,
+    /** @type {HTMLButtonElement} */ sidenavToggleBtn;
 
-  function createMobileSideNavButton() {
+  const createMobileSideNavButton = () => {
     // get first side nav element
-    /** @type {HTMLAnchorElement} */
+    /** @type {HTMLAnchorElement | null} */
     const sidenavTItle = document.querySelector(".side-navigation a, .sidenav");
 
     if (sidenavTItle) {
       // get text for the button for first side nav element
       let btnText = sidenavTItle.innerText;
-      const btnTextSpan = sidenavTItle.querySelector("span")?.innerText; // removing the sr-only span and it's content
+      const btnTextSpan = sidenavTItle.querySelector("span")?.innerText || ""; // removing the sr-only span and it's content
       btnText = btnText.replace(btnTextSpan, "").trim();
       // create button container
       const sidenavMobile = document.createElement("aside");
@@ -59,37 +58,40 @@
       // add click event
       sidenavToggleBtn.addEventListener("click", toggleSideNav);
     }
-  }
+  };
 
-  function createmobileSideNavDiv() {
+  const createmobileSideNavDiv = () => {
     mobileSideNavDiv = document.createElement("aside");
     mobileSideNavDiv.setAttribute("class", "mobile-sidenav");
     mobileSideNavCont = document.createElement("div");
     mobileSideNavCont.setAttribute("class", "container");
     mobileSideNavDiv.append(mobileSideNavCont);
     siteHeader.after(mobileSideNavDiv);
-  }
+  };
 
   // MOBILE Side nav
-  function moveSideNavToHeader() {
-    mobileSideNavCont?.append(sidenavigation);
+  const moveSideNavToHeader = () => {
+    if (mobileSideNavCont) {
+      mobileSideNavCont.append(sidenavigation);
+    }
+
     sidenavigation.setAttribute("aria-hidden", "true");
     allSidenavLinks?.forEach(el => {
       el.setAttribute("tabindex", "-1");
     });
-  }
+  };
 
   // DESKTOP Side nav
-  function moveSideNavToMainContent() {
+  const moveSideNavToMainContent = () => {
     mainContentSideNavCont?.append(sidenavigation);
     sidenavigation.removeAttribute("aria-hidden");
     allSidenavLinks?.forEach(el => {
       el.removeAttribute("tabindex");
     });
-  }
+  };
 
   // Mobile Side Nav Button click function
-  function toggleSideNav() {
+  const toggleSideNav = () => {
     mobileSideNavDiv.classList.toggle("visible");
     // Open
     if (mobileSideNavDiv.classList.contains("visible")) {
@@ -107,7 +109,7 @@
         el.setAttribute("tabindex", "-1");
       });
     }
-  }
+  };
 
   // Set active class on nav-heading links
   function addActiveClass() {
@@ -120,14 +122,14 @@
         active_link[i].className += " active";
   }
 
-  function sidenavOverflow() {
+  const sidenavOverflow = () => {
     if (!mobileView$3()) {
       const viewportheight = document.documentElement.clientHeight;
       const viewportMinusHeader = viewportheight - siteHeaderHeight - 100;
 
       if (
         viewportMinusHeader <=
-        document.querySelector(".side-navigation").clientHeight
+        (document.querySelector(".side-navigation")?.clientHeight || 0)
       ) {
         sidenavigation.classList.add("overflow-auto"); // sidenavigation.setAttribute("style", "max-height:" + viewportMinusHeader + "px")
       } else {
@@ -154,29 +156,27 @@
         sidenavigation.scrollTop.toString()
       );
     });
+  };
+
+  // ONLOAD
+  addActiveClass();
+  createmobileSideNavDiv();
+  createMobileSideNavButton();
+
+  if (mobileControlsDisplay == "block") {
+    moveSideNavToHeader();
   }
+  // on resize
+  window.addEventListener("resize", () => {
+    mobileControlsDisplay = getComputedStyle(mobileCntls).display; // clear the timeout
 
-  if (sidenavigation) {
-    // ONLOAD
-    addActiveClass();
-    createmobileSideNavDiv();
-    createMobileSideNavButton();
-
+    window.clearTimeout(timeout); // start timing for event "completion"
+    timeout = window.setTimeout(sidenavOverflow, delay); // if mobile
     if (mobileControlsDisplay == "block") {
-      moveSideNavToHeader();
+      moveSideNavToHeader(); // if desctop
+    } else {
+      moveSideNavToMainContent();
     }
-    // on resize
-    window.addEventListener("resize", () => {
-      mobileControlsDisplay = getComputedStyle(mobileCntls).display; // clear the timeout
-
-      window.clearTimeout(timeout); // start timing for event "completion"
-      timeout = window.setTimeout(sidenavOverflow, delay); // if mobile
-      if (mobileControlsDisplay == "block") {
-        moveSideNavToHeader(); // if desctop
-      } else {
-        moveSideNavToMainContent();
-      }
-    });
-    sidenavOverflow();
-  }
+  });
+  sidenavOverflow();
 })();
