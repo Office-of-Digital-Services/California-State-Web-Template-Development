@@ -151,7 +151,7 @@ window.addEventListener("load", () => {
 
     if (mobileControlsDisplay == "block") {
       mobileNavDefault();
-      // if desctop
+      // if desktop
     } else {
       desktopNavDefault();
     }
