@@ -4,10 +4,6 @@ window.addEventListener("load", () => {
   // VARIABLES
   const navButton = document.querySelector(".toggle-menu");
   if (!navButton) return;
-  const mobileCntls = document.querySelector(".global-header .mobile-controls");
-  if (!mobileCntls) return;
-
-  let mobileControlsDisplay = window.getComputedStyle(mobileCntls).display;
 
   const getAllNavLinks = () =>
     document.querySelectorAll(
@@ -49,7 +45,6 @@ window.addEventListener("load", () => {
     const regularHeader = document.querySelector("header");
 
     if (hide) {
-      console.log("hiding");
       mainCont?.setAttribute("aria-hidden", "true");
       footerGlobal?.setAttribute("aria-hidden", "true");
       footerSite?.setAttribute("aria-hidden", "true");
@@ -58,7 +53,6 @@ window.addEventListener("load", () => {
       regularHeader?.classList.add("nav-overlay");
     } else {
       //show
-      console.log("showing");
       mainCont?.removeAttribute("aria-hidden");
       footerGlobal?.removeAttribute("aria-hidden");
       footerSite?.removeAttribute("aria-hidden");
@@ -146,29 +140,30 @@ window.addEventListener("load", () => {
   // Button Click event
   navButton.addEventListener("click", openMenu);
 
-  // on resize function (hide mobile nav)
-  window.addEventListener("resize", () => {
-    // set changing wariable in here
-    mobileControlsDisplay = getComputedStyle(mobileCntls).display;
-    // if mobile
+  const mobileCheck = () => {
+    const mobileCntls = document.querySelector(
+      ".global-header .mobile-controls"
+    );
+
+    const mobileControlsDisplay = mobileCntls
+      ? window.getComputedStyle(mobileCntls).display
+      : "";
+
     if (mobileControlsDisplay == "block") {
       mobileNavDefault();
       // if desctop
     } else {
       desktopNavDefault();
     }
-  });
+  };
+
+  // on resize function (hide mobile nav)
+  window.addEventListener("resize", mobileCheck);
 
   // ONLOAD
   // move duplicated logo to navigation drawer section
   const navSearchCont = document.querySelector(".navigation-search");
   navSearchCont?.prepend(mobileItemsCont);
 
-  // if mobile
-  if (mobileControlsDisplay == "block") {
-    mobileNavDefault();
-    // if desktop
-  } else {
-    desktopNavDefault();
-  }
+  mobileCheck();
 });
