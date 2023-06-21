@@ -255,6 +255,8 @@
 
           const indexHeaderLisible = index_header + 1;
           const accordionPanel = header_node.nextElementSibling;
+          if (!accordionPanel) return;
+
           const accordionHeaderText = header_node.innerHTML;
           const accordionButton = document.createElement("BUTTON");
           const accordionOpenedAttribute = header_node.hasAttribute(
@@ -472,18 +474,18 @@
     return plugin;
   };
 
-  // @ts-ignore
-  window.van11yAccessibleAccordionAria = main();
-
   const onLoad = function onLoad() {
+    // @ts-ignore
+    window.van11yAccessibleAccordionAria = main();
+
     // @ts-ignore
     const expand_default = window.van11yAccessibleAccordionAria();
     expand_default.attach();
 
-    document.removeEventListener("DOMContentLoaded", onLoad);
+    window.removeEventListener("load", onLoad);
   };
 
-  document.addEventListener("DOMContentLoaded", onLoad);
+  window.addEventListener("load", onLoad);
 
   function NavReset() {
     //RESET
