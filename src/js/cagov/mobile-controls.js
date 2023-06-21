@@ -23,24 +23,22 @@ window.addEventListener("load", () => {
   const siteBranding = document.querySelector(".branding");
   const utilityLinks = document.querySelector(".settings-links");
   let mobileControlsDisplay = window.getComputedStyle(mobileCntls).display;
-  /** @type {NodeListOf<Element>} */
-  let allNavLinks;
-  /** @type {NodeListOf<Element>} */
-  let allUtilityLinks;
-  // We need timeout here to make sure navigation is created first (becasue naviagion.js is creating button elements dynamicaly) and then we can assign all thise links to our variable
-  setTimeout(() => {
-    allNavLinks = document.querySelectorAll(
+
+  const getAllNavLinks = () =>
+    document.querySelectorAll(
       '.navigation-search a.first-level-link, .navigation-search button.first-level-btn, .navigation-search input, .navigation-search button, .navigation-search [tabindex]:not([tabindex="-1"])'
     );
-    allUtilityLinks = document.querySelectorAll(
+
+  const getAllUtilityLinks = () =>
+    document.querySelectorAll(
       '.settings-links a, .settings-links button, .settings-links input, .settings-links select, .settings-links [tabindex]:not([tabindex="-1"])'
     );
-  }, 100);
 
   // all focusable elements other than navigation
-  const allBodyLinks = document.querySelectorAll(
-    '.utility-header .social-media-links a, .utility-header .social-media-links input, .utility-header .social-media-links button, .utility-header .social-media-links [tabindex]:not([tabindex="-1"]), .branding a, .branding button, .branding input, .branding select, .main-content a[href], .main-content button, .main-content input, .main-content textarea, .main-content select, .main-content details, .main-content [tabindex]:not([tabindex="-1"]), .site-footer a[href], .site-footer button, .site-footer input, .site-footer textarea, .site-footer select, .site-footer details, .site-footer [tabindex]:not([tabindex="-1"]), footer a[href], footer button, footer input, footer textarea, footer select, footer details, footer [tabindex]:not([tabindex="-1"])'
-  );
+  const getAllBodyLinks = () =>
+    document.querySelectorAll(
+      '.utility-header .social-media-links a, .utility-header .social-media-links input, .utility-header .social-media-links button, .utility-header .social-media-links [tabindex]:not([tabindex="-1"]), .branding a, .branding button, .branding input, .branding select, .main-content a[href], .main-content button, .main-content input, .main-content textarea, .main-content select, .main-content details, .main-content [tabindex]:not([tabindex="-1"]), .site-footer a[href], .site-footer button, .site-footer input, .site-footer textarea, .site-footer select, .site-footer details, .site-footer [tabindex]:not([tabindex="-1"]), footer a[href], footer button, footer input, footer textarea, footer select, footer details, footer [tabindex]:not([tabindex="-1"])'
+    );
 
   // create container for drawer mobile nav items
   const mobileItemsCont = document.createElement("div");
@@ -66,14 +64,14 @@ window.addEventListener("load", () => {
       bodyCont?.classList.add("overflow-hidden");
       navSearchCont?.setAttribute("aria-hidden", "false");
       // make links focusable
-      allNavLinks?.forEach(el => {
+      getAllNavLinks().forEach(el => {
         el.removeAttribute("tabindex");
       });
-      allUtilityLinks?.forEach(el => {
+      getAllUtilityLinks().forEach(el => {
         el.removeAttribute("tabindex");
       });
       // make all the rest of the links not focusable
-      allBodyLinks?.forEach(el => {
+      getAllBodyLinks().forEach(el => {
         el.setAttribute("tabindex", "-1");
       });
       // Hide all the website areas (add aria-hidden)
@@ -89,13 +87,13 @@ window.addEventListener("load", () => {
       bodyCont?.classList.remove("overflow-hidden");
       navSearchCont?.setAttribute("aria-hidden", "true");
       // removing focus
-      allNavLinks?.forEach(el => {
+      getAllNavLinks().forEach(el => {
         el.setAttribute("tabindex", "-1");
       });
-      allUtilityLinks?.forEach(el => {
+      getAllUtilityLinks().forEach(el => {
         el.setAttribute("tabindex", "-1");
       });
-      allBodyLinks?.forEach(el => {
+      getAllBodyLinks().forEach(el => {
         el.removeAttribute("tabindex");
       });
       // remove aria hidden for the rest of the site
@@ -120,13 +118,13 @@ window.addEventListener("load", () => {
     navSearchCont?.classList.remove("visible");
     navSearchCont?.setAttribute("aria-hidden", "true");
     // removing focus
-    allNavLinks?.forEach(el => {
+    getAllNavLinks().forEach(el => {
       el.setAttribute("tabindex", "-1");
     });
-    allUtilityLinks?.forEach(el => {
+    getAllUtilityLinks().forEach(el => {
       el.setAttribute("tabindex", "-1");
     });
-    allBodyLinks?.forEach(el => {
+    getAllBodyLinks().forEach(el => {
       el.removeAttribute("tabindex");
     });
     // remove aria hidden for the rest of the site
@@ -147,13 +145,13 @@ window.addEventListener("load", () => {
     navSearchCont?.classList.remove("visible");
     navSearchCont?.classList.remove("not-visible");
     navSearchCont?.setAttribute("aria-hidden", "false");
-    allNavLinks?.forEach(el => {
+    getAllNavLinks().forEach(el => {
       el.removeAttribute("tabindex");
     });
-    allUtilityLinks?.forEach(el => {
+    getAllUtilityLinks().forEach(el => {
       el.removeAttribute("tabindex");
     });
-    allBodyLinks?.forEach(el => {
+    getAllBodyLinks().forEach(el => {
       el.removeAttribute("tabindex");
     });
     // remove aria hidden for the rest of the site
