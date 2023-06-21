@@ -4,9 +4,9 @@ const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 const path = require("path");
 
 module.exports = function (
-  /** @type {import("@11ty/eleventy").UserConfig} **/ userConfig
+  /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
 ) {
-  userConfig.addPassthroughCopy({
+  eleventyConfig.addPassthroughCopy({
     "src/fonts": "ca_state_template/fonts",
     //"src/html-data": "ca_state_template/html-data",
     "src/root": "ca_state_template",
@@ -15,7 +15,7 @@ module.exports = function (
   });
 
   //Sorted list of all the samples
-  userConfig.addFilter(
+  eleventyConfig.addFilter(
     "allSamples",
     (/** @type {{data:{title:string, tags:string}}[]} */ values) => {
       return values
@@ -26,7 +26,7 @@ module.exports = function (
   );
 
   //Automatically uses the template site URL for images inside sample content
-  userConfig.addFilter(
+  eleventyConfig.addFilter(
     "SampleCodeUseMainSiteImages",
     (/** @type {string} */ content) =>
       content
@@ -35,7 +35,7 @@ module.exports = function (
   );
 
   //Start with default config, easier to configure 11ty later
-  const config = defaultConfig(userConfig);
+  const config = defaultConfig(eleventyConfig);
 
   // allow nunjucks templating in .html files
   config.htmlTemplateEngine = "njk";
@@ -54,7 +54,7 @@ module.exports = function (
   };
 
   //Adding a transform to make the output work as non-server static files
-  userConfig.addTransform(
+  eleventyConfig.addTransform(
     "staticPaths",
     /**
      * @param {string} content
