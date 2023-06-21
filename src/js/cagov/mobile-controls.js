@@ -7,7 +7,6 @@ window.addEventListener("load", () => {
   if (!mainNav) return;
   const navButton = document.querySelector(".toggle-menu");
   if (!navButton) return;
-  const navSearchCont = document.querySelector(".navigation-search");
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
   if (!mobileCntls) return;
   const mainCont = document.querySelector(".main-content");
@@ -58,6 +57,7 @@ window.addEventListener("load", () => {
   // Button click open and close menu function
   const openMenu = () => {
     mobileItemsCont.append(navButton);
+    const navSearchCont = document.querySelector(".navigation-search");
     navSearchCont?.classList.toggle("visible");
     navSearchCont?.classList.toggle("not-visible");
     // Open
@@ -114,6 +114,8 @@ window.addEventListener("load", () => {
     moveNavToggleButtonToMobileControlsContainer();
     if (utilityLinks) mainNav.before(utilityLinks);
     bodyCont.classList.remove("overflow-hidden");
+
+    const navSearchCont = document.querySelector(".navigation-search");
     navSearchCont?.classList.add("not-visible");
     navSearchCont?.classList.remove("visible");
     navSearchCont?.setAttribute("aria-hidden", "true");
@@ -141,6 +143,7 @@ window.addEventListener("load", () => {
     moveNavToggleButtonToMobileControlsContainer();
     if (utilityLinks) headerutilityLinksCont?.append(utilityLinks);
     bodyCont.classList.remove("overflow-hidden");
+    const navSearchCont = document.querySelector(".navigation-search");
     navSearchCont?.classList.remove("visible");
     navSearchCont?.classList.remove("not-visible");
     navSearchCont?.setAttribute("aria-hidden", "false");
@@ -180,6 +183,7 @@ window.addEventListener("load", () => {
 
   // ONLOAD
   // move duplicated logo to navigation drawer section
+  const navSearchCont = document.querySelector(".navigation-search");
   navSearchCont?.prepend(mobileItemsCont);
 
   // if mobile
