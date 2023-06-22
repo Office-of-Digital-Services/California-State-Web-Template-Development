@@ -4,7 +4,7 @@
 ----------------------------------------- */
 
 window.addEventListener("load", () => {
-  const ariaHidden = () => {
+  const setSearchContainerAriaHidden = () => {
     if (searchContainer) {
       if (featuredsearch) {
         searchContainer.removeAttribute("aria-hidden");
@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
     }
   };
 
-  const mobileView_for_search = () => {
+  const mobileControlVisible = () => {
     const mobileElement = document.querySelector(
       ".global-header .mobile-controls"
     );
@@ -61,8 +61,8 @@ window.addEventListener("load", () => {
 
     //        document.dispatchEvent('cagov.searchresults.hide'); // ???
 
-    if (mobileView_for_search()) {
-      ariaHidden();
+    if (mobileControlVisible()) {
+      setSearchContainerAriaHidden();
     }
   };
 
@@ -146,11 +146,11 @@ window.addEventListener("load", () => {
 
   //  search box top position
   // TODO: Really close to searchTop() except for top size
-  if (!mobileView_for_search()) {
+  if (!mobileControlVisible()) {
     // calulation search box top position
     const searchtop =
       headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-    if (!mobileView_for_search() && searchbox) {
+    if (!mobileControlVisible() && searchbox) {
       searchbox.style.top = `${Math.max(searchtop, 82)}px`;
     }
   }
@@ -260,7 +260,7 @@ window.addEventListener("load", () => {
     // calulation search box top position
     const searchtop =
       headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-    if (!mobileView_for_search() && searchbox) {
+    if (!mobileControlVisible() && searchbox) {
       searchbox.style.top = `${Math.max(searchtop, 55)}px`;
     }
   };
@@ -272,7 +272,7 @@ window.addEventListener("load", () => {
 
   // Calculation search box top property on the scroll for the fixed nav
   window.addEventListener("scroll", () => {
-    if (!mobileView_for_search()) {
+    if (!mobileControlVisible()) {
       // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
       setTimeout(setSearchTop, 400);
 
@@ -294,10 +294,10 @@ window.addEventListener("load", () => {
   //  search box top position if browser window is resized
   window.addEventListener("resize", () => {
     setSearchTop();
-    ariaHidden();
+    setSearchContainerAriaHidden();
   });
 
-  ariaHidden();
+  setSearchContainerAriaHidden();
 });
 
 // call out the function on the page load
