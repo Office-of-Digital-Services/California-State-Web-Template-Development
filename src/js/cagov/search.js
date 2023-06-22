@@ -256,6 +256,15 @@ window.addEventListener("load", () => {
     }
   }
 
+  const searchTop = () => {
+    // calulation search box top position
+    const searchtop =
+      headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
+    if (!mobileView_for_search() && searchbox) {
+      searchbox.style.top = `${Math.max(searchtop, 55)}px`;
+    }
+  };
+
   // on alert close event
   document.querySelectorAll(".alert-banner .close").forEach(oneClose => {
     oneClose.addEventListener("click", searchTop);
@@ -287,15 +296,6 @@ window.addEventListener("load", () => {
     searchTop();
     ariaHidden();
   });
-
-  const searchTop = () => {
-    // calulation search box top position
-    const searchtop =
-      headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-    if (!mobileView_for_search() && searchbox) {
-      searchbox.style.top = `${Math.max(searchtop, 55)}px`;
-    }
-  };
 
   ariaHidden();
 });
