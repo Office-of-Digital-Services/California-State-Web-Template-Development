@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
     }, 300);
   };
 
-  const xhide = (/** @type {boolean} */ hide) => {
+  const setHidden = (/** @type {boolean} */ hide) => {
     const mainCont = document.querySelector(".main-content");
     const footerGlobal = document.querySelector("footer");
     const footerSite = document.querySelector(".site-footer");
@@ -79,7 +79,7 @@ window.addEventListener("load", () => {
       // make all the rest of the links not focusable
       getAllBodyLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       // Hide all the website areas (add aria-hidden)
-      xhide(true);
+      setHidden(true);
 
       // Close
     } else {
@@ -91,7 +91,7 @@ window.addEventListener("load", () => {
       getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
       // remove aria hidden for the rest of the site
-      xhide(false);
+      setHidden(false);
       moveNavToggleButtonToMobileControlsContainer();
     }
   };
@@ -113,7 +113,7 @@ window.addEventListener("load", () => {
     getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
     getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
-    xhide(false);
+    setHidden(false);
   };
 
   // Default state for desktop
@@ -134,7 +134,7 @@ window.addEventListener("load", () => {
     getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
     getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
-    xhide(false);
+    setHidden(false);
   };
 
   // Button Click event
