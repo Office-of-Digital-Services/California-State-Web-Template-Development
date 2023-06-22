@@ -66,13 +66,14 @@ window.addEventListener("load", () => {
   const openMenu = () => {
     mobileItemsCont.append(navButton);
     const navSearchCont = document.querySelector(".navigation-search");
-    navSearchCont?.classList.toggle("visible");
-    navSearchCont?.classList.toggle("not-visible");
+    if (!navSearchCont) return;
+    navSearchCont.classList.toggle("visible");
+    navSearchCont.classList.toggle("not-visible");
     // Open
-    if (navSearchCont?.classList.contains("visible")) {
+    if (navSearchCont.classList.contains("visible")) {
       navButton.setAttribute("aria-expanded", "true");
       document.body.classList.add("overflow-hidden");
-      navSearchCont?.setAttribute("aria-hidden", "false");
+      navSearchCont.setAttribute("aria-hidden", "false");
       // make links focusable
       getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
       getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
@@ -85,7 +86,7 @@ window.addEventListener("load", () => {
     } else {
       navButton.setAttribute("aria-expanded", "false");
       document.body.classList.remove("overflow-hidden");
-      navSearchCont?.setAttribute("aria-hidden", "true");
+      navSearchCont.setAttribute("aria-hidden", "true");
       // removing focus
       getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
@@ -105,9 +106,10 @@ window.addEventListener("load", () => {
     document.body.classList.remove("overflow-hidden");
 
     const navSearchCont = document.querySelector(".navigation-search");
-    navSearchCont?.classList.add("not-visible");
-    navSearchCont?.classList.remove("visible");
-    navSearchCont?.setAttribute("aria-hidden", "true");
+    if (!navSearchCont) return;
+    navSearchCont.classList.add("not-visible");
+    navSearchCont.classList.remove("visible");
+    navSearchCont.setAttribute("aria-hidden", "true");
     // removing focus
     getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
     getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
@@ -127,9 +129,10 @@ window.addEventListener("load", () => {
       headerutilityLinksCont.append(utilityLinks);
     document.body.classList.remove("overflow-hidden");
     const navSearchCont = document.querySelector(".navigation-search");
-    navSearchCont?.classList.remove("visible");
-    navSearchCont?.classList.remove("not-visible");
-    navSearchCont?.setAttribute("aria-hidden", "false");
+    if (!navSearchCont) return;
+    navSearchCont.classList.remove("visible");
+    navSearchCont.classList.remove("not-visible");
+    navSearchCont.setAttribute("aria-hidden", "false");
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
     getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
@@ -162,8 +165,7 @@ window.addEventListener("load", () => {
 
   // ONLOAD
   // move duplicated logo to navigation drawer section
-  const navSearchCont = document.querySelector(".navigation-search");
-  navSearchCont?.prepend(mobileItemsCont);
+  document.querySelector(".navigation-search")?.prepend(mobileItemsCont);
 
   mobileCheck();
 });
