@@ -470,20 +470,7 @@
     return plugin;
   };
 
-  const onLoad = function onLoad() {
-    // @ts-ignore
-    window.van11yAccessibleAccordionAria = main();
-
-    // @ts-ignore
-    const expand_default = window.van11yAccessibleAccordionAria();
-    expand_default.attach();
-
-    window.removeEventListener("load", onLoad);
-  };
-
-  window.addEventListener("load", onLoad);
-
-  function NavReset() {
+  const NavReset = () => {
     //RESET
     document
       .querySelectorAll(".first-level-btn")
@@ -509,10 +496,12 @@
       const nav = document.querySelector("#navigation");
       nav.removeAttribute("aria-hidden");
     }
-  }
+  };
 
   // Remove href if <a> has a link
   window.addEventListener("load", () => {
+    main()().attach(); //This is way more abstract than it needs to be
+
     const navigationJS = document.querySelector(".main-navigation");
     if (!navigationJS) return;
 
