@@ -34,17 +34,13 @@ window.addEventListener("load", () => {
   const removeSearchResults = () => {
     document.body.classList.remove("active-search");
     if (searchText) searchText.value = "";
-    if (searchContainer) {
-      searchContainer.classList.remove("active");
-      searchContainer.setAttribute("aria-hidden", "true");
-    }
 
-    const resultsContainer = document.querySelector(
-      ".search-results-container"
-    );
-    if (resultsContainer) {
-      resultsContainer.classList.remove("visible");
-    }
+    searchContainer?.classList.remove("active");
+    searchContainer?.setAttribute("aria-hidden", "true");
+
+    document
+      .querySelector(".search-results-container")
+      ?.classList.remove("visible");
 
     document
       .querySelectorAll(".ask-group")
@@ -52,8 +48,10 @@ window.addEventListener("load", () => {
 
     if (!featuredsearch) {
       // added aria expaned attr for accessibility
-      const firstLevelBtn = document.querySelector("button.first-level-link");
-      if (firstLevelBtn) firstLevelBtn.setAttribute("aria-expanded", "false");
+      document
+        .querySelector("button.first-level-link")
+        ?.setAttribute("aria-expanded", "false");
+
       setSearchAttr();
     }
     // fire a scroll event to help update headers if need be
@@ -61,9 +59,7 @@ window.addEventListener("load", () => {
 
     //        document.dispatchEvent('cagov.searchresults.hide'); // ???
 
-    if (mobileControlVisible()) {
-      setSearchContainerAriaHidden();
-    }
+    if (mobileControlVisible()) setSearchContainerAriaHidden();
   };
 
   /** @type {HTMLInputElement | null} */
@@ -140,8 +136,9 @@ window.addEventListener("load", () => {
 
   if (!featuredsearch) {
     // added aria expaned attr for accessibility
-    const firstLevelBtn = document.querySelector("button.first-level-link");
-    if (firstLevelBtn) firstLevelBtn.setAttribute("aria-expanded", "false");
+    document
+      .querySelector("button.first-level-link")
+      ?.setAttribute("aria-expanded", "false");
   }
 
   //  search box top position
@@ -157,15 +154,14 @@ window.addEventListener("load", () => {
 
   // have the close button remove search results and the applied classes
   //resultsContainer.find('.close').on('click', removeSearchResults);
-  const resContainClose = document.querySelector(
-    ".search-results-container .close"
-  );
-  if (resContainClose)
-    resContainClose.addEventListener("click", removeSearchResults, false);
+  document
+    .querySelector(".search-results-container .close")
+    ?.addEventListener("click", removeSearchResults, false);
 
   //searchContainer.find('.close').on('click', removeSearchResults);
-  const hsClose = document.querySelector("#head-search .close");
-  if (hsClose) hsClose.addEventListener("click", removeSearchResults, false);
+  document
+    .querySelector("#head-search .close")
+    ?.addEventListener("click", removeSearchResults, false);
 
   // Our special nav icon which we need to hook into for starting the search
   // $('#nav-item-search')
@@ -186,11 +182,11 @@ window.addEventListener("load", () => {
         // hide Search form if it's not active
         if (searchactive) {
           // added aria expanded attr for accessibility
-          this.querySelector("button").setAttribute("aria-expanded", "true");
+          this.querySelector("button")?.setAttribute("aria-expanded", "true");
           removeSearchAttr();
         } else {
           // added aria expaned attr for accessibility
-          this.querySelector("button").setAttribute("aria-expanded", "false");
+          this.querySelector("button")?.setAttribute("aria-expanded", "false");
           setSearchAttr();
         }
 
@@ -209,42 +205,36 @@ window.addEventListener("load", () => {
   }
 
   // Close search when close icon is clicked
-  if (searchReset) searchReset.addEventListener("click", removeSearchResults);
+  searchReset?.addEventListener("click", removeSearchResults);
 
   const removeSearchAttr = () => {
-    if (searchInput) {
-      searchInput.removeAttribute("tabindex");
-      searchInput.removeAttribute("aria-hidden");
-    }
-    if (searchSubmit) {
-      searchSubmit.removeAttribute("tabindex");
-      searchSubmit.removeAttribute("aria-hidden");
-    }
-    if (searchReset) {
-      searchReset.removeAttribute("tabindex");
-      searchReset.removeAttribute("aria-hidden");
-    }
-    if (searchlabel) searchlabel.removeAttribute("aria-hidden");
+    searchInput?.removeAttribute("tabindex");
+    searchInput?.removeAttribute("aria-hidden");
 
-    if (searchContainer) searchContainer.removeAttribute("aria-hidden");
+    searchSubmit?.removeAttribute("tabindex");
+    searchSubmit?.removeAttribute("aria-hidden");
+
+    searchReset?.removeAttribute("tabindex");
+    searchReset?.removeAttribute("aria-hidden");
+
+    searchlabel?.removeAttribute("aria-hidden");
+
+    searchContainer?.removeAttribute("aria-hidden");
   };
 
   const setSearchAttr = () => {
-    if (searchInput) {
-      searchInput.setAttribute("tabindex", "-1");
-      searchInput.setAttribute("aria-hidden", "true");
-    }
-    if (searchSubmit) {
-      searchSubmit.setAttribute("tabindex", "-1");
-      searchSubmit.setAttribute("aria-hidden", "true");
-    }
-    if (searchReset) {
-      searchReset.setAttribute("tabindex", "-1");
-      searchReset.setAttribute("aria-hidden", "true");
-    }
-    if (searchlabel) searchlabel.setAttribute("aria-hidden", "true");
+    searchInput?.setAttribute("tabindex", "-1");
+    searchInput?.setAttribute("aria-hidden", "true");
 
-    if (searchContainer) searchContainer.setAttribute("aria-hidden", "true");
+    searchSubmit?.setAttribute("tabindex", "-1");
+    searchSubmit?.setAttribute("aria-hidden", "true");
+
+    searchReset?.setAttribute("tabindex", "-1");
+    searchReset?.setAttribute("aria-hidden", "true");
+
+    searchlabel?.setAttribute("aria-hidden", "true");
+
+    searchContainer?.setAttribute("aria-hidden", "true");
   };
 
   // Make Search form tabable if it's featured
@@ -278,15 +268,15 @@ window.addEventListener("load", () => {
 
       // remove featured search on scroll in desktop
       const FeaturedSearch = document.querySelector("nav ~ #head-search");
-      if (
-        document.body.scrollTop >= 100 ||
-        document.documentElement.scrollTop >= 100
-      ) {
-        if (FeaturedSearch) {
+      if (FeaturedSearch) {
+        if (
+          document.body.scrollTop >= 100 ||
+          document.documentElement.scrollTop >= 100
+        ) {
           FeaturedSearch.classList.add("hidden-up");
+        } else {
+          FeaturedSearch.classList.remove("hidden-up");
         }
-      } else if (FeaturedSearch) {
-        FeaturedSearch.classList.remove("hidden-up");
       }
     }
   });

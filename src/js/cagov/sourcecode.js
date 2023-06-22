@@ -23,9 +23,10 @@
     if (codeblock) {
       // copy the text
       if (codeblock.tagName.toLowerCase() == "pre") {
-        navigator.clipboard.writeText(
-          codeblock.querySelector("code").innerText
-        );
+        const code = codeblock.querySelector("code")?.innerText;
+        if (code) {
+          navigator.clipboard.writeText(code);
+        }
       } else {
         //TextArea
         navigator.clipboard.writeText(
@@ -35,8 +36,8 @@
       // select the text
       const range = document.createRange();
       range.selectNode(codeblock);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
+      window.getSelection()?.removeAllRanges();
+      window.getSelection()?.addRange(range);
       // replace the button icon
       //btnElem.querySelector("span").classList.remove("ca-gov-icon-copy");
       //btnElem.querySelector("span").classList.add("ca-gov-icon-check-mark");
@@ -65,7 +66,7 @@
       newDiv.classList.add("btn", "btn-outline-primary");
       newDiv.innerHTML = "<span class='ca-gov-icon-copy'></span> Copy code";
       if (dom.tagName.toLowerCase() == "code") {
-        dom.parentElement.after(newDiv);
+        dom.parentElement?.after(newDiv);
       } else {
         dom.after(newDiv);
       }

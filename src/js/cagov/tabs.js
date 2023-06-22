@@ -9,6 +9,9 @@ window.addEventListener("load", () => {
   const allTabs = document.querySelectorAll(".tabs");
   allTabs.forEach(tabbed => {
     const tablist = tabbed.querySelector("ul");
+
+    if (!tablist) return;
+
     const tabs = tablist.querySelectorAll("a");
     /** @type {NodeListOf<HTMLElement>} */
     const panels = tabbed.querySelectorAll('[id^="section"]');
@@ -52,7 +55,7 @@ window.addEventListener("load", () => {
       tab.addEventListener("click", e => {
         e.preventDefault();
         const currentTab = tablist.querySelector("[aria-selected]");
-        if (e.currentTarget !== currentTab) {
+        if (currentTab && e.currentTarget !== currentTab) {
           switchTab(currentTab, /** @type {HTMLElement} */ (e.currentTarget));
         }
       });
