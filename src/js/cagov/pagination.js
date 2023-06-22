@@ -163,7 +163,7 @@ class CAGovPagination extends HTMLElement {
       const style = document.createElement("style");
       style.id = "cagov-pagination-styles";
       style.textContent = styles;
-      document.querySelector("head").appendChild(style);
+      document.head.appendChild(style);
     }
   }
 
