@@ -493,8 +493,7 @@
       document
         .querySelectorAll(".rotate")
         .forEach((/**@type {HTMLElement} */ el) => (el.style.display = "none"));
-      const nav = document.querySelector("#navigation");
-      nav.removeAttribute("aria-hidden");
+      document.querySelector("#navigation")?.removeAttribute("aria-hidden");
     }
   };
 
