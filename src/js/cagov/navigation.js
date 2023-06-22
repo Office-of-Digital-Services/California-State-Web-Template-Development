@@ -70,11 +70,10 @@
   /** Find an element based on an Id
    * @param  {String} id Id to find
    * @param  {String} hash hash id (not mandatory)
-   * @return {Element} the element with the specified id
+   * @return {Element | null} the element with the specified id
    */
-  const findById = (id, hash) => {
-    return document.querySelector(`#${id}[${DATA_HASH_ID}="${hash}"]`);
-  };
+  const findById = (id, hash) =>
+    document.querySelector(`#${id}[${DATA_HASH_ID}="${hash}"]`);
 
   /**
    * @param {Element} node
@@ -87,9 +86,9 @@
   };
 
   /** search if element is or is contained in another element with attribute data-nav-id
-   * @param  {Element} el element (node)
+   * @param  {Element | null} el element (node)
    * @param  {String} hashId the attribute data-hashtooltip-id
-   * @return {String} the value of attribute data-hashtooltip-id
+   * @return {String | null} the value of attribute data-hashtooltip-id
    */
   const searchParentHashId = (el, hashId) => {
     let parentElement = el;
@@ -104,7 +103,7 @@
   };
 
   /**
-   * @param {Element} el
+   * @param {Element | null} el
    * @param {String} parentClass
    * @param {String} hashId
    */
@@ -515,7 +514,6 @@
       item.replaceWith(newDiv);
     });
 
-    const singleLevel = navigationJS.classList.contains("singleLevel");
     const setActiveLinkByFolder =
       navigationJS.classList.contains("auto-highlight");
 
@@ -584,7 +582,7 @@
     });
 
     // Add class has-sub, then add carrots
-    if (!singleLevel) {
+    if (!navigationJS.classList.contains("singleLevel")) {
       document.querySelectorAll(".first-level-btn").forEach(el => {
         el.classList.add("has-sub");
 
