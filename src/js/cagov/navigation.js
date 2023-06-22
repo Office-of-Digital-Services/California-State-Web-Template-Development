@@ -606,18 +606,18 @@
     addActive();
   });
 
-  // Do Navigation Reset function on window resize uless it's mobile device.
+  // Do Navigation Reset function on window resize.
   window.addEventListener("resize", () => {
     document
       .querySelector(".toggle-menu")
       ?.setAttribute("aria-expanded", "false");
 
     //Collapse the nav when narrow
-    const nav = document.querySelector("#navigation");
-    if (nav) {
-      nav.classList.remove("show");
-      nav.setAttribute("aria-hidden", "true");
-    }
+    //const nav = document.querySelector("#navigation");
+    //if (nav) {
+    //nav.classList.remove("show"); //This was causing the desktop menu to stay hidden when resizing from mobile.
+    //nav.setAttribute("aria-hidden", "true");
+    //}
 
     NavReset();
   });
