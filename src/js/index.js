@@ -1,4 +1,4 @@
-import "./bootstrap/bootstrap.bundle.min.js";
+import "../../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import "./cagov/fixed-header.js";
 import "./cagov/accordion.js";
 import "./cagov/accordion-list.js";

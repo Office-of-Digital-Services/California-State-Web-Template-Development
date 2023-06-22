@@ -5,11 +5,8 @@
 //
 // BOOTSTRAP CORE
 // -------------------------------------------------
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/utilities";
-@import "bootstrap/scss/bootstrap.scss";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 // State Template Variables
 @import "variables";
