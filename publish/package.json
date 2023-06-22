@@ -1,6 +1,6 @@
 {
   "name": "@cagovweb/state-template",
-  "version": "1.1.0",
+  "version": "1.1.0-beta.2",
   "description": "California State Web Template NPM Package",
   "repository": {
     "type": "git",
@@ -27,7 +27,8 @@
     "url": "https://github.com/carterm"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tags": "beta"
   },
   "scripts": {
     "NPM Publish (dry run)": "npm publish --dry-run",

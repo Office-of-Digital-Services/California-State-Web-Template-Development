@@ -4,7 +4,7 @@
    TABS -- custom accessible tabs
 ----------------------------------------- */
 
-(function () {
+window.addEventListener("load", () => {
   // Get relevant elements and collections
   const allTabs = document.querySelectorAll(".tabs");
   allTabs.forEach(tabbed => {
@@ -96,4 +96,4 @@
     tabs[0].setAttribute("aria-selected", "true");
     panels[0].hidden = false;
   });
-})();
+});

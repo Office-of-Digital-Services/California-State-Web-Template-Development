@@ -6,7 +6,7 @@ The California State Web Template is designed to promote a responsive and standa
 
 The state web template is an open source project which you can find on the [CA Office of Digital Services GitHub repository](https://github.com/Office-of-Digital-Services). There are various technology versions of the web template available for consumption. Collaboration is highly encouraged and user feedback and contributions are always considered and often implemented.
 
-This package is based on Bootstrap v5.1.3
+This package is based on [Bootstrap v5.1.3](https://www.npmjs.com/package/bootstrap/v/5.1.3)
 
 ## How to use
 
@@ -41,12 +41,8 @@ At references in your template files
   ...
   <link rel="stylesheet" href="state-template/css/cagov.core.min.css"/>
   <link rel="stylesheet" href="state-template/css/colortheme-oceanside.min.css"/>
+  <script type="text/javascript" src="state-template/js/cagov.core.min.js"></script>
 </head>
-
-<body>
-  ...
-  <script src="state-template/js/cagov.core.min.js"></script>
-</body>
 ```
 
 ## Documentation
