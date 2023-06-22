@@ -256,7 +256,7 @@ window.addEventListener("load", () => {
     }
   }
 
-  const searchTop = () => {
+  const setSearchTop = () => {
     // calulation search box top position
     const searchtop =
       headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
@@ -267,14 +267,14 @@ window.addEventListener("load", () => {
 
   // on alert close event
   document.querySelectorAll(".alert-banner .close").forEach(oneClose => {
-    oneClose.addEventListener("click", searchTop);
+    oneClose.addEventListener("click", setSearchTop);
   });
 
   // Calculation search box top property on the scroll for the fixed nav
   window.addEventListener("scroll", () => {
     if (!mobileView_for_search()) {
       // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
-      setTimeout(searchTop, 400);
+      setTimeout(setSearchTop, 400);
 
       // remove featured search on scroll in desktop
       const FeaturedSearch = document.querySelector("nav ~ #head-search");
@@ -293,7 +293,7 @@ window.addEventListener("load", () => {
 
   //  search box top position if browser window is resized
   window.addEventListener("resize", () => {
-    searchTop();
+    setSearchTop();
     ariaHidden();
   });
 
