@@ -41,12 +41,8 @@ At references in your template files
   ...
   <link rel="stylesheet" href="state-template/css/cagov.core.min.css"/>
   <link rel="stylesheet" href="state-template/css/colortheme-oceanside.min.css"/>
+  <script type="text/javascript" src="state-template/js/cagov.core.min.js"></script>
 </head>
-
-<body>
-  ...
-  <script src="state-template/js/cagov.core.min.js"></script>
-</body>
 ```
 
 ## Documentation
