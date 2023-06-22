@@ -1,5 +1,8 @@
 //@ts-check
-((w, doc) => {
+window.addEventListener("load", () => {
+  const w = window;
+  const doc = document;
+
   /**
    * Local object for method references
    * and define script meta-data
@@ -286,7 +289,7 @@
         !doc.getElementById(thisAccordion).hasAttribute("data-multi")
       ) {
         // swap expanded when there is a single constant panel
-        for (let trigger of triggers) {
+        for (const trigger of triggers)
           if (thisTrigger !== trigger) {
             isCurrent(trigger, false);
             const getID = trigger.getAttribute("aria-controls");
@@ -294,7 +297,6 @@
             ariaExpanded(trigger, false);
             ariaHidden(doc.getElementById(getID), true);
           }
-        }
       }
     }
   };
@@ -402,4 +404,4 @@
 
   // go go JavaScript
   ARIAaccordion.init();
-})(window, document);
+});

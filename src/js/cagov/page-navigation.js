@@ -2,7 +2,7 @@
 /* -----------------------------------------
    PAGE NAVIGATION - /source/js/cagov/page-navigation.js
 ----------------------------------------- */
-(() => {
+window.addEventListener("load", () => {
   const headings = document.querySelectorAll("h2");
   const h2heading = document.querySelector("h2");
   const pagenav = document.querySelector(".page-navigation");
@@ -50,4 +50,4 @@
     pagenav.appendChild(pagenavUL);
     pagenav.setAttribute("aria-labelledby", "on-this-page-navigation-label");
   }
-})(); // call out the function on the page load
+}); // call out the function on the page load

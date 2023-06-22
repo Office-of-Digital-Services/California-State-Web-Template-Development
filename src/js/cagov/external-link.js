@@ -1,7 +1,7 @@
 //@ts-check
 
 /* EXTERNAL LINK ICON */
-function linkAnnotator() {
+window.addEventListener("load", () => {
   const ext = '<span class="external-link-icon" aria-hidden="true"></span>';
 
   // Check if link is external function
@@ -34,6 +34,4 @@ function linkAnnotator() {
       linkElement.innerHTML += ext; // += concatenates to external links
     }
   });
-}
-
-linkAnnotator();
+});

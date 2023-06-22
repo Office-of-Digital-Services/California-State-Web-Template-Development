@@ -281,7 +281,7 @@ class CAGovPagination extends HTMLElement {
     );
   }
 }
-
-window.customElements.define("cagov-pagination", CAGovPagination);
-
+window.addEventListener("load", () => {
+  window.customElements.define("cagov-pagination", CAGovPagination);
+});
 //export { CAGovPagination };

@@ -92,10 +92,8 @@
    * @return {String} the value of attribute data-hashtooltip-id
    */
   const searchParentHashId = (el, hashId) => {
-    let found = false;
-
     let parentElement = el;
-    while (parentElement && !found) {
+    while (parentElement) {
       if (parentElement.hasAttribute(hashId)) {
         return parentElement.getAttribute(hashId);
       } else {
@@ -111,10 +109,8 @@
    * @param {String} hashId
    */
   const searchParent = (el, parentClass, hashId) => {
-    let found = false;
-
     let parentElement = el;
-    while (parentElement && !found) {
+    while (parentElement) {
       if (
         parentElement.classList.contains(parentClass) &&
         parentElement.getAttribute(DATA_HASH_ID) === hashId
@@ -255,6 +251,8 @@
 
           const indexHeaderLisible = index_header + 1;
           const accordionPanel = header_node.nextElementSibling;
+          if (!accordionPanel) return;
+
           const accordionHeaderText = header_node.innerHTML;
           const accordionButton = document.createElement("BUTTON");
           const accordionOpenedAttribute = header_node.hasAttribute(
@@ -472,20 +470,7 @@
     return plugin;
   };
 
-  // @ts-ignore
-  window.van11yAccessibleAccordionAria = main();
-
-  const onLoad = function onLoad() {
-    // @ts-ignore
-    const expand_default = window.van11yAccessibleAccordionAria();
-    expand_default.attach();
-
-    document.removeEventListener("DOMContentLoaded", onLoad);
-  };
-
-  document.addEventListener("DOMContentLoaded", onLoad);
-
-  function NavReset() {
+  const NavReset = () => {
     //RESET
     document
       .querySelectorAll(".first-level-btn")
@@ -511,18 +496,14 @@
       const nav = document.querySelector("#navigation");
       nav.removeAttribute("aria-hidden");
     }
-  }
-
-  const isDocumentReady = (
-    /** @type {{ (): void; (this: Document, ev: Event): any; }} */ callbackFunction
-  ) => {
-    if (document.readyState != "loading") callbackFunction();
-    else document.addEventListener("DOMContentLoaded", callbackFunction);
   };
 
   // Remove href if <a> has a link
-  isDocumentReady(() => {
+  window.addEventListener("load", () => {
+    main()().attach(); //This is way more abstract than it needs to be
+
     const navigationJS = document.querySelector(".main-navigation");
+    if (!navigationJS) return;
 
     const subnavbtnJS = document.querySelectorAll(
       ".main-navigation .nav-item a.has-sub-btn"
@@ -535,9 +516,9 @@
       item.replaceWith(newDiv);
     });
 
-    const singleLevel = navigationJS?.classList.contains("singleLevel");
+    const singleLevel = navigationJS.classList.contains("singleLevel");
     const setActiveLinkByFolder =
-      navigationJS?.classList.contains("auto-highlight");
+      navigationJS.classList.contains("auto-highlight");
 
     const navItemsJS = document.querySelectorAll(".main-navigation .nav-item");
 
@@ -558,19 +539,25 @@
         : null; // Regex for finding the index of the default main list item
 
     navItemsJS.forEach(navItem => {
+      /** @type {HTMLElement | null} */
       const link = navItem.querySelector(".first-level-btn, .first-level-link");
+      if (link) {
+        if (reMainNav) {
+          if (link.textContent && link.textContent.match(reMainNav)) {
+            navItem.classList.add("active");
+          }
+        } else if (setActiveLinkByFolder && link.getAttribute("href")) {
+          const arrNavLink = link.getAttribute("href")?.split("/");
+          const arrCurrentURL = location.href.split("/");
 
-      if (reMainNav) {
-        if (link.textContent.match(reMainNav)) {
-          navItem.classList.add("active");
-        }
-      } else if (setActiveLinkByFolder && link.getAttribute("href")) {
-        const arrNavLink = link.getAttribute("href").split("/");
-        const arrCurrentURL = location.href.split("/");
-
-        if (arrNavLink.length > 4 && arrCurrentURL[3] === arrNavLink[3]) {
-          // folder of current URL matches this nav link
-          navItem.classList.add("active");
+          if (
+            arrNavLink &&
+            arrNavLink.length > 4 &&
+            arrCurrentURL[3] === arrNavLink[3]
+          ) {
+            // folder of current URL matches this nav link
+            navItem.classList.add("active");
+          }
         }
       }
     });
@@ -593,7 +580,7 @@
       const itemCount = el.querySelectorAll(".second-level-nav > li").length;
       if (itemCount <= 2) {
         const subnav = el.querySelector(".sub-nav");
-        subnav.classList.add("with-few-items");
+        if (subnav) subnav.classList.add("with-few-items");
       }
     });
 
@@ -615,18 +602,22 @@
         el.appendChild(carrot);
       });
     }
+
+    addActive();
   });
 
-  // Do Navigation Reset function on window resize uless it's mobile device.
+  // Do Navigation Reset function on window resize.
   window.addEventListener("resize", () => {
     document
       .querySelector(".toggle-menu")
-      .setAttribute("aria-expanded", "false");
+      ?.setAttribute("aria-expanded", "false");
 
     //Collapse the nav when narrow
-    const nav = document.querySelector("#navigation");
-    nav.classList.remove("show");
-    nav.setAttribute("aria-hidden", "true");
+    //const nav = document.querySelector("#navigation");
+    //if (nav) {
+    //nav.classList.remove("show"); //This was causing the desktop menu to stay hidden when resizing from mobile.
+    //nav.setAttribute("aria-hidden", "true");
+    //}
 
     NavReset();
   });
@@ -654,5 +645,4 @@
       }
     }
   };
-  addActive();
 })();

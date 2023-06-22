@@ -78,6 +78,8 @@ export class CaGovAccordion extends HTMLElement {
     };
   }
 }
-window.customElements.define("cagov-accordion", CaGovAccordion);
+window.addEventListener("load", () => {
+  window.customElements.define("cagov-accordion", CaGovAccordion);
+});
 
 //document.querySelector('head').appendChild(style);
