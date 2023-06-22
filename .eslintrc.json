@@ -32,6 +32,7 @@
     "no-var": "warn",
     "operator-assignment": "warn",
     "prefer-arrow-callback": "warn",
+    "prefer-const": "warn",
     "prefer-template": "warn",
     "semi": "warn",
     "yoda": "warn",
