@@ -211,7 +211,7 @@ window.addEventListener("load", () => {
   // Close search when close icon is clicked
   if (searchReset) searchReset.addEventListener("click", removeSearchResults);
 
-  function removeSearchAttr() {
+  const removeSearchAttr = () => {
     if (searchInput) {
       searchInput.removeAttribute("tabindex");
       searchInput.removeAttribute("aria-hidden");
@@ -227,9 +227,9 @@ window.addEventListener("load", () => {
     if (searchlabel) searchlabel.removeAttribute("aria-hidden");
 
     if (searchContainer) searchContainer.removeAttribute("aria-hidden");
-  }
+  };
 
-  function setSearchAttr() {
+  const setSearchAttr = () => {
     if (searchInput) {
       searchInput.setAttribute("tabindex", "-1");
       searchInput.setAttribute("aria-hidden", "true");
@@ -245,7 +245,7 @@ window.addEventListener("load", () => {
     if (searchlabel) searchlabel.setAttribute("aria-hidden", "true");
 
     if (searchContainer) searchContainer.setAttribute("aria-hidden", "true");
-  }
+  };
 
   // Make Search form tabable if it's featured
   if (searchContainer) {
@@ -260,8 +260,6 @@ window.addEventListener("load", () => {
   document.querySelectorAll(".alert-banner .close").forEach(oneClose => {
     oneClose.addEventListener("click", searchTop);
   });
-
-  ariaHidden();
 
   // Calculation search box top property on the scroll for the fixed nav
   window.addEventListener("scroll", () => {
@@ -298,6 +296,8 @@ window.addEventListener("load", () => {
       searchbox.style.top = `${Math.max(searchtop, 55)}px`;
     }
   };
+
+  ariaHidden();
 });
 
 // call out the function on the page load
