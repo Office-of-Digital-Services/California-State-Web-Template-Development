@@ -1,5 +1,8 @@
 //@ts-check
-((w, doc) => {
+window.addEventListener("load", () => {
+  const w = window;
+  const doc = document;
+
   /**
    * Local object for method references
    * and define script meta-data
@@ -401,4 +404,4 @@
 
   // go go JavaScript
   ARIAaccordion.init();
-})(window, document);
+});
