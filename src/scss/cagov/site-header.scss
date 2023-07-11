@@ -52,7 +52,7 @@
       color: black;
       background-image: none;
       display: inline-block;
-      max-width: 100%;
+      min-width: 100%;
       &:focus {
         @include outline(2px);
       }
