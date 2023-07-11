@@ -1,6 +1,6 @@
 {
   "name": "@cagovweb/state-template",
-  "version": "1.1.0-beta.2",
+  "version": "1.1.0-beta.3",
   "description": "California State Web Template NPM Package",
   "repository": {
     "type": "git",
@@ -26,7 +26,9 @@
     "reactjs",
     "bootstrap",
     "11ty",
-    "eleventy"
+    "eleventy",
+    "CDT",
+    "department of technology"
   ],
   "author": {
     "name": "Carter Medlin",
