@@ -11,7 +11,7 @@ export default [
       {
         file: "_site/ca_state_template/js/cagov.core.min.js",
         format: "esm",
-        plugins: [terser()]
+        plugins: [terser({ module: false })]
       }
     ],
     onwarn: function (warning) {
