@@ -3,6 +3,7 @@ import { terser } from "rollup-plugin-terser";
 const publishPackageJsonVersion = require("./publish/package.json").version;
 //const projectPackageJsonVersion = process.env.npm_package_version;
 
+//Place a var at the top of generated source
 const banner = `var StateTemplateNpmPackageVersion="${publishPackageJsonVersion}";`;
 const format = "esm";
 
