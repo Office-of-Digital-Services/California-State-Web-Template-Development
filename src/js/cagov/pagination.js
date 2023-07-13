@@ -2,13 +2,13 @@
 /* -----------------------------------------
    PAGINATION - /src/js/cagov/pagination.js
 ----------------------------------------- */
-
-/**
- * @param {string} label
- * @param {number} number
- */
-function pageListItem(label, number) {
-  return `<li class="cagov-pagination__item">
+window.addEventListener("load", () => {
+  /**
+   * @param {string} label
+   * @param {number} number
+   */
+  function pageListItem(label, number) {
+    return `<li class="cagov-pagination__item">
     <a
       href="javascript:void(0);"
       class="cagov-pagination__button"
@@ -18,27 +18,27 @@ function pageListItem(label, number) {
       ${number}
     </a>
   </li>`;
-}
+  }
 
-function pageOverflow() {
-  return `<li
+  function pageOverflow() {
+    return `<li
     class="cagov-pagination__item cagov-pagination__overflow"
     role="presentation"
   >
     <span> … </span>
   </li>`;
-}
+  }
 
-/**
- * @param {string} next
- * @param {string} previous
- * @param {string} page
- * @param {number} currentPage
- * @param {number} totalPages
- */
-function templateHTML(next, previous, page, currentPage, totalPages) {
-  const unbounded = totalPages == -1;
-  return `<nav aria-label="Pagination" class="cagov-pagination">
+  /**
+   * @param {string} next
+   * @param {string} previous
+   * @param {string} page
+   * @param {number} currentPage
+   * @param {number} totalPages
+   */
+  function templateHTML(next, previous, page, currentPage, totalPages) {
+    const unbounded = totalPages == -1;
+    return `<nav aria-label="Pagination" class="cagov-pagination">
     <ul class="cagov-pagination__list">
       <li class="cagov-pagination__item">
         <a
@@ -97,9 +97,9 @@ function templateHTML(next, previous, page, currentPage, totalPages) {
       </li>
     </ul>
   </nav>`;
-}
+  }
 
-const styles = `
+  const styles = `
 cagov-pagination {
   white-space: nowrap;
   font-size: .9rem;
@@ -143,145 +143,144 @@ cagov-pagination .cagov-pagination__item:has(.cagov-pagination__link-inactive) {
 }
 `;
 
-/**
- * Pagination web component
- *
- * @element cagov-pagination
- *
- * @fires paginationClick - custom event with object with detail value of current page: {detail: 1}
- *
- * @attr {string} [data-yes] - "Yes";
- * @attr {string} [data-no] - "No";
- *
- * @cssprop --primary-700 - Default value of #165ac2, used for text, border color
- */
-class CAGovPagination extends HTMLElement {
-  constructor() {
-    super();
+  /**
+   * Pagination web component
+   *
+   * @element cagov-pagination
+   *
+   * @fires paginationClick - custom event with object with detail value of current page: {detail: 1}
+   *
+   * @attr {string} [data-yes] - "Yes";
+   * @attr {string} [data-no] - "No";
+   *
+   * @cssprop --primary-700 - Default value of #165ac2, used for text, border color
+   */
+  class CAGovPagination extends HTMLElement {
+    constructor() {
+      super();
 
-    if (!document.querySelector("#cagov-pagination-styles")) {
-      const style = document.createElement("style");
-      style.id = "cagov-pagination-styles";
-      style.textContent = styles;
-      document.head.appendChild(style);
+      if (!document.querySelector("#cagov-pagination-styles")) {
+        const style = document.createElement("style");
+        style.id = "cagov-pagination-styles";
+        style.textContent = styles;
+        document.head.appendChild(style);
+      }
     }
-  }
 
-  connectedCallback() {
-    this.currentPage = parseInt(
-      this.dataset.currentPage ? this.dataset.currentPage : "1",
-      10
-    );
-    this.render();
-  }
-
-  render() {
-    //console.log(this.dataset);
-    const previous = this.dataset.previous
-      ? this.dataset.previous
-      : '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span> Previous';
-    const next = this.dataset.next
-      ? this.dataset.next
-      : 'Next <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>';
-    const page = this.dataset.page ? this.dataset.page : "Page";
-    this.totalPages = this.dataset.totalPages
-      ? Number(this.dataset.totalPages)
-      : 1;
-    if (this.totalPages < 0 || this.totalPages > 1) {
-      const html = templateHTML(
-        next,
-        previous,
-        page,
-        this.currentPage,
-        this.totalPages
+    connectedCallback() {
+      this.currentPage = parseInt(
+        this.dataset.currentPage ? this.dataset.currentPage : "1",
+        10
       );
-      this.innerHTML = html;
-      this.applyListeners();
-    } else {
-      this.innerHTML = "";
-    }
-  }
-
-  static get observedAttributes() {
-    return ["data-current-page", "data-total-pages"];
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    if (name === "data-current-page") {
-      this.currentPage = parseInt(newValue, 10);
       this.render();
     }
-    if (name === "data-total-pages") {
-      this.totalPages = parseInt(newValue, 10);
-      this.render();
-    }
-  }
 
-  applyListeners() {
-    const pageLinks = this.querySelectorAll(".cagov-pagination__button");
-    pageLinks.forEach(pl => {
-      pl.addEventListener("click", event => {
-        this.currentPage = parseInt(
-          /** @type {CAGovPagination} */ (event.target).dataset.pageNum,
-          10
+    render() {
+      //console.log(this.dataset);
+      const previous = this.dataset.previous
+        ? this.dataset.previous
+        : '<span class="ca-gov-icon-arrow-prev" aria-hidden="true"></span> Previous';
+      const next = this.dataset.next
+        ? this.dataset.next
+        : 'Next <span class="ca-gov-icon-arrow-next" aria-hidden="true"></span>';
+      const page = this.dataset.page ? this.dataset.page : "Page";
+      this.totalPages = this.dataset.totalPages
+        ? Number(this.dataset.totalPages)
+        : 1;
+      if (this.totalPages < 0 || this.totalPages > 1) {
+        const html = templateHTML(
+          next,
+          previous,
+          page,
+          this.currentPage,
+          this.totalPages
         );
-        this.dispatchEvent(
-          new CustomEvent("paginationClick", {
-            detail: this.currentPage
-          })
-        );
-        this.dataset.currentPage = this.currentPage.toString();
+        this.innerHTML = html;
+        this.applyListeners();
+      } else {
+        this.innerHTML = "";
+      }
+    }
+
+    static get observedAttributes() {
+      return ["data-current-page", "data-total-pages"];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+      if (name === "data-current-page") {
+        this.currentPage = parseInt(newValue, 10);
+        this.render();
+      }
+      if (name === "data-total-pages") {
+        this.totalPages = parseInt(newValue, 10);
+        this.render();
+      }
+    }
+
+    applyListeners() {
+      const pageLinks = this.querySelectorAll(".cagov-pagination__button");
+      pageLinks.forEach(pl => {
+        pl.addEventListener("click", event => {
+          this.currentPage = parseInt(
+            /** @type {CAGovPagination} */ (event.target).dataset.pageNum,
+            10
+          );
+          this.dispatchEvent(
+            new CustomEvent("paginationClick", {
+              detail: this.currentPage
+            })
+          );
+          this.dataset.currentPage = this.currentPage.toString();
+        });
       });
-    });
-    this.querySelector(".cagov-pagination__previous-page").addEventListener(
-      "click",
-      event => {
-        if (
-          !(
-            /** @type {Element} */ (event.target).classList.contains(
-              "cagov-pagination__link-inactive"
+      this.querySelector(".cagov-pagination__previous-page").addEventListener(
+        "click",
+        event => {
+          if (
+            !(
+              /** @type {Element} */ (event.target).classList.contains(
+                "cagov-pagination__link-inactive"
+              )
             )
-          )
-        ) {
-          this.currentPage -= 1;
-          if (this.currentPage < 1) {
-            this.currentPage = 1;
+          ) {
+            this.currentPage -= 1;
+            if (this.currentPage < 1) {
+              this.currentPage = 1;
+            }
+            this.dispatchEvent(
+              new CustomEvent("paginationClick", {
+                detail: this.currentPage
+              })
+            );
+            this.dataset.currentPage = this.currentPage.toString();
           }
-          this.dispatchEvent(
-            new CustomEvent("paginationClick", {
-              detail: this.currentPage
-            })
-          );
-          this.dataset.currentPage = this.currentPage.toString();
         }
-      }
-    );
-    this.querySelector(".cagov-pagination__next-page").addEventListener(
-      "click",
-      event => {
-        if (
-          !(
-            /** @type {Element} */ (event.target).classList.contains(
-              "cagov-pagination__link-inactive"
+      );
+      this.querySelector(".cagov-pagination__next-page").addEventListener(
+        "click",
+        event => {
+          if (
+            !(
+              /** @type {Element} */ (event.target).classList.contains(
+                "cagov-pagination__link-inactive"
+              )
             )
-          )
-        ) {
-          this.currentPage += 1;
-          if (this.totalPages != -1 && this.currentPage > this.totalPages) {
-            this.currentPage = this.totalPages;
+          ) {
+            this.currentPage += 1;
+            if (this.totalPages != -1 && this.currentPage > this.totalPages) {
+              this.currentPage = this.totalPages;
+            }
+            this.dispatchEvent(
+              new CustomEvent("paginationClick", {
+                detail: this.currentPage
+              })
+            );
+            this.dataset.currentPage = this.currentPage.toString();
           }
-          this.dispatchEvent(
-            new CustomEvent("paginationClick", {
-              detail: this.currentPage
-            })
-          );
-          this.dataset.currentPage = this.currentPage.toString();
         }
-      }
-    );
+      );
+    }
   }
-}
-window.addEventListener("load", () => {
+
   window.customElements.define("cagov-pagination", CAGovPagination);
 });
-//export { CAGovPagination };
