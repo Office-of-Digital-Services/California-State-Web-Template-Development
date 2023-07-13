@@ -1,17 +1,25 @@
 import { terser } from "rollup-plugin-terser";
 
+const publishPackageJsonVersion = require("./publish/package.json").version;
+//const projectPackageJsonVersion = process.env.npm_package_version;
+
+const banner = `var StateTemplateNpmPackageVersion="${publishPackageJsonVersion}";`;
+const format = "esm";
+
 export default [
   {
     input: "src/js/index.js",
     output: [
       {
         file: "_site/ca_state_template/js/cagov.core.js",
-        format: "esm"
+        format,
+        banner
       },
       {
         file: "_site/ca_state_template/js/cagov.core.min.js",
-        format: "esm",
-        plugins: [terser({ module: false })]
+        format,
+        plugins: [terser({ module: false })],
+        banner
       }
     ],
     onwarn: function (warning) {
