@@ -44,6 +44,7 @@
     "NPM Publish (view package)": "npm pack",
     "NPM publish": "npm publish",
     "NPM remove beta tag": "npm dist-tag rm @cagovweb/state-template beta",
+    "NPM deprecate old version": "npm deprecate @cagovweb/state-template@1.0.0 \"Version no longer supported. Upgrade to @latest\"",
     "prepack": "mkdir -p dist && cp -r ../_site/ca_state_template/* ./dist",
     "postpack": "rm -rf ./dist"
   },
