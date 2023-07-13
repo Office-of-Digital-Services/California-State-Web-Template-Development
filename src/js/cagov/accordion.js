@@ -1,20 +1,21 @@
 //@ts-check
-/**
- * Accordion web component that collapses and expands content inside itself on click.
- *
- * @element cagov-accordion
- *
- *
- * @fires click - Default events which may be listened to in order to discover most popular accordions
- *
- * @attr {string} open - set on the internal details element
- * If this is true the accordion will be open before any user interaction.
- *
- * @cssprop --primary-700 - Default value of #165ac2, used for all colors of borders and fills
- * @cssprop --primary-900 - Default value of #003588, used for background on hover
- *
- */
+
 window.addEventListener("load", () => {
+  /**
+   * Accordion web component that collapses and expands content inside itself on click.
+   *
+   * @element cagov-accordion
+   *
+   *
+   * @fires click - Default events which may be listened to in order to discover most popular accordions
+   *
+   * @attr {string} open - set on the internal details element
+   * If this is true the accordion will be open before any user interaction.
+   *
+   * @cssprop --primary-700 - Default value of #165ac2, used for all colors of borders and fills
+   * @cssprop --primary-900 - Default value of #003588, used for background on hover
+   *
+   */
   class CaGovAccordion extends HTMLElement {
     connectedCallback() {
       this.summaryEl = this.querySelector("summary");
