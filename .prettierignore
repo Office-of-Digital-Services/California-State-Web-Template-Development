@@ -1,2 +1,3 @@
 _site
 sample_site/pages/readme.md.njk
+sample_site/pages/template-comments.scss.njk
