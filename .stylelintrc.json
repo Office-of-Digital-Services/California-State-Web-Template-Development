@@ -1,4 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/stylelintrc",
-  "extends": ["stylelint-config-standard-scss"]
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "property-no-vendor-prefix": null
+  }
 }
