@@ -29,7 +29,6 @@
     position: relative;
 
     .close {
-      font-size: 59px;
       position: absolute;
       top: 0;
       right: 5px;
@@ -62,6 +61,7 @@
       }
     }
   }
+
   .results-list {
     margin-top: ($spacer-y * 1.5) !important;
     margin-bottom: ($spacer-y * 1.5) !important;

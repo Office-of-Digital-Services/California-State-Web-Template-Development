@@ -20,14 +20,16 @@
 }
 
 .service-tile-panel {
-  /*Selectivly show when requested by user*/
+  /* Selectivly show when requested by user */
   visibility: hidden;
   position: absolute;
+
   // Not sure if this can be a generic class for all of the large close buttons.
   // Stashing in service tile panel to avoid conflict with other similar.
   .btn.close {
     position: relative;
     z-index: 1;
+
     @include font-size(3.5);
   }
 }
@@ -57,15 +59,18 @@
   &:focus {
     @include outline(2px); // added focus indication for accessibility
   }
+
   // create our columns for all screen sizes
   @include make-xs-column(12, 0);
+
   /* Need to keep the two column longer than bootstrap has .make-*-column for */
-  @media (min-width: 450px) {
+  @media (width >= 450px) {
     width: 50%;
   }
 
   @include make-sm-column(6, 0);
   @include make-md-column(3, 0);
+
   // no gaps between service-tiles
   position: relative;
   padding: 0;
@@ -73,6 +78,7 @@
   cursor: pointer;
   text-align: center;
   outline: none;
+
   // Keep width and height ratio close to 1 to 1
   min-height: 240px;
 
@@ -87,7 +93,8 @@
   @media (min-width: $screen-lg) {
     min-height: 320px;
   }
-  //color: $text-color;
+
+  // color: $text-color;
   // background: lighten($color-s2,10%);  // Caused acessibility failure. Should be dark blue
   color: $color-s1;
   background: $brand-primary;
@@ -120,7 +127,9 @@
 
     .title {
       margin: 5px 0 0;
-      @include text-overflow();
+
+      @include text-overflow;
+
       -webkit-transition: all 0.3s;
       transition: all 0.3s;
 
@@ -136,11 +145,13 @@
 }
 
 // Add open and close icons with css to keep markup clean
-.title:after {
-  @include m-t-sm();
-  font-family: "CaGov";
+.title::after {
+  @include m-t-sm;
+
+  font-family: CaGov;
   display: block;
   font-weight: normal;
+
   // TODO: data-state="info" not needed but keeping until js has been updated
   [data-state="closed"].service-tile &,
   [data-state="info"].service-tile & {
@@ -152,8 +163,9 @@
   }
 }
 
-[data-state="open"].service-tile:after {
+[data-state="open"].service-tile::after {
   @include triangle(down, 15px, rgba(18, 21, 26, 0.9));
+
   position: absolute;
   left: 50%;
   margin-left: -15px;
@@ -178,7 +190,7 @@ div[data-state="open"] .title {
     line-height: 1;
   }
 
-  .title:after {
+  .title::after {
     content: "\e65d" !important;
   }
 
@@ -189,8 +201,9 @@ div[data-state="open"] .title {
   &.third {
     width: 100%;
   }
+
   /* Need to keep the two column longer than bootstrap has .make-*-column for */
-  @media (min-width: 450px) {
+  @media (width >= 450px) {
     &.full {
       width: 100%;
     }
@@ -208,7 +221,7 @@ div[data-state="open"] .title {
     }
   }
 
-  @media (min-width: 992px) {
+  @media (width >= 992px) {
     &.full {
       width: 100%;
     }

@@ -12,8 +12,10 @@
 
   .half {
     @include make-sm-column(6);
+
     padding-top: 0; // beta 6.0 addition
     padding-left: 15px; // beta 5.0 addition
+
     @media (max-width: $screen-xs-max) {
       padding-top: 2px; // beta 5.0 addition
       float: left;
@@ -44,8 +46,9 @@
   }
 
   ul {
-    @include list-unstyled();
-    @include list-inline();
+    @include list-unstyled;
+    @include list-inline;
+
     margin-bottom: 0;
 
     li {
@@ -76,11 +79,12 @@
   .settings-links {
     // @include font-size(1); // font size
     font-size: $font-size-base;
+
     @include media-breakpoint-up(sm) {
       font-size: calc(#{$font-size-base} + #{$ratio});
     }
 
-    @include text-right();
+    @include text-right;
 
     @media (min-width: $screen-md-min) {
       padding-right: 5px;
@@ -89,6 +93,7 @@
 
   [class^="ca-gov-icon-"] {
     @include font-size(1.1);
+
     vertical-align: -2px;
     display: inline-block;
     text-decoration: none;
@@ -138,9 +143,7 @@
         img {
           left: 0;
           height: 24px;
-          vertical-align: top;
           margin-top: 6px;
-
           vertical-align: middle;
         }
 
@@ -158,8 +161,10 @@
         margin: 0;
         margin-right: 1rem;
         font-size: 0.95rem;
+
         @media (max-width: $screen-xs-max) {
           margin-right: 0;
+
           .desktop-only {
             display: none;
           }
@@ -167,7 +172,7 @@
       }
 
       a {
-        margin: 0px 10px 0 10px;
+        margin: 0 10px;
       }
     }
 
@@ -180,7 +185,7 @@
       min-height: 38px;
 
       a {
-        margin: 0 10px 0 10px;
+        margin: 0 10px;
         font-size: 0.95rem;
       }
 
@@ -188,6 +193,7 @@
         margin: 0;
         padding-right: 0;
         font-size: 0.95rem;
+
         &:hover,
         &:focus {
           text-decoration: none;
@@ -196,6 +202,7 @@
     }
   }
 }
+
 /* Hide utilities in mobile */
 @media (max-width: $screen-sm-max) {
   button[aria-controls="siteSettings"] {

@@ -3,7 +3,7 @@
 ----------------------------------------- */
 
 .gallery {
-  @include make-row();
+  @include make-row;
 
   .item {
     float: left;
@@ -28,7 +28,7 @@
     text-decoration: none;
 
     /* Use pseudo selectors to add the background */
-    &:before {
+    &::before {
       content: "";
       background-color: #fff;
       opacity: 0;
@@ -42,7 +42,7 @@
     }
 
     /* Transition in the color panel */
-    &:hover:before {
+    &:hover::before {
       //top:-8px;
       height: 100%;
       overflow: visible;
@@ -50,7 +50,7 @@
     }
 
     /* Use pseudo selectors to add the icon */
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       top: 60%;
@@ -58,31 +58,38 @@
       margin-left: -$font-size-base;
       margin-top: -($font-size-base * 1.5);
       z-index: 101;
-      font-family: "CaGov";
+      font-family: CaGov;
+
       @include font-size(2);
+
       -webkit-transition: all 0.5s;
       transition: all 0.5s;
     }
 
     /* Transition the icon up */
-    &:hover:after {
+    &:hover::after {
       content: "\e65e"; // .ca-gov-icon-magnify-glass
-      font-family: "CaGov";
+      font-family: CaGov;
+
       @include font-size(2);
+
       color: $color-a1;
       top: 50%;
     }
   }
 
   img {
-    @include img-responsive(); // Function to make image responsive
+    @include img-responsive; // Function to make image responsive
+
     bottom: 0;
     display: inline-block;
     position: relative;
-    //border: 3px solid #e5e5e5;
+
+    // border: 3px solid #e5e5e5;
     max-height: 140px;
-    //box-shadow:0 3px 8px #ccc;
-    //transition: box-shadow .2s ease, bottom .2s ease;
+
+    // box-shadow:0 3px 8px #ccc;
+    // transition: box-shadow .2s ease, bottom .2s ease;
 
     .ie8 & {
       width: auto !important; // IE8 Stretches images due to .img-responsive() having 100% width. This line reverts it.

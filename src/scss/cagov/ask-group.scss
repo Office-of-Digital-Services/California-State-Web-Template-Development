@@ -2,8 +2,8 @@
    ASK Group
    /source/scss/cagov/ask-group.scss
 ----------------------------------------- */
-$ask-bg-default: rgba(0, 0, 0, 0.65);
-$ask-bg-hover: rgba(0, 0, 0, 0.8);
+$ask-bg-default: rgb(0 0 0 / 65%);
+$ask-bg-hover: rgb(0 0 0 / 80%);
 
 // 991px
 @media (min-width: $screen-md-min) {
@@ -18,8 +18,8 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
     font-family: $headings-font-family;
 
     .flexbox & {
-      left: 0px;
-      right: 0px;
+      left: 0;
+      right: 0;
       margin: auto;
       max-width: 630px;
     }
@@ -34,7 +34,7 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
 
       .flexbox & {
         display: -webkit-box;
-        display: -ms-flexbox;
+        display: flexbox;
         display: flex;
         width: 100%;
         -webkit-box-pack: justify;
@@ -60,9 +60,11 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
         overflow: visible;
       }
     }
+
     .flexbox & .panel-group .panel + .panel {
       margin-top: 0;
     }
+
     .ask-panel {
       position: absolute;
       width: 100%;
@@ -100,6 +102,7 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       box-shadow: none;
+
       @include outline(2px);
     }
   }
@@ -111,6 +114,7 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
     left: 10%; // matches search bar
     width: 90%;
   }
+
   .flexbox .ask-group {
     width: 80%;
     left: 0;
@@ -121,13 +125,17 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
   overflow: hidden;
   position: relative;
   line-height: 2.75rem;
+
   @include font-size(1.25);
 
   > span {
     @include font-size(1.5);
+
     padding-right: 5px;
     vertical-align: middle;
+
     @include rgbacolor(#fff, 0.8);
+
     // color: $rgba;
   }
 }
@@ -136,15 +144,16 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
   padding: 0;
 
   > ul {
-    @include list-unstyled();
+    @include list-unstyled;
   }
 
   li a {
     display: block;
-    padding: 3px 15px 3px 15px;
+    padding: 3px 15px;
     margin: 0;
     line-height: 2.5rem;
     color: #fff;
+
     @include rgba(#000, 0.8);
 
     &:hover {
@@ -153,6 +162,7 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
 
     &:hover .more {
       @include rgba(#000, 0.8);
+
       color: #fff;
     }
   }
@@ -162,8 +172,10 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
   .header-single-banner {
     display: none;
   }
+
   .ask-group {
     @include make-xs-column(12);
+
     padding-top: $line-height-computed;
     float: none;
     padding-bottom: 1px;
@@ -178,8 +190,9 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
     }
 
     a.btn {
-      @include btn-block();
-      //@include btn-default();
+      @include btn-block;
+
+      // @include btn-default();
       background-color: transparent; // beta 5.0 addition
       border: none;
       color: #fff;
@@ -188,26 +201,27 @@ $ask-bg-hover: rgba(0, 0, 0, 0.8);
       &:focus,
       &:active {
         color: #fff; // Buttons
-        background-color: rgba(0, 0, 0, 0.25); // Compounded with panel bg
+        background-color: rgb(0 0 0 / 25%); // Compounded with panel bg
       }
 
       // Add triangle control to mobile
-      &:after {
+      &::after {
         content: "\43"; // .ca-gov-icon-triangle-down
-        font-family: "CaGov";
+        font-family: CaGov;
         position: absolute;
         right: 10px;
         top: 50%;
         margin-top: -20px;
       }
 
-      &.collapsed:after {
+      &.collapsed::after {
         content: "\45"; // .ca-gov-icon-triangle-right
       }
 
       // Increase the icon size and padding on small devices
       [class^="ca-gov-icon-"] {
         padding-right: 10px;
+
         @include font-size(1.75);
       }
     }

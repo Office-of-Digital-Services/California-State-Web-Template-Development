@@ -11,8 +11,10 @@
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+
   // @include font-size(1);
   font-size: $font-size-small;
+
   @include media-breakpoint-up(sm) {
     font-size: calc(#{$font-size-small} + #{$ratio});
   }
@@ -21,10 +23,12 @@
     position: relative;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+
     &:first-child {
       padding-left: 0;
     }
-    &:after {
+
+    &::after {
       content: "";
       color: $gray-300;
       border: none;
@@ -40,15 +44,15 @@
     }
 
     &:last-child {
-      &:after {
+      &::after {
         content: "";
         border-left: none; // Removes the border from the first item in the breadcrumb
-        margin: 0 0;
+        margin: 0;
       }
     }
   }
 }
 
-.breadcrumb > li + li:before {
+.breadcrumb > li + li::before {
   padding: 0; // Overrides Bootstraps injected content
 }

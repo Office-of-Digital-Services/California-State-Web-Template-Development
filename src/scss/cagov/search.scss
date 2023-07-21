@@ -4,18 +4,17 @@
 
 // default animation time for featured-search
 $search-st: 0.2s;
+
 // default delay time for featured-search
 $search-ft: 0.4s;
 
 // default animation time for transitions
 $search-dt: 0.5s;
+
 // default delay time for transitions
 $search-dft: 0.1s;
-
 $search-absolute-height: 96px;
-
 $search-input-height: 40px;
-
 $search-input-border-width: 3px;
 
 .search-container,
@@ -37,6 +36,7 @@ $search-input-border-width: 3px;
 
   // full width for all sizes
   width: 100%;
+
   // we are going to animate in our height if needed
   max-height: 0;
   border: none;
@@ -51,20 +51,23 @@ $search-input-border-width: 3px;
   }
 
   // needed for our floating search-locator
-  @include clearfix();
+  @include clearfix;
 
   // Transition all the things
 
   .search-textfield {
     // increases font size to approx 16.5px
     @include font-size(1.1);
+
     width: 100%;
     max-height: 38px;
+
     // makes border transparent but maintains height for hover effect
     border: 1px solid;
     border-radius: 5px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+
     // Padding can control size of small search box
     padding: 0 10px;
     -webkit-transition: border $search-ft;
@@ -74,11 +77,14 @@ $search-input-border-width: 3px;
       color: $black;
       opacity: 1;
     }
-    &::-ms-input-placeholder {
+
+    &::input-placeholder {
       color: $black;
     }
+
     &:focus {
       @include outline(2px);
+
       outline-offset: -2px;
     }
   }
@@ -86,9 +92,11 @@ $search-input-border-width: 3px;
   .submit-container {
     // Float all the things!!
     float: left;
-    @include clearfix();
+
+    @include clearfix;
 
     height: auto;
+
     // ie9 needs a little help figuring out it's height
     height: $search-input-height;
     -webkit-transition: all $search-dt $search-dft;
@@ -97,17 +105,19 @@ $search-input-border-width: 3px;
     button {
       // Keep on floating and floating
       float: left;
-      @include clearfix();
+
+      @include clearfix;
+
       -webkit-transition: all $search-dt $search-dft;
       transition: all $search-dt $search-dft;
-
       background: none;
 
       // fallback if not defined in color scheme
       border-color: white;
+
       // no border on the side next to the input otherwise it doubles up the border
       border-width: $search-input-border-width $search-input-border-width
-        $search-input-border-width 0px;
+        $search-input-border-width 0;
       border-style: solid;
 
       // square up this button with respect to the input
@@ -117,10 +127,12 @@ $search-input-border-width: 3px;
       // good size for the current height
       // NOTE: if changing input size this will need to be adjusted
       @include font-size(1.5);
+
       line-height: 0.9375rem;
 
       // HACK: ios needed button padding explicity removed tp prevent button from expanding
       padding: 0;
+
       // HACK: Removes ios default appearance
       -webkit-appearance: none;
 
@@ -128,15 +140,18 @@ $search-input-border-width: 3px;
         // Position the icon in the middle of the button
         position: relative;
         top: 0;
+
         // good size for the current height
         // NOTE: if changing input size this will need to be adjusted
         @include font-size(1.87);
+
         line-height: 1.875rem;
       }
 
       // 991px
       @media (max-width: $screen-sm-max) {
         @include font-size(2);
+
         line-height: 1em;
         padding-top: 0;
       }
@@ -154,6 +169,7 @@ $search-input-border-width: 3px;
     position: absolute;
     right: -10px;
     cursor: pointer;
+
     .sr-only {
       height: unset !important;
       width: unset !important;
@@ -175,6 +191,7 @@ $search-input-border-width: 3px;
 .search-textfield {
   padding-left: 10px; // Applying padding to all the search inputs globally. TODO: Check regression
 }
+
 input[type="search"].search-textfield {
   -webkit-appearance: none; // Removing iPhone rounder corner rendering
   background-color: canvas; // Removing iPhone -apple-system-opaque-tertiary-fill color
@@ -183,7 +200,8 @@ input[type="search"].search-textfield {
 .search-container.active {
   max-height: 300px;
   padding: 20px 15%;
-  //border-bottom-width: 2px;
+
+  // border-bottom-width: 2px;
 
   /* Active on mobile // 991px // */
   @media (max-width: $screen-sm-max) {
@@ -204,9 +222,8 @@ input[type="search"].search-textfield {
   position: relative;
 }
 
-//
 // Override google custom search styles
-//-----------------------------------------
+// -----------------------------------------
 
 .cse .gsc-control-cse,
 .gsc-control-cse {
@@ -214,25 +231,24 @@ input[type="search"].search-textfield {
 }
 
 // TODO: Refactor this into using an applied class of active instead of expanded
+
 /* Large Search Animation and Styling */
 
-//992px
+// 992px
 @media (min-width: $screen-md-min) {
   .featured-search {
     display: block;
     position: absolute;
     top: 240px; // Position search in the middle of the banner
     padding: 0;
-
     max-height: 100%;
     border-radius: 0;
-
     width: 60%;
     left: 20%;
 
     .flexbox & {
-      left: 0px;
-      right: 0px;
+      left: 0;
+      right: 0;
       margin: 0 auto;
       width: 60%;
       max-width: 630px;
@@ -249,7 +265,9 @@ input[type="search"].search-textfield {
 
     .search-textfield {
       padding: 14px; // Increases padding on large search to make it appear bigger.
+
       @include font-size(1.1); // increases font size to approx 16.5px
+
       height: 38px; // Large search box overides default from above
     }
 
@@ -258,10 +276,13 @@ input[type="search"].search-textfield {
       width: 55px;
       -webkit-transition: all $search-ft;
       transition: all $search-ft;
+
       button {
         -webkit-transition: all $search-ft;
         transition: all $search-ft;
+
         @include font-size(2.5); // Approx 37.5px
+
         width: 60px;
         -webkit-appearance: none;
 
@@ -282,6 +303,7 @@ input[type="search"].search-textfield {
     @media (min-width: $screen-md-min) {
       position: absolute;
     }
+
     -webkit-transition: top $search-ft, left $search-st $search-ft,
       width $search-st $search-ft, background-color $search-ft + $search-st,
       border $search-ft, padding $search-st $search-ft;
@@ -291,12 +313,10 @@ input[type="search"].search-textfield {
     top: $search-absolute-height;
     left: 0;
     padding: 20px 0;
-    width: 100%;
     border-radius: 0;
     padding-right: 15%;
     padding-left: 15%;
     border-bottom: none;
-
     width: 100%;
     max-width: 100%;
 
@@ -306,6 +326,7 @@ input[type="search"].search-textfield {
 
     .search-textfield {
       @include font-size(1.1); // increases font size to approx 16.5px
+
       height: $search-input-height; // Large search box overides default from above
       width: 100%;
       border-radius: $border-radius-base; // 4px corners by default
@@ -332,6 +353,7 @@ input[type="search"].search-textfield {
     left: 10%;
     width: 80%;
   }
+
   .flexbox .featured-search {
     left: 0;
     width: 100%;
@@ -342,12 +364,12 @@ input[type="search"].search-textfield {
   }
 }
 
-//
 // Agency Search Form
-//-----------------------------------------
+// -----------------------------------------
 
 .agency-form {
-  @include clearfix();
+  @include clearfix;
+
   margin-top: $spacer-y !important;
   margin-bottom: $spacer-y !important;
 
@@ -363,7 +385,8 @@ input[type="search"].search-textfield {
   }
 
   .submit-container {
-    @include clearfix();
+    @include clearfix;
+
     float: left;
     height: $search-input-height; // ie9 needs a little help figuring out it's height
 
@@ -373,7 +396,9 @@ input[type="search"].search-textfield {
       width: 44px;
       height: 100%;
       float: left;
+
       @include font-size(1.5);
+
       line-height: 0.9375rem;
       padding: 0; // ios needed button padding explicity removed tp prevent button from expanding
       -webkit-appearance: none; // Removes ios default appearance
@@ -382,12 +407,16 @@ input[type="search"].search-textfield {
         // Position the icon in the middle of the button
         position: relative;
         top: 0;
+
         @include font-size(1.87);
+
         line-height: 1.875rem;
       }
+
       // 991px
       @media (max-width: $screen-sm-max) {
         @include font-size(2);
+
         line-height: 1em;
         padding-top: 0;
       }
@@ -405,6 +434,7 @@ input[type="search"].search-textfield {
 
     > span {
       top: 0;
+
       @include font-size(1.8);
     }
   }
@@ -437,18 +467,17 @@ input[type="search"].search-textfield {
     float: left;
     text-align: center;
     width: 100px;
-
     position: relative;
+
     // Centers vertically for general pages
 
     display: none;
-
     line-height: inherit !important;
-
     cursor: pointer;
 
     [class^="ca-gov-icon-"] {
       @include font-size(1.4);
+
       padding: 0 !important;
       position: absolute;
       top: 0;
@@ -467,12 +496,14 @@ input[type="search"].search-textfield {
       white-space: nowrap;
       text-overflow: ellipsis;
     }
+
     /* Active on mobile */
     @media (max-width: $screen-sm-max) {
       width: 75px;
       margin-left: 5px;
     }
   }
+
   &.active {
     .search-locator {
       display: block;
@@ -512,6 +543,7 @@ input[type="search"].search-textfield {
   .fixed.compact .search-container {
     opacity: 0;
   }
+
   .active-search .fixed.compact .search-container,
   .fixed.compact .search-container.active {
     opacity: 1;
@@ -519,7 +551,7 @@ input[type="search"].search-textfield {
   }
 }
 
-/*full width navigation search container*/
+/* full width navigation search container */
 // 992px
 @media (min-width: $screen-md-min) {
   .nav-full-width + .search-container,
@@ -533,6 +565,7 @@ input[type="search"].search-textfield {
     top: 35px;
   }
 }
+
 // from 992px to 1140 //
 @media (min-width: $screen-md-min) and (max-width: $screen-lg-min) {
   .nav-full-width + .search-container,
@@ -553,13 +586,13 @@ button.gsc-search-button {
   cursor: pointer;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding: 0px 12px 0px 12px;
+  padding: 0 12px;
   border: 1px solid;
   min-height: 38px;
   margin-left: -1px;
 }
 
-/* ------------- Custom search box (not google) --------------*/
+/* ------------- Custom search box (not google) -------------- */
 .search-container {
   #Search {
     display: flex;
@@ -575,11 +608,13 @@ button.gsc-search-button {
     .close-search {
       display: block;
       right: 0;
+
       // 991px
       @media (max-width: $screen-sm-max) {
         display: block;
         cursor: pointer;
         min-height: 38px;
+
         .sr-only {
           height: unset !important;
           width: unset !important;
@@ -652,7 +687,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
   }
 
   input.gsc-input {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(255 255 255 / 100%);
     border-radius: 0;
     border: 3px solid transparent;
     transition: border 0.4s;
@@ -685,7 +720,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
   }
 
   td.gsc-search-button {
-    width: 0px !important;
+    width: 0 !important;
     margin-right: 0 !important;
     margin-left: 0 !important;
     padding-right: 0 !important;
@@ -695,14 +730,13 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 
   div.gsc-clear-button {
     padding-left: 0 !important;
-    display: block !important;
     background-image: none !important;
     margin-left: 0;
     margin-right: 0;
     width: 40px;
     display: block !important;
 
-    &:before {
+    &::before {
       content: "\4d";
       font-family: cagov;
       font-size: 2rem;
@@ -729,7 +763,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
   div.gsc-clear-button {
     width: 40px;
 
-    &:before {
+    &::before {
       content: "\4d";
       font-family: cagov;
       font-size: 2rem;
@@ -744,8 +778,8 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 
 .featured-search {
   div.gsc-clear-button {
-    width: 0px; // removes right space from featured search box
-    &:before {
+    width: 0; // removes right space from featured search box
+    &::before {
       display: none;
     }
   }
@@ -788,7 +822,7 @@ table.gsc-search-box td {
 }
 
 /* Full Width navigation search */
-@media (min-width: 992px) {
+@media (width >= 992px) {
   .full-width-nav .featured-search {
     top: -60px !important;
     right: 15px;
@@ -800,7 +834,7 @@ table.gsc-search-box td {
     border-radius: 5px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    padding: 0 8px 0 8px;
+    padding: 0 8px;
   }
 
   /* full width featured search hack for IE */
@@ -871,11 +905,13 @@ input[type="search"]::-ms-clear {
   width: 0;
   height: 0;
 }
+
 input[type="search"]::-ms-reveal {
   display: none;
   width: 0;
   height: 0;
 }
+
 /* clears the ‘X’ from Chrome */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,

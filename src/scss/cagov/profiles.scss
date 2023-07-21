@@ -2,7 +2,6 @@
    PROFILE - /source/scss/cagov/profiles.scss
 ----------------------------------------- */
 
-//
 // EXECUTIVE PROFILE BANNER
 // --------------------------------------------------
 .executive-profile {
@@ -13,6 +12,7 @@
   margin: 0;
   font-size: $font-size-base;
   border: none;
+
   img {
     max-width: 100px;
     max-height: 100px;
@@ -20,15 +20,18 @@
     margin-right: 1rem;
     position: relative;
   }
+
   .executive-profile-body {
     padding-left: 1rem;
     border-left: 1px solid $gray-900;
   }
+
   p,
   .executive-name {
     margin-top: 4px;
     margin-bottom: 4px;
   }
+
   .executive-name {
     font-size: $font-size-large;
   }

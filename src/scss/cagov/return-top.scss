@@ -11,7 +11,7 @@ html {
   z-index: 99999;
   right: -100px;
   bottom: 90px;
-  padding: 5px 10px 10px 10px;
+  padding: 5px 10px 10px;
   border: 1px solid;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -24,9 +24,9 @@ html {
   cursor: pointer;
   transition: all 0.5s ease;
 
-  &:before {
+  &::before {
     content: "\32"; // .ca-gov-icon-caret-up
-    font-family: "CaGov";
+    font-family: CaGov;
     font-weight: 900;
     padding-right: 3px;
     font-size: 1.3rem;
@@ -42,9 +42,10 @@ html {
 
     &:hover {
       background-color: $gray-100;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
     }
   }
+
   @media (min-width: $screen-md-min) {
     .sr-only {
       position: relative !important;

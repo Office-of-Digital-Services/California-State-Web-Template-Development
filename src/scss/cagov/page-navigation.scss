@@ -7,6 +7,7 @@
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid $gray-200;
+
   .label {
     color: $gray-700;
     font-weight: $font-weight-7;
@@ -16,16 +17,20 @@
     margin: 0;
     padding-bottom: 0;
   }
+
   ul {
     margin: 0;
     text-indent: 0;
     padding: 0;
+
     &.columns-2 {
       columns: 2;
     }
+
     &.columns-3 {
       columns: 3;
     }
+
     li {
       list-style: none;
       padding: 0;
@@ -37,9 +42,10 @@
         display: inline-block;
         position: relative;
         padding-left: 1.5rem;
+
         &::before {
           content: "\ea33";
-          font-family: "CaGov";
+          font-family: CaGov;
           position: absolute;
           font-size: 1.5rem;
           left: 0;
@@ -47,6 +53,7 @@
         }
       }
     }
+
     @media (max-width: $screen-xxs-max) {
       &.columns-2,
       &.columns-3 {

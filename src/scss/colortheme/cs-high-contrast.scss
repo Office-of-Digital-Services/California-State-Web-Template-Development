@@ -13,6 +13,7 @@ html.high-contrast {
     color: #ffd600 !important;
     text-shadow: none !important;
   }
+
   /* Additional custom overrides */
   .gauge-detail,
   .gauge-number,
@@ -20,7 +21,7 @@ html.high-contrast {
     background: none !important;
   }
 
-  .service-tile .teaser:before {
+  .service-tile .teaser::before {
     border: none !important;
   }
 

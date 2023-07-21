@@ -8,42 +8,48 @@
 .side-nav {
   .accordion {
     position: relative;
+
     .list-group-item {
       border-radius: 0;
+
       &:focus {
         @include outline(2px);
+
         outline-offset: -2px;
       }
     }
 
     .accordion__heading {
       padding: 0 !important;
+
       .accordion__trigger {
-        padding-top: 0.75rem !important;
-        padding-bottom: 0.75rem !important;
-        padding-left: 1.25rem !important;
-        padding-right: 1.25rem !important;
+        padding: 0.75rem 1.25rem !important;
         color: #212529;
         text-decoration: none;
         font-weight: 500;
+
         &:hover,
         &:focus {
           background-color: #f8f9fa;
         }
+
         &::before {
           display: none;
         }
-        &:after {
+
+        &::after {
           position: absolute;
-          font-family: "CaGov" !important;
+          font-family: CaGov !important;
           content: "\35";
           right: 15px;
           transition: transform 0.2s ease-in-out;
         }
-        &[aria-expanded="true"]:after {
+
+        &[aria-expanded="true"]::after {
           transform: rotate(90deg);
         }
       }
+
       // active
       &.active {
         .accordion__trigger {
@@ -60,7 +66,8 @@ cagov-accordion.sidenav {
     border: none;
     min-height: 2rem;
     margin-top: 0;
-    //SUMMARY
+
+    // SUMMARY
     summary {
       border: none;
       background: $white;
@@ -70,20 +77,24 @@ cagov-accordion.sidenav {
       font-weight: 400;
       text-decoration: none;
       border-bottom: 1px solid $gray-100;
-      &:before {
+
+      &::before {
         border: none !important;
         width: 3px;
         background-color: transparent !important;
       }
+
       &::after {
         display: none;
       }
+
       // hover, focus
       &:hover,
       &:focus {
         text-decoration: none;
         background-color: $gray-50;
-        &:before {
+
+        &::before {
           border: none;
           background-color: transparent;
         }
@@ -91,6 +102,7 @@ cagov-accordion.sidenav {
 
       &:focus {
         @include outline(2px);
+
         outline-offset: -2px;
       }
 
@@ -100,19 +112,23 @@ cagov-accordion.sidenav {
         text-decoration: none;
         background-color: $gray-75;
         font-weight: 400;
-        &:before {
+
+        &::before {
           border: none;
           width: 3px;
           border-radius: 0;
         }
+
         &:hover,
         &:focus {
           color: $gray-700 !important;
           text-decoration: none;
           background-color: $gray-100;
         }
+
         &:focus {
           @include outline(2px);
+
           outline-offset: -2px;
         }
       }
@@ -132,6 +148,7 @@ cagov-accordion.sidenav {
         left: unset !important;
         right: 2.7rem;
         top: 0.6rem !important;
+
         &::before {
           font-size: 2.4rem;
         }
@@ -152,10 +169,12 @@ cagov-accordion.sidenav {
       .side-subnav {
         margin-bottom: 0;
         margin-left: 0;
+
         li {
           &:first-child {
             margin-top: 0;
           }
+
           &:last-child {
             margin-bottom: 0;
           }
@@ -167,11 +186,13 @@ cagov-accordion.sidenav {
 
 .side-subnav {
   padding-left: 0;
+
   li {
     margin: 0;
     padding-left: 0;
     list-style: none;
     font-size: 1.125rem;
+
     a {
       position: relative;
       display: block;
@@ -180,21 +201,26 @@ cagov-accordion.sidenav {
       padding-left: 2.5rem;
       text-decoration: none !important;
       border-bottom: 1px solid $gray-100;
+
       &:hover,
       &:focus {
         text-decoration: none;
         color: $black;
         background-color: $gray-50;
       }
+
       &:focus {
         @include outline(2px);
+
         outline-offset: -2px;
       }
+
       &.active {
         color: $gray-700;
         text-decoration: none;
         background-color: $gray-75;
-        &:before {
+
+        &::before {
           content: "";
           border-left: 3px solid;
           position: absolute;
@@ -204,6 +230,7 @@ cagov-accordion.sidenav {
           height: 100%;
           border-radius: 0;
         }
+
         &:hover,
         &:focus {
           color: $black;

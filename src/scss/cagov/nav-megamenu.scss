@@ -15,6 +15,7 @@
 
   .nav-item {
     position: static;
+
     // 992px
     @media (max-width: $screen-sm-max) {
       position: relative;
@@ -40,7 +41,6 @@
   }
 }
 
-//
 // Sub-menu open indicator
 // --------------------------------------------------
 // 991px
@@ -57,10 +57,10 @@
   /* Dynamic element contained in .nav-arrow-container */
   .megadropdown .nav-arrow-down {
     // KEEPING POINTER AS I FEEL IT'S A BETTER SOLUTION
-    //background: transparent url("#{$template-path}/nav-down-arrow.png") no-repeat;
-    //width: 44px;
-    //height: 16px;
-    //margin-left: -22px;
+    // background: transparent url("#{$template-path}/nav-down-arrow.png") no-repeat;
+    // width: 44px;
+    // height: 16px;
+    // margin-left: -22px;
     // VARIATION USING BAR
     position: absolute;
     top: -5px; // equal to the thickness of the border
@@ -87,11 +87,13 @@
   left: calc($grid-gutter-width / 2);
   right: calc($grid-gutter-width / 2);
   overflow: hidden;
+
   // Remove border as rules are added to top level links
   // 991px
   @media (max-width: $screen-xs-max) {
     border: none;
   }
+
   // Collapse grid gutters
   .half,
   .third,
@@ -102,7 +104,6 @@
   }
 }
 
-//
 // Secondary level navigationr
 // --------------------------------------------------
 
@@ -121,6 +122,7 @@
 .second-level-nav {
   list-style: none;
   padding: 0;
+
   // SET UP NAVIGATION COLUMNS
 
   // 992px
@@ -134,19 +136,22 @@
       @include nav-columns(3);
     }
   }
+
   // float links ie9 and below doesn't support columns
   &.oldie {
-    @include clearfix();
+    @include clearfix;
   }
 
   [class^="unit"] {
     @include nav-column-group;
+
     background: none;
 
     a,
     .link-description {
       @include nav-column-group;
     }
+
     // float links since ie9 and below doesn't support columns
     .oldie & {
       width: 33.3333%;
@@ -155,16 +160,17 @@
   }
 }
 
-//
 // Links in Subnav
 // --------------------------------------------------
 
 a.second-level-link {
   //  @include font-size(1.1);
   font-size: $font-size-regular;
+
   @include media-breakpoint-up(sm) {
     font-size: calc(#{$font-size-regular} + #{$ratio});
   }
+
   padding: 10px;
 
   &:hover,
@@ -175,15 +181,19 @@ a.second-level-link {
 
   [class^="ca-gov-icon-"] {
     display: inline-block;
+
     @include font-size(1.375);
+
     vertical-align: -2px;
     margin-right: 3px;
   }
+
   // 991px
   @media (max-width: $screen-sm-max) {
     // to make outline visible
     padding: 0.5rem 1rem 0.75rem 2rem !important;
     color: $white;
+
     &:hover,
     &:focus {
       color: $white;
@@ -193,14 +203,15 @@ a.second-level-link {
 
 .link-description {
   display: block;
+
   // @include font-size(1);
   font-size: $font-size-base;
+
   @include media-breakpoint-up(sm) {
     font-size: calc(#{$font-size-base} + #{$ratio});
   }
 }
 
-//
 // MEGA MENU NAVIGATION UNITS
 // --------------------------------------------------
 
@@ -256,11 +267,13 @@ a.second-level-link {
 
     .sub-nav {
       padding: 16px;
+
       // one third width of the -sm  nav image
       &[class*="with-image-sm-"] {
         .sub-nav-decoration {
           width: 33.3333%;
         }
+
         // two columns for submenu items with -sm image
         > ul {
           -webkit-column-count: 2;
@@ -273,11 +286,13 @@ a.second-level-link {
           column-gap: 20px;
         }
       }
+
       // half width for the -md nav image
       &[class*="with-image-md-"] {
         .sub-nav-decoration {
           width: 50%;
         }
+
         // one column for submenu items with -md image
         > ul {
           -moz-column-count: 1;
@@ -294,6 +309,7 @@ a.second-level-link {
       &[class*="with-image-"] > ul > li {
         padding-right: 16px !important;
       }
+
       // sub nav background image settings
       .sub-nav-decoration {
         display: block;
@@ -305,26 +321,31 @@ a.second-level-link {
         background-position: 50% 50% !important;
         background-size: cover !important;
       }
+
       // width and float for the sub nav list if there is -sm-right image
       &.with-image-sm-right > ul {
         float: left;
         width: 66.6667%;
       }
+
       // width and float for the sub nav list if there is -sm-left image
       &.with-image-sm-left > ul {
         float: right;
         width: 66.6667%;
       }
+
       // width and float for the sub nav list if there is -md-right image
       &.with-image-md-right > ul {
         float: left;
         width: 50%;
       }
+
       // width and float for the sub nav list if there is -md-left image
       &.with-image-md-left > ul {
         float: right;
         width: 50%;
       }
+
       // settings if the subnav image has -left
       &[class*="-left"] .sub-nav-decoration {
         right: auto;
@@ -397,6 +418,7 @@ a.second-level-link {
 
     display: block;
   }
+
   .second-level-nav > li {
     border: none;
   }
@@ -432,12 +454,12 @@ a.second-level-link {
   .second-level-nav.flex {
     display: flex;
     text-align: center;
-    padding: 0 40px 0 40px;
+    padding: 0 40px;
 
     a {
       flex: 1;
       border: none;
-      padding: 20px 15px 15px 15px;
+      padding: 20px 15px 15px;
       margin-top: 15px;
       margin-bottom: 15px;
       width: 100%;
@@ -467,7 +489,7 @@ a.second-level-link {
 
 // Flex subnav in mobile view
 
-//991
+// 991
 @media (max-width: $screen-sm-max) {
   .second-level-nav.flex {
     display: block;

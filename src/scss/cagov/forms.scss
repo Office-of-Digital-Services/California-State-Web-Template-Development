@@ -15,24 +15,29 @@ label {
   font-size: $font-size-regular;
   margin-bottom: 0.5rem;
 }
+
 .input-group-text {
   border-radius: $border-radius-base;
+
   &.is-valid {
     color: $brand-success;
     border-color: $brand-success;
     background-color: lighten($brand-success, 27%);
   }
+
   &.is-invalid {
     color: $brand-danger;
     border-color: $brand-danger;
     background-color: lighten($brand-danger, 40%);
   }
 }
-.custom-file-label:after {
+
+.custom-file-label::after {
   color: $white;
   border-radius: $border-radius-base;
   font-weight: 500;
 }
+
 // removeing default arrow on custom select input
 .custom-select {
   -webkit-appearance: none;
@@ -58,6 +63,7 @@ label {
   display: flex;
   position: relative;
   width: 100%;
+
   .form-control {
     display: flex;
     flex-direction: column;
@@ -67,6 +73,7 @@ label {
     flex: 1 1 auto;
   }
 }
+
 // adding icon
 .input-group-addon {
   min-width: 38px;
@@ -79,12 +86,15 @@ label {
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
+
   i {
     margin: 0 auto;
   }
+
   &:first-child {
     border-right: none;
   }
+
   &:last-child {
     border-left: none;
   }
@@ -95,6 +105,7 @@ label {
   .feedback {
     color: darken($brand-danger, 3%);
   }
+
   .input-group-addon {
     color: $brand-danger;
     border-color: $brand-danger;
@@ -105,6 +116,7 @@ label {
     border-color: $brand-danger;
   }
 }
+
 .has-success {
   .feedback {
     color: darken($brand-success, 17%);
@@ -133,6 +145,7 @@ label {
   width: 150%;
   z-index: 10;
 }
+
 // radios / checkbox
 .form-check-inline {
   display: inline-block;
@@ -144,6 +157,7 @@ label {
   position: relative;
   cursor: pointer;
 }
+
 .check-icon-radio {
   backface-visibility: hidden;
   position: absolute;
@@ -155,6 +169,7 @@ label {
   font-size: 12px;
   border: 1px solid;
   border-radius: 50%;
+
   i {
     border-radius: 50%;
     height: 10px;
@@ -183,7 +198,6 @@ label {
   backface-visibility: hidden;
   position: absolute;
   left: 0;
-  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 18px;
@@ -191,6 +205,7 @@ label {
   font-size: 12px;
   color: $white;
   border: 1px solid;
+
   i {
     display: block;
     height: 100%;
@@ -201,6 +216,7 @@ label {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 100%;
+
     &::before {
       content: "\4e";
       left: 50%;
@@ -226,6 +242,7 @@ input[type="radio"]:checked + * i {
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path d='M17.087 10.35l-4.337 4.336-4.337-4.336c-0.293-0.293-0.768-0.293-1.060 0s-0.293 0.768 0 1.060l4.864 4.864c0.147 0.147 0.341 0.221 0.533 0.219 0.194 0 0.386-0.072 0.533-0.219l4.865-4.864c0.293-0.293 0.293-0.768 0-1.060s-0.768-0.293-1.061 0z'/></svg>");
   background-size: 20px 20px;
 }
+
 .select {
   border: 1px solid $input-border;
   overflow: hidden;
@@ -233,6 +250,7 @@ input[type="radio"]:checked + * i {
   width: 100%;
   position: relative;
   display: block;
+
   select {
     height: 40px;
     border: 0;
@@ -242,11 +260,12 @@ input[type="radio"]:checked + * i {
     appearance: none;
     padding-left: 10px;
   }
+
   &::after {
     content: "\43";
-    font-family: "CaGov";
+    font-family: CaGov;
     border-left: 1px solid $input-border;
-    padding: 8px 0px;
+    padding: 8px 0;
     position: absolute;
     right: 0;
     top: 0;
@@ -258,10 +277,12 @@ input[type="radio"]:checked + * i {
     pointer-events: none;
   }
 }
-//removes clear x icon from the input fields in IE
+
+// removes clear x icon from the input fields in IE
 .form-control::-ms-clear {
   display: none !important;
 }
+
 input[type="text"]::-ms-clear {
   display: none;
 }
@@ -317,6 +338,7 @@ select:focus {
 .form-group {
   margin-bottom: 1rem;
 }
+
 .invalid-feedback {
   font-size: 0.75em;
 }

@@ -28,18 +28,19 @@ ul.list-overstated {
 
     &::before {
       content: "\e66a";
-      font-family: "CaGov";
+      font-family: CaGov;
       background: none !important;
       position: absolute;
       font-size: 0.7em;
       top: 3px;
       left: 0;
     }
+
     /* Rotates disc arrow down when used with accordion */
     &.open {
       &::before {
         content: "\e66b";
-        font-family: "CaGov";
+        font-family: CaGov;
         background: none !important;
         position: absolute;
         font-size: 0.7em;
@@ -52,26 +53,27 @@ ul.list-overstated {
 
 .list-standout {
   $size: 1.5em; // reusable variable for .list-standout
+
   padding: 0;
   padding-left: 1.5em;
-  margin: 12px 0 10px 0;
+  margin: 12px 0 10px;
   line-height: 1.5;
 
-  ul li:before {
+  ul li::before {
     content: none;
   }
 
-  ul.list-standout li:before {
+  ul.list-standout li::before {
     content: "\35";
   }
 
   li {
     padding-left: $size;
-    margin: 10px 0 10px 0;
+    margin: 10px 0;
 
-    &:before {
+    &::before {
       content: "\35"; // ca-gov-icon-caret-right
-      font-family: "CaGov";
+      font-family: CaGov;
       width: $size;
       margin-left: -$size;
       vertical-align: sub;
@@ -80,7 +82,7 @@ ul.list-overstated {
       display: inline-block;
     }
 
-    &.open:before {
+    &.open::before {
       content: "\33"; // .ca-gov-icon-caret-down
     }
   }
@@ -88,15 +90,16 @@ ul.list-overstated {
 
 .list-primary {
   $size: 1.5em; // reusable variable for .list-standout
+
   padding: 0;
   padding-left: 0.2em;
 
   li {
     padding-left: $size;
 
-    &:before {
+    &::before {
       content: "\4b"; //  .ca-gov-icon-minus-mark
-      font-family: "CaGov";
+      font-family: CaGov;
       width: $size;
       margin-left: -$size;
       vertical-align: 0.1em;
@@ -105,7 +108,7 @@ ul.list-overstated {
       color: $color-p2;
     }
 
-    &.open:before {
+    &.open::before {
       content: "\4f"; // .ca-gov-icon-minus-line
     }
   }
@@ -125,6 +128,7 @@ ul.list-overstated {
     padding-bottom: 10px;
   }
 }
+
 // Bootstrap 3 backwards compatibility
 .list-inline {
   padding-left: 0;

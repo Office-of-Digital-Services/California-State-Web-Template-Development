@@ -2,6 +2,7 @@
    BUTTONS
    /source/scss/cagov/button.scss
 ----------------------------------------- */
+
 /* 
     NOTE: This might make more sence later to be moved to the color schemes
 */
@@ -98,8 +99,10 @@
     #fff,
     $gray-base
   );
+
   border-width: 1px;
-  //transition:all 0.5s;
+
+  // transition:all 0.5s;
 
   &.active {
     background: $gray;
@@ -143,15 +146,17 @@
   );
 }
 
-//
 // Default look and feel for more buttons
 // --------------------------------------------------
 
 .btn-more {
-  @include btn();
-  @include btn-block();
+  @include btn;
+  @include btn-block;
+
   background-color: #fff; // Fallback
+
   @include rgba(#ffffff, 0.7);
+
   // background-color: $rgba;
   @include font-size(1.25);
 
@@ -170,8 +175,8 @@
 
 .btn-more.inverse {
   background-color: #000; // Fallback
-  //.rgba (#000, .64);
-  //background-color: $rgba;
+  // .rgba (#000, .64);
+  // background-color: $rgba;
   color: #fff;
 
   &:hover,
@@ -180,18 +185,17 @@
   }
 }
 
-//
 // Justified mobile button groups in Site Settings
 // --------------------------------------------------
 
 @media (max-width: $screen-xs-max) {
   [role="group"].btn-group {
     margin-top: 10px;
-    @include btn-group-justified();
+
+    @include btn-group-justified;
   }
 }
 
-//
 // Button Blocks for Mobile
 // --------------------------------------------------
 
@@ -199,7 +203,8 @@
   .btn-block-xs {
     display: block !important;
     width: 100% !important;
-    @include m-b();
+
+    @include m-b;
   }
 }
 
@@ -207,25 +212,26 @@
   .btn-block-sm {
     display: block !important;
     width: 100% !important;
-    @include m-b();
+
+    @include m-b;
   }
 }
 
-//
 // Rows of buttons can benefit from a gutter
 // Mobile can benefit from additional leading
 // --------------------------------------------------
 
 .btn-row {
   .btn {
-    @include m-r-sm();
-    @include m-b-sm();
+    @include m-r-sm;
+    @include m-b-sm;
 
     @media (max-width: $screen-xs-max) {
-      @include m-b-sm();
+      @include m-b-sm;
     }
   }
 }
+
 // Backward compatibility (bootstrap 3 leftovers)
 .btn-xs {
   padding: 0.17rem 0.35rem;
@@ -249,10 +255,7 @@
     content: "";
     position: absolute;
     z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 50%;
@@ -269,117 +272,129 @@
   }
 }
 
-//btn-light
+// btn-light
 .btn-light.btn-hover:hover {
   background-color: $white;
   overflow: hidden;
 }
+
 .btn-light.btn-hover::before {
   background: $gray-lightest;
   overflow: hidden;
 }
-.btn-light.btn-hover:hover:before {
+
+.btn-light.btn-hover:hover::before {
   overflow: hidden;
 }
 
-//btn-default
+// btn-default
 .btn-default.btn-hover:hover {
   background-color: $white;
   overflow: hidden;
 }
-.btn-default.btn-hover:before {
+
+.btn-default.btn-hover::before {
   background: $gray-lightest;
   overflow: hidden;
 }
 
-//btn-primary
+// btn-primary
 .btn-primary.btn-hover:hover {
   background-color: $color-p2;
   overflow: hidden;
 }
-.btn-primary.btn-hover:before {
+
+.btn-primary.btn-hover::before {
   background: darken($color-p2, 7%);
   overflow: hidden;
 }
 
-//btn-highlight
+// btn-highlight
 .btn-highlight.btn-hover:hover {
   background-color: $color-p1;
   overflow: hidden;
 }
-.btn-highlight.btn-hover:before {
+
+.btn-highlight.btn-hover::before {
   background: lighten($color-p1, 7%);
   overflow: hidden;
 }
 
-//btn-standout
+// btn-standout
 .btn-standout.btn-hover:hover {
   background-color: $color-p3;
   overflow: hidden;
 }
-.btn-standout.btn-hover:before {
+
+.btn-standout.btn-hover::before {
   background: lighten($color-p3, 7%);
   overflow: hidden;
 }
 
-//btn-secondary
+// btn-secondary
 .btn-secondary.btn-hover:hover {
   background-color: $gray-lightest;
   overflow: hidden;
 }
-.btn-secondary.btn-hover:before {
+
+.btn-secondary.btn-hover::before {
   background: $white;
   overflow: hidden;
 }
 
-//OUTLINE BUTTONS HOVER
-//outline-primary
+// OUTLINE BUTTONS HOVER
+// outline-primary
 .btn-outline-primary.btn-hover:hover {
   background: inherit;
   overflow: hidden;
 }
-.btn-outline-primary.btn-hover:before {
+
+.btn-outline-primary.btn-hover::before {
   background: $gray-50;
   overflow: hidden;
 }
 
-//outline-standout
+// outline-standout
 .btn-outline-standout.btn-hover:hover {
   background: inherit;
   overflow: hidden;
 }
-.btn-outline-standout.btn-hover:before {
+
+.btn-outline-standout.btn-hover::before {
   background: $gray-50;
   overflow: hidden;
 }
 
-//outline-secondary
+// outline-secondary
 .btn-outline-secondary.btn-hover:hover {
   background: inherit;
   overflow: hidden;
 }
-.btn-outline-secondary.btn-hover:before {
+
+.btn-outline-secondary.btn-hover::before {
   background: $gray-50;
   overflow: hidden;
 }
 
-//outline-highlight
+// outline-highlight
 .btn-outline-highlight.btn-hover:hover {
   background: inherit;
   overflow: hidden;
 }
-.btn-outline-highlight.btn-hover:before {
-  background: rgba(0, 0, 0, 0.2);
+
+.btn-outline-highlight.btn-hover::before {
+  background: rgb(0 0 0 / 20%);
   overflow: hidden;
 }
 
-//outline-light
+// outline-light
 .btn-outline-light.btn-hover:hover {
   background: inherit;
   overflow: hidden;
 }
-.btn-outline-light.btn-hover:before {
-  background: rgba(0, 0, 0, 0.2);
+
+.btn-outline-light.btn-hover::before {
+  background: rgb(0 0 0 / 20%);
   overflow: hidden;
 }
 
@@ -392,9 +407,9 @@
   transition: 0.5s;
 }
 
-.btn-next span:after {
+.btn-next span::after {
   content: "\39";
-  font-family: "CaGov";
+  font-family: CaGov;
   position: absolute;
   opacity: 0;
   top: 0;
@@ -404,15 +419,16 @@
 
 .btn-next:hover span {
   padding-right: 25px;
+
   &::after {
     opacity: 1;
     right: 0;
   }
 }
 
-.btn-prev span:before {
+.btn-prev span::before {
   content: "\38";
-  font-family: "CaGov";
+  font-family: CaGov;
   position: absolute;
   opacity: 0;
   top: 0;
@@ -422,6 +438,7 @@
 
 .btn-prev:hover span {
   padding-left: 25px;
+
   &::before {
     opacity: 1;
     left: 0;

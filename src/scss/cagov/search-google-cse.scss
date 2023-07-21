@@ -4,7 +4,7 @@
 ----------------------------------------- */
 
 .google_results {
-  @include list-unstyled();
+  @include list-unstyled;
 }
 
 .google_result {
@@ -12,7 +12,7 @@
 }
 
 .google_url {
-  @include text-muted();
+  @include text-muted;
 }
 
 .google_result_thumbnail {
@@ -27,11 +27,13 @@
   a.gs-title b {
     color: $color-p2 !important;
   }
+
   .gsc-url-top {
     .gs-visibleUrl-breadcrumb span {
       color: $gray-600 !important;
     }
   }
+
   .gs-snippet {
     color: $text-color !important;
   }
@@ -42,6 +44,7 @@
     .gsc-cursor-page {
       color: $color-p3 !important;
     }
+
     .gsc-cursor-current-page {
       color: $color-p3 !important;
     }

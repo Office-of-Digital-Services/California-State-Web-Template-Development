@@ -21,7 +21,7 @@
  * Set the before content to position absolute to negate any visible space
  * the before content could add to the document.
  */
-.accordion > li:before {
+.accordion > li::before {
   content: "\200B";
   position: absolute;
 }
@@ -58,12 +58,13 @@
   text-align: left;
   width: 100%;
   z-index: 2;
+
   &:hover {
     color: $link-hover-color;
   }
 }
 
-.accordion__trigger:before {
+.accordion__trigger::before {
   border-left: 0.3em solid transparent;
   border-right: 0.3em solid transparent;
   border-top: 0.3em solid #222;
@@ -80,7 +81,7 @@
   width: 0;
 }
 
-.accordion__trigger[aria-expanded="true"]:before {
+.accordion__trigger[aria-expanded="true"]::before {
   transform: rotate(0deg);
 }
 
@@ -102,7 +103,7 @@
 
 .accordion__panel {
   background-color: inherit;
-  max-height: 0vh;
+  max-height: 0;
   overflow: hidden;
   padding: 0;
   position: relative;

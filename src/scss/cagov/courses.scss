@@ -3,7 +3,7 @@
 ----------------------------------------- */
 
 .course-item {
-  @include card();
+  @include card;
 
   .thumbnail ~ .header,
   .thumbnail ~ .body {

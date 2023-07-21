@@ -2,13 +2,15 @@
    FORM
    /source/scss/colortheme/cs-form.scss
 ----------------------------------------- */
-.custom-file-label:after {
+.custom-file-label::after {
   background-color: $color-p2;
 }
+
 .check-icon-radio {
   color: $color-p2;
   border-color: $color-p2;
 }
+
 .check-icon-checkbox {
   border-color: $color-p2;
 }
@@ -27,6 +29,7 @@ input[type="radio"]:checked + * i {
 }
 
 // radio and checkbox in form of button
+
 /* primary Color */
 input[type="checkbox"]:checked + .bg-primary--checked,
 input[type="radio"]:checked + .bg-primary--checked,

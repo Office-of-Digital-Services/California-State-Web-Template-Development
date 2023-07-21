@@ -3,7 +3,6 @@
    /source/scss/cagov/nav-mobile-controls.scss
 ----------------------------------------- */
 
-//
 // MOBILE
 // --------------------------------------------------
 // Hamburger menu to X transition
@@ -13,7 +12,7 @@ header {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.48);
+    background-color: rgb(0 0 0 / 48%);
     top: 0;
     left: 0;
     opacity: 0;
@@ -22,6 +21,7 @@ header {
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   }
 }
+
 header.nav-overlay {
   &::after {
     opacity: 1;
@@ -31,19 +31,23 @@ header.nav-overlay {
 
 .nav-drawer {
   display: flex;
-  padding: 0.5rem 1rem 1rem 1rem;
+  padding: 0.5rem 1rem 1rem;
+
   .toggle-menu {
     margin-top: 0;
     width: 2.75rem;
     height: 2.75rem;
+
     span {
       background-color: $white;
       width: 30px;
+
       &:nth-child(2),
       &:nth-child(3) {
         top: 20px;
       }
     }
+
     background-color: transparent;
     border: none;
 
@@ -52,22 +56,27 @@ header.nav-overlay {
         &:nth-child(1) {
           top: 15px;
         }
+
         &:nth-child(2),
         &:nth-child(3) {
           top: 25px;
         }
+
         &:nth-child(4) {
           top: 35px;
         }
       }
     }
   }
+
   @media (min-width: $screen-md-min) {
     display: none;
   }
 }
+
 .navigation-search .settings-links {
   padding: 1rem;
+
   a {
     position: relative;
     color: $white;
@@ -75,7 +84,8 @@ header.nav-overlay {
     margin-right: 1rem;
     font-size: 1rem;
   }
-  a:before {
+
+  a::before {
     content: "";
     color: $white;
     border: none;
@@ -88,7 +98,8 @@ header.nav-overlay {
     top: 5px;
     left: -1.95rem;
   }
-  a:first-child:before {
+
+  a:first-child::before {
     display: none;
   }
 }
@@ -98,8 +109,6 @@ header.nav-overlay {
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  color: $white;
   position: relative;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -174,6 +183,7 @@ header.nav-overlay {
     }
   }
 }
+
 // CONTAINER
 .mobile-controls {
   text-align: right; // move most menu controls to right
@@ -183,6 +193,7 @@ header.nav-overlay {
   top: 0;
   padding-right: 0;
   height: 0;
+
   @include container;
 
   .ca-gov-icon-menu-toggle-open,
@@ -232,7 +243,9 @@ header.nav-overlay {
     position: absolute;
     top: 0;
     right: 2px;
+
     @include font-size(1.5);
+
     width: 80px;
     text-align: center;
     cursor: pointer;
@@ -269,6 +282,7 @@ header.nav-overlay {
     right: 70px;
     top: 10px;
   }
+
   /* IE10 */
   *::-ms-backdrop,
   .mobile-controls .toggle-search {
@@ -276,5 +290,6 @@ header.nav-overlay {
     right: 70px;
     top: 10px;
   }
+
   /* IE11 */
 }

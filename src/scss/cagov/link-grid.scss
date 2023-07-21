@@ -14,15 +14,18 @@
   position: relative;
   text-decoration: none !important;
   height: 100%;
+
   &:hover,
   &:focus {
     background: $gray-100;
   }
+
   &:focus {
     @include outline(2px);
   }
+
   &::after {
-    font-family: "CaGov";
+    font-family: CaGov;
     content: "5";
     position: absolute;
     top: 0.8rem;

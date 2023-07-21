@@ -9,19 +9,20 @@ table.table {
 }
 
 table.editor-table-default {
-  @include table();
-  @include table-default();
+  @include table;
+  @include table-default;
 }
 
 table.editor-table-striped {
-  @include table();
-  @include table-striped();
+  @include table;
+  @include table-striped;
 }
 
 /* End Rich Text Editor */
 
 .table {
   color: $gray-900;
+
   // The official table style design for CA.gov
   &.table-default {
     border: none;

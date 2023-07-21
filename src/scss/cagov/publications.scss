@@ -3,7 +3,8 @@
 ----------------------------------------- */
 
 .pub-item {
-  @include clearfix();
+  @include clearfix;
+
   margin-bottom: calc($line-height-computed / 2);
 
   &.odd {
@@ -19,7 +20,7 @@
     margin-right: 15px;
 
     img {
-      @include img-responsive();
+      @include img-responsive;
     }
   }
 }

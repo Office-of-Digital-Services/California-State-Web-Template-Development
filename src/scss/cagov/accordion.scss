@@ -4,6 +4,7 @@
 ----------------------------------------- */
 
 /* accordion component specific classes */
+
 /* initial styles */
 cagov-accordion details {
   margin-bottom: 0;
@@ -23,7 +24,7 @@ cagov-accordion details {
     font-weight: bold;
     border: 1px solid $gray-200;
 
-    &:before {
+    &::before {
       position: absolute;
       height: 100%;
       width: 2.75rem;
@@ -31,12 +32,13 @@ cagov-accordion details {
       top: 0;
       left: 0;
       background-color: $gray-50;
+
       // top-left | top-right | bottom-right | bottom-left
       border-radius: 3px 0 0 3px;
       content: "";
     }
 
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       top: 0;
@@ -44,8 +46,9 @@ cagov-accordion details {
       background: transparent;
       height: 100%;
       width: 100%;
+
       // top-left | top-right | bottom-right | bottom-left
-      border-radius: 3px 3px 3px 3px;
+      border-radius: 3px;
     }
 
     .cagov-open-indicator {
@@ -56,8 +59,9 @@ cagov-accordion details {
       height: 0;
       transition-property: transform;
       transition: transform 0.2s;
+
       &::before {
-        font-family: "CaGov";
+        font-family: CaGov;
         content: "5";
         position: absolute;
         font-size: 1.6rem;
@@ -68,14 +72,16 @@ cagov-accordion details {
 
     &:hover {
       color: black;
-      &:before {
+
+      &::before {
         background-color: $gray-100;
       }
     }
   }
+
   .accordion-body {
     padding: 1rem;
-    border: none;
+
     // top-left | top-right | bottom-right | bottom-left
     border-radius: 0 0 4px 4px;
     border: 1px solid $gray-200;
@@ -98,13 +104,16 @@ cagov-accordion:defined {
   details summary {
     list-style: none; /* hide default expansion triangle after js executes */
     // top-left | top-right | bottom-right | bottom-left
-    border-radius: 4px 4px 4px 4px;
+    border-radius: 4px;
+
     &:focus {
-      &:before {
+      &::before {
         background-color: $gray-100;
       }
-      &:after {
+
+      &::after {
         @include outline(2px);
+
         outline-offset: -2px;
       }
     }
@@ -113,6 +122,7 @@ cagov-accordion:defined {
   /* let it be open initially if details has open attribute */
   details[open] {
     height: auto;
+
     .cagov-open-indicator {
       &::before {
         transform: rotate(90deg) translateY(-0.2rem);
@@ -122,11 +132,13 @@ cagov-accordion:defined {
     summary {
       // top-left | top-right | bottom-right | bottom-left
       border-radius: 4px 4px 0 0;
-      &:before {
+
+      &::before {
         // top-left | top-right | bottom-right | bottom-left
-        border-radius: 3px 0 0 0;
+        border-radius: 3px 0 0;
         background-color: $gray-100;
       }
+
       &:focus {
         &::after {
           // top-left | top-right | bottom-right | bottom-left

@@ -7,17 +7,21 @@ cagov-accordion.sidenav {
   details {
     summary {
       color: $gray-700;
+
       &:hover,
       &:focus {
         color: $black;
       }
+
       &.active {
         color: $gray-700 !important;
+
         &:hover,
         &:focus {
           color: $black !important;
         }
-        &:before {
+
+        &::before {
           background-color: $color-p1 !important;
         }
       }
@@ -29,12 +33,14 @@ cagov-accordion.sidenav {
   li {
     a {
       color: $gray-800;
+
       &:hover,
       &:focus {
         color: $black;
       }
+
       &.active {
-        &:before {
+        &::before {
           border-left-color: $color-p1;
         }
       }
@@ -50,10 +56,12 @@ cagov-accordion.sidenav {
       .accordion__trigger {
         color: $gray-800;
       }
+
       // active
       &.active {
         .accordion__trigger {
           background-color: $color-p2, 7%;
+
           &:hover,
           &:focus {
             background-color: darken($color-p2, 7%) !important;
@@ -73,6 +81,7 @@ cagov-accordion.sidenav {
         .accordion__trigger {
           color: $gray-800 !important;
           background-color: $gray-50 !important;
+
           &:hover,
           &:focus {
             color: $black !important;
@@ -93,6 +102,7 @@ cagov-accordion.sidenav {
         .accordion__trigger {
           color: $gray-800 !important;
           background-color: $gray-50 !important;
+
           &:hover,
           &:focus {
             color: $black !important;
@@ -112,10 +122,12 @@ cagov-accordion.sidenav {
       .accordion__trigger {
         color: $gray-800;
       }
+
       // active
       &.active {
         .accordion__trigger {
           background-color: $color-p2 !important;
+
           &:hover,
           &:focus {
             background-color: darken($color-p2, 7%) !important;

@@ -15,6 +15,7 @@
   &-overstated {
     @include link-variant($text-color, $gray-base, none);
     @include underline($text-color, $gray-base);
+
     background: $color-s3;
     color: $text-color;
 
@@ -26,6 +27,7 @@
   &-standout {
     @include link-variant($color-p1, #fff, none);
     @include underline($color-p1, $white);
+
     background: $color-p3;
     color: contrast($color-p3);
 
@@ -37,6 +39,7 @@
   &-primary {
     @include link-variant($white, $color-s1, none);
     @include underline($white, $color-s1);
+
     background: $color-p2;
     color: contrast($color-p2);
 
@@ -48,6 +51,7 @@
   &-highlight {
     @include link-variant($text-color, $gray-base, none);
     @include underline($text-color, $gray-base);
+
     background: $color-p1;
     color: $text-color;
 
@@ -59,6 +63,7 @@
   &-inverted {
     @include link-variant($color-p1, #fff, none);
     @include underline($color-p1, $white);
+
     background: $gray-darker;
     color: #fff;
 
@@ -70,6 +75,7 @@
   &-danger {
     @include link-variant($gray-base, $gray-base);
     @include underline($gray-base, $gray-base);
+
     background: $brand-danger;
     color: contrast($brand-danger);
 
