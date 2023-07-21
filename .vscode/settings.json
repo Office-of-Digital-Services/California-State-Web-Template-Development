@@ -16,5 +16,7 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "stylelint.validate": ["css", "scss"],
+  "search.useIgnoreFiles": true
 }
