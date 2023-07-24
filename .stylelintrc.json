@@ -17,6 +17,7 @@
     "scss/no-global-function-names": null,
     "no-descending-specificity": null,
     "selector-class-pattern": null,
-    "no-duplicate-selectors": null
+    "no-duplicate-selectors": null,
+    "selector-id-pattern": null
   }
 }
