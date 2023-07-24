@@ -15,7 +15,7 @@
   @include make-row; // Self clearing row container same as bootstraps .row
 
   @media (max-width: $screen-xs-max) {
-    //@include make-row(0);       // Remove negative margins for mobile
+    // @include make-row(0);       // Remove negative margins for mobile
   }
 }
 
@@ -24,7 +24,7 @@
 }
 
 .half {
-  //@include make-sm-column(6);     // 50% wide columns same as bootstraps .col-sm-6
+  // @include make-sm-column(6);     // 50% wide columns same as bootstraps .col-sm-6
   @include make-sm-column(6); // Equivelent to .col-md-6
 }
 
