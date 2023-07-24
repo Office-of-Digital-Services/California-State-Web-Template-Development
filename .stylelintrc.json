@@ -11,8 +11,12 @@
     "font-family-no-missing-generic-family-keyword": [
       true,
       {
-        "ignoreFontFamilies": ["CaGov"]
+        "ignoreFontFamilies": ["CaGov", "cagov"]
       }
-    ]
+    ],
+    "scss/no-global-function-names": null,
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "no-duplicate-selectors": null
   }
 }

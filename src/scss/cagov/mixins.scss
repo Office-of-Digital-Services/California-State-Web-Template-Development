@@ -208,8 +208,8 @@
     color: $link-color;
     text-decoration: $decoration;
 
-    //-webkit-transition: all 0.25s;
-    //transition:all 0.25s;
+    // -webkit-transition: all 0.25s;
+    // transition:all 0.25s;
     &:hover,
     &:focus {
       color: $link-hover-color;
