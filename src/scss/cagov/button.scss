@@ -260,10 +260,8 @@
     transform: scaleX(0);
     -webkit-transform-origin: 50%;
     transform-origin: 50%;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition: 300ms ease-out;
-    transition: 300ms ease-out;
+    -webkit-transition: transform 300ms ease-out;
+    transition: transform 300ms ease-out;
   }
 
   &:hover::before {
