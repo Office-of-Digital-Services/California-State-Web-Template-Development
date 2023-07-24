@@ -622,10 +622,6 @@
 @mixin table-striped {
   &.table-default {
     border: none;
-  }
-
-  &.table-default {
-    border: none;
 
     // Table Body
     > thead,
