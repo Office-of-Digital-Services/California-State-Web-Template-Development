@@ -27,9 +27,6 @@
   .main-content {
     min-height: unset;
 
-    > .section:extend(.container) {
-    }
-
     @media (min-width: $screen-md-min) {
       .main-primary {
         @include make-md-column(8); // Makes 8 column container
