@@ -254,12 +254,6 @@ a.second-level-link {
 @media (min-width: $screen-md-min) {
   .main-navigation.megadropdown.original {
     .second-level-nav {
-      -moz-column-count: 3;
-      -ms-column-count: 3;
-      -webkit-column-count: 3;
-      -moz-column-gap: 20px;
-      -ms-column-gap: 20px;
-      -webkit-column-gap: 20px;
       column-count: 3;
       column-gap: 20px;
     }
@@ -275,13 +269,7 @@ a.second-level-link {
 
         // two columns for submenu items with -sm image
         > ul {
-          -webkit-column-count: 2;
-          -moz-column-count: 2;
-          -ms-column-count: 2;
           column-count: 2;
-          -moz-column-gap: 20px;
-          -ms-column-gap: 20px;
-          -webkit-column-gap: 20px;
           column-gap: 20px;
         }
       }
@@ -294,12 +282,6 @@ a.second-level-link {
 
         // one column for submenu items with -md image
         > ul {
-          -moz-column-count: 1;
-          -ms-column-count: 1;
-          -webkit-column-count: 1;
-          -moz-column-gap: 20px;
-          -ms-column-gap: 20px;
-          -webkit-column-gap: 20px;
           column-count: 1;
           column-gap: 20px;
         }

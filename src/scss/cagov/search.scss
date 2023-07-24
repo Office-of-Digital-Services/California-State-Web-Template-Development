@@ -70,7 +70,6 @@ $search-input-border-width: 3px;
 
     // Padding can control size of small search box
     padding: 0 10px;
-    -webkit-transition: border $search-ft;
     transition: border $search-ft;
 
     &::placeholder {
@@ -100,7 +99,6 @@ $search-input-border-width: 3px;
 
     // ie9 needs a little help figuring out it's height
     height: $search-input-height;
-    -webkit-transition: all $search-dt $search-dft;
     transition: all $search-dt $search-dft;
 
     button {
@@ -109,7 +107,6 @@ $search-input-border-width: 3px;
 
       @include clearfix;
 
-      -webkit-transition: all $search-dt $search-dft;
       transition: all $search-dt $search-dft;
       background: none;
 
@@ -135,7 +132,7 @@ $search-input-border-width: 3px;
       padding: 0;
 
       // HACK: Removes ios default appearance
-      -webkit-appearance: none;
+      appearance: none;
 
       > span {
         // Position the icon in the middle of the button
@@ -194,7 +191,7 @@ $search-input-border-width: 3px;
 }
 
 input[type="search"].search-textfield {
-  -webkit-appearance: none; // Removing iPhone rounder corner rendering
+  appearance: none; // Removing iPhone rounder corner rendering
   background-color: canvas; // Removing iPhone -apple-system-opaque-tertiary-fill color
 }
 
@@ -271,11 +268,8 @@ input[type="search"].search-textfield {
     }
 
     &.play-animation {
-      -webkit-animation-duration: 1s;
       animation-duration: 1s;
-      -webkit-animation-fill-mode: both;
       animation-fill-mode: both;
-      -webkit-animation-name: pulse;
       animation-name: pulse;
     }
 
@@ -290,17 +284,15 @@ input[type="search"].search-textfield {
     .submit-container {
       height: 55px; // HACK: ie9 needs a little help figuring out its height
       width: 55px;
-      -webkit-transition: all $search-ft;
       transition: all $search-ft;
 
       button {
-        -webkit-transition: all $search-ft;
         transition: all $search-ft;
 
         @include font-size(2.5); // Approx 37.5px
 
         width: 60px;
-        -webkit-appearance: none;
+        appearance: none;
 
         > span {
           font-size: 2.8125rem;
@@ -320,9 +312,6 @@ input[type="search"].search-textfield {
       position: absolute;
     }
 
-    -webkit-transition: top $search-ft, left $search-st $search-ft,
-      width $search-st $search-ft, background-color $search-ft + $search-st,
-      border $search-ft, padding $search-st $search-ft;
     transition: top $search-ft, left $search-st $search-ft,
       width $search-st $search-ft, background-color $search-ft + $search-st,
       border $search-ft, padding $search-st $search-ft;
@@ -348,7 +337,6 @@ input[type="search"].search-textfield {
       border-radius: $border-radius-base; // 4px corners by default
       border: $search-input-border-width solid transparent; // makes border transparent but maintains height for hover effect
       padding: 0 4px; // Padding can control size of small search box
-      -webkit-transition: border $search-ft;
       transition: border $search-ft;
     }
   }
@@ -408,7 +396,7 @@ input[type="search"].search-textfield {
 
       line-height: 0.9375rem;
       padding: 0; // ios needed button padding explicity removed tp prevent button from expanding
-      -webkit-appearance: none; // Removes ios default appearance
+      appearance: none; // Removes ios default appearance
 
       > span {
         // Position the icon in the middle of the button

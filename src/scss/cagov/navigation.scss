@@ -6,13 +6,7 @@
 // --------------------------------------------------
 
 @mixin nav-columns($count: 3) {
-  -ms-column-count: $count;
-  -ms-column-gap: 0;
-  -webkit-column-count: $count;
-  -moz-column-count: $count;
   column-count: $count;
-  -webkit-column-gap: 0;
-  -moz-column-gap: 0;
   column-gap: 0;
 }
 
@@ -66,7 +60,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  -webkit-transition: 0.3s; // beta 5.0 addition (adds smoother transistion on scroll for fixed headers)
   transition: all 0.3s; // beta 5.0 addition
   .nav-item {
     // equivalent to .nav-item
@@ -89,9 +82,6 @@
     // 991px
     @media (max-width: $screen-sm-max) {
       max-height: 1000px;
-      -webkit-transition: max-height 0.5s ease-in-out;
-      -moz-transition: max-height 0.5s ease-in-out;
-      -o-transition: max-height 0.5s ease-in-out;
       transition: max-height 0.5s ease-in-out;
     }
   }
@@ -326,8 +316,6 @@
       display: block;
       -webkit-box-flex: 1;
       -moz-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
       flex: 1 1 auto;
 
       .noflex &,
@@ -529,9 +517,6 @@
     // Sub nav transition
     .sub-nav {
       display: block;
-      -webkit-transition: max-height 0.5s ease-in-out;
-      -moz-transition: max-height 0.5s ease-in-out;
-      -o-transition: max-height 0.5s ease-in-out;
       transition: max-height 0.5s ease-in-out;
       border-left: none;
       border-right: none;
@@ -728,8 +713,6 @@
       background-color: $gray-lightest;
 
       .rotate {
-        -moz-transform: rotate(90deg) !important;
-        -webkit-transform: rotate(90deg) !important;
         transform: rotate(90deg) !important;
       }
     }
@@ -745,8 +728,6 @@
       height: 3rem;
       border: none;
       display: block !important;
-      -moz-transition: all 0.2s ease !important;
-      -webkit-transition: all 0.2s ease !important;
       transition: all 0.2s ease !important;
     }
   }
@@ -809,15 +790,11 @@
     text-align: center;
     cursor: pointer;
     border: none;
-    -moz-transition: all 0.2s ease !important;
-    -webkit-transition: all 0.2s ease !important;
     transition: all 0.2s ease !important;
     color: $white !important;
   }
 
   .first-level-btn[aria-expanded="true"] .rotate {
-    -moz-transform: rotate(90deg) !important;
-    -webkit-transform: rotate(90deg) !important;
     transform: rotate(90deg) !important;
     position: absolute;
     width: 55px !important;
@@ -827,8 +804,6 @@
     top: 0;
     right: 0;
     text-align: center;
-    -moz-transition: all 0.2s ease !important;
-    -webkit-transition: all 0.2s ease !important;
     transition: all 0.2s ease !important;
     color: $white !important;
   }

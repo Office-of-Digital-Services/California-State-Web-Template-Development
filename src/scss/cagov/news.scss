@@ -68,7 +68,6 @@
 
 /* NEWS BLOCKS */
 .shadow {
-  -webkit-box-shadow: 0 2px 5px #eee;
   -moz-box-box-shadow: 0 2px 5px #eee;
   box-shadow: 0 2px 5px #eee;
 
@@ -91,7 +90,6 @@
   position: relative;
   text-align: center;
   background-color: lighten($gray-lighter, 7%);
-  -webkit-transition: all 0.2s ease-in-out 0s;
   transition: all 0.2s ease-in-out 0s;
 
   &:hover {
@@ -103,7 +101,6 @@
     display: block;
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     z-index: 2;
   }
@@ -117,14 +114,10 @@
   margin: 0;
   overflow: hidden;
   color: $white;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
 
   &:hover .block-hover_zoom {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
     transform: scale(1.1);
   }
 }
@@ -132,12 +125,11 @@
 [class*="block-hover"],
 [class*="block-hover"]::before,
 [class*="block-hover"]::after {
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .block-hover_zoom {
-  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 .bg-overlay {

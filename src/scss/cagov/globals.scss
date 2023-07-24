@@ -936,28 +936,22 @@
   position: relative;
   top: 50% !important;
   left: 50% !important;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .relative-centered-x {
   position: relative;
   left: 50% !important;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .relative-centered-y {
   position: relative;
   top: 50% !important;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* Absolute (Position, X, Y) */
@@ -965,28 +959,22 @@
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .absolute-centered-x {
   position: absolute !important;
   left: 50% !important;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .absolute-centered-y {
   position: absolute !important;
   top: 50% !important;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .top-rel-40pct {

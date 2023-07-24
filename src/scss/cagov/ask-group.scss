@@ -11,7 +11,6 @@ $ask-bg-hover: rgb(0 0 0 / 80%);
     position: relative;
     width: 60%;
     left: 20%;
-    -webkit-transition: opacity 0.3s, visibility 0.3s;
     transition: opacity 0.3s, visibility 0.3s;
     z-index: 5;
     visibility: visible;
@@ -40,7 +39,6 @@ $ask-bg-hover: rgb(0 0 0 / 80%);
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
       }
     }

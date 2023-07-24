@@ -6,7 +6,6 @@
     "stylelint-config-prettier-scss"
   ],
   "rules": {
-    "property-no-vendor-prefix": null,
     "number-max-precision": 5,
     "font-family-no-missing-generic-family-keyword": [
       true,

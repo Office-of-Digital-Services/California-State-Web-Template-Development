@@ -242,12 +242,9 @@
 
 /* btn-hover */
 .btn-hover {
-  -webkit-transition: color 300ms;
   transition: color 300ms;
   position: relative;
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -moz-osx-font-smoothing: grayscale;
 
@@ -256,16 +253,12 @@
     position: absolute;
     z-index: -1;
     inset: 0;
-    -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transform-origin: 50%;
     transform-origin: 50%;
-    -webkit-transition: transform 300ms ease-out;
     transition: transform 300ms ease-out;
   }
 
   &:hover::before {
-    -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
 }

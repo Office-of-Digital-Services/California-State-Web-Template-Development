@@ -111,7 +111,6 @@
     vertical-align: middle;
     display: inline-block;
     height: 100%;
-    -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
   }
 
@@ -130,7 +129,6 @@
 
       @include text-overflow;
 
-      -webkit-transition: all 0.3s;
       transition: all 0.3s;
 
       &:hover {
