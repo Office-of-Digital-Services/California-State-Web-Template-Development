@@ -15,7 +15,7 @@
     transition: all 0.3s;
   }
 
-  /* full width nav search box in fixed nav*/
+  /* full width nav search box in fixed nav */
   .full-width-nav #head-search.fixed-hide:not(.active) {
     visibility: visible;
     opacity: 1;
@@ -50,6 +50,7 @@
   top: 0;
   width: 100%;
   z-index: 3;
+
   @media (min-width: $screen-md-min) {
     z-index: 7;
     position: sticky;
@@ -63,6 +64,7 @@
 
 h2 {
   scroll-margin-top: 75px;
+
   @media (min-width: $screen-md-min) {
     scroll-margin-top: 150px;
   }

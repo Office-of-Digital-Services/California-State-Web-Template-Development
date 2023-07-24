@@ -12,7 +12,7 @@
 
     &::before {
       content: "\e046";
-      font-family: "CaGov";
+      font-family: CaGov;
       background: none !important;
       position: absolute;
       left: -22px;
@@ -31,12 +31,12 @@
   h4,
   h5,
   h6 {
-    margin: 0 0 4px 0;
+    margin: 0 0 4px;
+
     @include font-size(1.2);
   }
 }
 
-//
 // EVENT LIST WITH THUMBNAIL
 // --------------------------------------------------
 
@@ -51,10 +51,11 @@
     @include make-xs-column(4);
     @include make-sm-column(3);
     @include make-md-column(2);
+
     padding: 0;
 
     img {
-      @include img-responsive();
+      @include img-responsive;
     }
   }
 
@@ -65,6 +66,7 @@
 
     .title {
       background: none;
+
       // Removes bullet
       &::before {
         content: "";
@@ -74,16 +76,17 @@
     }
   }
 }
-//
+
 // EVENT DETAILS
 // --------------------------------------------------
 .event-detail {
   .presenter {
     padding: calc($line-height-computed / 2) 0;
-    @include clearfix();
+
+    @include clearfix;
   }
 
   .description {
-    @include clearfix();
+    @include clearfix;
   }
 }

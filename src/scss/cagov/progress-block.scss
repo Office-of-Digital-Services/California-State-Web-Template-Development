@@ -4,11 +4,13 @@
 .progress-text {
   text-align: center;
 }
+
 .dot-line {
   position: relative;
   display: block;
   width: 100%;
   font-size: 0;
+
   &::before,
   &::after {
     content: "";
@@ -24,6 +26,7 @@
   &::after {
     right: -30px;
   }
+
   &::before {
     left: -30px;
   }
@@ -35,10 +38,12 @@
     display: block;
   }
 }
+
 @media (max-width: $screen-xxs-max) {
   .progress-text {
     text-align: left;
     position: relative;
+
     p,
     h2,
     h3,
@@ -48,6 +53,7 @@
       margin-left: 3rem !important;
     }
   }
+
   .dot-line::before,
   .dot-line::after {
     display: none;
@@ -83,7 +89,7 @@
 
   .timeline-lines .col-sm-3:nth-last-of-type(2) .dot-text::before,
   .timeline-lines .col-sm-3:last-of-type .dot-text::before {
-    background: #dddddd;
+    background: #ddd;
   }
 }
 
@@ -118,7 +124,7 @@
   }
 }
 
-//Vertical timeline
+// Vertical timeline
 .timeline-dot {
   left: -$spacer;
   position: absolute;

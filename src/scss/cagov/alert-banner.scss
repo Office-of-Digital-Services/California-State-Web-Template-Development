@@ -5,7 +5,7 @@
 
 .alert-banner {
   margin-bottom: 0;
-  padding: 0.6rem 0 0.5rem 0;
+  padding: 0.6rem 0 0.5rem;
   border-radius: 0;
   -webkit-column-rule: $text-field-color;
   -moz-column-rule: $text-field-color;
@@ -49,7 +49,7 @@
     min-height: 30px;
   }
 
-  .container:after {
+  .container::after {
     content: " ";
     display: table;
     clear: both;
@@ -70,6 +70,7 @@
   font-weight: bold;
   padding: 0 5px;
   margin: 0 5px;
+
   @include font-size(0.87);
 
   [class^="ca-gov-icon-"] {
@@ -79,7 +80,9 @@
 
 .alert-link {
   line-height: 1.2em;
-  @include float-right();
+
+  @include float-right;
+
   font-weight: 400;
 }
 
@@ -92,7 +95,7 @@
 
   .alert-level {
     color: $gray-base;
-    background: rgba(0, 0, 0, 0.15);
+    background: rgb(0 0 0 / 15%);
   }
 
   .alert-text {
@@ -100,7 +103,6 @@
   }
 }
 
-//
 // HIDE ALERTS AFTER PAGE SCROLLS & HEADER COMPACTS
 // --------------------------------------------------
 

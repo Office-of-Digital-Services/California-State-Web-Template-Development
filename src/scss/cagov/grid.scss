@@ -2,7 +2,6 @@
    GRID -  /source/scss/cagov/grid.scss
 ----------------------------------------- */
 
-//
 // SEMANTIC GRID
 // --------------------------------------------------
 
@@ -13,9 +12,10 @@
 }
 
 .group {
-  @include make-row(); // Self clearing row container same as bootstraps .row
+  @include make-row; // Self clearing row container same as bootstraps .row
+
   @media (max-width: $screen-xs-max) {
-    //@include make-row(0);       // Remove negative margins for mobile
+    // @include make-row(0);       // Remove negative margins for mobile
   }
 }
 
@@ -24,7 +24,7 @@
 }
 
 .half {
-  //@include make-sm-column(6);     // 50% wide columns same as bootstraps .col-sm-6
+  // @include make-sm-column(6);     // 50% wide columns same as bootstraps .col-sm-6
   @include make-sm-column(6); // Equivelent to .col-md-6
 }
 
@@ -44,11 +44,10 @@
 }
 
 .three-quarters {
-  //@include make-sm-column(6);
+  // @include make-sm-column(6);
   @include make-sm-column(9);
 }
 
-//
 // GRID OFFSETS
 // --------------------------------------------------
 
@@ -72,19 +71,17 @@
   @include make-sm-column-offset(9);
 }
 
-//
 // SECONDARY COLUMN GROUP STYLES
 // --------------------------------------------------
 
 .main-secondary .group {
-  padding: 0 8px 0 8px;
+  padding: 0 8px;
 
   .half {
-    padding: 0 7px 0 7px;
+    padding: 0 7px;
   }
 }
 
-//
 // GRID OUTLINE FOR SAMPLE PAGE
 // --------------------------------------------------
 
@@ -96,9 +93,7 @@
   }
 }
 
-//
 // DEFAULT SECTION
-//
 
 .main-content > .section,
 .two-column .main-content > .section {

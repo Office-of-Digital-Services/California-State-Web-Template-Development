@@ -9,13 +9,9 @@
   background-position: 50% 50% !important;
   background-size: cover !important;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  inset: 0;
 }
 
-//
 // NAVIGATION MEDIA
 // Any generic media shown in the mega menu other than primary navigation.
 // --------------------------------------------------
@@ -46,7 +42,7 @@
   right: 0;
 
   .nav-media {
-    @include nav-media();
+    @include nav-media;
 
     @media (max-width: $screen-xs-max) {
       background-image: none !important;
@@ -61,7 +57,7 @@
   left: 0;
 
   .nav-media {
-    @include nav-media();
+    @include nav-media;
 
     @media (max-width: $screen-xs-max) {
       background-image: none !important;

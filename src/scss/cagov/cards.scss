@@ -25,14 +25,13 @@
   }
 }
 
-//
 // Optional textual caps
-//
 
 .card-header {
   padding: $card-spacer-y $card-spacer-x;
-  //background-color: $card-cap-bg;
-  //border-bottom: $card-border-width solid $card-border-color;
+
+  // background-color: $card-cap-bg;
+  // border-bottom: $card-border-width solid $card-border-color;
 
   &:first-child {
     border-radius: $card-border-radius-inner $card-border-radius-inner 0 0;
@@ -41,8 +40,9 @@
 
 .card-footer {
   padding: $card-spacer-y $card-spacer-x;
-  //background-color: $card-cap-bg;
-  //border-top: $card-border-width solid $card-border-color;
+
+  // background-color: $card-cap-bg;
+  // border-top: $card-border-width solid $card-border-color;
 
   &:last-child {
     border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
@@ -53,6 +53,7 @@
 .card-img-top {
   border-radius: $card-border-radius-inner $card-border-radius-inner 0 0;
 }
+
 .card-img-bottom {
   border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
 }
@@ -70,20 +71,23 @@
   .card-heading,
   .card-header {
     @include clearfix;
-    //padding: 4px 5px 4px 15px;    // Makes header padding match original design
+
+    // padding: 4px 5px 4px 15px;    // Makes header padding match original design
 
     h2,
     h3,
     h4,
     h5 {
-      @include h4(); // Make all headings appear the same size as h4
+      @include h4; // Make all headings appear the same size as h4
+
       font-weight: normal;
       border: none; // Remove heading border decoration
       display: inline-block;
-      margin: -8px 0 0 0;
+      margin: -8px 0 0;
 
       span[class^="ca-gov-icon-"] {
         @include font-size(2);
+
         position: relative; // Aligns icon with heading text
         top: 4px;
       }
@@ -99,7 +103,6 @@
     }
   }
 
-  //
   // SET UP PANEL FOR BACKGROUND IMAGES
   // --------------------------------------------------
 
@@ -154,7 +157,6 @@
   }
 }
 
-//
 // SPECIAL CASE FOR H1 WITH ICON IN PANELS
 // --------------------------------------------------
 
@@ -163,7 +165,6 @@
   margin-left: 0 !important;
 }
 
-//
 // SPECIAL CASE FOR PANELS IN SIDEBARS
 // --------------------------------------------------
 
@@ -171,13 +172,14 @@
 .main-secondary .card {
   background: none;
   box-shadow: none;
-  //border: none;
+
+  // border: none;
   border-radius: 0;
 
-  //@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  // @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
   //	margin-left: ($grid-gutter-width-sm / -2);
   //	margin-right: ($grid-gutter-width-sm / -2);
-  //}
+  // }
 
   .panel-heading,
   .card-heading {
@@ -196,6 +198,7 @@
 
       span[class^="ca-gov-icon-"] {
         @include font-size(1.8);
+
         position: absolute;
         left: 10px;
       }
@@ -208,9 +211,9 @@
   }
 }
 
-//
 // ADDS TRIANGLE TO PANEL
 // --------------------------------------------------
+
 /* NOTE: although any panel could have a triangle, at this time, only .panel-standout has css and an image */
 
 .panel.highlight,
@@ -231,7 +234,6 @@
   }
 }
 
-//
 // Additional padding between panels in group
 // --------------------------------------------------
 
@@ -244,6 +246,7 @@
 .card-heading {
   padding: 10px 1rem;
 }
+
 .panel-body,
 .card-body {
   padding: 1rem;
@@ -260,6 +263,7 @@
 
   .card-body {
     padding: 1.5rem;
+
     p {
       margin-bottom: 0;
     }
@@ -272,16 +276,16 @@
   .toggle-more {
     display: inline-block;
     color: $gray-light;
-    font-family: "CaGov";
+    font-family: CaGov;
     font-size: 22px;
     margin-left: -11px;
 
-    &:before {
+    &::before {
       content: "\e050"; // .ca-gov-icon-plus-fill
     }
 
     /* Change icon to minus */
-    &.active:before {
+    &.active::before {
       content: "\e04f"; // .ca-gov-icon-minus-fill
     }
   }
@@ -291,6 +295,7 @@
   margin-bottom: $card-spacer-y;
   margin-top: 0;
   font-size: $font-size-h4;
+
   a {
     text-decoration: none !important;
   }

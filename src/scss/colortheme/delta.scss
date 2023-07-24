@@ -2,7 +2,6 @@
    DELTA
 ----------------------------------------- */
 
-//
 // VARIABLES
 // --------------------------------------------------
 
@@ -13,14 +12,18 @@ $theme-directory: "#{$template-path}/delta"; // Folder where assets for theme ar
 $color-p1: #a5bdc5; // Aqua
 $color-p2: #577786; // Blue
 $color-p3: #46565e;
+
 // Darker Blue
 
 // Secondary Theme colors
 $color-s1: #f5f9fa;
+
 // Lightest Aqua
 $color-s2: #ccd4d6;
+
 // Lighter Aqua
 $color-s3: #a7b7bc;
+
 // Light Aqua
 
 // Accent Colors
@@ -94,7 +97,7 @@ $sub-nav-media-bg: transparent;
 
 // SEARCH
 $expanded-background-color: $gray-lighter;
-$text-field-color: rgba(255, 255, 255, 0.8); // 80% white
+$text-field-color: rgb(255 255 255 / 80%); // 80% white
 
 // UTILITY
 $utility-link-hover-color: #fff9eb;

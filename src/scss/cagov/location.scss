@@ -1,7 +1,7 @@
 /* -----------------------------------------
    LOCATION - /source/scss/cagov/location.scss
 ----------------------------------------- */
-//
+
 // GENERAL LOCATION STYLES
 // --------------------------------------------------
 
@@ -13,13 +13,14 @@
 
     [class^="ca-gov-icon"] {
       @include font-size(1.5);
+
       position: relative;
       color: $gray;
     }
 
     a {
       position: relative;
-      left: 0px;
+      left: 0;
     }
   }
 
@@ -30,12 +31,12 @@
   }
 }
 
-//
 // FULL WIDTH BANNER WITH THUMBNAIL
 // --------------------------------------------------
 
 .location.banner {
-  @include clearfix();
+  @include clearfix;
+
   padding: calc($grid-gutter-width / 2) 0;
   background: $gray-lightest;
   margin-bottom: calc($line-height-computed / 2);
@@ -46,7 +47,7 @@
     @include make-lg-column(2);
 
     img {
-      @include img-responsive();
+      @include img-responsive;
     }
   }
 
@@ -54,6 +55,7 @@
     @include make-sm-column(8);
     @include make-md-column(3);
     @include make-lg-column(3);
+
     position: relative;
   }
 
@@ -73,7 +75,8 @@
 // --------------------------------------------------
 
 .location.contact {
-  @include clearfix();
+  @include clearfix;
+
   margin-bottom: $line-height-computed;
   position: relative;
 
@@ -83,6 +86,7 @@
 
   [class^="ca-gov-icon-"] {
     @include font-size(3.5);
+
     color: $gray;
     float: left;
     width: 20%;
@@ -102,19 +106,21 @@
   }
 }
 
-//
 // LOCATION MINI WIDGET
 // --------------------------------------------------
 
 .location.mini {
-  @include clearfix();
+  @include clearfix;
+
   position: relative;
   margin-bottom: $line-height-computed;
 
   [class^="ca-gov-icon"] {
     padding: 5px;
     line-height: 1;
+
     @include font-size(2);
+
     position: absolute;
   }
 
@@ -127,12 +133,11 @@
 
     a {
       position: relative;
-      left: 0px; // Moves text away from icon
+      left: 0; // Moves text away from icon
     }
   }
 }
 
-//
 // LOCATION FULL
 // --------------------------------------------------
 
@@ -157,10 +162,12 @@
 
   .contact {
     @include make-sm-column(3);
+
     margin-top: $line-height-computed;
 
     [class^="ca-gov-icon"] {
       @include font-size(2.2);
+
       position: absolute;
     }
 
@@ -172,6 +179,7 @@
 
   .summary {
     @include make-sm-column(9);
+
     margin-top: $line-height-computed;
   }
 }

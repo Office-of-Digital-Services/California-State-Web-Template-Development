@@ -6,6 +6,7 @@
   background-color: $gray-50;
   border-top: 1px solid $gray-200;
   padding-top: 1rem;
+
   .container .d-flex {
     flex-direction: column;
   }
@@ -32,6 +33,7 @@
   .socialsharer-container {
     padding-left: 0;
     margin-top: 1rem;
+
     li {
       display: inline-block;
     }
@@ -46,8 +48,10 @@
       padding-left: 5px;
       padding-right: 5px;
     }
+
     .list-inline-item {
       display: inline-block;
+
       &:not(:last-child) {
         margin-right: 5px;
       }
@@ -60,9 +64,11 @@
 
     li {
       margin-right: 20px;
+
       a {
         color: $black;
         text-decoration: none;
+
         &:hover {
           color: $gray-800;
         }

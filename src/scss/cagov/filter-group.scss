@@ -5,24 +5,25 @@
 
 // Assumes that filter group is contained in section-default
 
-.filter-group:before {
+.filter-group::before {
   content: "";
   display: block;
-  @include m-b();
+
+  @include m-b;
 }
 
 .filter-toggle.active {
   position: relative;
   z-index: 1;
 
-  &:before {
+  &::before {
     position: absolute;
     left: 50%;
     margin-left: -10px;
     bottom: -18px;
   }
 
-  &:after {
+  &::after {
     position: absolute;
     left: 50%;
     margin-left: -9px;
@@ -32,22 +33,21 @@
 
 // MIXIN
 @mixin section-filter($border, $background) {
-  .filter-group:before {
+  .filter-group::before {
     border-top: 1px solid $border;
   }
 
   .filter-toggle.active {
-    &:before {
+    &::before {
       @include triangle(up, 10px, $border);
     }
 
-    &:after {
+    &::after {
       @include triangle(up, 9px, $background);
     }
   }
 }
 
-//
 // VARIATIONS BASED ON SECTIONS
 // --------------------------------------------------
 

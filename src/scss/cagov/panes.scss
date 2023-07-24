@@ -33,8 +33,8 @@
   padding: 10px 30px 20px 40px;
 }
 
-.odd .group-right:before,
-.even .group-left:after {
+.odd .group-right::before,
+.even .group-left::after {
   border: solid transparent;
   content: " ";
   height: 0;
@@ -49,6 +49,7 @@
     color: $text-color;
     text-decoration: underline;
   }
+
   .btn {
     text-decoration: none;
   }
@@ -60,6 +61,7 @@
     display: flex;
     flex-direction: row;
   }
+
   .group-left,
   .group-right {
     width: 50%;
@@ -67,22 +69,26 @@
     display: flex;
     top: 0;
   }
-  .odd .group-right:before {
+
+  .odd .group-right::before {
     right: 100%;
     top: 50%;
     border-width: 30px;
     margin-top: -30px;
   }
+
   .even {
     .group-left {
       order: 1;
-      &:after {
+
+      &::after {
         left: 100%;
         top: 50%;
         border-width: 30px;
         margin-top: -30px;
       }
     }
+
     .group-right {
       order: 2;
     }
@@ -95,21 +101,20 @@
     .group-left {
       order: 2;
     }
+
     .group-right {
       order: 1;
     }
   }
-  .odd .group-right:before {
+
+  .odd .group-right::before {
     bottom: 100%;
     left: 25%;
     border-width: 20px;
     margin-left: -20px;
   }
-  .even .group-left:after {
-    bottom: 100%;
-    left: 25%;
-    border-width: 20px;
-    margin-left: -20px;
+
+  .even .group-left::after {
     bottom: 100%;
     left: 25%;
     border-width: 20px;

@@ -2,7 +2,7 @@
    HERO INFO - /source/scss/cagov/hero-info.scss
 ----------------------------------------- */
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .p-y-200--md {
     padding-top: 14.28571rem !important;
     padding-bottom: 14.28571rem !important;
@@ -12,6 +12,7 @@
 .display {
   font-weight: 300;
 }
+
 .modal-title {
   margin: 0;
 }

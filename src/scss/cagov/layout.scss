@@ -13,7 +13,7 @@
 /* Default layout is 1 column */
 .main-content {
   background: #fff; // Globaly set page bg to white
-  //padding-bottom: 65px;
+  // padding-bottom: 65px;
   min-height: 400px;
 
   > .section {
@@ -98,7 +98,8 @@
 .hidden-lg {
   display: block !important;
 }
-@media (min-width: 0) and (max-width: $screen-xs-max) {
+
+@media (width >= 0) and (max-width: $screen-xs-max) {
   .visible-xs {
     display: block !important;
   }
@@ -112,6 +113,7 @@
   .visible-sm {
     display: block !important;
   }
+
   .hidden-sm {
     display: none !important;
   }
@@ -131,14 +133,17 @@
   .visible-lg {
     display: block !important;
   }
+
   .hidden-lg {
     display: none !important;
   }
 }
+
 @media print {
   .print-p-t {
     padding-top: 136px !important;
   }
+
   .global-header.fixed {
     position: absolute !important;
     top: 0 !important;

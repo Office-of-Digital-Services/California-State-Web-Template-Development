@@ -26,6 +26,7 @@
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
+
   @include border-radius($badge-border-radius);
 
   // Empty badges collapse automatically
@@ -37,11 +38,12 @@
 .label-pill {
   padding-right: $badge-pill-padding-x;
   padding-left: $badge-pill-padding-x;
+
   @include border-radius($badge-pill-border-radius);
 }
 
 // Colors
-//
+
 // Contextual variations (linked badges get darker on :hover).
 
 @each $color, $value in $theme-colors {

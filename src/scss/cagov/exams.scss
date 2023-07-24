@@ -3,7 +3,7 @@
 ----------------------------------------- */
 
 .exam-item {
-  @include card();
+  @include card;
 
   .footer {
     a.btn {
@@ -24,6 +24,6 @@
 
 .exam-detail {
   .location {
-    @include float-right();
+    @include float-right;
   }
 }

@@ -3,7 +3,6 @@
    /source/scss/colortheme/cs-navigation.scss
 ----------------------------------------- */
 
-//
 // NAVIGATION ACTIVE STYLE
 // --------------------------------------------------
 .nav-item,
@@ -13,8 +12,9 @@ nav-item-search {
     .first-level-btn,
     .first-level-link {
       color: $color-p2;
-      //border-bottom:5px solid $color-p2;
-      //margin-bottom:-5px;
+
+      // border-bottom:5px solid $color-p2;
+      // margin-bottom:-5px;
       > span[class^="ca-gov-icon"] {
         color: $gray-900;
       }
@@ -43,7 +43,6 @@ nav-item-search {
   background: $color-p2;
 }
 
-//
 // FIRST LEVEL LINKS
 // --------------------------------------------------
 
@@ -60,16 +59,19 @@ nav-item-search {
   &:focus {
     color: $gray-900;
   }
+
   // 991
   @media (max-width: $screen-sm-max) {
     &.active {
       background-color: $mobile-drawer-active !important;
       color: $white !important;
+
       &:hover,
       &:focus {
         background-color: $mobile-drawer !important;
         color: $white !important;
       }
+
       &::before,
       &::after {
         border-left: none !important;
@@ -84,7 +86,6 @@ nav-item-search {
   }
 }
 
-//
 // SECOND LEVEL LINKS
 // --------------------------------------------------
 
@@ -94,11 +95,14 @@ nav-item-search {
   [class^="ca-gov-icon-"] {
     color: $gray-700;
   }
+
   // 991px
   @media (max-width: $screen-sm-max) {
     background-color: $mobile-drawer;
+
     &.active {
       background-color: $mobile-drawer-active;
+
       &:hover,
       &:focus {
         background-color: $mobile-drawer;
@@ -192,7 +196,8 @@ nav-item-search {
       background-color: $color-p2;
     }
   }
-  /*full width navigation*/
+
+  /* full width navigation */
   .nav-full-width {
     background: $color-p2;
 
@@ -214,11 +219,13 @@ nav-item-search {
       .first-level-btn {
         background-color: $mobile-drawer-active !important;
         color: $white !important;
+
         &:hover,
         &:focus {
           background-color: $mobile-drawer !important;
           color: $white !important;
         }
+
         &::before,
         &::after {
           border-left: none !important;

@@ -26,6 +26,7 @@
   min-width: 100%;
   min-height: 100%;
   position: relative;
+
   @media (max-width: $screen-xs-max) {
     height: unset;
     padding-top: 70px;
@@ -74,7 +75,7 @@
   min-height: 100%;
   position: relative;
   color: $white;
-  padding: 1rem 0 1.5rem 0;
+  padding: 1rem 0 1.5rem;
 }
 
 .header-primary-banner {
@@ -85,12 +86,14 @@
   background-size: cover !important;
   display: block;
   position: relative;
+
   p {
     font-size: 2.9375rem;
-    color: #ffffff;
+    color: #fff;
     font-weight: 200;
     line-height: 3.675rem;
     margin-bottom: 2rem;
+
     span {
       font-weight: 600;
     }

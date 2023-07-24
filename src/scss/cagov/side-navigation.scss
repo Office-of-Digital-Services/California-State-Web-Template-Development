@@ -6,6 +6,7 @@
 .list-navigation {
   margin-left: 0;
   padding-left: 0;
+
   li {
     list-style: none;
     margin: 0;
@@ -21,37 +22,45 @@
       padding-top: 0.7rem;
       padding-left: 1rem;
       border-bottom: 1px solid $gray-100;
+
       &.landing {
         font-weight: $font-weight-7;
+
         &.active {
           background-color: $gray-75;
+
           &:hover,
           &:focus {
             background-color: $gray-100;
           }
         }
+
         &.back {
           padding-left: 1.5rem;
+
           &::after {
             content: "\e668";
             position: absolute;
-            font-family: "CaGov";
+            font-family: CaGov;
             left: 0;
             top: 0.65rem;
           }
         }
       }
+
       &.active {
         color: $gray-800;
         text-decoration: none;
         background-color: $gray-75;
+
         &:hover,
         &:focus {
           color: $black;
           text-decoration: none;
           background-color: $gray-100;
         }
-        &:before {
+
+        &::before {
           content: "";
           border-left: 3px solid;
           position: absolute;
@@ -63,26 +72,33 @@
         }
       }
     }
+
     a:hover,
     a:focus {
       text-decoration: none;
       background-color: $gray-50;
     }
+
     a:focus {
       @include outline(2px);
+
       outline-offset: -2px;
     }
 
     // second level
     ul {
       padding-left: 0;
+
       li {
         margin: 0;
+
         a {
           padding-left: 2.5rem;
+
           &.active {
             color: $gray-800;
             text-decoration: none;
+
             &:hover,
             &:focus {
               color: $black;
@@ -97,8 +113,9 @@
 
 .sidenav-mobile-btn {
   display: block;
-  padding: 0.5rem 0 0.5rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid $gray-200;
+
   .container {
     display: flex;
     justify-content: flex-end;
@@ -113,6 +130,7 @@
   position: relative;
   right: 0;
   padding-right: 2.3rem;
+
   .ca-gov-icon-caret-down {
     font-size: 2rem;
     position: absolute;
@@ -121,6 +139,7 @@
     line-height: 1rem;
     transition: all 0.3s ease;
   }
+
   &[aria-expanded="true"] {
     .ca-gov-icon-caret-down {
       transform: rotate(180deg);
@@ -142,18 +161,22 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.15s ease-out;
+
     &.visible {
       max-height: 1600px;
       transition: max-height 0.25s ease-in;
     }
+
     .side-navigation {
       display: flex;
       flex-direction: column;
-      padding: 1rem 0 1rem 0;
+      padding: 1rem 0;
+
       &.sticky-6 {
         top: 0;
         position: relative;
       }
+
       ul {
         margin-top: 0;
         margin-bottom: 0;
@@ -174,15 +197,18 @@ a.sidenav {
   color: $gray-700;
   border-bottom: 1px solid $gray-100;
   background-color: $white;
+
   &:hover,
   &:focus {
     text-decoration: none;
     background-color: $gray-50;
     color: $black;
   }
+
   &:focus {
     outline-offset: -2px;
   }
+
   &.active {
     color: $gray-700;
     text-decoration: none;
@@ -194,7 +220,8 @@ a.sidenav {
       color: $black;
       background-color: $gray-100;
     }
-    &:before {
+
+    &::before {
       content: "";
       border-left: 3px solid;
       position: absolute;
@@ -205,18 +232,22 @@ a.sidenav {
       border-radius: 0;
     }
   }
+
   &.landing {
     font-weight: $font-weight-7;
   }
+
   &.subnav {
     padding-left: 2.5rem;
   }
+
   &.back {
     padding-left: 1.5rem;
+
     &::after {
       content: "\e668";
       position: absolute;
-      font-family: "CaGov";
+      font-family: CaGov;
       left: 0;
       top: 0.65rem;
     }

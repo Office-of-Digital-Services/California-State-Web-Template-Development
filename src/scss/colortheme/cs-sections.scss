@@ -22,6 +22,7 @@
     // Overstated is same as primary // beta 5.0 addition
     @include link-variant($white, $color-s1);
     @include underline($white, $color-s1);
+
     background: $color-p2;
     color: contrast($color-p2);
 
@@ -53,8 +54,10 @@
   &-standout {
     @include link-variant($white, darken($color-s2, 15%));
     @include underline($color-s3, darken($color-s2, 15%));
+
     a:not(.btn) {
       color: $white;
+
       &:hover,
       &:focus {
         text-decoration: underline;
@@ -66,6 +69,7 @@
       $donut-background: $gray-lighter,
       $donut-halfmark: $gray-lightest
     );
+
     background: $color-p3;
     color: contrast($color-p3);
 
@@ -99,11 +103,11 @@
     // $link-color, $link-hover-color, $decoration: none, $hover-decoration: underline
     @include link-variant($color-s3, darken($color-s2, 15%));
     @include underline($color-s3, darken($color-s2, 15%));
-
     @include donut-color-variants(
       $donut-background: $gray-lighter,
       $donut-halfmark: $gray-lightest
     );
+
     background: $color-p3;
     color: contrast($color-p3);
 
@@ -130,6 +134,7 @@
         contrast($color-p3)
       );
     }
+
     // SECTION THEME BUTTON COLORS
     .btn-default {
       // better-button = color; background; border, hover-color; hover-background; hover-border
@@ -141,6 +146,7 @@
         rgba(255, 255, 255, 0.2),
         #fff
       );
+
       margin-bottom: calc($line-height-computed / 2);
 
       [class^="ca-gov-icon-"] {
@@ -153,6 +159,7 @@
   &-primary {
     @include link-variant($white, $color-s1);
     @include underline($white, $color-s1);
+
     background: $color-p2;
     color: contrast($color-p2);
 
@@ -184,6 +191,7 @@
   &-inverted {
     @include link-variant($color-s3, darken($color-s3, 7%));
     @include underline($color-s3, darken($color-s3, 7%));
+
     background: $gray-darker;
     color: #fff;
 
@@ -229,17 +237,17 @@
 
 .bg-primary {
   color: $white;
+
   @include link-variant($white, $color-s1);
   @include underline($white, $color-s1);
 }
 
 .bg-standout {
   color: $white;
+
   @include link-variant($color-s3, darken($color-s2, 15%));
   @include underline($color-s3, darken($color-s2, 15%));
 }
-
-//
 
 a.text-white:not(.btn) {
   @include link-underline($white);

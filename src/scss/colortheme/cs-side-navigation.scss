@@ -2,15 +2,18 @@
    SIDE NAVIGATION
    /source/scss/colortheme/cs-side-navigation.scss
 ----------------------------------------- */
-.side-navigation ul li a.active:before,
-.list-navigation li a.active:before {
+.side-navigation ul li a.active::before,
+.list-navigation li a.active::before {
   border-left-color: $color-p1;
 }
+
 /* MOBILE */
 .sidenav-mobile-btn {
   background-color: $color-s1;
+
   .sidenav-toggle {
     color: $color-p2;
+
     &:hover,
     &:focus {
       color: darken($color-p2, 7%);
@@ -20,29 +23,35 @@
 
 .mobile-sidenav {
   background-color: $mobile-drawer;
+
   .side-navigation ul,
   .list-navigation {
     li {
       a {
         color: $white;
         border-bottom-color: $mobile-drawer;
+
         &:hover,
         &:focus {
           color: $white;
           background-color: $mobile-drawer-active;
         }
+
         &.active {
           background-color: $mobile-drawer-active;
-          &:before {
+
+          &::before {
             color: $white;
             border-left-color: $color-p1;
           }
+
           &:hover,
           &:focus {
             color: $white;
             background-color: $mobile-drawer;
           }
         }
+
         ul li a.active::before {
           border-left-color: $color-p1;
         }
@@ -50,6 +59,7 @@
     }
   }
 }
+
 /* DESKTOP */
 @media (min-width: $screen-md-min) {
   .side-navigation ul,
@@ -57,16 +67,19 @@
     li {
       a {
         color: $gray-700;
+
         &:hover,
         &:hover {
           color: $gray-900;
         }
+
         &.active {
-          &:before {
+          &::before {
             border-left-color: $color-p1;
           }
         }
       }
+
       ul li a.active::before {
         border-left-color: $color-p1;
       }
@@ -75,12 +88,14 @@
 
   a.sidenav {
     color: $gray-700;
+
     &:hover,
     &:hover {
       color: $gray-900;
     }
+
     &.active {
-      &:before {
+      &::before {
         border-left-color: $color-p1;
       }
     }
@@ -92,6 +107,7 @@
   &.active {
     background-color: $color-p2;
     border-color: $color-p2;
+
     &:hover {
       background-color: darken($color-p2, 7%) !important;
       border-color: darken($color-p2, 7%);
@@ -116,6 +132,7 @@
       background-color: #fff !important;
       border-color: $color-p3;
       color: $color-p3 !important;
+
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
@@ -137,10 +154,12 @@
       background: darken($color-p2, 7%) !important;
       color: contrast($color-p2) !important;
     }
+
     &.active {
       background-color: #fff !important;
       border-color: $color-p2;
       color: $color-p2 !important;
+
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
@@ -161,10 +180,12 @@
       background: darken($color-p3, 7%) !important;
       color: contrast($color-p3) !important;
     }
+
     &.active {
       background-color: #fff !important;
       border-color: $color-p3;
       color: $color-p3 !important;
+
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
@@ -186,10 +207,12 @@
       background: darken($color-p2, 7%) !important;
       color: contrast($color-p2) !important;
     }
+
     &.active {
       background-color: #fff !important;
       border-color: $color-p2;
       color: $color-p2 !important;
+
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
@@ -216,6 +239,7 @@
       background-color: #fff !important;
       border-color: $color-p3;
       color: $color-p3 !important;
+
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
@@ -242,6 +266,7 @@
       background-color: #fff !important;
       border-color: $brand-danger;
       color: $brand-danger !important;
+
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
@@ -261,10 +286,12 @@
     &.open {
       background: darken($color-s1, 7%) !important;
     }
+
     &.active {
       background-color: $color-p2 !important;
       border-color: $color-p2;
       color: $white !important;
+
       &:hover,
       &:focus {
         background-color: darken($color-p2, 7%) !important;
@@ -289,6 +316,7 @@
       background-color: $color-p2 !important;
       border-color: $color-p2;
       color: $white !important;
+
       &:hover,
       &:focus {
         background-color: darken($color-p2, 7%) !important;

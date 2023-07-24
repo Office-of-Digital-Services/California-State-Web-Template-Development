@@ -20,7 +20,6 @@
   }
 }
 
-//
 // CARD STYLES
 // --------------------------------------------------
 
@@ -61,18 +60,17 @@
   @include card-variant($brand-danger, $brand-danger);
 }
 
-//
 // Inverse cards need a little extra love
 // --------------------------------------------------
 
 .card-inverse,
 .card-inverted {
   .card-header {
-    border-bottom: $card-border-width solid rgba(255, 255, 255, 0.2);
+    border-bottom: $card-border-width solid rgb(255 255 255 / 20%);
   }
 
   .card-footer {
-    border-top: $card-border-width solid rgba(255, 255, 255, 0.2);
+    border-top: $card-border-width solid rgb(255 255 255 / 20%);
   }
 }
 
@@ -163,6 +161,7 @@
   .card-body {
     background: $overstated-body-bg;
     color: $text-color;
+
     @include link-variant($link-color, $link-hover-color);
     @include underline($link-color, $link-hover-color);
   }
@@ -253,6 +252,7 @@
   .card-body {
     background: $standout-body-bg;
     color: $text-color;
+
     @include link-variant($link-color, $link-hover-color);
     @include underline($link-color, $link-hover-color);
   }
@@ -265,7 +265,7 @@
   .card-heading,
   .card-header {
     .triangle {
-      //background: url("#{$theme-directory}/panel-standout-triangle.png") no-repeat;
+      // background: url("#{$theme-directory}/panel-standout-triangle.png") no-repeat;
       @include triangle(down, 12px, $color-p3);
     }
   }

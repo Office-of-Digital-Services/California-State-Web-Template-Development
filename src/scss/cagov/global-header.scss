@@ -41,30 +41,37 @@
   padding: 0;
   background: $white;
   width: auto;
+
   .section-default {
     background-color: $white;
+
     @media (min-width: $screen-md-min) {
       border-bottom: 1px solid $gray-200;
     }
-    &:after {
+
+    &::after {
       content: "";
       border-bottom: 1px solid $gray-200;
       position: absolute;
       width: 100%;
       left: 0;
+
       @media (min-width: $screen-md-min) {
         border-bottom: none;
       }
     }
   }
+
   @media (min-width: $screen-md-min) {
     border-bottom: 1px solid $gray-200;
+
     .section-default {
-      &:after {
+      &::after {
         bottom: 55px;
         z-index: 99;
       }
     }
+
     // Hide mobile controls in desktop view
     .mobile-controls {
       display: none !important; // Javascript also uses this style to detect if page is in mobile view

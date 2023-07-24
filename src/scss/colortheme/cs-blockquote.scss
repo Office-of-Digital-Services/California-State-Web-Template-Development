@@ -5,15 +5,19 @@
 
 blockquote {
   border-color: $color-p2;
+
   &::before {
     color: $color-p2;
   }
+
   &.prominent {
     background-color: $color-p2;
     color: $white;
+
     &::before {
       color: $white;
     }
+
     p,
     footer {
       color: $white;

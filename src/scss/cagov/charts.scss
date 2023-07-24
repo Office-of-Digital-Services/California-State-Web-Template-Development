@@ -40,8 +40,9 @@
   padding-left: 10px;
   padding-right: 10px;
   position: relative;
+
   // using the defaults
-  @include donut-color-variants();
+  @include donut-color-variants;
 
   .info {
     display: block;
@@ -84,7 +85,6 @@
   }
 
   .half-gauge-chart {
-    margin: 5px 10px 0;
     height: 50%;
     width: 100%;
     margin: auto;

@@ -1,10 +1,10 @@
-@import "variables.scss";
-@import "cagov/mixins.scss";
-@import "cagov/icon-font.scss";
+@import "variables";
+@import "cagov/mixins";
+@import "cagov/icon-font";
 
 select[data-class-icon] {
   font-size: 20px;
-  font-family: "CaGov";
+  font-family: CaGov;
   speak: none;
   font-style: normal;
   font-weight: normal;

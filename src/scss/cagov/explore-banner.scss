@@ -9,15 +9,17 @@
   width: 100%;
   padding: 15px;
   background: #000;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(0 0 0 / 50%);
 
   .explore-title {
     font-family: $headings-font-family;
+
     @include font-size(1.7);
   }
 
   [class^="ca-gov-icon-"] {
     display: block;
+
     @include font-size(3);
   }
 

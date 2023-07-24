@@ -4,7 +4,7 @@
 ----------------------------------------- */
 
 .utility-header {
-  //beta 5.0 addition
+  // beta 5.0 addition
   background: $color-p2;
   color: contrast($color-p2);
 }
@@ -13,17 +13,19 @@
 @media (max-width: $screen-xs-max) {
   .nav-full-width-icons .settings-links .utility-links a,
   .nav-full-width-icons .settings-links .utility-links button {
-    border: 1px solid $color-p2; //primary color
-    color: $color-p2; //primary color
+    border: 1px solid $color-p2; // primary color
+    color: $color-p2; // primary color
   }
 }
+
 .global-header {
   /* Default header pattern */
-  //background: $body-bg url("#{$theme-directory}/header-background.jpg") no-repeat 40% 40%;
+  // background: $body-bg url("#{$theme-directory}/header-background.jpg") no-repeat 40% 40%;
+
   /* Small screen gets solid color */
   @media (max-width: $screen-xs-max) {
-    //background: $color-p3;              // Fallback color
-    //.rgba ($color-p3, .85);             // rgba function
-    //background: $rgba;                  // rgba value for modern browsers
+    // background: $color-p3;              // Fallback color
+    // .rgba ($color-p3, .85);             // rgba function
+    // background: $rgba;                  // rgba value for modern browsers
   }
 }

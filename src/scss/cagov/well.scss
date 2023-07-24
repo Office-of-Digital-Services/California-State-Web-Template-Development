@@ -7,17 +7,20 @@
   padding: calc($grid-gutter-width / 2);
   margin-bottom: calc($grid-gutter-width / 2);
   position: relative;
-  @include clearfix();
+
+  @include clearfix;
 
   .header {
-    @include clearfix();
+    @include clearfix;
+
     margin-bottom: 0;
 
     .title {
       float: left;
       margin-right: calc($grid-gutter-width / 2);
+
       @include font-size(1.5);
-      @include font-condensed();
+      @include font-condensed;
     }
 
     .filing-date {
@@ -32,13 +35,16 @@
 
   .footer {
     position: relative; // used in cases where footer has a published date
-    @include clearfix();
+
+    @include clearfix;
+
     clear: both;
 
     a.btn {
       float: right;
       margin-top: calc($line-height-computed / 2);
-      @include btn-xs();
+
+      @include btn-xs;
 
       @media (max-width: $screen-md-min) {
         float: left; // Float the button left $991 and below
@@ -48,7 +54,8 @@
     .published {
       float: left;
       margin-top: 10px;
-      @include published();
+
+      @include published;
     }
   }
 

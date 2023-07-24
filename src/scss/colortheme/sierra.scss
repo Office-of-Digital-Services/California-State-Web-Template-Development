@@ -2,7 +2,6 @@
    SIERRA
 ----------------------------------------- */
 
-//
 // VARIABLES
 // --------------------------------------------------
 
@@ -11,7 +10,7 @@ $theme-directory: "#{$template-path}/sierra"; // Folder where assets for theme a
 
 // Primary Theme colors
 $color-p1: #fbad23; // Gold
-$color-p2: #447766; // Medium green
+$color-p2: #476; // Medium green
 $color-p3: #194949; // Dark green
 
 // Secondary Theme colors
@@ -44,7 +43,6 @@ $mobile-controls: $gray-600; // Mobile controls
 $footer-txt: #fff; // Color of text and links in the footer
 
 $panel-border: #ddd;
-
 $overstated-header-bg: $color-p2; // Background for panel header
 $overstated-header-txt: #fff; // Panel header text color
 $overstated-header-icon: #fff; // Panel header icon color
@@ -90,7 +88,7 @@ $sub-nav-media-bg: transparent;
 
 // SEARCH
 $expanded-background-color: $gray-lighter;
-$text-field-color: rgba(255, 255, 255, 0.8); // 80% white
+$text-field-color: rgb(255 255 255 / 80%); // 80% white
 
 // UTILITY
 $utility-link-hover-color: lighten($color-p1, 35%);

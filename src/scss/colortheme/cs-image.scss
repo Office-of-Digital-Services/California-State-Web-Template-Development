@@ -27,7 +27,7 @@
 
   &-standout,
   &-impact {
-    //@include image-thumbnail($color-s2; $color-s2);
+    // @include image-thumbnail($color-s2; $color-s2);
     @include image-thumbnail(tint($color-p3, 40%), darken($color-p3, 8%));
   }
 

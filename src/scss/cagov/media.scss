@@ -3,7 +3,6 @@
    /source/scss/cagov/media.scss
 ----------------------------------------- */
 
-//
 // Figures and Captions
 // --------------------------------------------------
 
@@ -18,39 +17,42 @@ figure {
 
 figcaption {
   @include font-size(0.8);
+
   padding: 10px;
 }
 
-//
 // Generic image floating tags for use in content display
 // --------------------------------------------------
 
 .img-left {
-  @include float-left();
+  @include float-left;
+
   margin-right: calc($grid-gutter-width / 2);
   margin-top: 4px; // Aligns image with top of text
 }
 
 .img-right {
-  @include float-right();
+  @include float-right;
+
   margin-left: calc($grid-gutter-width / 2);
   margin-top: 4px; // Aligns image with top of text
 }
+
 // old bootstrap 3 classes
 .img-circle {
   border-radius: 50%;
 }
+
 .img-rounded {
   border-radius: 5px;
 }
 
-//
 // Extension for media object
 // --------------------------------------------------
 
 .media {
   .media-top {
-    @include text-center();
+    @include text-center;
 
     img,
     span {
@@ -60,13 +62,13 @@ figcaption {
   }
 }
 
-//
 // Responsive image overide
 // Inline block allows images to be centered using text-align
 // --------------------------------------------------
 
 .img-responsive {
   @include img-fluid;
+
   display: inline-block;
 }
 
