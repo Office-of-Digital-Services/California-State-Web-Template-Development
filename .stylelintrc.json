@@ -1,6 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/stylelintrc",
-  "extends": ["stylelint-config-standard-scss"],
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-prettier-scss"
+  ],
   "rules": {
     "property-no-vendor-prefix": null,
     "number-max-precision": 5

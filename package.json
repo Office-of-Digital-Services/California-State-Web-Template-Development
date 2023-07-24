@@ -49,7 +49,8 @@
     "build:sass-trinity-min": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/ca_state_template/css/colortheme-trinity.min.css --style compressed",
     "start": "run-p watch:*",
     "build": "run-p build:*",
-    "GIT cleanup": "git clean -fd"
+    "GIT cleanup": "git clean -fd",
+    "stylelint-scss-check": "stylelint-config-prettier-scss-check"
   },
   "private": true,
   "type": "commonjs",
@@ -66,6 +67,8 @@
     "eslint-config-prettier": "^8.8.0",
     "prettier": "2.8.3",
     "stylelint": "^15.10.2",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-recommended": "^13.0.0",
     "stylelint-config-standard-scss": "^10.0.0"
   }
 }
