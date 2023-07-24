@@ -78,6 +78,7 @@ $search-input-border-width: 3px;
       opacity: 1;
     }
 
+    /* stylelint-disable-next-line selector-pseudo-element-no-unknown */
     &::input-placeholder {
       color: $black;
     }
