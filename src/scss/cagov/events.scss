@@ -35,12 +35,10 @@
 
     @include font-size(1.2);
   }
-}
 
-// EVENT LIST WITH THUMBNAIL
-// --------------------------------------------------
+  // EVENT LIST WITH THUMBNAIL
+  // --------------------------------------------------
 
-.event-item {
   &::after {
     display: block;
     clear: both;
