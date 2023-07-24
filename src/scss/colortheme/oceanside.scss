@@ -1,3 +1,5 @@
+@use "sass:color";
+
 /* -----------------------------------------
    OCEANSIDE
 ----------------------------------------- */
@@ -89,9 +91,6 @@ $sub-nav-media-bg: transparent;
 // SEARCH
 $expanded-background-color: $gray-lighter;
 $text-field-color: rgb(255 255 255 / 80%); // 80% white
-
-// UTILITY
-$utility-link-hover-color: lighten($color-p1, 35%);
 
 // MOBILE DRAWER BACKGROUND
 $mobile-drawer: darken($color-p2, 7%);

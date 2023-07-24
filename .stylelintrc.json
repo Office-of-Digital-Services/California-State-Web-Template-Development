@@ -13,7 +13,6 @@
         "ignoreFontFamilies": ["CaGov"]
       }
     ],
-    "scss/no-global-function-names": null,
     "no-descending-specificity": null,
     "selector-class-pattern": null,
     "selector-id-pattern": null,
