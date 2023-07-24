@@ -19,7 +19,6 @@
   }
 
   li::before {
-    content: "";
     font-size: 1.625rem;
     font-weight: 700;
     padding: 0 12px;
@@ -31,6 +30,8 @@
     left: -27px;
     top: -3px;
     margin-left: -1px;
+    counter-increment: step-list-count;
+    content: counter(step-list-count);
   }
 
   li span.has-black-color,
@@ -45,11 +46,6 @@
   li:first-child::before {
     padding: 0 14px;
     margin-left: -1px;
-  }
-
-  li::before {
-    counter-increment: step-list-count;
-    content: counter(step-list-count);
   }
 
   li:nth-child(n + 10)::before {
