@@ -217,6 +217,21 @@ input[type="search"].search-textfield {
       display: none;
     }
   }
+
+  div.gsc-clear-button {
+    width: 40px;
+
+    &::before {
+      content: "\4d";
+      font-family: cagov;
+      font-size: 2rem;
+      width: 100%;
+      color: $gray-lighter;
+      display: block;
+      margin-top: 12px;
+      margin-left: 2px;
+    }
+  }
 }
 
 #local_form {
@@ -336,15 +351,6 @@ input[type="search"].search-textfield {
       -webkit-transition: border $search-ft;
       transition: border $search-ft;
     }
-  }
-}
-
-.search-container.featured-search {
-  // 991px
-  @media (max-width: $screen-sm-max) {
-    padding-right: 1rem;
-    padding-left: 1rem;
-    max-height: 100%;
   }
 }
 
@@ -511,20 +517,14 @@ input[type="search"].search-textfield {
   }
 }
 
-.featured-search {
-  .textfield-container {
-    padding-right: 60px; // Creates blank space to left of search for submit button
-    margin-right: -60px; // Reverses space created for button and prevents line break
-  }
-}
-
-.featured-search.active {
-  .search-locator {
-    display: block;
-  }
-}
-
 .search-container.featured-search {
+  // 991px
+  @media (max-width: $screen-sm-max) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    max-height: 100%;
+  }
+
   background: none; // fallback color
   // Darken the search container on hover
   &:hover,
@@ -630,6 +630,18 @@ button.gsc-search-button {
 }
 
 .featured-search {
+  div.gsc-clear-button {
+    width: 0; // removes right space from featured search box
+    &::before {
+      display: none;
+    }
+  }
+
+  .textfield-container {
+    padding-right: 60px; // Creates blank space to left of search for submit button
+    margin-right: -60px; // Reverses space created for button and prevents line break
+  }
+
   .container {
     padding: 0 !important;
 
@@ -647,6 +659,10 @@ button.gsc-search-button {
 }
 
 .featured-search.active {
+  .search-locator {
+    display: block;
+  }
+
   .container {
     #Search {
       .gsc-search-button {
@@ -757,32 +773,6 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
   position: relative;
   top: 0;
   right: 49px;
-}
-
-.search-container.active {
-  div.gsc-clear-button {
-    width: 40px;
-
-    &::before {
-      content: "\4d";
-      font-family: cagov;
-      font-size: 2rem;
-      width: 100%;
-      color: $gray-lighter;
-      display: block;
-      margin-top: 12px;
-      margin-left: 2px;
-    }
-  }
-}
-
-.featured-search {
-  div.gsc-clear-button {
-    width: 0; // removes right space from featured search box
-    &::before {
-      display: none;
-    }
-  }
 }
 
 .search-results-header .gsc-control-searchbox-only {
