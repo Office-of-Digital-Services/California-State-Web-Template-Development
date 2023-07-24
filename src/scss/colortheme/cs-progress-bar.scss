@@ -31,10 +31,6 @@
   @include progress-bar-variant($color-a1);
 }
 
-.progress-bar-accent1 {
-  @include progress-bar-variant($color-a1);
-}
-
 .progress-bar-accent2 {
   @include progress-bar-variant($color-a2);
 }
