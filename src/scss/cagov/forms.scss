@@ -48,6 +48,10 @@ label {
   color: $brand-danger;
 }
 
+.form-group {
+  margin-bottom: 1rem;
+}
+
 // Idea for making inline forms appear to follow the grid.
 // Requires adding a group/row class outside of form for negative margins
 .form-inline-columns {
@@ -321,10 +325,6 @@ select:focus {
 /* bootstrap 4.4.1 adjustments */
 .input-group > .form-control {
   flex: 1 1 0% !important;
-}
-
-.form-group {
-  margin-bottom: 1rem;
 }
 
 .invalid-feedback {
