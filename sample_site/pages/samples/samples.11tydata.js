@@ -2,6 +2,7 @@ module.exports = {
   eleventyComputed: {
     layout: "sample.njk",
     tags: "sample",
+    landing: "Samples",
     permalink: data =>
       `/samples/${
         /** @type {import("@11ty/eleventy/src/Template")} */ (data.page)
