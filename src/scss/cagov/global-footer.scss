@@ -25,15 +25,6 @@
     }
   }
 
-  .socialsharer-container {
-    padding-left: 0;
-    margin-top: 1rem;
-
-    li {
-      display: inline-block;
-    }
-  }
-
   ul {
     list-style: none;
     margin: 5px 0;
@@ -49,6 +40,15 @@
       &:not(:last-child) {
         margin-right: 5px;
       }
+    }
+  }
+
+  .socialsharer-container {
+    padding-left: 0;
+    margin-top: 1rem;
+
+    li {
+      display: inline-block;
     }
   }
 
