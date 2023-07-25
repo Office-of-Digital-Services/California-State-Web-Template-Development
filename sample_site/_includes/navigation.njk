@@ -4,26 +4,38 @@
   aria-label="Main navigation">
   <ul id="nav_list" class="top-level-nav">
     <li class="nav-item">
-      <a class="first-level-link" href="/index.html">Home</a>
+      <a
+        class="first-level-link {{- ' active' if landing === 'Home' }}"
+        href="/index.html"
+        >Home</a
+      >
     </li>
     <li class="nav-item">
-      <a class="first-level-link" href="/components-patterns.html"
+      <a
+        class="first-level-link {{- ' active' if landing === 'Components' }}"
+        href="/components-patterns.html"
         >Components and patterns</a
       >
     </li>
     <li class="nav-item">
       <a
-        class="first-level-link"
+        class="first-level-link {{- ' active' if landing === 'Samples' }}"
         href="{{(collections.all | allSamples)[0].url}}"
         >Samples</a
       >
     </li>
     <li class="nav-item">
-      <a class="first-level-link" href="/top-task-1/index.html">Top task 1</a>
+      <a
+        class="first-level-link {{- ' active' if landing === 'Top task1' }}"
+        href="/top-task-1/index.html"
+        >Top task 1</a
+      >
     </li>
 
-    <li class="nav-item" role="presentation">
-      <a href="/top-task-2/index.html" class="first-level-link">Top task 2</a>
+    <li
+      class="nav-item {{- ' active' if landing === 'Top task2' }}"
+      role="presentation">
+      <a class="first-level-link">Top task 2</a>
       <div class="sub-nav">
         <ul class="second-level-nav">
           <li class="unit1">
@@ -37,7 +49,9 @@
             >
           </li>
           <li class="unit1">
-            <a href="/index.html" class="second-level-link">Content 2</a>
+            <a href="/top-task-2/content-page-2.html" class="second-level-link"
+              >Content 2</a
+            >
           </li>
         </ul>
       </div>

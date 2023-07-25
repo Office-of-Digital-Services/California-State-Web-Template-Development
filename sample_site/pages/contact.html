@@ -1,29 +1,29 @@
 ---
-layout: base.njk
+layout: home.njk
 permalink: /contact.html
 title: Contact us
 ---
 
-<div id="main-content" class="main-content">
-  <div class="bg-grey-lightest">
-    <div class="container">
-      <nav aria-label="You are here" class="breadcrumbs">
-        <ol>
-          <li>
-            <a href="/index.html" title="Home page">Home</a>
-          </li>
-          <li>
-            <a href="/index.html" title="Home page">About</a>
-          </li>
-          <li>Contact us</li>
-        </ol>
-      </nav>
-      <h1 class="m-t-0 p-b-lg">Contact us</h1>
-    </div>
+<div class="bg-grey-lightest">
+  <div class="container">
+    <nav aria-label="You are here" class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/index.html" title="Home page">Home</a>
+        </li>
+        <li>
+          <a href="/about.html" title="Home page">About</a>
+        </li>
+        <li>Contact us</li>
+      </ol>
+    </nav>
+    <h1 class="m-t-0 p-b-lg">Contact us</h1>
   </div>
+</div>
 
-  <div class="container p-t-md">
-    <main class="main-primary" id="main">
+<div class="container p-t-md">
+  <div class="row">
+    <div class="col-lg-9 mx-auto">
       <p class="lead">
         Have a question or need to send us something? Here are the different
         ways you can contact us
@@ -34,7 +34,7 @@ title: Contact us
 
       For more information see https://template.webstandards.ca.gov/components/page-navigation.html#Sample
       -->
-      <nav class="page-navigation"></nav>
+      <nav class="page-navigation m-t-lg"></nav>
 
       <h2>Online</h2>
 
@@ -48,9 +48,9 @@ title: Contact us
         class="form-control"
         id="InputNameRequired"
         placeholder="Your name" />
-      <div class="invalid-feedback d-block">This field is required</div>
+      <div class="invalid-feedback d-none">This field is required</div>
 
-      <label class="form-control-label p-t-md" for="InputEmailRequired">
+      <label class="form-control-label p-t-lg" for="InputEmailRequired">
         <span class="required-label">*</span>
         <span class="sr-only">Required field:</span>
         Email
@@ -60,9 +60,9 @@ title: Contact us
         class="form-control"
         id="InputEmailRequired"
         placeholder="Email" />
-      <div class="invalid-feedback d-block">This field is required</div>
+      <div class="invalid-feedback d-none">This field is required</div>
 
-      <label class="form-control-label p-t-md" for="InputAgency">Agency</label>
+      <label class="form-control-label  p-t-lg" for="InputAgency">Agency</label>
       <input
         type="text"
         class="form-control"
@@ -70,7 +70,7 @@ title: Contact us
         placeholder="Agency" />
       <div class="feedback text-muted"></div>
 
-      <label for="Select" class="mb-1 p-t-md">Why you are contacting us</label>
+      <label for="Select" class="mb-1  p-t-lg">Why you are contacting us</label>
       <select
         class="form-select form-select-lg mb-3"
         aria-label=".form-select-lg example"
@@ -82,7 +82,7 @@ title: Contact us
       </select>
 
       <label
-        class="form-control-label p-t-md"
+        class="form-control-label  p-t-lg"
         for="exampleInputCommentRequired">
         <span class="required-label">*</span>
         <span class="sr-only">Required field:</span>
@@ -93,7 +93,7 @@ title: Contact us
         class="form-control"
         rows="5"
         cols="80"></textarea>
-      <div class="invalid-feedback d-block">This field is required</div>
+      <div class="invalid-feedback d-none">This field is required</div>
 
       <h2>Phone</h2>
 
@@ -124,6 +124,6 @@ title: Contact us
           <p>Address line 1<br />Address line 2<br />City, State #####-####</p>
         </div>
       </div>
-    </main>
+    </div>
   </div>
 </div>
