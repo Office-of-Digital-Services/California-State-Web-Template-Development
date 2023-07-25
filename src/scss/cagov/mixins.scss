@@ -208,8 +208,8 @@
     color: $link-color;
     text-decoration: $decoration;
 
-    //-webkit-transition: all 0.25s;
-    //transition:all 0.25s;
+    // -webkit-transition: all 0.25s;
+    // transition:all 0.25s;
     &:hover,
     &:focus {
       color: $link-hover-color;
@@ -622,10 +622,6 @@
 @mixin table-striped {
   &.table-default {
     border: none;
-  }
-
-  &.table-default {
-    border: none;
 
     // Table Body
     > thead,
@@ -949,9 +945,6 @@
 // For selecting text on the page
 
 @mixin user-select($select) {
-  -webkit-user-select: $select;
-  -moz-user-select: $select;
-  -ms-user-select: $select; // IE10+
   user-select: $select;
 }
 

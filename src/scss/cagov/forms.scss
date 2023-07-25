@@ -40,8 +40,6 @@ label {
 
 // removeing default arrow on custom select input
 .custom-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 }
 
@@ -69,7 +67,7 @@ label {
     flex-direction: column;
     justify-content: center;
     -moz-box-flex: 1;
-    -webkit-flex: 1;
+    flex: 1;
     flex: 1 1 auto;
   }
 }
@@ -179,16 +177,12 @@ label {
     position: absolute;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 
     &::before {
       content: attr(data-uncheck-icon);
       left: 50%;
       position: absolute;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
   }
@@ -212,8 +206,6 @@ label {
     left: 50%;
     position: absolute;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 100%;
 
@@ -222,8 +214,6 @@ label {
       left: 50%;
       top: 50%;
       position: absolute;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
     }
   }
@@ -255,8 +245,6 @@ input[type="radio"]:checked + * i {
     height: 40px;
     border: 0;
     width: 100%;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     padding-left: 10px;
   }

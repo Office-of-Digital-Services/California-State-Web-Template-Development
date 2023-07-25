@@ -112,21 +112,10 @@
     background: white;
     color: $black;
   }
-}
 
-.header-cagov-logo svg {
-  left: 27px;
-  height: 1.7rem;
+  // FLEX UTILITY
+  // --------------------------------------------------
 
-  @media (max-width: $screen-md-max) {
-    left: 5px;
-  }
-}
-
-//
-// FLEX UTILITY
-// --------------------------------------------------
-.utility-header {
   .flex-row {
     display: flex;
 
@@ -200,6 +189,15 @@
         }
       }
     }
+  }
+}
+
+.header-cagov-logo svg {
+  left: 27px;
+  height: 1.7rem;
+
+  @media (max-width: $screen-md-max) {
+    left: 5px;
   }
 }
 

@@ -164,7 +164,7 @@
 .panel-standout.highlight {
   .panel-heading {
     .triangle {
-      //background: url("#{$theme-directory}/panel-standout-triangle.png") no-repeat;
+      // background: url("#{$theme-directory}/panel-standout-triangle.png") no-repeat;
       @include triangle(down, 12px, $color-p1);
     }
   }

@@ -57,16 +57,13 @@ cagov-accordion details {
       top: 0.4rem;
       width: 0;
       height: 0;
-      transition-property: transform;
-      transition: transform 0.2s;
 
       &::before {
         font-family: CaGov;
         content: "5";
         position: absolute;
         font-size: 1.6rem;
-        transition-property: transform, left;
-        transition: transform 0.2s, 0.2s;
+        transition: transform 0.2s;
       }
     }
 
