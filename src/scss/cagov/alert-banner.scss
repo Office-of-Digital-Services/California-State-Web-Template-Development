@@ -16,6 +16,10 @@
     top: 5px;
   }
 
+  .alert-text {
+    position: relative;
+  }
+
   .alert-icon ~ .alert-text {
     margin-left: 2.5rem;
   }
@@ -50,10 +54,6 @@
     content: " ";
     display: table;
     clear: both;
-  }
-
-  .alert-text {
-    position: relative;
   }
 
   .btn {
