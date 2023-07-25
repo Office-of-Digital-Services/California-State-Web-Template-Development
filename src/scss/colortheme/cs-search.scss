@@ -37,6 +37,10 @@
       background-color: $white;
       border-color: $white;
 
+      .ca-gov-icon-search {
+        color: $gray-700;
+      }
+
       // border-left-color: $gray-700;
       &:hover,
       &:focus {
@@ -46,10 +50,6 @@
         .ca-gov-icon-search {
           color: $gray-900;
         }
-      }
-
-      .ca-gov-icon-search {
-        color: $gray-700;
       }
     }
   }
