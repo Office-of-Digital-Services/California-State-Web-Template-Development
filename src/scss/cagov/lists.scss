@@ -9,6 +9,10 @@
   padding: 0;
 }
 
+.accordion-list a {
+  cursor: pointer;
+}
+
 /* Adding the explicit classes below so that they are available in Rich Text Editor */
 
 ul.list-overstated {
@@ -51,43 +55,6 @@ ul.list-overstated {
   }
 }
 
-.list-standout {
-  $size: 1.5em; // reusable variable for .list-standout
-
-  padding: 0;
-  padding-left: 1.5em;
-  margin: 12px 0 10px;
-  line-height: 1.5;
-
-  ul li::before {
-    content: none;
-  }
-
-  ul.list-standout li::before {
-    content: "\35";
-  }
-
-  li {
-    padding-left: $size;
-    margin: 10px 0;
-
-    &::before {
-      content: "\35"; // ca-gov-icon-caret-right
-      font-family: CaGov;
-      width: $size;
-      margin-left: -$size;
-      vertical-align: sub;
-      font-size: $size;
-      font-weight: 900;
-      display: inline-block;
-    }
-
-    &.open::before {
-      content: "\33"; // .ca-gov-icon-caret-down
-    }
-  }
-}
-
 .list-primary {
   $size: 1.5em; // reusable variable for .list-standout
 
@@ -114,8 +81,41 @@ ul.list-overstated {
   }
 }
 
-.accordion-list a {
-  cursor: pointer;
+.list-standout {
+  $size: 1.5em; // reusable variable for .list-standout
+
+  padding: 0;
+  padding-left: 1.5em;
+  margin: 12px 0 10px;
+  line-height: 1.5;
+
+  li {
+    padding-left: $size;
+    margin: 10px 0;
+
+    &::before {
+      content: "\35"; // ca-gov-icon-caret-right
+      font-family: CaGov;
+      width: $size;
+      margin-left: -$size;
+      vertical-align: sub;
+      font-size: $size;
+      font-weight: 900;
+      display: inline-block;
+    }
+
+    &.open::before {
+      content: "\33"; // .ca-gov-icon-caret-down
+    }
+  }
+
+  ul li::before {
+    content: none;
+  }
+
+  ul.list-standout li::before {
+    content: "\35";
+  }
 }
 
 .list-divided {
