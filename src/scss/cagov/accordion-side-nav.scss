@@ -60,6 +60,64 @@
   }
 }
 
+.side-subnav {
+  padding-left: 0;
+
+  li {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    font-size: 1.125rem;
+
+    a {
+      position: relative;
+      display: block;
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      padding-left: 2.5rem;
+      text-decoration: none !important;
+      border-bottom: 1px solid $gray-100;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $black;
+        background-color: $gray-50;
+      }
+
+      &:focus {
+        @include outline(2px);
+
+        outline-offset: -2px;
+      }
+
+      &.active {
+        color: $gray-700;
+        text-decoration: none;
+        background-color: $gray-75;
+
+        &::before {
+          content: "";
+          border-left: 3px solid;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 3px;
+          height: 100%;
+          border-radius: 0;
+        }
+
+        &:hover,
+        &:focus {
+          color: $black;
+          text-decoration: none;
+          background-color: $gray-100;
+        }
+      }
+    }
+  }
+}
+
 // DS VERSION
 cagov-accordion.sidenav {
   details {
@@ -171,64 +229,6 @@ cagov-accordion.sidenav {
           &:last-child {
             margin-bottom: 0;
           }
-        }
-      }
-    }
-  }
-}
-
-.side-subnav {
-  padding-left: 0;
-
-  li {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-    font-size: 1.125rem;
-
-    a {
-      position: relative;
-      display: block;
-      padding-top: 0.7rem;
-      padding-bottom: 0.7rem;
-      padding-left: 2.5rem;
-      text-decoration: none !important;
-      border-bottom: 1px solid $gray-100;
-
-      &:hover,
-      &:focus {
-        text-decoration: none;
-        color: $black;
-        background-color: $gray-50;
-      }
-
-      &:focus {
-        @include outline(2px);
-
-        outline-offset: -2px;
-      }
-
-      &.active {
-        color: $gray-700;
-        text-decoration: none;
-        background-color: $gray-75;
-
-        &::before {
-          content: "";
-          border-left: 3px solid;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 3px;
-          height: 100%;
-          border-radius: 0;
-        }
-
-        &:hover,
-        &:focus {
-          color: $black;
-          text-decoration: none;
-          background-color: $gray-100;
         }
       }
     }
