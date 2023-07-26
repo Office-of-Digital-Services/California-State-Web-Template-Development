@@ -53,7 +53,6 @@
       color: black;
       background-image: none;
       display: inline-block;
-      min-width: 100%;
 
       &:focus {
         @include outline(2px);
@@ -115,6 +114,11 @@
         @media (max-width: $screen-sm-max) {
           min-height: auto;
         }
+      }
+
+      // MOBILE 992px
+      @media (max-width: $screen-sm-max) {
+        min-width: 100%;
       }
     }
   }
