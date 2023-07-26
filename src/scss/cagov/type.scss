@@ -183,12 +183,6 @@ a {
   }
 }
 
-/* Solution for links that are behind fixed Header */
-#main-content a,
-#main-content button {
-  scroll-margin-top: 140px !important;
-}
-
 .featured-narrative {
   border-bottom: 1px solid #d6d6d6;
   border-top: 1px solid #d6d6d6;
@@ -251,15 +245,6 @@ p {
 
   @include media-breakpoint-up(sm) {
     font-size: calc(0.9rem + #{$ratio});
-  }
-}
-
-.ie9 p {
-  + h1,
-  + h2,
-  + h3,
-  + h4 {
-    padding-top: 10px; // Add top padding back into ie9's headers
   }
 }
 
@@ -377,6 +362,15 @@ h6,
   font-family: $headings-font-family;
 }
 
+.ie9 p {
+  + h1,
+  + h2,
+  + h3,
+  + h4 {
+    padding-top: 10px; // Add top padding back into ie9's headers
+  }
+}
+
 .subtitle {
   font-size: $font-size-large;
   margin-bottom: 3rem;
@@ -430,29 +424,71 @@ code {
   @include underline($link-color, $link-hover-color);
 }
 
+/* external link */
+
+/* External link icon */
+.external-link-icon {
+  display: inline-block;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: "\e9ed";
+    font-family: CaGov !important;
+    font-size: 75%;
+    margin-left: 3px;
+  }
+}
+
+/* external link exeptions */
+img ~,
+svg ~,
+.cagov-card,
+.wp-block-button__link,
+*[class*="ca-gov-icon-"],
+[class*="ca-gov-icon-"] ~,
+.pdf-link-icon ~,
+.footer-social-links a {
+  .external-link-icon {
+    display: none;
+  }
+}
+
+.icon-abs-right .external-link-icon {
+  position: absolute;
+  right: 1.5rem;
+}
+
 // UNDELINE EXEPTIONS
+.panel-heading a,
+.social a,
+.socialsharer-container a,
+.thumbnail a,
+.explore-invite a,
+.service-tile-content .panel-heading a,
+.accordion .panel-heading a,
 .tab-group .nav-tabs li > a,
 .main-content .btn,
 .panel-title,
-.panel-heading a,
 .btn-more,
 .accordion .panel-heading .panel-title a,
 .panel-group .panel-heading .panel-title a,
 .service-tile-content .panel-heading .panel-title a,
-.service-tile-content .panel-heading a,
-.accordion .panel-heading a,
 .icon-link,
-.social a,
 .main-content a[role="button"],
 .main-content a[role="tab"],
 .gallery-item,
 .news-link,
-.news-icon,
-.socialsharer-container a,
-.thumbnail a,
-.explore-invite a {
+.news-icon {
   text-decoration: none !important;
   background-image: none !important;
+}
+
+/* Solution for links that are behind fixed Header */
+#main-content a,
+#main-content button {
+  scroll-margin-top: 140px !important;
 }
 
 .no-underline {
@@ -495,40 +531,4 @@ a.list-group-item {
   white-space: nowrap;
   vertical-align: baseline;
   background-color: $gray-100;
-}
-
-/* external link */
-
-/* External link icon */
-.external-link-icon {
-  display: inline-block;
-  padding: 0;
-  position: relative;
-  text-decoration: none;
-
-  &::after {
-    content: "\e9ed";
-    font-family: CaGov !important;
-    font-size: 75%;
-    margin-left: 3px;
-  }
-}
-
-.icon-abs-right .external-link-icon {
-  position: absolute;
-  right: 1.5rem;
-}
-
-/* external link exeptions */
-.cagov-card,
-.wp-block-button__link,
-.footer-social-links a,
-img ~,
-svg ~,
-*[class*="ca-gov-icon-"],
-[class*="ca-gov-icon-"] ~,
-.pdf-link-icon ~ {
-  .external-link-icon {
-    display: none;
-  }
 }
