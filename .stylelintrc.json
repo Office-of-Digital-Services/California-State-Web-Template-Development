@@ -6,6 +6,7 @@
     "stylelint-config-prettier-scss"
   ],
   "rules": {
+    "no-descending-specificity": [true, { "ignore": "selectors-within-list" }],
     "number-max-precision": 5,
     "font-family-no-missing-generic-family-keyword": [
       true,
