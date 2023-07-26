@@ -106,6 +106,16 @@
   // SET UP PANEL FOR BACKGROUND IMAGES
   // --------------------------------------------------
 
+  .photo {
+    background-position: 50% 50%; // set the photo to the center
+    background-size: cover; // Allows background fill the available space
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 25%;
+  }
+
   &.photo-left,
   &.photo-right {
     position: relative;
@@ -132,16 +142,6 @@
     .photo {
       right: 0;
     }
-  }
-
-  .photo {
-    background-position: 50% 50%; // set the photo to the center
-    background-size: cover; // Allows background fill the available space
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    width: 25%;
   }
 
   // Remove .photo-left and .photo-right background images for mobile
