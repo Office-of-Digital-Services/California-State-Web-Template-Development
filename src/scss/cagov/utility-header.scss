@@ -119,6 +119,31 @@
   .flex-row {
     display: flex;
 
+    .settings-links {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: auto; // justify to the right
+      align-items: center; // make items vertically centered
+      justify-content: flex-end;
+      min-height: 38px;
+
+      a {
+        margin: 0 10px;
+        font-size: 0.95rem;
+      }
+
+      button {
+        margin: 0;
+        padding-right: 0;
+        font-size: 0.95rem;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+
     .social-media-links {
       a {
         margin: 0 10px;
@@ -129,10 +154,11 @@
       justify-content: flex-start;
       min-height: 38px;
       align-items: center; // make items vertically centered
+
       .header-cagov-logo {
         margin-right: 0.5rem;
 
-        // DEPRICATED - no longer need (img) because of .ca-gov-logo-svg
+        // DEPRICATED 6.2.0 - no longer need (img) because of .ca-gov-logo-svg
         img {
           left: 0;
           height: 24px;
@@ -161,31 +187,6 @@
           .desktop-only {
             display: none;
           }
-        }
-      }
-    }
-
-    .settings-links {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: auto; // justify to the right
-      align-items: center; // make items vertically centered
-      justify-content: flex-end;
-      min-height: 38px;
-
-      a {
-        margin: 0 10px;
-        font-size: 0.95rem;
-      }
-
-      button {
-        margin: 0;
-        padding-right: 0;
-        font-size: 0.95rem;
-
-        &:hover,
-        &:focus {
-          text-decoration: none;
         }
       }
     }
