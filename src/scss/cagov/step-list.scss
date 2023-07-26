@@ -7,18 +7,7 @@
   margin-left: 1.5rem !important;
   counter-reset: step-list-count;
 
-  li {
-    list-style: none;
-    border-left: 5px solid;
-    font-size: 1.75rem;
-    font-weight: $font-weight-7;
-    position: relative;
-    padding-left: 45px;
-    line-height: $font-lineheight-3;
-    margin-bottom: 0;
-  }
-
-  li::before {
+  > li::before {
     font-size: 1.625rem;
     font-weight: 700;
     padding: 0 12px;
@@ -34,8 +23,19 @@
     content: counter(step-list-count);
   }
 
-  li span.has-black-color,
-  li .cagov-step-list-content {
+  > li {
+    list-style: none;
+    border-left: 5px solid;
+    font-size: 1.75rem;
+    font-weight: $font-weight-7;
+    position: relative;
+    padding-left: 45px;
+    line-height: $font-lineheight-3;
+    margin-bottom: 0;
+  }
+
+  > li span.has-black-color,
+  > li .cagov-step-list-content {
     margin-top: 1rem;
     padding-bottom: 1.75rem;
     font-size: calc($font-size-regular + $ratio);
@@ -43,59 +43,47 @@
     display: block;
   }
 
-  li:first-child::before {
+  > li:first-child::before {
     padding: 0 14px;
     margin-left: -1px;
   }
 
-  li:nth-child(n + 10)::before {
+  > li:nth-child(n + 10)::before {
     padding: 0 7px;
   }
 
-  li:nth-child(n + 20)::before {
+  > li:nth-child(n + 20)::before {
     padding: 0 5px;
   }
 
-  li:last-child {
+  // Don't draw the last line
+  > li:last-child {
     border-left: none;
   }
 
-  // exeptions
-  li:nth-child(3)::before {
+  // exeptions for circle sizes
+  > li:nth-child(3)::before {
     margin-left: -1px;
   }
 
-  li:nth-child(10)::before {
+  > li:nth-child(10)::before {
     margin-left: -1px;
   }
 
-  li:nth-child(11)::before {
+  > li:nth-child(11)::before {
     padding: 0 10px;
   }
 
-  li:nth-child(12)::before {
+  > li:nth-child(12)::before {
     padding: 0 8px;
     margin-left: -1px;
   }
 
-  li:nth-child(21)::before {
+  > li:nth-child(21)::before {
     padding: 0 6px;
   }
 
-  li:last-child::before {
+  > li:last-child::before {
     margin-left: 3px;
   }
-}
-
-/* Make the list within the step list look normal */
-.cagov-step-list li ul li {
-  border: none;
-  font-size: calc(1.125rem + 0.1vw);
-  font-weight: normal;
-  list-style-type: disc;
-  padding-left: unset;
-}
-
-.cagov-step-list li ul li::before {
-  content: none;
 }
