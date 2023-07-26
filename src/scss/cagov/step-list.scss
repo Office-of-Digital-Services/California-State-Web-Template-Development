@@ -7,22 +7,6 @@
   margin-left: 1.5rem !important;
   counter-reset: step-list-count;
 
-  > li::before {
-    font-size: 1.625rem;
-    font-weight: 700;
-    padding: 0 12px;
-    border: 5px solid;
-    background-color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    position: absolute;
-    left: -27px;
-    top: -3px;
-    margin-left: -1px;
-    counter-increment: step-list-count;
-    content: counter(step-list-count);
-  }
-
   > li {
     list-style: none;
     border-left: 5px solid;
@@ -32,58 +16,40 @@
     padding-left: 45px;
     line-height: $font-lineheight-3;
     margin-bottom: 0;
-  }
 
-  > li span.has-black-color,
-  > li .cagov-step-list-content {
-    margin-top: 1rem;
-    padding-bottom: 1.75rem;
-    font-size: calc($font-size-regular + $ratio);
-    font-weight: $font-weight-4;
-    display: block;
-  }
+    // The circle bullet
+    &::before {
+      font-size: 1.625rem;
+      font-weight: 700;
+      border: 5px solid;
+      background-color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      position: absolute;
+      left: -27px;
+      top: -3px;
+      counter-increment: step-list-count;
+      content: counter(step-list-count);
+      width: 50px;
+    }
 
-  > li:first-child::before {
-    padding: 0 14px;
-    margin-left: -1px;
-  }
+    // Don't draw the last verticle line
+    &:last-child {
+      border-left: none;
 
-  > li:nth-child(n + 10)::before {
-    padding: 0 7px;
-  }
+      // Indent to compensate for the border
+      &::before {
+        margin-left: 5px;
+      }
+    }
 
-  > li:nth-child(n + 20)::before {
-    padding: 0 5px;
-  }
-
-  // Don't draw the last line
-  > li:last-child {
-    border-left: none;
-  }
-
-  // exeptions for circle sizes
-  > li:nth-child(3)::before {
-    margin-left: -1px;
-  }
-
-  > li:nth-child(10)::before {
-    margin-left: -1px;
-  }
-
-  > li:nth-child(11)::before {
-    padding: 0 10px;
-  }
-
-  > li:nth-child(12)::before {
-    padding: 0 8px;
-    margin-left: -1px;
-  }
-
-  > li:nth-child(21)::before {
-    padding: 0 6px;
-  }
-
-  > li:last-child::before {
-    margin-left: 3px;
+    span.has-black-color,
+    .cagov-step-list-content {
+      margin-top: 1rem;
+      padding-bottom: 1.75rem;
+      font-size: calc($font-size-regular + $ratio);
+      font-weight: $font-weight-4;
+      display: block;
+    }
   }
 }
