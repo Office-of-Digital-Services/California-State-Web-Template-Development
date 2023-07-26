@@ -24,8 +24,8 @@
 .mobile-sidenav {
   background-color: $mobile-drawer;
 
-  .side-navigation ul,
-  .list-navigation {
+  .list-navigation,
+  .side-navigation ul {
     li {
       a {
         color: $white;
@@ -62,8 +62,8 @@
 
 /* DESKTOP */
 @media (min-width: $screen-md-min) {
-  .side-navigation ul,
-  .list-navigation {
+  .list-navigation,
+  .side-navigation ul {
     li {
       a {
         color: $gray-700;
