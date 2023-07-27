@@ -162,12 +162,12 @@ nav-item-search {
 .nav-media {
   background: $sub-nav-media-bg;
 
-  .media:hover {
-    background: #fff;
-  }
-
   // Add the border to the first one only
   .media {
+    &:hover {
+      background: #fff;
+    }
+
     border-bottom: 4px solid $white;
 
     @media (max-width: $screen-xs-max) {
