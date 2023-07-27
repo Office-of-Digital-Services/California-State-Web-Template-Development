@@ -24,6 +24,12 @@
       "never",
       { "except": ["only-of-namespace"] }
     ],
-    "scss/declaration-nested-properties-no-divided-groups": true
+    "scss/declaration-nested-properties-no-divided-groups": true,
+    "property-no-vendor-prefix": [
+      true,
+      {
+        "ignoreProperties": ["appearance"]
+      }
+    ]
   }
 }

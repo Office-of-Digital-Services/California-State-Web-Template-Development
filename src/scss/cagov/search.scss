@@ -132,7 +132,7 @@ $search-input-border-width: 3px;
       padding: 0;
 
       // HACK: Removes ios default appearance
-      appearance: none;
+      -webkit-appearance: none;
 
       > span {
         // Position the icon in the middle of the button
@@ -191,7 +191,7 @@ $search-input-border-width: 3px;
 }
 
 input[type="search"].search-textfield {
-  appearance: none; // Removing iPhone rounder corner rendering
+  -webkit-appearance: none; // Removing iPhone rounder corner rendering
   background-color: canvas; // Removing iPhone -apple-system-opaque-tertiary-fill color
 }
 
@@ -396,7 +396,7 @@ input[type="search"].search-textfield {
 
       line-height: 0.9375rem;
       padding: 0; // ios needed button padding explicity removed tp prevent button from expanding
-      appearance: none; // Removes ios default appearance
+      -webkit-appearance: none; // Removes ios default appearance
 
       > span {
         // Position the icon in the middle of the button
