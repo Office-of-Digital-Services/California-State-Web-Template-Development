@@ -50,7 +50,7 @@
     "start": "run-p watch:*",
     "build": "run-p build:*",
     "GIT cleanup": "git clean -fd",
-    "stylelint-scss-check": "stylelint-config-prettier-scss-check",
+    "stylelint-rules-prettier-check": "stylelint-config-prettier-scss-check",
     "stylelint run fix": "npx stylelint '**/*.{css,scss}' --fix"
   },
   "private": true,
