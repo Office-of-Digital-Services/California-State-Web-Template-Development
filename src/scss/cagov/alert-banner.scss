@@ -3,6 +3,36 @@
    /source/scss/cagov/alert-banner.scss
 ----------------------------------------- */
 
+.alert-level {
+  display: inline-block;
+  font-weight: bold;
+  padding: 0 5px;
+  margin: 0 5px;
+
+  @include font-size(0.87);
+
+  [class^="ca-gov-icon-"] {
+    margin-right: 3px;
+  }
+}
+
+.alert-severe {
+  background: $brand-highlight;
+
+  .close {
+    color: $gray-base;
+  }
+
+  .alert-level {
+    color: $gray-base;
+    background: rgb(0 0 0 / 15%);
+  }
+
+  .alert-text {
+    color: $gray-base;
+  }
+}
+
 .alert-banner {
   margin-bottom: 0;
   padding: 0.6rem 0 0.5rem;
@@ -14,6 +44,10 @@
     font-size: 1.6rem;
     position: absolute;
     top: 5px;
+  }
+
+  .alert-text {
+    position: relative;
   }
 
   .alert-icon ~ .alert-text {
@@ -52,26 +86,9 @@
     clear: both;
   }
 
-  .alert-text {
-    position: relative;
-  }
-
   .btn {
     position: relative;
     top: -1px;
-  }
-}
-
-.alert-level {
-  display: inline-block;
-  font-weight: bold;
-  padding: 0 5px;
-  margin: 0 5px;
-
-  @include font-size(0.87);
-
-  [class^="ca-gov-icon-"] {
-    margin-right: 3px;
   }
 }
 
@@ -81,23 +98,6 @@
   @include float-right;
 
   font-weight: 400;
-}
-
-.alert-severe {
-  background: $brand-highlight;
-
-  .close {
-    color: $gray-base;
-  }
-
-  .alert-level {
-    color: $gray-base;
-    background: rgb(0 0 0 / 15%);
-  }
-
-  .alert-text {
-    color: $gray-base;
-  }
 }
 
 // HIDE ALERTS AFTER PAGE SCROLLS & HEADER COMPACTS

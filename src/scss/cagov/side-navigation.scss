@@ -165,6 +165,7 @@
     &.visible {
       max-height: 1600px;
       transition: max-height 0.25s ease-in;
+      overflow-y: auto;
     }
 
     .side-navigation {

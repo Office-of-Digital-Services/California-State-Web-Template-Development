@@ -2,9 +2,11 @@
    BREADCRUMBS -  /source/scss/cagov/breadcrumbs.scss
 ----------------------------------------- */
 
-.breadcrumbs ol,
+// TODO: Is the "breadcrumb" (No S) class used?
+
+.breadcrumb,
 .breadcrumbs ul,
-.breadcrumb {
+.breadcrumbs ol {
   padding: 0.5em 1rem;
   padding-left: 0;
   margin-bottom: 2rem;

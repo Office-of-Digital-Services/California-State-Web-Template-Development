@@ -571,6 +571,27 @@
 }
 
 @mixin table-default {
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        background: #f2f2f2;
+        border: 2px solid #fff;
+      }
+    }
+  }
+
+  > thead {
+    > tr {
+      > th,
+      > td {
+        background: #d9d9d9;
+        border: 2px solid #fff;
+      }
+    }
+  }
+
   &.table-default {
     border: none;
 
@@ -589,27 +610,6 @@
 
     // Table Head
     > thead > tr {
-      > th,
-      > td {
-        background: #d9d9d9;
-        border: 2px solid #fff;
-      }
-    }
-  }
-
-  > tbody,
-  > tfoot {
-    > tr {
-      > th,
-      > td {
-        background: #f2f2f2;
-        border: 2px solid #fff;
-      }
-    }
-  }
-
-  > thead {
-    > tr {
       > th,
       > td {
         background: #d9d9d9;
@@ -969,8 +969,8 @@
 ) {
   border-color: $border;
 
-  & > .panel-heading,
-  & > .card-heading {
+  > .panel-heading,
+  > .card-heading {
     color: $heading-text-color;
     background-color: $heading-bg-color;
     border-color: $heading-border;
@@ -986,8 +986,8 @@
     }
   }
 
-  & > .panel-footer,
-  & > .card-footer {
+  > .panel-footer,
+  > .card-footer {
     + .panel-collapse > .panel-body,
     + .card-collapse > .card-body {
       border-bottom-color: $border;

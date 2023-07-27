@@ -95,12 +95,6 @@
   }
 }
 
-html:not(.ie8) {
-  .stats-highlight img {
-    display: none;
-  }
-}
-
 .ie8 .stats-highlight {
   .info,
   .small-goal-text {
@@ -109,5 +103,11 @@ html:not(.ie8) {
 
   img {
     width: 100%;
+  }
+}
+
+html:not(.ie8) {
+  .stats-highlight img {
+    display: none;
   }
 }

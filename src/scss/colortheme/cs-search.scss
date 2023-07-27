@@ -37,6 +37,10 @@
       background-color: $white;
       border-color: $white;
 
+      .ca-gov-icon-search {
+        color: $gray-700;
+      }
+
       // border-left-color: $gray-700;
       &:hover,
       &:focus {
@@ -46,10 +50,6 @@
         .ca-gov-icon-search {
           color: $gray-900;
         }
-      }
-
-      .ca-gov-icon-search {
-        color: $gray-700;
       }
     }
   }
@@ -76,14 +76,16 @@
   }
 }
 
-.featured-search.active .container #Search .close-search-btn .sr-only,
-.search-container .close-search .sr-only {
-  color: $color-p2;
-  text-decoration: underline;
+.search-container .close-search,
+.featured-search.active .container #Search .close-search-btn {
+  .sr-only {
+    color: $color-p2;
+    text-decoration: underline;
 
-  &:hover,
-  &:focus {
-    color: darken($color-p2, 7%);
-    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: darken($color-p2, 7%);
+      text-decoration: none;
+    }
   }
 }
