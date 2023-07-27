@@ -107,6 +107,9 @@
 }
 
 /* NEWS IMAGE */
+.block-hover_zoom {
+  transform: scale(1.01);
+}
 
 .block-hover {
   position: relative;
@@ -126,10 +129,6 @@
 [class*="block-hover"]::before,
 [class*="block-hover"]::after {
   transition: all 0.3s ease;
-}
-
-.block-hover_zoom {
-  transform: scale(1.01);
 }
 
 .bg-overlay {
