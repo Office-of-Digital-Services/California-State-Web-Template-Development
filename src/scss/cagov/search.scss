@@ -62,12 +62,6 @@ $search-input-border-width: 3px;
     width: 100%;
     max-height: 38px;
 
-    // makes border transparent but maintains height for hover effect
-    border: 1px solid;
-    border-radius: 5px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-
     // Padding can control size of small search box
     padding: 0 10px;
     transition: border $search-ft;
@@ -186,13 +180,12 @@ $search-input-border-width: 3px;
   }
 }
 
-.search-textfield {
-  padding-left: 10px; // Applying padding to all the search inputs globally. TODO: Check regression
-}
-
 input[type="search"].search-textfield {
+  padding-left: 10px;
   -webkit-appearance: none; // Removing iPhone rounder corner rendering
   background-color: canvas; // Removing iPhone -apple-system-opaque-tertiary-fill color
+  border: 1px solid #72717c;
+  border-radius: 5px 0 0 5px; // Square borders on right side for iPhone
 }
 
 .search-container.active {
