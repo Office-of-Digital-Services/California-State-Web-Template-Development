@@ -6,7 +6,8 @@
     "stylelint-config-prettier-scss"
   ],
   "rules": {
-    "no-descending-specificity": [true, { "ignore": "selectors-within-list" }],
+    "scss/selector-no-redundant-nesting-selector": true,
+    "scss/selector-nest-combinators": null,
     "number-max-precision": 5,
     "font-family-no-missing-generic-family-keyword": [
       true,
@@ -17,6 +18,12 @@
     "scss/no-global-function-names": null,
     "selector-class-pattern": null,
     "selector-id-pattern": null,
-    "scss/dollar-variable-pattern": null
+    "scss/dollar-variable-pattern": null,
+    "no-descending-specificity": [true, { "ignore": "selectors-within-list" }],
+    "scss/declaration-nested-properties": [
+      "never",
+      { "except": ["only-of-namespace"] }
+    ],
+    "scss/declaration-nested-properties-no-divided-groups": true
   }
 }

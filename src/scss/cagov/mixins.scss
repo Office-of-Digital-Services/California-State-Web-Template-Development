@@ -969,8 +969,8 @@
 ) {
   border-color: $border;
 
-  & > .panel-heading,
-  & > .card-heading {
+  > .panel-heading,
+  > .card-heading {
     color: $heading-text-color;
     background-color: $heading-bg-color;
     border-color: $heading-border;
@@ -986,8 +986,8 @@
     }
   }
 
-  & > .panel-footer,
-  & > .card-footer {
+  > .panel-footer,
+  > .card-footer {
     + .panel-collapse > .panel-body,
     + .card-collapse > .card-body {
       border-bottom-color: $border;
