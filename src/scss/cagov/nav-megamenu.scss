@@ -10,75 +10,6 @@
   }
 }
 
-.megadropdown .top-level-nav {
-  // beta 5.0 addition (fixes IE dropdown issue)
-
-  .nav-item {
-    position: static;
-
-    // 992px
-    @media (max-width: $screen-sm-max) {
-      position: relative;
-    }
-
-    .no-js &:hover .sub-nav {
-      position: absolute; // On hover show the sub navigation panel
-      display: block;
-    }
-  }
-}
-
-// beta 5.0 addition
-.main-navigation.dropdown .sub-nav {
-  max-width: 250px;
-  min-width: 250px;
-  left: initial;
-  right: initial;
-
-  // 992px
-  @media (max-width: $screen-sm-max) {
-    max-width: 100%;
-  }
-}
-
-// Sub-menu open indicator
-// --------------------------------------------------
-// 991px
-@media (min-width: $screen-sm-max) {
-  /* Dynamic Element appended to each .sub-nav */
-  .nav-arrow-container {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  /* Dynamic element contained in .nav-arrow-container */
-  .megadropdown .nav-arrow-down {
-    // KEEPING POINTER AS I FEEL IT'S A BETTER SOLUTION
-    // background: transparent url("#{$template-path}/nav-down-arrow.png") no-repeat;
-    // width: 44px;
-    // height: 16px;
-    // margin-left: -22px;
-    // VARIATION USING BAR
-    position: absolute;
-    top: -5px; // equal to the thickness of the border
-    left: 50%;
-    height: 5px;
-    width: 100px;
-    margin-left: -65px; // -50 + -15 for 1/2 of gutter
-  }
-
-  .dropdown .nav-arrow-down {
-    height: 5px;
-    left: 0;
-    margin-left: 0;
-    position: absolute;
-    top: -5px;
-  }
-}
-
 // Sub navigation container
 // --------------------------------------------------
 
@@ -103,18 +34,14 @@
   }
 }
 
-// Secondary level navigationr
-// --------------------------------------------------
+.link-description {
+  display: block;
 
-.dropdown {
-  .second-level-nav {
-    > li {
-      border-right: 0; //  _cs-shame.scss addition
-    }
-  }
+  // @include font-size(1);
+  font-size: $font-size-base;
 
-  .sub-nav {
-    border-bottom: none; //  _cs-shame.scss addition
+  @include media-breakpoint-up(sm) {
+    font-size: calc(#{$font-size-base} + #{$ratio});
   }
 }
 
@@ -159,6 +86,94 @@
   }
 }
 
+// Secondary level navigationr
+// --------------------------------------------------
+
+.dropdown {
+  .second-level-nav {
+    > li {
+      border-right: 0; //  _cs-shame.scss addition
+    }
+  }
+
+  .sub-nav {
+    border-bottom: none; //  _cs-shame.scss addition
+  }
+}
+
+// beta 5.0 addition
+.main-navigation.dropdown .sub-nav {
+  max-width: 250px;
+  min-width: 250px;
+  left: initial;
+  right: initial;
+
+  // 992px
+  @media (max-width: $screen-sm-max) {
+    max-width: 100%;
+  }
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+.megadropdown .top-level-nav {
+  // beta 5.0 addition (fixes IE dropdown issue)
+
+  .nav-item {
+    position: static;
+
+    // 992px
+    @media (max-width: $screen-sm-max) {
+      position: relative;
+    }
+
+    .no-js &:hover .sub-nav {
+      position: absolute; // On hover show the sub navigation panel
+      display: block;
+    }
+  }
+}
+
+// Sub-menu open indicator
+// --------------------------------------------------
+// 991px
+@media (min-width: $screen-sm-max) {
+  /* Dynamic Element appended to each .sub-nav */
+  .nav-arrow-container {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  /* Dynamic element contained in .nav-arrow-container */
+  .megadropdown .nav-arrow-down {
+    // KEEPING POINTER AS I FEEL IT'S A BETTER SOLUTION
+    // background: transparent url("#{$template-path}/nav-down-arrow.png") no-repeat;
+    // width: 44px;
+    // height: 16px;
+    // margin-left: -22px;
+    // VARIATION USING BAR
+    position: absolute;
+    top: -5px; // equal to the thickness of the border
+    left: 50%;
+    height: 5px;
+    width: 100px;
+    margin-left: -65px; // -50 + -15 for 1/2 of gutter
+  }
+
+  .dropdown .nav-arrow-down {
+    height: 5px;
+    left: 0;
+    margin-left: 0;
+    position: absolute;
+    top: -5px;
+  }
+}
+
 // Links in Subnav
 // --------------------------------------------------
 
@@ -197,17 +212,6 @@ a.second-level-link {
     &:focus {
       color: $white;
     }
-  }
-}
-
-.link-description {
-  display: block;
-
-  // @include font-size(1);
-  font-size: $font-size-base;
-
-  @include media-breakpoint-up(sm) {
-    font-size: calc(#{$font-size-base} + #{$ratio});
   }
 }
 
@@ -261,6 +265,18 @@ a.second-level-link {
     .sub-nav {
       padding: 16px;
 
+      // sub nav background image settings
+      .sub-nav-decoration {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        background-position: 50% 50% !important;
+        background-size: cover !important;
+      }
+
       // one third width of the -sm  nav image
       &[class*="with-image-sm-"] {
         .sub-nav-decoration {
@@ -289,18 +305,6 @@ a.second-level-link {
 
       &[class*="with-image-"] > ul > li {
         padding-right: 16px !important;
-      }
-
-      // sub nav background image settings
-      .sub-nav-decoration {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-        background-position: 50% 50% !important;
-        background-size: cover !important;
       }
 
       // width and float for the sub nav list if there is -sm-right image
@@ -352,10 +356,6 @@ a.second-level-link {
     page-break-inside: avoid;
     break-inside: avoid;
   }
-}
-
-.nav-item {
-  display: inline-block;
 }
 
 .sub-nav.open {
