@@ -1,6 +1,6 @@
 {
   "name": "cagov-template-development",
-  "version": "6.2.0",
+  "version": "6.2.1-beta.1",
   "description": "CA State Web Template Development Project",
   "author": {
     "name": "Carter Medlin",
@@ -15,6 +15,8 @@
   "license": "MIT",
   "homepage": "https://template.webstandards.ca.gov/",
   "scripts": {
+    "start": "run-p watch:*",
+    "build": "run-p build:*",
     "watch:js": "rollup --config rollup.config.js --watch",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "watch:sass": "npx sass --no-source-map src/scss/cagov.core.scss:_site/ca_state_template/css/cagov.core.min.css --watch  --style compressed",
@@ -47,8 +49,6 @@
     "build:sass-sierra-min": "npx sass --no-source-map src/scss/colortheme/sierra-import.scss:_site/ca_state_template/css/colortheme-sierra.min.css --style compressed",
     "build:sass-trinity": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/ca_state_template/css/colortheme-trinity.css",
     "build:sass-trinity-min": "npx sass --no-source-map src/scss/colortheme/trinity-import.scss:_site/ca_state_template/css/colortheme-trinity.min.css --style compressed",
-    "start": "run-p watch:*",
-    "build": "run-p build:*",
     "GIT cleanup": "git clean -fd",
     "stylelint-rules-prettier-check": "stylelint-config-prettier-scss-check",
     "stylelint run fix": "npx stylelint '**/*.{css,scss}' --fix"
