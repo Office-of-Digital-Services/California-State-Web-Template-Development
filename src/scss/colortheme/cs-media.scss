@@ -4,6 +4,6 @@
 ----------------------------------------- */
 
 figure {
-  background-color: $white;
-  border-color: $gray-200;
+  background-color: var(--white, #ffffff);
+  border-color: var(--gray-200, #d4d4d7);
 }

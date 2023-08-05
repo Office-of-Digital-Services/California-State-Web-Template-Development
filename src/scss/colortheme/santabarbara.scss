@@ -5,9 +5,6 @@
 // VARIABLES
 // --------------------------------------------------
 
-// Theme directory
-$theme-directory: "#{$template-path}/santabarbara"; // Folder where assets for theme are stored
-
 // Primary Theme colors
 $color-p1: #ff9b53; // Gold
 $color-p2: #834b1e; // Rust
@@ -17,17 +14,6 @@ $color-p3: #664945; // Brown Violet
 $color-s1: #f8eee4; // Lightest Gold
 $color-s2: #f1dac2; // Lighter Gold
 $color-s3: #e8bd90; // Light Gold
-
-// Accent Colors
-$color-a1: #1b79c0; // Dark Blue
-$color-a2: #077cbb; // Med Blue
-$color-a3: #258378; // Teal
-$color-a4: #32852e; // Green $brand-success
-$color-a5: #815ab4; // Purple
-$color-a6: #be37cd; // Lavender
-$color-a7: #c93e2c; // Red $brand-danger
-$color-a8: #bb520c; // Orange $brand-warning
-$color-a9: #f7e455; // Yellow
 
 // Module or theme specific variables
 $nav-first-level: #fff; // Color of navigation links
@@ -39,7 +25,7 @@ $body-color: #07537b; // Background base and typically the page edge border
 $body-midline: $color-s2; // Midline gradient color
 $edge-border: $body-color; // Applied to outer edge of the page
 $header-icon: $color-p2; // Icon left of main content H1
-$mobile-controls: $gray-600; // Mobile controls
+$mobile-controls: var(--gray-600, #72717c); // Mobile controls
 $footer-txt: #fff; // Color of text and links in the footer
 
 $panel-border: #ddd;

@@ -5,36 +5,36 @@
 
 .utility-header {
   background: $color-s1;
-  color: $black;
+  color: var(--black, #000);
 
   a {
-    color: $black;
+    color: var(--black, #000);
 
     &:hover,
     &:focus,
     &.hovered {
-      color: $gray-800;
+      color: var(--gray-800, #4a4958);
     }
   }
 
   .social-media-links {
     a {
-      color: $black;
+      color: var(--black, #000);
       text-decoration: none;
 
       &:hover,
       &:focus {
-        color: $gray-800;
+        color: var(--gray-800, #4a4958);
       }
     }
   }
 
   button {
-    color: $black;
+    color: var(--black, #000);
 
     &:hover,
     &:focus {
-      color: $gray-800;
+      color: var(--gray-800, #4a4958);
     }
   }
 

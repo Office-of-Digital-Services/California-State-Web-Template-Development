@@ -14,7 +14,7 @@
 }
 
 .bg-primary .link-grid {
-  border-color: $white;
+  border-color: var(--white, #ffffff);
 
   &:hover,
   &:focus {

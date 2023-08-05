@@ -5,9 +5,6 @@
 // VARIABLES
 // --------------------------------------------------
 
-// Theme directory
-$theme-directory: "#{$template-path}/sacramento"; // Folder where assets for theme are stored
-
 // Primary Theme colors
 $color-p1: #7bb0da; // Baby Blue
 $color-p2: #153554; // Dark Blue
@@ -16,18 +13,7 @@ $color-p3: #730000; // Dark Red
 // Secondary Theme colors
 $color-s1: #e1ecf7; // Lightest Blue
 $color-s2: #c7d9ea; // Lighter Blue
-$color-s3: #9bb8d3; // Light Blue $brand-info
-
-// Accent Colors
-$color-a1: #1b79c0; // Dark Blue
-$color-a2: #077cbb; // Med Blue
-$color-a3: #258378; // Teal
-$color-a4: #32852e; // Green $brand-success
-$color-a5: #815ab4; // Purple
-$color-a6: #be37cd; // Lavender
-$color-a7: #c93e2c; // Red $brand-danger
-$color-a8: #bb520c; // Orange $brand-warning
-$color-a9: #f7e455; // Yellow
+$color-s3: #9bb8d3; // Light Blue
 
 $panel-border: #ddd;
 
@@ -41,7 +27,7 @@ $body-color: #32608a; // Background base and typically the page edge border
 $body-midline: $color-s3; // Midline gradient color
 $edge-border: $body-color; // Applied to outer edge of the page
 $header-icon: $color-p2; // Icon left of main content H1
-$mobile-controls: $gray-600; // Mobile controls
+$mobile-controls: var(--gray-600, #72717c); // Mobile controls
 $footer-txt: #fff; // Color of text and links in the footer
 
 $overstated-header-bg: $color-p2; // Background for panel header

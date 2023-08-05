@@ -63,11 +63,11 @@
 
   .section-inverted {
     &.group-right::before {
-      border-right-color: $gray-darker;
+      border-right-color: var(--gray-900, #3b3a48);
     }
 
     &.group-left::after {
-      border-left-color: $gray-darker;
+      border-left-color: var(--gray-900, #3b3a48);
     }
   }
 }
@@ -117,7 +117,7 @@
   .section-inverted {
     &.group-right::before,
     &.group-left::after {
-      border-bottom-color: $gray-darker;
+      border-bottom-color: var(--gray-900, #3b3a48);
     }
   }
 }

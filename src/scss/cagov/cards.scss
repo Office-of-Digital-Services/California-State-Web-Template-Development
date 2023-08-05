@@ -257,7 +257,7 @@
   position: relative;
   display: block;
   margin-bottom: $card-spacer-y;
-  background-color: $white;
+  background-color: var(--white, #ffffff);
   border: none;
   border-radius: $card-border-radius;
 

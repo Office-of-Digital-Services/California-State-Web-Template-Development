@@ -5,9 +5,6 @@
 // VARIABLES
 // --------------------------------------------------
 
-// Theme directory
-$theme-directory: "#{$template-path}/mono"; // Folder where assets for theme are stored
-
 // Primary Theme colors
 $color-p1: #ffce2b; // Yellow
 $color-p2: #545351; // Gray
@@ -17,17 +14,6 @@ $color-p3: #191919; // Dark Gray
 $color-s1: #ededef; // Lightest Gray
 $color-s2: #d4d4cd; // Lighter Gray
 $color-s3: #b3b2ac; // Light Gray
-
-// Accent Colors
-$color-a1: #1b79c0; // Dark Blue
-$color-a2: #077cbb; // Med Blue
-$color-a3: #258378; // Teal
-$color-a4: #32852e; // Green $brand-success
-$color-a5: #815ab4; // Purple
-$color-a6: #be37cd; // Lavender
-$color-a7: #c93e2c; // Red $brand-danger
-$color-a8: #bb520c; // Orange $brand-warning
-$color-a9: #f7e455; // Yellow
 
 // Module or theme specific variables
 $nav-first-level: #fff; // Color of navigation links
@@ -39,7 +25,7 @@ $body-color: #1d4d4c; // Background base and typically the page edge border
 $body-midline: $color-s3; // Midline gradient color
 $edge-border: $body-color; // Applied to outer edge of the page
 $header-icon: $color-p2; // Icon left of main content H1
-$mobile-controls: $gray-600; // Mobile controls
+$mobile-controls: var(--gray-600, #72717c); // Mobile controls
 $footer-txt: #fff; // Color of text and links in the footer
 
 $panel-border: #ddd;

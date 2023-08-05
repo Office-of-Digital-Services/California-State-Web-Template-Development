@@ -12,15 +12,15 @@ blockquote {
 
   &.prominent {
     background-color: $color-p2;
-    color: $white;
+    color: var(--white, #ffffff);
 
     &::before {
-      color: $white;
+      color: var(--white, #ffffff);
     }
 
     p,
     footer {
-      color: $white;
+      color: var(--white, #ffffff);
     }
   }
 }

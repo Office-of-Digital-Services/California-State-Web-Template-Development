@@ -38,7 +38,7 @@ header.nav-overlay {
     height: 2.75rem;
 
     span {
-      background-color: $white;
+      background-color: var(--white, #ffffff);
       width: 30px;
 
       &:nth-child(2),
@@ -78,7 +78,7 @@ header.nav-overlay {
 
   a {
     position: relative;
-    color: $white;
+    color: var(--white, #ffffff);
     margin-left: 1rem;
     margin-right: 1rem;
     font-size: 1rem;
@@ -86,13 +86,13 @@ header.nav-overlay {
 
   a::before {
     content: "";
-    color: $white;
+    color: var(--white, #ffffff);
     border: none;
     margin: 0 0.75rem;
     font-size: 1.125rem;
     font-weight: 200;
     position: absolute;
-    border-left: 1px solid $gray-200;
+    border-left: 1px solid var(--gray-200, #d4d4d7);
     height: 70%;
     top: 5px;
     left: -1.95rem;
@@ -112,7 +112,7 @@ header.nav-overlay {
   transform: rotate(0deg);
   transition: 0.5s ease-in-out;
   cursor: pointer;
-  color: $white;
+  color: var(--white, #ffffff);
   min-width: 2.5rem;
   min-height: 2.5rem;
   margin-top: 1.3rem;
@@ -169,8 +169,8 @@ header.nav-overlay {
 .mobile-controls {
   text-align: right; // move most menu controls to right
   position: relative;
-  color: $gray-600;
-  background: $white;
+  color: var(--gray-600, #72717c);
+  background: var(--white, #ffffff);
   top: 0;
   padding-right: 0;
   height: 0;

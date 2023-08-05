@@ -5,11 +5,11 @@
 
 .alert-banner {
   background-color: $color-p3;
-  color: $white;
+  color: var(--white, #ffffff);
 
   a:not(.btn),
   .close {
-    color: $white;
+    color: var(--white, #ffffff);
 
     &:focus,
     &:hover {
@@ -79,16 +79,16 @@
 }
 
 .alert-severe {
-  color: $gray-800 !important;
+  color: var(--gray-800, #4a4958) !important;
   background-color: $color-p1;
 
   a:not(.btn),
   .close {
-    color: $gray-800 !important;
+    color: var(--gray-800, #4a4958) !important;
 
     &:focus,
     &:hover {
-      color: $black !important;
+      color: var(--black, #000) !important;
     }
   }
 }

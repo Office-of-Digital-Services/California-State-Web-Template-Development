@@ -26,7 +26,7 @@
 
   &-standout {
     @include link-variant($color-p1, #fff, none);
-    @include underline($color-p1, $white);
+    @include underline($color-p1, var(--white, #ffffff));
 
     background: $color-p3;
     color: contrast($color-p3);
@@ -37,8 +37,8 @@
   }
 
   &-primary {
-    @include link-variant($white, $color-s1, none);
-    @include underline($white, $color-s1);
+    @include link-variant(var(--white, #ffffff), $color-s1, none);
+    @include underline(var(--white, #ffffff), $color-s1);
 
     background: $color-p2;
     color: contrast($color-p2);
@@ -62,13 +62,13 @@
 
   &-inverted {
     @include link-variant($color-p1, #fff, none);
-    @include underline($color-p1, $white);
+    @include underline($color-p1, var(--white, #ffffff));
 
-    background: $gray-darker;
+    background: var(--gray-900, #3b3a48);
     color: #fff;
 
     footer {
-      color: contrast($gray-darker);
+      color: #fff;
     }
   }
 
@@ -76,11 +76,11 @@
     @include link-variant($gray-base, $gray-base);
     @include underline($gray-base, $gray-base);
 
-    background: $brand-danger;
-    color: contrast($brand-danger);
+    background: var(--brand-danger, #cd402d);
+    color: #fff;
 
     footer {
-      color: contrast($brand-danger);
+      color: #fff;
     }
   }
 }

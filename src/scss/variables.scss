@@ -2,11 +2,57 @@
 // --------------------------------------------------
 
 // == Colors
+:root {
+  --white: #fff;
+  --gray-50: #fafafa;
+  --gray-75: #f3f3f4;
+  --gray-100: #ededef;
+  --gray-200: #d4d4d7;
+  --gray-300: #bcbbc1;
+  --gray-400: #a4a3ab;
+  --gray-500: #898891;
+  --gray-600: #72717c;
+  --gray-700: #5e5e6a;
+  --gray-800: #4a4958;
+  --gray-900: #3b3a48;
+  --black: #000;
+  --brand-primary: #046b99;
+  --brand-primary-darker: color-mix(in srgb, var(--brand-primary), #000 15%);
+  --brand-primary-darkest: color-mix(in srgb, var(--brand-primary), #000 30%);
+  --brand-highlight: #fdb81e;
+  --brand-highlight-darker: color-mix(
+    in srgb,
+    var(--brand-highlight),
+    #000 15%
+  );
+  --brand-success: #32852e;
+  --brand-success-darker: color-mix(in srgb, var(--brand-success), #000 15%);
+  --brand-success-darkest: color-mix(in srgb, var(--brand-success), #000 60%);
+  --brand-success-lighter: color-mix(in srgb, var(--brand-success), #fff 70%);
+  --brand-info: #1c7db5;
+  --brand-info-darker: color-mix(in srgb, var(--brand-info), #000 15%);
+  --brand-warning: #c2570f;
+  --brand-warning-darker: color-mix(in srgb, var(--brand-warning), #000 15%);
+  --brand-danger: #cd402d;
+  --brand-danger-darker: color-mix(in srgb, var(--brand-danger), #000 15%);
+  --brand-danger-lighter: color-mix(in srgb, var(--brand-danger), #fff 80%);
+  // Accent Colors
+  --color-a1: #1b79c0; // Dark Blue
+  --color-a2: #077cbb; // Med Blue
+  --color-a3: #258378; // Teal
+  --color-a4: #32852e; // Green $brand-success
+  --color-a5: #815ab4; // Purple
+  --color-a6: #be37cd; // Lavender
+  --color-a7: #c93e2c; // Red $brand-danger
+  --color-a8: #bb520c; // Orange $brand-warning
+  --color-a9: #f7e455; // Yellow
+}
+
+// Accent Colors
 
 // ## Gray and brand colors for use across Bootstrap.
 
 $brand-primary: #046b99;
-$brand-highlight: #fdb81e;
 $brand-success: #32852e;
 
 // @brand-info:         #02BFE7;
@@ -53,20 +99,8 @@ $gray: lighten($gray-base, 33.5%) !default; // #555
 $gray-light: lighten($gray-base, 46.7%) !default; // #777
 $gray-lighter: lighten($gray-base, 84%) !default; // #eee
 $gray-lightest: lighten($gray-base, 96%); // #f5f5f5
-$white: #fff;
 
 // Design System Gray colors
-$gray-50: #fafafa;
-$gray-75: #f3f3f4;
-$gray-100: #ededef;
-$gray-200: #d4d4d7;
-$gray-300: #bcbbc1;
-$gray-400: #a4a3ab;
-$gray-500: #898891;
-$gray-600: #72717c;
-$gray-700: #5e5e6a;
-$gray-800: #4a4958;
-$gray-900: #3b3a48;
 $text-primary: #006ce0;
 $text-success: #1f7f35;
 $text-info: #117888;
@@ -82,10 +116,10 @@ $body-bg: #fff !default; // Bootstrap duplicate
 $text-color: $gray-text !default;
 
 // Global textual link color.
-$link-color: $brand-primary;
+$link-color: var(--brand-primary);
 
 // Link hover color set via `darken()` function.
-$link-hover-color: darken($link-color, 15%);
+$link-hover-color: var(--brand-primary-darkest);
 
 // Link visited color set via `darken()` function.
 $link-hover-decoration: underline !default;

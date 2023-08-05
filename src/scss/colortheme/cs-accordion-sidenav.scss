@@ -6,19 +6,19 @@
 cagov-accordion.sidenav {
   details {
     summary {
-      color: $gray-700;
+      color: var(--gray-700, #5e5e6a);
 
       &:hover,
       &:focus {
-        color: $black;
+        color: var(--black, #000);
       }
 
       &.active {
-        color: $gray-700 !important;
+        color: var(--gray-700, #5e5e6a) !important;
 
         &:hover,
         &:focus {
-          color: $black !important;
+          color: var(--black, #000) !important;
         }
 
         &::before {
@@ -32,11 +32,11 @@ cagov-accordion.sidenav {
 .side-subnav {
   li {
     a {
-      color: $gray-800;
+      color: var(--gray-800, #4a4958);
 
       &:hover,
       &:focus {
-        color: $black;
+        color: var(--black, #000);
       }
 
       &.active {
@@ -54,7 +54,7 @@ cagov-accordion.sidenav {
   .accordion {
     .accordion__heading {
       .accordion__trigger {
-        color: $gray-800;
+        color: var(--gray-800, #4a4958);
       }
 
       // active
@@ -78,7 +78,7 @@ cagov-accordion.sidenav {
   .accordion {
     .accordion__heading {
       .accordion__trigger {
-        color: $gray-800;
+        color: var(--gray-800, #4a4958);
       }
 
       // active
@@ -103,13 +103,13 @@ cagov-accordion.sidenav {
       // active
       &.active {
         .accordion__trigger {
-          color: $gray-800 !important;
-          background-color: $gray-50 !important;
+          color: var(--gray-800, #4a4958) !important;
+          background-color: var(--gray-50, #fafafa) !important;
 
           &:hover,
           &:focus {
-            color: $black !important;
-            background-color: $gray-100 !important;
+            color: var(--black, #000) !important;
+            background-color: var(--gray-100, #f3f3f4) !important;
           }
         }
       }
@@ -124,13 +124,13 @@ cagov-accordion.sidenav {
       // active
       &.active {
         .accordion__trigger {
-          color: $gray-800 !important;
-          background-color: $gray-50 !important;
+          color: var(--gray-800, #4a4958) !important;
+          background-color: var(--gray-50, #fafafa) !important;
 
           &:hover,
           &:focus {
-            color: $black !important;
-            background-color: $gray-100 !important;
+            color: var(--black, #000) !important;
+            background-color: var(--gray-100, #f3f3f4) !important;
           }
         }
       }

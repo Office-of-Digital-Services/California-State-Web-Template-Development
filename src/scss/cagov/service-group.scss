@@ -97,7 +97,7 @@
   // color: $text-color;
   // background: lighten($color-s2,10%);  // Caused acessibility failure. Should be dark blue
   color: $color-s1;
-  background: $brand-primary;
+  background: var(--brand-primary, #046b99);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

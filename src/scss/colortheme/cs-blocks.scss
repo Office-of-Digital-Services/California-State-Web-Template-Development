@@ -9,7 +9,7 @@
 }
 
 .circle-icon {
-  background: $gray-darker;
+  background: var(--gray-900, #3b3a48);
 }
 
 .icon-link {
@@ -22,7 +22,7 @@
 // beta 5.0 addition
 .service-tile-empty {
   background: #1c1d1e;
-  color: lighten($gray-base, 9%);
+  color: var(--gray-900, #3b3a48);
 }
 
 // News Blocks

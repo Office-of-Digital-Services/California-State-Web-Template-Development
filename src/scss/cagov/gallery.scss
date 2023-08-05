@@ -71,7 +71,7 @@
 
       @include font-size(2);
 
-      color: $color-a1;
+      color: var(--color-a1);
       top: 50%;
     }
   }

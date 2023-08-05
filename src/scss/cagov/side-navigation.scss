@@ -17,21 +17,21 @@
       position: relative;
       display: block;
       text-decoration: none !important;
-      color: $gray-800;
+      color: var(--gray-800, #4a4958);
       padding-bottom: 0.7rem;
       padding-top: 0.7rem;
       padding-left: 1rem;
-      border-bottom: 1px solid $gray-100;
+      border-bottom: 1px solid var(--gray-100, #f3f3f4);
 
       &.landing {
         font-weight: $font-weight-7;
 
         &.active {
-          background-color: $gray-75;
+          background-color: var(--gray-75, #f3f3f4);
 
           &:hover,
           &:focus {
-            background-color: $gray-100;
+            background-color: var(--gray-100, #f3f3f4);
           }
         }
 
@@ -49,15 +49,15 @@
       }
 
       &.active {
-        color: $gray-800;
+        color: var(--gray-800, #4a4958);
         text-decoration: none;
-        background-color: $gray-75;
+        background-color: var(--gray-75, #f3f3f4);
 
         &:hover,
         &:focus {
-          color: $black;
+          color: var(--black, #000);
           text-decoration: none;
-          background-color: $gray-100;
+          background-color: var(--gray-100, #f3f3f4);
         }
 
         &::before {
@@ -76,7 +76,7 @@
     a:hover,
     a:focus {
       text-decoration: none;
-      background-color: $gray-50;
+      background-color: var(--gray-50, #fafafa);
     }
 
     a:focus {
@@ -96,12 +96,12 @@
           padding-left: 2.5rem;
 
           &.active {
-            color: $gray-800;
+            color: var(--gray-800, #4a4958);
             text-decoration: none;
 
             &:hover,
             &:focus {
-              color: $black;
+              color: var(--black, #000);
               text-decoration: none;
             }
           }
@@ -114,7 +114,7 @@
 .sidenav-mobile-btn {
   display: block;
   padding: 0.5rem 0;
-  border-bottom: 1px solid $gray-200;
+  border-bottom: 1px solid var(--gray-200, #d4d4d7);
 
   .container {
     display: flex;
@@ -195,15 +195,15 @@ a.sidenav {
   padding-left: 1rem;
   position: relative;
   text-decoration: none !important;
-  color: $gray-700;
-  border-bottom: 1px solid $gray-100;
-  background-color: $white;
+  color: var(--gray-700, #5e5e6a);
+  border-bottom: 1px solid var(--gray-100, #f3f3f4);
+  background-color: var(--white, #ffffff);
 
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: $gray-50;
-    color: $black;
+    background-color: var(--gray-50, #fafafa);
+    color: var(--black, #000);
   }
 
   &:focus {
@@ -211,15 +211,15 @@ a.sidenav {
   }
 
   &.active {
-    color: $gray-700;
+    color: var(--gray-700, #5e5e6a);
     text-decoration: none;
-    background-color: $gray-75;
+    background-color: var(--gray-75, #f3f3f4);
 
     &:hover,
     &:focus {
       text-decoration: none !important;
-      color: $black;
-      background-color: $gray-100;
+      color: var(--black, #000);
+      background-color: var(--gray-100, #f3f3f4);
     }
 
     &::before {

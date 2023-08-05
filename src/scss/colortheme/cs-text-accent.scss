@@ -5,39 +5,39 @@
 
 .text {
   &-accent1 {
-    color: $color-a1 !important;
+    color: var(--color-a1, #1b79c0) !important;
   }
 
   &-accent2 {
-    color: $color-a2 !important;
+    color: var(--color-a2, #077cbb) !important;
   }
 
   &-accent3 {
-    color: $color-a3 !important;
+    color: var(--color-a3, #258378) !important;
   }
 
   &-accent4 {
-    color: $color-a4 !important;
+    color: var(--color-a4, #32852e) !important;
   }
 
   &-accent5 {
-    color: $color-a5 !important;
+    color: var(--color-a5, #815ab4) !important;
   }
 
   &-accent6 {
-    color: $color-a6 !important;
+    color: var(--color-a6, #be37cd) !important;
   }
 
   &-accent7 {
-    color: $color-a7 !important;
+    color: var(--color-a7, #c93e2c) !important;
   }
 
   &-accent8 {
-    color: $color-a8 !important;
+    color: var(--color-a8, #bb520c) !important;
   }
 
   &-accent9 {
-    color: $color-a9 !important;
+    color: var(--color-a9, #f7e455) !important;
   }
 
   // PRIMARY COLORS
@@ -77,8 +77,8 @@
 
 // badges
 .label-primary {
-  color: $black;
-  background-color: $gray-100;
+  color: var(--black, #000);
+  background-color: var(--gray-100, #f3f3f4);
   border-radius: 0;
 }
 

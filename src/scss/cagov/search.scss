@@ -67,13 +67,13 @@ $search-input-border-width: 3px;
     transition: border $search-ft;
 
     &::placeholder {
-      color: $black;
+      color: var(--black, #000);
       opacity: 1;
     }
 
     /* stylelint-disable-next-line selector-pseudo-element-no-unknown */
     &::input-placeholder {
-      color: $black;
+      color: var(--black, #000);
     }
 
     &:focus {
@@ -514,8 +514,8 @@ input[type="search"].search-textfield {
   }
 
   &.active {
-    background-color: $gray-100;
-    border-top: 1px solid $gray-300;
+    background-color: var(--gray-100, #f3f3f4);
+    border-top: 1px solid var(--gray-300, #bcbbc1);
   }
 }
 

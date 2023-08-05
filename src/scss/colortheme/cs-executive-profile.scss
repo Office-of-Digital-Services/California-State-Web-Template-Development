@@ -8,13 +8,13 @@
 
 .executive-profile.dark {
   .executive-profile-body {
-    border-left-color: $white;
+    border-left-color: var(--white, #ffffff);
   }
 
   p,
   .executive-name,
   a {
-    color: $white;
+    color: var(--white, #ffffff);
   }
 
   a:hover,

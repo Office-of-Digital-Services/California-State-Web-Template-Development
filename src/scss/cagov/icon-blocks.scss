@@ -17,7 +17,11 @@
 
 .bg-blue-gradient {
   background-repeat: repeat-x;
-  background-image: linear-gradient(225deg, $color-a1, $color-p2);
+  background-image: linear-gradient(
+    225deg,
+    var(--color-a1, #1b79c0),
+    $color-p2
+  );
 }
 
 .icon-block {
@@ -25,7 +29,7 @@
   display: inline-block;
   text-align: center;
   transition: all 0.2s ease-in-out;
-  color: $white;
+  color: var(--white, #ffffff);
   transform: translateY(-51%);
   font-size: 1.57143rem;
   height: 3.92857rem;
@@ -102,7 +106,7 @@
   text-decoration: none !important;
   font-size: 1.25rem;
   transition: all ease 0.3s;
-  color: $white !important;
+  color: var(--white, #ffffff) !important;
 
   &:hover,
   &:focus {

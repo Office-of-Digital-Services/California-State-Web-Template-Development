@@ -20,8 +20,8 @@
 
   &-overstated {
     // Overstated is same as primary // beta 5.0 addition
-    @include link-variant($white, $color-s1);
-    @include underline($white, $color-s1);
+    @include link-variant(var(--white, #ffffff), $color-s1);
+    @include underline(var(--white, #ffffff), $color-s1);
 
     background: $color-p2;
     color: contrast($color-p2);
@@ -29,10 +29,10 @@
     .btn-primary {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
-        $white,
+        var(--white, #ffffff),
         $color-p2,
         contrast($color-p2),
-        $white,
+        var(--white, #ffffff),
         darken($color-p2, 7%),
         contrast($color-p2)
       );
@@ -41,10 +41,10 @@
     .btn-standout {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
-        $white,
+        var(--white, #ffffff),
         $color-p3,
         contrast($color-p3),
-        $white,
+        var(--white, #ffffff),
         darken($color-p3, 7%),
         contrast($color-p3)
       );
@@ -52,11 +52,11 @@
   }
 
   &-standout {
-    @include link-variant($white, darken($color-s2, 15%));
+    @include link-variant(var(--white, #ffffff), darken($color-s2, 15%));
     @include underline($color-s3, darken($color-s2, 15%));
 
     a:not(.btn) {
-      color: $white;
+      color: var(--white, #ffffff);
 
       &:hover,
       &:focus {
@@ -76,10 +76,10 @@
     .btn-primary {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
-        $white,
+        var(--white, #ffffff),
         $color-p2,
         contrast($color-p2),
-        $white,
+        var(--white, #ffffff),
         darken($color-p2, 7%),
         contrast($color-p2)
       );
@@ -88,10 +88,10 @@
     .btn-standout {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
-        $white,
+        var(--white, #ffffff),
         $color-p3,
         contrast($color-p3),
-        $white,
+        var(--white, #ffffff),
         darken($color-p3, 7%),
         contrast($color-p3)
       );
@@ -114,10 +114,10 @@
     .btn-primary {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
-        $white,
+        var(--white, #ffffff),
         $color-p2,
         contrast($color-p2),
-        $white,
+        var(--white, #ffffff),
         darken($color-p2, 7%),
         contrast($color-p2)
       );
@@ -126,10 +126,10 @@
     .btn-standout {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
-        $white,
+        var(--white, #ffffff),
         $color-p3,
         contrast($color-p3),
-        $white,
+        var(--white, #ffffff),
         darken($color-p3, 7%),
         contrast($color-p3)
       );
@@ -157,8 +157,8 @@
   }
 
   &-primary {
-    @include link-variant($white, $color-s1);
-    @include underline($white, $color-s1);
+    @include link-variant(var(--white, #ffffff), $color-s1);
+    @include underline(var(--white, #ffffff), $color-s1);
 
     background: $color-p2;
     color: contrast($color-p2);
@@ -166,10 +166,10 @@
     .btn-primary {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
-        $white,
+        var(--white, #ffffff),
         $color-p2,
         contrast($color-p2),
-        $white,
+        var(--white, #ffffff),
         darken($color-p2, 7%),
         contrast($color-p2)
       );
@@ -178,10 +178,10 @@
     .btn-standout {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
-        $white,
+        var(--white, #ffffff),
         $color-p3,
         contrast($color-p3),
-        $white,
+        var(--white, #ffffff),
         darken($color-p3, 7%),
         contrast($color-p3)
       );
@@ -192,16 +192,16 @@
     @include link-variant($color-s3, darken($color-s3, 7%));
     @include underline($color-s3, darken($color-s3, 7%));
 
-    background: $gray-darker;
+    background: var(--gray-900, #3b3a48);
     color: #fff;
 
     .btn-primary {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
-        $white,
+        var(--white, #ffffff),
         $color-p2,
         contrast($color-p2),
-        $white,
+        var(--white, #ffffff),
         darken($color-p2, 7%),
         contrast($color-p2)
       );
@@ -210,10 +210,10 @@
     .btn-standout {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
-        $white,
+        var(--white, #ffffff),
         $color-p3,
         contrast($color-p3),
-        $white,
+        var(--white, #ffffff),
         darken($color-p3, 7%),
         contrast($color-p3)
       );
@@ -224,8 +224,8 @@
     @include link-variant($gray-base, $gray-base);
     @include underline($gray-base, $gray-base);
 
-    background: $brand-danger;
-    color: contrast($brand-danger);
+    background: var(--brand-danger, #cd402d);
+    color: var(--white, #ffffff);
   }
 }
 
@@ -236,23 +236,23 @@
 }
 
 .bg-primary {
-  color: $white;
+  color: var(--white, #ffffff);
 
-  @include link-variant($white, $color-s1);
-  @include underline($white, $color-s1);
+  @include link-variant(var(--white, #ffffff), $color-s1);
+  @include underline(var(--white, #ffffff), $color-s1);
 }
 
 .bg-standout {
-  color: $white;
+  color: var(--white, #ffffff);
 
   @include link-variant($color-s3, darken($color-s2, 15%));
   @include underline($color-s3, darken($color-s2, 15%));
 }
 
 a.text-white:not(.btn) {
-  @include link-underline($white);
+  @include link-underline(var(--white, #ffffff));
 
   &:hover {
-    @include link-underline($white);
+    @include link-underline(var(--white, #ffffff));
   }
 }

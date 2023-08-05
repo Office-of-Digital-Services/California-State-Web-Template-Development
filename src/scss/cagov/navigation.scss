@@ -176,18 +176,18 @@
 
       &:hover,
       &:focus {
-        background-color: $gray-50;
+        background-color: var(--gray-50, #fafafa);
       }
 
       &.active {
-        background-color: $gray-50;
+        background-color: var(--gray-50, #fafafa);
         position: relative;
-        color: $black;
+        color: var(--black, #000);
 
         &:hover,
         &:focus {
-          color: $gray-800;
-          background-color: $gray-100;
+          color: var(--gray-800, #4a4958);
+          background-color: var(--gray-100, #f3f3f4);
         }
 
         &::before {
@@ -196,7 +196,7 @@
           top: 0;
           left: 0;
           height: 100%;
-          border-left: 1px solid $gray-200;
+          border-left: 1px solid var(--gray-200, #d4d4d7);
         }
 
         &::after {
@@ -205,7 +205,7 @@
           top: 0;
           right: 0;
           height: 100%;
-          border-left: 1px solid $gray-200;
+          border-left: 1px solid var(--gray-200, #d4d4d7);
         }
       }
 
@@ -241,14 +241,14 @@
     &.active {
       .first-level-link,
       .first-level-btn {
-        background-color: $gray-50;
+        background-color: var(--gray-50, #fafafa);
         position: relative;
-        color: $black;
+        color: var(--black, #000);
 
         &:hover,
         &:focus {
-          color: $gray-800;
-          background-color: $gray-100;
+          color: var(--gray-800, #4a4958);
+          background-color: var(--gray-100, #f3f3f4);
         }
 
         &::before {
@@ -257,7 +257,7 @@
           top: 0;
           left: 0;
           height: 100%;
-          border-left: 1px solid $gray-200;
+          border-left: 1px solid var(--gray-200, #d4d4d7);
         }
 
         &::after {
@@ -266,7 +266,7 @@
           top: 0;
           right: 0;
           height: 100%;
-          border-left: 1px solid $gray-200;
+          border-left: 1px solid var(--gray-200, #d4d4d7);
         }
       }
     }
@@ -486,15 +486,15 @@
   // For standard mobile menu and off canvas menu
   .top-level-nav .nav-item {
     margin-top: 0;
-    border-bottom: 1px solid $gray-200;
+    border-bottom: 1px solid var(--gray-200, #d4d4d7);
 
     &:first-child {
-      border-top: 1px solid $gray-200;
+      border-top: 1px solid var(--gray-200, #d4d4d7);
     }
 
     .first-level-link,
     .first-level-btn {
-      color: $white;
+      color: var(--white, #ffffff);
       display: block;
       padding: 1rem 0 1rem 1rem;
       margin-right: 2px;
@@ -791,7 +791,7 @@
     cursor: pointer;
     border: none;
     transition: all 0.2s ease !important;
-    color: $white !important;
+    color: var(--white, #ffffff) !important;
   }
 
   .first-level-btn[aria-expanded="true"] .rotate {
@@ -805,6 +805,6 @@
     right: 0;
     text-align: center;
     transition: all 0.2s ease !important;
-    color: $white !important;
+    color: var(--white, #ffffff) !important;
   }
 }

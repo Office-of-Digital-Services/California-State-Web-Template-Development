@@ -375,7 +375,7 @@ h6,
   font-size: $font-size-large;
   margin-bottom: 3rem;
   font-weight: 600;
-  color: $gray-700;
+  color: var(--gray-700, #5e5e6a);
 
   @include media-breakpoint-up(sm) {
     font-size: calc(#{$font-size-large} + #{$ratio});
@@ -526,9 +526,9 @@ a.list-group-item {
   font-weight: 600;
   line-height: 1;
   font-size: 95%;
-  color: $black;
+  color: var(--black, #000);
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  background-color: $gray-100;
+  background-color: var(--gray-100, #f3f3f4);
 }

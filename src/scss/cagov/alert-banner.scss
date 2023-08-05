@@ -17,7 +17,7 @@
 }
 
 .alert-severe {
-  background: $brand-highlight;
+  background: var(--brand-highlight, #fdb81e);
 
   .close {
     color: $gray-base;

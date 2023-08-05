@@ -6,10 +6,10 @@
 .page-navigation {
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid $gray-200;
+  border-bottom: 1px solid var(--gray-200, #d4d4d7);
 
   .label {
-    color: $gray-700;
+    color: var(--gray-700, #5e5e6a);
     font-weight: $font-weight-7;
     font-size: $font-size-regular;
     line-height: $font-lineheight-5;

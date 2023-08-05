@@ -21,7 +21,7 @@ table.editor-table-striped {
 /* End Rich Text Editor */
 
 .table {
-  color: $gray-900;
+  color: var(--gray-900, #3b3a48);
 
   // The official table style design for CA.gov
   &.table-default {
@@ -52,5 +52,5 @@ table.editor-table-striped {
 }
 
 .table-striped > tbody > tr:nth-of-type(2n + 1) > * {
-  color: $gray-900;
+  color: var(--gray-900, #3b3a48);
 }

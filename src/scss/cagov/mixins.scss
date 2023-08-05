@@ -566,7 +566,7 @@
 
   // Nesting
   .table {
-    background-color: $white;
+    background-color: var(--white, #ffffff);
   }
 }
 
@@ -1007,8 +1007,8 @@
 // Underline
 
 @mixin underline(
-  $underlinecolor: $brand-primary,
-  $underlinehovercolor: darken($link-color, 15%),
+  $underlinecolor: var(--brand-primary, #046b99),
+  $underlinehovercolor: var(--brand-primary-darkest),
   $size-long: 2px,
   $size-height: 1px,
   $bottom: 4%
@@ -1029,7 +1029,7 @@
 }
 
 @mixin link-underline(
-  $undrlncolor: $brand-primary,
+  $undrlncolor: var(--brand-primary, #046b99),
   $size-long: 2px,
   $size-height: 1px,
   $bottom: 4%

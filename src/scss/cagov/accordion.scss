@@ -15,23 +15,23 @@ cagov-accordion details {
   summary {
     cursor: pointer;
     padding: 0.5rem 3rem 0.5rem 3.75rem;
-    background-color: $gray-50;
+    background-color: var(--gray-50, #fafafa);
     position: relative;
     line-height: 2rem;
     margin: 0;
-    color: $gray-800;
+    color: var(--gray-800, #4a4958);
     font-size: 1.125rem;
     font-weight: bold;
-    border: 1px solid $gray-200;
+    border: 1px solid var(--gray-200, #d4d4d7);
 
     &::before {
       position: absolute;
       height: 100%;
       width: 2.75rem;
-      border-right: 1px solid $gray-200;
+      border-right: 1px solid var(--gray-200, #d4d4d7);
       top: 0;
       left: 0;
-      background-color: $gray-50;
+      background-color: var(--gray-50, #fafafa);
 
       // top-left | top-right | bottom-right | bottom-left
       border-radius: 3px 0 0 3px;
@@ -71,7 +71,7 @@ cagov-accordion details {
       color: black;
 
       &::before {
-        background-color: $gray-100;
+        background-color: var(--gray-100, #f3f3f4);
       }
     }
   }
@@ -81,7 +81,7 @@ cagov-accordion details {
 
     // top-left | top-right | bottom-right | bottom-left
     border-radius: 0 0 4px 4px;
-    border: 1px solid $gray-200;
+    border: 1px solid var(--gray-200, #d4d4d7);
     border-top: none;
   }
 }
@@ -105,7 +105,7 @@ cagov-accordion:defined {
 
     &:focus {
       &::before {
-        background-color: $gray-100;
+        background-color: var(--gray-100, #f3f3f4);
       }
 
       &::after {
@@ -133,7 +133,7 @@ cagov-accordion:defined {
       &::before {
         // top-left | top-right | bottom-right | bottom-left
         border-radius: 3px 0 0;
-        background-color: $gray-100;
+        background-color: var(--gray-100, #f3f3f4);
       }
 
       &:focus {

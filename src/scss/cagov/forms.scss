@@ -20,20 +20,21 @@ label {
   border-radius: $border-radius-base;
 
   &.is-valid {
-    color: $brand-success;
-    border-color: $brand-success;
-    background-color: lighten($brand-success, 27%);
+    color: var(--brand-success, #32852e);
+    border-color: var(--brand-success, #32852e);
+    background-color: var(--brand-success-lighter, #c6dac2);
   }
 
   &.is-invalid {
-    color: $brand-danger;
-    border-color: $brand-danger;
-    background-color: lighten($brand-danger, 40%);
+    color: var(--brand-danger, #cd402d);
+    border-color: var(--brand-danger, #cd402d);
+    // background-color: lighten($brand-danger, 40%);
+    background-color: var(--brand-danger-lighter, #f4d9d5);
   }
 }
 
 .custom-file-label::after {
-  color: $white;
+  color: var(--white, #ffffff);
   border-radius: $border-radius-base;
   font-weight: 500;
 }
@@ -45,7 +46,7 @@ label {
 
 // Asterisk
 .required-label {
-  color: $brand-danger;
+  color: var(--brand-danger, #cd402d);
 }
 
 .form-group {
@@ -105,33 +106,33 @@ label {
 // Bootstrap3 Backward bcompatibility
 .has-error {
   .feedback {
-    color: darken($brand-danger, 3%);
+    color: var(--brand-danger-darker, #9f3f2e);
   }
 
   .input-group-addon {
-    color: $brand-danger;
-    border-color: $brand-danger;
-    background-color: lighten($brand-danger, 40%);
+    color: var(--brand-danger, #cd402d);
+    border-color: var(--brand-danger, #cd402d);
+    background-color: var(--brand-danger-lighter, #f4d9d5);
   }
 
   .form-control {
-    border-color: $brand-danger;
+    border-color: var(--brand-danger, #cd402d);
   }
 }
 
 .has-success {
   .feedback {
-    color: darken($brand-success, 17%);
+    color: var(--brand-success-darkest, #1e3417);
   }
 
   .input-group-addon {
-    color: $brand-success;
-    border-color: $brand-success;
-    background-color: lighten($brand-success, 27%);
+    color: var(--brand-success, #32852e);
+    border-color: var(--brand-success, #32852e);
+    background-color: var(--brand-success-lighter, #c6dac2);
   }
 
   .form-control {
-    border-color: $brand-success;
+    border-color: var(--brand-success, #32852e);
   }
 }
 
@@ -201,7 +202,7 @@ label {
   width: 18px;
   height: 18px;
   font-size: 12px;
-  color: $white;
+  color: var(--white, #ffffff);
   border: 1px solid;
 
   i {
@@ -261,7 +262,7 @@ input[type="radio"]:checked + * i {
     position: absolute;
     right: 0;
     top: 0;
-    background: $white;
+    background: var(--white, #ffffff);
     z-index: 3;
     text-align: center;
     width: 30px;
@@ -311,7 +312,7 @@ input[type="radio"]:focus + .btn {
 }
 
 .valid-feedback {
-  color: $brand-success;
+  color: var(--brand-success, #32852e);
 }
 
 /* Accessibilty focus */

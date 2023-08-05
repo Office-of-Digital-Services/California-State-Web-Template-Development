@@ -28,12 +28,12 @@
   .side-navigation ul {
     li {
       a {
-        color: $white;
+        color: var(--white, #ffffff);
         border-bottom-color: $mobile-drawer;
 
         &:hover,
         &:focus {
-          color: $white;
+          color: var(--white, #ffffff);
           background-color: $mobile-drawer-active;
         }
 
@@ -41,13 +41,13 @@
           background-color: $mobile-drawer-active;
 
           &::before {
-            color: $white;
+            color: var(--white, #ffffff);
             border-left-color: $color-p1;
           }
 
           &:hover,
           &:focus {
-            color: $white;
+            color: var(--white, #ffffff);
             background-color: $mobile-drawer;
           }
         }
@@ -66,10 +66,10 @@
   .side-navigation ul {
     li {
       a {
-        color: $gray-700;
+        color: var(--gray-700, #5e5e6a);
 
         &:hover {
-          color: $gray-900;
+          color: var(--gray-900, #3b3a48);
         }
 
         &.active {
@@ -86,10 +86,10 @@
   }
 
   a.sidenav {
-    color: $gray-700;
+    color: var(--gray-700, #5e5e6a);
 
     &:hover {
-      color: $gray-900;
+      color: var(--gray-900, #3b3a48);
     }
 
     &.active {
@@ -223,13 +223,13 @@
 .list-group.section-inverted {
   .list-group-item,
   .list-group-item > button {
-    background: $gray-darker !important;
+    background: var(--gray-900, #3b3a48) !important;
     color: #fff !important;
 
     &:hover,
     &:focus,
     &.open {
-      background: darken($gray-darker, 7%) !important;
+      background: var(--black, #000) !important;
       color: #fff !important;
     }
 
@@ -250,25 +250,25 @@
 .list-group.section-danger {
   .list-group-item,
   .list-group-item > button {
-    background: $brand-danger !important;
-    color: contrast($brand-danger) !important;
+    background: var(--brand-danger, #cd402d) !important;
+    color: var(--white, #fff) !important;
 
     &:hover,
     &:focus,
     &.open {
-      background: darken($brand-danger, 7%) !important;
-      color: contrast($brand-danger) !important;
+      background: var(--brand-danger-darker) !important;
+      color: var(--white, #fff) !important;
     }
 
     &.active {
       background-color: #fff !important;
-      border-color: $brand-danger;
-      color: $brand-danger !important;
+      border-color: var(--brand-danger, #cd402d);
+      color: var(--brand-danger, #cd402d) !important;
 
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
-        border-color: $brand-danger;
+        border-color: var(--brand-danger, #cd402d);
       }
     }
   }
@@ -288,7 +288,7 @@
     &.active {
       background-color: $color-p2 !important;
       border-color: $color-p2;
-      color: $white !important;
+      color: var(--white, #ffffff) !important;
 
       &:hover,
       &:focus {
@@ -313,7 +313,7 @@
     &.active {
       background-color: $color-p2 !important;
       border-color: $color-p2;
-      color: $white !important;
+      color: var(--white, #ffffff) !important;
 
       &:hover,
       &:focus {

@@ -30,7 +30,7 @@
 
   .gsc-url-top {
     .gs-visibleUrl-breadcrumb span {
-      color: $gray-600 !important;
+      color: var(--gray-600, #72717c) !important;
     }
   }
 

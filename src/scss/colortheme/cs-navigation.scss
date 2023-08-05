@@ -16,7 +16,7 @@ nav-item-search {
       // border-bottom:5px solid $color-p2;
       // margin-bottom:-5px;
       > span[class^="ca-gov-icon"] {
-        color: $gray-900;
+        color: var(--gray-900, #3b3a48);
       }
     }
   }
@@ -33,7 +33,7 @@ nav-item-search {
       color: $color-p2;
 
       > span[class^="ca-gov-icon"] {
-        color: $gray-900;
+        color: var(--gray-900, #3b3a48);
       }
     }
   }
@@ -52,24 +52,24 @@ nav-item-search {
 
   > span[class^="ca-gov-icon"]:not(.carrot) {
     /* Navigation icons */
-    color: $gray-700;
+    color: var(--gray-700, #5e5e6a);
   }
 
   &:hover,
   &:focus {
-    color: $gray-900;
+    color: var(--gray-900, #3b3a48);
   }
 
   // 991
   @media (max-width: $screen-sm-max) {
     &.active {
       background-color: $mobile-drawer-active !important;
-      color: $white !important;
+      color: var(--white, #ffffff) !important;
 
       &:hover,
       &:focus {
         background-color: $mobile-drawer !important;
-        color: $white !important;
+        color: var(--white, #ffffff) !important;
       }
 
       &::before,
@@ -81,7 +81,7 @@ nav-item-search {
     &:hover,
     &:focus {
       background-color: $mobile-drawer-active !important;
-      color: $white !important;
+      color: var(--white, #ffffff) !important;
     }
   }
 }
@@ -93,7 +93,7 @@ nav-item-search {
   color: $color-p2;
 
   [class^="ca-gov-icon-"] {
-    color: $gray-700;
+    color: var(--gray-700, #5e5e6a);
   }
 
   // 991px
@@ -114,8 +114,8 @@ nav-item-search {
 .second-level-nav {
   > li {
     border: 1px solid transparent;
-    border-right: 4px solid $white; // beta 6.0 addition
-    border-bottom: 4px solid $white; // beta 6.0 addition
+    border-right: 4px solid var(--white, #ffffff); // beta 6.0 addition
+    border-bottom: 4px solid var(--white, #ffffff); // beta 6.0 addition
 
     &:hover,
     &:focus {
@@ -124,7 +124,7 @@ nav-item-search {
 
     @media (max-width: $screen-sm-max) {
       border: none; // beta 5.0 addition (for accessible menu)
-      border-top: 1px solid $gray-200;
+      border-top: 1px solid var(--gray-200, #d4d4d7);
 
       &:hover,
       &:focus {
@@ -146,7 +146,7 @@ nav-item-search {
   // border-bottom: 5px solid $color-p2;
   // border-left: 1px solid $gray-lighter;
   // border-right: 1px solid $gray-lighter;
-  background: $white;
+  background: var(--white, #ffffff);
 }
 
 @media (max-width: $screen-xs-max) {
@@ -168,10 +168,10 @@ nav-item-search {
       background: #fff;
     }
 
-    border-bottom: 4px solid $white;
+    border-bottom: 4px solid var(--white, #ffffff);
 
     @media (max-width: $screen-xs-max) {
-      border-bottom: 4px solid $white;
+      border-bottom: 4px solid var(--white, #ffffff);
 
       &:hover,
       &:focus {
@@ -216,12 +216,12 @@ nav-item-search {
     &.active {
       .first-level-btn {
         background-color: $mobile-drawer-active !important;
-        color: $white !important;
+        color: var(--white, #ffffff) !important;
 
         &:hover,
         &:focus {
           background-color: $mobile-drawer !important;
-          color: $white !important;
+          color: var(--white, #ffffff) !important;
         }
 
         &::before,

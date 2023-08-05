@@ -93,7 +93,7 @@
   transition: all 0.2s ease-in-out 0s;
 
   &:hover {
-    color: $white;
+    color: var(--white, #ffffff);
     text-decoration: none;
   }
 
@@ -116,7 +116,7 @@
   max-width: 100%;
   margin: 0;
   overflow: hidden;
-  color: $white;
+  color: var(--white, #ffffff);
   backface-visibility: hidden;
   transform: translateZ(0);
 

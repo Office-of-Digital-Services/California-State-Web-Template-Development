@@ -68,7 +68,7 @@
 
         &:hover,
         &:focus {
-          color: $gray-800;
+          color: var(--gray-800, #4a4958);
           background-color: transparent;
           border: none;
         }
@@ -110,7 +110,7 @@
     vertical-align: initial;
     line-height: 120%;
     background: white;
-    color: $black;
+    color: var(--black, #000);
   }
 
   // FLEX UTILITY

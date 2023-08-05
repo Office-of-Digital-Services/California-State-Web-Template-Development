@@ -11,7 +11,7 @@
 }
 
 .mobile-controls {
-  background: $white;
+  background: var(--white, #ffffff);
 }
 
 .mobile-control {

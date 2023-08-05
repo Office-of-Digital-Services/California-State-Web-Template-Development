@@ -28,37 +28,37 @@
 /* Accent Colors */
 
 .progress-bar-accent1 {
-  @include progress-bar-variant($color-a1);
+  @include progress-bar-variant(var(--color-a1, #1b79c0));
 }
 
 .progress-bar-accent2 {
-  @include progress-bar-variant($color-a2);
+  @include progress-bar-variant(var(--color-a2, #077cbb));
 }
 
 .progress-bar-accent3 {
-  @include progress-bar-variant($color-a3);
+  @include progress-bar-variant(var(--color-a3, #258378));
 }
 
 .progress-bar-accent4 {
-  @include progress-bar-variant($color-a4);
+  @include progress-bar-variant(var(--color-a4, #32852e));
 }
 
 .progress-bar-accent5 {
-  @include progress-bar-variant($color-a5);
+  @include progress-bar-variant(var(--color-a5, #815ab4));
 }
 
 .progress-bar-accent6 {
-  @include progress-bar-variant($color-a6);
+  @include progress-bar-variant(var(--color-a6, #be37cd));
 }
 
 .progress-bar-accent7 {
-  @include progress-bar-variant($color-a7);
+  @include progress-bar-variant(var(--color-a7, #c93e2c));
 }
 
 .progress-bar-accent8 {
-  @include progress-bar-variant($color-a8);
+  @include progress-bar-variant(var(--color-a8, #bb520c));
 }
 
 .progress-bar-accent9 {
-  @include progress-bar-variant($color-a9);
+  @include progress-bar-variant(var(--color-a9, #f7e455));
 }

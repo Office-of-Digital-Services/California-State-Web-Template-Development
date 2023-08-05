@@ -53,7 +53,7 @@
       // active
       &.active {
         .accordion__trigger {
-          color: $white !important;
+          color: var(--white, #ffffff) !important;
         }
       }
     }
@@ -76,13 +76,13 @@
       padding-bottom: 0.7rem;
       padding-left: 2.5rem;
       text-decoration: none !important;
-      border-bottom: 1px solid $gray-100;
+      border-bottom: 1px solid var(--gray-100, #f3f3f4);
 
       &:hover,
       &:focus {
         text-decoration: none;
-        color: $black;
-        background-color: $gray-50;
+        color: var(--black, #000);
+        background-color: var(--gray-50, #fafafa);
       }
 
       &:focus {
@@ -92,9 +92,9 @@
       }
 
       &.active {
-        color: $gray-700;
+        color: var(--gray-700, #5e5e6a);
         text-decoration: none;
-        background-color: $gray-75;
+        background-color: var(--gray-75, #f3f3f4);
 
         &::before {
           content: "";
@@ -109,9 +109,9 @@
 
         &:hover,
         &:focus {
-          color: $black;
+          color: var(--black, #000);
           text-decoration: none;
-          background-color: $gray-100;
+          background-color: var(--gray-100, #f3f3f4);
         }
       }
     }
@@ -128,12 +128,12 @@ cagov-accordion.sidenav {
     // SUMMARY
     summary {
       border: none;
-      background: $white;
+      background: var(--white, #ffffff);
       padding: 0.7rem 2rem 0.7rem 1rem;
       font-size: calc(1rem + $ratio);
       font-weight: 400;
       text-decoration: none;
-      border-bottom: 1px solid $gray-100;
+      border-bottom: 1px solid var(--gray-100, #f3f3f4);
 
       &::before {
         border: none !important;
@@ -149,7 +149,7 @@ cagov-accordion.sidenav {
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: $gray-50;
+        background-color: var(--gray-50, #fafafa);
 
         &::before {
           border: none;
@@ -165,9 +165,9 @@ cagov-accordion.sidenav {
 
       // ACTIVE STATE
       &.active {
-        color: $black !important;
+        color: var(--black, #000) !important;
         text-decoration: none;
-        background-color: $gray-75;
+        background-color: var(--gray-75, #f3f3f4);
         font-weight: 400;
 
         &::before {
@@ -178,9 +178,9 @@ cagov-accordion.sidenav {
 
         &:hover,
         &:focus {
-          color: $gray-700 !important;
+          color: var(--gray-700, #5e5e6a) !important;
           text-decoration: none;
-          background-color: $gray-100;
+          background-color: var(--gray-100, #f3f3f4);
         }
 
         &:focus {
@@ -193,7 +193,7 @@ cagov-accordion.sidenav {
       // OPEN STATE
       &[open] {
         summary {
-          color: $black;
+          color: var(--black, #000);
 
           &::after {
             display: none;
