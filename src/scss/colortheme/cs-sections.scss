@@ -6,35 +6,33 @@
 .section,
 .card {
   &-default {
-    background: $gray-lightest;
+    background: var(--gray-50, #fafafa);
   }
 
   &-search {
-    background: $gray-lighter; // TODO: Make Generic
+    background: var(--gray-100, #ededef);
   }
 
   &-understated {
-    // background: $gray-lighter;
-    background: $color-s1; // beta 5.0 addition
+    background: $color-s1;
   }
 
   &-overstated {
-    // Overstated is same as primary // beta 5.0 addition
     @include link-variant(var(--white, #ffffff), $color-s1);
     @include underline(var(--white, #ffffff), $color-s1);
 
-    background: $color-p2;
-    color: contrast($color-p2);
+    background: var(--color-p2, #046b99);
+    color: var(--white, #ffffff);
 
     .btn-primary {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
         var(--white, #ffffff),
-        $color-p2,
-        contrast($color-p2),
+        var(--color-p2, #046b99),
         var(--white, #ffffff),
-        darken($color-p2, 7%),
-        contrast($color-p2)
+        var(--white, #ffffff),
+        var(--color-p2-darker, #214a68),
+        var(--white, #ffffff)
       );
     }
 
@@ -42,11 +40,11 @@
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
         var(--white, #ffffff),
-        $color-p3,
-        contrast($color-p3),
+        var(--color-p3, #323a45),
         var(--white, #ffffff),
-        darken($color-p3, 7%),
-        contrast($color-p3)
+        var(--white, #ffffff),
+        var(--color-p3-darker, #242830),
+        var(--white, #ffffff)
       );
     }
   }
@@ -56,32 +54,32 @@
     @include underline($color-s3, darken($color-s2, 15%));
 
     a:not(.btn) {
-      color: var(--white, #ffffff);
+      color: var(--white, #fff);
 
       &:hover,
       &:focus {
         text-decoration: underline;
-        color: $color-p1;
+        color: var(--color-p1, #fdb81e);
       }
     }
 
     @include donut-color-variants(
-      $donut-background: $gray-lighter,
-      $donut-halfmark: $gray-lightest
+      $donut-background: var(--gray-100, #ededef),
+      $donut-halfmark: var(--gray-50, #fafafa)
     );
 
-    background: $color-p3;
-    color: contrast($color-p3);
+    background: var(--color-p3, #323a45);
+    color: var(--white, #fff);
 
     .btn-primary {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
         var(--white, #ffffff),
-        $color-p2,
-        contrast($color-p2),
+        var(--color-p2, #046b99),
         var(--white, #ffffff),
-        darken($color-p2, 7%),
-        contrast($color-p2)
+        var(--white, #ffffff),
+        var(--color-p2-darker, #214a68),
+        var(--white, #ffffff)
       );
     }
 
@@ -89,11 +87,11 @@
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
         var(--white, #ffffff),
-        $color-p3,
-        contrast($color-p3),
+        var(--color-p3, #323a45),
+        var(--white, #fff),
         var(--white, #ffffff),
-        darken($color-p3, 7%),
-        contrast($color-p3)
+        var(--color-p3-darker, #242830),
+        var(--white, #fff)
       );
     }
   }
@@ -104,22 +102,22 @@
     @include link-variant($color-s3, darken($color-s2, 15%));
     @include underline($color-s3, darken($color-s2, 15%));
     @include donut-color-variants(
-      $donut-background: $gray-lighter,
-      $donut-halfmark: $gray-lightest
+      $donut-background: var(--gray-100, #ededef),
+      $donut-halfmark: var(--gray-50, #fafafa)
     );
 
-    background: $color-p3;
-    color: contrast($color-p3);
+    background: var(--color-p3, #323a45);
+    color: var(--white, #fff);
 
     .btn-primary {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
         var(--white, #ffffff),
-        $color-p2,
-        contrast($color-p2),
+        var(--color-p2, #046b99),
         var(--white, #ffffff),
-        darken($color-p2, 7%),
-        contrast($color-p2)
+        var(--white, #ffffff),
+        var(--color-p2-darker, #214a68),
+        var(--white, #ffffff)
       );
     }
 
@@ -127,11 +125,11 @@
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
         var(--white, #ffffff),
-        $color-p3,
-        contrast($color-p3),
+        var(--color-p3, #323a45),
         var(--white, #ffffff),
-        darken($color-p3, 7%),
-        contrast($color-p3)
+        var(--white, #ffffff),
+        var(--color-p3-darker, #242830),
+        var(--white, #ffffff)
       );
     }
 
@@ -160,18 +158,18 @@
     @include link-variant(var(--white, #ffffff), $color-s1);
     @include underline(var(--white, #ffffff), $color-s1);
 
-    background: $color-p2;
-    color: contrast($color-p2);
+    background: var(--color-p2, #046b99);
+    color: var(--white, #ffffff);
 
     .btn-primary {
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
         var(--white, #ffffff),
-        $color-p2,
-        contrast($color-p2),
+        var(--color-p2, #046b99),
         var(--white, #ffffff),
-        darken($color-p2, 7%),
-        contrast($color-p2)
+        var(--white, #ffffff),
+        var(--color-p2-darker, #214a68),
+        var(--white, #ffffff)
       );
     }
 
@@ -179,11 +177,11 @@
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
         var(--white, #ffffff),
-        $color-p3,
-        contrast($color-p3),
+        var(--color-p3, #323a45),
         var(--white, #ffffff),
-        darken($color-p3, 7%),
-        contrast($color-p3)
+        var(--white, #ffffff),
+        var(--color-p3-darker, #242830),
+        var(--white, #ffffff)
       );
     }
   }
@@ -199,11 +197,11 @@
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
         var(--white, #ffffff),
-        $color-p2,
-        contrast($color-p2),
+        var(--color-p2, #046b99),
         var(--white, #ffffff),
-        darken($color-p2, 7%),
-        contrast($color-p2)
+        var(--white, #ffffff),
+        var(--color-p2-darker, #214a68),
+        var(--white, #ffffff)
       );
     }
 
@@ -211,18 +209,18 @@
       // better-button = color; background; border, hover-color; hover-background; hover-border
       @include better-button(
         var(--white, #ffffff),
-        $color-p3,
-        contrast($color-p3),
+        var(--color-p3, #323a45),
         var(--white, #ffffff),
-        darken($color-p3, 7%),
-        contrast($color-p3)
+        var(--white, #ffffff),
+        var(--color-p3-darker, #242830),
+        var(--white, #ffffff)
       );
     }
   }
 
   &-danger {
-    @include link-variant($gray-base, $gray-base);
-    @include underline($gray-base, $gray-base);
+    @include link-variant(var(--black, #000000), var(--black, #000000));
+    @include underline(var(--black, #000000), var(--black, #000000));
 
     background: var(--brand-danger, #cd402d);
     color: var(--white, #ffffff);
@@ -231,8 +229,8 @@
 
 // background links / gradient links
 .bg-highlight {
-  @include link-variant($text-color, $gray-base);
-  @include underline($text-color, $gray-base);
+  @include link-variant(var(--gray-900, #3b3a48), var(--black, #000000));
+  @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
 }
 
 .bg-primary {

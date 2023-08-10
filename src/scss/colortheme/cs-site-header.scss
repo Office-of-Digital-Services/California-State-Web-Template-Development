@@ -7,7 +7,7 @@
 // --------------------------------------------------
 
 .toggle-menu span {
-  background-color: $color-p2;
+  background-color: var(--color-p2-darker, #214a68);
 }
 
 .mobile-controls {
@@ -23,7 +23,7 @@
   }
 
   &.toggle-sub-nav {
-    color: $color-p2;
+    color: var(--color-p2, #046b99);
     background-color: darken($sub-nav-bg, 2%);
 
     &:hover,

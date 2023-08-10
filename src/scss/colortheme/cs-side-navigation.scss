@@ -4,7 +4,7 @@
 ----------------------------------------- */
 .side-navigation ul li a.active::before,
 .list-navigation li a.active::before {
-  border-left-color: $color-p1;
+  border-left-color: var(--color-p1, #fdb81e);
 }
 
 /* MOBILE */
@@ -12,11 +12,11 @@
   background-color: $color-s1;
 
   .sidenav-toggle {
-    color: $color-p2;
+    color: var(--color-p2, #046b99);
 
     &:hover,
     &:focus {
-      color: darken($color-p2, 7%);
+      color: var(--color-p2-darker, #214a68);
     }
   }
 }
@@ -42,7 +42,7 @@
 
           &::before {
             color: var(--white, #ffffff);
-            border-left-color: $color-p1;
+            border-left-color: var(--color-p1, #fdb81e);
           }
 
           &:hover,
@@ -53,7 +53,7 @@
         }
 
         ul li a.active::before {
-          border-left-color: $color-p1;
+          border-left-color: var(--color-p1, #fdb81e);
         }
       }
     }
@@ -74,13 +74,13 @@
 
         &.active {
           &::before {
-            border-left-color: $color-p1;
+            border-left-color: var(--color-p1, #fdb81e);
           }
         }
       }
 
       ul li a.active::before {
-        border-left-color: $color-p1;
+        border-left-color: var(--color-p1, #fdb81e);
       }
     }
   }
@@ -94,7 +94,7 @@
 
     &.active {
       &::before {
-        border-left-color: $color-p1;
+        border-left-color: var(--color-p1, #fdb81e);
       }
     }
   }
@@ -103,12 +103,12 @@
 /* bootstrap side navigation */
 .list-group-item {
   &.active {
-    background-color: $color-p2;
-    border-color: $color-p2;
+    background-color: var(--color-p2, #046b99);
+    border-color: var(--color-p2, #046b99);
 
     &:hover {
-      background-color: darken($color-p2, 7%) !important;
-      border-color: darken($color-p2, 7%);
+      background-color: var(--color-p2-darker, #214a68) !important;
+      border-color: var(--color-p2-darker, #214a68);
     }
   }
 }
@@ -116,25 +116,25 @@
 .list-group.section-standout {
   .list-group-item,
   .list-group-item > button {
-    background-color: $color-p3 !important;
-    color: contrast($color-p3) !important;
+    background-color: var(--color-p3, #323a45) !important;
+    color: var(--white, #fff) !important;
 
     &:hover,
     &:focus,
     &.open {
-      background: darken($color-p3, 7%) !important;
-      color: contrast($color-p3) !important;
+      background: var(--color-p3-darker, #242830) !important;
+      color: var(--white, #fff) !important;
     }
 
     &.active {
       background-color: #fff !important;
-      border-color: $color-p3;
-      color: $color-p3 !important;
+      border-color: var(--color-p3, #323a45);
+      color: var(--color-p3, #323a45) !important;
 
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
-        border-color: $color-p3;
+        border-color: var(--color-p3, #323a45);
       }
     }
   }
@@ -143,25 +143,25 @@
 .list-group.section-overstated {
   .list-group-item,
   .list-group-item > button {
-    background: $color-p2 !important;
-    color: contrast($color-p2) !important;
+    background: var(--color-p2, #046b99) !important;
+    color: var(--white, #fff) !important;
 
     &:hover,
     &:focus,
     &.open {
-      background: darken($color-p2, 7%) !important;
-      color: contrast($color-p2) !important;
+      background: var(--color-p2-darker, #214a68) !important;
+      color: var(--white, #fff) !important;
     }
 
     &.active {
       background-color: #fff !important;
-      border-color: $color-p2;
-      color: $color-p2 !important;
+      border-color: var(--color-p2, #046b99);
+      color: var(--color-p2, #046b99) !important;
 
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
-        border-color: $color-p2;
+        border-color: var(--color-p2, #046b99);
       }
     }
   }
@@ -170,24 +170,24 @@
 .list-group.section-impact {
   .list-group-item,
   .list-group-item > button {
-    background: $color-p3 !important;
-    color: contrast($color-p3) !important;
+    background: var(--color-p3, #323a45) !important;
+    color: var(--white, #fff) !important;
 
     &:hover,
     &:focus {
-      background: darken($color-p3, 7%) !important;
-      color: contrast($color-p3) !important;
+      background: var(--color-p3-darker, #242830) !important;
+      color: var(--white, #fff) !important;
     }
 
     &.active {
       background-color: #fff !important;
-      border-color: $color-p3;
-      color: $color-p3 !important;
+      border-color: var(--color-p3, #323a45);
+      color: var(--color-p3, #323a45) !important;
 
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
-        border-color: $color-p3;
+        border-color: var(--color-p3, #323a45);
       }
     }
   }
@@ -196,25 +196,25 @@
 .list-group.section-primary {
   .list-group-item,
   .list-group-item > button {
-    background: $color-p2 !important;
-    color: contrast($color-p2) !important;
+    background: var(--color-p2, #046b99) !important;
+    color: var(--white, #fff) !important;
 
     &:hover,
     &:focus,
     &.open {
-      background: darken($color-p2, 7%) !important;
-      color: contrast($color-p2) !important;
+      background: var(--color-p2-darker, #214a68) !important;
+      color: var(--white, #fff) !important;
     }
 
     &.active {
       background-color: #fff !important;
-      border-color: $color-p2;
-      color: $color-p2 !important;
+      border-color: var(--color-p2, #046b99);
+      color: var(--color-p2, #046b99) !important;
 
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
-        border-color: $color-p2;
+        border-color: var(--color-p2, #046b99);
       }
     }
   }
@@ -235,13 +235,13 @@
 
     &.active {
       background-color: #fff !important;
-      border-color: $color-p3;
-      color: $color-p3 !important;
+      border-color: var(--color-p3, #323a45);
+      color: var(--color-p3, #323a45) !important;
 
       &:hover,
       &:focus {
         background-color: #f8f9fa !important;
-        border-color: $color-p3;
+        border-color: var(--color-p3, #323a45);
       }
     }
   }
@@ -286,14 +286,14 @@
     }
 
     &.active {
-      background-color: $color-p2 !important;
-      border-color: $color-p2;
+      background-color: var(--color-p2, #046b99) !important;
+      border-color: var(--color-p2, #046b99);
       color: var(--white, #ffffff) !important;
 
       &:hover,
       &:focus {
-        background-color: darken($color-p2, 7%) !important;
-        border-color: darken($color-p2, 7%) !important;
+        background-color: var(--color-p2-darker, #214a68) !important;
+        border-color: var(--color-p2-darker, #214a68) !important;
       }
     }
   }
@@ -302,23 +302,23 @@
 .list-group.section-default {
   .list-group-item,
   .list-group-item > button {
-    background: $gray-lightest !important;
+    background: var(--gray-50, #fafafa) !important;
 
     &:hover,
     &:focus,
     &.open {
-      background: darken($gray-lightest, 7%) !important;
+      background: var(--gray-100, #ededef) !important;
     }
 
     &.active {
-      background-color: $color-p2 !important;
-      border-color: $color-p2;
+      background-color: var(--color-p2, #046b99) !important;
+      border-color: var(--color-p2, #046b99);
       color: var(--white, #ffffff) !important;
 
       &:hover,
       &:focus {
-        background-color: darken($color-p2, 7%) !important;
-        border-color: darken($color-p2, 7%) !important;
+        background-color: var(--color-p2-darker, #214a68) !important;
+        border-color: var(--color-p2-darker, #214a68) !important;
       }
     }
   }

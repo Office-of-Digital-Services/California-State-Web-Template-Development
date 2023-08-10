@@ -5,7 +5,7 @@
 
 .testimonial {
   &-default {
-    background: $gray-lightest;
+    background: var(--gray-50, #fafafa);
   }
 
   &-understated {
@@ -13,11 +13,15 @@
   }
 
   &-overstated {
-    @include link-variant($text-color, $gray-base, none);
-    @include underline($text-color, $gray-base);
+    @include link-variant(
+      var(--gray-900, #3b3a48),
+      var(--black, #000000),
+      none
+    );
+    @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
 
     background: $color-s3;
-    color: $text-color;
+    color: var(--gray-900, #3b3a48);
 
     footer {
       color: contrast($color-s3);
@@ -25,14 +29,14 @@
   }
 
   &-standout {
-    @include link-variant($color-p1, #fff, none);
-    @include underline($color-p1, var(--white, #ffffff));
+    @include link-variant(var(--color-p1, #fdb81e), #fff, none);
+    @include underline(var(--color-p1, #fdb81e), var(--white, #ffffff));
 
-    background: $color-p3;
-    color: contrast($color-p3);
+    background: var(--color-p3, #323a45);
+    color: var(--white, #fff);
 
     footer {
-      color: contrast($color-p3);
+      color: var(--white, #fff);
     }
   }
 
@@ -40,29 +44,33 @@
     @include link-variant(var(--white, #ffffff), $color-s1, none);
     @include underline(var(--white, #ffffff), $color-s1);
 
-    background: $color-p2;
-    color: contrast($color-p2);
+    background: var(--color-p2, #046b99);
+    color: var(--white, #ffffff);
 
     footer {
-      color: contrast($color-p2);
+      color: var(--white, #ffffff);
     }
   }
 
   &-highlight {
-    @include link-variant($text-color, $gray-base, none);
-    @include underline($text-color, $gray-base);
+    @include link-variant(
+      var(--gray-900, #3b3a48),
+      var(--black, #000000),
+      none
+    );
+    @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
 
-    background: $color-p1;
-    color: $text-color;
+    background: var(--color-p1, #fdb81e);
+    color: var(--gray-900, #3b3a48);
 
     footer {
-      color: contrast($color-p1);
+      color: var(--gray-900, #3b3a48);
     }
   }
 
   &-inverted {
-    @include link-variant($color-p1, #fff, none);
-    @include underline($color-p1, var(--white, #ffffff));
+    @include link-variant(var(--color-p1, #fdb81e), #fff, none);
+    @include underline(var(--color-p1, #fdb81e), var(--white, #ffffff));
 
     background: var(--gray-900, #3b3a48);
     color: #fff;
@@ -73,8 +81,8 @@
   }
 
   &-danger {
-    @include link-variant($gray-base, $gray-base);
-    @include underline($gray-base, $gray-base);
+    @include link-variant(var(--black, #000000), var(--black, #000000));
+    @include underline(var(--black, #000000), var(--black, #000000));
 
     background: var(--brand-danger, #cd402d);
     color: #fff;

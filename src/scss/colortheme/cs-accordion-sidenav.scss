@@ -22,7 +22,7 @@ cagov-accordion.sidenav {
         }
 
         &::before {
-          background-color: $color-p1 !important;
+          background-color: var(--color-p1, #fdb81e) !important;
         }
       }
     }
@@ -41,7 +41,7 @@ cagov-accordion.sidenav {
 
       &.active {
         &::before {
-          border-left-color: $color-p1;
+          border-left-color: var(--color-p1, #fdb81e);
         }
       }
     }
@@ -60,11 +60,11 @@ cagov-accordion.sidenav {
       // active
       &.active {
         .accordion__trigger {
-          background-color: $color-p2, 7%;
+          background-color: var(--color-p2, #046b99);
 
           &:hover,
           &:focus {
-            background-color: darken($color-p2, 7%) !important;
+            background-color: var(--color-p2-darker, #214a68) !important;
           }
         }
       }
@@ -84,11 +84,11 @@ cagov-accordion.sidenav {
       // active
       &.active {
         .accordion__trigger {
-          background-color: $color-p2 !important;
+          background-color: var(--color-p2, #046b99) !important;
 
           &:hover,
           &:focus {
-            background-color: darken($color-p2, 7%) !important;
+            background-color: var(--color-p2-darker, #214a68) !important;
           }
         }
       }

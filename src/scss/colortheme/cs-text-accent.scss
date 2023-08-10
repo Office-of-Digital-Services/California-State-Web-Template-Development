@@ -42,15 +42,15 @@
 
   // PRIMARY COLORS
   &-accent-p1 {
-    color: $color-p1 !important;
+    color: var(--color-p1, #fdb81e) !important;
   }
 
   &-accent-p2 {
-    color: $color-p2 !important;
+    color: var(--color-p2, #046b99) !important;
   }
 
   &-accent-p3 {
-    color: $color-p3 !important;
+    color: var(--color-p3, #323a45) !important;
   }
 
   // SECONDARY COLORS
@@ -68,11 +68,11 @@
 }
 
 .color-primary--hover:hover {
-  color: $color-p2;
+  color: var(--color-p2, #046b99);
 }
 
 .bg-primary--hover:hover {
-  background-color: $color-p2;
+  background-color: var(--color-p2, #046b99);
 }
 
 // badges
@@ -84,27 +84,27 @@
 
 .label-info {
   color: #fff;
-  background-color: $color-p2;
+  background-color: var(--color-p2, #046b99);
 }
 
 .label-secondary {
-  color: $text-color;
+  color: var(--gray-900, #3b3a48);
   background-color: $color-s2;
 }
 
 .label-light {
-  color: $text-color;
+  color: var(--gray-900, #3b3a48);
   background-color: $color-s1;
 }
 
 .label-dark {
   color: #fff;
-  background-color: $color-p3;
+  background-color: var(--color-p3, #323a45);
 }
 
 .label-warning {
-  color: $text-color;
-  background-color: $color-p1;
+  color: var(--gray-900, #3b3a48);
+  background-color: var(--color-p1, #fdb81e);
 }
 
 .text-highlight-primary {
@@ -112,10 +112,10 @@
 }
 
 .text-highlight-warning {
-  background-color: lighten($color-p1, 32%);
+  background-color: var(--color-p1-lighter, #f5ce73);
 }
 
 .text-highlight-dark {
   color: #fff;
-  background-color: $color-p3;
+  background-color: var(--color-p3, #323a45);
 }

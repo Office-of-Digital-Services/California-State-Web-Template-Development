@@ -53,13 +53,13 @@
 
 .section,
 .card {
-  @include section-filter($gray-lighter, #fff);
+  @include section-filter(var(--gray-100, #ededef), #fff);
 
   &-search {
-    @include section-filter(darken($gray-lighter, 10%), $gray-lighter);
+    @include section-filter(var(--gray-200, #d4d4d7), var(--gray-100, #ededef));
   }
 
   &-default {
-    @include section-filter($gray-lighter, $gray-lightest);
+    @include section-filter(var(--gray-100, #ededef), var(--gray-50, #fafafa));
   }
 }

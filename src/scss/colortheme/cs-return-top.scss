@@ -4,14 +4,14 @@
 ----------------------------------------- */
 
 .return-top {
-  border-color: $color-p2;
-  color: $color-p2;
+  border-color: var(--color-p2, #046b99);
+  color: var(--color-p2, #046b99);
 
   &.is-visible {
     &:hover,
     &:focus {
-      color: darken($color-p2, 7%);
-      border-color: darken($color-p2, 7%);
+      color: var(--color-p2-darker, #214a68);
+      border-color: var(--color-p2-darker, #214a68);
     }
   }
 }

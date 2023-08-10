@@ -19,6 +19,6 @@
 
   a:hover,
   a:focus {
-    color: $color-p1;
+    color: var(--color-p1, #fdb81e);
   }
 }

@@ -7,7 +7,7 @@
 .nav-pills {
   > li {
     > a {
-      border: 1px solid $gray;
+      border: 1px solid var(--gray-700, #5e5e6a);
 
       &:hover {
         background: #fff;

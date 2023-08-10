@@ -8,11 +8,11 @@
   margin-bottom: calc($line-height-computed / 2);
 
   &.odd {
-    background: lighten($gray-lighter, 14%); // beta 5.0 addition
+    background: var(--gray-50, #fafafa);
   }
 
   &.even {
-    background: lighten($gray-lighter, 10%); // beta 5.0 addition
+    background: var(--gray-75, #f3f3f4);
   }
 
   .thumbnail {
@@ -32,5 +32,5 @@
 .pub-language,
 .pub-revision-date,
 .pub-tags {
-  color: $gray;
+  color: var(--gray-700, #5e5e6a);
 }

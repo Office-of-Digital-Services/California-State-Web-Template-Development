@@ -1,11 +1,11 @@
 .carousel-video-submenu {
   .owl-item.watching {
     img {
-      border-color: $color-p1;
+      border-color: var(--color-p1, #fdb81e);
     }
 
     button {
-      border-color: $color-p1;
+      border-color: var(--color-p1, #fdb81e);
     }
   }
 }

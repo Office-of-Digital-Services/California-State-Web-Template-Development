@@ -216,7 +216,7 @@ input[type="search"].search-textfield {
       font-family: CaGov;
       font-size: 2rem;
       width: 100%;
-      color: $gray-lighter;
+      color: var(--gray-100, #ededef);
       display: block;
       margin-top: 12px;
       margin-left: 2px;
@@ -418,7 +418,7 @@ input[type="search"].search-textfield {
   }
 
   button {
-    background: $gray-light;
+    background: var(--gray-600, #72717c);
 
     > span {
       top: 0;
@@ -450,7 +450,7 @@ input[type="search"].search-textfield {
   }
 
   .search-locator {
-    color: $text-color;
+    color: var(--gray-900, #3b3a48);
     float: left;
     text-align: center;
     width: 100px;
@@ -738,7 +738,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
       font-family: CaGov;
       font-size: 2rem;
       width: 100%;
-      color: $gray-lighter;
+      color: var(--gray-100, #ededef);
       display: block;
       margin-top: 12px;
       margin-left: 2px;

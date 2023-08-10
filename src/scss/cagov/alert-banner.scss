@@ -20,16 +20,16 @@
   background: var(--brand-highlight, #fdb81e);
 
   .close {
-    color: $gray-base;
+    color: var(--black, #000000);
   }
 
   .alert-level {
-    color: $gray-base;
+    color: var(--black, #000000);
     background: rgb(0 0 0 / 15%);
   }
 
   .alert-text {
-    color: $gray-base;
+    color: var(--black, #000000);
   }
 }
 

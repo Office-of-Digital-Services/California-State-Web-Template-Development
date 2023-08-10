@@ -20,7 +20,7 @@
   background-image: linear-gradient(
     225deg,
     var(--color-a1, #1b79c0),
-    $color-p2
+    var(--color-p2, #046b99)
   );
 }
 
@@ -85,7 +85,7 @@
 }
 
 .circle-icon {
-  background: $gray-darker;
+  background: var(--gray-900, #3b3a48);
   width: 7rem;
   height: 7rem;
   text-align: center;

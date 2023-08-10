@@ -275,7 +275,7 @@
 
   .toggle-more {
     display: inline-block;
-    color: $gray-light;
+    color: var(--gray-600, #72717c);
     font-family: CaGov;
     font-size: 22px;
     margin-left: -11px;

@@ -2,11 +2,11 @@
   a {
     &:hover {
       span[class^="ca-gov-icon-"] {
-        color: $color-p1;
+        color: var(--color-p1, #fdb81e);
       }
 
       .explore-title {
-        color: $color-p1;
+        color: var(--color-p1, #fdb81e);
       }
     }
   }

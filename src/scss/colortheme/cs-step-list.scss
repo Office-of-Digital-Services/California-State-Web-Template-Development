@@ -4,10 +4,10 @@
 ----------------------------------------- */
 .cagov-step-list {
   li {
-    border-color: $color-p1;
+    border-color: var(--color-p1, #fdb81e);
 
     &::before {
-      border-color: $color-p1;
+      border-color: var(--color-p1, #fdb81e);
     }
   }
 }

@@ -11,34 +11,34 @@
 .btn-primary {
   @include better-button(
     var(--white, #ffffff),
-    $color-p2,
-    $color-p2,
+    var(--color-p2, #046b99),
+    var(--color-p2, #046b99),
     var(--white, #ffffff),
-    darken($color-p2, 7%),
-    darken($color-p2, 7%)
+    var(--color-p2-darker, #214a68),
+    var(--color-p2-darker, #214a68)
   );
 }
 
 // better-button = color; background; border, hover-color; hover-background; hover-border
 .btn-outline-primary {
   @include better-button(
-    $color-p2,
+    var(--color-p2, #046b99),
     var(--white, #ffffff),
-    $color-p2,
-    darken($color-p2, 7%),
+    var(--color-p2, #046b99),
+    var(--color-p2-darker, #214a68),
     var(--white, #ffffff),
-    darken($color-p2, 7%)
+    var(--color-p2-darker, #214a68)
   );
 }
 
 .btn-default {
   @include better-button(
-    $gray-base,
+    var(--black, #000000),
     rgba(255, 255, 255, 0.65),
-    $gray-base,
-    $gray-base,
+    var(--black, #000000),
+    var(--black, #000000),
     rgba(255, 255, 255, 1),
-    $gray-base
+    var(--black, #000000)
   );
 }
 
@@ -46,58 +46,58 @@
 .btn-standout {
   @include better-button(
     var(--white, #ffffff),
-    $color-p3,
-    $color-p3,
+    var(--color-p3, #323a45),
+    var(--color-p3, #323a45),
     var(--white, #ffffff),
-    darken($color-p3, 7%),
-    darken($color-p3, 7%)
+    var(--color-p3-darker, #242830),
+    var(--color-p3-darker, #242830)
   );
 }
 
 // better-button = color; background; border, hover-color; hover-background; hover-border
 .btn-outline-standout {
   @include better-button(
-    $color-p3,
+    var(--color-p3, #323a45),
     var(--white, #ffffff),
-    $color-p3,
-    darken($color-p3, 7%),
+    var(--color-p3, #323a45),
+    var(--color-p3-darker, #242830),
     var(--white, #ffffff),
-    darken($color-p3, 7%)
+    var(--color-p3-darker, #242830)
   );
 }
 
 // beta 5.0 addition
 .btn-highlight {
   @include better-button(
-    $text-color,
-    $color-p1,
-    $color-p1,
-    $color-p3,
-    darken($color-p1, 7%),
-    darken($color-p1, 7%)
+    var(--gray-900, #3b3a48),
+    var(--color-p1, #fdb81e),
+    var(--color-p1, #fdb81e),
+    var(--black, #000),
+    var(--color-p1-darker, #a98231),
+    var(--color-p1-darker, #a98231)
   );
 }
 
 // better-button = color; background; border, hover-color; hover-background; hover-border
 .btn-outline-highlight {
   @include better-button(
-    lighten($color-p1, 7%),
+    var(--color-p1-light, #f2c45a),
     transparent,
-    lighten($color-p1, 7%),
-    lighten($color-p1, 14%),
+    var(--color-p1-light, #f2c45a),
+    var(--color-p1-lighter, #f5ce73),
     transparent,
-    lighten($color-p1, 14%)
+    var(--color-p1-lighter, #f5ce73)
   );
 }
 
 .btn-secondary {
   @include better-button(
-    $gray,
-    $gray-lightest,
-    $gray,
+    var(--gray-700, #5e5e6a),
+    var(--gray-50, #fafafa),
+    var(--gray-700, #5e5e6a),
     $link-hover-color,
     #fff,
-    $gray-base
+    var(--black, #000000)
   );
 
   border-width: 1px;
@@ -105,7 +105,7 @@
   // transition:all 0.5s;
 
   &.active {
-    background: $gray;
+    background: var(--gray-700, #5e5e6a);
     color: #fff;
     box-shadow: none;
   }
@@ -114,12 +114,12 @@
 // better-button = color; background; border, hover-color; hover-background; hover-border
 .btn-outline-secondary {
   @include better-button(
-    $gray,
+    var(--gray-700, #5e5e6a),
     var(--white, #ffffff),
-    $gray,
-    darken($gray, 7%),
+    var(--gray-700, #5e5e6a),
+    var(--gray-900, #3b3a48),
     var(--white, #ffffff),
-    darken($gray, 7%)
+    var(--gray-900, #3b3a48)
   );
 }
 
@@ -181,7 +181,7 @@
 
   &:hover,
   &:focus {
-    color: $color-p1;
+    color: var(--color-p1, #fdb81e);
   }
 }
 
@@ -270,7 +270,7 @@
 }
 
 .btn-light.btn-hover::before {
-  background: $gray-lightest;
+  background: var(--gray-50, #fafafa);
   overflow: hidden;
 }
 
@@ -285,46 +285,46 @@
 }
 
 .btn-default.btn-hover::before {
-  background: $gray-lightest;
+  background: var(--gray-50, #fafafa);
   overflow: hidden;
 }
 
 // btn-primary
 .btn-primary.btn-hover:hover {
-  background-color: $color-p2;
+  background-color: var(--color-p2, #046b99);
   overflow: hidden;
 }
 
 .btn-primary.btn-hover::before {
-  background: darken($color-p2, 7%);
+  background: var(--color-p2-darker, #214a68);
   overflow: hidden;
 }
 
 // btn-highlight
 .btn-highlight.btn-hover:hover {
-  background-color: $color-p1;
+  background-color: var(--color-p1, #fdb81e);
   overflow: hidden;
 }
 
 .btn-highlight.btn-hover::before {
-  background: lighten($color-p1, 7%);
+  background: var(--color-p1-light, #f2c45a);
   overflow: hidden;
 }
 
 // btn-standout
 .btn-standout.btn-hover:hover {
-  background-color: $color-p3;
+  background-color: var(--color-p3, #323a45);
   overflow: hidden;
 }
 
 .btn-standout.btn-hover::before {
-  background: lighten($color-p3, 7%);
+  background: var(--color-p3-light, #525760);
   overflow: hidden;
 }
 
 // btn-secondary
 .btn-secondary.btn-hover:hover {
-  background-color: $gray-lightest;
+  background-color: var(--gray-50, #fafafa);
   overflow: hidden;
 }
 

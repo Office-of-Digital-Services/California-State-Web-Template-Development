@@ -46,7 +46,7 @@
 
 .bg-highlight {
   a {
-    color: $text-color;
+    color: var(--gray-900, #3b3a48);
     text-decoration: underline;
   }
 

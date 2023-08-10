@@ -9,46 +9,46 @@
 
   .bg-highlight.group-right::before,
   .bg-p1.group-right::before {
-    border-right-color: $color-p1;
+    border-right-color: var(--color-p1, #fdb81e);
   }
 
   .bg-highlight.group-left::after,
   .bg-p1.group-left::after {
-    border-left-color: $color-p1;
+    border-left-color: var(--color-p1, #fdb81e);
   }
 
   .section-primary.group-right::before,
   .bg-primary.group-right::before,
   .bg-p2.group-right::before {
-    border-right-color: $color-p2;
+    border-right-color: var(--color-p2, #046b99);
   }
 
   .section-primary.group-left::after,
   .bg-primary.group-left::after,
   .bg-p2.group-left::after {
-    border-left-color: $color-p2;
+    border-left-color: var(--color-p2, #046b99);
   }
 
   .section-default {
     &.group-right::before {
-      border-right-color: $gray-lightest;
+      border-right-color: var(--gray-50, #fafafa);
     }
 
     &.group-left::after {
-      border-left-color: $gray-lightest;
+      border-left-color: var(--gray-50, #fafafa);
     }
   }
 
   .section-standout.group-right::before,
   .bg-standout.group-right::before,
   .bg-p3.group-right::before {
-    border-right-color: $color-p3;
+    border-right-color: var(--color-p3, #323a45);
   }
 
   .section-standout.group-left::after,
   .bg-standout.group-left::after,
   .bg-p3.group-left::after {
-    border-left-color: $color-p3;
+    border-left-color: var(--color-p3, #323a45);
   }
 
   .section-understated.group-right::before,
@@ -79,7 +79,7 @@
   .bg-p1.group-right::before,
   .bg-highlight.group-left::after,
   .bg-p1.group-left::after {
-    border-bottom-color: $color-p1;
+    border-bottom-color: var(--color-p1, #fdb81e);
   }
 
   .section-primary.group-right::before,
@@ -88,13 +88,13 @@
   .section-primary.group-left::after,
   .bg-primary.group-left::after,
   .bg-p2.group-left::after {
-    border-bottom-color: $color-p2;
+    border-bottom-color: var(--color-p2, #046b99);
   }
 
   .section-default {
     &.group-right::before,
     &.group-left::after {
-      border-bottom-color: $gray-lightest;
+      border-bottom-color: var(--gray-50, #fafafa);
     }
   }
 
@@ -104,7 +104,7 @@
   .section-standout.group-left::after,
   .bg-standout.group-left::after,
   .bg-p3.group-left::after {
-    border-bottom-color: $color-p3;
+    border-bottom-color: var(--color-p3, #323a45);
   }
 
   .section-understated.group-right::before,

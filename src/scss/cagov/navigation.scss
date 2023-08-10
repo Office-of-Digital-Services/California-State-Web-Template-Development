@@ -702,15 +702,15 @@
       @include outline(2px);
 
       outline-offset: -2px;
-      background-color: $gray-lightest;
+      background-color: var(--gray-50, #fafafa);
     }
 
     &:hover {
-      background-color: $gray-lightest;
+      background-color: var(--gray-50, #fafafa);
     }
 
     &.open {
-      background-color: $gray-lightest;
+      background-color: var(--gray-50, #fafafa);
 
       .rotate {
         transform: rotate(90deg) !important;

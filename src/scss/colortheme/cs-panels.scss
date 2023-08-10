@@ -36,7 +36,7 @@
 
   .panel-body {
     background: $panel-default-body-bg;
-    color: $text-color;
+    color: var(--gray-900, #3b3a48);
   }
 }
 
@@ -76,7 +76,7 @@
 
   .panel-body {
     background: $overstated-body-bg;
-    color: $text-color;
+    color: var(--gray-900, #3b3a48);
   }
 }
 
@@ -116,7 +116,7 @@
 
   .panel-body {
     background: $understated-body-bg;
-    color: $text-color;
+    color: var(--gray-900, #3b3a48);
   }
 }
 
@@ -156,7 +156,7 @@
 
   .panel-body {
     background: $standout-body-bg;
-    color: $text-color;
+    color: var(--gray-900, #3b3a48);
   }
 }
 
@@ -164,7 +164,7 @@
 .panel-standout.highlight {
   .panel-heading {
     .triangle {
-      @include triangle(down, 12px, $color-p1);
+      @include triangle(down, 12px, var(--color-p1, #fdb81e));
     }
   }
 }

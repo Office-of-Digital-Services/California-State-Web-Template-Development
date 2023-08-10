@@ -40,7 +40,7 @@
 .service-tile-full {
   clear: both;
   width: 100%;
-  background: $gray-lightest;
+  background: var(--gray-50, #fafafa);
   height: auto;
 
   &.is-open .service-tile-panel {
@@ -94,7 +94,6 @@
     min-height: 320px;
   }
 
-  // color: $text-color;
   // background: lighten($color-s2,10%);  // Caused acessibility failure. Should be dark blue
   color: $color-s1;
   background: var(--brand-primary, #046b99);
@@ -132,14 +131,14 @@
       transition: all 0.3s;
 
       &:hover {
-        color: $color-p1;
+        color: var(--color-p1, #fdb81e);
       }
     }
   }
 }
 
 .service-tile:focus .teaser .title {
-  color: $color-p1;
+  color: var(--color-p1, #fdb81e);
 }
 
 // Add open and close icons with css to keep markup clean
@@ -173,14 +172,12 @@
 
 // title when open
 div[data-state="open"] .title {
-  color: $color-p1;
+  color: var(--color-p1, #fdb81e);
 }
 
 .service-tile-empty {
-  // background:  $color-p2;
-  // color: $color-s2;
-  background: $color-p3; // beta 5.0 addition
-  color: lighten($color-p3, 9%); // beta 5.0 addition
+  background: var(--color-p3, #323a45); // beta 5.0 addition
+  color: var(--color-p3-lighter, #71757c); // beta 5.0 addition
   overflow: hidden;
 
   span {

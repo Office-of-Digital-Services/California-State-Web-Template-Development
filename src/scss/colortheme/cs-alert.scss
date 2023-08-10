@@ -4,7 +4,7 @@
 ----------------------------------------- */
 
 .alert-banner {
-  background-color: $color-p3;
+  background-color: var(--color-p3, #323a45);
   color: var(--white, #ffffff);
 
   a:not(.btn),
@@ -13,7 +13,7 @@
 
     &:focus,
     &:hover {
-      color: $color-p1;
+      color: var(--color-p1, #fdb81e);
     }
   }
 }
@@ -80,7 +80,7 @@
 
 .alert-severe {
   color: var(--gray-800, #4a4958) !important;
-  background-color: $color-p1;
+  background-color: var(--color-p1, #fdb81e);
 
   a:not(.btn),
   .close {

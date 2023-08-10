@@ -5,7 +5,7 @@
 
 .location.mini {
   [class^="ca-gov-icon"] {
-    background: $color-p3;
-    color: contrast($color-p3);
+    background: var(--color-p3, #323a45);
+    color: var(--white, #fff);
   }
 }

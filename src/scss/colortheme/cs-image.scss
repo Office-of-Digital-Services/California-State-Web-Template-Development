@@ -18,7 +18,7 @@
 .section,
 .card {
   &-understated {
-    @include image-thumbnail($gray-lightest, darken($gray-lighter, 8%));
+    @include image-thumbnail(var(--gray-50, #fafafa), var(--gray-200, #d4d4d7));
   }
 
   &-overstated {
@@ -28,18 +28,24 @@
   &-standout,
   &-impact {
     // @include image-thumbnail($color-s2; $color-s2);
-    @include image-thumbnail(tint($color-p3, 40%), darken($color-p3, 8%));
+    @include image-thumbnail(
+      var(--color-p3-lighter, #71757c),
+      var(--color-p3-darker, #242830)
+    );
   }
 
   &-primary {
-    @include image-thumbnail(tint($color-p2, 70%), darken($color-p2, 10%));
+    @include image-thumbnail(
+      var(--color-p2-lightest, #a4c3d4),
+      var(--color-p2-darkest, #112a3c)
+    );
   }
 
   &-inverted {
-    @include image-thumbnail($thumbnail-bg, darken($gray-lighter, 8%));
+    @include image-thumbnail($thumbnail-bg, var(--gray-200, #d4d4d7));
   }
 
   &-danger {
-    @include image-thumbnail($thumbnail-bg, darken($gray-lighter, 8%));
+    @include image-thumbnail($thumbnail-bg, var(--gray-200, #d4d4d7));
   }
 }

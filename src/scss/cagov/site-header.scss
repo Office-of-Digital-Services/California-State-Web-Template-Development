@@ -98,7 +98,7 @@
             font-weight: 700;
             margin: 0;
             padding: 0;
-            color: $color-p3;
+            color: var(--color-p3, #323a45);
             height: 24px;
             line-height: 1.2em;
             transition: all 0.3s;

@@ -225,8 +225,8 @@
 // Custom Chart related Colors
 
 @mixin donut-color-variants(
-  $donut-background: $gray-light,
-  $donut-halfmark: $gray-light
+  $donut-background: var(--gray-600, #72717c),
+  $donut-halfmark: var(--gray-600, #72717c)
 ) {
   .half-gauge-chart {
     .donut-background {

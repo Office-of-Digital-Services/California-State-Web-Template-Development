@@ -11,10 +11,7 @@ nav-item-search {
     > a,
     .first-level-btn,
     .first-level-link {
-      color: $color-p2;
-
-      // border-bottom:5px solid $color-p2;
-      // margin-bottom:-5px;
+      color: var(--color-p2, #046b99);
       > span[class^="ca-gov-icon"] {
         color: var(--gray-900, #3b3a48);
       }
@@ -30,7 +27,7 @@ nav-item-search {
     > a,
     .first-level-btn,
     .first-level-link {
-      color: $color-p2;
+      color: var(--color-p2, #046b99);
 
       > span[class^="ca-gov-icon"] {
         color: var(--gray-900, #3b3a48);
@@ -40,7 +37,7 @@ nav-item-search {
 }
 
 .nav-arrow-down {
-  background: $color-p2;
+  background: var(--color-p2, #046b99);
 }
 
 // FIRST LEVEL LINKS
@@ -48,7 +45,7 @@ nav-item-search {
 
 .first-level-link,
 .first-level-btn {
-  color: $color-p2;
+  color: var(--color-p2, #046b99);
 
   > span[class^="ca-gov-icon"]:not(.carrot) {
     /* Navigation icons */
@@ -90,7 +87,7 @@ nav-item-search {
 // --------------------------------------------------
 
 .second-level-link {
-  color: $color-p2;
+  color: var(--color-p2, #046b99);
 
   [class^="ca-gov-icon-"] {
     color: var(--gray-700, #5e5e6a);
@@ -134,7 +131,7 @@ nav-item-search {
   }
 
   .link-description {
-    color: $gray;
+    color: var(--gray-700, #5e5e6a);
   }
 }
 
@@ -142,10 +139,6 @@ nav-item-search {
 // --------------------------------------------------
 
 .sub-nav {
-  // border-top: 5px solid $color-p1;
-  // border-bottom: 5px solid $color-p2;
-  // border-left: 1px solid $gray-lighter;
-  // border-right: 1px solid $gray-lighter;
   background: var(--white, #ffffff);
 }
 
@@ -191,22 +184,22 @@ nav-item-search {
 
     &:hover::after,
     &:focus::after {
-      background-color: $color-p2;
+      background-color: var(--color-p2, #046b99);
     }
   }
 
   /* full width navigation */
   .nav-full-width {
-    background: $color-p2;
+    background: var(--color-p2, #046b99);
 
     .main-navigation .nav-item:hover,
     .main-navigation .nav-item:focus,
     .main-navigation .nav-item.active:hover {
-      background-color: darken($color-p2, 8%);
+      background-color: var(--color-p2-darker, #214a68);
     }
 
     .main-navigation .nav-item.active {
-      background-color: darken($color-p2, 5%);
+      background-color: var(--color-p2-dark, #29597f);
     }
   }
 }
@@ -234,7 +227,7 @@ nav-item-search {
 }
 
 .has-sub .rotate {
-  color: $color-p2;
+  color: var(--color-p2, #046b99);
 }
 
 /* Dark Mobile menu */

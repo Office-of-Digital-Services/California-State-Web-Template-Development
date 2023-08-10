@@ -6,11 +6,11 @@
 /* Traditional Colors */
 
 .progress-bar-default {
-  @include progress-bar-variant($gray-lighter);
+  @include progress-bar-variant(var(--gray-100, #ededef));
 }
 
 .progress-bar-primary {
-  @include progress-bar-variant($color-p2);
+  @include progress-bar-variant(var(--color-p2, #046b99));
 }
 
 .progress-bar-understated {
@@ -22,7 +22,7 @@
 }
 
 .progress-bar-standout {
-  @include progress-bar-variant($color-p3);
+  @include progress-bar-variant(var(--color-p3, #323a45));
 }
 
 /* Accent Colors */

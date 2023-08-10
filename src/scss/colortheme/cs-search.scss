@@ -70,8 +70,8 @@
     background-color: var(--gray-100, #f3f3f4);
 
     .submit-container button {
-      border-color: darken($gray-lighter, 10%);
-      background: $gray;
+      border-color: var(--gray-200, #d4d4d7);
+      background: var(--gray-700, #5e5e6a);
     }
   }
 }
@@ -79,12 +79,12 @@
 .search-container .close-search,
 .featured-search.active .container #Search .close-search-btn {
   .sr-only {
-    color: $color-p2;
+    color: var(--color-p2, #046b99);
     text-decoration: underline;
 
     &:hover,
     &:focus {
-      color: darken($color-p2, 7%);
+      color: var(--color-p2-darker, #214a68);
       text-decoration: none;
     }
   }

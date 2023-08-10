@@ -21,7 +21,7 @@
     bottom: -5px;
     margin-left: -5px;
     border-style: solid;
-    border-color: $color-p2 transparent;
+    border-color: var(--color-p2, #046b99) transparent;
     border-width: 5px 5px 0;
   }
 }

@@ -4,14 +4,14 @@
 ----------------------------------------- */
 
 blockquote {
-  border-color: $color-p2;
+  border-color: var(--color-p2, #046b99);
 
   &::before {
-    color: $color-p2;
+    color: var(--color-p2, #046b99);
   }
 
   &.prominent {
-    background-color: $color-p2;
+    background-color: var(--color-p2, #046b99);
     color: var(--white, #ffffff);
 
     &::before {
