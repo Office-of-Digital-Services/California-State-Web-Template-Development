@@ -9,7 +9,7 @@
 
 /* MOBILE */
 .sidenav-mobile-btn {
-  background-color: $color-s1;
+  background-color: var(--color-s1, #eef8fb);
 
   .sidenav-toggle {
     color: var(--color-p2, #046b99);
@@ -28,12 +28,12 @@
   .side-navigation ul {
     li {
       a {
-        color: var(--white, #ffffff);
+        color: var(--white, #fff);
         border-bottom-color: $mobile-drawer;
 
         &:hover,
         &:focus {
-          color: var(--white, #ffffff);
+          color: var(--white, #fff);
           background-color: $mobile-drawer-active;
         }
 
@@ -41,13 +41,13 @@
           background-color: $mobile-drawer-active;
 
           &::before {
-            color: var(--white, #ffffff);
+            color: var(--white, #fff);
             border-left-color: var(--color-p1, #fdb81e);
           }
 
           &:hover,
           &:focus {
-            color: var(--white, #ffffff);
+            color: var(--white, #fff);
             background-color: $mobile-drawer;
           }
         }
@@ -277,18 +277,18 @@
 .list-group.section-understated {
   .list-group-item,
   .list-group-item > button {
-    background: $color-s1 !important;
+    background: var(--color-s1, #eef8fb) !important;
 
     &:hover,
     &:focus,
     &.open {
-      background: darken($color-s1, 7%) !important;
+      background: var(--color-s1-darker, #ccd3d5) !important;
     }
 
     &.active {
       background-color: var(--color-p2, #046b99) !important;
       border-color: var(--color-p2, #046b99);
-      color: var(--white, #ffffff) !important;
+      color: var(--white, #fff) !important;
 
       &:hover,
       &:focus {
@@ -313,7 +313,7 @@
     &.active {
       background-color: var(--color-p2, #046b99) !important;
       border-color: var(--color-p2, #046b99);
-      color: var(--white, #ffffff) !important;
+      color: var(--white, #fff) !important;
 
       &:hover,
       &:focus {

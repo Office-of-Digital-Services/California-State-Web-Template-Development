@@ -55,7 +55,7 @@
 
   // SECONDARY COLORS
   &-accent-s1 {
-    color: $color-s1 !important;
+    color: var(--color-s1, #eef8fb) !important;
   }
 
   &-accent-s2 {
@@ -94,7 +94,7 @@
 
 .label-light {
   color: var(--gray-900, #3b3a48);
-  background-color: $color-s1;
+  background-color: var(--color-s1, #eef8fb);
 }
 
 .label-dark {
@@ -108,7 +108,7 @@
 }
 
 .text-highlight-primary {
-  background-color: $color-s1;
+  background-color: var(--color-s1, #eef8fb);
 }
 
 .text-highlight-warning {

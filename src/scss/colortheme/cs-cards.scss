@@ -14,8 +14,8 @@
 // --------------------------------------------------
 
 .card-primary {
-  @include link-variant(var(--white, #ffffff), $color-s1);
-  @include underline(var(--white, #ffffff), $color-s1);
+  @include link-variant(var(--white, #ffffff), var(--color-s1, #eef8fb));
+  @include underline(var(--white, #ffffff), var(--color-s1, #eef8fb));
   @include card-variant(
     var(--color-p2, #046b99),
     var(--color-p2, #046b99),

@@ -125,7 +125,7 @@ nav-item-search {
 
       &:hover,
       &:focus {
-        background: lighten($sub-nav-bg, 2%);
+        background: color-mix(in srgb, var(--color-s1), #fff 6%);
       }
     }
   }
@@ -168,7 +168,7 @@ nav-item-search {
 
       &:hover,
       &:focus {
-        background: lighten($sub-nav-bg, 2%);
+        background: color-mix(in srgb, var(--color-s1), #fff 6%);
       }
     }
   }

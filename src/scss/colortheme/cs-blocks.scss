@@ -19,7 +19,7 @@
 .icon-link {
   &:hover,
   &:focus {
-    color: $color-s1 !important;
+    color: var(--color-s1, #eef8fb) !important;
   }
 }
 

@@ -36,12 +36,12 @@
 
 /*  SECONDARY THEME COLORS	*/
 .color-s1 {
-  color: $color-s1 !important;
+  color: var(--color-s1, #eef8fb) !important;
 }
 
 .color-s1-hover:hover,
 .color-s1-hover:focus {
-  color: $color-s1 !important;
+  color: var(--color-s1, #eef8fb) !important;
 }
 
 .color-s2 {
@@ -97,13 +97,13 @@
 .bg-s1,
 .bg-s1-hover:hover,
 .bg-s1-hover:focus {
-  background-color: $color-s1 !important;
+  background-color: var(--color-s1, #eef8fb) !important;
 }
 
 .bg-s1-hover-color,
 .bg-s1-hover-color:hover,
 .bg-s1-hover-color:focus {
-  background-color: darken($color-s1, 7%) !important;
+  background-color: var(--color-s1-darker, #ccd3d5) !important;
 }
 
 .bg-s2,
@@ -225,7 +225,7 @@
 }
 
 .brd-s1 {
-  border-color: $color-s1 !important;
+  border-color: var(--color-s1, #eef8fb) !important;
 }
 
 .brd-s2 {

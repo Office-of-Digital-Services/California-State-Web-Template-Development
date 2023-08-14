@@ -131,7 +131,7 @@
 .btn-s1 {
   @include better-button(
     var(--gray-700, #5e5e6a),
-    $color-s1,
+    var(--color-s1, #eef8fb),
     var(--gray-700, #5e5e6a),
     var(--black, #000),
     #fff,

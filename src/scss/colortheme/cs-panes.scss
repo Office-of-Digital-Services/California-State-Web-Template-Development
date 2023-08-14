@@ -53,12 +53,12 @@
 
   .section-understated.group-right::before,
   .bg-s1.group-right::before {
-    border-right-color: $color-s1;
+    border-right-color: var(--color-s1, #eef8fb);
   }
 
   .section-understated.group-left::after,
   .bg-s1.group-left::after {
-    border-left-color: $color-s1;
+    border-left-color: var(--color-s1, #eef8fb);
   }
 
   .section-inverted {
@@ -111,7 +111,7 @@
   .bg-s1 .group-right::before,
   .section-understated.group-left::after,
   .bg-s1.group-left::after {
-    border-bottom-color: $color-s1;
+    border-bottom-color: var(--color-s1, #eef8fb);
   }
 
   .section-inverted {

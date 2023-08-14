@@ -3,18 +3,18 @@
    /source/scss/colortheme/cs-executive-profile.scss
 ----------------------------------------- */
 .executive-profile {
-  background-color: $color-s1;
+  background-color: var(--color-s1, #eef8fb);
 }
 
 .executive-profile.dark {
   .executive-profile-body {
-    border-left-color: var(--white, #ffffff);
+    border-left-color: var(--white, #fff);
   }
 
   p,
   .executive-name,
   a {
-    color: var(--white, #ffffff);
+    color: var(--white, #fff);
   }
 
   a:hover,

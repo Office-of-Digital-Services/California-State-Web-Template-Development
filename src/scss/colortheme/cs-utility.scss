@@ -4,7 +4,7 @@
 ----------------------------------------- */
 
 .utility-header {
-  background: $color-s1;
+  background: var(--color-s1, #eef8fb);
   color: var(--black, #000);
 
   a {

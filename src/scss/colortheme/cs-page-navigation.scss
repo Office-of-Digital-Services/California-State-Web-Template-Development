@@ -218,18 +218,18 @@ a.sidenav {
 .list-group.section-understated {
   .list-group-item,
   .list-group-item > button {
-    background: $color-s1 !important;
+    background: var(--color-s1, #eef8fb) !important;
 
     &:hover,
     &:focus,
     &.open {
-      background: darken($color-s1, 7%) !important;
+      background:  var(--color-s1-darker, #ccd3d5) !important;
     }
 
     &.active {
       background-color:  var(--color-p2, #046b99) !important;
       border-color:  var(--color-p2, #046b99);
-      color: var(--white, #ffffff) !important;
+      color: var(--white, #fff) !important;
 
       &:hover,
       &:focus {
@@ -254,7 +254,7 @@ a.sidenav {
     &.active {
       background-color:  var(--color-p2, #046b99) !important;
       border-color:  var(--color-p2, #046b99);
-      color: var(--white, #ffffff) !important;
+      color: var(--white, #fff) !important;
 
       &:hover,
       &:focus {

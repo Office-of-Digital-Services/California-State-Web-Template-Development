@@ -32,10 +32,14 @@
   --color-p3-light: color-mix(in srgb, var(--color-p3), #fff 15%);
   --color-p3-lighter: color-mix(in srgb, var(--color-p3), #fff 30%);
   --color-p3-lightest: color-mix(in srgb, var(--color-p3), #fff 60%);
+
+  // secondary 1
+  --color-s1: #eef8fb;
+  --color-s1-darker: color-mix(in srgb, var(--color-s1), #000 15%);
+  --color-s1-lighter: color-mix(in srgb, var(--color-s1), #fff 10%);
 }
 
 // Secondary Theme colors
-$color-s1: #f5f9fa; // Lightest Aqua
 $color-s2: #ccd4d6; // Lighter Aqua
 $color-s3: #a7b7bc; // Light Aqua
 
@@ -55,14 +59,14 @@ $overstated-header-txt: #fff; // Panel header text color
 $overstated-header-icon: #fff; // Panel header icon color
 $overstated-header-border: var(--color-p2); // Panel header bottom border color
 $overstated-border: $panel-border; // Border surrounding entire panel
-$overstated-body-bg: $color-s1; // Panel body background
+$overstated-body-bg: var(--color-s1); // Panel body background
 
 $panel-default-header-bg: $color-s2; // Background for panel header
 $panel-default-header-txt: var(--gray-900, #3b3a48); // Panel header text color
 $panel-default-header-icon: var(--color-p3); // Panel header icon color
 $panel-default-header-border: $panel-border; // Panel header bottom border color
 $panel-default-border: $panel-border; // Border surrounding entire panel
-$panel-default-body-bg: $color-s1; // Panel body background
+$panel-default-body-bg: var(--color-s1); // Panel body background
 
 $sidebar-default-header-bg: $color-s2; // Background for panel header
 $sidebar-default-header-txt: var(
@@ -72,12 +76,12 @@ $sidebar-default-header-txt: var(
 $sidebar-default-header-icon: var(--color-p3); // Panel header icon color
 $sidebar-default-header-border: $panel-border; // Panel header bottom border color
 $sidebar-default-border: $panel-border; // Border surrounding entire panel
-$sidebar-default-body-bg: $color-s1; // Panel body background
+$sidebar-default-body-bg: var(--color-s1); // Panel body background
 
-$understated-header-bg: $color-s1; // Background for panel header
+$understated-header-bg: var(--color-s1); // Background for panel header
 $understated-header-txt: var(--gray-900, #3b3a48); // Panel header text color
 $understated-header-icon: var(--color-p3); // Panel header icon color
-$understated-header-border: $color-s1; // Panel header bottom border color
+$understated-header-border: var(--color-s1); // Panel header bottom border color
 $understated-border: $panel-border; // Border surrounding entire panel
 $understated-body-bg: #fff; // Panel body background
 
@@ -86,13 +90,13 @@ $standout-header-txt: #fff; // Panel header text color
 $standout-header-icon: var(--color-p1); // Panel header icon color
 $standout-header-border: var(--color-p3); // Panel header bottom border color
 $standout-border: $panel-border; // Border surrounding entire panel
-$standout-body-bg: $color-s1; // Panel body background
+$standout-body-bg: var(--color-s1); // Panel body background
 
 $figure-border: $color-s2; // Border around media captions
-$figure-bg: $color-s1; // Background behind figure and caption
+$figure-bg: var(--color-s1); // Background behind figure and caption
 
 // MEGAMENU
-$sub-nav-bg: $color-s1;
+$sub-nav-bg: #eef8fb;
 $sub-nav-link-border: var(--gray-100, #ededef);
 $sub-nav-media-bg: transparent;
 

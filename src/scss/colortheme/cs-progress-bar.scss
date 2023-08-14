@@ -14,7 +14,7 @@
 }
 
 .progress-bar-understated {
-  @include progress-bar-variant($color-s1);
+  @include progress-bar-variant(var(--color-s1, #eef8fb));
 }
 
 .progress-bar-overstated {

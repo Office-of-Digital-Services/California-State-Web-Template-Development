@@ -9,7 +9,7 @@
   }
 
   &-understated {
-    background: $color-s1;
+    background: var(--color-s1, #eef8fb);
   }
 
   &-overstated {
@@ -30,7 +30,7 @@
 
   &-standout {
     @include link-variant(var(--color-p1, #fdb81e), #fff, none);
-    @include underline(var(--color-p1, #fdb81e), var(--white, #ffffff));
+    @include underline(var(--color-p1, #fdb81e), var(--white, #fff));
 
     background: var(--color-p3, #323a45);
     color: var(--white, #fff);
@@ -41,14 +41,14 @@
   }
 
   &-primary {
-    @include link-variant(var(--white, #ffffff), $color-s1, none);
-    @include underline(var(--white, #ffffff), $color-s1);
+    @include link-variant(var(--white, #fff), var(--color-s1, #eef8fb), none);
+    @include underline(var(--white, #fff), var(--color-s1, #eef8fb));
 
     background: var(--color-p2, #046b99);
-    color: var(--white, #ffffff);
+    color: var(--white, #fff);
 
     footer {
-      color: var(--white, #ffffff);
+      color: var(--white, #fff);
     }
   }
 
@@ -70,7 +70,7 @@
 
   &-inverted {
     @include link-variant(var(--color-p1, #fdb81e), #fff, none);
-    @include underline(var(--color-p1, #fdb81e), var(--white, #ffffff));
+    @include underline(var(--color-p1, #fdb81e), var(--white, #fff));
 
     background: var(--gray-900, #3b3a48);
     color: #fff;
