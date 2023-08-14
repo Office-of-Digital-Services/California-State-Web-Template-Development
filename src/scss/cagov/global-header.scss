@@ -17,8 +17,7 @@
     transform: translateX(-50%);
     clip: unset;
     background-color: white;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
+    border-radius: 0 0 7px 7px;
     overflow: hidden;
 
     &:focus {
