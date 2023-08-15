@@ -564,9 +564,7 @@ input[type="search"].search-textfield {
 /* Search Button */
 
 button.gsc-search-button {
-  cursor: pointer;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 0 5px 5px 0;
   padding: 0 12px;
   border: 1px solid;
   min-height: 38px;
