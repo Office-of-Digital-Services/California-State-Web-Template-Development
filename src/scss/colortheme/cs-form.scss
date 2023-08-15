@@ -49,7 +49,7 @@ input[type="radio"]:checked + * .bg-highlight--checked {
 /* Focusable custom checkboxes and radios for accessibility */
 input[type="checkbox"]:focus + div,
 input[type="radio"]:focus + div {
-  box-shadow: 0 0 2px 2px $color-s3;
+  box-shadow: 0 0 2px 2px var(--color-s3, #4993b5);
 }
 
 .custom-radio {

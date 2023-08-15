@@ -347,6 +347,8 @@ $cursor-disabled: not-allowed !default;
 // == Dropdowns
 
 // ## Dropdown menu container and contents.
+$sub-nav-link-border: var(--gray-100, #ededef);
+$sub-nav-media-bg: transparent;
 
 // Background for the dropdown menu.
 $dropdown-bg: #fff !default;
@@ -750,8 +752,8 @@ $panel-border-radius: $border-radius-base !default;
 $panel-inner-border: var(--gray-200, #d4d4d7) !default;
 $panel-footer-bg: #f5f5f5 !default;
 $panel-default-text: var(--gray-900, #3b3a48) !default;
-$panel-default-border: #ddd !default;
-$panel-default-heading-bg: #f5f5f5 !default;
+$panel-default-border: var(--gray-200, #d4d4d7) !default;
+$panel-default-heading-bg: var(--gray-75, #f3f3f4) !default;
 $panel-primary-text: #fff !default;
 $panel-primary-border: $brand-primary !default;
 $panel-primary-heading-bg: $brand-primary !default;
@@ -925,3 +927,6 @@ $alert-danger-color: $red;
 $alert-danger-hover: darken($red, 10%);
 
 $nav-tabs-active-link-hover-bg: $body-bg !default;
+
+// SEARCH
+$text-field-color: rgb(255 255 255 / 80%); // 80% white

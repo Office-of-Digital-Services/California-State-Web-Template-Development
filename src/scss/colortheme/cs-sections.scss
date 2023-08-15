@@ -50,8 +50,11 @@
   }
 
   &-standout {
-    @include link-variant(var(--white, #fff), darken($color-s2, 15%));
-    @include underline($color-s3, darken($color-s2, 15%));
+    @include link-variant(var(--white, #fff), var(--color-s2-darker, #f1f8fb));
+    @include underline(
+      var(--color-s3, #4993b5),
+      var(--color-s2-darker, #f1f8fb)
+    );
 
     a:not(.btn) {
       color: var(--white, #fff);
@@ -99,8 +102,14 @@
   &-impact {
     // SAME AS STANDOUT
     // $link-color, $link-hover-color, $decoration: none, $hover-decoration: underline
-    @include link-variant($color-s3, darken($color-s2, 15%));
-    @include underline($color-s3, darken($color-s2, 15%));
+    @include link-variant(
+      var(--color-s3, #4993b5),
+      var(--color-s2-darker, #f1f8fb)
+    );
+    @include underline(
+      var(--color-s3, #4993b5),
+      var(--color-s2-darker, #f1f8fb)
+    );
     @include donut-color-variants(
       $donut-background: var(--gray-100, #ededef),
       $donut-halfmark: var(--gray-50, #fafafa)
@@ -139,7 +148,7 @@
       @include better-button(
         #fff,
         transparent,
-        $color-s2,
+        var(--color-s2, #87b8ce),
         #fff,
         rgba(255, 255, 255, 0.2),
         #fff
@@ -148,7 +157,7 @@
       margin-bottom: calc($line-height-computed / 2);
 
       [class^="ca-gov-icon-"] {
-        color: $color-s2;
+        color: var(--color-s2, #87b8ce);
         padding: 0 5px;
       }
     }
@@ -187,8 +196,11 @@
   }
 
   &-inverted {
-    @include link-variant($color-s3, darken($color-s3, 7%));
-    @include underline($color-s3, darken($color-s3, 7%));
+    @include link-variant(
+      var(--color-s3, #4993b5),
+      var(--color-s3-dark, #507b97)
+    );
+    @include underline(var(--color-s3, #4993b5), var(--color-s3-dark, #507b97));
 
     background: var(--gray-900, #3b3a48);
     color: #fff;
@@ -243,8 +255,11 @@
 .bg-standout {
   color: var(--white, #fff);
 
-  @include link-variant($color-s3, darken($color-s2, 15%));
-  @include underline($color-s3, darken($color-s2, 15%));
+  @include link-variant(
+    var(--color-s3, #4993b5),
+    var(--color-s2-darker, #f1f8fb)
+  );
+  @include underline(var(--color-s3, #4993b5), var(--color-s2-darker, #f1f8fb));
 }
 
 a.text-white:not(.btn) {

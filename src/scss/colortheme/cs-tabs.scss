@@ -7,7 +7,7 @@
   background: $nav-tabs-active-link-hover-bg;
 
   .nav-tabs {
-    background: $panel-default-header-bg;
+    background: var(--gray-75, #f3f3f4);
   }
 }
 

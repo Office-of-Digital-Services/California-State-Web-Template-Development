@@ -45,21 +45,21 @@
 }
 
 .color-s2 {
-  color: $color-s2 !important;
+  color: var(--color-s2, #87b8ce) !important;
 }
 
 .color-s2-hover:hover,
 .color-s2-hover:focus {
-  color: $color-s2 !important;
+  color: var(--color-s2, #87b8ce) !important;
 }
 
 .color-s3 {
-  color: $color-s3 !important;
+  color: var(--color-s3, #4993b5) !important;
 }
 
 .color-s3-hover:hover,
 .color-s3-hover:focus {
-  color: $color-s3 !important;
+  color: var(--color-s3, #4993b5) !important;
 }
 
 /* background colors */
@@ -109,25 +109,25 @@
 .bg-s2,
 .bg-s2-hover:hover,
 .bg-s2-hover:focus {
-  background-color: $color-s2 !important;
+  background-color: var(--color-s2, #87b8ce) !important;
 }
 
 .bg-s2-hover-color,
 .bg-s2-hover-color:hover,
 .bg-s2-hover-color:focus {
-  background-color: darken($color-s2, 7%) !important;
+  background-color: var(--color-s2-dark, #7c9bad) !important;
 }
 
 .bg-s3,
 .bg-s3-hover:hover,
 .bg-s3-hover:focus {
-  background-color: $color-s3 !important;
+  background-color: var(--color-s3, #4993b5) !important;
 }
 
 .bg-s3-hover-color,
 .bg-s3-hover-color:hover,
 .bg-s3-hover-color:focus {
-  background-color: darken($color-s3, 7%) !important;
+  background-color: var(--color-s3-dark, #507b97) !important;
 }
 
 .bg-primary-light {
@@ -158,18 +158,18 @@
 }
 
 .bg-secondary-light {
-  background-color: tint($color-s3, 40%) !important;
+  background-color: var(--color-s3-light, #a4c2d4) !important;
 }
 
 .bg-secondary-light-hover:hover,
 .bg-secondary-light-hover:focus {
-  background-color: tint($color-s3, 40%) !important;
+  background-color: var(--color-s3-light, #a4c2d4) !important;
 }
 
 // before after backgrounds
 .bg-secondary-before::before,
 .bg-secondary-after::after {
-  background-color: $color-s3 !important;
+  background-color: var(--color-s3, #4993b5) !important;
 }
 
 .bg-highlight-before::before,
@@ -229,11 +229,11 @@
 }
 
 .brd-s2 {
-  border-color: $color-s2 !important;
+  border-color: var(--color-s2, #87b8ce) !important;
 }
 
 .brd-s3 {
-  border-color: $color-s3 !important;
+  border-color: var(--color-s3, #4993b5) !important;
 }
 
 .brd-primary-light-before::before,
@@ -253,7 +253,7 @@
 
 .brd-secondary-light-before::before,
 .brd-secondary-light-after::after {
-  border-color: tint($color-s3, 40%) !important;
+  border-color: var(--color-s3-light, #a4c2d4) !important;
 }
 
 /* Underline colors */

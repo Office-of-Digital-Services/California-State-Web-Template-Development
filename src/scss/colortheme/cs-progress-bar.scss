@@ -18,7 +18,7 @@
 }
 
 .progress-bar-overstated {
-  @include progress-bar-variant($color-s3);
+  @include progress-bar-variant(var(--color-s3, #4993b5));
 }
 
 .progress-bar-standout {

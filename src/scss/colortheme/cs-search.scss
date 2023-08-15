@@ -6,7 +6,7 @@
 .search-container {
   .submit-container {
     button {
-      color: $mobile-controls;
+      color: var(--gray-600, #72717c);
       border-color: $text-field-color;
     }
   }

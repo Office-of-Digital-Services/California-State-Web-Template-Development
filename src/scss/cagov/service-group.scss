@@ -94,7 +94,6 @@
     min-height: 320px;
   }
 
-  // background: lighten($color-s2,10%);  // Caused acessibility failure. Should be dark blue
   color: var(--color-s1, #eef8fb);
   background: var(--brand-primary, #046b99);
   background-position: center;

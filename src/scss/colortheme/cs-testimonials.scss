@@ -20,11 +20,11 @@
     );
     @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
 
-    background: $color-s3;
+    background: var(--color-s3, #4993b5);
     color: var(--gray-900, #3b3a48);
 
     footer {
-      color: contrast($color-s3);
+      color: var(--black, #000);
     }
   }
 

@@ -59,11 +59,11 @@
   }
 
   &-accent-s2 {
-    color: $color-s2 !important;
+    color: var(--color-s2, #87b8ce) !important;
   }
 
   &-accent-s3 {
-    color: $color-s3 !important;
+    color: var(--color-s3, #4993b5) !important;
   }
 }
 
@@ -89,7 +89,7 @@
 
 .label-secondary {
   color: var(--gray-900, #3b3a48);
-  background-color: $color-s2;
+  background-color: var(--color-s2, #87b8ce);
 }
 
 .label-light {

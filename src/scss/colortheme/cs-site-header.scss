@@ -11,14 +11,14 @@
 }
 
 .mobile-controls {
-  background: var(--white, #ffffff);
+  background: var(--white, #fff);
 }
 
 .mobile-control {
-  color: $mobile-controls;
+  color: var(--gray-600, #72717c);
 
   a {
-    color: $mobile-controls;
+    color: var(--gray-600, #72717c);
     text-decoration: none;
   }
 
