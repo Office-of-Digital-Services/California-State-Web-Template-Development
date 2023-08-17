@@ -22,23 +22,23 @@
 }
 
 .mobile-sidenav {
-  background-color: $mobile-drawer;
+  background-color: var(--mobile-drawer, #214a68);
 
   .list-navigation,
   .side-navigation ul {
     li {
       a {
         color: var(--white, #fff);
-        border-bottom-color: $mobile-drawer;
+        border-bottom-color: var(--mobile-drawer, #214a68);
 
         &:hover,
         &:focus {
           color: var(--white, #fff);
-          background-color: $mobile-drawer-active;
+          background-color: var(--mobile-drawer-active, #046b99);
         }
 
         &.active {
-          background-color: $mobile-drawer-active;
+          background-color: var(--mobile-drawer-active, #046b99);
 
           &::before {
             color: var(--white, #fff);
@@ -48,7 +48,7 @@
           &:hover,
           &:focus {
             color: var(--white, #fff);
-            background-color: $mobile-drawer;
+            background-color: var(--mobile-drawer, #214a68);
           }
         }
 

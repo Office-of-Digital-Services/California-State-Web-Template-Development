@@ -49,11 +49,11 @@
   --color-s3-dark: color-mix(in srgb, var(--color-s3), #000 15%);
   --color-s3-light: color-mix(in srgb, var(--color-s3), #fff 45%);
   --color-s3-lighter: color-mix(in srgb, var(--color-s3), #fff 60%);
+
+  // Megamenu sub navigation background
+  --sub-nav-bg: var(--color-s1-lighter);
+
+  // Mobile navigation draver background
+  --mobile-drawer: var(--color-p2);
+  --mobile-drawer-active: var(--color-p2-light);
 }
-
-// MEGAMENU
-$sub-nav-bg: var(--color-s1-lighter);
-
-// MOBILE DRAWER BACKGROUND
-$mobile-drawer: var(--color-p2);
-$mobile-drawer-active: var(--color-p2-light);

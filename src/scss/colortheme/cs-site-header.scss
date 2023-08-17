@@ -29,7 +29,10 @@
     &:hover,
     &:focus {
       outline: none;
-      background-color: $sub-nav-bg; // should be the same as sub-nav background
+      background-color: var(
+        --sub-nav-bg,
+        #f1f8fb
+      ); // should be the same as sub-nav background
     }
   }
 }

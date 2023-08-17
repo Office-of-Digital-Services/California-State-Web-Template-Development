@@ -3,12 +3,6 @@
    /source/scss/colortheme/cs-global-header.scss
 ----------------------------------------- */
 
-.utility-header {
-  // beta 5.0 addition
-  background: var(--color-p2, #046b99);
-  color: (var(--white, #fff));
-}
-
 // Utility header setting buttons style when full width navigation with icon is used
 @media (max-width: $screen-xs-max) {
   .nav-full-width-icons .settings-links .utility-links a,

@@ -6,7 +6,7 @@
 // NAVIGATION ACTIVE STYLE
 // --------------------------------------------------
 .nav-item,
-nav-item-search {
+.nav-item-search {
   &.active {
     > a,
     .first-level-btn,
@@ -21,14 +21,13 @@ nav-item-search {
   &:hover,
   &:focus {
     @media (min-width: $screen-sm-min) {
-      background-color: $sub-nav-bg;
+      background-color: var(--sub-nav-bg, #f1f8fb);
     }
 
     > a,
     .first-level-btn,
     .first-level-link {
       color: var(--color-p2, #046b99);
-
       > span[class^="ca-gov-icon"] {
         color: var(--gray-900, #3b3a48);
       }
@@ -60,13 +59,13 @@ nav-item-search {
   // 991
   @media (max-width: $screen-sm-max) {
     &.active {
-      background-color: $mobile-drawer-active !important;
-      color: var(--white, #ffffff) !important;
+      background-color: var(--mobile-drawer-active, #046b99) !important;
+      color: var(--white, #fff) !important;
 
       &:hover,
       &:focus {
-        background-color: $mobile-drawer !important;
-        color: var(--white, #ffffff) !important;
+        background-color: var(--mobile-drawer, #214a68) !important;
+        color: var(--white, #fff) !important;
       }
 
       &::before,
@@ -77,8 +76,8 @@ nav-item-search {
 
     &:hover,
     &:focus {
-      background-color: $mobile-drawer-active !important;
-      color: var(--white, #ffffff) !important;
+      background-color: var(--mobile-drawer-active, #046b99) !important;
+      color: var(--white, #fff) !important;
     }
   }
 }
@@ -95,14 +94,14 @@ nav-item-search {
 
   // 991px
   @media (max-width: $screen-sm-max) {
-    background-color: $mobile-drawer;
+    background-color: var(--mobile-drawer, #214a68);
 
     &.active {
-      background-color: $mobile-drawer-active;
+      background-color: var(--mobile-drawer-active, #046b99);
 
       &:hover,
       &:focus {
-        background-color: $mobile-drawer;
+        background-color: var(--mobile-drawer, #214a68);
       }
     }
   }
@@ -111,8 +110,8 @@ nav-item-search {
 .second-level-nav {
   > li {
     border: 1px solid transparent;
-    border-right: 4px solid var(--white, #ffffff); // beta 6.0 addition
-    border-bottom: 4px solid var(--white, #ffffff); // beta 6.0 addition
+    border-right: 4px solid var(--white, #fff); // beta 6.0 addition
+    border-bottom: 4px solid var(--white, #fff); // beta 6.0 addition
 
     &:hover,
     &:focus {
@@ -139,7 +138,7 @@ nav-item-search {
 // --------------------------------------------------
 
 .sub-nav {
-  background: var(--white, #ffffff);
+  background: var(--white, #fff);
 }
 
 @media (max-width: $screen-xs-max) {
@@ -161,10 +160,10 @@ nav-item-search {
       background: #fff;
     }
 
-    border-bottom: 4px solid var(--white, #ffffff);
+    border-bottom: 4px solid var(--white, #fff);
 
     @media (max-width: $screen-xs-max) {
-      border-bottom: 4px solid var(--white, #ffffff);
+      border-bottom: 4px solid var(--white, #fff);
 
       &:hover,
       &:focus {
@@ -208,13 +207,13 @@ nav-item-search {
   .nav-item {
     &.active {
       .first-level-btn {
-        background-color: $mobile-drawer-active !important;
-        color: var(--white, #ffffff) !important;
+        background-color: var(--mobile-drawer-active, #046b99) !important;
+        color: var(--white, #fff) !important;
 
         &:hover,
         &:focus {
-          background-color: $mobile-drawer !important;
-          color: var(--white, #ffffff) !important;
+          background-color: var(--mobile-drawer, #214a68) !important;
+          color: var(--white, #fff) !important;
         }
 
         &::before,
@@ -233,6 +232,6 @@ nav-item-search {
 /* Dark Mobile menu */
 @media (max-width: $screen-sm-max) {
   .navigation-search {
-    background-color: $mobile-drawer;
+    background-color: var(--mobile-drawer, #214a68);
   }
 }
