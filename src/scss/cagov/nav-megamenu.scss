@@ -206,11 +206,11 @@ a.second-level-link {
   @media (max-width: $screen-sm-max) {
     // to make outline visible
     padding: 0.5rem 1rem 0.75rem 2rem !important;
-    color: var(--white, #ffffff);
+    color: var(--white, #fff);
 
     &:hover,
     &:focus {
-      color: var(--white, #ffffff);
+      color: var(--white, #fff);
     }
   }
 }

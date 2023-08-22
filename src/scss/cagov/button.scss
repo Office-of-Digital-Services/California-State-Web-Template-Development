@@ -61,10 +61,7 @@
     var(--color-p3-darker, #242830)
   );
 
-  &:disabled {
-    color: var(--white, #fff) !important;
-  }
-
+  &:disabled,
   &.disabled {
     color: var(--white, #fff) !important;
   }
@@ -124,12 +121,9 @@
     box-shadow: none;
   }
 
-  &:disabled {
-    color: var(--black, #000000);
-  }
-
+  &:disabled,
   &.disabled {
-    color: var(--black, #000000);
+    color: var(--black, #000);
   }
 }
 
@@ -146,9 +140,9 @@
 
   &.active {
     background: #fff;
-    color: var(--black, #000);
   }
 
+  &.active,
   &:disabled {
     color: var(--black, #000);
   }
@@ -308,7 +302,7 @@
 
 // btn-light
 .btn-light.btn-hover:hover {
-  background-color: var(--white, #ffffff);
+  background-color: var(--white, #fff);
   overflow: hidden;
 }
 
@@ -323,7 +317,7 @@
 
 // btn-default
 .btn-default.btn-hover:hover {
-  background-color: var(--white, #ffffff);
+  background-color: var(--white, #fff);
   overflow: hidden;
 }
 
@@ -372,7 +366,7 @@
 }
 
 .btn-secondary.btn-hover::before {
-  background: var(--white, #ffffff);
+  background: var(--white, #fff);
   overflow: hidden;
 }
 
