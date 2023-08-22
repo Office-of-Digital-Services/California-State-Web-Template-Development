@@ -65,8 +65,9 @@ module.exports = function (
         .relative(path.dirname(outputPath), path.dirname(basePath))
         .slice(0, -2); //removing last 2 dots
 
-      //Replace all ... ="/  ... with new path
-      return content.replace(/=\"\//g, `="${relativePath}`);
+      return content
+        .replace(/href="(.*\/)"/g, 'href="$1index.html"') // fixing any root path links
+        .replace(/=\"\//g, `="${relativePath}`); //Replace all ... ="/  ... with new path
     }
   );
 

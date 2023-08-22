@@ -576,9 +576,7 @@ input[type="search"].search-textfield {
 /* Search Button */
 
 button.gsc-search-button {
-  cursor: pointer;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-radius: 0 5px 5px 0;
   padding: 0 12px;
   border: 1px solid;
   min-height: 38px;
@@ -589,7 +587,6 @@ button.gsc-search-button {
 .search-container {
   #Search {
     display: flex;
-
     .gsc-search-button {
       right: 50px;
       background-color: var(--gray-600, #72717c);
@@ -704,7 +701,6 @@ button.gsc-search-button {
 
     #Search {
       .gsc-search-button {
-        right: 0;
         outline-offset: -2px;
       }
 
@@ -874,9 +870,7 @@ table.gsc-search-box td {
   }
 
   .full-width-nav .featured-search input.search-textfield {
-    border-radius: 5px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-radius: 5px 0 0 5px;
     padding: 0 8px;
   }
 

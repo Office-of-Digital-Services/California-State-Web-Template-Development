@@ -6,21 +6,18 @@
   position: relative;
   left: 50% !important;
   transform: translateX(-50%);
-  width: 0;
-  height: 0;
   z-index: 999;
 
   a {
-    width: 0;
-    height: 0;
+    width: 1px; // > 0px Needed for Safar
+    height: 1px; // > 0px Needed for Safar
     text-align: center;
     position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%);
     clip: unset;
     background-color: white;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
+    border-radius: 0 0 7px 7px;
     overflow: hidden;
 
     &:focus {
