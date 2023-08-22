@@ -512,32 +512,6 @@
     width: 100%;
   }
 
-  .top-level-nav {
-    .nav-item {
-      &.active {
-        .first-level-btn {
-          background-color: var(--mobile-drawer-active, #046b99) !important;
-          color: var(--white, #fff) !important;
-
-          &:hover,
-          &:focus {
-            background-color: var(--mobile-drawer, #214a68) !important;
-            color: var(--white, #fff) !important;
-          }
-
-          &::before,
-          &::after {
-            border-left: none !important;
-          }
-        }
-      }
-
-      [aria-hidden="true"].sub-nav {
-        max-height: 0;
-      }
-    }
-  }
-
   .main-navigation {
     #nav-item-search button.first-level-link {
       background: none;
@@ -569,6 +543,28 @@
 
   // For standard mobile menu and off canvas menu
   .top-level-nav .nav-item {
+    &.active {
+      .first-level-btn {
+        background-color: var(--mobile-drawer-active, #046b99) !important;
+        color: var(--white, #fff) !important;
+
+        &:hover,
+        &:focus {
+          background-color: var(--mobile-drawer, #214a68) !important;
+          color: var(--white, #fff) !important;
+        }
+
+        &::before,
+        &::after {
+          border-left: none !important;
+        }
+      }
+    }
+
+    [aria-hidden="true"].sub-nav {
+      max-height: 0;
+    }
+
     margin-top: 0;
     border-bottom: 1px solid var(--gray-200, #d4d4d7);
 
