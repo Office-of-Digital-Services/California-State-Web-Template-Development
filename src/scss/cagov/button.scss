@@ -61,10 +61,7 @@
     var(--color-p3-darker, #242830)
   );
 
-  &:disabled {
-    color: var(--white, #fff) !important;
-  }
-
+  &:disabled,
   &.disabled {
     color: var(--white, #fff) !important;
   }
@@ -124,10 +121,7 @@
     box-shadow: none;
   }
 
-  &:disabled {
-    color: var(--black, #000);
-  }
-
+  &:disabled,
   &.disabled {
     color: var(--black, #000);
   }
@@ -146,9 +140,9 @@
 
   &.active {
     background: #fff;
-    color: var(--black, #000);
   }
 
+  &.active,
   &:disabled {
     color: var(--black, #000);
   }
