@@ -5,6 +5,7 @@
 .tab-group {
   position: relative;
   border: none;
+  background: $nav-tabs-active-link-hover-bg;
 
   @media (max-width: $screen-xs-max) {
     border: none;
@@ -17,6 +18,7 @@
   .nav-tabs {
     border-radius: 0;
     border-bottom: none;
+    background: var(--gray-75, #f3f3f4);
 
     li:first-child a,
     li:first-child a:hover,
@@ -48,6 +50,12 @@
         }
       }
     }
+
+    .nav-link.active {
+      &::after {
+        border-color: var(--color-p1, #fdb81e);
+      }
+    }
   }
 
   .tab-pane {
@@ -55,7 +63,7 @@
   }
 
   .tab-content {
-    border: 1px solid $gray-200;
+    border: 1px solid var(--gray-200, #d4d4d7);
 
     @media (max-width: $screen-xs-max) {
       border: none;
@@ -137,11 +145,11 @@
   background-color: transparent !important;
   border: none !important;
   cursor: default;
-  color: $gray-900 !important;
+  color: var(--gray-900, #3b3a48) !important;
   position: relative;
 
   &:hover {
-    color: $gray-700 !important;
+    color: var(--gray-700, #5e5e6a) !important;
   }
 
   &::after {
@@ -155,7 +163,7 @@
 }
 
 .nav-tabs > li > a:hover {
-  color: darken($link-color, 7%);
+  color: var(--brand-primary-darker, #29597f);
 }
 
 .nav-tabs > li > a:focus {
@@ -253,13 +261,13 @@
         padding: 0.5rem 1rem;
         font-size: 1.25rem;
         font-weight: 600;
-        background-color: $gray-50;
+        background-color: var(--gray-50, #fafafa);
         text-decoration: none;
         position: relative;
 
         &:hover,
         &:focus {
-          background-color: $gray-100;
+          background-color: var(--gray-100, #f3f3f4);
         }
 
         &:focus {
@@ -283,16 +291,17 @@
         }
 
         &[aria-expanded="true"] {
-          color: $black;
+          color: var(--black, #000);
 
           &:hover,
           &:focus {
-            color: $gray-800;
+            color: var(--gray-800, #4a4958);
           }
 
           &::before {
             content: "";
             border-left: 3px solid;
+            border-left-color: var(--color-p1, #fdb81e);
             position: absolute;
             top: 0;
             left: 0;
@@ -340,7 +349,7 @@
     border: none;
     position: relative;
     margin: 0;
-    color: $black;
+    color: var(--black, #000);
 
     &::after {
       left: 0;
@@ -349,6 +358,7 @@
       content: "";
       width: 100%;
       border-bottom: 3px solid;
+      border-color: var(--color-p1, #fdb81e);
     }
   }
 

@@ -25,32 +25,32 @@
 .gs-result {
   a.gs-title,
   a.gs-title b {
-    color: $color-p2 !important;
+    color: var(--color-p2, #046b99) !important;
   }
 
   .gsc-url-top {
     .gs-visibleUrl-breadcrumb span {
-      color: $gray-600 !important;
+      color: var(--gray-600, #72717c) !important;
     }
   }
 
   .gs-snippet {
-    color: $text-color !important;
+    color: var(--gray-900, #3b3a48) !important;
   }
 }
 
 .gsc-cursor-box {
   .gsc-cursor {
     .gsc-cursor-page {
-      color: $color-p3 !important;
+      color: var(--color-p3, #323a45) !important;
     }
 
     .gsc-cursor-current-page {
-      color: $color-p3 !important;
+      color: var(--color-p3, #323a45) !important;
     }
   }
 }
 
 .gcsc-find-more-on-google {
-  color: $color-p2 !important;
+  color: var(--color-p2, #046b99) !important;
 }

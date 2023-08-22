@@ -17,19 +17,26 @@
 }
 
 .alert-severe {
-  background: $brand-highlight;
+  color: var(--gray-800, #4a4958) !important;
+  background-color: var(--color-p1, #fdb81e);
 
+  a:not(.btn),
   .close {
-    color: $gray-base;
+    color: var(--gray-800, #4a4958) !important;
+
+    &:focus,
+    &:hover {
+      color: var(--black, #000) !important;
+    }
   }
 
   .alert-level {
-    color: $gray-base;
+    color: var(--black, #000);
     background: rgb(0 0 0 / 15%);
   }
 
   .alert-text {
-    color: $gray-base;
+    color: var(--black, #000);
   }
 }
 
@@ -39,6 +46,8 @@
   border-radius: 0;
   column-rule: $text-field-color;
   transition: all 0.2s;
+  background-color: var(--color-p3, #323a45);
+  color: var(--white, #fff);
 
   .alert-icon {
     font-size: 1.6rem;
@@ -75,6 +84,16 @@
     background: none;
   }
 
+  a:not(.btn),
+  .close {
+    color: var(--white, #fff);
+
+    &:focus,
+    &:hover {
+      color: var(--color-p1, #fdb81e);
+    }
+  }
+
   .container {
     font-size: 1rem;
     min-height: 30px;
@@ -89,6 +108,66 @@
   .btn {
     position: relative;
     top: -1px;
+  }
+}
+
+.alert-warning {
+  color: $alert-warning-text;
+  background-color: $alert-warning-bg;
+
+  a:not(.btn),
+  .close {
+    color: $alert-warning-text;
+
+    &:focus,
+    &:hover {
+      color: darken($alert-warning-text, 7%);
+    }
+  }
+}
+
+.alert-info {
+  color: $alert-info-text;
+  background-color: $alert-info-bg;
+
+  a:not(.btn),
+  .close {
+    color: $alert-info-text;
+
+    &:focus,
+    &:hover {
+      color: darken($alert-info-text, 14%);
+    }
+  }
+}
+
+.alert-danger {
+  color: $alert-danger-text;
+  background-color: $alert-danger-bg;
+
+  a:not(.btn),
+  .close {
+    color: $alert-danger-text;
+
+    &:focus,
+    &:hover {
+      color: darken($alert-danger-text, 14%);
+    }
+  }
+}
+
+.alert-success {
+  color: $alert-success-text;
+  background-color: $alert-success-bg;
+
+  a:not(.btn),
+  .close {
+    color: $alert-success-text;
+
+    &:focus,
+    &:hover {
+      color: darken($alert-success-text, 14%);
+    }
   }
 }
 

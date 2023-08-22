@@ -59,6 +59,7 @@
 }
 
 /* Old panel styles */
+// (All panels will be deprecated since they are replaced by cards)
 .panel,
 .card {
   border-width: 1px;
@@ -144,6 +145,80 @@
     }
   }
 
+  // CARD STYLES
+  &.card-primary {
+    @include link-variant(var(--white, #fff), var(--color-s1, #eef8fb));
+    @include underline(var(--white, #fff), var(--color-s1, #eef8fb));
+    @include card-variant(
+      var(--color-p2, #046b99),
+      var(--color-p2, #046b99),
+      var(--white, #fff)
+    );
+  }
+
+  /* stylelint-disable-next-line no-duplicate-selectors */
+  &.card-inverted,
+  &.card-inverse {
+    @include link-variant(
+      var(--color-s3, #4993b5),
+      var(--color-s3-dark, #507b97)
+    );
+    @include underline(var(--color-s3, #4993b5), var(--color-s3-dark, #507b97));
+    @include card-variant(
+      var(--gray-800, #4a4958),
+      var(--gray-500, #898891),
+      var(--white, #fff)
+    );
+
+    .card-header {
+      border-bottom: $card-border-width solid rgb(255 255 255 / 20%);
+    }
+
+    .card-footer {
+      border-top: $card-border-width solid rgb(255 255 255 / 20%);
+    }
+  }
+
+  &.card-success {
+    @include link-variant(var(--gray-900, #3b3a48), var(--black, #000000));
+    @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
+    @include card-variant(
+      var(--brand-success, #32852e),
+      var(--brand-success, #32852e),
+      var(--white, #fff)
+    );
+  }
+
+  &.card-info {
+    @include link-variant(#fff, #fff);
+    @include underline(#fff, #fff);
+    @include card-variant(
+      var(--brand-info, #1c7db5),
+      var(--brand-info, #1c7db5),
+      var(--white, #fff)
+    );
+  }
+
+  &.card-warning {
+    @include link-variant(var(--gray-900, #3b3a48), var(--black, #000000));
+    @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
+    @include card-variant(
+      var(--brand-warning, #c2570f),
+      var(--brand-warning, #c2570f),
+      var(--white, #fff)
+    );
+  }
+
+  &.card-danger {
+    @include link-variant(var(--black, #000000), var(--black, #000000));
+    @include underline(var(--black, #000000), var(--black, #000000));
+    @include card-variant(
+      var(--brand-danger, #cd402d),
+      var(--brand-danger, #cd402d),
+      var(--white, #fff)
+    );
+  }
+
   // Remove .photo-left and .photo-right background images for mobile
   @media (max-width: $screen-xs-max) {
     .panel-body,
@@ -153,6 +228,257 @@
 
     .photo {
       background-image: none !important;
+    }
+  }
+}
+
+// ADDS TRIANGLE TO PANEL
+// --------------------------------------------------
+
+/* NOTE: although any panel could have a triangle, at this time, only .panel-standout has css and an image */
+
+// (All panels will be deprecated since they are replaced by cards)
+.panel.highlight,
+.card.highlight {
+  .panel-heading,
+  .card-heading {
+    position: relative;
+
+    // .triangle class injected into DOM by js
+    .triangle {
+      position: absolute;
+      bottom: -16px;
+      height: 12px;
+      left: 50%;
+      margin-left: -12px;
+      width: 24px;
+    }
+  }
+}
+
+// Additional padding between panels in group
+// --------------------------------------------------
+
+// (All panels will be deprecated since they are replaced by cards)
+.panel-group .panel + .panel,
+.card-group .card + .card {
+  margin-top: $line-height-computed;
+}
+
+.panel-heading,
+.card-heading {
+  padding: 10px 1rem;
+}
+
+.panel-body,
+.card-body {
+  padding: 1rem;
+}
+
+/* DEFAULT CARD */
+.card {
+  position: relative;
+  display: block;
+  margin-bottom: $card-spacer-y;
+  background-color: var(--white, #fff);
+  border: none;
+  border-radius: $card-border-radius;
+
+  .card-body {
+    padding: 1.5rem;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .btn-block {
+    margin-top: 5px;
+  }
+
+  .toggle-more {
+    display: inline-block;
+    color: var(--gray-600, #72717c);
+    font-family: CaGov;
+    font-size: 22px;
+    margin-left: -11px;
+
+    &::before {
+      content: "\e050"; // .ca-gov-icon-plus-fill
+    }
+
+    /* Change icon to minus */
+    &.active::before {
+      content: "\e04f"; // .ca-gov-icon-minus-fill
+    }
+  }
+}
+
+.card-title {
+  margin-bottom: $card-spacer-y;
+  margin-top: 0;
+  font-size: $font-size-h4;
+
+  a {
+    text-decoration: none !important;
+  }
+}
+
+/* Cards color styles (Panels will be deprecated) */
+.card-default,
+.panel-default {
+  border: 1px solid;
+
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    var(--gray-200, #d4d4d7),
+    var(--gray-900, #3b3a48),
+    var(--gray-75, #f3f3f4),
+    var(--gray-200, #d4d4d7)
+  );
+
+  .card-heading,
+  .card-header,
+  .panel-heading {
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: var(--color-p3, #323a45);
+      }
+    }
+  }
+
+  .panel-body,
+  .card-body {
+    background: var(--white, #fff);
+    color: var(--gray-900, #3b3a48);
+  }
+}
+
+/* Overstated Cards */
+.card-overstated,
+.panel-overstated {
+  border: 1px solid;
+
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    var(--gray-200, #d4d4d7),
+    var(--white, #f5f5f5),
+    var(--color-p2, #046b99),
+    var(--color-p2, #046b99)
+  );
+
+  .card-heading,
+  .card-header,
+  .panel-heading {
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: var(--white, #fff);
+      }
+    }
+  }
+
+  .card-body,
+  .panel-body {
+    background: var(--white, #fff);
+    color: var(--gray-900, #3b3a48);
+
+    @include link-variant($link-color, $link-hover-color);
+    @include underline($link-color, $link-hover-color);
+  }
+}
+
+/* Uderstated Cards */
+.card-understated,
+.panel-understated {
+  border: 1px solid;
+
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    var(--gray-200, #d4d4d7),
+    var(--gray-900, #3b3a48),
+    var(--color-s1, #eef8fb),
+    var(--color-s1, #eef8fb)
+  );
+
+  .card-heading,
+  .card-header,
+  .panel-heading {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: var(--color-p3, #323a45);
+      }
+    }
+  }
+
+  .card-body,
+  .panel-body {
+    background: var(--white, #fff);
+    color: var(--gray-900, #3b3a48);
+  }
+}
+
+/* Standout Cards */
+.card-standout,
+.panel-standout {
+  border: 1px solid;
+
+  // border, heading-text-color, heading-bg-color, heading-border
+  @include panel-variant(
+    var(--gray-200, #d4d4d7),
+    var(--white, #fff),
+    var(--color-p3, #323a45),
+    var(--color-p3, #323a45)
+  );
+
+  .card-heading,
+  .card-header,
+  .panel-heading {
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      span[class^="ca-gov-icon-"] {
+        color: var(--color-p1, #fdb81e);
+      }
+    }
+  }
+
+  .card-body,
+  .panel-body {
+    background: var(--white, #fff);
+    color: var(--gray-900, #3b3a48);
+
+    @include link-variant($link-color, $link-hover-color);
+    @include underline($link-color, $link-hover-color);
+  }
+}
+
+/* Adds triangle to card */
+.card-standout.highlight,
+.panel-standout.highlight {
+  .card-heading,
+  .card-header,
+  .panel-heading {
+    .triangle {
+      @include triangle(down, 12px, var(--color-p3, #323a45));
     }
   }
 }
@@ -208,95 +534,5 @@
   .panel-body,
   .card-body {
     background: transparent;
-  }
-}
-
-// ADDS TRIANGLE TO PANEL
-// --------------------------------------------------
-
-/* NOTE: although any panel could have a triangle, at this time, only .panel-standout has css and an image */
-
-.panel.highlight,
-.card.highlight {
-  .panel-heading,
-  .card-heading {
-    position: relative;
-
-    // .triangle class injected into DOM by js
-    .triangle {
-      position: absolute;
-      bottom: -16px;
-      height: 12px;
-      left: 50%;
-      margin-left: -12px;
-      width: 24px;
-    }
-  }
-}
-
-// Additional padding between panels in group
-// --------------------------------------------------
-
-.panel-group .panel + .panel,
-.card-group .card + .card {
-  margin-top: $line-height-computed;
-}
-
-.panel-heading,
-.card-heading {
-  padding: 10px 1rem;
-}
-
-.panel-body,
-.card-body {
-  padding: 1rem;
-}
-
-/* DEFAULT CARD */
-.card {
-  position: relative;
-  display: block;
-  margin-bottom: $card-spacer-y;
-  background-color: $white;
-  border: none;
-  border-radius: $card-border-radius;
-
-  .card-body {
-    padding: 1.5rem;
-
-    p {
-      margin-bottom: 0;
-    }
-  }
-
-  .btn-block {
-    margin-top: 5px;
-  }
-
-  .toggle-more {
-    display: inline-block;
-    color: $gray-light;
-    font-family: CaGov;
-    font-size: 22px;
-    margin-left: -11px;
-
-    &::before {
-      content: "\e050"; // .ca-gov-icon-plus-fill
-    }
-
-    /* Change icon to minus */
-    &.active::before {
-      content: "\e04f"; // .ca-gov-icon-minus-fill
-    }
-  }
-}
-
-.card-title {
-  margin-bottom: $card-spacer-y;
-  margin-top: 0;
-  font-size: $font-size-h4;
-
-  a {
-    text-decoration: none !important;
   }
 }

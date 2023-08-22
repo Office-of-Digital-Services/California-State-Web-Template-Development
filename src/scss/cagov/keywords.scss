@@ -12,13 +12,13 @@
       @include label;
       @include label-variant(#ccc);
 
-      color: $text-color;
+      color: var(--gray-900, #3b3a48);
       margin-left: 5px;
       margin-right: 5px;
     }
 
     a {
-      color: $text-color;
+      color: var(--gray-900, #3b3a48);
     }
   }
 }

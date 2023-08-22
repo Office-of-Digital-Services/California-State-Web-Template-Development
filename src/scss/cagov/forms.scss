@@ -20,22 +20,24 @@ label {
   border-radius: $border-radius-base;
 
   &.is-valid {
-    color: $brand-success;
-    border-color: $brand-success;
-    background-color: lighten($brand-success, 27%);
+    color: var(--brand-success, #32852e);
+    border-color: var(--brand-success, #32852e);
+    background-color: var(--brand-success-lighter, #c6dac2);
   }
 
   &.is-invalid {
-    color: $brand-danger;
-    border-color: $brand-danger;
-    background-color: lighten($brand-danger, 40%);
+    color: var(--brand-danger, #cd402d);
+    border-color: var(--brand-danger, #cd402d);
+    // background-color: lighten($brand-danger, 40%);
+    background-color: var(--brand-danger-lighter, #f4d9d5);
   }
 }
 
 .custom-file-label::after {
-  color: $white;
+  color: var(--white, #ffffff);
   border-radius: $border-radius-base;
   font-weight: 500;
+  background-color: var(--color-p2, #046b99);
 }
 
 // removeing default arrow on custom select input
@@ -45,7 +47,7 @@ label {
 
 // Asterisk
 .required-label {
-  color: $brand-danger;
+  color: var(--brand-danger, #cd402d);
 }
 
 .form-group {
@@ -105,33 +107,33 @@ label {
 // Bootstrap3 Backward bcompatibility
 .has-error {
   .feedback {
-    color: darken($brand-danger, 3%);
+    color: var(--brand-danger-darker, #9f3f2e);
   }
 
   .input-group-addon {
-    color: $brand-danger;
-    border-color: $brand-danger;
-    background-color: lighten($brand-danger, 40%);
+    color: var(--brand-danger, #cd402d);
+    border-color: var(--brand-danger, #cd402d);
+    background-color: var(--brand-danger-lighter, #f4d9d5);
   }
 
   .form-control {
-    border-color: $brand-danger;
+    border-color: var(--brand-danger, #cd402d);
   }
 }
 
 .has-success {
   .feedback {
-    color: darken($brand-success, 17%);
+    color: var(--brand-success-darkest, #1e3417);
   }
 
   .input-group-addon {
-    color: $brand-success;
-    border-color: $brand-success;
-    background-color: lighten($brand-success, 27%);
+    color: var(--brand-success, #32852e);
+    border-color: var(--brand-success, #32852e);
+    background-color: var(--brand-success-lighter, #c6dac2);
   }
 
   .form-control {
-    border-color: $brand-success;
+    border-color: var(--brand-success, #32852e);
   }
 }
 
@@ -171,6 +173,8 @@ label {
   font-size: 12px;
   border: 1px solid;
   border-radius: 50%;
+  color: var(--color-p2, #046b99);
+  border-color: var(--color-p2, #046b99);
 
   i {
     border-radius: 50%;
@@ -201,8 +205,9 @@ label {
   width: 18px;
   height: 18px;
   font-size: 12px;
-  color: $white;
+  color: var(--white, #fff);
   border: 1px solid;
+  border-color: var(--color-p2, #046b99);
 
   i {
     display: block;
@@ -229,6 +234,53 @@ input[type="radio"]:checked + i,
 input[type="checkbox"]:checked + * i,
 input[type="radio"]:checked + * i {
   color: #fff;
+  background-color: var(--color-p2, #046b99);
+  border-color: var(--color-p2, #046b99);
+}
+
+.bg-primary--checked.checked,
+.checked .bg-primary--checked {
+  background-color: var(--color-p2, #046b99) !important;
+}
+
+/* primary Color */
+input[type="checkbox"]:checked + .bg-primary--checked,
+input[type="radio"]:checked + .bg-primary--checked,
+input[type="checkbox"]:checked + * .bg-primary--checked,
+input[type="radio"]:checked + * .bg-primary--checked {
+  background-color: var(--color-p2, #046b99);
+}
+
+/* highlight Color */
+input[type="checkbox"]:checked + .bg-highlight--checked,
+input[type="radio"]:checked + .bg-highlight--checked,
+input[type="checkbox"]:checked + * .bg-highlight--checked,
+input[type="radio"]:checked + * .bg-highlight--checked {
+  background-color: var(--color-p1, #fdb81e);
+}
+
+/* Focusable custom checkboxes and radios for accessibility */
+input[type="checkbox"]:focus + div,
+input[type="radio"]:focus + div {
+  box-shadow: 0 0 2px 2px var(--color-s3, #4993b5);
+}
+
+.custom-radio {
+  .custom-control-input:checked ~ .custom-control-label::before {
+    @include gradient-bg(var(--color-p2, #046b99));
+  }
+}
+
+.custom-checkbox {
+  .custom-control-input:checked ~ .custom-control-label::before {
+    @include gradient-bg(var(--color-p2, #046b99));
+  }
+}
+
+.form-check-input:checked,
+.custom-control-input:checked {
+  background-color: var(--color-p2, #046b99);
+  border-color: var(--color-p2, #046b99);
 }
 
 // custom select
@@ -261,7 +313,7 @@ input[type="radio"]:checked + * i {
     position: absolute;
     right: 0;
     top: 0;
-    background: $white;
+    background: var(--white, #ffffff);
     z-index: 3;
     text-align: center;
     width: 30px;
@@ -311,7 +363,7 @@ input[type="radio"]:focus + .btn {
 }
 
 .valid-feedback {
-  color: $brand-success;
+  color: var(--brand-success, #32852e);
 }
 
 /* Accessibilty focus */

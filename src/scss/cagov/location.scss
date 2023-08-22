@@ -15,7 +15,7 @@
       @include font-size(1.5);
 
       position: relative;
-      color: $gray;
+      color: var(--gray-700, #5e5e6a);
     }
 
     a {
@@ -38,7 +38,7 @@
   @include clearfix;
 
   padding: calc($grid-gutter-width / 2) 0;
-  background: $gray-lightest;
+  background: var(--gray-50, #fafafa);
   margin-bottom: calc($line-height-computed / 2);
 
   .thumbnail {
@@ -86,7 +86,7 @@
   [class^="ca-gov-icon-"] {
     @include font-size(3.5);
 
-    color: $gray;
+    color: var(--gray-700, #5e5e6a);
     float: left;
     width: 20%;
     min-width: 60px;
@@ -121,6 +121,8 @@
     @include font-size(2);
 
     position: absolute;
+    background: var(--color-p3, #323a45);
+    color: var(--white, #fff);
   }
 
   .contact {

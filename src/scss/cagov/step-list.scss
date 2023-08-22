@@ -16,6 +16,7 @@
     padding-left: 45px;
     line-height: $font-lineheight-3;
     margin-bottom: 0;
+    border-color: var(--color-p1, #fdb81e);
 
     // The circle bullet
     &::before {
@@ -31,6 +32,7 @@
       counter-increment: step-list-count;
       content: counter(step-list-count);
       width: 50px;
+      border-color: var(--color-p1, #fdb81e);
     }
 
     // Don't draw the last verticle line

@@ -5,93 +5,55 @@
 // VARIABLES
 // --------------------------------------------------
 
-// Theme directory
-$theme-directory: "#{$template-path}/santacruz"; // Folder where assets for theme are stored
+:root {
+  // Primary Theme colors
+  // highlight
+  --color-p1: #f5811b;
+  --color-p1-dark: color-mix(in srgb, var(--color-p1), #000 15%);
+  --color-p1-darker: color-mix(in srgb, var(--color-p1), #000 30%);
+  --color-p1-darkest: color-mix(in srgb, var(--color-p1), #000 30%);
+  --color-p1-light: color-mix(in srgb, var(--color-p1), #fff 15%);
+  --color-p1-lighter: color-mix(in srgb, var(--color-p1), #fff 30%);
+  --color-p1-lightest: color-mix(in srgb, var(--color-p1), #fff 60%);
 
-// Primary Theme colors
-$color-p1: #f5811b; // Orange
-$color-p2: #0f4f94; // Blue
-$color-p3: #2c2c4f; // Purple
-// Darker Blue
+  // primary
+  --color-p2: #0f4f94;
+  --color-p2-dark: color-mix(in srgb, var(--color-p2), #000 15%);
+  --color-p2-darker: color-mix(in srgb, var(--color-p2), #000 30%);
+  --color-p2-darkest: color-mix(in srgb, var(--color-p2), #000 60%);
+  --color-p2-light: color-mix(in srgb, var(--color-p2), #fff 15%);
+  --color-p2-lighter: color-mix(in srgb, var(--color-p2), #fff 30%);
+  --color-p2-lightest: color-mix(in srgb, var(--color-p2), #fff 60%);
 
-// Secondary Theme colors
-$color-s1: #eff4fa; // Lightest Blue
-$color-s2: #c7d9ea; // Lighter Blue
-$color-s3: #9bb8d3; // Light Blue $brand-info
+  // standout
+  --color-p3: #2c2c4f;
+  --color-p3-dark: color-mix(in srgb, var(--color-p3), #000 15%);
+  --color-p3-darker: color-mix(in srgb, var(--color-p3), #000 30%);
+  --color-p3-darkest: color-mix(in srgb, var(--color-p3), #000 60%);
+  --color-p3-light: color-mix(in srgb, var(--color-p3), #fff 15%);
+  --color-p3-lighter: color-mix(in srgb, var(--color-p3), #fff 30%);
+  --color-p3-lightest: color-mix(in srgb, var(--color-p3), #fff 60%);
 
-// Accent Colors
-$color-a1: #1b79c0; // Dark Blue
-$color-a2: #077cbb; // Med Blue
-$color-a3: #258378; // Teal
-$color-a4: #32852e; // Green $brand-success
-$color-a5: #815ab4; // Purple
-$color-a6: #be37cd; // Lavender
-$color-a7: #c93e2c; // Red $brand-danger
-$color-a8: #bb520c; // Orange $brand-warning
-$color-a9: #f7e455; // Yellow
+  // secondary 1
+  --color-s1: #eff4fa;
+  --color-s1-darker: color-mix(in srgb, var(--color-s1), #000 5%);
+  --color-s1-lighter: color-mix(in srgb, var(--color-s1), #fff 10%);
 
-$panel-border: #ddd;
+  // secondary 2
+  --color-s2: #c7d9ea;
+  --color-s2-dark: color-mix(in srgb, var(--color-s2), #000 15%);
+  --color-s2-darker: color-mix(in srgb, var(--color-s2), #000 30%);
 
-// Module or theme specific variables
-$nav-first-level: #fff; // Color of navigation links
-$nav-second-level: $text-color; // Second level link colors
-$off-canvas-links: #fff; // Off Canvas link color
-$search-accent: $color-p1; // Search field input hover border
-$nav-accent: $color-p1; // Link hover and nav bar bottom line
-$body-color: #1d4d4c; // Background base and typically the page edge border
-$body-midline: $color-s3; // Midline gradient color
-$edge-border: $body-color; // Applied to outer edge of the page
-$header-icon: $color-p2; // Icon left of main content H1
-$mobile-controls: $gray-600; // Mobile controls
-$footer-txt: #fff; // Color of text and links in the footer
+  // secondary 3
+  --color-s3: #9bb8d3;
+  --color-s3-dark: color-mix(in srgb, var(--color-s3), #000 15%);
+  --color-s3-light: color-mix(in srgb, var(--color-s3), #fff 45%);
+  --color-s3-lighter: color-mix(in srgb, var(--color-s3), #fff 60%);
 
-$overstated-header-bg: $color-p2; // Background for panel header
-$overstated-header-txt: #fff; // Panel header text color
-$overstated-header-icon: #fff; // Panel header icon color
-$overstated-header-border: $color-p2; // Panel header bottom border color
-$overstated-border: $panel-border; // Border surrounding entire panel
-$overstated-body-bg: $color-s1; // Panel body background
+  // Megamenu sub navigation background
+  --sub-nav-bg: var(--color-s1-lighter);
 
-$panel-default-header-bg: $color-s2; // Background for panel header
-$panel-default-header-txt: $text-color; // Panel header text color
-$panel-default-header-icon: $color-p3; // Panel header icon color
-$panel-default-header-border: $panel-border; // Panel header bottom border color
-$panel-default-border: $panel-border; // Border surrounding entire panel
-$panel-default-body-bg: $color-s1; // Panel body background
-
-$sidebar-default-header-bg: $color-s2; // Background for panel header
-$sidebar-default-header-txt: $text-color; // Panel header text color
-$sidebar-default-header-icon: $color-p3; // Panel header icon color
-$sidebar-default-header-border: $panel-border; // Panel header bottom border color
-$sidebar-default-border: $panel-border; // Border surrounding entire panel
-$sidebar-default-body-bg: $color-s1; // Panel body background
-
-$understated-header-bg: $color-s1; // Background for panel header
-$understated-header-txt: $text-color; // Panel header text color
-$understated-header-icon: $color-p3; // Panel header icon color
-$understated-header-border: $color-s1; // Panel header bottom border color
-$understated-border: $panel-border; // Border surrounding entire panel
-$understated-body-bg: #fff; // Panel body background
-
-$standout-header-bg: $color-p3; // Background for panel header
-$standout-header-txt: #fff; // Panel header text color
-$standout-header-icon: $color-p1; // Panel header icon color
-$standout-header-border: $color-p3; // Panel header bottom border color
-$standout-border: $panel-border; // Border surrounding entire panel
-$standout-body-bg: $color-s1; // Panel body background
-
-$figure-border: $color-s2; // Border around media captions
-$figure-bg: $color-s1; // Background behind figure and caption
-
-// MEGAMENU
-$sub-nav-bg: lighten($color-s1, 4%);
-$sub-nav-link-border: $gray-lighter;
-$sub-nav-media-bg: transparent;
-
-// SEARCH
-$expanded-background-color: $gray-lighter;
-$text-field-color: rgb(255 255 255 / 80%); // 80% white
-
-// MOBILE DRAWER BACKGROUND
-$mobile-drawer: $color-p3;
-$mobile-drawer-active: lighten($color-p3, 7%);
+  // Mobile navigation draver background
+  --mobile-drawer: var(--color-p3);
+  --mobile-drawer-active: var(--color-p3-light);
+}

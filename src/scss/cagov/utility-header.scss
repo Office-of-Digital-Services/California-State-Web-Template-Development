@@ -7,6 +7,8 @@
   width: 100%;
   min-height: 42px; // beta 6.0 addition
   transition: all 0.3s ease;
+  background: var(--color-s1, #eef8fb);
+  color: var(--black, #000);
 
   .half {
     @include make-sm-column(6);
@@ -35,11 +37,13 @@
     display: inline-block;
     padding: 0;
     text-decoration: underline;
+    color: var(--black, #000);
 
     &:hover,
     &:focus,
     &.hovered {
       text-decoration: none;
+      color: var(--gray-800, #4a4958);
     }
   }
 
@@ -66,7 +70,7 @@
 
         &:hover,
         &:focus {
-          color: $gray-800;
+          color: var(--gray-800, #4a4958);
           background-color: transparent;
           border: none;
         }
@@ -108,7 +112,7 @@
     vertical-align: initial;
     line-height: 120%;
     background: white;
-    color: $black;
+    color: var(--black, #000);
   }
 
   // FLEX UTILITY
@@ -134,10 +138,12 @@
         margin: 0;
         padding-right: 0;
         font-size: 0.95rem;
+        color: var(--black, #000);
 
         &:hover,
         &:focus {
           text-decoration: none;
+          color: var(--gray-800, #4a4958);
         }
       }
     }
@@ -145,6 +151,13 @@
     .social-media-links {
       a {
         margin: 0 10px;
+        color: var(--black, #000);
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: var(--gray-800, #4a4958);
+        }
       }
 
       display: flex;

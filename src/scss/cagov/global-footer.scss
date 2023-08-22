@@ -3,8 +3,8 @@
 ----------------------------------------- */
 
 .global-footer {
-  background-color: $gray-50;
-  border-top: 1px solid $gray-200;
+  background-color: var(--gray-50, #fafafa);
+  border-top: 1px solid var(--gray-200, #d4d4d7);
   padding-top: 1rem;
 
   .container .d-flex {
@@ -62,11 +62,11 @@
       margin-right: 20px;
 
       a {
-        color: $black;
+        color: var(--black, #000);
         text-decoration: none;
 
         &:hover {
-          color: $gray-800;
+          color: var(--gray-800, #4a4958);
         }
       }
     }

@@ -32,6 +32,14 @@
       // decoration on icons cannot be removed unless it uses inline-block or using additional spans like this solution
       // http: //stackoverflow.com/questions/19326446/keep-underline-on-anchor-text-but-not-on-font-awesome-icon-in-anchor
       text-decoration: none;
+
+      span[class^="ca-gov-icon-"] {
+        color: var(--color-p1, #fdb81e);
+      }
+
+      .explore-title {
+        color: var(--color-p1, #fdb81e);
+      }
     }
   }
 }
