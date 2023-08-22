@@ -48,10 +48,7 @@ blockquote {
   &.prominent {
     text-align: center;
 
-    p {
-      text-align: left;
-    }
-
+    p,
     footer {
       text-align: left;
     }
@@ -65,12 +62,9 @@ blockquote {
     background-color: var(--color-p2, #046b99);
     color: var(--white, #fff);
 
-    &::before {
-      color: var(--white, #fff);
-    }
-
     p,
-    footer {
+    footer,
+    &::before {
       color: var(--white, #fff);
     }
   }
