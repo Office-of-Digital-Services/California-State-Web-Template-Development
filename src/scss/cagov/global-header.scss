@@ -32,11 +32,11 @@
   position: relative; // Allows children to be absolute positioned within .global-header
   z-index: 1;
   padding: 0;
-  background: var(--white, #ffffff);
+  background: var(--white, #fff);
   width: auto;
 
   .section-default {
-    background-color: var(--white, #ffffff);
+    background-color: var(--white, #fff);
 
     @media (min-width: $screen-md-min) {
       border-bottom: 1px solid var(--gray-200, #d4d4d7);

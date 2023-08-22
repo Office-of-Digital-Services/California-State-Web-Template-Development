@@ -283,6 +283,7 @@ input[type="search"].search-textfield {
       padding: 14px; // Increases padding on large search to make it appear bigger.
       border-color: var(--gray-600, #72717c) !important;
       @include font-size(1.1); // increases font size to approx 16.5px
+
       height: 38px; // Large search box overides default from above
     }
 

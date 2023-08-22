@@ -887,7 +887,7 @@
     cursor: pointer;
     border: none;
     transition: all 0.2s ease !important;
-    color: var(--white, #ffffff) !important;
+    color: var(--white, #fff) !important;
   }
 
   .first-level-btn[aria-expanded="true"] .rotate {
@@ -901,7 +901,7 @@
     right: 0;
     text-align: center;
     transition: all 0.2s ease !important;
-    color: var(--white, #ffffff) !important;
+    color: var(--white, #fff) !important;
   }
 }
 

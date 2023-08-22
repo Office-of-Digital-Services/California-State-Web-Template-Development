@@ -64,7 +64,7 @@
 .underline-white {
   background-image: linear-gradient(
     to right,
-    var(--white, #ffffff),
+    var(--white, #fff),
     50%,
     transparent 50%
   );
@@ -79,7 +79,7 @@
 .underline-hover-white:focus {
   background-image: linear-gradient(
     to right,
-    var(--white, #ffffff),
+    var(--white, #fff),
     50%,
     transparent 50%
   );
@@ -93,7 +93,7 @@
 .underline-black {
   background-image: linear-gradient(
     to right,
-    var(--black, #000000) 50%,
+    var(--black, #000) 50%,
     transparent 50%
   );
   background-repeat: repeat-x;
@@ -107,7 +107,7 @@
 .underline-hover-black:focus {
   background-image: linear-gradient(
     to right,
-    var(--black, #000000) 50%,
+    var(--black, #000) 50%,
     transparent 50%
   );
   background-repeat: repeat-x;
@@ -431,21 +431,21 @@
 ------------------------------------ */
 // colors and backgrounds
 .color-black {
-  color: var(--black, #000000) !important;
+  color: var(--black, #000) !important;
 }
 
 .color-black-hover:hover,
 .color-black-hover:focus {
-  color: var(--black, #000000) !important;
+  color: var(--black, #000) !important;
 }
 
 .color-white {
-  color: var(--white, #ffffff) !important;
+  color: var(--white, #fff) !important;
 }
 
 .color-white-hover:hover,
 .color-white-hover:focus {
-  color: var(--white, #ffffff) !important;
+  color: var(--white, #fff) !important;
 }
 
 .color-gray-dark,
@@ -558,7 +558,7 @@
 
 // light backgrounds
 .bg-white {
-  background-color: var(--white, #ffffff) !important;
+  background-color: var(--white, #fff) !important;
 }
 
 .bg-outline-color,
@@ -569,7 +569,7 @@
 
 .bg-white-hover:hover,
 .bg-white-hover:focus {
-  background-color: var(--white, #ffffff) !important;
+  background-color: var(--white, #fff) !important;
 }
 
 .bg-grey-light {
@@ -708,7 +708,7 @@
 // border colors
 .brd-white-before::before,
 .brd-white-after::after {
-  border-color: var(--white, #ffffff) !important;
+  border-color: var(--white, #fff) !important;
 }
 
 .brd-gray-light,

@@ -28,13 +28,14 @@ label {
   &.is-invalid {
     color: var(--brand-danger, #cd402d);
     border-color: var(--brand-danger, #cd402d);
+
     // background-color: lighten($brand-danger, 40%);
     background-color: var(--brand-danger-lighter, #f4d9d5);
   }
 }
 
 .custom-file-label::after {
-  color: var(--white, #ffffff);
+  color: var(--white, #fff);
   border-radius: $border-radius-base;
   font-weight: 500;
   background-color: var(--color-p2, #046b99);
@@ -313,7 +314,7 @@ input[type="radio"]:focus + div {
     position: absolute;
     right: 0;
     top: 0;
-    background: var(--white, #ffffff);
+    background: var(--white, #fff);
     z-index: 3;
     text-align: center;
     width: 30px;
