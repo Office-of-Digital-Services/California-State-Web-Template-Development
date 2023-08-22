@@ -28,81 +28,6 @@ header.nav-overlay {
   }
 }
 
-.nav-drawer {
-  display: flex;
-  padding: 0.5rem 1rem 1rem;
-
-  .toggle-menu {
-    margin-top: 0;
-    width: 2.75rem;
-    height: 2.75rem;
-
-    span {
-      background-color: var(--white, #ffffff);
-      width: 30px;
-
-      &:nth-child(2),
-      &:nth-child(3) {
-        top: 20px;
-      }
-    }
-
-    background-color: transparent;
-    border: none;
-
-    &[aria-expanded="false"] {
-      span {
-        &:nth-child(1) {
-          top: 15px;
-        }
-
-        &:nth-child(2),
-        &:nth-child(3) {
-          top: 25px;
-        }
-
-        &:nth-child(4) {
-          top: 35px;
-        }
-      }
-    }
-  }
-
-  @media (min-width: $screen-md-min) {
-    display: none;
-  }
-}
-
-.navigation-search .settings-links {
-  padding: 1rem;
-
-  a {
-    position: relative;
-    color: var(--white, #ffffff);
-    margin-left: 1rem;
-    margin-right: 1rem;
-    font-size: 1rem;
-  }
-
-  a::before {
-    content: "";
-    color: var(--white, #ffffff);
-    border: none;
-    margin: 0 0.75rem;
-    font-size: 1.125rem;
-    font-weight: 200;
-    position: absolute;
-    border-left: 1px solid var(--gray-200, #d4d4d7);
-    height: 70%;
-    top: 5px;
-    left: -1.95rem;
-  }
-
-  a:first-child::before {
-    display: none;
-  }
-}
-
 .toggle-menu {
   padding: 16px 8px;
   display: flex;
@@ -112,7 +37,7 @@ header.nav-overlay {
   transform: rotate(0deg);
   transition: 0.5s ease-in-out;
   cursor: pointer;
-  color: var(--white, #ffffff);
+  color: var(--white, #fff);
   min-width: 2.5rem;
   min-height: 2.5rem;
   margin-top: 1.3rem;
@@ -129,6 +54,7 @@ header.nav-overlay {
     opacity: 1;
     transform: rotate(0deg);
     transition: 0.25s ease-in-out;
+    background-color: var(--color-p2, #046b99);
 
     &:nth-child(1) {
       top: 2px;
@@ -165,12 +91,57 @@ header.nav-overlay {
   }
 }
 
+.nav-drawer {
+  display: flex;
+  padding: 0.5rem 1rem 1rem;
+
+  .toggle-menu {
+    margin-top: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+
+    span {
+      background-color: var(--white, #fff);
+      width: 30px;
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 20px;
+      }
+    }
+
+    background-color: transparent;
+    border: none;
+
+    &[aria-expanded="false"] {
+      span {
+        &:nth-child(1) {
+          top: 15px;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          top: 25px;
+        }
+
+        &:nth-child(4) {
+          top: 35px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+
 // CONTAINER
 .mobile-controls {
   text-align: right; // move most menu controls to right
   position: relative;
   color: var(--gray-600, #72717c);
-  background: var(--white, #ffffff);
+  background: var(--white, #fff);
   top: 0;
   padding-right: 0;
   height: 0;
@@ -209,6 +180,55 @@ header.nav-overlay {
       @include outline(2px);
     }
   }
+
+  a {
+    color: var(--gray-600, #72717c);
+    text-decoration: none;
+  }
+
+  &.toggle-sub-nav {
+    color: var(--color-p2, #046b99);
+    background-color: color-mix(in srgb, var(--color-s1), #000 6%);
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background-color: var(
+        --sub-nav-bg,
+        #f1f8fb
+      ); // should be the same as sub-nav background
+    }
+  }
+}
+
+.navigation-search .settings-links {
+  padding: 1rem;
+
+  a {
+    position: relative;
+    color: var(--white, #ffffff);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+  }
+
+  a::before {
+    content: "";
+    color: var(--white, #ffffff);
+    border: none;
+    margin: 0 0.75rem;
+    font-size: 1.125rem;
+    font-weight: 200;
+    position: absolute;
+    border-left: 1px solid var(--gray-200, #d4d4d7);
+    height: 70%;
+    top: 5px;
+    left: -1.95rem;
+  }
+
+  a:first-child::before {
+    display: none;
+  }
 }
 
 // Mobile controls inside main navigation
@@ -219,6 +239,8 @@ header.nav-overlay {
 
 // INDIVIDUAL CONTROLS
 .mobile-control {
+  color: var(--gray-600, #72717c);
+
   &.toggle-sub-nav {
     // Dynamic element $toggleSubNav placed before each .sub-nav element
     position: absolute;

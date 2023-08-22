@@ -9,6 +9,8 @@
 figure {
   border: 1px solid #ddd;
   margin-bottom: 15px;
+  background-color: var(--white, #fff);
+  border-color: var(--gray-200, #d4d4d7);
 
   img {
     width: 100%;

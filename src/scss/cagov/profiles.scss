@@ -12,6 +12,7 @@
   margin: 0;
   font-size: $font-size-base;
   border: none;
+  background-color: var(--color-s1, #eef8fb);
 
   img {
     max-width: 100px;
@@ -34,5 +35,22 @@
 
   .executive-name {
     font-size: $font-size-large;
+  }
+
+  &.dark {
+    .executive-profile-body {
+      border-left-color: var(--white, #fff);
+    }
+
+    p,
+    .executive-name,
+    a {
+      color: var(--white, #fff);
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--color-p1, #fdb81e);
+    }
   }
 }

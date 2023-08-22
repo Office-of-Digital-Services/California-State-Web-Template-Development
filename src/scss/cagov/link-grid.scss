@@ -14,10 +14,13 @@
   position: relative;
   text-decoration: none !important;
   height: 100%;
+  color: var(--color-p2, #046b99);
+  border-bottom: 4px solid var(--color-p2, #046b99);
 
   &:hover,
   &:focus {
     background: var(--gray-100, #f3f3f4);
+    color: var(--color-p2-darker, #214a68);
   }
 
   &:focus {
@@ -41,4 +44,13 @@
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.bg-primary .link-grid {
+  border-color: var(--white, #fff);
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-p2-darker, #214a68);
+  }
 }

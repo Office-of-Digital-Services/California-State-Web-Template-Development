@@ -1,6 +1,7 @@
 /* -----------------------------------------
    PANES - /source/scss/cagov/panes.scss
 ----------------------------------------- */
+// Subject to deprecation
 
 .pane {
   display: flex;
@@ -93,6 +94,72 @@
       order: 2;
     }
   }
+
+  // Color arrow element based on pane's background
+
+  .bg-highlight.group-right::before,
+  .bg-p1.group-right::before {
+    border-right-color: var(--color-p1, #fdb81e);
+  }
+
+  .bg-highlight.group-left::after,
+  .bg-p1.group-left::after {
+    border-left-color: var(--color-p1, #fdb81e);
+  }
+
+  .section-primary.group-right::before,
+  .bg-primary.group-right::before,
+  .bg-p2.group-right::before {
+    border-right-color: var(--color-p2, #046b99);
+  }
+
+  .section-primary.group-left::after,
+  .bg-primary.group-left::after,
+  .bg-p2.group-left::after {
+    border-left-color: var(--color-p2, #046b99);
+  }
+
+  .section-default {
+    &.group-right::before {
+      border-right-color: var(--gray-50, #fafafa);
+    }
+
+    &.group-left::after {
+      border-left-color: var(--gray-50, #fafafa);
+    }
+  }
+
+  .section-standout.group-right::before,
+  .bg-standout.group-right::before,
+  .bg-p3.group-right::before {
+    border-right-color: var(--color-p3, #323a45);
+  }
+
+  .section-standout.group-left::after,
+  .bg-standout.group-left::after,
+  .bg-p3.group-left::after {
+    border-left-color: var(--color-p3, #323a45);
+  }
+
+  .section-understated.group-right::before,
+  .bg-s1.group-right::before {
+    border-right-color: var(--color-s1, #eef8fb);
+  }
+
+  .section-understated.group-left::after,
+  .bg-s1.group-left::after {
+    border-left-color: var(--color-s1, #eef8fb);
+  }
+
+  .section-inverted {
+    &.group-right::before {
+      border-right-color: var(--gray-900, #3b3a48);
+    }
+
+    &.group-left::after {
+      border-left-color: var(--gray-900, #3b3a48);
+    }
+  }
 }
 
 // MOBILE VERSION
@@ -119,5 +186,51 @@
     left: 25%;
     border-width: 20px;
     margin-left: -20px;
+  }
+  // Color arrow element based on pane's background
+  .bg-highlight.group-right::before,
+  .bg-p1.group-right::before,
+  .bg-highlight.group-left::after,
+  .bg-p1.group-left::after {
+    border-bottom-color: var(--color-p1, #fdb81e);
+  }
+
+  .section-primary.group-right::before,
+  .bg-primary.group-right::before,
+  .bg-p2.group-right::before,
+  .section-primary.group-left::after,
+  .bg-primary.group-left::after,
+  .bg-p2.group-left::after {
+    border-bottom-color: var(--color-p2, #046b99);
+  }
+
+  .section-default {
+    &.group-right::before,
+    &.group-left::after {
+      border-bottom-color: var(--gray-50, #fafafa);
+    }
+  }
+
+  .section-standout.group-right::before,
+  .bg-standout.group-right::before,
+  .bg-p3.group-right::before,
+  .section-standout.group-left::after,
+  .bg-standout.group-left::after,
+  .bg-p3.group-left::after {
+    border-bottom-color: var(--color-p3, #323a45);
+  }
+
+  .section-understated.group-right::before,
+  .bg-s1 .group-right::before,
+  .section-understated.group-left::after,
+  .bg-s1.group-left::after {
+    border-bottom-color: var(--color-s1, #eef8fb);
+  }
+
+  .section-inverted {
+    &.group-right::before,
+    &.group-left::after {
+      border-bottom-color: var(--gray-900, #3b3a48);
+    }
   }
 }

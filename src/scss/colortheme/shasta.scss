@@ -41,7 +41,7 @@
 
   // secondary 2
   --color-s2: #daefe8;
-  --color-s2-dark: color-mix(in srgb, var(--color-s2), #000 15%);
+  --color-s2-dark: color-mix(in srgb, var(--color-s2), #000 5%);
   --color-s2-darker: color-mix(in srgb, var(--color-s2), #000 30%);
 
   // secondary 3

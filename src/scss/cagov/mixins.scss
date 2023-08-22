@@ -959,6 +959,13 @@
   filter: alpha(opacity=$opacity-ie);
 }
 
+// Cards
+@mixin card-variant($background, $border, $text-color) {
+  background-color: $background;
+  border-color: $border;
+  color: $text-color;
+}
+
 // Panels
 
 @mixin panel-variant(
@@ -1044,4 +1051,16 @@
 
 @mixin outline($size) {
   outline: $outline-default-style $size $outline-default-color !important;
+}
+
+@mixin image-thumbnail(
+  $bg: $thumbnail-bg,
+  $border: $thumbnail-border,
+  $weight: $thumbnail-padding
+) {
+  .img-thumbnail {
+    padding: $weight;
+    background-color: $bg;
+    border: 1px solid $border;
+  }
 }

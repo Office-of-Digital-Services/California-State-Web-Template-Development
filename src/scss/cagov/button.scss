@@ -10,58 +10,74 @@
 // better-button = color; background; border, hover-color; hover-background; hover-border
 .btn-primary {
   @include better-button(
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--color-p2, #046b99),
     var(--color-p2, #046b99),
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--color-p2-darker, #214a68),
     var(--color-p2-darker, #214a68)
   );
+
+  &:disabled {
+    color: var(--white, #fff) !important;
+  }
+
+  &.disabled {
+    color: var(--white, #fff) !important;
+  }
 }
 
 // better-button = color; background; border, hover-color; hover-background; hover-border
 .btn-outline-primary {
   @include better-button(
     var(--color-p2, #046b99),
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--color-p2, #046b99),
     var(--color-p2-darker, #214a68),
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--color-p2-darker, #214a68)
   );
 }
 
 .btn-default {
   @include better-button(
-    var(--black, #000000),
+    var(--gray-700, #5e5e6a),
     rgba(255, 255, 255, 0.65),
-    var(--black, #000000),
-    var(--black, #000000),
+    var(--gray-700, #5e5e6a),
+    var(--black, #000),
     rgba(255, 255, 255, 1),
-    var(--black, #000000)
+    var(--black, #000)
   );
 }
 
 // beta 5.0 addition
 .btn-standout {
   @include better-button(
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--color-p3, #323a45),
     var(--color-p3, #323a45),
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--color-p3-darker, #242830),
     var(--color-p3-darker, #242830)
   );
+
+  &:disabled {
+    color: var(--white, #fff) !important;
+  }
+
+  &.disabled {
+    color: var(--white, #fff) !important;
+  }
 }
 
 // better-button = color; background; border, hover-color; hover-background; hover-border
 .btn-outline-standout {
   @include better-button(
     var(--color-p3, #323a45),
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--color-p3, #323a45),
     var(--color-p3-darker, #242830),
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--color-p3-darker, #242830)
   );
 }
@@ -69,23 +85,23 @@
 // beta 5.0 addition
 .btn-highlight {
   @include better-button(
-    var(--gray-900, #3b3a48),
-    var(--color-p1, #fdb81e),
-    var(--color-p1, #fdb81e),
     var(--black, #000),
-    var(--color-p1-darker, #a98231),
-    var(--color-p1-darker, #a98231)
+    var(--color-p1-light, #f2c45a),
+    var(--color-p1-light, #f2c45a),
+    var(--gray-900, #3b3a48),
+    var(--color-p1-lighter, #f5ce73),
+    var(--color-p1-lighter, #f5ce73)
   );
 }
 
 // better-button = color; background; border, hover-color; hover-background; hover-border
 .btn-outline-highlight {
   @include better-button(
-    var(--color-p1-light, #f2c45a),
+    var(--black, #000),
     transparent,
     var(--color-p1-light, #f2c45a),
-    var(--color-p1-lighter, #f5ce73),
-    transparent,
+    var(--gray-900, #3b3a48),
+    var(--gray-50, #fafafa),
     var(--color-p1-lighter, #f5ce73)
   );
 }
@@ -97,17 +113,44 @@
     var(--gray-700, #5e5e6a),
     $link-hover-color,
     #fff,
-    var(--black, #000000)
+    var(--black, #000)
   );
 
   border-width: 1px;
 
-  // transition:all 0.5s;
+  &.active {
+    background: #fff;
+    color: var(--black, #000);
+    box-shadow: none;
+  }
+
+  &:disabled {
+    color: var(--black, #000000);
+  }
+
+  &.disabled {
+    color: var(--black, #000000);
+  }
+}
+
+// better-button = color; background; border, hover-color; hover-background; hover-border
+.btn-s1 {
+  @include better-button(
+    var(--gray-700, #5e5e6a),
+    var(--color-s1, #eef8fb),
+    var(--gray-700, #5e5e6a),
+    var(--black, #000),
+    #fff,
+    var(--black, #000000)
+  );
 
   &.active {
-    background: var(--gray-700, #5e5e6a);
-    color: #fff;
-    box-shadow: none;
+    background: #fff;
+    color: var(--black, #000);
+  }
+
+  &:disabled {
+    color: var(--black, #000);
   }
 }
 
@@ -115,10 +158,10 @@
 .btn-outline-secondary {
   @include better-button(
     var(--gray-700, #5e5e6a),
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--gray-700, #5e5e6a),
     var(--gray-900, #3b3a48),
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--gray-900, #3b3a48)
   );
 }
@@ -127,8 +170,8 @@
 .btn-light {
   @include better-button(
     var(--gray-700, #5e5e6a),
-    var(--white, #ffffff),
-    var(--white, #ffffff),
+    var(--white, #fff),
+    var(--white, #fff),
     var(--black, #000),
     var(--gray-100, #f3f3f4),
     var(--gray-100, #f3f3f4)
@@ -137,9 +180,9 @@
 
 .btn-outline-light {
   @include better-button(
-    var(--white, #ffffff),
+    var(--white, #fff),
     transparent,
-    var(--white, #ffffff),
+    var(--white, #fff),
     var(--gray-100, #f3f3f4),
     transparent,
     var(--gray-100, #f3f3f4)

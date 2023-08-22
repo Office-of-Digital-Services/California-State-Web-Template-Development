@@ -105,7 +105,8 @@ $search-input-border-width: 3px;
       background: none;
 
       // fallback if not defined in color scheme
-      border-color: white;
+      color: var(--gray-600, #72717c);
+      border-color: $text-field-color;
 
       // no border on the side next to the input otherwise it doubles up the border
       border-width: $search-input-border-width $search-input-border-width
@@ -170,6 +171,14 @@ $search-input-border-width: 3px;
       background: none !important;
       margin: 0 !important;
       font-size: 1.125rem !important;
+      color: var(--color-p2, #046b99);
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: var(--color-p2-darker, #214a68);
+        text-decoration: none;
+      }
     }
 
     // 991px
@@ -186,6 +195,10 @@ input[type="search"].search-textfield {
   background-color: canvas; // Removing iPhone -apple-system-opaque-tertiary-fill color
   border: 1px solid #72717c;
   border-radius: 5px 0 0 5px; // Square borders on right side for iPhone
+
+  @media (max-width: $screen-sm-max) {
+    border-color: var(--white, #fff) !important;
+  }
 }
 
 .search-container.active {
@@ -268,9 +281,8 @@ input[type="search"].search-textfield {
 
     .search-textfield {
       padding: 14px; // Increases padding on large search to make it appear bigger.
-
+      border-color: var(--gray-600, #72717c) !important;
       @include font-size(1.1); // increases font size to approx 16.5px
-
       height: 38px; // Large search box overides default from above
     }
 
@@ -580,10 +592,53 @@ button.gsc-search-button {
 
     .gsc-search-button {
       right: 50px;
+      background-color: var(--gray-600, #72717c);
+      border-color: var(--gray-600, #72717c);
+
+      &:hover,
+      &:focus {
+        background-color: var(--gray-800, #4a4958);
+        border-color: var(--gray-800, #4a4958);
+      }
+
+      .ca-gov-icon-search {
+        color: var(--white, #fff);
+      }
+
+      @media (max-width: $screen-sm-max) {
+        background-color: var(--white, #fff);
+        border-color: var(--white, #fff);
+
+        .ca-gov-icon-search {
+          color: var(--gray-700, #5e5e6a);
+        }
+
+        // border-left-color: var(--gray-700, #5e5e6a);
+        &:hover,
+        &:focus {
+          background-color: var(--gray-50, #fafafa);
+          border-color: var(--gray-50, #fafafa);
+
+          .ca-gov-icon-search {
+            color: var(--gray-900, #3b3a48);
+          }
+        }
+      }
     }
 
     .close-search-btn {
       display: block;
+
+      .sr-only {
+        color: var(--color-p2, #046b99);
+        text-decoration: underline;
+
+        &:hover,
+        &:focus {
+          color: var(--color-p2-darker, #214a68);
+          text-decoration: none;
+        }
+      }
     }
 
     .close-search {
@@ -606,6 +661,27 @@ button.gsc-search-button {
           font-size: 1.125rem !important;
         }
       }
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    .search-textfield {
+      background-color: #fff;
+    }
+
+    .submit-container button {
+      border-color: #fff;
+    }
+  }
+
+  &.active {
+    background-color: var(--gray-100, #f3f3f4);
+
+    .submit-container button {
+      border-color: var(--gray-200, #d4d4d7);
+      background: var(--gray-700, #5e5e6a);
     }
   }
 }

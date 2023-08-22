@@ -5,6 +5,7 @@
 .tab-group {
   position: relative;
   border: none;
+  background: $nav-tabs-active-link-hover-bg;
 
   @media (max-width: $screen-xs-max) {
     border: none;
@@ -17,6 +18,7 @@
   .nav-tabs {
     border-radius: 0;
     border-bottom: none;
+    background: var(--gray-75, #f3f3f4);
 
     li:first-child a,
     li:first-child a:hover,
@@ -46,6 +48,12 @@
           text-decoration: none;
           border-bottom: none;
         }
+      }
+    }
+
+    .nav-link.active {
+      &::after {
+        border-color: var(--color-p1, #fdb81e);
       }
     }
   }
@@ -293,6 +301,7 @@
           &::before {
             content: "";
             border-left: 3px solid;
+            border-left-color: var(--color-p1, #fdb81e);
             position: absolute;
             top: 0;
             left: 0;
@@ -349,6 +358,7 @@
       content: "";
       width: 100%;
       border-bottom: 3px solid;
+      border-color: var(--color-p1, #fdb81e);
     }
   }
 

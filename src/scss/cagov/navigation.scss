@@ -33,6 +33,7 @@
     transition: right 0.5s ease-in-out;
     height: 100%;
     overflow-y: auto;
+    background-color: var(--mobile-drawer, #214a68);
 
     &.visible {
       opacity: 1;
@@ -72,7 +73,37 @@
   }
 }
 
-.nav-item {
+.nav-item,
+.nav-item-search {
+  &:hover,
+  &:focus {
+    @media (min-width: $screen-sm-min) {
+      background-color: var(--sub-nav-bg, #f1f8fb);
+    }
+
+    > a,
+    .first-level-btn,
+    .first-level-link {
+      color: var(--color-p2, #046b99);
+
+      > span[class^="ca-gov-icon"] {
+        color: var(--gray-900, #3b3a48);
+      }
+    }
+  }
+
+  &.active {
+    > a,
+    .first-level-btn,
+    .first-level-link {
+      color: var(--color-p2, #046b99);
+
+      > span[class^="ca-gov-icon"] {
+        color: var(--gray-900, #3b3a48);
+      }
+    }
+  }
+
   .sub-nav.open {
     display: block;
     overflow: hidden;
@@ -129,6 +160,12 @@
     position: relative;
     text-align: center;
     text-decoration: none;
+    color: var(--color-p2, #046b99);
+
+    &:hover,
+    &:focus {
+      color: var(--gray-900, #3b3a48);
+    }
 
     &:focus {
       @include outline(2px);
@@ -139,6 +176,7 @@
     > span[class^="ca-gov-icon"]:not(.carrot) {
       display: block;
       font-size: 32px;
+      color: var(--gray-700, #5e5e6a);
     }
 
     .carrot {
@@ -327,6 +365,32 @@
         top: 100%; // Positioning for flexbox layout
         border: solid 1px #ccc;
         box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+        background: var(--white, #fff);
+
+        .second-level-nav {
+          > li {
+            border: 1px solid transparent;
+            border-right: 4px solid var(--white, #fff); // beta 6.0 addition
+            border-bottom: 4px solid var(--white, #fff); // beta 6.0 addition
+
+            &:hover,
+            &:focus {
+              background: #fff;
+            }
+          }
+
+          .link-description {
+            color: var(--gray-700, #5e5e6a);
+          }
+        }
+
+        .second-level-link {
+          color: var(--color-p2, #046b99);
+
+          [class^="ca-gov-icon-"] {
+            color: var(--gray-700, #5e5e6a);
+          }
+        }
       }
 
       > a {
@@ -448,9 +512,29 @@
     width: 100%;
   }
 
-  .nav-item {
-    [aria-hidden="true"].sub-nav {
-      max-height: 0;
+  .top-level-nav {
+    .nav-item {
+      &.active {
+        .first-level-btn {
+          background-color: var(--mobile-drawer-active, #046b99) !important;
+          color: var(--white, #fff) !important;
+
+          &:hover,
+          &:focus {
+            background-color: var(--mobile-drawer, #214a68) !important;
+            color: var(--white, #fff) !important;
+          }
+
+          &::before,
+          &::after {
+            border-left: none !important;
+          }
+        }
+      }
+
+      [aria-hidden="true"].sub-nav {
+        max-height: 0;
+      }
     }
   }
 
@@ -494,7 +578,7 @@
 
     .first-level-link,
     .first-level-btn {
-      color: var(--white, #ffffff);
+      color: var(--white, #fff);
       display: block;
       padding: 1rem 0 1rem 1rem;
       margin-right: 2px;
@@ -506,6 +590,28 @@
 
         display: inline-block;
         vertical-align: -2px;
+      }
+
+      &.active {
+        background-color: var(--mobile-drawer-active, #046b99) !important;
+        color: var(--white, #fff) !important;
+
+        &:hover,
+        &:focus {
+          background-color: var(--mobile-drawer, #214a68) !important;
+          color: var(--white, #fff) !important;
+        }
+
+        &::before,
+        &::after {
+          border-left: none !important;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: var(--mobile-drawer-active, #046b99) !important;
+        color: var(--white, #fff) !important;
       }
     }
 
@@ -520,6 +626,33 @@
       transition: max-height 0.5s ease-in-out;
       border-left: none;
       border-right: none;
+      border-top: none;
+      border-bottom: none;
+
+      .second-level-nav {
+        > li {
+          border: none; // beta 5.0 addition (for accessible menu)
+          border-top: 1px solid var(--gray-200, #d4d4d7);
+
+          &:hover,
+          &:focus {
+            background: color-mix(in srgb, var(--color-s1), #fff 6%);
+          }
+        }
+      }
+
+      .second-level-link {
+        background-color: var(--mobile-drawer, #214a68);
+
+        &.active {
+          background-color: var(--mobile-drawer-active, #046b99);
+
+          &:hover,
+          &:focus {
+            background-color: var(--mobile-drawer, #214a68);
+          }
+        }
+      }
     }
   }
 
@@ -559,6 +692,9 @@
 }
 
 // END MOBILE NAVIGATION
+.nav-arrow-down {
+  background: var(--color-p2, #046b99);
+}
 
 // beta 5.0 addition
 .main-navigation.dropdown .nav-arrow-down {
@@ -693,46 +829,6 @@
   }
 }
 
-/* Side nav */
-.accordion-list.list-group {
-  .list-group-item {
-    cursor: pointer;
-
-    &:focus {
-      @include outline(2px);
-
-      outline-offset: -2px;
-      background-color: var(--gray-50, #fafafa);
-    }
-
-    &:hover {
-      background-color: var(--gray-50, #fafafa);
-    }
-
-    &.open {
-      background-color: var(--gray-50, #fafafa);
-
-      .rotate {
-        transform: rotate(90deg) !important;
-      }
-    }
-
-    .rotate {
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 1.3rem;
-      line-height: 3rem;
-      text-align: center;
-      width: 3rem;
-      height: 3rem;
-      border: none;
-      display: block !important;
-      transition: all 0.2s ease !important;
-    }
-  }
-}
-
 /* v6 Nav Button */
 .first-level-btn > * {
   pointer-events: none;
@@ -807,4 +903,31 @@
     transition: all 0.2s ease !important;
     color: var(--white, #ffffff) !important;
   }
+}
+
+// Subject to deprication
+.nav-media {
+  background: $sub-nav-media-bg;
+
+  // Add the border to the first one only
+  .media {
+    &:hover {
+      background: #fff;
+    }
+
+    border-bottom: 4px solid var(--white, #fff);
+
+    @media (max-width: $screen-xs-max) {
+      border-bottom: 4px solid var(--white, #fff);
+
+      &:hover,
+      &:focus {
+        background: color-mix(in srgb, var(--color-s1), #fff 6%);
+      }
+    }
+  }
+}
+
+.has-sub .rotate {
+  color: var(--color-p2, #046b99);
 }

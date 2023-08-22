@@ -3,6 +3,46 @@
    /source/scss/cagov/accordion-side-nav.scss
 ----------------------------------------- */
 
+/* Side nav */
+.accordion-list.list-group {
+  .list-group-item {
+    cursor: pointer;
+
+    &:focus {
+      @include outline(2px);
+
+      outline-offset: -2px;
+      background-color: var(--gray-50, #fafafa);
+    }
+
+    &:hover {
+      background-color: var(--gray-50, #fafafa);
+    }
+
+    &.open {
+      background-color: var(--gray-50, #fafafa);
+
+      .rotate {
+        transform: rotate(90deg) !important;
+      }
+    }
+
+    .rotate {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 1.3rem;
+      line-height: 3rem;
+      text-align: center;
+      width: 3rem;
+      height: 3rem;
+      border: none;
+      display: block !important;
+      transition: all 0.2s ease !important;
+    }
+  }
+}
+
 // BOOTSTRAP VERSION
 
 .side-nav {
@@ -24,9 +64,9 @@
 
       .accordion__trigger {
         padding: 0.75rem 1.25rem !important;
-        color: #212529;
         text-decoration: none;
         font-weight: 500;
+        color: var(--gray-800, #4a4958);
 
         &:hover,
         &:focus {
@@ -53,7 +93,78 @@
       // active
       &.active {
         .accordion__trigger {
-          color: var(--white, #ffffff) !important;
+          color: var(--white, #fff) !important;
+          background-color: var(--color-p2, #046b99);
+
+          &:hover,
+          &:focus {
+            background-color: var(--color-p2-darker, #214a68) !important;
+          }
+        }
+      }
+    }
+  }
+
+  // understated
+  &.section-understated {
+    .accordion {
+      .accordion__heading {
+        .accordion__trigger {
+          color: var(--gray-800, #4a4958);
+        }
+
+        // active
+        &.active {
+          .accordion__trigger {
+            background-color: var(--color-p2, #046b99) !important;
+
+            &:hover,
+            &:focus {
+              background-color: var(--color-p2-darker, #214a68) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // standout
+  &.section-standout {
+    .accordion {
+      .accordion__heading {
+        // active
+        &.active {
+          .accordion__trigger {
+            color: var(--gray-800, #4a4958) !important;
+            background-color: var(--gray-50, #fafafa) !important;
+
+            &:hover,
+            &:focus {
+              color: var(--black, #000) !important;
+              background-color: var(--gray-100, #f3f3f4) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // primary
+  &.section-primary {
+    .accordion {
+      .accordion__heading {
+        // active
+        &.active {
+          .accordion__trigger {
+            color: var(--gray-800, #4a4958) !important;
+            background-color: var(--gray-50, #fafafa) !important;
+
+            &:hover,
+            &:focus {
+              color: var(--black, #000) !important;
+              background-color: var(--gray-100, #f3f3f4) !important;
+            }
+          }
         }
       }
     }
@@ -77,12 +188,13 @@
       padding-left: 2.5rem;
       text-decoration: none !important;
       border-bottom: 1px solid var(--gray-100, #f3f3f4);
+      color: var(--gray-800, #4a4958);
 
       &:hover,
       &:focus {
         text-decoration: none;
-        color: var(--black, #000);
         background-color: var(--gray-50, #fafafa);
+        color: var(--black, #000);
       }
 
       &:focus {
@@ -105,6 +217,7 @@
           width: 3px;
           height: 100%;
           border-radius: 0;
+          border-left-color: var(--color-p1, #fdb81e);
         }
 
         &:hover,
@@ -134,6 +247,7 @@ cagov-accordion.sidenav {
       font-weight: 400;
       text-decoration: none;
       border-bottom: 1px solid var(--gray-100, #f3f3f4);
+      color: var(--gray-700, #5e5e6a);
 
       &::before {
         border: none !important;
@@ -150,6 +264,7 @@ cagov-accordion.sidenav {
       &:focus {
         text-decoration: none;
         background-color: var(--gray-50, #fafafa);
+        color: var(--gray-700, #5e5e6a);
 
         &::before {
           border: none;
@@ -165,7 +280,7 @@ cagov-accordion.sidenav {
 
       // ACTIVE STATE
       &.active {
-        color: var(--black, #000) !important;
+        color: var(--gray-700, #5e5e6a) !important;
         text-decoration: none;
         background-color: var(--gray-75, #f3f3f4);
         font-weight: 400;
@@ -174,11 +289,12 @@ cagov-accordion.sidenav {
           border: none;
           width: 3px;
           border-radius: 0;
+          background-color: var(--color-p1, #fdb81e) !important;
         }
 
         &:hover,
         &:focus {
-          color: var(--gray-700, #5e5e6a) !important;
+          color: var(--black, #000) !important;
           text-decoration: none;
           background-color: var(--gray-100, #f3f3f4);
         }

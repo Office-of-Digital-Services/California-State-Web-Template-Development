@@ -18,6 +18,8 @@ html {
   opacity: 0;
   visibility: hidden;
   background: var(--white, #ffffff);
+  border-color: var(--color-p2, #046b99);
+  color: var(--color-p2, #046b99);
   font-size: $font-size-regular;
   text-align: center;
   text-decoration: none;
@@ -43,6 +45,12 @@ html {
     &:hover {
       background-color: var(--gray-100, #f3f3f4);
       box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--color-p2-darker, #214a68);
+      border-color: var(--color-p2-darker, #214a68);
     }
   }
 

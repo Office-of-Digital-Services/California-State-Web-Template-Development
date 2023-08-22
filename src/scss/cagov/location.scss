@@ -121,6 +121,8 @@
     @include font-size(2);
 
     position: absolute;
+    background: var(--color-p3, #323a45);
+    color: var(--white, #fff);
   }
 
   .contact {
