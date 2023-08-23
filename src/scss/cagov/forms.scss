@@ -266,13 +266,19 @@ input[type="radio"]:focus + div {
   box-shadow: 0 0 2px 2px var(--color-s3, #4993b5);
 }
 
-.custom-radio {
+.custom-checkbox {
+  .custom-control-label::before {
+    border-radius: $border-radius-base;
+  }
+
   .custom-control-input:checked ~ .custom-control-label::before {
     @include gradient-bg(var(--color-p2, #046b99));
+
+    border-radius: $border-radius-base;
   }
 }
 
-.custom-checkbox {
+.custom-radio {
   .custom-control-input:checked ~ .custom-control-label::before {
     @include gradient-bg(var(--color-p2, #046b99));
   }
@@ -351,16 +357,6 @@ input[type="radio"]:checked + * .color-white--checked {
 input[type="checkbox"]:focus + .btn,
 input[type="radio"]:focus + .btn {
   @include outline(2px);
-}
-
-.custom-checkbox {
-  .custom-control-label::before {
-    border-radius: $border-radius-base;
-  }
-
-  .custom-control-input:checked ~ .custom-control-label::before {
-    border-radius: $border-radius-base;
-  }
 }
 
 .valid-feedback {
