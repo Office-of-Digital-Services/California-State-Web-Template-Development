@@ -572,29 +572,39 @@
   background-color: var(--white, #fff) !important;
 }
 
+.bg-gray-light,
 .bg-grey-light {
   background-color: var(--gray-100, #ededef) !important;
 }
 
+.bg-gray-light-hover:hover,
+.bg-gray-light-hover:focus,
 .bg-grey-light-hover:hover,
 .bg-grey-light-hover:focus {
   background-color: var(--gray-100, #ededef) !important;
 }
 
+.bg-gray-light-hover-darker:hover,
+.bg-gray-light-hover-darker:focus,
 .bg-grey-light-hover-darker:hover,
 .bg-grey-light-hover-darker:focus {
   background-color: var(--gray-200, #d4d4d7) !important;
 }
 
+.bg-gray-lightest,
 .bg-grey-lightest {
   background-color: var(--gray-50, #fafafa) !important;
 }
 
+.bg-gray-lightest-hover:hover,
+.bg-gray-lightest-hover:focus,
 .bg-grey-lightest-hover:hover,
 .bg-grey-lightest-hover:focus {
   background-color: var(--gray-50, #fafafa) !important;
 }
 
+.bg-gray-lightest-hover-darker:hover,
+.bg-gray-lightest-hover-darker:focus,
 .bg-grey-lightest-hover-darker:hover,
 .bg-grey-lightest-hover-darker:focus {
   background-color: var(--gray-75, #f3f3f4) !important;
