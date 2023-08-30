@@ -261,10 +261,8 @@
 
 @mixin container {
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 
   @media (min-width: $screen-xs-min) {
     max-width: $breakpoint-xm;
