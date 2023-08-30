@@ -7,6 +7,8 @@ const publishPackageJsonVersion = require("./publish/package.json").version;
 const banner = `var StateTemplateNpmPackageVersion="${publishPackageJsonVersion}";`;
 const format = "esm";
 
+console.log(process.env);
+
 export default [
   {
     input: "src/js/index.js",
