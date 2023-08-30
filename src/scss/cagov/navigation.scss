@@ -19,8 +19,7 @@
 .navigation-search {
   border: none;
   position: relative;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
   z-index: 26;
 
   @media (max-width: $screen-sm-max) {
