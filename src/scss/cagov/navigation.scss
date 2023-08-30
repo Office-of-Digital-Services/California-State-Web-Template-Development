@@ -51,6 +51,7 @@
   position: relative;
   margin-top: -82px;
   padding-left: 80px;
+  display: flex;
 
   @media (max-width: $screen-xs-max) {
     max-width: 100%;
