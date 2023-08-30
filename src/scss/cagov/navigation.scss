@@ -725,10 +725,7 @@
 
 // Second-level-link toggle button
 .nav-item .toggle-sub-nav {
-  &.closed .ca-gov-icon-menu-toggle-open {
-    display: none;
-  }
-
+  &.closed .ca-gov-icon-menu-toggle-open,
   &.open .ca-gov-icon-menu-toggle-closed {
     display: none;
   }
