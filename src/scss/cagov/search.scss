@@ -481,8 +481,7 @@ input[type="search"].search-textfield {
 .search-container.featured-search {
   // 991px
   @media (max-width: $screen-sm-max) {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding: 0 1rem;
     max-height: 100%;
   }
 
