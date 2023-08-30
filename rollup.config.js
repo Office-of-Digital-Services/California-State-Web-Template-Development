@@ -7,7 +7,9 @@ const publishPackageJsonVersion = require("./publish/package.json").version;
 const banner = `var StateTemplateNpmPackageVersion="${publishPackageJsonVersion}";`;
 const format = "esm";
 
-console.log(process.env);
+// Minify in normal build only
+const plugins =
+  process.env["ROLLUP_WATCH"] === "true" ? [] : [terser({ module: false })];
 
 export default [
   {
@@ -21,7 +23,7 @@ export default [
       {
         file: "_site/ca_state_template/js/cagov.core.min.js",
         format,
-        plugins: [terser({ module: false })],
+        plugins,
         banner
       }
     ],
