@@ -40,8 +40,7 @@ header.nav-overlay {
   color: var(--white, #fff);
   min-width: 2.5rem;
   min-height: 2.5rem;
-  margin-top: 1.3rem;
-  margin-left: auto;
+  margin: 1.3rem 0 0 auto;
 
   // Overvriting sr-only class to avoid strucural changes in mobile controls
 
@@ -143,7 +142,6 @@ header.nav-overlay {
   color: var(--gray-600, #72717c);
   background: var(--white, #fff);
   top: 0;
-  padding-right: 0;
   height: 0;
 
   @include container;
