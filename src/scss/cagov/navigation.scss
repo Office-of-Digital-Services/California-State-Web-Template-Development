@@ -19,8 +19,7 @@
 .navigation-search {
   border: none;
   position: relative;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
   z-index: 26;
 
   @media (max-width: $screen-sm-max) {
@@ -51,6 +50,7 @@
   position: relative;
   margin-top: -82px;
   padding-left: 80px;
+  display: flex;
 
   @media (max-width: $screen-xs-max) {
     max-width: 100%;

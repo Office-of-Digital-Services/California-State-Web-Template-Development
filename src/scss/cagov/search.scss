@@ -196,8 +196,11 @@ input[type="search"].search-textfield {
   border: 1px solid #72717c;
   border-radius: 5px 0 0 5px; // Square borders on right side for iPhone
 
-  @media (max-width: $screen-sm-max) {
-    border-color: var(--white, #fff) !important;
+  .search-container & {
+    @media (max-width: $screen-sm-max) {
+      // Remove the black border for the mobile search
+      border-color: var(--white, #fff);
+    }
   }
 }
 
@@ -478,8 +481,7 @@ input[type="search"].search-textfield {
 .search-container.featured-search {
   // 991px
   @media (max-width: $screen-sm-max) {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding: 0 1rem;
     max-height: 100%;
   }
 
@@ -870,7 +872,6 @@ table.gsc-search-box td {
   }
 
   .full-width-nav .featured-search input.search-textfield {
-    border-radius: 5px 0 0 5px;
     padding: 0 8px;
   }
 

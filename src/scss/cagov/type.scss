@@ -164,9 +164,7 @@
 }
 
 body {
-  font-family: $font-family-sans-serif;
-  font-size: $font-size-regular;
-  line-height: $line-height-base;
+  font: #{$font-size-regular}/#{$line-height-base} $font-family-sans-serif;
   color: var(--gray-900, #3b3a48);
   overflow-y: scroll;
 
