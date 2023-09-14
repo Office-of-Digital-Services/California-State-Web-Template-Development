@@ -34,12 +34,14 @@
 }
 
 /* Facebook */
-.ca-gov-icon-share-facebook {
+.ca-gov-icon-share-facebook,
+.socialsharer-container .ca-gov-icon-facebook {
   @include social-media($share-facebook);
 }
 
 /* Twitter */
-.ca-gov-icon-share-twitter {
+.ca-gov-icon-share-twitter,
+.socialsharer-container .ca-gov-icon-twitter {
   @include social-media($share-twitter);
 }
 
@@ -49,7 +51,8 @@
 }
 
 /* youtube */
-.ca-gov-icon-share-youtube {
+.ca-gov-icon-share-youtube,
+.socialsharer-container .ca-gov-icon-youtube {
   @include social-media($share-youtube);
 }
 
@@ -69,7 +72,8 @@
 }
 
 /* instagram */
-.ca-gov-icon-share-instagram {
+.ca-gov-icon-share-instagram,
+.socialsharer-container .ca-gov-icon-instagram {
   @include social-media($share-instagram);
 }
 
@@ -81,6 +85,11 @@
 /* vimeo */
 .ca-gov-icon-share-vimeo {
   @include social-media($share-vimeo);
+}
+
+/* Github */
+.socialsharer-container .ca-gov-icon-github {
+  @include social-media($share-github);
 }
 
 /* Email */
