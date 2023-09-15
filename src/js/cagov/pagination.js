@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
     class="cagov-pagination__item cagov-pagination__overflow"
     role="presentation"
   >
-    <span> … </span>
+    <span> &hellip; </span>
   </li>`;
   }
 
