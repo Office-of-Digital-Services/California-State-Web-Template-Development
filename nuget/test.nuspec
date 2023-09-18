@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <!-- Required elements-->
+        <id>cagovweb.state-template</id>
+        <version>6.2.1</version>
+        <title>CA State Template NuGet package</title>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>The CA State Template nuget package</description>
+        <authors>Carter Medlin</authors>
+        <language>en-US</language>
+        <license type="expression">MIT</license>
+        <icon>icon.png</icon>
+        <tags>California State CA Government gov Template state-template ca.gov state of California ca web template css javascript js react reactjs bootstrap 11ty eleventy CDT department of technology</tags>
+   
+       <contentFiles>
+        <!-- Include Assets as Content -->
+        <files include="**/images/*.*" buildAction="Content" />
+        <files include="**/data.txt" buildAction="Content" />
+        <!-- Copy tool scripts to the output folder -->
+        <files include="**/tools/*" buildAction="None" flatten="false" copyToOutput="true" />
+    </contentFiles>
+    </metadata>
+    <files>
+      <file src=".\myfile.js" target="js\myfile.js" />
+      <file src="icon.png" target="" />
+    </files>
+
+
+</package>
