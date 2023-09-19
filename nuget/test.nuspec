@@ -17,8 +17,8 @@
         <readme>readme.md</readme>
     </metadata>
     <files>
-      <file src="icon.png" target="" />
-      <file src="readme.md" target="\" />
+      <file src="nuget_content/icon.png" />
+      <file src="nuget_content/readme.md" />
       <file src="../_site/ca_state_template/**/*" target="\ca_state_template" />
     </files>
 
