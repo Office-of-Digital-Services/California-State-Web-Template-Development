@@ -67,3 +67,5 @@ git push origin master
 
 # NuGet
 nuget/dist
+*.nupkg
+nuget/cagovweb*

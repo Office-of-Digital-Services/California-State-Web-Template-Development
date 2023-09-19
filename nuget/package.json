@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "Install": "nuget install",
+    "Pack": "nuget pack test.nuspec"
+  },
+  "dependencies": {}
+}
