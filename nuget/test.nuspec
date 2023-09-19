@@ -17,7 +17,8 @@
         <readme>readme.md</readme>
         <contentFiles>
           <!-- Include Assets as Content -->
-          <files include="../_site/ca_state_template/*.*" buildAction="Content" />
+          <files include="**/*" buildAction="Content" />
+          <files include="**/dist/ca_state_template/*.*" buildAction="Content" />
           <files include="**/images/*.*" buildAction="Content" />
           <files include="**/data.txt" buildAction="Content" />
           <!-- Copy tool scripts to the output folder -->
@@ -25,10 +26,9 @@
         </contentFiles>
     </metadata>
     <files>
-      <file src=".\myfile.js" target="js\myfile.js" />
       <file src="icon.png" target="" />
       <file src=".\readme.md" target="\" />
-      <file src="..\_site\ca_state_template\*.*" target="content\Content" />
+      <file src="dist\**/*" target="content\Content" />
     </files>
 
 
