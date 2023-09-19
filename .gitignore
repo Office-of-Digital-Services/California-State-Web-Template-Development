@@ -64,3 +64,6 @@ git push origin master
 *.dat
 /StateTemplate.sln
 /website.publishproj
+
+# NuGet
+nuget/dist
