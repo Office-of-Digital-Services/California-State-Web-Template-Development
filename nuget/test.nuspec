@@ -3,27 +3,32 @@
     <metadata>
         <!-- Required elements-->
         <id>cagovweb.state-template</id>
-        <version>6.2.1</version>
+        <version>6.2.1-nuget-beta-1</version>
         <title>CA State Template NuGet package</title>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>The CA State Template nuget package</description>
+        <summary>Summary for The CA State Template nuget package</summary>
+        <description>Description for The CA State Template nuget package</description>
         <authors>Carter Medlin</authors>
         <language>en-US</language>
         <license type="expression">MIT</license>
         <icon>icon.png</icon>
+        <repository type="git" url="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git" branch="main" />
         <tags>California State CA Government gov Template state-template ca.gov state of California ca web template css javascript js react reactjs bootstrap 11ty eleventy CDT department of technology</tags>
-   
-       <contentFiles>
-        <!-- Include Assets as Content -->
-        <files include="**/images/*.*" buildAction="Content" />
-        <files include="**/data.txt" buildAction="Content" />
-        <!-- Copy tool scripts to the output folder -->
-        <files include="**/tools/*" buildAction="None" flatten="false" copyToOutput="true" />
-    </contentFiles>
+        <readme>readme.md</readme>
+        <contentFiles>
+          <!-- Include Assets as Content -->
+          <files include="../_site/ca_state_template/*.*" buildAction="Content" />
+          <files include="**/images/*.*" buildAction="Content" />
+          <files include="**/data.txt" buildAction="Content" />
+          <!-- Copy tool scripts to the output folder -->
+          <files include="**/tools/*" buildAction="None" flatten="false" copyToOutput="true" />
+        </contentFiles>
     </metadata>
     <files>
       <file src=".\myfile.js" target="js\myfile.js" />
       <file src="icon.png" target="" />
+      <file src=".\readme.md" target="\" />
+      <file src="..\_site\ca_state_template\*.*" target="content\Content" />
     </files>
 
 
