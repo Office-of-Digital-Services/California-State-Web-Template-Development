@@ -16,6 +16,10 @@
         <tags>California State CA Government gov Template state-template ca.gov state of California ca web template css javascript js react reactjs bootstrap 11ty eleventy CDT department of technology</tags>
         <readme>readme.md</readme>
         <projectUrl>https://template.webstandards.ca.gov</projectUrl>
+        <contentFiles>
+          <!-- Include Assets as Content -->
+          <files include="../_site/ca_state_template/**/*" buildAction="None" copyToOutput="true" />
+        </contentFiles>
     </metadata>
     <files>
       <file src="nuget_content/icon.png" />
