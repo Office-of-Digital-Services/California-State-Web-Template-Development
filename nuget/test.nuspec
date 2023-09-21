@@ -3,7 +3,7 @@
     <metadata>
         <!-- Required elements-->
         <id>cagovweb.state-template</id>
-        <version>6.3.0-nuget-beta-1</version>
+        <version>6.3.0-nuget-beta-2</version>
         <title>State of California Web Template NuGet Package</title>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <summary>Use the latest version of the State of California Web Template to develop your websites and applications</summary>
@@ -18,13 +18,14 @@
         <projectUrl>https://template.webstandards.ca.gov</projectUrl>
         <contentFiles>
           <!-- Include Assets as Content -->
-          <files include="../_site/ca_state_template/**/*" buildAction="None" copyToOutput="true" />
+          <files include="../_site/ca_state_template/**/*" buildAction="Content"/>
         </contentFiles>
     </metadata>
     <files>
       <file src="nuget_content/icon.png" />
       <file src="nuget_content/readme.md" />
-      <file src="../_site/ca_state_template/**/*" target="state-template" />
+      <file src="../_site/ca_state_template/**/*" target="content\state-template" />
+      <file src="../_site/ca_state_template/**/*" target="contentFiles\any\any\wwwroot\state-template" />
     </files>
 
 
