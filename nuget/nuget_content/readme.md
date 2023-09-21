@@ -1,6 +1,6 @@
 # California State Web Template Nuget Package
 
-This is the Nuget Package for the California State Web Template, an HTML template and website standard offered by the California Department of Technology to state agencies and departments within the State of California and beyond.
+This is the NuGet Package for the California State Web Template, an HTML template and website standard offered by the California Department of Technology to state agencies and departments within the State of California and beyond.
 
 The California State Web Template is designed to promote a responsive and standard look and feel to ensure a uniform user experience across state entities. The web template includes many usability, security and accessibility requirements and is updated regularly to meet evolving industry standards and best practices.
 
@@ -10,41 +10,7 @@ This package is based on [Bootstrap v5.3.0](https://www.npmjs.com/package/bootst
 
 ## How to use
 
-### React
-
-#### Option 1 - default theme
-
-```javascript
-//import with default Oceanside theme - includes core JS and CSS
-import "@cagovweb/state-template";
-```
-
-#### Option 2 - specific theme
-
-```javascript
-//import with specific theme
-//Core CSS first
-import "@cagovweb/state-template/dist/css/cagov.core.css";
-//Choose Theme
-import "@cagovweb/state-template/dist/css/colortheme-oceanside.css";
-//Core JS last
-import "@cagovweb/state-template/dist/js/cagov.core.js";
-```
-
-### Eleventy
-
-**`.eleventy.js`** [(see reference)](https://www.11ty.dev/docs/copy/)
-
-```javascript
-module.exports = function(eleventyConfig) {
-  // Copy state template core files to site output
-  eleventyConfig.addPassthroughCopy({
-    "node_modules/@cagovweb/state-template/dist": "state-template"
-  });
-};
-```
-
-At references in your template files
+### Add references in your template files
 
 ```html
 <head>

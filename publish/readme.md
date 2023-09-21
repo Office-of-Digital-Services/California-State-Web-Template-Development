@@ -44,7 +44,7 @@ module.exports = function(eleventyConfig) {
 };
 ```
 
-At references in your template files
+Add references in your template files
 
 ```html
 <head>

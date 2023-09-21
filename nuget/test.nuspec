@@ -4,9 +4,9 @@
         <!-- Required elements-->
         <id>cagovweb.state-template</id>
         <version>6.2.1-nuget-beta-1</version>
-        <title>CA State Template NuGet package</title>
+        <title>State of California Web Template NuGet Package</title>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <summary>Summary for The CA State Template nuget package</summary>
+        <summary>Use the latest version of the State of California Web Template to develop your websites and applications</summary>
         <description>Description for The CA State Template nuget package</description>
         <authors>Carter Medlin</authors>
         <language>en-US</language>
@@ -15,11 +15,12 @@
         <repository type="git" url="https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git" branch="main" />
         <tags>California State CA Government gov Template state-template ca.gov state of California ca web template css javascript js react reactjs bootstrap 11ty eleventy CDT department of technology</tags>
         <readme>readme.md</readme>
+        <projectUrl>https://template.webstandards.ca.gov</projectUrl>
     </metadata>
     <files>
       <file src="nuget_content/icon.png" />
       <file src="nuget_content/readme.md" />
-      <file src="../_site/ca_state_template/**/*" target="\ca_state_template" />
+      <file src="../_site/ca_state_template/**/*" target="\state-template" />
     </files>
 
 
