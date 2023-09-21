@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
     <metadata>
         <!-- Required elements-->
         <id>cagovweb.state-template</id>
-        <version>6.3.0-nuget-beta-2</version>
+        <version>6.3.0-nuget-beta-4</version>
         <title>State of California Web Template NuGet Package</title>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <summary>Use the latest version of the State of California Web Template to develop your websites and applications</summary>
@@ -18,7 +18,7 @@
         <projectUrl>https://template.webstandards.ca.gov</projectUrl>
         <contentFiles>
           <!-- Include Assets as Content -->
-          <files include="../_site/ca_state_template/**/*" buildAction="Content"/>
+          <files include="**/*" buildAction="Content" copyToOutput="true" />
         </contentFiles>
     </metadata>
     <files>
