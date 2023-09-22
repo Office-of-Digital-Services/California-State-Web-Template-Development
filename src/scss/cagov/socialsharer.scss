@@ -6,7 +6,7 @@
 
 // Mixin for link color & hover states
 @mixin social-media($color) {
-  color: $color !important;
+  color: $color;
 
   &:hover,
   &:focus {
