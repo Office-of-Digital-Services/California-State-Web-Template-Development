@@ -31,6 +31,33 @@ import "@cagovweb/state-template/dist/css/colortheme-oceanside.css";
 import "@cagovweb/state-template/dist/js/cagov.core.js";
 ```
 
+### .Net Core (Visual Studio)
+
+You can use [Library Manager (LibMan)](https://learn.microsoft.com/en-us/aspnet/core/client-side/libman/libman-vs?view=aspnetcore-7.0) to automatically sync the client JS/CSS with your Visual Studio projects.
+
+#### Create `libman.json` in your project root folder
+
+```json
+{
+  "version": "1.0",
+  "libraries": [
+    {
+      "provider": "jsdelivr",
+      "library": "@cagovweb/state-template@latest",
+      "destination": "wwwroot/lib/state-template/"
+    }
+  ]
+}
+```
+
+#### In your layout files you can reference the files in the `lib` folder
+
+```html
+<link href="~/lib/state-template/dist/css/cagov.core.min.css" rel="stylesheet">
+<link href="~/lib/state-template/dist/css/colortheme-oceanside.min.css" rel="stylesheet">
+<script src="~/lib/state-template/dist/js/cagov.core.min.js"></script>
+```
+
 ### Eleventy
 
 **`.eleventy.js`** [(see reference)](https://www.11ty.dev/docs/copy/)
