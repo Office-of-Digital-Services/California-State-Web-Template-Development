@@ -37,7 +37,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "tag": "latest"
+    "tag": "beta"
   },
   "scripts": {
     "NPM Publish (dry run)": "npm publish --dry-run",
