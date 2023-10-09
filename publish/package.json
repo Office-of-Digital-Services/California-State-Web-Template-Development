@@ -1,6 +1,6 @@
 {
   "name": "@cagovweb/state-template",
-  "version": "6.3.0-beta.4",
+  "version": "6.3.0",
   "description": "California State Web Template NPM Package",
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "tag": "beta"
+    "tag": "latest"
   },
   "scripts": {
     "NPM Publish (dry run)": "npm publish --dry-run",
