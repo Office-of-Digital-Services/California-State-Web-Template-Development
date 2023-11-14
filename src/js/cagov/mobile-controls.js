@@ -76,7 +76,7 @@ window.addEventListener("load", () => {
       navSearchCont.setAttribute("aria-hidden", "false");
       // make links focusable
       getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-      getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
+      getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       // make all the rest of the links not focusable
       getAllBodyLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       // Hide all the website areas (add aria-hidden)
@@ -89,7 +89,7 @@ window.addEventListener("load", () => {
       navSearchCont.setAttribute("aria-hidden", "true");
       // removing focus
       getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
+      getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
       getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
       // remove aria hidden for the rest of the site
       setHidden(false);
@@ -102,7 +102,8 @@ window.addEventListener("load", () => {
     moveNavToggleButtonToMobileControlsContainer();
     const mainNav = document.querySelector(".main-navigation");
     const utilityLinks = document.querySelector(".settings-links");
-    if (mainNav && utilityLinks) mainNav.before(utilityLinks);
+    if (mainNav && utilityLinks) 
+    // mainNav.before(utilityLinks);
     document.body.classList.remove("overflow-hidden");
 
     const navSearchCont = document.querySelector(".navigation-search");
@@ -112,7 +113,7 @@ window.addEventListener("load", () => {
     navSearchCont.setAttribute("aria-hidden", "true");
     // removing focus
     getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-    getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
+    // getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
     getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
     setHidden(false);
@@ -126,7 +127,7 @@ window.addEventListener("load", () => {
       ".utility-header .container .flex-row"
     );
     if (utilityLinks && headerutilityLinksCont)
-      headerutilityLinksCont.append(utilityLinks);
+     // headerutilityLinksCont.append(utilityLinks);
     document.body.classList.remove("overflow-hidden");
     const navSearchCont = document.querySelector(".navigation-search");
     if (!navSearchCont) return;

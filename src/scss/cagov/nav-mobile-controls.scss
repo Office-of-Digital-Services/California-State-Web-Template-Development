@@ -208,6 +208,10 @@ header.nav-overlay {
     margin-left: 1rem;
     margin-right: 1rem;
     font-size: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   a::before {

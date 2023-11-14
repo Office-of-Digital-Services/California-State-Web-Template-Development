@@ -85,12 +85,7 @@
     @include media-breakpoint-up(sm) {
       font-size: calc(#{$font-size-base} + #{$ratio});
     }
-
     @include text-right;
-
-    @media (min-width: $screen-md-min) {
-      padding-right: 5px;
-    }
   }
 
   [class^="ca-gov-icon-"] {
@@ -130,8 +125,13 @@
       min-height: 38px;
 
       a {
-        margin: 0 10px;
+        margin: 0;
+        margin-left: 1rem;
         font-size: 0.95rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
 
       button {
