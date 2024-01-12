@@ -2,7 +2,11 @@
 
 window.addEventListener("load", () => {
   // VARIABLES
+  const navSearchCont = document.querySelector(".navigation-search");
   const navButton = document.querySelector(".toggle-menu");
+  const mainNav = document.querySelector(".main-navigation");
+  const utilityLinks = document.querySelector(".settings-links");
+
   if (!navButton) return;
 
   const getAllNavLinks = () =>
@@ -21,6 +25,13 @@ window.addEventListener("load", () => {
       '.utility-header .social-media-links a, .utility-header .social-media-links input, .utility-header .social-media-links button, .utility-header .social-media-links [tabindex]:not([tabindex="-1"]), .branding a, .branding button, .branding input, .branding select, .main-content a[href], .main-content button, .main-content input, .main-content textarea, .main-content select, .main-content details, .main-content [tabindex]:not([tabindex="-1"]), .site-footer a[href], .site-footer button, .site-footer input, .site-footer textarea, .site-footer select, .site-footer details, .site-footer [tabindex]:not([tabindex="-1"]), footer a[href], footer button, footer input, footer textarea, footer select, footer details, footer [tabindex]:not([tabindex="-1"])'
     );
 
+  // Add escape
+  const addESC = function(e) {
+    if (e.keyCode == 27) {
+      mobileNavDefault();
+    } 
+  };
+
   // create container for drawer mobile nav items
   const mobileItemsCont = document.createElement("div");
   mobileItemsCont.setAttribute("class", "nav-drawer");
@@ -32,6 +43,7 @@ window.addEventListener("load", () => {
     );
     setTimeout(() => {
       navButton.setAttribute("aria-expanded", "false");
+      navButton.removeAttribute("tabindex");
       navButtonCont?.append(navButton);
     }, 300);
   };
@@ -65,14 +77,18 @@ window.addEventListener("load", () => {
   // Button click open and close menu function
   const openMenu = () => {
     mobileItemsCont.append(navButton);
-    const navSearchCont = document.querySelector(".navigation-search");
+    
     if (!navSearchCont) return;
     navSearchCont.classList.toggle("visible");
     navSearchCont.classList.toggle("not-visible");
     // Open
     if (navSearchCont.classList.contains("visible")) {
+      // @ts-ignore
+      navButton.focus();
       navButton.setAttribute("aria-expanded", "true");
       document.body.classList.add("overflow-hidden");
+      navSearchCont.setAttribute("tabindex", "-1");
+      navSearchCont.setAttribute("role", "dialog");
       navSearchCont.setAttribute("aria-hidden", "false");
       // make links focusable
       getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
@@ -81,12 +97,18 @@ window.addEventListener("load", () => {
       getAllBodyLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       // Hide all the website areas (add aria-hidden)
       setHidden(true);
-
+      // Activate escape key
+      document.addEventListener('keydown', addESC);
       // Close
     } else {
       navButton.setAttribute("aria-expanded", "false");
       document.body.classList.remove("overflow-hidden");
       navSearchCont.setAttribute("aria-hidden", "true");
+      navSearchCont.removeAttribute("tabindex");
+      navSearchCont.removeAttribute("role");
+      navSearchCont.removeAttribute("aria-modal");
+      // Deactivate escape key
+      document.removeEventListener('keydown', addESC);
       // removing focus
       getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
@@ -100,40 +122,45 @@ window.addEventListener("load", () => {
   // Default state for mobile
   const mobileNavDefault = () => {
     moveNavToggleButtonToMobileControlsContainer();
-    const mainNav = document.querySelector(".main-navigation");
-    const utilityLinks = document.querySelector(".settings-links");
+    
     if (mainNav && utilityLinks) 
     // mainNav.before(utilityLinks);
     document.body.classList.remove("overflow-hidden");
-
-    const navSearchCont = document.querySelector(".navigation-search");
+    // @ts-ignore
     if (!navSearchCont) return;
     navSearchCont.classList.add("not-visible");
     navSearchCont.classList.remove("visible");
     navSearchCont.setAttribute("aria-hidden", "true");
+    navSearchCont.removeAttribute("tabindex");
+    navSearchCont.removeAttribute("role");
+    navSearchCont.removeAttribute("aria-modal");
     // removing focus
     getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-    // getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
+    getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
     getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
     setHidden(false);
+    // @ts-ignore
+    navButton.focus();
+    navButton.removeAttribute("tabindex");
   };
 
   // Default state for desktop
   const desktopNavDefault = () => {
     moveNavToggleButtonToMobileControlsContainer();
-    const utilityLinks = document.querySelector(".settings-links");
     const headerutilityLinksCont = document.querySelector(
       ".utility-header .container .flex-row"
     );
     if (utilityLinks && headerutilityLinksCont)
      // headerutilityLinksCont.append(utilityLinks);
     document.body.classList.remove("overflow-hidden");
-    const navSearchCont = document.querySelector(".navigation-search");
     if (!navSearchCont) return;
     navSearchCont.classList.remove("visible");
     navSearchCont.classList.remove("not-visible");
     navSearchCont.setAttribute("aria-hidden", "false");
+    navSearchCont.removeAttribute("tabindex");
+    navSearchCont.removeAttribute("role");
+    navSearchCont.removeAttribute("aria-modal");
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
     getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
