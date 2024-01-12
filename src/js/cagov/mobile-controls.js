@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
 
   // Add escape
   const addESC = function(e) {
-    if (e.keyCode == 27) {
+    if (e.key === "Escape") {
       mobileNavDefault();
     } 
   };
