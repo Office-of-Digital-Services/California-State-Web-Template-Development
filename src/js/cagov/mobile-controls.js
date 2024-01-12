@@ -143,6 +143,8 @@ window.addEventListener("load", () => {
     // @ts-ignore
     navButton.focus();
     navButton.removeAttribute("tabindex");
+    // Deactivate escape key
+    document.removeEventListener('keydown', addESC);
   };
 
   // Default state for desktop
