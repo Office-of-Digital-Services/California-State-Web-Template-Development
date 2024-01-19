@@ -6,6 +6,7 @@ window.addEventListener("load", () => {
   const navButton = document.querySelector(".toggle-menu");
   const mainNav = document.querySelector(".main-navigation");
   const utilityLinks = document.querySelector(".settings-links");
+  
 
   if (!navButton) return;
 
@@ -14,21 +15,16 @@ window.addEventListener("load", () => {
       '.navigation-search a.first-level-link, .navigation-search button.first-level-btn, .navigation-search input, .navigation-search button, .navigation-search [tabindex]:not([tabindex="-1"])'
     );
 
-  const getAllUtilityLinks = () =>
-    document.querySelectorAll(
-      '.settings-links a, .settings-links button, .settings-links input, .settings-links select, .settings-links [tabindex]:not([tabindex="-1"])'
-    );
-
-  // all focusable elements other than navigation
-  const getAllBodyLinks = () =>
-    document.querySelectorAll(
-      '.utility-header .social-media-links a, .utility-header .social-media-links input, .utility-header .social-media-links button, .utility-header .social-media-links [tabindex]:not([tabindex="-1"]), .branding a, .branding button, .branding input, .branding select, .main-content a[href], .main-content button, .main-content input, .main-content textarea, .main-content select, .main-content details, .main-content [tabindex]:not([tabindex="-1"]), .site-footer a[href], .site-footer button, .site-footer input, .site-footer textarea, .site-footer select, .site-footer details, .site-footer [tabindex]:not([tabindex="-1"]), footer a[href], footer button, footer input, footer textarea, footer select, footer details, footer [tabindex]:not([tabindex="-1"])'
-    );
-
   // Add escape
   const addESC = function(e) {
     if (e.key === "Escape") {
       mobileNavDefault();
+      // Put focus on nav button once it's back in mobile section
+      setTimeout(() => {
+        // @ts-ignore
+        navButton.focus();
+      }, 400);
+      
     } 
   };
 
@@ -75,9 +71,8 @@ window.addEventListener("load", () => {
   };
 
   // Button click open and close menu function
-  const openMenu = () => {
+  const openMenu = () =>  {
     mobileItemsCont.append(navButton);
-    
     if (!navSearchCont) return;
     navSearchCont.classList.toggle("visible");
     navSearchCont.classList.toggle("not-visible");
@@ -90,13 +85,12 @@ window.addEventListener("load", () => {
       navSearchCont.setAttribute("tabindex", "-1");
       navSearchCont.setAttribute("role", "dialog");
       navSearchCont.setAttribute("aria-hidden", "false");
+      // Trap focus inside mobile navigation container function
+      setUpKeyboardFocusTrap(navSearchCont);
       // make links focusable
       getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-      getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      // make all the rest of the links not focusable
-      getAllBodyLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       // Hide all the website areas (add aria-hidden)
-      setHidden(true);
+     setHidden(true);
       // Activate escape key
       document.addEventListener('keydown', addESC);
       // Close
@@ -111,11 +105,14 @@ window.addEventListener("load", () => {
       document.removeEventListener('keydown', addESC);
       // removing focus
       getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
-      getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
-      // remove aria hidden for the rest of the site
-      setHidden(false);
+     // remove aria hidden for the rest of the site
+     setHidden(false);
       moveNavToggleButtonToMobileControlsContainer();
+      // Put focus back on nav button that is moved back to mobile control section
+      setTimeout(() => {
+        // @ts-ignore
+        navButton.focus();
+      }, 300);
     }
   };
 
@@ -136,12 +133,8 @@ window.addEventListener("load", () => {
     navSearchCont.removeAttribute("aria-modal");
     // removing focus
     getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-    getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
-    getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
     setHidden(false);
-    // @ts-ignore
-    navButton.focus();
     navButton.removeAttribute("tabindex");
     // Deactivate escape key
     document.removeEventListener('keydown', addESC);
@@ -164,10 +157,8 @@ window.addEventListener("load", () => {
     navSearchCont.removeAttribute("role");
     navSearchCont.removeAttribute("aria-modal");
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-    getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
-    getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
-    // remove aria hidden for the rest of the site
-    setHidden(false);
+  // remove aria hidden for the rest of the site
+   setHidden(false);
   };
 
   // Button Click event
@@ -189,6 +180,37 @@ window.addEventListener("load", () => {
       desktopNavDefault();
     }
   };
+
+
+  // TRAP FOCUS FUCNTION
+  function setUpKeyboardFocusTrap(modal) {
+  // Note: display modal before calling setUpKeyboardFocusTrap(modal);
+
+  // Focusable elements inside of navigation array
+  const focusableElements = document.querySelectorAll('.toggle-menu, .navigation-search a.first-level-link, .navigation-search button.first-level-btn, .navigation-search input, .navigation-search button, .navigation-search [tabindex]:not([tabindex="-1"]), .navigation-search a.second-level-link:not([tabindex="-1"])');
+  const firstTabStop = focusableElements[0];
+  const lastTabStop = focusableElements[focusableElements.length - 1];
+  // @ts-ignore
+  firstTabStop.focus();
+  modal.addEventListener('keydown', trapTabKey);
+  function trapTabKey(e) {
+    const hitTab = (e.keyCode || e.which) === 9;
+    const hitShift = e.shiftKey;
+    if (hitTab && hitShift) {
+      if (document.activeElement === firstTabStop) {
+        e.preventDefault();
+        // @ts-ignore
+        lastTabStop.focus();
+      }
+    } else if (hitTab && !hitShift) {
+      if (document.activeElement === lastTabStop) {
+        e.preventDefault();
+        // @ts-ignore
+        firstTabStop.focus();
+      }
+    }
+  }
+}
 
   // on resize function (hide mobile nav)
   window.addEventListener("resize", mobileCheck);
