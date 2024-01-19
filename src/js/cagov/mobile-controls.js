@@ -1,7 +1,21 @@
 //@ts-check
 
 window.addEventListener("load", () => {
+  /**
+   *
+   * @param {HTMLElement} parent
+   * @param {HTMLElement} child
+   * @returns {boolean}
+   */
+  const checkParent = (parent, child) =>
+    child?.parentElement
+      ? child.parentElement === parent
+        ? true
+        : checkParent(parent, child.parentElement)
+      : false;
+
   // VARIABLES
+  /** @type {HTMLButtonElement} */
   const navButton = document.querySelector(".toggle-menu");
   if (!navButton) return;
 
@@ -9,18 +23,6 @@ window.addEventListener("load", () => {
     document.querySelectorAll(
       '.navigation-search a.first-level-link, .navigation-search button.first-level-btn, .navigation-search input, .navigation-search button, .navigation-search [tabindex]:not([tabindex="-1"])'
     );
-
-  const getAllUtilityLinks = () =>
-    document.querySelectorAll(
-      '.settings-links a, .settings-links button, .settings-links input, .settings-links select, .settings-links [tabindex]:not([tabindex="-1"])'
-    );
-
-  // all focusable elements other than navigation
-  const getAllBodyLinks = () =>
-    document.querySelectorAll(
-      '.utility-header .social-media-links a, .utility-header .social-media-links input, .utility-header .social-media-links button, .utility-header .social-media-links [tabindex]:not([tabindex="-1"]), .branding a, .branding button, .branding input, .branding select, .main-content a[href], .main-content button, .main-content input, .main-content textarea, .main-content select, .main-content details, .main-content [tabindex]:not([tabindex="-1"]), .site-footer a[href], .site-footer button, .site-footer input, .site-footer textarea, .site-footer select, .site-footer details, .site-footer [tabindex]:not([tabindex="-1"]), footer a[href], footer button, footer input, footer textarea, footer select, footer details, footer [tabindex]:not([tabindex="-1"])'
-    );
-
   // create container for drawer mobile nav items
   const mobileItemsCont = document.createElement("div");
   mobileItemsCont.setAttribute("class", "nav-drawer");
@@ -35,6 +37,20 @@ window.addEventListener("load", () => {
       navButtonCont?.append(navButton);
     }, 300);
   };
+
+  /** @type {HTMLDivElement} */
+  const navSearchCont2 = document.querySelector(".navigation-search");
+  navSearchCont2.addEventListener("focusout", e => {
+    if (
+      !checkParent(
+        /** @type {HTMLElement} **/ (e.currentTarget),
+        /** @type {HTMLElement} **/ (e.relatedTarget)
+      )
+    ) {
+      openMenu();
+      //window.location.reload();
+    }
+  });
 
   const setHidden = (/** @type {boolean} */ hide) => {
     const mainCont = document.querySelector(".main-content");
@@ -76,11 +92,12 @@ window.addEventListener("load", () => {
       navSearchCont.setAttribute("aria-hidden", "false");
       // make links focusable
       getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-      getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
+      //getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       // make all the rest of the links not focusable
-      getAllBodyLinks().forEach(el => el.setAttribute("tabindex", "-1"));
+      //getAllBodyLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       // Hide all the website areas (add aria-hidden)
       setHidden(true);
+      navButton.focus();
 
       // Close
     } else {
@@ -89,8 +106,8 @@ window.addEventListener("load", () => {
       navSearchCont.setAttribute("aria-hidden", "true");
       // removing focus
       getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
-      getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
+      //getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
+      //getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
       // remove aria hidden for the rest of the site
       setHidden(false);
       moveNavToggleButtonToMobileControlsContainer();
@@ -102,19 +119,20 @@ window.addEventListener("load", () => {
     moveNavToggleButtonToMobileControlsContainer();
     const mainNav = document.querySelector(".main-navigation");
     const utilityLinks = document.querySelector(".settings-links");
-    if (mainNav && utilityLinks) 
-    // mainNav.before(utilityLinks);
-    document.body.classList.remove("overflow-hidden");
+    if (mainNav && utilityLinks)
+      // mainNav.before(utilityLinks);
+      document.body.classList.remove("overflow-hidden");
 
     const navSearchCont = document.querySelector(".navigation-search");
     if (!navSearchCont) return;
+
     navSearchCont.classList.add("not-visible");
     navSearchCont.classList.remove("visible");
     navSearchCont.setAttribute("aria-hidden", "true");
     // removing focus
     getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
     // getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-    getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
+    //getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
     setHidden(false);
   };
@@ -127,16 +145,16 @@ window.addEventListener("load", () => {
       ".utility-header .container .flex-row"
     );
     if (utilityLinks && headerutilityLinksCont)
-     // headerutilityLinksCont.append(utilityLinks);
-    document.body.classList.remove("overflow-hidden");
+      // headerutilityLinksCont.append(utilityLinks);
+      document.body.classList.remove("overflow-hidden");
     const navSearchCont = document.querySelector(".navigation-search");
     if (!navSearchCont) return;
     navSearchCont.classList.remove("visible");
     navSearchCont.classList.remove("not-visible");
     navSearchCont.setAttribute("aria-hidden", "false");
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-    getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
-    getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
+    //getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
+    //getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
     setHidden(false);
   };
