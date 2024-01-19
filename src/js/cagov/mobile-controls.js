@@ -15,14 +15,39 @@ window.addEventListener("load", () => {
       : false;
 
   // VARIABLES
+  /** @type {HTMLDivElement} */
+  const navSearchCont = document.querySelector(".navigation-search");
+  /** @type {HTMLDivElement} */
+  const utilityLinks = document.querySelector(".settings-links");
+  /** @type {HTMLDivElement} */
+  const headerutilityLinksCont = document.querySelector(".utility-header .container .flex-row");
+  /** @type {HTMLElement} */
+  const mainNav = document.querySelector(".main-navigation");
   /** @type {HTMLButtonElement} */
   const navButton = document.querySelector(".toggle-menu");
+    
+
   if (!navButton) return;
 
   const getAllNavLinks = () =>
     document.querySelectorAll(
       '.navigation-search a.first-level-link, .navigation-search button.first-level-btn, .navigation-search input, .navigation-search button, .navigation-search [tabindex]:not([tabindex="-1"])'
     );
+
+
+ // Add escape
+ const addESC = function(e) {
+  if (e.key === "Escape") {
+    mobileNavDefault();
+    // Put focus on nav button once it's back in mobile section
+    setTimeout(() => {
+      // @ts-ignore
+      navButton.focus();
+    }, 400);
+    
+  } 
+};
+
   // create container for drawer mobile nav items
   const mobileItemsCont = document.createElement("div");
   mobileItemsCont.setAttribute("class", "nav-drawer");
@@ -34,13 +59,13 @@ window.addEventListener("load", () => {
     );
     setTimeout(() => {
       navButton.setAttribute("aria-expanded", "false");
+      navButton.removeAttribute("tabindex");
       navButtonCont?.append(navButton);
     }, 300);
   };
 
-  /** @type {HTMLDivElement} */
-  const navSearchCont2 = document.querySelector(".navigation-search");
-  navSearchCont2.addEventListener("focusout", e => {
+
+  navSearchCont.addEventListener("focusout", e => {
     if (
       !checkParent(
         /** @type {HTMLElement} **/ (e.currentTarget),
@@ -81,80 +106,70 @@ window.addEventListener("load", () => {
   // Button click open and close menu function
   const openMenu = () => {
     mobileItemsCont.append(navButton);
-    const navSearchCont = document.querySelector(".navigation-search");
     if (!navSearchCont) return;
     navSearchCont.classList.toggle("visible");
     navSearchCont.classList.toggle("not-visible");
     // Open
     if (navSearchCont.classList.contains("visible")) {
+      navButton.focus();
       navButton.setAttribute("aria-expanded", "true");
       document.body.classList.add("overflow-hidden");
       navSearchCont.setAttribute("aria-hidden", "false");
       // make links focusable
       getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-      //getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      // make all the rest of the links not focusable
-      //getAllBodyLinks().forEach(el => el.setAttribute("tabindex", "-1"));
       // Hide all the website areas (add aria-hidden)
       setHidden(true);
-      navButton.focus();
+      // Activate escape key
+      document.addEventListener('keydown', addESC);
 
       // Close
     } else {
       navButton.setAttribute("aria-expanded", "false");
       document.body.classList.remove("overflow-hidden");
       navSearchCont.setAttribute("aria-hidden", "true");
+      // Deactivate escape key
+      document.removeEventListener('keydown', addESC);
       // removing focus
       getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      //getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
-      //getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
       // remove aria hidden for the rest of the site
       setHidden(false);
       moveNavToggleButtonToMobileControlsContainer();
+      // Put focus back on nav button that is moved back to mobile control section
+      setTimeout(() => {
+        navButton.focus();
+      }, 300);
     }
   };
 
   // Default state for mobile
   const mobileNavDefault = () => {
     moveNavToggleButtonToMobileControlsContainer();
-    const mainNav = document.querySelector(".main-navigation");
-    const utilityLinks = document.querySelector(".settings-links");
     if (mainNav && utilityLinks)
       // mainNav.before(utilityLinks);
       document.body.classList.remove("overflow-hidden");
-
-    const navSearchCont = document.querySelector(".navigation-search");
     if (!navSearchCont) return;
-
     navSearchCont.classList.add("not-visible");
     navSearchCont.classList.remove("visible");
     navSearchCont.setAttribute("aria-hidden", "true");
     // removing focus
     getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-    // getAllUtilityLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-    //getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
     setHidden(false);
+    // Deactivate escape key
+    document.removeEventListener('keydown', addESC);
   };
 
   // Default state for desktop
   const desktopNavDefault = () => {
     moveNavToggleButtonToMobileControlsContainer();
-    const utilityLinks = document.querySelector(".settings-links");
-    const headerutilityLinksCont = document.querySelector(
-      ".utility-header .container .flex-row"
-    );
     if (utilityLinks && headerutilityLinksCont)
       // headerutilityLinksCont.append(utilityLinks);
       document.body.classList.remove("overflow-hidden");
-    const navSearchCont = document.querySelector(".navigation-search");
     if (!navSearchCont) return;
     navSearchCont.classList.remove("visible");
     navSearchCont.classList.remove("not-visible");
     navSearchCont.setAttribute("aria-hidden", "false");
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-    //getAllUtilityLinks().forEach(el => el.removeAttribute("tabindex"));
-    //getAllBodyLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
     setHidden(false);
   };
