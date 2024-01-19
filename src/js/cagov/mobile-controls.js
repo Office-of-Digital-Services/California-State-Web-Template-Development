@@ -194,7 +194,7 @@ window.addEventListener("load", () => {
   firstTabStop.focus();
   modal.addEventListener('keydown', trapTabKey);
   function trapTabKey(e) {
-    const hitTab = (e.keyCode || e.which) === 9;
+    const hitTab = e.key === "Tab";
     const hitShift = e.shiftKey;
     if (hitTab && hitShift) {
       if (document.activeElement === firstTabStop) {
