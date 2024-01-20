@@ -25,7 +25,41 @@ window.addEventListener("load", () => {
   const mainNav = document.querySelector(".main-navigation");
   /** @type {HTMLButtonElement} */
   const navButton = document.querySelector(".toggle-menu");
-    
+  const checkIfMobileView = () => {
+  const mobileElement = document.querySelector(
+      ".global-header .mobile-controls"
+    );
+    return mobileElement
+      ? getComputedStyle(mobileElement)["display"] !== "none"
+      : false;
+  };
+  const NavReset = () => {
+    //RESET
+    document
+      .querySelectorAll(".first-level-btn")
+      .forEach(el => el.setAttribute("aria-expanded", "false"));
+    document.querySelectorAll(".sub-nav").forEach(el => {
+      el.setAttribute("aria-hidden", "true");
+      el.classList.remove("open");
+    });
+    document
+      .querySelectorAll(".second-level-link")
+      .forEach(el => el.setAttribute("tabindex", "-1"));
+
+    if (window.innerWidth <= 991) {
+      document
+        .querySelectorAll(".rotate")
+        .forEach(
+          (/**@type {HTMLElement} */ el) => (el.style.display = "block")
+        );
+    } else {
+      document
+        .querySelectorAll(".rotate")
+        .forEach((/**@type {HTMLElement} */ el) => (el.style.display = "none"));
+      document.querySelector("#navigation")?.removeAttribute("aria-hidden");
+    }
+  };
+  
 
   if (!navButton) return;
 
@@ -34,17 +68,16 @@ window.addEventListener("load", () => {
       '.navigation-search a.first-level-link, .navigation-search button.first-level-btn, .navigation-search input, .navigation-search button, .navigation-search [tabindex]:not([tabindex="-1"])'
     );
 
-
  // Add escape
  const addESC = function(e) {
   if (e.key === "Escape") {
     mobileNavDefault();
+    NavReset();
     // Put focus on nav button once it's back in mobile section
     setTimeout(() => {
       // @ts-ignore
       navButton.focus();
-    }, 400);
-    
+    }, 400); 
   } 
 };
 
@@ -64,19 +97,21 @@ window.addEventListener("load", () => {
     }, 300);
   };
 
-
   navSearchCont.addEventListener("focusout", e => {
-    if (
-      !checkParent(
-        /** @type {HTMLElement} **/ (e.currentTarget),
-        /** @type {HTMLElement} **/ (e.relatedTarget)
-      )
-    ) {
-      openMenu();
-      //window.location.reload();
+    if (checkIfMobileView()) {
+      if (
+        !checkParent(
+          /** @type {HTMLElement} **/ (e.currentTarget),
+          /** @type {HTMLElement} **/ (e.relatedTarget)
+        )
+      ) {
+
+        openMenu();
+      }
     }
   });
 
+  
   const setHidden = (/** @type {boolean} */ hide) => {
     const mainCont = document.querySelector(".main-content");
     const footerGlobal = document.querySelector("footer");
@@ -134,6 +169,7 @@ window.addEventListener("load", () => {
       // remove aria hidden for the rest of the site
       setHidden(false);
       moveNavToggleButtonToMobileControlsContainer();
+      NavReset();
       // Put focus back on nav button that is moved back to mobile control section
       setTimeout(() => {
         navButton.focus();
@@ -157,6 +193,7 @@ window.addEventListener("load", () => {
     setHidden(false);
     // Deactivate escape key
     document.removeEventListener('keydown', addESC);
+    NavReset();
   };
 
   // Default state for desktop
@@ -172,6 +209,7 @@ window.addEventListener("load", () => {
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     // remove aria hidden for the rest of the site
     setHidden(false);
+    NavReset();
   };
 
   // Button Click event
@@ -193,6 +231,7 @@ window.addEventListener("load", () => {
       desktopNavDefault();
     }
   };
+
 
   // on resize function (hide mobile nav)
   window.addEventListener("resize", mobileCheck);
