@@ -31,11 +31,11 @@ window.addEventListener("load", () => {
   const navSearchCont = document.querySelector(".navigation-search");
   if (!navSearchCont) return;
 
-  const mainCont = document.querySelector(".main-content");
-  const footerGlobal = document.querySelector("footer");
-  const footerSite = document.querySelector(".site-footer");
-  const headerutility = document.querySelector(".utility-header");
-  const siteBranding = document.querySelector(".branding");
+  //Used for hiding/showing main elements
+  const mainElements = document.querySelectorAll(
+    ".main-content, footer, .site-footer, .utility-header, .branding, header"
+  );
+
   const regularHeader = document.querySelector("header");
 
   /**
@@ -131,11 +131,8 @@ window.addEventListener("load", () => {
 
     setOpen();
     // Hide all the website areas (add aria-hidden)
-    mainCont?.setAttribute("aria-hidden", "true");
-    footerGlobal?.setAttribute("aria-hidden", "true");
-    footerSite?.setAttribute("aria-hidden", "true");
-    headerutility?.setAttribute("aria-hidden", "true");
-    siteBranding?.setAttribute("aria-hidden", "true");
+    mainElements.forEach(x => x.setAttribute("aria-hidden", "true"));
+
     regularHeader?.classList.add("nav-overlay");
     navMobileMenuToggleBtn.focus();
   };
@@ -173,11 +170,7 @@ window.addEventListener("load", () => {
     // removing focus
     getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
     // remove aria hidden for the rest of the site
-    mainCont?.removeAttribute("aria-hidden");
-    footerGlobal?.removeAttribute("aria-hidden");
-    footerSite?.removeAttribute("aria-hidden");
-    headerutility?.removeAttribute("aria-hidden");
-    siteBranding?.removeAttribute("aria-hidden");
+    mainElements.forEach(x => x.removeAttribute("aria-hidden"));
     regularHeader?.classList.remove("nav-overlay");
 
     NavReset();
