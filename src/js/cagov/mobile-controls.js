@@ -16,14 +16,14 @@ window.addEventListener("load", () => {
   navMobileMenuToggleBtn.setAttribute("aria-expanded", "false");
   navMobileMenuToggleBtn.setAttribute("aria-controls", "navigation");
   navMobileMenuToggleBtn.setAttribute("tabindex", "-1");
-  const navCloseBtnSpan1 = document.createElement("span");
-  const navCloseBtnSpan2 = document.createElement("span");
-  const navCloseBtnSpan3 = document.createElement("span");
-  const navCloseBtnSpan4 = document.createElement("span");
-  const navCloseBtnSpan5 = document.createElement("span");
-  navCloseBtnSpan5.classList.add("sr-only");
-  navCloseBtnSpan5.innerText = "Menu";
-  navMobileMenuToggleBtn.append(navCloseBtnSpan1, navCloseBtnSpan2, navCloseBtnSpan3, navCloseBtnSpan4, navCloseBtnSpan5);
+
+  const navCloseBtnSpans = [0, 1, 2, 3, 4].map(() =>
+    document.createElement("span")
+  );
+
+  navCloseBtnSpans[4].classList.add("sr-only");
+  navCloseBtnSpans[4].innerText = "Menu";
+  navMobileMenuToggleBtn.append(...navCloseBtnSpans);
   mobileItemsCont.append(navMobileMenuToggleBtn);
 
   /** @type {HTMLDivElement} */
