@@ -44,36 +44,6 @@ window.addEventListener("load", () => {
         : checkParent(parent, child.parentElement)
       : false;
 
-  navSearchCont.addEventListener("transitionend", e => {
-    if (e.target !== e.currentTarget) return;
-
-    // Open
-    if (navSearchCont.classList.contains("visible")) {
-      //console.log(e.target);
-
-      navMobileMenuToggleBtn.focus();
-
-      //mobileItemsCont.append(navToggleBtn);
-    } else {
-      //const navButtonCont = document.querySelector(
-      //  ".mobile-controls .main-nav-icons"
-      //);
-      //navButtonCont?.append(navToggleBtn);
-    }
-  });
-
-  navSearchCont.addEventListener("transitionstart", () => {
-    // Open
-    if (!navSearchCont.classList.contains("visible")) {
-      //const navButtonCont = document.querySelector(
-      //  ".mobile-controls .main-nav-icons"
-      //);
-      //navButtonCont?.append(navToggleBtn);
-    } else {
-      //mobileItemsCont.append(navToggleBtn);
-    }
-  });
-
   // reset navigation function
   const NavReset = () => {
     //RESET
@@ -103,8 +73,8 @@ window.addEventListener("load", () => {
   };
 
   const getAllNavLinks = () =>
-    document.querySelectorAll(
-      '.navigation-search a.first-level-link, .navigation-search button.first-level-btn, .navigation-search input, .navigation-search button, .navigation-search [tabindex]:not([tabindex="-1"])'
+    navSearchCont.querySelectorAll(
+      'a.first-level-link, button.first-level-btn, input, button, [tabindex]:not([tabindex="-1"])'
     );
 
   // Escape key event fuction
@@ -186,8 +156,6 @@ window.addEventListener("load", () => {
     navSearchCont.classList.add("visible");
     navSearchCont.classList.remove("not-visible");
 
-    console.log("visible");
-    //navToggleBtn.focus();
     navToggleBtn.setAttribute("aria-expanded", "true");
     navMobileMenuToggleBtn.setAttribute("aria-expanded", "false");
 
@@ -197,6 +165,8 @@ window.addEventListener("load", () => {
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     // Hide all the website areas (add aria-hidden)
     setHidden(true);
+
+    navMobileMenuToggleBtn.focus();
   };
 
   // Button click close menu function
@@ -204,7 +174,6 @@ window.addEventListener("load", () => {
     navSearchCont.classList.remove("visible");
     navSearchCont.classList.add("not-visible");
 
-    console.log("not visible");
     navToggleBtn.setAttribute("aria-expanded", "false");
     navMobileMenuToggleBtn.setAttribute("aria-expanded", "true");
     document.body.classList.remove("overflow-hidden");
