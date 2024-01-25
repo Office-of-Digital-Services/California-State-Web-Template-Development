@@ -9,12 +9,21 @@ window.addEventListener("load", () => {
   const mobileItemsCont = document.createElement("div");
   mobileItemsCont.setAttribute("class", "nav-drawer");
 
+  // Create close mobile meu button
   const navMobileMenuToggleBtn = document.createElement("button");
   navMobileMenuToggleBtn.classList.add("mobile-control");
   navMobileMenuToggleBtn.classList.add("toggle-menu");
-  navMobileMenuToggleBtn.setAttribute("aria-expanded", "true");
+  navMobileMenuToggleBtn.setAttribute("aria-expanded", "false");
   navMobileMenuToggleBtn.setAttribute("aria-controls", "navigation");
   navMobileMenuToggleBtn.setAttribute("tabindex", "-1");
+  const navCloseBtnSpan1 = document.createElement("span");
+  const navCloseBtnSpan2 = document.createElement("span");
+  const navCloseBtnSpan3 = document.createElement("span");
+  const navCloseBtnSpan4 = document.createElement("span");
+  const navCloseBtnSpan5 = document.createElement("span");
+  navCloseBtnSpan5.classList.add("sr-only");
+  navCloseBtnSpan5.innerText = "Menu";
+  navMobileMenuToggleBtn.append(navCloseBtnSpan1, navCloseBtnSpan2, navCloseBtnSpan3, navCloseBtnSpan4, navCloseBtnSpan5);
   mobileItemsCont.append(navMobileMenuToggleBtn);
 
   /** @type {HTMLDivElement} */
@@ -132,7 +141,7 @@ window.addEventListener("load", () => {
 
   const setOpen = () => {
     navToggleBtn.setAttribute("aria-expanded", "true");
-    navMobileMenuToggleBtn.setAttribute("aria-expanded", "false");
+    navMobileMenuToggleBtn.setAttribute("aria-expanded", "true");
 
     if (utilityLinks && headerutilityLinksCont)
       document.body.classList.add("overflow-hidden");
@@ -154,7 +163,7 @@ window.addEventListener("load", () => {
 
   const setClosed = () => {
     navToggleBtn.setAttribute("aria-expanded", "false");
-    navMobileMenuToggleBtn.setAttribute("aria-expanded", "true");
+    navMobileMenuToggleBtn.setAttribute("aria-expanded", "false");
     if (mainNav && utilityLinks)
       document.body.classList.remove("overflow-hidden");
 
