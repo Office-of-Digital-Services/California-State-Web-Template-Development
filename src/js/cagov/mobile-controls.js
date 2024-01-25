@@ -1,9 +1,21 @@
 //@ts-check
 
 window.addEventListener("load", () => {
+  /** @type {HTMLButtonElement} */
+  const navToggleBtn = document.querySelector(".toggle-menu");
+  if (!navToggleBtn) return;
+
   // create container for drawer mobile nav items
   const mobileItemsCont = document.createElement("div");
   mobileItemsCont.setAttribute("class", "nav-drawer");
+
+  const navMobileMenuToggleBtn = document.createElement("button");
+  navMobileMenuToggleBtn.classList.add("mobile-control");
+  navMobileMenuToggleBtn.classList.add("toggle-menu");
+  navMobileMenuToggleBtn.setAttribute("aria-expanded", "true");
+  navMobileMenuToggleBtn.setAttribute("aria-controls", "navigation");
+  navMobileMenuToggleBtn.setAttribute("tabindex", "-1");
+  mobileItemsCont.append(navMobileMenuToggleBtn);
 
   /** @type {HTMLDivElement} */
   const utilityLinks = document.querySelector(".settings-links");
@@ -13,9 +25,11 @@ window.addEventListener("load", () => {
   );
   /** @type {HTMLElement} */
   const mainNav = document.querySelector(".main-navigation");
-  /** @type {HTMLButtonElement} */
-  const navToggleBtn = document.querySelector(".toggle-menu");
-  if (!navToggleBtn) return;
+
+  // VARIABLES
+  /** @type {HTMLDivElement} */
+  const navSearchCont = document.querySelector(".navigation-search");
+  if (!navSearchCont) return;
 
   /**
    * True if child is descendant of the parent
@@ -30,18 +44,21 @@ window.addEventListener("load", () => {
         : checkParent(parent, child.parentElement)
       : false;
 
-  // VARIABLES
-  /** @type {HTMLDivElement} */
-  const navSearchCont = document.querySelector(".navigation-search");
-  navSearchCont.addEventListener("transitionend", () => {
+  navSearchCont.addEventListener("transitionend", e => {
+    if (e.target !== e.currentTarget) return;
+
     // Open
     if (navSearchCont.classList.contains("visible")) {
-      mobileItemsCont.append(navToggleBtn);
+      //console.log(e.target);
+
+      navMobileMenuToggleBtn.focus();
+
+      //mobileItemsCont.append(navToggleBtn);
     } else {
-      const navButtonCont = document.querySelector(
-        ".mobile-controls .main-nav-icons"
-      );
-      navButtonCont?.append(navToggleBtn);
+      //const navButtonCont = document.querySelector(
+      //  ".mobile-controls .main-nav-icons"
+      //);
+      //navButtonCont?.append(navToggleBtn);
     }
   });
 
@@ -53,7 +70,7 @@ window.addEventListener("load", () => {
       //);
       //navButtonCont?.append(navToggleBtn);
     } else {
-      mobileItemsCont.append(navToggleBtn);
+      //mobileItemsCont.append(navToggleBtn);
     }
   });
 
@@ -95,7 +112,7 @@ window.addEventListener("load", () => {
     if (navSearchCont.classList.contains("visible")) {
       if (e.key === "Escape") {
         e.stopPropagation();
-        openMenu();
+        closeMenu();
       }
     }
   };
@@ -123,9 +140,9 @@ window.addEventListener("load", () => {
   // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
   navSearchCont.addEventListener("focusout", e => {
     if (
-      checkIfMobileView() &&
-      e.relatedTarget &&
-      e.relatedTarget !== navToggleBtn
+      checkIfMobileView() //&&
+      // e.relatedTarget &&
+      //e.relatedTarget !== navToggleBtn
     ) {
       if (
         !checkParent(
@@ -133,7 +150,7 @@ window.addEventListener("load", () => {
           /** @type {HTMLElement} **/ (e.relatedTarget)
         )
       ) {
-        openMenu();
+        closeMenu();
       }
     }
   });
@@ -164,39 +181,41 @@ window.addEventListener("load", () => {
     }
   };
 
-  // Button click open and close menu function
+  // Button click open menu function
   const openMenu = () => {
-    if (!navSearchCont) return;
-    navSearchCont.classList.toggle("visible");
-    navSearchCont.classList.toggle("not-visible");
-    // Open
-    if (navSearchCont.classList.contains("visible")) {
-      //navToggleBtn.focus();
-      navToggleBtn.setAttribute("aria-expanded", "true");
-      document.body.classList.add("overflow-hidden");
-      navSearchCont.setAttribute("aria-hidden", "false");
-      // make links focusable
-      getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-      // Hide all the website areas (add aria-hidden)
-      setHidden(true);
+    navSearchCont.classList.add("visible");
+    navSearchCont.classList.remove("not-visible");
 
-      // Close
-    } else {
-      navToggleBtn.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("overflow-hidden");
-      navSearchCont.setAttribute("aria-hidden", "true");
-      // Deactivate escape key
-      // removing focus
-      getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      // remove aria hidden for the rest of the site
-      setHidden(false);
-      moveNavToggleButtonToMobileControlsContainer();
-      NavReset();
-      // Put focus back on nav button that is moved back to mobile control section
-      // setTimeout(() => {
-      //   navButton.focus();
-      // }, 300);
-    }
+    console.log("visible");
+    //navToggleBtn.focus();
+    navToggleBtn.setAttribute("aria-expanded", "true");
+    navMobileMenuToggleBtn.setAttribute("aria-expanded", "false");
+
+    document.body.classList.add("overflow-hidden");
+    navSearchCont.setAttribute("aria-hidden", "false");
+    // make links focusable
+    getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
+    // Hide all the website areas (add aria-hidden)
+    setHidden(true);
+  };
+
+  // Button click close menu function
+  const closeMenu = () => {
+    navSearchCont.classList.remove("visible");
+    navSearchCont.classList.add("not-visible");
+
+    console.log("not visible");
+    navToggleBtn.setAttribute("aria-expanded", "false");
+    navMobileMenuToggleBtn.setAttribute("aria-expanded", "true");
+    document.body.classList.remove("overflow-hidden");
+    navSearchCont.setAttribute("aria-hidden", "true");
+    // Deactivate escape key
+    // removing focus
+    getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
+    // remove aria hidden for the rest of the site
+    setHidden(false);
+    moveNavToggleButtonToMobileControlsContainer();
+    NavReset();
   };
 
   // Default state for mobile
@@ -235,6 +254,8 @@ window.addEventListener("load", () => {
 
   // Button Click event
   navToggleBtn.addEventListener("click", openMenu);
+  // Button Click event
+  navMobileMenuToggleBtn.addEventListener("click", closeMenu);
 
   const mobileCheck = () => {
     const mobileCntls = document.querySelector(
