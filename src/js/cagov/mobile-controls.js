@@ -85,7 +85,7 @@ window.addEventListener("load", () => {
     );
 
   // Escape key event fuction
-  const addESC = function (e) {
+  const addESC = function (/** @type {KeyboardEvent} **/ e) {
     if (navSearchCont.classList.contains("visible")) {
       if (e.key === "Escape") {
         e.stopPropagation();
