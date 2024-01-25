@@ -1,6 +1,22 @@
 //@ts-check
 
 window.addEventListener("load", () => {
+  // create container for drawer mobile nav items
+  const mobileItemsCont = document.createElement("div");
+  mobileItemsCont.setAttribute("class", "nav-drawer");
+
+  /** @type {HTMLDivElement} */
+  const utilityLinks = document.querySelector(".settings-links");
+  /** @type {HTMLDivElement} */
+  const headerutilityLinksCont = document.querySelector(
+    ".utility-header .container .flex-row"
+  );
+  /** @type {HTMLElement} */
+  const mainNav = document.querySelector(".main-navigation");
+  /** @type {HTMLButtonElement} */
+  const navToggleBtn = document.querySelector(".toggle-menu");
+  if (!navToggleBtn) return;
+
   /**
    * True if child is descendant of the parent
    * @param {HTMLElement} parent
@@ -17,22 +33,29 @@ window.addEventListener("load", () => {
   // VARIABLES
   /** @type {HTMLDivElement} */
   const navSearchCont = document.querySelector(".navigation-search");
-  /** @type {HTMLDivElement} */
-  const utilityLinks = document.querySelector(".settings-links");
-  /** @type {HTMLDivElement} */
-  const headerutilityLinksCont = document.querySelector(".utility-header .container .flex-row");
-  /** @type {HTMLElement} */
-  const mainNav = document.querySelector(".main-navigation");
-  /** @type {HTMLButtonElement} */
-  const navToggleBtn = document.querySelector(".toggle-menu");
-  const checkIfMobileView = () => {
-  const mobileElement = document.querySelector(
-      ".global-header .mobile-controls"
-    );
-    return mobileElement
-      ? getComputedStyle(mobileElement)["display"] !== "none"
-      : false;
-  };
+  navSearchCont.addEventListener("transitionend", () => {
+    // Open
+    if (navSearchCont.classList.contains("visible")) {
+      mobileItemsCont.append(navToggleBtn);
+    } else {
+      const navButtonCont = document.querySelector(
+        ".mobile-controls .main-nav-icons"
+      );
+      navButtonCont?.append(navToggleBtn);
+    }
+  });
+
+  navSearchCont.addEventListener("transitionstart", () => {
+    // Open
+    if (!navSearchCont.classList.contains("visible")) {
+      //const navButtonCont = document.querySelector(
+      //  ".mobile-controls .main-nav-icons"
+      //);
+      //navButtonCont?.append(navToggleBtn);
+    } else {
+      mobileItemsCont.append(navToggleBtn);
+    }
+  });
 
   // reset navigation function
   const NavReset = () => {
@@ -61,9 +84,6 @@ window.addEventListener("load", () => {
       document.querySelector("#navigation")?.removeAttribute("aria-hidden");
     }
   };
-  
-
-  if (!navToggleBtn) return;
 
   const getAllNavLinks = () =>
     document.querySelectorAll(
@@ -71,52 +91,53 @@ window.addEventListener("load", () => {
     );
 
   // Escape key event fuction
-  const addESC = function(e) {
+  const addESC = function (e) {
     if (navSearchCont.classList.contains("visible")) {
       if (e.key === "Escape") {
-        e.stopPropagation(); 
+        e.stopPropagation();
         openMenu();
-      } 
+      }
     }
   };
 
   // Escape key event listener
   document.addEventListener("keydown", addESC);
 
-  // create container for drawer mobile nav items
-  const mobileItemsCont = document.createElement("div");
-  mobileItemsCont.setAttribute("class", "nav-drawer");
-
   // move mobile navigation toggle button back into mobile controls container
   const moveNavToggleButtonToMobileControlsContainer = () => {
-    const navButtonCont = document.querySelector(
-      ".mobile-controls .main-nav-icons"
-    );
-    setTimeout(() => {
-      navToggleBtn.setAttribute("aria-expanded", "false");
-      navToggleBtn.removeAttribute("tabindex");
-      navButtonCont?.append(navToggleBtn);
-      navToggleBtn.focus();
-    }, 300);
+    navToggleBtn.setAttribute("aria-expanded", "false");
+    //navToggleBtn.removeAttribute("tabindex");
+
+    navToggleBtn.focus();
   };
 
+  const checkIfMobileView = () => {
+    const mobileElement = document.querySelector(
+      ".global-header .mobile-controls"
+    );
+    return mobileElement
+      ? getComputedStyle(mobileElement)["display"] !== "none"
+      : false;
+  };
 
   // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
   navSearchCont.addEventListener("focusout", e => {
-    if (checkIfMobileView() && e.relatedTarget !== navToggleBtn) {
+    if (
+      checkIfMobileView() &&
+      e.relatedTarget &&
+      e.relatedTarget !== navToggleBtn
+    ) {
       if (
         !checkParent(
           /** @type {HTMLElement} **/ (e.currentTarget),
           /** @type {HTMLElement} **/ (e.relatedTarget)
         )
       ) {
-
         openMenu();
       }
     }
   });
 
-  
   const setHidden = (/** @type {boolean} */ hide) => {
     const mainCont = document.querySelector(".main-content");
     const footerGlobal = document.querySelector("footer");
@@ -145,13 +166,12 @@ window.addEventListener("load", () => {
 
   // Button click open and close menu function
   const openMenu = () => {
-    mobileItemsCont.append(navToggleBtn);
     if (!navSearchCont) return;
     navSearchCont.classList.toggle("visible");
     navSearchCont.classList.toggle("not-visible");
     // Open
     if (navSearchCont.classList.contains("visible")) {
-      navToggleBtn.focus();
+      //navToggleBtn.focus();
       navToggleBtn.setAttribute("aria-expanded", "true");
       document.body.classList.add("overflow-hidden");
       navSearchCont.setAttribute("aria-hidden", "false");
@@ -232,7 +252,6 @@ window.addEventListener("load", () => {
       desktopNavDefault();
     }
   };
-
 
   // on resize function (hide mobile nav)
   window.addEventListener("resize", mobileCheck);
