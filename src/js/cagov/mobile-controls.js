@@ -1,6 +1,52 @@
 //@ts-check
 
 window.addEventListener("load", () => {
+  /** @type {HTMLButtonElement} */
+  const navToggleBtn = document.querySelector(".toggle-menu");
+  if (!navToggleBtn) return;
+
+  // create container for drawer mobile nav items
+  const mobileItemsCont = document.createElement("div");
+  mobileItemsCont.setAttribute("class", "nav-drawer");
+
+  // Create close mobile meu button
+  const navMobileMenuToggleBtn = document.createElement("button");
+  navMobileMenuToggleBtn.classList.add("mobile-control");
+  navMobileMenuToggleBtn.classList.add("toggle-menu");
+  navMobileMenuToggleBtn.setAttribute("aria-expanded", "false");
+  navMobileMenuToggleBtn.setAttribute("aria-controls", "navigation");
+  navMobileMenuToggleBtn.setAttribute("tabindex", "-1");
+
+  const navCloseBtnSpans = [0, 1, 2, 3, 4].map(() =>
+    document.createElement("span")
+  );
+
+  navCloseBtnSpans[4].classList.add("sr-only");
+  navCloseBtnSpans[4].innerText = "Menu";
+  navMobileMenuToggleBtn.append(...navCloseBtnSpans);
+  mobileItemsCont.append(navMobileMenuToggleBtn);
+
+  /** @type {HTMLDivElement} */
+  const utilityLinks = document.querySelector(".settings-links");
+  /** @type {HTMLDivElement} */
+  const headerutilityLinksCont = document.querySelector(
+    ".utility-header .container .flex-row"
+  );
+  /** @type {HTMLElement} */
+  const mainNav = document.querySelector(".main-navigation");
+
+  // VARIABLES
+  /** @type {HTMLDivElement} */
+  const navSearchCont = document.querySelector(".navigation-search");
+  if (!navSearchCont) return;
+
+  //Used for hiding/showing main elements
+  const mainElements = document.querySelectorAll(
+    ".main-content, footer, .site-footer, .utility-header, .branding, header"
+  );
+
+  const regularHeader = document.querySelector("header");
+
   /**
    * True if child is descendant of the parent
    * @param {HTMLElement} parent
@@ -13,26 +59,6 @@ window.addEventListener("load", () => {
         ? true
         : checkParent(parent, child.parentElement)
       : false;
-
-  // VARIABLES
-  /** @type {HTMLDivElement} */
-  const navSearchCont = document.querySelector(".navigation-search");
-  /** @type {HTMLDivElement} */
-  const utilityLinks = document.querySelector(".settings-links");
-  /** @type {HTMLDivElement} */
-  const headerutilityLinksCont = document.querySelector(".utility-header .container .flex-row");
-  /** @type {HTMLElement} */
-  const mainNav = document.querySelector(".main-navigation");
-  /** @type {HTMLButtonElement} */
-  const navToggleBtn = document.querySelector(".toggle-menu");
-  const checkIfMobileView = () => {
-  const mobileElement = document.querySelector(
-      ".global-header .mobile-controls"
-    );
-    return mobileElement
-      ? getComputedStyle(mobileElement)["display"] !== "none"
-      : false;
-  };
 
   // reset navigation function
   const NavReset = () => {
@@ -61,160 +87,101 @@ window.addEventListener("load", () => {
       document.querySelector("#navigation")?.removeAttribute("aria-hidden");
     }
   };
-  
-
-  if (!navToggleBtn) return;
 
   const getAllNavLinks = () =>
-    document.querySelectorAll(
-      '.navigation-search a.first-level-link, .navigation-search button.first-level-btn, .navigation-search input, .navigation-search button, .navigation-search [tabindex]:not([tabindex="-1"])'
+    navSearchCont.querySelectorAll(
+      'a.first-level-link, button.first-level-btn, input, button, [tabindex]:not([tabindex="-1"])'
     );
-
-  // Escape key event fuction
-  const addESC = function(e) {
-    if (navSearchCont.classList.contains("visible")) {
-      if (e.key === "Escape") {
-        e.stopPropagation(); 
-        openMenu();
-      } 
-    }
-  };
 
   // Escape key event listener
-  document.addEventListener("keydown", addESC);
+  document.addEventListener("keydown", e => {
+    if (navSearchCont.classList.contains("visible")) {
+      if (e.key === "Escape") {
+        e.stopPropagation();
+        closeMenu();
+      }
+    }
+  });
 
-  // create container for drawer mobile nav items
-  const mobileItemsCont = document.createElement("div");
-  mobileItemsCont.setAttribute("class", "nav-drawer");
-
-  // move mobile navigation toggle button back into mobile controls container
-  const moveNavToggleButtonToMobileControlsContainer = () => {
-    const navButtonCont = document.querySelector(
-      ".mobile-controls .main-nav-icons"
+  const checkIfMobileView = () => {
+    const mobileElement = document.querySelector(
+      ".global-header .mobile-controls"
     );
-    setTimeout(() => {
-      navToggleBtn.setAttribute("aria-expanded", "false");
-      navToggleBtn.removeAttribute("tabindex");
-      navButtonCont?.append(navToggleBtn);
-      navToggleBtn.focus();
-    }, 300);
+    return mobileElement
+      ? getComputedStyle(mobileElement)["display"] !== "none"
+      : false;
   };
-
 
   // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
   navSearchCont.addEventListener("focusout", e => {
-    if (checkIfMobileView() && e.relatedTarget !== navToggleBtn) {
+    if (checkIfMobileView()) {
       if (
         !checkParent(
           /** @type {HTMLElement} **/ (e.currentTarget),
           /** @type {HTMLElement} **/ (e.relatedTarget)
         )
       ) {
-
-        openMenu();
+        closeMenu();
       }
     }
   });
 
-  
-  const setHidden = (/** @type {boolean} */ hide) => {
-    const mainCont = document.querySelector(".main-content");
-    const footerGlobal = document.querySelector("footer");
-    const footerSite = document.querySelector(".site-footer");
-    const headerutility = document.querySelector(".utility-header");
-    const siteBranding = document.querySelector(".branding");
-    const regularHeader = document.querySelector("header");
-
-    if (hide) {
-      mainCont?.setAttribute("aria-hidden", "true");
-      footerGlobal?.setAttribute("aria-hidden", "true");
-      footerSite?.setAttribute("aria-hidden", "true");
-      headerutility?.setAttribute("aria-hidden", "true");
-      siteBranding?.setAttribute("aria-hidden", "true");
-      regularHeader?.classList.add("nav-overlay");
-    } else {
-      //show
-      mainCont?.removeAttribute("aria-hidden");
-      footerGlobal?.removeAttribute("aria-hidden");
-      footerSite?.removeAttribute("aria-hidden");
-      headerutility?.removeAttribute("aria-hidden");
-      siteBranding?.removeAttribute("aria-hidden");
-      regularHeader?.classList.remove("nav-overlay");
-    }
-  };
-
-  // Button click open and close menu function
+  // Button click open menu function
   const openMenu = () => {
-    mobileItemsCont.append(navToggleBtn);
-    if (!navSearchCont) return;
-    navSearchCont.classList.toggle("visible");
-    navSearchCont.classList.toggle("not-visible");
-    // Open
-    if (navSearchCont.classList.contains("visible")) {
-      navToggleBtn.focus();
-      navToggleBtn.setAttribute("aria-expanded", "true");
-      document.body.classList.add("overflow-hidden");
-      navSearchCont.setAttribute("aria-hidden", "false");
-      // make links focusable
-      getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-      // Hide all the website areas (add aria-hidden)
-      setHidden(true);
+    navSearchCont.classList.add("visible");
+    navSearchCont.classList.remove("not-visible");
 
-      // Close
-    } else {
-      navToggleBtn.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("overflow-hidden");
-      navSearchCont.setAttribute("aria-hidden", "true");
-      // Deactivate escape key
-      // removing focus
-      getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
-      // remove aria hidden for the rest of the site
-      setHidden(false);
-      moveNavToggleButtonToMobileControlsContainer();
-      NavReset();
-      // Put focus back on nav button that is moved back to mobile control section
-      // setTimeout(() => {
-      //   navButton.focus();
-      // }, 300);
-    }
+    setOpen();
+    // Hide all the website areas (add aria-hidden)
+    mainElements.forEach(x => x.setAttribute("aria-hidden", "true"));
+
+    regularHeader?.classList.add("nav-overlay");
+    navMobileMenuToggleBtn.focus();
   };
 
-  // Default state for mobile
-  const mobileNavDefault = () => {
-    moveNavToggleButtonToMobileControlsContainer();
-    if (mainNav && utilityLinks)
-      // mainNav.before(utilityLinks);
-      document.body.classList.remove("overflow-hidden");
-    if (!navSearchCont) return;
-    navSearchCont.classList.add("not-visible");
+  const setOpen = () => {
+    navToggleBtn.setAttribute("aria-expanded", "true");
+    navMobileMenuToggleBtn.setAttribute("aria-expanded", "true");
+
+    if (utilityLinks && headerutilityLinksCont)
+      document.body.classList.add("overflow-hidden");
+
+    navSearchCont.setAttribute("aria-hidden", "false");
+    // make links focusable
+    getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
+  };
+
+  // Button click close menu function
+  const closeMenu = () => {
     navSearchCont.classList.remove("visible");
+    navSearchCont.classList.add("not-visible");
+
+    setClosed();
+
+    navToggleBtn.focus();
+  };
+
+  const setClosed = () => {
+    navToggleBtn.setAttribute("aria-expanded", "false");
+    navMobileMenuToggleBtn.setAttribute("aria-expanded", "false");
+    if (mainNav && utilityLinks)
+      document.body.classList.remove("overflow-hidden");
+
     navSearchCont.setAttribute("aria-hidden", "true");
+
     // removing focus
     getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
     // remove aria hidden for the rest of the site
-    setHidden(false);
-    // Deactivate escape key
-    NavReset();
-  };
+    mainElements.forEach(x => x.removeAttribute("aria-hidden"));
+    regularHeader?.classList.remove("nav-overlay");
 
-  // Default state for desktop
-  const desktopNavDefault = () => {
-    moveNavToggleButtonToMobileControlsContainer();
-    if (utilityLinks && headerutilityLinksCont)
-      // headerutilityLinksCont.append(utilityLinks);
-      document.body.classList.remove("overflow-hidden");
-    if (!navSearchCont) return;
-    navSearchCont.classList.remove("visible");
-    navSearchCont.classList.remove("not-visible");
-    navSearchCont.setAttribute("aria-hidden", "false");
-    getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-    // remove aria hidden for the rest of the site
-    setHidden(false);
     NavReset();
   };
 
   // Button Click event
   navToggleBtn.addEventListener("click", openMenu);
+  // Button Click event
+  navMobileMenuToggleBtn.addEventListener("click", closeMenu);
 
   const mobileCheck = () => {
     const mobileCntls = document.querySelector(
@@ -226,13 +193,14 @@ window.addEventListener("load", () => {
       : "";
 
     if (mobileControlsDisplay == "block") {
-      mobileNavDefault();
-      // if desktop
+      // mobile
+      setClosed();
     } else {
-      desktopNavDefault();
+      // desktop
+      setOpen();
+      NavReset();
     }
   };
-
 
   // on resize function (hide mobile nav)
   window.addEventListener("resize", mobileCheck);
