@@ -84,18 +84,15 @@ window.addEventListener("load", () => {
       'a.first-level-link, button.first-level-btn, input, button, [tabindex]:not([tabindex="-1"])'
     );
 
-  // Escape key event fuction
-  const addESC = function (/** @type {KeyboardEvent} **/ e) {
+  // Escape key event listener
+  document.addEventListener("keydown", e => {
     if (navSearchCont.classList.contains("visible")) {
       if (e.key === "Escape") {
         e.stopPropagation();
         closeMenu();
       }
     }
-  };
-
-  // Escape key event listener
-  document.addEventListener("keydown", addESC);
+  });
 
   const checkIfMobileView = () => {
     const mobileElement = document.querySelector(
