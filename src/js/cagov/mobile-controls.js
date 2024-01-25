@@ -90,14 +90,6 @@ window.addEventListener("load", () => {
   // Escape key event listener
   document.addEventListener("keydown", addESC);
 
-  // move mobile navigation toggle button back into mobile controls container
-  const moveNavToggleButtonToMobileControlsContainer = () => {
-    navToggleBtn.setAttribute("aria-expanded", "false");
-    //navToggleBtn.removeAttribute("tabindex");
-
-    navToggleBtn.focus();
-  };
-
   const checkIfMobileView = () => {
     const mobileElement = document.querySelector(
       ".global-header .mobile-controls"
@@ -183,13 +175,14 @@ window.addEventListener("load", () => {
     getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
     // remove aria hidden for the rest of the site
     setHidden(false);
-    moveNavToggleButtonToMobileControlsContainer();
+
     NavReset();
+
+    navToggleBtn.focus();
   };
 
   // Default state for mobile
   const mobileNavDefault = () => {
-    moveNavToggleButtonToMobileControlsContainer();
     if (mainNav && utilityLinks)
       // mainNav.before(utilityLinks);
       document.body.classList.remove("overflow-hidden");
@@ -207,7 +200,6 @@ window.addEventListener("load", () => {
 
   // Default state for desktop
   const desktopNavDefault = () => {
-    moveNavToggleButtonToMobileControlsContainer();
     if (utilityLinks && headerutilityLinksCont)
       // headerutilityLinksCont.append(utilityLinks);
       document.body.classList.remove("overflow-hidden");
