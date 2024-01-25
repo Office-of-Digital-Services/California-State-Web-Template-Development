@@ -105,11 +105,7 @@ window.addEventListener("load", () => {
 
   // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
   navSearchCont.addEventListener("focusout", e => {
-    if (
-      checkIfMobileView() //&&
-      // e.relatedTarget &&
-      //e.relatedTarget !== navToggleBtn
-    ) {
+    if (checkIfMobileView()) {
       if (
         !checkParent(
           /** @type {HTMLElement} **/ (e.currentTarget),
@@ -163,7 +159,7 @@ window.addEventListener("load", () => {
       document.body.classList.remove("overflow-hidden");
 
     navSearchCont.setAttribute("aria-hidden", "true");
-    // Deactivate escape key
+
     // removing focus
     getAllNavLinks().forEach(el => el.setAttribute("tabindex", "-1"));
     // remove aria hidden for the rest of the site
