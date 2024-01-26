@@ -65,7 +65,7 @@ window.addEventListener("load", () => {
     //RESET
     document
       .querySelectorAll(".first-level-btn")
-      .forEach(el => (el.ariaExpanded = null));
+      .forEach(el => (el.ariaExpanded = "false")); //Must be false and not blank for CSS
 
     document.querySelectorAll(".sub-nav").forEach(el => {
       el.ariaHidden = "true";

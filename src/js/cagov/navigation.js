@@ -10,6 +10,8 @@
  * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
  */
 (() => {
+  const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
+
   /**
    * @param {Object} obj
    * @param {String} key
@@ -469,31 +471,28 @@
     return plugin;
   };
 
+  // reset navigation function
   const NavReset = () => {
     //RESET
     document
       .querySelectorAll(".first-level-btn")
-      .forEach(el => el.setAttribute("aria-expanded", "false"));
+      .forEach(el => (el.ariaExpanded = "false")); //Must be false and not blank for CSS
+
     document.querySelectorAll(".sub-nav").forEach(el => {
-      el.setAttribute("aria-hidden", "true");
+      el.ariaHidden = "true";
       el.classList.remove("open");
     });
+
     document
       .querySelectorAll(".second-level-link")
-      .forEach(el => el.setAttribute("tabindex", "-1"));
+      .forEach((/**@type {HTMLElement} */ el) => (el.tabIndex = -1));
 
-    if (window.innerWidth <= 991) {
-      document
-        .querySelectorAll(".rotate")
-        .forEach(
-          (/**@type {HTMLElement} */ el) => (el.style.display = "block")
-        );
-    } else {
-      document
-        .querySelectorAll(".rotate")
-        .forEach((/**@type {HTMLElement} */ el) => (el.style.display = "none"));
-      document.querySelector("#navigation")?.removeAttribute("aria-hidden");
-    }
+    document
+      .querySelectorAll(".rotate")
+      .forEach(
+        (/**@type {HTMLElement} */ el) =>
+          (el.style.display = isDesktopWidth() ? "none" : "block")
+      );
   };
 
   // Remove href if <a> has a link
@@ -609,14 +608,7 @@
       .querySelector(".toggle-menu")
       ?.setAttribute("aria-expanded", "false");
 
-    //Collapse the nav when narrow
-    //const nav = document.querySelector("#navigation");
-    //if (nav) {
-    //nav.classList.remove("show"); //This was causing the desktop menu to stay hidden when resizing from mobile.
-    //nav.setAttribute("aria-hidden", "true");
-    //}
-
-    NavReset();
+    //NavReset(); //Don't need it here because it is on mobile-controls.js
   });
 
   // Reset on escape
