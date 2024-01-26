@@ -146,7 +146,7 @@ window.addEventListener("load", () => {
     navSearchCont.setAttribute("aria-hidden", "false");
     // make links focusable
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
-    // dectop
+    // desktop
     if (mobileControlsDisplay !== "block") {
       navToggleBtn.setAttribute("aria-expanded", "false");
     }
