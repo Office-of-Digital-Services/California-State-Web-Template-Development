@@ -86,6 +86,7 @@ window.addEventListener("load", () => {
         .querySelectorAll(".rotate")
         .forEach((/**@type {HTMLElement} */ el) => (el.style.display = "none"));
       document.querySelector("#navigation")?.removeAttribute("aria-hidden");
+      navSearchCont.setAttribute("aria-hidden", "false");
     }
   };
 
