@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
   // Create close mobile meu button
   const navMobileMenuToggleBtn = document.createElement("button");
   navMobileMenuToggleBtn.classList.add("mobile-control", "toggle-menu");
-  navMobileMenuToggleBtn.ariaExpanded = null;
+  navMobileMenuToggleBtn.ariaExpanded = "false";
   navMobileMenuToggleBtn.setAttribute("aria-controls", "navigation");
   navMobileMenuToggleBtn.tabIndex = -1;
 
@@ -149,8 +149,11 @@ window.addEventListener("load", () => {
     // make links focusable
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     // desktop
-    if (mobileControlsDisplay !== "block") {
-      navToggleBtn.ariaExpanded = null;
+    if (
+      mobileControlsDisplay !== "block" &&
+      navToggleBtn.ariaExpanded !== "false"
+    ) {
+      navToggleBtn.ariaExpanded = "false";
     }
   };
 
@@ -165,8 +168,12 @@ window.addEventListener("load", () => {
   };
 
   const setClosed = () => {
-    navToggleBtn.ariaExpanded = null;
-    navMobileMenuToggleBtn.ariaExpanded = null;
+    if (navToggleBtn.ariaExpanded !== "false") {
+      navToggleBtn.ariaExpanded = "false";
+    }
+    if (navMobileMenuToggleBtn.ariaExpanded !== "false") {
+      navMobileMenuToggleBtn.ariaExpanded = "false";
+    }
     if (mainNav) document.body.classList.remove("overflow-hidden");
 
     // removing focus

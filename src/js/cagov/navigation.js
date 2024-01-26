@@ -348,8 +348,8 @@
             // making sure all second level links are not tabable
             accordionPanel
               .querySelectorAll(".second-level-link")
-              .forEach(item => {
-                item.setAttribute("tabindex", "-1");
+              .forEach((/** @type {HTMLElement} **/ item) => {
+                item.tabIndex = -1;
               });
           }
         });
@@ -430,7 +430,10 @@
                     // adding tabindex to links to make sure they are not tabable if sub nav panel is closed
                     destination
                       .querySelectorAll(".second-level-link")
-                      .forEach(item => item.setAttribute("tabindex", "-1"));
+                      .forEach(
+                        (/** @type {HTMLElement} **/ item) =>
+                          (item.tabIndex = -1)
+                      );
                   }
 
                   if (!mobileView()) {
@@ -449,7 +452,10 @@
                         //Added fix to make closed panels non-tabbable
                         destinationPanel
                           .querySelectorAll(".second-level-link")
-                          .forEach(item => item.setAttribute("tabindex", "-1"));
+                          .forEach(
+                            (/** @type {HTMLElement} **/ item) =>
+                              (item.tabIndex = -1)
+                          );
                       }
                     });
                   }
@@ -587,11 +593,11 @@
 
         const carrot = document.createElement("span");
         carrot.classList.add("ca-gov-icon-caret-down", "carrot");
-        carrot.setAttribute("aria-hidden", "true");
+        carrot.ariaHidden = "true";
 
         const toggleSubNav = document.createElement("div");
         toggleSubNav.classList.add("ca-gov-icon-caret-right", "rotate");
-        toggleSubNav.setAttribute("aria-hidden", "true");
+        toggleSubNav.ariaHidden = "true";
         toggleSubNav.style.display = mobileView() ? "block" : "none";
 
         el.appendChild(toggleSubNav);
@@ -600,15 +606,6 @@
     }
 
     addActive();
-  });
-
-  // Do Navigation Reset function on window resize.
-  window.addEventListener("resize", () => {
-    document
-      .querySelector(".toggle-menu")
-      ?.setAttribute("aria-expanded", "false");
-
-    //NavReset(); //Don't need it here because it is on mobile-controls.js
   });
 
   // Reset on escape
