@@ -10,6 +10,8 @@
  * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
  */
 (() => {
+  const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
+
   /**
    * @param {Object} obj
    * @param {String} key
@@ -346,8 +348,8 @@
             // making sure all second level links are not tabable
             accordionPanel
               .querySelectorAll(".second-level-link")
-              .forEach(item => {
-                item.setAttribute("tabindex", "-1");
+              .forEach((/** @type {HTMLElement} **/ item) => {
+                item.tabIndex = -1;
               });
           }
         });
@@ -428,7 +430,10 @@
                     // adding tabindex to links to make sure they are not tabable if sub nav panel is closed
                     destination
                       .querySelectorAll(".second-level-link")
-                      .forEach(item => item.setAttribute("tabindex", "-1"));
+                      .forEach(
+                        (/** @type {HTMLElement} **/ item) =>
+                          (item.tabIndex = -1)
+                      );
                   }
 
                   if (!mobileView()) {
@@ -447,7 +452,10 @@
                         //Added fix to make closed panels non-tabbable
                         destinationPanel
                           .querySelectorAll(".second-level-link")
-                          .forEach(item => item.setAttribute("tabindex", "-1"));
+                          .forEach(
+                            (/** @type {HTMLElement} **/ item) =>
+                              (item.tabIndex = -1)
+                          );
                       }
                     });
                   }
@@ -469,31 +477,28 @@
     return plugin;
   };
 
+  // reset navigation function
   const NavReset = () => {
     //RESET
     document
       .querySelectorAll(".first-level-btn")
-      .forEach(el => el.setAttribute("aria-expanded", "false"));
+      .forEach(el => (el.ariaExpanded = "false")); //Must be false and not blank for CSS
+
     document.querySelectorAll(".sub-nav").forEach(el => {
-      el.setAttribute("aria-hidden", "true");
+      el.ariaHidden = "true";
       el.classList.remove("open");
     });
+
     document
       .querySelectorAll(".second-level-link")
-      .forEach(el => el.setAttribute("tabindex", "-1"));
+      .forEach((/**@type {HTMLElement} */ el) => (el.tabIndex = -1));
 
-    if (window.innerWidth <= 991) {
-      document
-        .querySelectorAll(".rotate")
-        .forEach(
-          (/**@type {HTMLElement} */ el) => (el.style.display = "block")
-        );
-    } else {
-      document
-        .querySelectorAll(".rotate")
-        .forEach((/**@type {HTMLElement} */ el) => (el.style.display = "none"));
-      document.querySelector("#navigation")?.removeAttribute("aria-hidden");
-    }
+    document
+      .querySelectorAll(".rotate")
+      .forEach(
+        (/**@type {HTMLElement} */ el) =>
+          (el.style.display = isDesktopWidth() ? "none" : "block")
+      );
   };
 
   // Remove href if <a> has a link
@@ -588,11 +593,11 @@
 
         const carrot = document.createElement("span");
         carrot.classList.add("ca-gov-icon-caret-down", "carrot");
-        carrot.setAttribute("aria-hidden", "true");
+        carrot.ariaHidden = "true";
 
         const toggleSubNav = document.createElement("div");
         toggleSubNav.classList.add("ca-gov-icon-caret-right", "rotate");
-        toggleSubNav.setAttribute("aria-hidden", "true");
+        toggleSubNav.ariaHidden = "true";
         toggleSubNav.style.display = mobileView() ? "block" : "none";
 
         el.appendChild(toggleSubNav);
@@ -601,22 +606,6 @@
     }
 
     addActive();
-  });
-
-  // Do Navigation Reset function on window resize.
-  window.addEventListener("resize", () => {
-    document
-      .querySelector(".toggle-menu")
-      ?.setAttribute("aria-expanded", "false");
-
-    //Collapse the nav when narrow
-    //const nav = document.querySelector("#navigation");
-    //if (nav) {
-    //nav.classList.remove("show"); //This was causing the desktop menu to stay hidden when resizing from mobile.
-    //nav.setAttribute("aria-hidden", "true");
-    //}
-
-    NavReset();
   });
 
   // Reset on escape

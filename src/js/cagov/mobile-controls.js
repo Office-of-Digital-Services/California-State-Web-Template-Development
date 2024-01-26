@@ -1,6 +1,8 @@
 //@ts-check
 
 window.addEventListener("load", () => {
+  const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
+
   /** @type {HTMLButtonElement} */
   const navToggleBtn = document.querySelector(".toggle-menu");
   if (!navToggleBtn) return;
@@ -63,7 +65,8 @@ window.addEventListener("load", () => {
     //RESET
     document
       .querySelectorAll(".first-level-btn")
-      .forEach(el => (el.ariaExpanded = "false"));
+      .forEach(el => (el.ariaExpanded = "false")); //Must be false and not blank for CSS
+
     document.querySelectorAll(".sub-nav").forEach(el => {
       el.ariaHidden = "true";
       el.classList.remove("open");
@@ -73,21 +76,17 @@ window.addEventListener("load", () => {
       .querySelectorAll(".second-level-link")
       .forEach((/**@type {HTMLElement} */ el) => (el.tabIndex = -1));
 
-    if (window.innerWidth <= 991) {
-      document
-        .querySelectorAll(".rotate")
-        .forEach(
-          (/**@type {HTMLElement} */ el) => (el.style.display = "block")
-        );
-    } else {
-      document
-        .querySelectorAll(".rotate")
-        .forEach((/**@type {HTMLElement} */ el) => (el.style.display = "none"));
+    document
+      .querySelectorAll(".rotate")
+      .forEach(
+        (/**@type {HTMLElement} */ el) =>
+          (el.style.display = isDesktopWidth() ? "none" : "block")
+      );
 
-      const navElement = document.querySelector("#navigation");
-      if (navElement) navElement.ariaHidden = null;
-      navSearchCont.ariaHidden = "false";
-    }
+    const targetAriaHidden = isDesktopWidth() ? null : "true";
+
+    if (navSearchCont.ariaHidden != targetAriaHidden)
+      navSearchCont.ariaHidden = targetAriaHidden;
   };
 
   const getAllNavLinks = () =>
@@ -146,11 +145,14 @@ window.addEventListener("load", () => {
 
   const setOpen = () => {
     navMobileMenuToggleBtn.ariaExpanded = "true";
-    navSearchCont.ariaHidden = "false";
+    navSearchCont.ariaHidden = null;
     // make links focusable
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     // desktop
-    if (mobileControlsDisplay !== "block") {
+    if (
+      mobileControlsDisplay !== "block" &&
+      navToggleBtn.ariaExpanded !== "false"
+    ) {
       navToggleBtn.ariaExpanded = "false";
     }
   };
@@ -166,10 +168,13 @@ window.addEventListener("load", () => {
   };
 
   const setClosed = () => {
-    navToggleBtn.ariaExpanded = "false";
-    navMobileMenuToggleBtn.ariaExpanded = "false";
+    if (navToggleBtn.ariaExpanded !== "false") {
+      navToggleBtn.ariaExpanded = "false";
+    }
+    if (navMobileMenuToggleBtn.ariaExpanded !== "false") {
+      navMobileMenuToggleBtn.ariaExpanded = "false";
+    }
     if (mainNav) document.body.classList.remove("overflow-hidden");
-    navSearchCont.ariaHidden = "true";
 
     // removing focus
     getAllNavLinks().forEach(el => (el.tabIndex = -1));
