@@ -133,7 +133,7 @@ $spacer-y: $spacer;
 
 // ## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Public Sans", sans-serif; // CAgov Font
+$font-family-sans-serif:  "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif; // CAgov Font
 $font-family-serif: "Merriweather", "Times New Roman", serif;
 
 // Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
@@ -184,7 +184,7 @@ $font-weight-8: 800;
 $font-weight-9: 900;
 
 // By default, this inherits from the `<body>`.
-$headings-font-family: "Public Sans", sans-serif;
+$headings-font-family: $font-family-sans-serif;
 $headings-font-weight: 400 !default;
 $headings-line-height: $line-height-base;
 $headings-color: inherit !default;
