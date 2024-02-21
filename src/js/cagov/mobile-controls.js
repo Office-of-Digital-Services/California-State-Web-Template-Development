@@ -193,10 +193,9 @@ window.addEventListener("load", () => {
   const mobileCheck = () => {
     if (mobileControlsDisplay == "block") {
       // mobile
-      setClosed();
+      closeMenu();
     } else {
       // desktop
-      setOpen();
       NavReset();
     }
   };
@@ -207,6 +206,5 @@ window.addEventListener("load", () => {
   // ONLOAD
   // move duplicated logo to navigation drawer section
   document.querySelector(".navigation-search")?.prepend(mobileItemsCont);
-
   mobileCheck();
 });
