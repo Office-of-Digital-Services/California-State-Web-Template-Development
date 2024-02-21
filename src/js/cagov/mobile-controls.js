@@ -196,6 +196,7 @@ window.addEventListener("load", () => {
       closeMenu();
     } else {
       // desktop
+      closeMenu();
       NavReset();
     }
   };
