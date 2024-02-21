@@ -191,12 +191,10 @@ window.addEventListener("load", () => {
   navMobileMenuToggleBtn.addEventListener("click", closeMenu);
 
   const mobileCheck = () => {
-    if (mobileControlsDisplay == "block") {
-      // mobile
-      closeMenu();
-    } else {
+    closeMenu();
+    if (mobileControlsDisplay !== "block") {
       // desktop
-      closeMenu();
+
       NavReset();
     }
   };
