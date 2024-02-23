@@ -76,6 +76,8 @@ window.addEventListener("load", () => {
       .querySelectorAll(".second-level-link")
       .forEach((/**@type {HTMLElement} */ el) => (el.tabIndex = -1));
 
+
+
     document
       .querySelectorAll(".rotate")
       .forEach(
@@ -95,6 +97,14 @@ window.addEventListener("load", () => {
         'a.first-level-link, button.first-level-btn, input, button, [tabindex]:not([tabindex="-1"])'
       )
     );
+
+    const getAllFirstLevelNavLinks = () =>
+    /** @type { NodeListOf<HTMLElement>} */ (
+      navSearchCont.querySelectorAll(
+        'a.first-level-link, button.first-level-btn'
+      )
+    );
+
 
   // Escape key event listener
   document.addEventListener("keydown", e => {
@@ -190,12 +200,16 @@ window.addEventListener("load", () => {
   // Button Click event
   navMobileMenuToggleBtn.addEventListener("click", closeMenu);
 
-  const mobileCheck = () => {
-    closeMenu();
-    if (mobileControlsDisplay !== "block") {
-      // desktop
-
-      NavReset();
+  const mobileCheck = () => {  
+    NavReset();
+    // desktop
+    if (isDesktopWidth()) {
+      getAllFirstLevelNavLinks().forEach(el => el.removeAttribute("tabindex"));
+    }
+    // mobile
+    else {
+      getAllFirstLevelNavLinks().forEach(el => (el.tabIndex = -1));
+      closeMenu();
     }
   };
 
