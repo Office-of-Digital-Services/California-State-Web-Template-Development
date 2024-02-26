@@ -213,7 +213,7 @@ window.addEventListener("load", () => {
       getAllFirstLevelNavLinks().forEach(el => (el.tabIndex = -1));
       closeMenu();
       // removing focus from hamburger 
-      navToggleBtn.blur();
+      navToggleBtn?.blur();
     }
   };
 
