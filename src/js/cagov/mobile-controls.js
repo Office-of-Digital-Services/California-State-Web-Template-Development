@@ -202,6 +202,8 @@ window.addEventListener("load", () => {
 
   const mobileCheck = () => {  
     NavReset();
+    // remove focus from the hamburger
+    
     // desktop
     if (isDesktopWidth()) {
       getAllFirstLevelNavLinks().forEach(el => el.removeAttribute("tabindex"));
@@ -210,6 +212,8 @@ window.addEventListener("load", () => {
     else {
       getAllFirstLevelNavLinks().forEach(el => (el.tabIndex = -1));
       closeMenu();
+      // removing focus from hamburger 
+      navToggleBtn.blur();
     }
   };
 
