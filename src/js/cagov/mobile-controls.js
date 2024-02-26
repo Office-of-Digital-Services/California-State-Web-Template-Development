@@ -76,8 +76,6 @@ window.addEventListener("load", () => {
       .querySelectorAll(".second-level-link")
       .forEach((/**@type {HTMLElement} */ el) => (el.tabIndex = -1));
 
-
-
     document
       .querySelectorAll(".rotate")
       .forEach(
@@ -98,13 +96,12 @@ window.addEventListener("load", () => {
       )
     );
 
-    const getAllFirstLevelNavLinks = () =>
+  const getAllFirstLevelNavLinks = () =>
     /** @type { NodeListOf<HTMLElement>} */ (
       navSearchCont.querySelectorAll(
-        'a.first-level-link, button.first-level-btn'
+        "a.first-level-link, button.first-level-btn"
       )
     );
-
 
   // Escape key event listener
   document.addEventListener("keydown", e => {
@@ -169,12 +166,14 @@ window.addEventListener("load", () => {
 
   // Button click close menu function
   const closeMenu = () => {
-    navSearchCont.classList.remove("visible");
+    if (navSearchCont.classList.contains("visible")) {
+      navSearchCont.classList.remove("visible");
+      navToggleBtn.focus();
+    }
+
     navSearchCont.classList.add("not-visible");
 
     setClosed();
-
-    navToggleBtn.focus();
   };
 
   const setClosed = () => {
@@ -200,10 +199,9 @@ window.addEventListener("load", () => {
   // Button Click event
   navMobileMenuToggleBtn.addEventListener("click", closeMenu);
 
-  const mobileCheck = () => {  
+  const mobileCheck = () => {
     NavReset();
-    // remove focus from the hamburger
-    
+
     // desktop
     if (isDesktopWidth()) {
       getAllFirstLevelNavLinks().forEach(el => el.removeAttribute("tabindex"));
@@ -212,8 +210,6 @@ window.addEventListener("load", () => {
     else {
       getAllFirstLevelNavLinks().forEach(el => (el.tabIndex = -1));
       closeMenu();
-      // removing focus from hamburger 
-      navToggleBtn?.blur();
     }
   };
 
