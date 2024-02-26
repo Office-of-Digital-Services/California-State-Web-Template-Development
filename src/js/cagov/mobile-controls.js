@@ -168,6 +168,8 @@ window.addEventListener("load", () => {
   const closeMenu = () => {
     if (navSearchCont.classList.contains("visible")) {
       navSearchCont.classList.remove("visible");
+
+      //Set focus only when close actually happens
       navToggleBtn.focus();
     }
 
