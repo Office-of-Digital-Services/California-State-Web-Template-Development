@@ -47,18 +47,6 @@ window.addEventListener("load", () => {
 
   const regularHeader = document.querySelector("header");
 
-  /**
-   * True if child is descendant of the parent
-   * (Must use Node instead of HTMLElement because of Safari)
-   * @param {Node} parent
-   * @param {Node} child
-   * @returns {boolean}
-   */
-  const checkParent = (parent, child) => {
-    return !!(
-      child.compareDocumentPosition(parent) & Node.DOCUMENT_POSITION_CONTAINS
-    );
-  };
   // reset navigation function
   const NavReset = () => {
     //RESET
@@ -124,11 +112,14 @@ window.addEventListener("load", () => {
   // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
   navSearchCont.addEventListener("focusout", e => {
     if (checkIfMobileView()) {
+      const child = /** @type {Node} **/ (e.relatedTarget);
+      const parent = /** @type {Node} **/ (e.currentTarget);
+
       if (
         e.relatedTarget &&
-        !checkParent(
-          /** @type {Node} **/ (e.currentTarget),
-          /** @type {Node} **/ (e.relatedTarget)
+        !(
+          child.compareDocumentPosition(parent) &
+          Node.DOCUMENT_POSITION_CONTAINS
         )
       ) {
         closeMenu();
