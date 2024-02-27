@@ -49,9 +49,9 @@ window.addEventListener("load", () => {
 
   /**
    * True if child is descendant of the parent
-   * (Must use ParentNode instead of HTMLElement because of Safari)
-   * @param {ParentNode} parent
-   * @param {ParentNode} child
+   * (Must use Node instead of HTMLElement because of Safari)
+   * @param {Node} parent
+   * @param {Node} child
    * @returns {boolean}
    */
   const checkParent = (parent, child) =>
@@ -128,8 +128,8 @@ window.addEventListener("load", () => {
     if (checkIfMobileView()) {
       if (
         !checkParent(
-          /** @type {HTMLElement} **/ (e.currentTarget),
-          /** @type {HTMLElement} **/ (e.relatedTarget)
+          /** @type {Node} **/ (e.currentTarget),
+          /** @type {Node} **/ (e.relatedTarget)
         )
       ) {
         closeMenu();
