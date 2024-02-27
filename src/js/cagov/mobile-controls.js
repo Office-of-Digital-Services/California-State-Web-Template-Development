@@ -115,13 +115,7 @@ window.addEventListener("load", () => {
       const child = /** @type {Node} **/ (e.relatedTarget);
       const parent = /** @type {Node} **/ (e.currentTarget);
 
-      if (
-        e.relatedTarget &&
-        !(
-          child.compareDocumentPosition(parent) &
-          Node.DOCUMENT_POSITION_CONTAINS
-        )
-      ) {
+      if (child && !parent.contains(child)) {
         closeMenu();
       }
     }
