@@ -55,7 +55,9 @@ window.addEventListener("load", () => {
    * @returns {boolean}
    */
   const checkParent = (parent, child) =>
-    !!(child.compareDocumentPosition(parent) & Node.DOCUMENT_POSITION_CONTAINS);
+    !!(
+      child?.compareDocumentPosition(parent) & Node.DOCUMENT_POSITION_CONTAINS
+    );
 
   // reset navigation function
   const NavReset = () => {
