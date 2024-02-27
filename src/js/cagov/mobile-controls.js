@@ -49,15 +49,16 @@ window.addEventListener("load", () => {
 
   /**
    * True if child is descendant of the parent
-   * @param {HTMLElement} parent
-   * @param {HTMLElement} child
+   * (Must use ParentNode instead of HTMLElement because of Safari)
+   * @param {ParentNode} parent
+   * @param {ParentNode} child
    * @returns {boolean}
    */
   const checkParent = (parent, child) =>
-    child?.parentElement
-      ? child.parentElement === parent
+    child?.parentNode
+      ? child.parentNode === parent
         ? true
-        : checkParent(parent, child.parentElement)
+        : checkParent(parent, child.parentNode)
       : false;
 
   // reset navigation function
