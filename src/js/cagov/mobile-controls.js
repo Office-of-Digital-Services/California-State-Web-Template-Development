@@ -55,11 +55,7 @@ window.addEventListener("load", () => {
    * @returns {boolean}
    */
   const checkParent = (parent, child) =>
-    child?.parentNode
-      ? child.parentNode === parent
-        ? true
-        : checkParent(parent, child.parentNode)
-      : false;
+    !!(child.compareDocumentPosition(parent) & Node.DOCUMENT_POSITION_CONTAINS);
 
   // reset navigation function
   const NavReset = () => {
@@ -126,6 +122,11 @@ window.addEventListener("load", () => {
   // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
   navSearchCont.addEventListener("focusout", e => {
     if (checkIfMobileView()) {
+      const p = /** @type {Node} **/ (e.currentTarget);
+      const c = /** @type {Node} **/ (e.relatedTarget);
+
+      console.log(p.compareDocumentPosition(c));
+
       if (
         !checkParent(
           /** @type {Node} **/ (e.currentTarget),
