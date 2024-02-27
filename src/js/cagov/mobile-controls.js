@@ -54,10 +54,11 @@ window.addEventListener("load", () => {
    * @param {Node} child
    * @returns {boolean}
    */
-  const checkParent = (parent, child) =>
-    !!(
-      child?.compareDocumentPosition(parent) & Node.DOCUMENT_POSITION_CONTAINS
+  const checkParent = (parent, child) => {
+    return !!(
+      child.compareDocumentPosition(parent) & Node.DOCUMENT_POSITION_CONTAINS
     );
+  };
   // reset navigation function
   const NavReset = () => {
     //RESET
@@ -124,6 +125,7 @@ window.addEventListener("load", () => {
   navSearchCont.addEventListener("focusout", e => {
     if (checkIfMobileView()) {
       if (
+        e.relatedTarget &&
         !checkParent(
           /** @type {Node} **/ (e.currentTarget),
           /** @type {Node} **/ (e.relatedTarget)
