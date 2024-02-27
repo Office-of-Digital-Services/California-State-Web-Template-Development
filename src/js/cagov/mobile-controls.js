@@ -227,6 +227,19 @@ window.addEventListener("load", () => {
     }
   }
 
+  // Close mobile nav if click outside of nav
+  document.addEventListener("mouseup", e => {
+    // if the target of the click isn't the navigation container nor a descendant of the navigation
+    if (checkIfMobileView()) {
+      if (
+        navSearchCont !== e.target &&
+        !navSearchCont?.contains(/**@type {Node} */ (e.target))
+      ) {
+        closeMenu();
+      }
+    }
+  });
+
   // Button Click event
   navToggleBtn.addEventListener("click", openMenu);
   // Button Click event
