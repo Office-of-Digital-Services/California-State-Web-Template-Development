@@ -56,6 +56,7 @@ window.addEventListener("load", () => {
    */
   const checkParent = (parent, child) =>
     !!(
+      parent &&
       child?.compareDocumentPosition(parent) & Node.DOCUMENT_POSITION_CONTAINS
     );
 
