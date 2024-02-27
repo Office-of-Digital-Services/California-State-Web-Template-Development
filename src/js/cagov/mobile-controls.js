@@ -122,11 +122,6 @@ window.addEventListener("load", () => {
   // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
   navSearchCont.addEventListener("focusout", e => {
     if (checkIfMobileView()) {
-      const p = /** @type {Node} **/ (e.currentTarget);
-      const c = /** @type {Node} **/ (e.relatedTarget);
-
-      console.log(p.compareDocumentPosition(c));
-
       if (
         !checkParent(
           /** @type {Node} **/ (e.currentTarget),
