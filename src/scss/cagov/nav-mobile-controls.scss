@@ -34,8 +34,6 @@ header.nav-overlay {
   flex-direction: column;
   align-items: center;
   position: relative;
-  transform: rotate(0deg);
-  transition: 0.5s ease-in-out;
   cursor: pointer;
   color: var(--white, #fff);
   min-width: 2.5rem;

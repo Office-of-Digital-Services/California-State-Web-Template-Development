@@ -47,18 +47,18 @@ window.addEventListener("load", () => {
 
   const regularHeader = document.querySelector("header");
 
-  /**
-   * True if child is descendant of the parent
-   * @param {HTMLElement} parent
-   * @param {HTMLElement} child
-   * @returns {boolean}
-   */
-  const checkParent = (parent, child) =>
-    child?.parentElement
-      ? child.parentElement === parent
-        ? true
-        : checkParent(parent, child.parentElement)
-      : false;
+  // /**
+  //  * True if child is descendant of the parent
+  //  * @param {HTMLElement} parent
+  //  * @param {HTMLElement} child
+  //  * @returns {boolean}
+  //  */
+  // const checkParent = (parent, child) =>
+  //   child?.parentElement
+  //     ? child.parentElement === parent
+  //       ? true
+  //       : checkParent(parent, child.parentElement)
+  //     : false;
 
   // reset navigation function
   const NavReset = () => {
@@ -123,18 +123,18 @@ window.addEventListener("load", () => {
   };
 
   // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
-  navSearchCont.addEventListener("focusout", e => {
-    if (checkIfMobileView()) {
-      if (
-        !checkParent(
-          /** @type {HTMLElement} **/ (e.currentTarget),
-          /** @type {HTMLElement} **/ (e.relatedTarget)
-        )
-      ) {
-        closeMenu();
-      }
-    }
-  });
+  // navSearchCont.addEventListener("focusout", e => {
+  //   if (checkIfMobileView()) {
+  //     if (
+  //       !checkParent(
+  //         /** @type {HTMLElement} **/ (e.currentTarget),
+  //         /** @type {HTMLElement} **/ (e.relatedTarget)
+  //       )
+  //     ) {
+  //       closeMenu();
+  //     }
+  //   }
+  // });
 
   // Button click open menu function
   const openMenu = () => {
@@ -155,6 +155,8 @@ window.addEventListener("load", () => {
     navSearchCont.ariaHidden = null;
     // make links focusable
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
+    // tabbing out
+    setTabbingOut(navSearchCont);
     // desktop
     if (
       mobileControlsDisplay !== "block" &&
@@ -168,13 +170,11 @@ window.addEventListener("load", () => {
   const closeMenu = () => {
     if (navSearchCont.classList.contains("visible")) {
       navSearchCont.classList.remove("visible");
-
       //Set focus only when close actually happens
       navToggleBtn.focus();
     }
 
     navSearchCont.classList.add("not-visible");
-
     setClosed();
   };
 
@@ -188,13 +188,44 @@ window.addEventListener("load", () => {
     if (mainNav) document.body.classList.remove("overflow-hidden");
 
     // removing focus
-    getAllNavLinks().forEach(el => (el.tabIndex = -1));
+    if (checkIfMobileView()) {
+      getAllNavLinks().forEach(el => (el.tabIndex = -1));
+    }
     // remove aria hidden for the rest of the site
     mainElements.forEach(x => (x.ariaHidden = null));
     regularHeader?.classList.remove("nav-overlay");
 
     NavReset();
   };
+
+  // Close mobile menu on tabbing out function
+  function setTabbingOut(modal) {
+    // Focusable elements inside of navigation array
+    let focusableElements = document.querySelectorAll(".toggle-menu");
+    let firstTabStop = focusableElements[0];
+    let lastTabStop = focusableElements[focusableElements.length - 1];
+    // @ts-ignore
+    modal.addEventListener("keydown", tabbingNav);
+    function tabbingNav(e) {
+      focusableElements = document.querySelectorAll(
+        'navigation-search .toggle-menu, .navigation-search a.first-level-link, .navigation-search button.first-level-btn, .navigation-search input, .navigation-search button, .navigation-search [tabindex]:not([tabindex="-1"]), .navigation-search a.second-level-link:not([tabindex="-1"])'
+      );
+      firstTabStop = focusableElements[0];
+
+      lastTabStop = focusableElements[focusableElements.length - 1];
+      const hitTab = e.key === "Tab";
+      const hitShift = e.shiftKey;
+      if (hitTab && hitShift) {
+        if (document.activeElement === firstTabStop) {
+          closeMenu();
+        }
+      } else if (hitTab && !hitShift) {
+        if (document.activeElement === lastTabStop) {
+          closeMenu();
+        }
+      }
+    }
+  }
 
   // Button Click event
   navToggleBtn.addEventListener("click", openMenu);
