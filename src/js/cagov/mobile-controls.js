@@ -47,19 +47,6 @@ window.addEventListener("load", () => {
 
   const regularHeader = document.querySelector("header");
 
-  /**
-   * True if child is descendant of the parent
-   * @param {HTMLElement} parent
-   * @param {HTMLElement} child
-   * @returns {boolean}
-   */
-  const checkParent = (parent, child) =>
-    child?.parentElement
-      ? child.parentElement === parent
-        ? true
-        : checkParent(parent, child.parentElement)
-      : false;
-
   // reset navigation function
   const NavReset = () => {
     //RESET
@@ -125,12 +112,10 @@ window.addEventListener("load", () => {
   // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
   navSearchCont.addEventListener("focusout", e => {
     if (checkIfMobileView()) {
-      if (
-        !checkParent(
-          /** @type {HTMLElement} **/ (e.currentTarget),
-          /** @type {HTMLElement} **/ (e.relatedTarget)
-        )
-      ) {
+      const child = /** @type {Node} **/ (e.relatedTarget);
+      const parent = /** @type {Node} **/ (e.currentTarget);
+
+      if (child && !parent.contains(child)) {
         closeMenu();
       }
     }
@@ -214,6 +199,19 @@ window.addEventListener("load", () => {
       closeMenu();
     }
   };
+
+  // Close mobile nav if click outside of nav
+  regularHeader.addEventListener("mouseup", e => {
+    // if the target of the click isn't the navigation container nor a descendant of the navigation
+    if (checkIfMobileView()) {
+      if (
+        navSearchCont !== e.target &&
+        !navSearchCont?.contains(/**@type {Node} */ (e.target))
+      ) {
+        closeMenu();
+      }
+    }
+  });
 
   // on resize function (hide mobile nav)
   window.addEventListener("resize", mobileCheck);
