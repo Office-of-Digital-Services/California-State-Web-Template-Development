@@ -4,7 +4,7 @@
   "description": "California State Web Template NPM Package",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
+    "url": "git+https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
   },
   "bugs": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/issues",
   "homepage": "https://template.webstandards.ca.gov/",
