@@ -1,10 +1,10 @@
 {
   "name": "@cagovweb/state-template",
-  "version": "6.3.1-beta9",
+  "version": "6.3.1",
   "description": "California State Web Template NPM Package",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
+    "url": "git+https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development.git"
   },
   "bugs": "https://github.com/Office-of-Digital-Services/California-State-Web-Template-Development/issues",
   "homepage": "https://template.webstandards.ca.gov/",
