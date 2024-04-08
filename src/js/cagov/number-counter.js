@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     item.updateCounter = () => {
       item.counterCount += item.counterStep;
-      item.innerText = Math.ceil(item.counterCount).toString();
+      item.innerText = Math.ceil(item.counterCount).toLocaleString();
 
       if (item.counterCount < item.counterTarget) {
         window.setTimeout(item.updateCounter, item.counterSpeed);
       } else {
-        item.innerText = item.counterTarget.toString();
+        item.innerText = item.counterTarget.toLocaleString();
       }
     };
   });
