@@ -83,8 +83,9 @@ window.addEventListener("load", () => {
 
   // DESKTOP Side nav
   const moveSideNavToMainContent = () => {
-    if (sidenavigation !== mainContentSideNavCont)
-      mainContentSideNavCont?.append(sidenavigation);
+    if (sidenavigation === mainContentSideNavCont) return; //Prevents an error if sidenav is not set up correctly
+
+    mainContentSideNavCont?.append(sidenavigation);
     sidenavigation.removeAttribute("aria-hidden");
     allSidenavLinks?.forEach(el => {
       el.removeAttribute("tabindex");
