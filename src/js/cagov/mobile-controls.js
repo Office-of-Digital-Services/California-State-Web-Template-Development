@@ -194,14 +194,12 @@ window.addEventListener("load", () => {
 
     // Add a blur event listener to remove the class on blur
     searchInput.addEventListener("blur", () => {
-      // Remove the class after a delay (e.g., 500 milliseconds)
+      // Remove the class after a delay
       setTimeout(() => {
         searchInput.classList.remove("is-in-focus");
       }, 500);
-      // Handle any other blur-related actions here
     });
 
-    // Rest of your existing logic...
     if (!searchInput.classList.contains("is-in-focus")) {
       NavReset();
       // desktop
