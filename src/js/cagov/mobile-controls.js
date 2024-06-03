@@ -6,7 +6,8 @@ window.addEventListener("load", () => {
   /** @type {HTMLButtonElement} */
   const navToggleBtn = document.querySelector(".toggle-menu");
   if (!navToggleBtn) return;
-
+  /** @type {HTMLElement} */
+  const mainNav = document.querySelector(".main-navigation");
   // create container for drawer mobile nav items
   const mobileItemsCont = document.createElement("div");
   mobileItemsCont.className = "nav-drawer";
@@ -26,9 +27,6 @@ window.addEventListener("load", () => {
   navCloseBtnSpans[4].innerText = "Menu";
   navMobileMenuToggleBtn.append(...navCloseBtnSpans);
   mobileItemsCont.append(navMobileMenuToggleBtn);
-
-  /** @type {HTMLElement} */
-  const mainNav = document.querySelector(".main-navigation");
 
   // VARIABLES
   /** @type {HTMLDivElement} */
@@ -187,16 +185,34 @@ window.addEventListener("load", () => {
   navMobileMenuToggleBtn.addEventListener("click", closeMenu);
 
   const mobileCheck = () => {
-    NavReset();
+    const searchInput = document.querySelector(".search-textfield");
 
-    // desktop
-    if (isDesktopWidth()) {
-      getAllFirstLevelNavLinks().forEach(el => el.removeAttribute("tabindex"));
-    }
-    // mobile
-    else {
-      getAllFirstLevelNavLinks().forEach(el => (el.tabIndex = -1));
-      closeMenu();
+    // Add a focus event listener to add the class on focus
+    searchInput.addEventListener("focus", () => {
+      searchInput.classList.add("is-in-focus");
+    });
+
+    // Add a blur event listener to remove the class on blur
+    searchInput.addEventListener("blur", () => {
+      // Remove the class after a delay
+      setTimeout(() => {
+        searchInput.classList.remove("is-in-focus");
+      }, 500);
+    });
+
+    if (!searchInput.classList.contains("is-in-focus")) {
+      NavReset();
+      // desktop
+      if (isDesktopWidth()) {
+        getAllFirstLevelNavLinks().forEach(el =>
+          el.removeAttribute("tabindex")
+        );
+      }
+      // mobile
+      else {
+        getAllFirstLevelNavLinks().forEach(el => (el.tabIndex = -1));
+        closeMenu();
+      }
     }
   };
 
