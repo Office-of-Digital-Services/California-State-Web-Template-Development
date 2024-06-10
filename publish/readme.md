@@ -6,7 +6,7 @@ The California State Web Template is designed to promote a responsive and standa
 
 The state web template is an open source project which you can find on the [CA Office of Digital Services GitHub repository](https://github.com/Office-of-Digital-Services). There are various technology versions of the web template available for consumption. Collaboration is highly encouraged and user feedback and contributions are always considered and often implemented.
 
-This package is based on [Bootstrap v5.3.0](https://www.npmjs.com/package/bootstrap/v/5.3.0)
+This package is based on [Bootstrap v5.3.3](https://www.npmjs.com/package/bootstrap/v/5.3.3)
 
 ## How to use
 
