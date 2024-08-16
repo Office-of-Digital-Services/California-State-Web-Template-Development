@@ -186,6 +186,7 @@ window.addEventListener("load", () => {
 
   const mobileCheck = () => {
     const searchInput = document.querySelector(".search-textfield");
+    if (!searchInput) return;
 
     // Add a focus event listener to add the class on focus
     searchInput.addEventListener("focus", () => {
