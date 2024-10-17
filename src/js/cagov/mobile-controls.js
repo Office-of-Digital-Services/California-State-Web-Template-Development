@@ -14,6 +14,7 @@ window.addEventListener("load", () => {
 
   // Create close mobile meu button
   const navMobileMenuToggleBtn = document.createElement("button");
+  navMobileMenuToggleBtn.type = "button";
   navMobileMenuToggleBtn.classList.add("mobile-control", "toggle-menu");
   navMobileMenuToggleBtn.ariaExpanded = "false";
   navMobileMenuToggleBtn.setAttribute("aria-controls", "navigation");
