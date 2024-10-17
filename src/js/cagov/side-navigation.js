@@ -52,7 +52,6 @@ window.addEventListener("load", () => {
       sidenavToggleBtn.ariaExpanded = "false";
       sidenavToggleBtn.setAttribute("aria-controls", "side-navigation");
       sidenavToggleBtn.innerText = btnText;
-
       // create icon
       const arrowIcon = document.createElement("span");
       arrowIcon.ariaHidden = "true";
