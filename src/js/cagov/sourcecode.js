@@ -66,7 +66,6 @@
       };
       newDiv.classList.add("btn", "btn-outline-primary");
       newDiv.innerHTML = "<span class='ca-gov-icon-copy'></span> Copy code";
-
       if (dom.tagName.toLowerCase() == "code") {
         dom.parentElement?.after(newDiv);
       } else {
