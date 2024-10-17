@@ -41,9 +41,9 @@ window.addEventListener("load", () => {
       btnText = btnText.replace(btnTextSpan, "").trim();
       // create button container
       const sidenavMobile = document.createElement("aside");
-      sidenavMobile.setAttribute("class", "sidenav-mobile-btn");
+      sidenavMobile.className = "sidenav-mobile-btn";
       const sidenavMobileCont = document.createElement("div");
-      sidenavMobileCont.setAttribute("class", "container");
+      sidenavMobileCont.className = "container";
       sidenavMobile.append(sidenavMobileCont);
       // create button
       sidenavToggleBtn = document.createElement("button");
