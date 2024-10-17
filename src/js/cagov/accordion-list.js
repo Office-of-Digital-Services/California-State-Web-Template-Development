@@ -213,9 +213,9 @@ window.addEventListener("load", () => {
       // provide the heading with a class for styling
       heading.classList.add(widgetHeadingClass);
 
-      newButton.setAttribute("type", "button");
+      newButton.type = "button";
       newButton.setAttribute("aria-controls", targetID);
-      newButton.setAttribute("id", `${targetID}_trigger`);
+      newButton.id = `${targetID}_trigger`;
       newButton.classList.add(widgetTriggerClass);
 
       /**

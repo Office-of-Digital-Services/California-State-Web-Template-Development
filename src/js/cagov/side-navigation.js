@@ -6,11 +6,15 @@
 
 window.addEventListener("load", () => {
   const siteHeader = document.querySelector("header");
-  const sidenavigation = document.querySelector(".side-navigation");
+  const sidenavigation = /** @type {HTMLElement} */ (
+    document.querySelector(".side-navigation")
+  );
   if (!sidenavigation || !siteHeader) return;
-  const allSidenavLinks = sidenavigation.querySelectorAll(".side-navigation a");
+  const allSidenavLinks = /** @type {NodeListOf<HTMLElement>} */ (
+    sidenavigation.querySelectorAll(".side-navigation a")
+  );
   const mainContentSideNavCont = sidenavigation.closest("div");
-  sidenavigation.setAttribute("id", "side-navigation");
+  sidenavigation.id = "side-navigation";
   const topposition = localStorage.getItem("sidebar-scroll");
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
   if (!mobileCntls) return;
@@ -37,20 +41,21 @@ window.addEventListener("load", () => {
       btnText = btnText.replace(btnTextSpan, "").trim();
       // create button container
       const sidenavMobile = document.createElement("aside");
-      sidenavMobile.setAttribute("class", "sidenav-mobile-btn");
+      sidenavMobile.className = "sidenav-mobile-btn";
       const sidenavMobileCont = document.createElement("div");
-      sidenavMobileCont.setAttribute("class", "container");
+      sidenavMobileCont.className = "container";
       sidenavMobile.append(sidenavMobileCont);
       // create button
       sidenavToggleBtn = document.createElement("button");
-      sidenavToggleBtn.setAttribute("class", "sidenav-toggle");
-      sidenavToggleBtn.setAttribute("aria-expanded", "false");
+      sidenavToggleBtn.type = "button";
+      sidenavToggleBtn.className = "sidenav-toggle";
+      sidenavToggleBtn.ariaExpanded = "false";
       sidenavToggleBtn.setAttribute("aria-controls", "side-navigation");
       sidenavToggleBtn.innerText = btnText;
       // create icon
       const arrowIcon = document.createElement("span");
-      arrowIcon.setAttribute("aria-hidden", "true");
-      arrowIcon.setAttribute("class", "ca-gov-icon-caret-down");
+      arrowIcon.ariaHidden = "true";
+      arrowIcon.className = "ca-gov-icon-caret-down";
       sidenavToggleBtn.append(arrowIcon);
       // append button into the header
       sidenavMobileCont.append(sidenavToggleBtn);
@@ -62,9 +67,9 @@ window.addEventListener("load", () => {
 
   const createmobileSideNavDiv = () => {
     mobileSideNavDiv = document.createElement("aside");
-    mobileSideNavDiv.setAttribute("class", "mobile-sidenav");
+    mobileSideNavDiv.className = "mobile-sidenav";
     mobileSideNavCont = document.createElement("div");
-    mobileSideNavCont.setAttribute("class", "container");
+    mobileSideNavCont.className = "container";
     mobileSideNavDiv.append(mobileSideNavCont);
     siteHeader.after(mobileSideNavDiv);
   };
@@ -75,9 +80,9 @@ window.addEventListener("load", () => {
       mobileSideNavCont.append(sidenavigation);
     }
 
-    sidenavigation.setAttribute("aria-hidden", "true");
+    sidenavigation.ariaHidden = "true";
     allSidenavLinks?.forEach(el => {
-      el.setAttribute("tabindex", "-1");
+      el.tabIndex = -1;
     });
   };
 
@@ -98,22 +103,24 @@ window.addEventListener("load", () => {
     // Open
     if (mobileSideNavDiv.classList.contains("visible")) {
       sidenavigation.removeAttribute("aria-hidden");
-      sidenavToggleBtn.setAttribute("aria-expanded", "true");
+      sidenavToggleBtn.ariaExpanded = "true";
       allSidenavLinks?.forEach(el => {
         el.removeAttribute("tabindex");
       });
 
       // Closed
     } else {
-      sidenavToggleBtn.setAttribute("aria-expanded", "false");
-      sidenavigation.setAttribute("aria-hidden", "true");
+      sidenavToggleBtn.ariaExpanded = "false";
+      sidenavigation.ariaHidden = "true";
       allSidenavLinks?.forEach(el => {
-        el.setAttribute("tabindex", "-1");
+        el.tabIndex = -1;
       });
     }
   };
 
-  // Set active class on nav-heading links
+  /**
+   * Set active class on nav-heading links
+   */
   function addActiveClass() {
     /** @type {NodeListOf<HTMLAnchorElement>} */
     const active_link = document.querySelectorAll("a.nav-heading"),

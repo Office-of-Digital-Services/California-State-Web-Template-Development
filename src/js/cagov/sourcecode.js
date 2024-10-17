@@ -60,6 +60,7 @@
       }
       // Create a 'copy code' button, insert it after the <pre> tag
       const newDiv = document.createElement("button");
+      newDiv.type = "button";
       newDiv.onclick = function () {
         copyCode(/** @type {HTMLElement} */ (this));
       };
