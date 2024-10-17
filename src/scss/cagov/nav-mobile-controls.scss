@@ -17,7 +17,9 @@ header {
     left: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transition:
+      opacity 0.3s ease-in-out,
+      visibility 0.3s ease-in-out;
   }
 }
 
@@ -29,7 +31,7 @@ header.nav-overlay {
 }
 
 .toggle-menu {
-  padding: 16px 8px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,13 +42,13 @@ header.nav-overlay {
   color: var(--white, #fff);
   min-width: 2.5rem;
   min-height: 1.75rem;
-  margin: 1.3rem 0 0 auto;
+  margin: 0.4rem 0 0 auto;
 
   // Overvriting sr-only class to avoid strucural changes in mobile controls
 
   span {
-    height: 2px;
-    width: 20px;
+    height: 3px;
+    width: 32px;
     display: block;
     position: absolute;
     border-radius: 5px;
@@ -56,16 +58,16 @@ header.nav-overlay {
     background-color: var(--color-p2, #046b99);
 
     &:nth-child(1) {
-      top: 2px;
+      top: 12px;
     }
 
     &:nth-child(2),
     &:nth-child(3) {
-      top: 9px;
+      top: 22px;
     }
 
     &:nth-child(4) {
-      top: 16px;
+      top: 32px;
     }
   }
 
