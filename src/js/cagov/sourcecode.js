@@ -60,11 +60,13 @@
       }
       // Create a 'copy code' button, insert it after the <pre> tag
       const newDiv = document.createElement("button");
+      newDiv.type = "button";
       newDiv.onclick = function () {
         copyCode(/** @type {HTMLElement} */ (this));
       };
       newDiv.classList.add("btn", "btn-outline-primary");
       newDiv.innerHTML = "<span class='ca-gov-icon-copy'></span> Copy code";
+
       if (dom.tagName.toLowerCase() == "code") {
         dom.parentElement?.after(newDiv);
       } else {
