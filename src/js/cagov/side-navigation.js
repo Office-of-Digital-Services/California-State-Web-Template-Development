@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
     sidenavigation.querySelectorAll(".side-navigation a")
   );
   const mainContentSideNavCont = sidenavigation.closest("div");
-  sidenavigation.setAttribute("id", "side-navigation");
+  sidenavigation.id = "side-navigation";
   const topposition = localStorage.getItem("sidebar-scroll");
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
   if (!mobileCntls) return;
@@ -110,7 +110,7 @@ window.addEventListener("load", () => {
 
       // Closed
     } else {
-      sidenavToggleBtn.setAttribute("aria-expanded", "false");
+      sidenavToggleBtn.ariaExpanded = "false";
       sidenavigation.ariaHidden = "true";
       allSidenavLinks?.forEach(el => {
         el.tabIndex = -1;
