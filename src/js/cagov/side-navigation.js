@@ -43,10 +43,12 @@ window.addEventListener("load", () => {
       sidenavMobile.append(sidenavMobileCont);
       // create button
       sidenavToggleBtn = document.createElement("button");
-      sidenavToggleBtn.setAttribute("class", "sidenav-toggle");
-      sidenavToggleBtn.setAttribute("aria-expanded", "false");
+      sidenavToggleBtn.type = "button";
+      sidenavToggleBtn.className = "sidenav-toggle";
+      sidenavToggleBtn.ariaExpanded = "false";
       sidenavToggleBtn.setAttribute("aria-controls", "side-navigation");
       sidenavToggleBtn.innerText = btnText;
+
       // create icon
       const arrowIcon = document.createElement("span");
       arrowIcon.setAttribute("aria-hidden", "true");
