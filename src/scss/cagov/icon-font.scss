@@ -25,6 +25,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ca-gov-icon-cagov-icon::before {
+  content: "\ea34";
+}
+
 .ca-gov-icon-bullet::before {
   content: "\ea32";
 }
