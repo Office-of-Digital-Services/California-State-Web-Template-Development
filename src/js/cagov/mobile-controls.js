@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
 
   //Used for hiding/showing main elements
   const mainElements = document.querySelectorAll(
-    ".main-content, footer, .site-footer, .utility-header, .branding, header"
+    ".main-content, footer, .site-footer, .utility-header, .branding"
   );
 
   const regularHeader = document.querySelector("header");
