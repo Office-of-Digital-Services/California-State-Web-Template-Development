@@ -44,14 +44,6 @@
   overflow: hidden;
 }
 
-.carousel-banner,
-.carousel-banner .owl-stage-outer,
-.carousel-banner .owl-stage,
-.carousel-banner .owl-item,
-.carousel-banner .slide {
-  height: 100%;
-}
-
 // Beta 5.0 addition
 @media (max-width: $screen-xs-max) {
   .ask-group + .header-primary-banner,
