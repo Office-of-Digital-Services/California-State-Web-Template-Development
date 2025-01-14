@@ -5,7 +5,7 @@
 
 // Subject to
 .testimonial {
-  padding: $grid-gutter-width;
+  padding: var(--grid-gutter-width);
   border: none;
 
   // Proper spacing between instances of .testimonial

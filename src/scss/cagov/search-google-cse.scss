@@ -19,7 +19,7 @@
   height: 68px;
   width: 89px;
   float: left;
-  margin-right: calc($grid-gutter-width / 2);
+  margin-right: calc(var(--grid-gutter-width) / 2);
 }
 
 .gs-result {

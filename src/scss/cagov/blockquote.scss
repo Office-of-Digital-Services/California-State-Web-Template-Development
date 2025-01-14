@@ -27,7 +27,7 @@ blockquote {
   footer {
     display: block;
     font-size: 80%; // back to default font-size
-    color: $blockquote-small-color;
+    color: var(--blockquote-small-color);
     font-weight: var(--font-weight-7);
     margin-top: 1rem;
 
@@ -73,7 +73,7 @@ blockquote {
   &.blockquote-reverse {
     padding-right: 15px;
     padding-left: 0;
-    border-right: 5px solid $blockquote-border-color;
+    border-right: 5px solid var(--blockquote-border-color);
     border-left: 0;
     text-align: right;
 

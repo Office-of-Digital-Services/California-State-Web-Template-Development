@@ -14,8 +14,8 @@
 // --------------------------------------------------
 
 .sub-nav {
-  left: calc($grid-gutter-width / 2);
-  right: calc($grid-gutter-width / 2);
+  left: calc(var(--grid-gutter-width) / 2);
+  right: calc(var(--grid-gutter-width) / 2);
   overflow: hidden;
 
   // Remove border as rules are added to top level links

@@ -37,7 +37,7 @@
 .location.banner {
   @include clearfix;
 
-  padding: calc($grid-gutter-width / 2) 0;
+  padding: calc(var(--grid-gutter-width) / 2) 0;
   background: var(--gray-50, #fafafa);
   margin-bottom: calc(var(--line-height-computed) / 2);
 

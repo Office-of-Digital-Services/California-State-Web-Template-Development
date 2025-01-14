@@ -8,7 +8,7 @@
   .thumbnail ~ .header,
   .thumbnail ~ .body {
     margin-left: calc(
-      calc($grid-gutter-width / 2) + 4.375rem
+      calc(var(--grid-gutter-width) / 2) + 4.375rem
     ); // 70 is the width of the thumbnail in pixels
   }
 

@@ -9,14 +9,16 @@
   @include make-row;
 
   margin-bottom: var(--line-height-computed);
-  padding: 0 calc($grid-gutter-width / 2); // Adds padding to compensate for instances where thumbnails are/are not used
+  padding: 0 calc(var(--grid-gutter-width) / 2); // Adds padding to compensate for instances where thumbnails are/are not used
 
   .published {
     @include published;
   }
 
   .thumbnail {
-    margin-left: calc($grid-gutter-width / 2) * -1; // Remove left margin to account for instances where thumbnails are not used
+    margin-left: calc(
+      var(--grid-gutter-width) / -2
+    ); // Remove left margin to account for instances where thumbnails are not used
 
     @include make-xs-column(5);
     @include make-sm-column(3);

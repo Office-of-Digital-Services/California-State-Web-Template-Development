@@ -32,7 +32,7 @@
       content: "";
       color: var(--gray-900, #3b3a48);
       border: none;
-      margin: 0 calc($grid-gutter-width / 2);
+      margin: 0 calc(var(--grid-gutter-width) / 2);
       font-size: 1.125rem;
       font-weight: 200;
       position: absolute;

@@ -550,7 +550,7 @@
 .outline-color,
 .outline-color:hover,
 .outline-color:focus {
-  color: $outline-default-color !important;
+  color: var(--outline-default-color, #2ea3f2) !important;
 }
 
 .color-red {
@@ -565,7 +565,7 @@
 .bg-outline-color,
 .bg-outline-color:hover,
 .bg-outline-color:focus {
-  background-color: $outline-default-color !important;
+  background-color: var(--outline-default-color, #2ea3f2) !important;
 }
 
 .bg-white-hover:hover,
@@ -725,7 +725,7 @@
 .brd-gray-light,
 .brd-gray-light-hover:hover,
 .brd-gray-light-hover:focus {
-  border-color: $card-border-color !important;
+  border-color: var(--card-border-color, #ddd) !important;
 }
 
 .brd-gray-dark,
@@ -742,7 +742,7 @@
 
 .brd-gray-light-before::before,
 .brd-gray-light-after::after {
-  border-color: $card-border-color !important;
+  border-color: var(--card-border-color, #ddd) !important;
 }
 
 .brd-transparent-before::before,

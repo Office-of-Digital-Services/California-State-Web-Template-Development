@@ -98,7 +98,7 @@
  */
 
 .accordion__trigger:focus {
-  outline: solid 2px $outline-default-color !important;
+  outline: solid 2px var(--outline-default-color) !important;
 }
 
 .accordion__panel {

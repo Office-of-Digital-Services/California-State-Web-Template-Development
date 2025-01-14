@@ -237,7 +237,7 @@
   }
 
   &-inverted {
-    @include image-thumbnail($thumbnail-bg, var(--gray-200, #d4d4d7));
+    @include image-thumbnail(var(--body-bg), var(--gray-200, #d4d4d7));
 
     @include link-variant(
       var(--color-s3, #4993b5),
@@ -274,7 +274,7 @@
   }
 
   &-danger {
-    @include image-thumbnail($thumbnail-bg, var(--gray-200, #d4d4d7));
+    @include image-thumbnail(var(--body-bg), var(--gray-200, #d4d4d7));
 
     background: var(--brand-danger, #cd402d);
     color: var(--white, #fff);

@@ -26,7 +26,8 @@
 }
 
 .pub-body {
-  padding: calc(var(--line-height-computed) / 2) calc($grid-gutter-width / 2) !important; // Adds padding consistent to the themes gutter and line-height
+  padding: calc(var(--line-height-computed) / 2)
+    calc(var(--grid-gutter-width) / 2) !important; // Adds padding consistent to the themes gutter and line-height
 }
 
 .pub-language,

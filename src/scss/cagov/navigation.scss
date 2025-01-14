@@ -897,7 +897,7 @@
 
 // Subject to deprication
 .nav-media {
-  background: $sub-nav-media-bg;
+  background: var(--sub-nav-media-bg);
 
   // Add the border to the first one only
   .media {
