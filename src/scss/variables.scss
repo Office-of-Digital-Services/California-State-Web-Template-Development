@@ -22,7 +22,7 @@
   --brand-highlight: #fdb81e;
   --brand-highlight-darker: color-mix(
     in srgb,
-    var(--brand-highlight),
+    $btn-info-bg var(--brand-highlight),
     #000 15%
   );
   --brand-success: #32852e;
@@ -41,39 +41,88 @@
   --color-a1: #1b79c0; // Dark Blue
   --color-a2: #077cbb; // Med Blue
   --color-a3: #258378; // Teal
-  --color-a4: #32852e; // Green $brand-success
+  --color-a4: #32852e; // Green
   --color-a5: #815ab4; // Purple
   --color-a6: #be37cd; // Lavender
-  --color-a7: #c93e2c; // Red $brand-danger
-  --color-a8: #bb520c; // Orange $brand-warning
+  --color-a7: #c93e2c; // Red
+  --color-a8: #bb520c; // Orange
   --color-a9: #f7e455; // Yellow
+
+  // Social Media Brand Colors
+  --share-facebook: #3d77ea;
+  --share-facebook-hover: color-mix(in srgb, var(--share-facebook), #000 15%);
+  --share-twitter: #000;
+  --share-twitter-hover: color-mix(in srgb, var(--share-twitter), #000 15%);
+  --share-googleplus: #dc4a38;
+  --share-googleplus-hover: color-mix(
+    in srgb,
+    var(--share-googleplus),
+    #000 15%
+  );
+  --share-flickr: #0063dc;
+  --share-linkedin: #0976b4;
+  --share-instagram: #e73476;
+  --share-snapchat: #fffc00;
+  --share-youtube: #e73323;
+  --share-pinterest: #cc2127;
+  --share-vimeo: #1ab7ea;
+  --share-email: #888;
+  --share-github: #25292e;
+
+  // Buttons
+  --btn-default-color: var(--gray-900);
+
+  // text colors
+  --text-color: var(--gray-900, #3b3a48);
+  --text-muted: var(--gray-700, #5e5e6a);
+  --link-color: var(--brand-primary, #046b99);
+  --link-hover-color: var(--brand-primary-darkest, #005a7f);
+
+  // fonts
+  --font-family-sans-serif: "Public Sans", system-ui, -apple-system, "Segoe UI",
+    "Roboto", "Helvetica Neue", "Noto Sans", sans-serif;
+  --font-family-serif: "Merriweather", "Times New Roman", serif;
+  --font-family-monospace: menlo, monaco, consolas, "Courier New", monospace !default;
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125); // ~ 18px
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-small: calc(var(--font-size-base, 1rem) * 0.85);
+  --font-size-x-small: calc(var(--font-size-base, 1rem) * 0.8);
+  --headings-font-family: var(--font-family-sans-serif);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375); // ~47px
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175); // ~37px
+  --font-size-h3: calc(var(--font-size-base, 1rem) * 1.8125); // ~29px
+  --font-size-h4: calc(var(--font-size-base, 1rem) * 1.4375); // ~23px
+  --font-size-h5: calc(var(--font-size-base, 1rem) * 1.125); // ~18px
+  --font-size-h6: calc(var(--font-size-base, 1rem) * 0.875); // ~14px
+  --ratio: 0.1vw;
+  --ratio-headers: 0.1vw;
+  --line-height-base: 1.5;
+  --line-height-computed: calc(1rem * var(--line-height-base));
+  --font-lineheight-1: 1.25;
+  --font-lineheight-2: 1.375;
+  --font-lineheight-3: 1.5;
+  --font-lineheight-4: 1.625;
+  --font-lineheight-5: 1.75;
+  --font-lineheight-6: 2;
+  --font-weight-1: 100;
+  --font-weight-2: 200;
+  --font-weight-3: 300;
+  --font-weight-4: 400;
+  --font-weight-5: 500;
+  --font-weight-6: 600;
+  --font-weight-7: 700;
+  --font-weight-8: 800;
+  --font-weight-9: 900;
+
+  // Backgrounds
+  --body-bg: var(--white);
+
+  // Spacing
+  --spacer: 1rem;
+  --spacer-x: var(--spacer);
+  --spacer-y: var(--spacer);
 }
-
-// Accent Colors
-
-// ## Gray and brand colors for use across Bootstrap.
-
-$brand-primary: #046b99;
-$brand-success: #32852e;
-
-// @brand-info:         #02BFE7;
-$brand-info: #1c7db5;
-$brand-warning: #c2570f;
-$brand-danger: #cd402d;
-
-// == Social Media Brand Colors
-$share-facebook: #3d77ea;
-$share-twitter: #000;
-$share-googleplus: #dc4a38;
-$share-flickr: #0063dc;
-$share-linkedin: #0976b4;
-$share-instagram: #e73476;
-$share-snapchat: #fffc00;
-$share-youtube: #e73323;
-$share-pinterest: #cc2127;
-$share-vimeo: #1ab7ea;
-$share-email: #888;
-$share-github: #25292e;
 
 // Template and image paths were seperated to allow cagov theme specific images to live outside of images folder.
 // This may be helpful for theme variations or multi-site uses.
@@ -81,112 +130,17 @@ $template-path: "../images"; // Absolute or relative path to the master theme di
 $image-path: "../images"; // Absolute or relative path to the images directory
 $font-path: "../fonts"; // Absolute or relative path to the fonts directory
 
-// OLD BOOTSTRAP 3 VARIABLES //
-
-$bootstrap-sass-asset-helper: false !default;
-
-// Variables
-// --------------------------------------------------
-
-// == Colors
-
-// ## Gray and brand colors for use across Bootstrap.
-
-$gray-base: #000 !default;
-$gray-text: #3b3a48; // var(--gray-900, #3b3a48);
-$gray-dark: var(--gray-900, #3b3a48) !default; // var(--gray-900, #3b3a48);
-$gray: #5e5e6a !default; // var(--gray-700, #5e5e6a);
-$gray-light: #72717c !default; // var(--gray-600, #72717c)
-$gray-lighter: #ededef; // var(--gray-100, #ededef)
-$gray-lightest: #fafafa; // var(--gray-50, #fafafa)
-
-// Design System Gray colors
-$text-primary: #006ce0;
-$text-success: #1f7f35;
-$text-info: #117888;
-$text-muted: var(--gray-700, #5e5e6a);
-
-// == Scaffolding
-
 // ## Settings for some of the most global styles.
 
-// Background color for `<body>`.
-$body-bg: #fff !default; // Bootstrap duplicate
 // Global text color on `<body>`.
-$text-color: var(--gray-900, #3b3a48) !default;
-
-// Global textual link color.
-$link-color: var(--brand-primary);
-
-// Link hover color set via `darken()` function.
-$link-hover-color: var(--brand-primary-darkest);
-
-// Link visited color set via `darken()` function.
-$link-hover-decoration: underline !default;
-
-// == Generic Spacers
-$spacer: 1rem !default;
-$spacer-x: $spacer;
-$spacer-y: $spacer;
-
-// == Typography
-
-// ## Font, line-height, and color for body text, headings, and more.
-
-$font-family-sans-serif:  "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", sans-serif; // CAgov Font
-$font-family-serif: "Merriweather", "Times New Roman", serif;
-
-// Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-$font-family-monospace: menlo, monaco, consolas, "Courier New", monospace !default;
-$font-family-base: $font-family-sans-serif !default;
-$font-size-base: 1rem;
-$font-size-regular: $font-size-base * 1.125; // ~ 18px
-$font-size-large: $font-size-base * 1.4375; // ~23px
-$font-size-small: $font-size-base * 0.85; // ~12px
-$font-size-x-small: $font-size-base * 0.8; // ~11px
-
-$font-size-h1: $font-size-base * 2.9375; // ~47px
-$font-size-h2: $font-size-base * 2.3175; // ~37px
-$font-size-h3: $font-size-base * 1.8125; // ~29px
-$font-size-h4: $font-size-base * 1.4375; // ~23px
-$font-size-h5: $font-size-base * 1.125; // ~18px
-$font-size-h6: $font-size-base * 0.875; // ~14px
-
-// Responsive Font Ratio (for responsive typography (body))
-$ratio: 0.1vw;
-
-// Responsive Font Ratio (for headers)
-$ratio-headers: 0.1vw;
-
-// Unit-less `line-height` for use in components like buttons.
-$line-height-base: 1.5; // 20/14
-$font-lineheight-xs: 0.95;
-$font-lineheight-sm: 1.1;
-$font-lineheight-1: 1.25;
-$font-lineheight-2: 1.375;
-$font-lineheight-3: 1.5;
-$font-lineheight-4: 1.625;
-$font-lineheight-5: 1.75;
-$font-lineheight-6: 2;
+$text-color: var(--text-color) !default;
 
 // Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-$line-height-computed: floor((16px * $line-height-base)) !default; // ~20px
-
-// Font weight variables
-$font-weight-1: 100;
-$font-weight-2: 200;
-$font-weight-3: 300;
-$font-weight-4: 400;
-$font-weight-5: 500;
-$font-weight-6: 600;
-$font-weight-7: 700;
-$font-weight-8: 800;
-$font-weight-9: 900;
 
 // By default, this inherits from the `<body>`.
-$headings-font-family: $font-family-sans-serif;
+$headings-font-family: var(--font-family-sans-serif) !default;
 $headings-font-weight: 400 !default;
-$headings-line-height: $line-height-base;
+$headings-line-height: var(--line-height-base);
 $headings-color: inherit !default;
 
 // == Components
@@ -211,9 +165,6 @@ $border-radius-small: 3px !default;
 // Global color for active items (e.g., navs or dropdowns).
 $component-active-color: #fff !default;
 
-// Global background color for active items (e.g., navs or dropdowns).
-$component-active-bg: $brand-primary !default;
-
 // Width of the `border` for generating carets that indicate dropdowns.
 $caret-width-base: 4px !default;
 
@@ -227,8 +178,8 @@ $card-border-radius: $border-radius-base;
 $card-border-color: #ddd;
 $card-border-radius-inner: ($card-border-radius);
 $card-cap-bg: rgb(0 0 0 / 6.5%);
-$card-bg: $body-bg;
-$card-link-hover-color: $body-bg;
+$card-bg: var(--body-bg);
+$card-link-hover-color: var(--body-bg);
 
 // == Tables
 
@@ -253,29 +204,6 @@ $table-bg-active: $table-bg-hover !default;
 $table-border-color: #ddd !default;
 
 // == Buttons
-
-// ## For each of Bootstrap's buttons, define text, background and border color.
-
-$btn-font-weight: normal !default;
-$btn-default-color: #333 !default;
-$btn-default-bg: #fff !default;
-$btn-default-border: #333 !default;
-$btn-primary-color: #fff !default;
-$btn-primary-bg: $brand-primary !default;
-$btn-primary-border: darken($btn-primary-bg, 5%) !default;
-$btn-success-color: #fff !default;
-$btn-success-bg: $brand-success !default;
-$btn-success-border: darken($btn-success-bg, 5%) !default;
-$btn-info-color: #fff !default;
-$btn-info-bg: $brand-info !default;
-$btn-info-border: darken($btn-info-bg, 5%) !default;
-$btn-warning-color: #fff !default;
-$btn-warning-bg: $brand-warning !default;
-$btn-warning-border: darken($btn-warning-bg, 5%) !default;
-$btn-danger-color: #fff !default;
-$btn-danger-bg: $brand-danger !default;
-$btn-danger-border: darken($btn-danger-bg, 5%) !default;
-$btn-link-disabled-color: var(--gray-600, #72717c) !default;
 
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius-base: $border-radius-base !default;
@@ -317,7 +245,7 @@ $input-color-placeholder: #999 !default;
 
 // Default `.form-control` height
 $input-height-base: (
-  $line-height-computed + ($padding-base-vertical * 2) + 2
+  calc(var(--line-height-computed) + ($padding-base-vertical * 2) + 2)
 ) !default;
 
 // Large `.form-control` height
@@ -481,15 +409,13 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 
 // ##
 
-$pagination-color: $link-color !default;
+$pagination-color: var(--link-color) !default;
 $pagination-bg: #fff !default;
 $pagination-border: #ddd !default;
-$pagination-hover-color: $link-hover-color !default;
+$pagination-hover-color: var(--link-color-hover) !default;
 $pagination-hover-bg: var(--gray-100, #ededef) !default;
 $pagination-hover-border: #ddd !default;
 $pagination-active-color: #fff !default;
-$pagination-active-bg: $brand-primary !default;
-$pagination-active-border: $brand-primary !default;
 $pagination-disabled-color: var(--gray-600, #72717c) !default;
 $pagination-disabled-bg: #fff !default;
 $pagination-disabled-border: #ddd !default;
@@ -514,8 +440,8 @@ $jumbotron-padding: 30px !default; //  (bootstrap4 has 2rem)
 $jumbotron-color: inherit !default;
 $jumbotron-bg: var(--gray-100, #ededef) !default;
 $jumbotron-heading-color: inherit !default;
-$jumbotron-font-size: ceil(($font-size-base * 1.5)) !default;
-$jumbotron-heading-font-size: ceil(($font-size-base * 4.5)) !default;
+$jumbotron-font-size: calc(var(--font-size-base) * 1.5) !default;
+$jumbotron-heading-font-size: calc(var(--font-size-base) * 4.5) !default;
 
 // == Form states and alerts
 
@@ -593,20 +519,17 @@ $popover-arrow-outer-fallback-color: darken(
 // Default label background color
 $label-default-bg: var(--gray-600, #72717c) !default;
 
-// Primary label background color
-$label-primary-bg: $brand-primary !default;
-
 // Success label background color
-$label-success-bg: $brand-success !default;
+$label-success-bg: var(--brand-success, #32852e) !default;
 
 // Info label background color
-$label-info-bg: $brand-info !default;
+$label-info-bg: var(--brand-info, #1c7db5) !default;
 
 // Warning label background color
-$label-warning-bg: $brand-warning !default;
+$label-warning-bg: var(--brand-warning, #c2570f) !default;
 
 // Danger label background color
-$label-danger-bg: $brand-danger !default;
+$label-danger-bg: var(--brand-danger, #cd402d) !default;
 
 // Default label text color
 $label-color: #fff !default;
@@ -625,7 +548,7 @@ $modal-inner-padding: 15px !default; // Bootstrap4 is 1rem
 $modal-title-padding: 15px !default;
 
 // Modal title line-height
-$modal-title-line-height: $line-height-base !default;
+$modal-title-line-height: var(--line-height-base) !default;
 
 // Background color of modal content area
 $modal-content-bg: #fff !default;
@@ -684,19 +607,17 @@ $progress-bar-color: #fff !default;
 // Variable for setting rounded corners on progress bar.
 $progress-border-radius: $border-radius-base !default;
 
-// Default progress bar color
-$progress-bar-bg: $brand-primary !default; // Bootstrap4 is theme-color("primary") !default;
 // Success progress bar color
-$progress-bar-success-bg: $brand-success !default;
+$progress-bar-success-bg: var(--brand-success, #32852e) !default;
 
 // Warning progress bar color
-$progress-bar-warning-bg: $brand-warning !default;
+$progress-bar-warning-bg: var(--brand-warning, #c2570f) !default;
 
 // Danger progress bar color
-$progress-bar-danger-bg: $brand-danger !default;
+$progress-bar-danger-bg: var(--brand-danger, #cd402d) !default;
 
 // Info progress bar color
-$progress-bar-info-bg: $brand-info !default;
+$progress-bar-info-bg: var(--brand-info, #1c7db5) !default;
 
 // == List group
 
@@ -756,8 +677,6 @@ $panel-default-text: var(--gray-900, #3b3a48) !default;
 $panel-default-border: var(--gray-200, #d4d4d7) !default;
 $panel-default-heading-bg: var(--gray-75, #f3f3f4) !default;
 $panel-primary-text: #fff !default;
-$panel-primary-border: $brand-primary !default;
-$panel-primary-heading-bg: $brand-primary !default;
 $panel-success-text: $state-success-text !default;
 $panel-success-border: $state-success-border !default;
 $panel-success-heading-bg: $state-success-bg !default;
@@ -778,7 +697,7 @@ $panel-danger-heading-bg: $state-danger-bg !default;
 // Padding around the thumbnail image
 $thumbnail-padding: 4px !default; // Bootstrap4 is .25rem
 // Thumbnail background color
-$thumbnail-bg: $body-bg !default;
+$thumbnail-bg: var(--body-bg) !default;
 
 // Thumbnail border color
 $thumbnail-border: #ddd !default;
@@ -787,7 +706,7 @@ $thumbnail-border: #ddd !default;
 $thumbnail-border-radius: $border-radius-base !default;
 
 // Custom text color for thumbnail captions
-$thumbnail-caption-color: $text-color !default;
+$thumbnail-caption-color: var(--text-color) !default;
 
 // Padding around the thumbnail caption
 $thumbnail-caption-padding: 9px !default;
@@ -810,7 +729,7 @@ $badge-link-hover-color: #fff !default;
 $badge-bg: var(--gray-600, #72717c) !default;
 
 // Badge text color in active nav link
-$badge-active-color: $link-color !default;
+$badge-active-color: var(--link-color) !default;
 
 // Badge background color in active nav link
 $badge-active-bg: #fff !default;
@@ -878,9 +797,6 @@ $pre-scrollable-max-height: 340px !default;
 // Horizontal offset for forms and lists.
 $component-offset-horizontal: 180px !default;
 
-// Text muted color
-$text-muted: var(--gray-700, #5e5e6a);
-
 // Abbreviations and acronyms border color
 $abbr-border-color: var(--gray-600, #72717c) !default;
 
@@ -891,7 +807,7 @@ $headings-small-color: var(--gray-700, #5e5e6a);
 $blockquote-small-color: var(--gray-700, #5e5e6a);
 
 // Blockquote font size
-$blockquote-font-size: ($font-size-base * 1.25) !default;
+$blockquote-font-size: calc(var(var(--font-size-base), 1rem) * 1.25) !default;
 
 // Blockquote border color
 $blockquote-border-color: var(--gray-100, #ededef) !default;
@@ -928,7 +844,7 @@ $alert-danger-color: $red;
 $alert-danger-hover: darken($red, 10%);
 
 // Nav Tabs
-$nav-tabs-active-link-hover-bg: $body-bg !default;
+$nav-tabs-active-link-hover-bg: var(--body-bg) !default;
 
 // SEARCH
 $text-field-color: rgb(255 255 255 / 80%); // 80% white

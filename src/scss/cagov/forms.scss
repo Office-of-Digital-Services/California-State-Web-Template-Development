@@ -12,7 +12,7 @@
 
 label {
   font-weight: 600;
-  font-size: $font-size-regular;
+  font-size: var(--font-size-regular);
   margin-bottom: 0.5rem;
 }
 
@@ -28,8 +28,6 @@ label {
   &.is-invalid {
     color: var(--brand-danger, #cd402d);
     border-color: var(--brand-danger, #cd402d);
-
-    // background-color: lighten($brand-danger, 40%);
     background-color: var(--brand-danger-lighter, #f4d9d5);
   }
 }

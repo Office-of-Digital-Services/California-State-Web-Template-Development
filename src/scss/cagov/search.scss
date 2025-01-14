@@ -285,9 +285,13 @@ input[type="search"].search-textfield {
       position: absolute;
     }
 
-    transition: top $search-ft, left $search-st $search-ft,
-      width $search-st $search-ft, background-color $search-ft + $search-st,
-      border $search-ft, padding $search-st $search-ft;
+    transition:
+      top $search-ft,
+      left $search-st $search-ft,
+      width $search-st $search-ft,
+      background-color $search-ft + $search-st,
+      border $search-ft,
+      padding $search-st $search-ft;
     top: $search-absolute-height;
     left: 0;
     padding: 20px 0;
@@ -338,8 +342,8 @@ input[type="search"].search-textfield {
 .agency-form {
   @include clearfix;
 
-  margin-top: $spacer-y !important;
-  margin-bottom: $spacer-y !important;
+  margin-top: var(--spacer, 1rem) !important;
+  margin-bottom: var(--spacer, 1rem) !important;
 
   .textfield-container {
     float: left;

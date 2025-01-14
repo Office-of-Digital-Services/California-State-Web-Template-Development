@@ -8,7 +8,7 @@
 
   @include make-row;
 
-  margin-bottom: $line-height-computed;
+  margin-bottom: var(--line-height-computed);
   padding: 0 calc($grid-gutter-width / 2); // Adds padding to compensate for instances where thumbnails are/are not used
 
   .published {
@@ -55,12 +55,12 @@
   }
 
   .published {
-    margin-bottom: $line-height-computed;
+    margin-bottom: var(--line-height-computed);
     clear: both; // used when share widget is enabled
   }
 
   .keywords {
-    margin-top: $line-height-computed;
+    margin-top: var(--line-height-computed);
   }
 }
 

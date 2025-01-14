@@ -262,7 +262,7 @@
 // (All panels will be deprecated since they are replaced by cards)
 .panel-group .panel + .panel,
 .card-group .card + .card {
-  margin-top: $line-height-computed;
+  margin-top: var(--line-height-computed);
 }
 
 .panel-heading,
@@ -317,7 +317,7 @@
 .card-title {
   margin-bottom: $card-spacer-y;
   margin-top: 0;
-  font-size: $font-size-h4;
+  font-size: var(--font-size-h4);
 
   a {
     text-decoration: none !important;
@@ -391,8 +391,14 @@
     background: var(--white, #fff);
     color: var(--gray-900, #3b3a48);
 
-    @include link-variant($link-color, $link-hover-color);
-    @include underline($link-color, $link-hover-color);
+    @include link-variant(
+      var(--link-color, #046b99),
+      var(--link-hover-color, #005a7f)
+    );
+    @include underline(
+      var(--link-color, #046b99),
+      var(--link-hover-color, #005a7f)
+    );
   }
 }
 
@@ -466,8 +472,14 @@
     background: var(--white, #fff);
     color: var(--gray-900, #3b3a48);
 
-    @include link-variant($link-color, $link-hover-color);
-    @include underline($link-color, $link-hover-color);
+    @include link-variant(
+      var(--link-color, #046b99),
+      var(--link-hover-color, #005a7f)
+    );
+    @include underline(
+      var(--link-color, #046b99),
+      var(--link-hover-color, #005a7f)
+    );
   }
 }
 

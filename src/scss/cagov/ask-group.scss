@@ -11,10 +11,12 @@ $ask-bg-hover: rgb(0 0 0 / 80%);
     position: relative;
     width: 60%;
     left: 20%;
-    transition: opacity 0.3s, visibility 0.3s;
+    transition:
+      opacity 0.3s,
+      visibility 0.3s;
     z-index: 5;
     visibility: visible;
-    font-family: $headings-font-family;
+    font-family: var(--headings-font-family);
 
     .flexbox & {
       left: 0;
@@ -174,7 +176,7 @@ $ask-bg-hover: rgb(0 0 0 / 80%);
   .ask-group {
     @include make-xs-column(12);
 
-    padding-top: $line-height-computed;
+    padding-top: var(--line-height-computed);
     float: none;
     padding-bottom: 1px;
 

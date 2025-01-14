@@ -532,19 +532,19 @@
 }
 
 .text-primary {
-  color: $text-primary !important;
+  color: var(--color-p2, #046b99) !important;
 }
 
 .text-success {
-  color: $text-success !important;
+  color: var(--brand-success, #32852e) !important;
 }
 
 .text-info {
-  color: $text-info !important;
+  color: var(--brand-info, #1c7db5) !important;
 }
 
 .text-muted {
-  color: $text-muted !important;
+  color: var(--text-muted, #5e5e6a) !important;
 }
 
 .outline-color,
@@ -1200,7 +1200,7 @@
 }
 
 .font-size-sm {
-  font-size: ($font-size-base * 0.75) !important;
+  font-size: calc(var(--font-size-base, 1rem) * 0.75) !important;
 }
 
 .font-size-70x {

@@ -12,7 +12,7 @@
   background-color: rgb(0 0 0 / 50%);
 
   .explore-title {
-    font-family: $headings-font-family;
+    font-family: var(--headings-font-family);
 
     @include font-size(1.7);
   }

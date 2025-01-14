@@ -38,7 +38,7 @@
         border-radius: 0;
         position: relative;
         display: block;
-        color: $link-color;
+        color: var(--link-color, #046b99);
         font-weight: 600;
 
         &,

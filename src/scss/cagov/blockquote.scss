@@ -5,10 +5,10 @@
 
 blockquote {
   // @include font-size(1.125);
-  font-size: $font-size-regular;
+  font-size: var(--font-size-regular);
 
   @include media-breakpoint-up(sm) {
-    font-size: calc(#{$font-size-regular} + #{$ratio});
+    font-size: calc(var(--font-size-regular) + var(--ratio));
   }
 
   padding: 11px 22px;
@@ -28,7 +28,7 @@ blockquote {
     display: block;
     font-size: 80%; // back to default font-size
     color: $blockquote-small-color;
-    font-weight: $font-weight-7;
+    font-weight: var(--font-weight-7);
     margin-top: 1rem;
 
     &::before {

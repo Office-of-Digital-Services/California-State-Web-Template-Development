@@ -18,7 +18,7 @@
 
   > .section {
     // & :extend(.container);                              // Backwards compatability with v4 templates
-    padding-bottom: $line-height-computed;
+    padding-bottom: var(--line-height-computed);
   }
 }
 

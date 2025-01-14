@@ -42,7 +42,7 @@
 
     a.btn {
       float: right;
-      margin-top: calc($line-height-computed / 2);
+      margin-top: calc(var(--line-height-computed) / 2);
 
       @include btn-xs;
 

@@ -39,7 +39,7 @@
 
   padding: calc($grid-gutter-width / 2) 0;
   background: var(--gray-50, #fafafa);
-  margin-bottom: calc($line-height-computed / 2);
+  margin-bottom: calc(var(--line-height-computed) / 2);
 
   .thumbnail {
     @include make-sm-column(4);
@@ -65,7 +65,7 @@
     @include make-lg-column(7);
 
     @media (max-width: $screen-sm-max) {
-      margin-top: calc($line-height-computed / 2);
+      margin-top: calc(var(--line-height-computed) / 2);
     }
   }
 }
@@ -76,11 +76,13 @@
 .location.contact {
   @include clearfix;
 
-  margin-bottom: $line-height-computed;
+  margin-bottom: var(--line-height-computed);
   position: relative;
 
   .main-secondary > & {
-    margin-top: $line-height-computed; // when first in sidebar add extra padding on top
+    margin-top: var(
+      --line-height-computed
+    ); // when first in sidebar add extra padding on top
   }
 
   [class^="ca-gov-icon-"] {
@@ -112,7 +114,7 @@
   @include clearfix;
 
   position: relative;
-  margin-bottom: $line-height-computed;
+  margin-bottom: var(--line-height-computed);
 
   [class^="ca-gov-icon"] {
     padding: 5px;
@@ -149,7 +151,7 @@
 
     @media (max-width: $screen-sm-max) {
       margin-bottom: calc(
-        $line-height-computed / 2
+        var(--line-height-computed) / 2
       ); // Adds seperation between photo and map at small size
     }
   }
@@ -164,7 +166,7 @@
   .contact {
     @include make-sm-column(3);
 
-    margin-top: $line-height-computed;
+    margin-top: var(--line-height-computed);
 
     [class^="ca-gov-icon"] {
       @include font-size(2.2);
@@ -181,6 +183,6 @@
   .summary {
     @include make-sm-column(9);
 
-    margin-top: $line-height-computed;
+    margin-top: var(--line-height-computed);
   }
 }

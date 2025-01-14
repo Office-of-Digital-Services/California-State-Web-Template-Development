@@ -9,7 +9,7 @@
     float: left;
     position: relative;
     text-align: center;
-    margin-bottom: $line-height-computed;
+    margin-bottom: var(--line-height-computed);
     padding-bottom: 8px; // Bottom padding value equal to the a tags negative bottom value
     padding-left: calc($grid-gutter-width / 2);
     padding-right: calc($grid-gutter-width / 2);
@@ -54,8 +54,8 @@
       position: absolute;
       top: 60%;
       left: 50%;
-      margin-left: -$font-size-base;
-      margin-top: -($font-size-base * 1.5);
+      margin-left: calc(var(--font-size-base) * -1);
+      margin-top: calc(var(--font-size-base, 1rem) * -1.5);
       z-index: 101;
       font-family: CaGov;
 

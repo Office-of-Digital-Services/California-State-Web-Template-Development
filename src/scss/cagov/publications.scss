@@ -5,7 +5,7 @@
 .pub-item {
   @include clearfix;
 
-  margin-bottom: calc($line-height-computed / 2);
+  margin-bottom: calc(var(--line-height-computed) / 2);
 
   &.odd {
     background: var(--gray-50, #fafafa);
@@ -26,7 +26,7 @@
 }
 
 .pub-body {
-  padding: calc($line-height-computed / 2) calc($grid-gutter-width / 2) !important; // Adds padding consistent to the themes gutter and line-height
+  padding: calc(var(--line-height-computed) / 2) calc($grid-gutter-width / 2) !important; // Adds padding consistent to the themes gutter and line-height
 }
 
 .pub-language,

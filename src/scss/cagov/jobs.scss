@@ -4,7 +4,7 @@
 
 .job-detail {
   .sub-header {
-    margin-bottom: $line-height-computed;
+    margin-bottom: var(--line-height-computed);
   }
 }
 

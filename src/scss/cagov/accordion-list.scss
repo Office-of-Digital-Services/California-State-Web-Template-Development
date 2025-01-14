@@ -35,11 +35,11 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding-bottom: 0;
-  font-family: $font-family-sans-serif;
+  font-family: var(--font-family-sans-serif);
 }
 
 .accordion__trigger {
-  color: $link-color;
+  color: var(--link-color, #046b99);
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-thickness: from-font;
@@ -60,7 +60,7 @@
   z-index: 2;
 
   &:hover {
-    color: $link-hover-color;
+    color: var(--link-hover-color, #005a7f);
   }
 }
 
@@ -112,7 +112,9 @@
 }
 
 .accordion__panel--transition {
-  transition: max-height 0.2s ease-in-out, padding-top 0.2s ease-in-out,
+  transition:
+    max-height 0.2s ease-in-out,
+    padding-top 0.2s ease-in-out,
     padding-bottom 0.2s ease-in-out;
 }
 

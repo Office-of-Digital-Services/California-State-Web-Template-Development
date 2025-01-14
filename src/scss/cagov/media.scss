@@ -59,7 +59,7 @@ figcaption {
     img,
     span {
       display: inherit;
-      margin-bottom: $line-height-computed;
+      margin-bottom: var(--line-height-computed);
     }
   }
 }

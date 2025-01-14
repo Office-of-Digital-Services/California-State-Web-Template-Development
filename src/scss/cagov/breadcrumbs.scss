@@ -13,10 +13,10 @@
   list-style: none;
 
   // @include font-size(1);
-  font-size: $font-size-small;
+  font-size: var(--font-size-small);
 
   @include media-breakpoint-up(sm) {
-    font-size: calc(#{$font-size-small} + #{$ratio});
+    font-size: calc(var(--font-size-small) + var(--ratio));
   }
 
   li {
@@ -57,8 +57,17 @@
   padding: 0; // Overrides Bootstraps injected content
 }
 
-.section--overstated, .section-standout, .section-impact, .section-primary, .section-inverted, .bg-primary, .bg-standout, .bg-p2, .bg-p3 {
-  .breadcrumbs ul li::after, .breadcrumbs ol li::after {
-    color: var(--white, #FFF);
+.section--overstated,
+.section-standout,
+.section-impact,
+.section-primary,
+.section-inverted,
+.bg-primary,
+.bg-standout,
+.bg-p2,
+.bg-p3 {
+  .breadcrumbs ul li::after,
+  .breadcrumbs ol li::after {
+    color: var(--white, #fff);
   }
 }

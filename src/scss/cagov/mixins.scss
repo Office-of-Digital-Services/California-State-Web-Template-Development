@@ -138,7 +138,7 @@
   color: $color;
   background-color: $background;
   border-color: $border;
-  font-weight: $font-weight-6;
+  font-weight: var(--font-weight-6);
 
   &:hover,
   &:focus,
@@ -282,7 +282,7 @@
 }
 
 @mixin text-muted {
-  color: $text-muted;
+  color: var(--text-muted, #5e5e6a);
 }
 
 @mixin list-inline {
@@ -324,27 +324,27 @@
 }
 
 @mixin m-b {
-  margin-bottom: $spacer-y !important;
+  margin-bottom: var(--spacer, 1rem) !important;
 }
 
 @mixin m-r-sm {
-  margin-right: ($spacer-y * 0.5) !important;
+  margin-right: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 @mixin m-b-sm {
-  margin-bottom: ($spacer-y * 0.5) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 @mixin p-r {
-  padding-right: $spacer-x !important;
+  padding-right: var(--spacer, 1rem) !important;
 }
 
 @mixin m-t {
-  margin-top: $spacer-y !important;
+  margin-top: var(--spacer, 1rem) !important;
 }
 
 @mixin m-t-sm {
-  margin-top: ($spacer-y * 0.5) !important;
+  margin-top: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 @mixin btn-block {
@@ -391,7 +391,7 @@
 }
 
 @mixin h4 {
-  font-family: $headings-font-family;
+  font-family: var(--headings-font-family);
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   color: $headings-color;
@@ -411,7 +411,7 @@
   @include button-size(
     $padding-large-vertical,
     $padding-large-horizontal,
-    $font-size-large,
+    var(--font-size-large),
     $line-height-large,
     $btn-border-radius-large
   );
@@ -421,7 +421,7 @@
   @include button-size(
     $padding-small-vertical,
     $padding-small-horizontal,
-    $font-size-small,
+    var(--font-size-small),
     $line-height-small,
     $btn-border-radius-small
   );
@@ -431,7 +431,7 @@
   @include button-size(
     $padding-xs-vertical,
     $padding-xs-horizontal,
-    $font-size-x-small,
+    var(--font-size-x-small),
     $line-height-small,
     $btn-border-radius-small
   );
@@ -477,7 +477,7 @@
 
     a.btn {
       float: right;
-      margin-top: calc($line-height-computed / 2);
+      margin-top: calc(var(--line-height-computed) / 2);
 
       @include btn-xs;
 
@@ -522,7 +522,7 @@
 @mixin table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: $line-height-computed;
+  margin-bottom: var(--line-height-computed);
 
   // Cells
   > thead,
@@ -532,7 +532,7 @@
       > th,
       > td {
         padding: $table-cell-padding;
-        line-height: $line-height-base;
+        line-height: var(--line-height-base);
         vertical-align: top;
         border-top: 1px solid $table-border-color;
       }
@@ -669,8 +669,8 @@
   @include button-size(
     $padding-base-vertical,
     $padding-base-horizontal,
-    $font-size-base,
-    $line-height-base,
+    var(--font-size-base),
+    var(--line-height-base),
     $btn-border-radius-base
   );
   @include user-select(none);
@@ -687,7 +687,7 @@
   &:hover,
   &:focus,
   &.focus {
-    color: $btn-default-color;
+    color: var(--btn-default-color, #3b3a48);
     text-decoration: none;
   }
 
