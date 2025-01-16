@@ -369,9 +369,7 @@
 
         .second-level-nav {
           > li {
-            border: 1px solid transparent;
-            border-right: 4px solid var(--white, #fff); // beta 6.0 addition
-            border-bottom: 4px solid var(--white, #fff); // beta 6.0 addition
+            border: none;
 
             &:hover,
             &:focus {
@@ -737,15 +735,6 @@
   }
 }
 
-// Minor divsions or sub sections
-// --------------------------------------------------
-// 992px
-
-/* Need a little extra specificity for IE to override display: table-cell */
-.oldie .home-link {
-  @include sr-only;
-}
-
 /* FULL WIDTH MENU WITH REGULAR UTILITY BAR */
 // 992px
 @media (min-width: $screen-md-min) {
@@ -753,6 +742,20 @@
     padding-left: 0;
     margin-top: 0;
     min-height: 55px;
+
+    &.dropdown {
+      .second-level-nav {
+        .unit1 {
+          min-height: unset !important;
+
+          a.second-level-link:hover,
+          a.second-level-link:focus {
+            background-color: var(--gray-50, #fafafa);
+            text-decoration: none;
+          }
+        }
+      }
+    }
 
     .top-level-nav {
       // min-height: 55px;
