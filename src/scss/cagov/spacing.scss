@@ -38,33 +38,33 @@
 }
 
 .m-a {
-  margin: $spacer !important;
+  margin: var(--spacer, 1rem) !important;
 }
 
 .m-t {
-  margin-top: $spacer-y !important;
+  margin-top: var(--spacer, 1rem) !important;
 }
 
 .m-r {
-  margin-right: $spacer-x !important;
+  margin-right: var(--spacer, 1rem) !important;
 }
 
 .m-b {
-  margin-bottom: $spacer-y !important;
+  margin-bottom: var(--spacer, 1rem) !important;
 }
 
 .m-l {
-  margin-left: $spacer-x !important;
+  margin-left: var(--spacer, 1rem) !important;
 }
 
 .m-x {
-  margin-right: $spacer-x !important;
-  margin-left: $spacer-x !important;
+  margin-right: var(--spacer, 1rem) !important;
+  margin-left: var(--spacer, 1rem) !important;
 }
 
 .m-y {
-  margin-top: $spacer-y !important;
-  margin-bottom: $spacer-y !important;
+  margin-top: var(--spacer, 1rem) !important;
+  margin-bottom: var(--spacer, 1rem) !important;
 }
 
 .m-x-auto {
@@ -73,117 +73,117 @@
 }
 
 .m-a-sm {
-  margin: ($spacer * 0.5) !important;
+  margin: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .m-t-sm {
-  margin-top: ($spacer-y * 0.5) !important;
+  margin-top: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .m-r-sm {
-  margin-right: ($spacer-y * 0.5) !important;
+  margin-right: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .m-b-sm {
-  margin-bottom: ($spacer-y * 0.5) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .m-l-sm {
-  margin-left: ($spacer-y * 0.5) !important;
+  margin-left: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .m-x-sm {
-  margin-right: ($spacer-x * 0.5) !important;
-  margin-left: ($spacer-x * 0.5) !important;
+  margin-right: calc(var(--spacer, 1rem) * 0.5) !important;
+  margin-left: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .m-y-sm {
-  margin-top: ($spacer-y * 0.5) !important;
-  margin-bottom: ($spacer-y * 0.5) !important;
+  margin-top: calc(var(--spacer, 1rem) * 0.5) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .m-a-md {
-  margin: ($spacer * 1.5) !important;
+  margin: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .m-t-md {
-  margin-top: ($spacer-y * 1.5) !important;
+  margin-top: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .m-r-md {
-  margin-right: ($spacer-y * 1.5) !important;
+  margin-right: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .m-b-md {
-  margin-bottom: ($spacer-y * 1.5) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .m-l-md {
-  margin-left: ($spacer-y * 1.5) !important;
+  margin-left: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .m-x-md {
-  margin-right: ($spacer-x * 1.5) !important;
-  margin-left: ($spacer-x * 1.5) !important;
+  margin-right: calc(var(--spacer, 1rem) * 1.5) !important;
+  margin-left: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .m-y-md {
-  margin-top: ($spacer-y * 1.5) !important;
-  margin-bottom: ($spacer-y * 1.5) !important;
+  margin-top: calc(var(--spacer, 1rem) * 1.5) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .m-a-lg {
-  margin: ($spacer * 3) !important;
+  margin: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .m-t-lg {
-  margin-top: ($spacer-y * 3) !important;
+  margin-top: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .m-r-lg {
-  margin-right: ($spacer-y * 3) !important;
+  margin-right: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .m-b-lg {
-  margin-bottom: ($spacer-y * 3) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .m-l-lg {
-  margin-left: ($spacer-y * 3) !important;
+  margin-left: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .m-x-lg {
-  margin-right: ($spacer-x * 3) !important;
-  margin-left: ($spacer-x * 3) !important;
+  margin-right: calc(var(--spacer, 1rem) * 3) !important;
+  margin-left: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .m-y-lg {
-  margin-top: ($spacer-y * 3) !important;
-  margin-bottom: ($spacer-y * 3) !important;
+  margin-top: calc(var(--spacer, 1rem) * 3) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .m-t-60 {
-  margin-top: ($spacer-y * 4) !important;
+  margin-top: calc(var(--spacer, 1rem) * 4) !important;
 }
 
 .m-t-80 {
-  margin-top: ($spacer-y * 5) !important;
+  margin-top: calc(var(--spacer, 1rem) * 5) !important;
 }
 
 .m-t-100 {
-  margin-top: ($spacer-y * 6) !important;
+  margin-top: calc(var(--spacer, 1rem) * 6) !important;
 }
 
 .m-b-60 {
-  margin-bottom: ($spacer-y * 4) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 4) !important;
 }
 
 .m-b-80 {
-  margin-bottom: ($spacer-y * 5) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 5) !important;
 }
 
 .m-b-100 {
-  margin-bottom: ($spacer-y * 6) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 6) !important;
 }
 
 // Padding
@@ -219,147 +219,147 @@
 }
 
 .p-a {
-  padding: $spacer !important;
+  padding: var(--spacer, 1rem) !important;
 }
 
 .p-t {
-  padding-top: $spacer-y !important;
+  padding-top: var(--spacer, 1rem) !important;
 }
 
 .p-r {
-  padding-right: $spacer-x !important;
+  padding-right: var(--spacer, 1rem) !important;
 }
 
 .p-b {
-  padding-bottom: $spacer-y !important;
+  padding-bottom: var(--spacer, 1rem) !important;
 }
 
 .p-l {
-  padding-left: $spacer-x !important;
+  padding-left: var(--spacer, 1rem) !important;
 }
 
 .p-x {
-  padding-right: $spacer-x !important;
-  padding-left: $spacer-x !important;
+  padding-right: var(--spacer, 1rem) !important;
+  padding-left: var(--spacer, 1rem) !important;
 }
 
 .p-y {
-  padding-top: $spacer-y !important;
-  padding-bottom: $spacer-y !important;
+  padding-top: var(--spacer, 1rem) !important;
+  padding-bottom: var(--spacer, 1rem) !important;
 }
 
 .p-a-sm {
-  padding: ($spacer * 0.5) !important;
+  padding: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .p-t-sm {
-  padding-top: ($spacer-y * 0.5) !important;
+  padding-top: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .p-r-sm {
-  padding-right: ($spacer-y * 0.5) !important;
+  padding-right: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .p-b-sm {
-  padding-bottom: ($spacer-y * 0.5) !important;
+  padding-bottom: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .p-l-sm {
-  padding-left: ($spacer-y * 0.5) !important;
+  padding-left: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .p-x-sm {
-  padding-right: ($spacer-x * 0.5) !important;
-  padding-left: ($spacer-x * 0.5) !important;
+  padding-right: calc(var(--spacer, 1rem) * 0.5) !important;
+  padding-left: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .p-y-sm {
-  padding-top: ($spacer-y * 0.5) !important;
-  padding-bottom: ($spacer-y * 0.5) !important;
+  padding-top: calc(var(--spacer, 1rem) * 0.5) !important;
+  padding-bottom: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .p-a-md {
-  padding: ($spacer * 1.5) !important;
+  padding: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .p-t-md {
-  padding-top: ($spacer-y * 1.5) !important;
+  padding-top: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .p-r-md {
-  padding-right: ($spacer-y * 1.5) !important;
+  padding-right: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .p-b-md {
-  padding-bottom: ($spacer-y * 1.5) !important;
+  padding-bottom: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .p-l-md {
-  padding-left: ($spacer-y * 1.5) !important;
+  padding-left: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .p-x-md {
-  padding-right: ($spacer-x * 1.5) !important;
-  padding-left: ($spacer-x * 1.5) !important;
+  padding-right: calc(var(--spacer, 1rem) * 1.5) !important;
+  padding-left: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .p-y-md {
-  padding-top: ($spacer-y * 1.5) !important;
-  padding-bottom: ($spacer-y * 1.5) !important;
+  padding-top: calc(var(--spacer, 1rem) * 1.5) !important;
+  padding-bottom: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .p-a-lg {
-  padding: ($spacer * 3) !important;
+  padding: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .p-t-lg {
-  padding-top: ($spacer-y * 3) !important;
+  padding-top: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .p-r-lg {
-  padding-right: ($spacer-y * 3) !important;
+  padding-right: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .p-b-lg {
-  padding-bottom: ($spacer-y * 3) !important;
+  padding-bottom: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .p-l-lg {
-  padding-left: ($spacer-y * 3) !important;
+  padding-left: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .p-x-lg {
-  padding-right: ($spacer-x * 3) !important;
-  padding-left: ($spacer-x * 3) !important;
+  padding-right: calc(var(--spacer, 1rem) * 3) !important;
+  padding-left: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .p-y-lg {
-  padding-top: ($spacer-y * 3) !important;
-  padding-bottom: ($spacer-y * 3) !important;
+  padding-top: calc(var(--spacer, 1rem) * 3) !important;
+  padding-bottom: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .p-t-60 {
-  padding-top: ($spacer-y * 4) !important;
+  padding-top: calc(var(--spacer, 1rem) * 4) !important;
 }
 
 .p-t-80 {
-  padding-top: ($spacer-y * 5) !important;
+  padding-top: calc(var(--spacer, 1rem) * 5) !important;
 }
 
 .p-t-100 {
-  padding-top: ($spacer-y * 6) !important;
+  padding-top: calc(var(--spacer, 1rem) * 6) !important;
 }
 
 .p-b-60 {
-  padding-bottom: ($spacer-y * 4) !important;
+  padding-bottom: calc(var(--spacer, 1rem) * 4) !important;
 }
 
 .p-b-80 {
-  padding-bottom: ($spacer-y * 5) !important;
+  padding-bottom: calc(var(--spacer, 1rem) * 5) !important;
 }
 
 .p-b-100 {
-  padding-bottom: ($spacer-y * 6) !important;
+  padding-bottom: calc(var(--spacer, 1rem) * 6) !important;
 }
 
 .p-y-80 {
@@ -373,35 +373,35 @@
 }
 
 .left-sm {
-  left: ($spacer * 0.5) !important;
+  left: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .left-n {
-  left: ($spacer) !important;
+  left: var(--spacer, 1rem) !important;
 }
 
 .left-md {
-  left: ($spacer * 1.5) !important;
+  left: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .left-lg {
-  left: ($spacer * 3) !important;
+  left: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .left-minus-sm {
-  left: -($spacer * 0.5) !important;
+  left: calc(var(--spacer, 1rem) * -0.5) !important;
 }
 
 .left-minus-n {
-  left: -($spacer) !important;
+  left: calc(var(--spacer, 1rem) * -1) !important;
 }
 
 .left-minus-md {
-  left: -($spacer * 1.5) !important;
+  left: calc(var(--spacer, 1rem) * -1.5) !important;
 }
 
 .left-minus-lg {
-  left: -($spacer * 3) !important;
+  left: calc(var(--spacer, 1rem) * -3) !important;
 }
 
 .right-0 {
@@ -409,35 +409,35 @@
 }
 
 .right-sm {
-  right: ($spacer * 0.5) !important;
+  right: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .right-n {
-  right: ($spacer) !important;
+  right: var(--spacer, 1rem) !important;
 }
 
 .right-md {
-  right: ($spacer * 1.5 !important);
+  right: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .right-lg {
-  right: ($spacer * 3) !important;
+  right: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .right-minus-sm {
-  right: -($spacer * 0.5) !important;
+  right: calc(var(--spacer, 1rem) * -0.5) !important;
 }
 
 .right-minus-n {
-  right: -($spacer) !important;
+  right: calc(var(--spacer, 1rem) * -1) !important;
 }
 
 .right-minus-md {
-  right: -($spacer * 1.5) !important;
+  right: calc(var(--spacer, 1rem) * -1.5) !important;
 }
 
 .right-minus-lg {
-  right: -($spacer * 3) !important;
+  right: calc(var(--spacer, 1rem) * -3) !important;
 }
 
 .top-minus-5 {
@@ -461,19 +461,19 @@
 }
 
 .top-sm {
-  top: ($spacer * 0.5) !important;
+  top: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 .top-n {
-  top: ($spacer) !important;
+  top: var(--spacer, 1rem) !important;
 }
 
 .top-md {
-  top: ($spacer * 1.5) !important;
+  top: calc(var(--spacer, 1rem) * 1.5) !important;
 }
 
 .top-lg {
-  top: ($spacer * 3) !important;
+  top: calc(var(--spacer, 1rem) * 3) !important;
 }
 
 .top-5pct {
@@ -545,19 +545,19 @@
 }
 
 .bottom-sm {
-  bottom: ($spacer * 0.5);
+  bottom: calc(var(--spacer, 1rem) * 0.5);
 }
 
 .bottom-n {
-  bottom: ($spacer);
+  bottom: var(--spacer, 1rem);
 }
 
 .bottom-md {
-  bottom: ($spacer * 1.5);
+  bottom: calc(var(--spacer, 1rem) * 1.5);
 }
 
 .bottom-lg {
-  bottom: ($spacer * 3);
+  bottom: calc(var(--spacer, 1rem) * 3);
 }
 
 .bottom-5pct {

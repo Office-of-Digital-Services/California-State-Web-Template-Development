@@ -29,14 +29,14 @@ figcaption {
 .img-left {
   @include float-left;
 
-  margin-right: calc($grid-gutter-width / 2);
+  margin-right: calc(var(--grid-gutter-width) / 2);
   margin-top: 4px; // Aligns image with top of text
 }
 
 .img-right {
   @include float-right;
 
-  margin-left: calc($grid-gutter-width / 2);
+  margin-left: calc(var(--grid-gutter-width) / 2);
   margin-top: 4px; // Aligns image with top of text
 }
 
@@ -59,7 +59,7 @@ figcaption {
     img,
     span {
       display: inherit;
-      margin-bottom: $line-height-computed;
+      margin-bottom: var(--line-height-computed);
     }
   }
 }
@@ -83,5 +83,5 @@ figcaption {
   font-size: 1rem;
   height: unset;
   min-height: 1.25rem;
-  border-radius: $border-radius-base;
+  border-radius: var(--border-radius-base);
 }

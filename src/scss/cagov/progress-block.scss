@@ -124,7 +124,7 @@
 
 // Vertical timeline
 .timeline-dot {
-  left: -$spacer;
+  left: -var(--spacer, 1rem);
   position: absolute;
   top: 2.25rem;
   transform: translateY(-50%);

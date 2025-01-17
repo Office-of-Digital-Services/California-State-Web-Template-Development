@@ -11,8 +11,8 @@
   overflow: hidden;
 
   @media (max-width: $screen-xs-max) {
-    padding-top: $line-height-computed;
-    padding-bottom: $line-height-computed;
+    padding-top: var(--line-height-computed);
+    padding-bottom: var(--line-height-computed);
   }
 
   /* Section extensions */
@@ -190,7 +190,7 @@
         #fff
       );
 
-      margin-bottom: calc($line-height-computed / 2);
+      margin-bottom: calc(var(--line-height-computed) / 2);
 
       [class^="ca-gov-icon-"] {
         color: var(--color-s2, #87b8ce);
@@ -237,7 +237,7 @@
   }
 
   &-inverted {
-    @include image-thumbnail($thumbnail-bg, var(--gray-200, #d4d4d7));
+    @include image-thumbnail(var(--body-bg), var(--gray-200, #d4d4d7));
 
     @include link-variant(
       var(--color-s3, #4993b5),
@@ -274,7 +274,7 @@
   }
 
   &-danger {
-    @include image-thumbnail($thumbnail-bg, var(--gray-200, #d4d4d7));
+    @include image-thumbnail(var(--body-bg), var(--gray-200, #d4d4d7));
 
     background: var(--brand-danger, #cd402d);
     color: var(--white, #fff);
@@ -311,7 +311,7 @@ pre {
   word-wrap: break-word;
   background-color: var(--gray-50, #fafafa);
   border: 1px solid var(--gray-100, #ededef);
-  padding: $spacer;
+  padding: var(--spacer, 1rem);
 }
 
 textarea.sourcecode {

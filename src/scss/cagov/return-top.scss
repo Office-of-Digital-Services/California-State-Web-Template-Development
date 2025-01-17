@@ -20,7 +20,7 @@ html {
   background: var(--white, #fff);
   border-color: var(--color-p2, #046b99);
   color: var(--color-p2, #046b99);
-  font-size: $font-size-regular;
+  font-size: var(--font-size-regular);
   text-align: center;
   text-decoration: none;
   cursor: pointer;

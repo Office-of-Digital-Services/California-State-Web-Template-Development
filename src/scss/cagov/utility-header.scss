@@ -80,10 +80,10 @@
 
   .settings-links {
     // @include font-size(1); // font size
-    font-size: $font-size-base;
+    font-size: var(--font-size-base, 1rem);
 
     @include media-breakpoint-up(sm) {
-      font-size: calc(#{$font-size-base} + #{$ratio});
+      font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
     }
     @include text-right;
   }

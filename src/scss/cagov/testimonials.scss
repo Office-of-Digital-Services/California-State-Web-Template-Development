@@ -5,7 +5,7 @@
 
 // Subject to
 .testimonial {
-  padding: $grid-gutter-width;
+  padding: var(--grid-gutter-width);
   border: none;
 
   // Proper spacing between instances of .testimonial
@@ -48,7 +48,7 @@
 
     .thumbnail-img {
       display: inherit;
-      margin-bottom: $line-height-computed;
+      margin-bottom: var(--line-height-computed);
     }
   }
 

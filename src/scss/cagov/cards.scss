@@ -30,32 +30,30 @@
 .card-header {
   padding: $card-spacer-y $card-spacer-x;
 
-  // background-color: $card-cap-bg;
-  // border-bottom: $card-border-width solid $card-border-color;
-
   &:first-child {
-    border-radius: $card-border-radius-inner $card-border-radius-inner 0 0;
+    border-radius: var(--card-border-radius-inner)
+      var(--card-border-radius-inner) 0 0;
   }
 }
 
 .card-footer {
   padding: $card-spacer-y $card-spacer-x;
 
-  // background-color: $card-cap-bg;
-  // border-top: $card-border-width solid $card-border-color;
-
   &:last-child {
-    border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
+    border-radius: 0 0 var(--card-border-radius-inner)
+      var(--card-border-radius-inner);
   }
 }
 
 // Card image caps
 .card-img-top {
-  border-radius: $card-border-radius-inner $card-border-radius-inner 0 0;
+  border-radius: var(--card-border-radius-inner) var(--card-border-radius-inner)
+    0 0;
 }
 
 .card-img-bottom {
-  border-radius: 0 0 $card-border-radius-inner $card-border-radius-inner;
+  border-radius: 0 0 var(--card-border-radius-inner)
+    var(--card-border-radius-inner);
 }
 
 /* Old panel styles */
@@ -171,11 +169,11 @@
     );
 
     .card-header {
-      border-bottom: $card-border-width solid rgb(255 255 255 / 20%);
+      border-bottom: var(--card-border-width) solid rgb(255 255 255 / 20%);
     }
 
     .card-footer {
-      border-top: $card-border-width solid rgb(255 255 255 / 20%);
+      border-top: var(--card-border-width) solid rgb(255 255 255 / 20%);
     }
   }
 
@@ -223,7 +221,7 @@
   @media (max-width: $screen-xs-max) {
     .panel-body,
     .card-body {
-      padding: calc($grid-gutter-width / 2) !important;
+      padding: calc(var(--grid-gutter-width) / 2) !important;
     }
 
     .photo {
@@ -262,7 +260,7 @@
 // (All panels will be deprecated since they are replaced by cards)
 .panel-group .panel + .panel,
 .card-group .card + .card {
-  margin-top: $line-height-computed;
+  margin-top: var(--line-height-computed);
 }
 
 .panel-heading,
@@ -282,7 +280,7 @@
   margin-bottom: $card-spacer-y;
   background-color: var(--white, #fff);
   border: none;
-  border-radius: $card-border-radius;
+  border-radius: var(--card-border-radius);
 
   .card-body {
     padding: 1.5rem;
@@ -317,7 +315,7 @@
 .card-title {
   margin-bottom: $card-spacer-y;
   margin-top: 0;
-  font-size: $font-size-h4;
+  font-size: var(--font-size-h4);
 
   a {
     text-decoration: none !important;
@@ -391,8 +389,14 @@
     background: var(--white, #fff);
     color: var(--gray-900, #3b3a48);
 
-    @include link-variant($link-color, $link-hover-color);
-    @include underline($link-color, $link-hover-color);
+    @include link-variant(
+      var(--link-color, #046b99),
+      var(--link-hover-color, #005a7f)
+    );
+    @include underline(
+      var(--link-color, #046b99),
+      var(--link-hover-color, #005a7f)
+    );
   }
 }
 
@@ -466,8 +470,14 @@
     background: var(--white, #fff);
     color: var(--gray-900, #3b3a48);
 
-    @include link-variant($link-color, $link-hover-color);
-    @include underline($link-color, $link-hover-color);
+    @include link-variant(
+      var(--link-color, #046b99),
+      var(--link-hover-color, #005a7f)
+    );
+    @include underline(
+      var(--link-color, #046b99),
+      var(--link-hover-color, #005a7f)
+    );
   }
 }
 
@@ -501,11 +511,6 @@
 
   // border: none;
   border-radius: 0;
-
-  // @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-  //	margin-left: ($grid-gutter-width-sm / -2);
-  //	margin-right: ($grid-gutter-width-sm / -2);
-  // }
 
   .panel-heading,
   .card-heading {

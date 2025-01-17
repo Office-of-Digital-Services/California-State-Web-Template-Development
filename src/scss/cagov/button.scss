@@ -108,7 +108,7 @@
     var(--gray-700, #5e5e6a),
     var(--gray-50, #fafafa),
     var(--gray-700, #5e5e6a),
-    $link-hover-color,
+    var(--link-hover-color, #005a7f),
     #fff,
     var(--black, #000)
   );

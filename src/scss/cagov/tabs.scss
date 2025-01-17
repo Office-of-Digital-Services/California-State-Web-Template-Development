@@ -5,7 +5,7 @@
 .tab-group {
   position: relative;
   border: none;
-  background: $nav-tabs-active-link-hover-bg;
+  background: var(--body-bg);
 
   @media (max-width: $screen-xs-max) {
     border: none;
@@ -38,7 +38,7 @@
         border-radius: 0;
         position: relative;
         display: block;
-        color: $link-color;
+        color: var(--link-color, #046b99);
         font-weight: 600;
 
         &,
@@ -59,7 +59,7 @@
   }
 
   .tab-pane {
-    padding: calc($grid-gutter-width / 2);
+    padding: calc(var(--grid-gutter-width) / 2);
   }
 
   .tab-content {

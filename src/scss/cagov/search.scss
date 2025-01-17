@@ -106,7 +106,7 @@ $search-input-border-width: 3px;
 
       // fallback if not defined in color scheme
       color: var(--gray-600, #72717c);
-      border-color: $text-field-color;
+      border-color: var(--text-field-color);
 
       // no border on the side next to the input otherwise it doubles up the border
       border-width: $search-input-border-width $search-input-border-width
@@ -285,9 +285,13 @@ input[type="search"].search-textfield {
       position: absolute;
     }
 
-    transition: top $search-ft, left $search-st $search-ft,
-      width $search-st $search-ft, background-color $search-ft + $search-st,
-      border $search-ft, padding $search-st $search-ft;
+    transition:
+      top $search-ft,
+      left $search-st $search-ft,
+      width $search-st $search-ft,
+      background-color $search-ft + $search-st,
+      border $search-ft,
+      padding $search-st $search-ft;
     top: $search-absolute-height;
     left: 0;
     padding: 20px 0;
@@ -307,7 +311,7 @@ input[type="search"].search-textfield {
 
       height: $search-input-height; // Large search box overides default from above
       width: 100%;
-      border-radius: $border-radius-base; // 4px corners by default
+      border-radius: var(--border-radius-base); // 4px corners by default
       border: $search-input-border-width solid transparent; // makes border transparent but maintains height for hover effect
       padding: 0 4px; // Padding can control size of small search box
       transition: border $search-ft;
@@ -338,8 +342,8 @@ input[type="search"].search-textfield {
 .agency-form {
   @include clearfix;
 
-  margin-top: $spacer-y !important;
-  margin-bottom: $spacer-y !important;
+  margin-top: var(--spacer, 1rem) !important;
+  margin-bottom: var(--spacer, 1rem) !important;
 
   .textfield-container {
     float: left;

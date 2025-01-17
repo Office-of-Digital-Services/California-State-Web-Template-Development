@@ -44,7 +44,7 @@
   margin-bottom: 0;
   padding: 0.6rem 0 0.5rem;
   border-radius: 0;
-  column-rule: $text-field-color;
+  column-rule: var(--text-field-color);
   transition: all 0.2s;
   background-color: var(--color-p3, #323a45);
   color: var(--white, #fff);
@@ -112,61 +112,61 @@
 }
 
 .alert-warning {
-  color: $alert-warning-text;
-  background-color: $alert-warning-bg;
+  color: var(--alert-warning-text);
+  background-color: var(--alert-warning-bg);
 
   a:not(.btn),
   .close {
-    color: $alert-warning-text;
+    color: var(--alert-warning-text);
 
     &:focus,
     &:hover {
-      color: darken($alert-warning-text, 7%);
+      color: color-mix(in srgb, var(--alert-warning-text), #000 15%);
     }
   }
 }
 
 .alert-info {
-  color: $alert-info-text;
-  background-color: $alert-info-bg;
+  color: var(--alert-info-text);
+  background-color: var(--alert-info-bg);
 
   a:not(.btn),
   .close {
-    color: $alert-info-text;
+    color: var(--alert-info-text);
 
     &:focus,
     &:hover {
-      color: darken($alert-info-text, 14%);
+      color: color-mix(in srgb, var(--alert-info-text), #000 30%);
     }
   }
 }
 
 .alert-danger {
-  color: $alert-danger-text;
-  background-color: $alert-danger-bg;
+  color: var(--alert-danger-text);
+  background-color: var(--alert-danger-bg);
 
   a:not(.btn),
   .close {
-    color: $alert-danger-text;
+    color: var(--alert-danger-text);
 
     &:focus,
     &:hover {
-      color: darken($alert-danger-text, 14%);
+      color: color-mix(in srgb, var(--alert-danger-text), #000 30%);
     }
   }
 }
 
 .alert-success {
-  color: $alert-success-text;
-  background-color: $alert-success-bg;
+  color: var(--alert-success-text);
+  background-color: var(--alert-success-bg);
 
   a:not(.btn),
   .close {
-    color: $alert-success-text;
+    color: var(--alert-success-text);
 
     &:focus,
     &:hover {
-      color: darken($alert-success-text, 14%);
+      color: color-mix(in srgb, var(--alert-success-text), #000 30%);
     }
   }
 }

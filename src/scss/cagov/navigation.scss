@@ -65,10 +65,10 @@
   .nav-item {
     // equivalent to .nav-item
     position: relative;
-    font-size: $font-size-base;
+    font-size: var(--font-size-base, 1rem);
 
     @include media-breakpoint-up(sm) {
-      font-size: calc(#{$font-size-base} + #{$ratio});
+      font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
     }
   }
 }
@@ -203,7 +203,7 @@
     .first-level-btn {
       display: block;
       padding: 0.85rem 1rem 0.9rem;
-      font-family: $headings-font-family;
+      font-family: var(--headings-font-family);
       font-weight: 400;
 
       // white-space: nowrap;
@@ -369,9 +369,7 @@
 
         .second-level-nav {
           > li {
-            border: 1px solid transparent;
-            border-right: 4px solid var(--white, #fff); // beta 6.0 addition
-            border-bottom: 4px solid var(--white, #fff); // beta 6.0 addition
+            border: none;
 
             &:hover,
             &:focus {
@@ -737,15 +735,6 @@
   }
 }
 
-// Minor divsions or sub sections
-// --------------------------------------------------
-// 992px
-
-/* Need a little extra specificity for IE to override display: table-cell */
-.oldie .home-link {
-  @include sr-only;
-}
-
 /* FULL WIDTH MENU WITH REGULAR UTILITY BAR */
 // 992px
 @media (min-width: $screen-md-min) {
@@ -753,6 +742,20 @@
     padding-left: 0;
     margin-top: 0;
     min-height: 55px;
+
+    &.dropdown {
+      .second-level-nav {
+        .unit1 {
+          min-height: unset !important;
+
+          a.second-level-link:hover,
+          a.second-level-link:focus {
+            background-color: var(--gray-50, #fafafa);
+            text-decoration: none;
+          }
+        }
+      }
+    }
 
     .top-level-nav {
       // min-height: 55px;
@@ -897,7 +900,7 @@
 
 // Subject to deprication
 .nav-media {
-  background: $sub-nav-media-bg;
+  background: var(--sub-nav-media-bg);
 
   // Add the border to the first one only
   .media {

@@ -5,19 +5,19 @@
 .form-control,
 .custom-file-label,
 .custom-select {
-  border-radius: $border-radius-base;
-  border-color: $input-border;
+  border-radius: var(--border-radius-base);
+  border-color: var(--input-border);
   font-size: 1.375rem;
 }
 
 label {
   font-weight: 600;
-  font-size: $font-size-regular;
+  font-size: var(--font-size-regular);
   margin-bottom: 0.5rem;
 }
 
 .input-group-text {
-  border-radius: $border-radius-base;
+  border-radius: var(--border-radius-base);
 
   &.is-valid {
     color: var(--brand-success, #32852e);
@@ -28,15 +28,13 @@ label {
   &.is-invalid {
     color: var(--brand-danger, #cd402d);
     border-color: var(--brand-danger, #cd402d);
-
-    // background-color: lighten($brand-danger, 40%);
     background-color: var(--brand-danger-lighter, #f4d9d5);
   }
 }
 
 .custom-file-label::after {
   color: var(--white, #fff);
-  border-radius: $border-radius-base;
+  border-radius: var(--border-radius-base);
   font-weight: 500;
   background-color: var(--color-p2, #046b99);
 }
@@ -59,7 +57,7 @@ label {
 // Requires adding a group/row class outside of form for negative margins
 .form-inline-columns {
   .form-group {
-    margin: 0 calc($grid-gutter-width / 2);
+    margin: 0 calc(var(--grid-gutter-width) / 2);
   }
 }
 
@@ -268,13 +266,13 @@ input[type="radio"]:focus + div {
 
 .custom-checkbox {
   .custom-control-label::before {
-    border-radius: $border-radius-base;
+    border-radius: var(--border-radius-base);
   }
 
   .custom-control-input:checked ~ .custom-control-label::before {
     @include gradient-bg(var(--color-p2, #046b99));
 
-    border-radius: $border-radius-base;
+    border-radius: var(--border-radius-base);
   }
 }
 
@@ -297,7 +295,7 @@ input[type="radio"]:focus + div {
 }
 
 .select {
-  border: 1px solid $input-border;
+  border: 1px solid var(--input-border);
   overflow: hidden;
   height: 40px;
   width: 100%;
@@ -315,7 +313,7 @@ input[type="radio"]:focus + div {
   &::after {
     content: "\43";
     font-family: CaGov;
-    border-left: 1px solid $input-border;
+    border-left: 1px solid var(--input-border);
     padding: 8px 0;
     position: absolute;
     right: 0;

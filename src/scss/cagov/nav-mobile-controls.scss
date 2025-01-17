@@ -238,7 +238,7 @@ header.nav-overlay {
 // Mobile controls inside main navigation
 .main-navigation .mobile-controls {
   text-align: left;
-  background-color: $body-bg;
+  background-color: var(--body-bg, #fff);
 }
 
 // INDIVIDUAL CONTROLS

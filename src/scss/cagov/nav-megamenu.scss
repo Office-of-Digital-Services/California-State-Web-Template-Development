@@ -14,8 +14,8 @@
 // --------------------------------------------------
 
 .sub-nav {
-  left: calc($grid-gutter-width / 2);
-  right: calc($grid-gutter-width / 2);
+  left: calc(var(--grid-gutter-width) / 2);
+  right: calc(var(--grid-gutter-width) / 2);
   overflow: hidden;
 
   // Remove border as rules are added to top level links
@@ -38,10 +38,10 @@
   display: block;
 
   // @include font-size(1);
-  font-size: $font-size-base;
+  font-size: var(--font-size-base, 1rem);
 
   @include media-breakpoint-up(sm) {
-    font-size: calc(#{$font-size-base} + #{$ratio});
+    font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
   }
 }
 
@@ -152,7 +152,7 @@
   /* Dynamic element contained in .nav-arrow-container */
   .megadropdown .nav-arrow-down {
     // KEEPING POINTER AS I FEEL IT'S A BETTER SOLUTION
-    // background: transparent url("#{$template-path}/nav-down-arrow.png") no-repeat;
+    // background: transparent url("#{var(--template-path)}/nav-down-arrow.png") no-repeat;
     // width: 44px;
     // height: 16px;
     // margin-left: -22px;
@@ -178,11 +178,10 @@
 // --------------------------------------------------
 
 a.second-level-link {
-  //  @include font-size(1.1);
-  font-size: $font-size-regular;
+  font-size: var(--font-size-regular);
 
   @include media-breakpoint-up(sm) {
-    font-size: calc(#{$font-size-regular} + #{$ratio});
+    font-size: calc(var(--font-size-regular) + var(--ratio));
   }
 
   padding: 10px;

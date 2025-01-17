@@ -138,7 +138,7 @@
   color: $color;
   background-color: $background;
   border-color: $border;
-  font-weight: $font-weight-6;
+  font-weight: var(--font-weight-6);
 
   &:hover,
   &:focus,
@@ -265,24 +265,24 @@
   padding: 0 1rem;
 
   @media (min-width: $screen-xs-min) {
-    max-width: $breakpoint-xm;
+    max-width: var(--breakpoint-xm);
   }
 
   @media (min-width: $screen-sm-min) {
-    max-width: $breakpoint-sm;
+    max-width: var(--breakpoint-sm);
   }
 
   @media (min-width: $screen-md-min) {
-    max-width: $breakpoint-md;
+    max-width: var(--breakpoint-md);
   }
 
   @media (min-width: $screen-lg-min) {
-    max-width: $breakpoint-lg;
+    max-width: var(--breakpoint-lg);
   }
 }
 
 @mixin text-muted {
-  color: $text-muted;
+  color: var(--text-muted, #5e5e6a);
 }
 
 @mixin list-inline {
@@ -324,27 +324,27 @@
 }
 
 @mixin m-b {
-  margin-bottom: $spacer-y !important;
+  margin-bottom: var(--spacer, 1rem) !important;
 }
 
 @mixin m-r-sm {
-  margin-right: ($spacer-y * 0.5) !important;
+  margin-right: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 @mixin m-b-sm {
-  margin-bottom: ($spacer-y * 0.5) !important;
+  margin-bottom: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 @mixin p-r {
-  padding-right: $spacer-x !important;
+  padding-right: var(--spacer, 1rem) !important;
 }
 
 @mixin m-t {
-  margin-top: $spacer-y !important;
+  margin-top: var(--spacer, 1rem) !important;
 }
 
 @mixin m-t-sm {
-  margin-top: ($spacer-y * 0.5) !important;
+  margin-top: calc(var(--spacer, 1rem) * 0.5) !important;
 }
 
 @mixin btn-block {
@@ -362,7 +362,7 @@
   font-size: 75%;
   font-weight: bold;
   line-height: 1;
-  color: $label-color;
+  color: #fff;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
@@ -371,7 +371,7 @@
   a & {
     &:hover,
     &:focus {
-      color: $label-link-hover-color;
+      color: #fff;
       text-decoration: none;
       cursor: pointer;
     }
@@ -391,10 +391,10 @@
 }
 
 @mixin h4 {
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
+  font-family: var(--headings-font-family);
+  font-weight: var(--headings-font-weight, 400);
+  line-height: var(--headings-line-height);
+  color: var(--headings-color);
 
   @include font-size(1.25);
 
@@ -402,45 +402,45 @@
   .small {
     font-weight: normal;
     line-height: 1;
-    color: $headings-small-color;
+    color: var(--headings-small-color);
     font-size: 75%;
   }
 }
 
 @mixin btn-lg {
   @include button-size(
-    $padding-large-vertical,
-    $padding-large-horizontal,
-    $font-size-large,
-    $line-height-large,
-    $btn-border-radius-large
+    var(--padding-large-vertical),
+    var(--padding-large-horizontal),
+    var(--font-size-large),
+    var(--line-height-large),
+    var(--border-radius-large)
   );
 }
 
 @mixin btn-sm {
   @include button-size(
-    $padding-small-vertical,
-    $padding-small-horizontal,
-    $font-size-small,
-    $line-height-small,
-    $btn-border-radius-small
+    var(--padding-small-vertical),
+    var(--padding-small-horizontal),
+    var(--font-size-small),
+    var(--line-height-small),
+    var(--btn-border-radius-small)
   );
 }
 
 @mixin btn-xs {
   @include button-size(
-    $padding-xs-vertical,
-    $padding-xs-horizontal,
-    $font-size-x-small,
-    $line-height-small,
-    $btn-border-radius-small
+    var(--padding-xs-vertical),
+    var(--padding-xs-horizontal),
+    var(--font-size-x-small),
+    var(--line-height-small),
+    var(--btn-border-radius-small)
   );
 }
 
 @mixin card {
   background: #f2f2f2;
-  padding: calc($grid-gutter-width / 2);
-  margin-bottom: calc($grid-gutter-width / 2);
+  padding: calc(var(--grid-gutter-width) / 2);
+  margin-bottom: calc(var(--grid-gutter-width) / 2);
   position: relative;
 
   @include clearfix;
@@ -452,7 +452,7 @@
 
     .title {
       float: left;
-      margin-right: calc($grid-gutter-width / 2);
+      margin-right: calc(var(--grid-gutter-width) / 2);
 
       @include font-size(1.5);
       @include font-condensed;
@@ -477,7 +477,7 @@
 
     a.btn {
       float: right;
-      margin-top: calc($line-height-computed / 2);
+      margin-top: calc(var(--line-height-computed) / 2);
 
       @include btn-xs;
 
@@ -522,7 +522,7 @@
 @mixin table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: $line-height-computed;
+  margin-bottom: var(--line-height-computed);
 
   // Cells
   > thead,
@@ -531,10 +531,10 @@
     > tr {
       > th,
       > td {
-        padding: $table-cell-padding;
-        line-height: $line-height-base;
+        padding: var(--table-cell-padding);
+        line-height: var(--line-height-base);
         vertical-align: top;
-        border-top: 1px solid $table-border-color;
+        border-top: 1px solid var(--table-border-color);
       }
     }
   }
@@ -542,7 +542,7 @@
   // Bottom align for column headings
   > thead > tr > th {
     vertical-align: bottom;
-    border-bottom: 2px solid $table-border-color;
+    border-bottom: 2px solid var(--table-border-color);
   }
 
   // Remove top border from thead by default
@@ -559,7 +559,7 @@
 
   // Account for multiple tbody instances
   > tbody + tbody {
-    border-top: 2px solid $table-border-color;
+    border-top: 2px solid var(--table-border-color);
   }
 
   // Nesting
@@ -667,11 +667,11 @@
   white-space: nowrap;
 
   @include button-size(
-    $padding-base-vertical,
-    $padding-base-horizontal,
-    $font-size-base,
-    $line-height-base,
-    $btn-border-radius-base
+    var(--padding-base-vertical),
+    var(--padding-base-horizontal),
+    var(--font-size-base),
+    var(--line-height-base),
+    var(--btn-border-radius-base)
   );
   @include user-select(none);
 
@@ -687,7 +687,7 @@
   &:hover,
   &:focus,
   &.focus {
-    color: $btn-default-color;
+    color: var(--btn-default-color, #3b3a48);
     text-decoration: none;
   }
 
@@ -702,7 +702,7 @@
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    cursor: $cursor-disabled;
+    cursor: var(--cursor-disabled);
 
     @include opacity(0.65);
     @include box-shadow(none);
@@ -768,7 +768,7 @@
 // Generate semantic grid columns with these mixins.
 
 // Centered container element
-@mixin container-fixed($gutter: $grid-gutter-width) {
+@mixin container-fixed($gutter: var(--grid-gutter-width)) {
   margin-right: auto;
   margin-left: auto;
   padding-left: floor(calc($gutter / 2));
@@ -778,7 +778,7 @@
 }
 
 // Creates a wrapper for a series of columns
-@mixin make-row($gutter: $grid-gutter-width) {
+@mixin make-row($gutter: var(--grid-gutter-width)) {
   margin-left: -1rem;
   margin-right: -1rem;
 
@@ -786,7 +786,7 @@
 }
 
 // Generate the extra small columns
-@mixin make-xs-column($columns, $gutter: $grid-gutter-width) {
+@mixin make-xs-column($columns, $gutter: var(--grid-gutter-width)) {
   position: relative;
   float: unset;
   width: 100%;
@@ -796,19 +796,19 @@
 }
 
 @mixin make-xs-column-offset($columns) {
-  margin-left: percentage(calc($columns / $grid-columns));
+  margin-left: percentage(calc($columns / var(--grid-columns)));
 }
 
 @mixin make-xs-column-push($columns) {
-  left: percentage(calc($columns / $grid-columns));
+  left: percentage(calc($columns / var(--grid-columns)));
 }
 
 @mixin make-xs-column-pull($columns) {
-  right: percentage(calc($columns / $grid-columns));
+  right: percentage(calc($columns / var(--grid-columns)));
 }
 
 // Generate the small columns
-@mixin make-sm-column($columns, $gutter: $grid-gutter-width) {
+@mixin make-sm-column($columns, $gutter: var(--grid-gutter-width) h) {
   position: relative;
   min-height: 1px;
   padding-left: 1rem;
@@ -841,7 +841,7 @@
 }
 
 // Generate the medium columns
-@mixin make-md-column($columns, $gutter: $grid-gutter-width) {
+@mixin make-md-column($columns, $gutter: var(--grid-gutter-width)) {
   position: relative;
   min-height: 1px;
   padding-left: 1rem;
@@ -874,7 +874,7 @@
 }
 
 // Generate the large columns
-@mixin make-lg-column($columns, $gutter: $grid-gutter-width) {
+@mixin make-lg-column($columns, $gutter: var(--grid-gutter-width)) {
   position: relative;
   min-height: 1px;
   padding-left: 1rem;
@@ -1048,14 +1048,10 @@
 }
 
 @mixin outline($size) {
-  outline: $outline-default-style $size $outline-default-color !important;
+  outline: solid $size var(--outline-default-color) !important;
 }
 
-@mixin image-thumbnail(
-  $bg: $thumbnail-bg,
-  $border: $thumbnail-border,
-  $weight: $thumbnail-padding
-) {
+@mixin image-thumbnail($bg: var(--body-bg), $border: #ddd, $weight: 4px) {
   .img-thumbnail {
     padding: $weight;
     background-color: $bg;

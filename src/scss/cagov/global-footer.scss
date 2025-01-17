@@ -74,7 +74,7 @@
 
   .copyright {
     font-size: 1rem;
-    padding: 5px 0 $line-height-computed;
+    padding: 5px 0 var(--line-height-computed);
   }
 
   @media (min-width: $screen-md-min) {

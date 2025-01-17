@@ -5,10 +5,10 @@
 
 blockquote {
   // @include font-size(1.125);
-  font-size: $font-size-regular;
+  font-size: var(--font-size-regular);
 
   @include media-breakpoint-up(sm) {
-    font-size: calc(#{$font-size-regular} + #{$ratio});
+    font-size: calc(var(--font-size-regular) + var(--ratio));
   }
 
   padding: 11px 22px;
@@ -27,8 +27,8 @@ blockquote {
   footer {
     display: block;
     font-size: 80%; // back to default font-size
-    color: $blockquote-small-color;
-    font-weight: $font-weight-7;
+    color: var(--blockquote-small-color);
+    font-weight: var(--font-weight-7);
     margin-top: 1rem;
 
     &::before {
@@ -73,7 +73,7 @@ blockquote {
   &.blockquote-reverse {
     padding-right: 15px;
     padding-left: 0;
-    border-right: 5px solid $blockquote-border-color;
+    border-right: 5px solid var(--blockquote-border-color);
     border-left: 0;
     text-align: right;
 

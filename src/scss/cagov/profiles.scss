@@ -10,7 +10,7 @@
   align-items: center;
   padding: 1rem;
   margin: 0;
-  font-size: $font-size-base;
+  font-size: var(--font-size-base, 1rem);
   border: none;
   background-color: var(--color-s1, #eef8fb);
 
@@ -34,7 +34,7 @@
   }
 
   .executive-name {
-    font-size: $font-size-large;
+    font-size: var(--font-size-large);
   }
 
   &.dark {

@@ -62,8 +62,8 @@
   }
 
   .results-list {
-    margin-top: ($spacer-y * 1.5) !important;
-    margin-bottom: ($spacer-y * 1.5) !important;
+    margin-top: calc(var(--spacer, 1rem) * 1.5) !important;
+    margin-bottom: calc(var(--spacer, 1rem) * 1.5) !important;
   }
 }
 
