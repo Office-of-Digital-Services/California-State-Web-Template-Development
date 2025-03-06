@@ -14,6 +14,7 @@ Icon SVG creation
 1. Click on "Generate font" button that is located at the bottom right corner
 1. After font is generated click on "Download" button in the bottom right corner.
 1. Unzip downloaded file go to the fonts folder and rename each file to "CaGov" (e.g. CaGov.eat, CaGov.ttf, etc.)
+1. Get the WOFF2 version from https://cloudconvert.com/woff-to-woff2
 1. Copy and paste those renamed font files into your website's "fonts" folder
 1. In the downloaded folder find "styles.css"
 1. Inside find your custom icons styles. Change classes, so the first half of the class name would look like this .ca-gov-icon-
