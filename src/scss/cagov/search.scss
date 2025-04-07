@@ -50,19 +50,12 @@ $search-input-border-width: 3px;
     top: $search-absolute-height;
   }
 
-  // needed for our floating search-locator
-  @include clearfix;
-
   // Transition all the things
 
   .search-textfield {
-    // increases font size to approx 16.5px
-    @include font-size(1.1);
-
+    font-size: 1.1rem;
     width: 100%;
     max-height: 38px;
-
-    // Padding can control size of small search box
     padding: 0 10px;
     transition: border $search-ft;
 
@@ -77,7 +70,7 @@ $search-input-border-width: 3px;
     }
 
     &:focus {
-      @include outline(2px);
+      outline: 2px solid var(--outline-default-color);
 
       outline-offset: -2px;
     }
@@ -86,9 +79,6 @@ $search-input-border-width: 3px;
   .submit-container {
     // Float all the things!!
     float: left;
-
-    @include clearfix;
-
     height: auto;
 
     // ie9 needs a little help figuring out it's height
@@ -98,9 +88,6 @@ $search-input-border-width: 3px;
     button {
       // Keep on floating and floating
       float: left;
-
-      @include clearfix;
-
       transition: all $search-dt $search-dft;
       background: none;
 
@@ -116,11 +103,7 @@ $search-input-border-width: 3px;
       // square up this button with respect to the input
       width: $search-input-height + (2 * $search-input-border-width);
       height: 100%;
-
-      // good size for the current height
-      // NOTE: if changing input size this will need to be adjusted
-      @include font-size(1.5);
-
+      font-size: 1.5rem;
       line-height: 0.9375rem;
 
       // HACK: ios needed button padding explicity removed tp prevent button from expanding
@@ -133,18 +116,13 @@ $search-input-border-width: 3px;
         // Position the icon in the middle of the button
         position: relative;
         top: 0;
-
-        // good size for the current height
-        // NOTE: if changing input size this will need to be adjusted
-        @include font-size(1.87);
-
+        font-size: 1.87rem;
         line-height: 1.875rem;
       }
 
       // 991px
       @media (max-width: $screen-sm-max) {
-        @include font-size(2);
-
+        font-size: 2rem;
         line-height: 1em;
         padding-top: 0;
       }
@@ -247,11 +225,10 @@ input[type="search"].search-textfield {
     }
 
     .search-textfield {
-      padding: 14px; // Increases padding on large search to make it appear bigger.
+      padding: 14px;
       border-color: var(--gray-600, #72717c) !important;
-      @include font-size(1.1); // increases font size to approx 16.5px
-
-      height: 38px; // Large search box overides default from above
+      font-size: 1.1rem;
+      height: 38px;
     }
 
     .submit-container {
@@ -261,9 +238,7 @@ input[type="search"].search-textfield {
 
       button {
         transition: all $search-ft;
-
-        @include font-size(2.5); // Approx 37.5px
-
+        font-size: 2.5rem;
         width: 60px;
         appearance: none;
 
@@ -307,8 +282,7 @@ input[type="search"].search-textfield {
     }
 
     .search-textfield {
-      @include font-size(1.1); // increases font size to approx 16.5px
-
+      font-size: 1.1rem;
       height: $search-input-height; // Large search box overides default from above
       width: 100%;
       border-radius: var(--border-radius-base); // 4px corners by default
@@ -340,8 +314,6 @@ input[type="search"].search-textfield {
 // -----------------------------------------
 
 .agency-form {
-  @include clearfix;
-
   margin-top: var(--spacer, 1rem) !important;
   margin-bottom: var(--spacer, 1rem) !important;
 
@@ -357,8 +329,6 @@ input[type="search"].search-textfield {
   }
 
   .submit-container {
-    @include clearfix;
-
     float: left;
     height: $search-input-height; // ie9 needs a little help figuring out it's height
 
@@ -368,9 +338,7 @@ input[type="search"].search-textfield {
       width: 44px;
       height: 100%;
       float: left;
-
-      @include font-size(1.5);
-
+      font-size: 1.5rem;
       line-height: 0.9375rem;
       padding: 0; // ios needed button padding explicity removed tp prevent button from expanding
       -webkit-appearance: none; // Removes ios default appearance
@@ -379,16 +347,13 @@ input[type="search"].search-textfield {
         // Position the icon in the middle of the button
         position: relative;
         top: 0;
-
-        @include font-size(1.87);
-
+        font-size: 1.87rem;
         line-height: 1.875rem;
       }
 
       // 991px
       @media (max-width: $screen-sm-max) {
-        @include font-size(2);
-
+        font-size: 2rem;
         line-height: 1em;
         padding-top: 0;
       }
@@ -406,8 +371,7 @@ input[type="search"].search-textfield {
 
     > span {
       top: 0;
-
-      @include font-size(1.8);
+      font-size: 1.8rem;
     }
   }
 }
@@ -447,8 +411,7 @@ input[type="search"].search-textfield {
     cursor: pointer;
 
     [class^="ca-gov-icon-"] {
-      @include font-size(1.4);
-
+      font-size: 1.4rem;
       padding: 0 !important;
       position: absolute;
       top: 0;

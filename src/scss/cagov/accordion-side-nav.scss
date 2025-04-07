@@ -9,8 +9,7 @@
     cursor: pointer;
 
     &:focus {
-      @include outline(2px);
-
+      outline: 2px solid var(--outline-default-color);
       outline-offset: -2px;
       background-color: var(--gray-50, #fafafa);
     }
@@ -53,7 +52,7 @@
       border-radius: 0;
 
       &:focus {
-        @include outline(2px);
+        outline: 2px solid var(--outline-default-color);
 
         outline-offset: -2px;
       }
@@ -198,8 +197,7 @@
       }
 
       &:focus {
-        @include outline(2px);
-
+        outline: 2px solid var(--outline-default-color);
         outline-offset: -2px;
       }
 
@@ -273,8 +271,7 @@ cagov-accordion.sidenav {
       }
 
       &:focus {
-        @include outline(2px);
-
+        outline: 2px solid var(--outline-default-color);
         outline-offset: -2px;
       }
 
@@ -300,8 +297,7 @@ cagov-accordion.sidenav {
         }
 
         &:focus {
-          @include outline(2px);
-
+          outline: 2px solid var(--outline-default-color);
           outline-offset: -2px;
         }
       }

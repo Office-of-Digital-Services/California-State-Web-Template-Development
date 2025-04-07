@@ -1,6 +1,6 @@
 <!--HTML-->
-<div class="group countdown p-x">
-  <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+<div class="row flex-column flex-md-row countdown p-x">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text"
       ><abbr title="weeks" aria-label="weeks" class="text-decoration-none"
         >wks</abbr
@@ -8,11 +8,11 @@
     /></span>
     <span id="weeks1"></span>
   </div>
-  <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text">days<br /></span>
     <span id="days1"></span>
   </div>
-  <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text"
       ><abbr title="hours" aria-label="hours" class="text-decoration-none"
         >hrs</abbr
@@ -21,7 +21,7 @@
     /></span>
     <span id="hours1"></span>
   </div>
-  <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text"
       ><abbr title="minutes" aria-label="minutes" class="text-decoration-none"
         >mins</abbr
@@ -29,7 +29,7 @@
     /></span>
     <span id="minutes1"></span>
   </div>
-  <div class="fifth bg-gray-100 text-center p-b-md p-l-0 p-r-0">
+  <div class="col bg-gray-100 text-center p-b-md p-l-0 p-r-0">
     <span class="countdown-text"
       ><abbr title="seconds" aria-label="seconds" class="text-decoration-none"
         >secs</abbr
@@ -42,7 +42,7 @@
 <!--JavaScript-->
 <script>
   // Set the date we're counting down to
-  var countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
+  var countDownDate = new Date("Jan 1, 2026 00:00:00").getTime();
 
   // Update the count down every 1 second
   var x = setInterval(function () {

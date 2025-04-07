@@ -18,8 +18,7 @@ figure {
 }
 
 figcaption {
-  @include font-size(0.8);
-
+  font-size: 0.8rem;
   padding: 10px;
 }
 
@@ -27,15 +26,13 @@ figcaption {
 // --------------------------------------------------
 
 .img-left {
-  @include float-left;
-
+  float: left;
   margin-right: calc(var(--grid-gutter-width) / 2);
   margin-top: 4px; // Aligns image with top of text
 }
 
 .img-right {
-  @include float-right;
-
+  float: right;
   margin-left: calc(var(--grid-gutter-width) / 2);
   margin-top: 4px; // Aligns image with top of text
 }
@@ -54,7 +51,7 @@ figcaption {
 
 .media {
   .media-top {
-    @include text-center;
+    text-align: center;
 
     img,
     span {
@@ -69,8 +66,8 @@ figcaption {
 // --------------------------------------------------
 
 .img-responsive {
-  @include img-fluid;
-
+  max-width: 100%;
+  height: auto;
   display: inline-block;
 }
 

@@ -11,11 +11,9 @@
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-
-  // @include font-size(1);
   font-size: var(--font-size-small);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-small) + var(--ratio));
   }
 

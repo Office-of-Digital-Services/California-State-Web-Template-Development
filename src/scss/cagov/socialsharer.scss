@@ -17,13 +17,9 @@
 .socialsharer-container {
   float: left;
 
-  @include clearfix;
-
   a {
     line-height: 1em;
-
-    @include font-size(1.375);
-
+    font-size: 1.375rem;
     cursor: pointer;
 
     &:hover,

@@ -4,7 +4,8 @@
 ----------------------------------------- */
 
 .google_results {
-  @include list-unstyled;
+  padding-left: 0;
+  list-style: none;
 }
 
 .google_result {
@@ -12,7 +13,7 @@
 }
 
 .google_url {
-  @include text-muted;
+  color: var(--text-muted, #5e5e6a);
 }
 
 .google_result_thumbnail {

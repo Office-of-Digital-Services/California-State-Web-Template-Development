@@ -36,30 +36,77 @@
 
   &-understated {
     background: var(--color-s1, #eef8fb);
-    @include image-thumbnail(var(--gray-50, #fafafa), var(--gray-200, #d4d4d7));
+
+    .img-thumbnail {
+      padding: 4px;
+      background-color: var(--gray-50, #fafafa);
+      border: 1px solid var(--gray-200, #d4d4d7);
+    }
   }
 
   &-overstated {
-    @include image-thumbnail(
-      var(--color-s3-lighter, #bdd3e0),
-      var(--color-s3-dark, #507b97)
-    );
-    @include link-variant(var(--white, #fff), var(--color-s1, #eef8fb));
-    @include underline(var(--white, #fff), var(--color-s1, #eef8fb));
+    .img-thumbnail {
+      padding: 4px;
+      background-color: var(--color-s3-lighter, #bdd3e0);
+      border: 1px solid var(--color-s3-dark, #507b97);
+    }
 
-    background: var(--color-p2, #046b99);
-    color: var(--white, #fff);
+    a:not(.btn) {
+      color: var(--white, #fff);
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: var(--color-s1, #eef8fb);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--color-s1, #eef8fb);
+        outline-offset: -2px;
+      }
+    }
 
     .btn-primary {
-      // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        var(--white, #fff),
-        var(--color-p2, #046b99),
-        var(--white, #fff),
-        var(--white, #fff),
-        var(--color-p2-darker, #214a68),
-        var(--white, #fff)
-      );
+      color: var(--white, #fff);
+      background-color: var(--color-p2, #046b99);
+      border-color: var(--white, #fff);
+      font-weight: var(--font-weight-6);
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: var(--color-p2-darker, #214a68);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: var(--color-p2, #046b99) !important;
+          border-color: var(--white, #fff);
+        }
+      }
+
+      .badge {
+        color: var(--color-p2, #046b99);
+        background-color: var(--white, #fff);
+      }
     }
 
     .btn-standout {

@@ -48,7 +48,8 @@
   }
 
   ul {
-    @include list-unstyled;
+    padding-left: 0;
+    list-style: none;
     @include list-inline;
 
     margin-bottom: 0;
@@ -79,18 +80,16 @@
   }
 
   .settings-links {
-    // @include font-size(1); // font size
     font-size: var(--font-size-base, 1rem);
 
-    @include media-breakpoint-up(sm) {
+    @media (width >= 576px) {
       font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
     }
     @include text-right;
   }
 
   [class^="ca-gov-icon-"] {
-    @include font-size(1.1);
-
+    font-size: 1.1rem;
     vertical-align: -2px;
     display: inline-block;
     text-decoration: none;

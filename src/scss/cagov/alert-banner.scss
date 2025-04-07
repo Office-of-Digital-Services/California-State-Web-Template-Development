@@ -8,8 +8,7 @@
   font-weight: bold;
   padding: 0 5px;
   margin: 0 5px;
-
-  @include font-size(0.87);
+  font-size: 0.87rem;
 
   [class^="ca-gov-icon-"] {
     margin-right: 3px;
@@ -173,9 +172,7 @@
 
 .alert-link {
   line-height: 1.2em;
-
-  @include float-right;
-
+  float: right;
   font-weight: 400;
 }
 

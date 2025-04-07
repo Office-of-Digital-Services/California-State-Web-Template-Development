@@ -3,8 +3,9 @@
 ----------------------------------------- */
 
 .branding {
-  @include container;
-
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
   padding-left: 0;
   padding-right: 0;
   position: relative;
@@ -55,7 +56,7 @@
       display: inline-block;
 
       &:focus {
-        @include outline(2px);
+        outline: 2px solid var(--outline-default-color);
       }
 
       .logo-assets {
@@ -118,6 +119,27 @@
         min-width: 100%;
       }
     }
+  }
+}
+
+@media (width >= 576px) {
+  .branding {
+    max-width: var(--breakpoint-xm);
+  }
+}
+@media (width >= 768px) {
+  .branding {
+    max-width: var(--breakpoint-sm);
+  }
+}
+@media (width >= 992px) {
+  .branding {
+    max-width: var(--breakpoint-md);
+  }
+}
+@media (width >= 1200px) {
+  .branding {
+    max-width: var(--breakpoint-lg);
   }
 }
 

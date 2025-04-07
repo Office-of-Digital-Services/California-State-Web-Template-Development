@@ -22,61 +22,6 @@
   }
 }
 
-/* Two column layout option */
-.two-column {
-  .main-content {
-    min-height: unset;
-
-    @media (min-width: $screen-md-min) {
-      .main-primary {
-        @include make-md-column(8); // Makes 8 column container
-      }
-
-      .main-secondary {
-        @include make-md-column(4); // makes 4 column container
-      }
-    }
-
-    // Reverses the left and right columns so secondary can appear visually on the left
-    .reverse-main {
-      .main-primary {
-        @include make-sm-column-push(4);
-      }
-
-      .main-secondary {
-        @include make-sm-column-pull(8);
-      }
-    }
-  }
-}
-
-@media (max-width: $screen-sm-max) {
-  .two-column .main-content .main-secondary {
-    position: inherit; // FIX: - aside was covering the content when the page switched to one column.
-  }
-}
-
-/* Remove the left and right border for mobile */
-@media (max-width: $screen-sm-min) {
-  .main-content {
-    border: none !important;
-    width: 100%;
-  }
-}
-
-/* Allows two column containers used in the sidebar to fill the horizontal space */
-@media (max-width: $screen-xs-max) {
-  .main-secondary {
-    .group {
-      padding: 0 !important;
-
-      .half {
-        padding: 0 !important;
-      }
-    }
-  }
-}
-
 .decoration-last {
   display: none;
 }

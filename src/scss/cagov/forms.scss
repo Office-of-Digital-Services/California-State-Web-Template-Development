@@ -270,15 +270,14 @@ input[type="radio"]:focus + div {
   }
 
   .custom-control-input:checked ~ .custom-control-label::before {
-    @include gradient-bg(var(--color-p2, #046b99));
-
+    background-color: var(--color-p2, #046b99);
     border-radius: var(--border-radius-base);
   }
 }
 
 .custom-radio {
   .custom-control-input:checked ~ .custom-control-label::before {
-    @include gradient-bg(var(--color-p2, #046b99));
+    background-color: var(--color-p2, #046b99);
   }
 }
 
@@ -354,7 +353,7 @@ input[type="radio"]:checked + * .color-white--checked {
 
 input[type="checkbox"]:focus + .btn,
 input[type="radio"]:focus + .btn {
-  @include outline(2px);
+  outline: 2px solid var(--outline-default-color);
 }
 
 .valid-feedback {
@@ -366,7 +365,7 @@ input:focus,
 textarea:focus,
 button:focus,
 select:focus {
-  @include outline(2px);
+  outline: 2px solid var(--outline-default-color);
 }
 
 /* bootstrap 4.4.1 adjustments */

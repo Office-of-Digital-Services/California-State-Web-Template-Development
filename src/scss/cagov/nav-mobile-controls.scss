@@ -139,14 +139,15 @@ header.nav-overlay {
 
 // CONTAINER
 .mobile-controls {
-  text-align: right; // move most menu controls to right
+  text-align: right;
   position: relative;
   color: var(--gray-600, #72717c);
   background: var(--white, #fff);
   top: 0;
   height: 0;
-
-  @include container;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
 
   .ca-gov-icon-menu-toggle-open,
   .ca-gov-icon-menu-toggle-closed {
@@ -177,7 +178,7 @@ header.nav-overlay {
     }
 
     &:focus {
-      @include outline(2px);
+      outline: 2px solid var(--outline-default-color);
     }
   }
 
@@ -198,6 +199,27 @@ header.nav-overlay {
         #f1f8fb
       ); // should be the same as sub-nav background
     }
+  }
+}
+
+@media (width >= 576px) {
+  .mobile-controls {
+    max-width: var(--breakpoint-xm);
+  }
+}
+@media (width >= 768px) {
+  .mobile-controls {
+    max-width: var(--breakpoint-sm);
+  }
+}
+@media (width >= 992px) {
+  .mobile-controls {
+    max-width: var(--breakpoint-md);
+  }
+}
+@media (width >= 1200px) {
+  .mobile-controls {
+    max-width: var(--breakpoint-lg);
   }
 }
 
@@ -250,9 +272,7 @@ header.nav-overlay {
     position: absolute;
     top: 0;
     right: 2px;
-
-    @include font-size(1.5);
-
+    font-size: 1.5rem;
     width: 80px;
     text-align: center;
     cursor: pointer;

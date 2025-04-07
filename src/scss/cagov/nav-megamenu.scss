@@ -23,24 +23,13 @@
   @media (max-width: $screen-xs-max) {
     border: none;
   }
-
-  // Collapse grid gutters
-  .half,
-  .third,
-  .quarter,
-  .two-thirds,
-  .three-quarters {
-    padding: 0;
-  }
 }
 
 .link-description {
   display: block;
-
-  // @include font-size(1);
   font-size: var(--font-size-base, 1rem);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
   }
 }
@@ -49,40 +38,14 @@
   list-style: none;
   padding: 0;
 
-  // SET UP NAVIGATION COLUMNS
-
-  // 992px
-  @media (min-width: $screen-md-min) {
-    .half &,
-    .two-thirds & {
-      @include nav-columns(2);
-    }
-
-    .three-quarters & {
-      @include nav-columns(3);
-    }
-  }
-
-  // float links ie9 and below doesn't support columns
-  &.oldie {
-    @include clearfix;
-  }
-
   [class^="unit"] {
-    @include nav-column-group;
-
+    break-inside: avoid;
     background: none;
+  }
 
-    a,
-    .link-description {
-      @include nav-column-group;
-    }
-
-    // float links since ie9 and below doesn't support columns
-    .oldie & {
-      width: 33.3333%;
-      float: left;
-    }
+  [class^="unit"] a,
+  [class^="unit"] .link-description {
+    break-inside: avoid;
   }
 }
 
@@ -180,7 +143,7 @@
 a.second-level-link {
   font-size: var(--font-size-regular);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-regular) + var(--ratio));
   }
 
@@ -194,9 +157,7 @@ a.second-level-link {
 
   [class^="ca-gov-icon-"] {
     display: inline-block;
-
-    @include font-size(1.375);
-
+    font-size: 1.375rem;
     vertical-align: -2px;
     margin-right: 3px;
   }

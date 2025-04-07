@@ -8,7 +8,7 @@ body {
   color: var(--gray-900, #3b3a48);
   overflow-y: scroll;
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-regular) + var(--ratio));
   }
 }
@@ -22,7 +22,7 @@ a {
   }
 
   &:focus {
-    @include outline(2px);
+    outline: 2px solid var(--outline-default-color);
   }
 }
 
@@ -41,7 +41,7 @@ a {
 p {
   margin-bottom: 0.7rem;
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     margin-bottom: calc(0.7rem + var(--ratio));
   }
 }
@@ -51,7 +51,7 @@ p {
   margin-bottom: 1rem;
   font-weight: var(--font-weight-4);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-large) + var(--ratio));
     margin-bottom: calc(1rem + var(--ratio));
   }
@@ -61,7 +61,7 @@ p {
   font-size: var(--font-size-base, 1rem);
   margin-bottom: 0.65rem;
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
     margin-bottom: calc(0.65rem + var(--ratio));
   }
@@ -70,7 +70,7 @@ p {
 .btn {
   font-size: var(--font-size-base, 1rem);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
   }
 }
@@ -78,7 +78,7 @@ p {
 .btn-lg {
   font-size: 1.125rem;
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-regular) + var(--ratio));
   }
 }
@@ -86,7 +86,7 @@ p {
 .btn-sm {
   font-size: 0.9rem;
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(0.9rem + var(--ratio));
   }
 }
@@ -99,14 +99,13 @@ h1,
     display: none; // hide icon used in v4
   }
 
-  // @include font-size(2.4);
   font-size: var(--font-size-h1);
   margin-top: 3rem;
   margin-bottom: 1.6rem;
   font-weight: var(--font-weight-7);
   line-height: var(--font-lineheight-1);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-h1) + var(--ratio-headers));
     margin-top: calc(3rem + var(--ratio-headers));
     margin-bottom: calc(1.6rem + var(--ratio-headers));
@@ -117,14 +116,13 @@ h1,
 
 h2,
 .h2 {
-  // @include font-size(1.94);
   font-size: var(--font-size-h2);
   margin-top: 2.7rem;
   margin-bottom: 1.4rem;
   font-weight: var(--font-weight-7);
   line-height: var(--font-lineheight-2);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-h2) + var(--ratio-headers));
     margin-top: calc(2.7rem + var(--ratio-headers));
     margin-bottom: calc(1.4rem + var(--ratio-headers));
@@ -135,14 +133,13 @@ h2,
 
 h3,
 .h3 {
-  // @include font-size(1.54);
   font-size: var(--font-size-h3);
   margin-top: 2.4rem;
   margin-bottom: 1.2rem;
   font-weight: var(--font-weight-7);
   line-height: var(--font-lineheight-3);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-h3) + var(--ratio-headers));
     margin-top: calc(2.4rem + var(--ratio-headers));
     margin-bottom: calc(1.2rem + var(--ratio-headers));
@@ -153,14 +150,13 @@ h3,
 
 h4,
 .h4 {
-  // @include font-size(1.25);
   font-size: var(--font-size-h4);
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: var(--font-weight-7);
   line-height: var(--font-lineheight-4);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-h4) + var(--ratio-headers));
     margin-top: calc(2rem + var(--ratio-headers));
     margin-bottom: calc(1rem + var(--ratio-headers));
@@ -171,14 +167,13 @@ h4,
 
 h5,
 .h5 {
-  // @include font-size(1);
   font-size: var(--font-size-h5);
   margin-top: 1.7rem;
   margin-bottom: 0.8rem;
   font-weight: var(--font-weight-7);
   line-height: var(--font-lineheight-5);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-h5) + var(--ratio-headers));
     margin-top: calc(1.7rem + var(--ratio-headers));
     margin-bottom: calc(0.8rem + var(--ratio-headers));
@@ -189,14 +184,13 @@ h5,
 
 h6,
 .h6 {
-  // @include font-size(0.8);
   font-size: var(--font-size-h6);
   margin-top: 1.4rem;
   margin-bottom: 0.6rem;
   font-weight: var(--font-weight-7);
   line-height: var(--font-lineheight-5);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-h6) + var(--ratio-headers));
     margin-top: calc(1.4rem + var(--ratio-headers));
     margin-bottom: calc(0.6rem + var(--ratio-headers));
@@ -220,7 +214,7 @@ h6,
   font-weight: 600;
   color: var(--gray-700, #5e5e6a);
 
-  @include media-breakpoint-up(sm) {
+  @media (width >= 576px) {
     font-size: calc(var(--font-size-large) + var(--ratio));
     margin-bottom: calc(3rem + var(--ratio));
   }
@@ -229,15 +223,15 @@ h6,
 // ICON SIZING
 [class*="icon-"] {
   &.big {
-    @include font-size(1.94);
+    font-size: 1.94rem;
   }
 
   &.bigger {
-    @include font-size(2.4);
+    font-size: 2.4rem;
   }
 
   &.biggest {
-    @include font-size(3.5);
+    font-size: 3.5rem;
   }
 }
 
@@ -264,10 +258,9 @@ code {
 
 // LINKS NEED VISUAL INDICATORS OTHER THAN COLOR (USING UNDERLINE MIXING)
 .main-content {
-  @include underline(
-    var(--link-color, #046b99),
-    var(--link-hover-color, #005a7f)
-  );
+  a:not(.btn) {
+    text-decoration: underline;
+  }
 }
 
 /* external link */

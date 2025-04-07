@@ -9,9 +9,7 @@
 
 .stat-counter {
   text-align: center;
-
-  @include font-size(3);
-
+  font-size: 3rem;
   font-family: var(--headings-font-family);
 }
 
@@ -25,9 +23,7 @@
 ----------------------------------------- */
 .countdown div {
   text-align: center;
-
-  @include font-size(3);
-
+  font-size: 3rem;
   margin-top: 0;
   font-weight: 700;
   line-height: 1.1;
@@ -35,7 +31,6 @@
 }
 
 .countdown-text {
-  @include font-size(1);
-
+  font-size: 1rem;
   font-weight: 400;
 }

@@ -10,12 +10,6 @@
   column-gap: 0;
 }
 
-@mixin nav-column-group() {
-  -webkit-column-break-inside: avoid; /* for Safari, Chrome, Opera */
-  page-break-inside: avoid; /* for Firefox */
-  break-inside: avoid; /* for IE 10+ */
-}
-
 .navigation-search {
   border: none;
   position: relative;
@@ -45,14 +39,38 @@
 // --------------------------------------------------
 
 .main-navigation {
-  @include container;
-
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
   position: relative;
   margin-top: -82px;
   padding-left: 80px;
   display: flex;
+}
 
-  @media (max-width: $screen-xs-max) {
+@media (width >= 576px) {
+  .main-navigation {
+    max-width: var(--breakpoint-xm);
+  }
+}
+@media (width >= 768px) {
+  .main-navigation {
+    max-width: var(--breakpoint-sm);
+  }
+}
+@media (width >= 992px) {
+  .main-navigation {
+    max-width: var(--breakpoint-md);
+  }
+}
+@media (width >= 1200px) {
+  .main-navigation {
+    max-width: var(--breakpoint-lg);
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .main-navigation {
     max-width: 100%;
   }
 }
@@ -67,7 +85,7 @@
     position: relative;
     font-size: var(--font-size-base, 1rem);
 
-    @include media-breakpoint-up(sm) {
+    @media (width >= 576px) {
       font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
     }
   }
@@ -168,8 +186,7 @@
     }
 
     &:focus {
-      @include outline(2px);
-
+      outline: 2px solid var(--outline-default-color);
       outline-offset: -2px;
     }
 
@@ -252,8 +269,7 @@
       }
 
       &:focus {
-        @include outline(2px);
-
+        outline: 2px solid var(--outline-default-color);
         outline-offset: -2px;
       }
 
@@ -310,20 +326,6 @@
     }
   }
 }
-
-// Mobile first level nav
-
-// // 1200px and 991px
-// @media (max-width: $screen-lg) and (min-width: $screen-md-min) {
-//     .first-level-link,
-//     .first-level-btn {
-//         padding: 5px 9px 12px 9px;
-
-//         &.has-sub {
-//             padding-right: 13px; // extra room for arrow
-//         }
-//     }
-// }
 
 // TOP LEVEL NAVIGATION FOR DESKTOP
 // --------------------------------------------------
@@ -452,7 +454,14 @@
   }
 
   .home-link {
-    @include sr-only;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
   }
 
   /* FIXED */
@@ -580,8 +589,7 @@
       text-decoration: none;
 
       span[class^="ca-gov-icon"]:not(.carrot) {
-        @include font-size(1.5);
-
+        font-size: 1.5rem;
         display: inline-block;
         vertical-align: -2px;
       }
@@ -687,14 +695,12 @@
   background: var(--color-p2, #046b99);
 }
 
-// beta 5.0 addition
 .main-navigation.dropdown .nav-arrow-down {
   width: 100%;
 }
 
 // 1200px
 @media (min-width: $screen-lg) {
-  // Beta 5.0 addition
   .main-navigation {
     padding-left: 350px;
   }
@@ -702,14 +708,12 @@
 
 // 1200px and 992px
 @media (max-width: $screen-lg) and (min-width: $screen-md-min) {
-  // Beta 5.0 addition
   .main-navigation {
     padding-left: 250px;
 
     .top-level-nav {
       .nav-item {
-        // equivalent to .nav-item
-        @include font-size(1);
+        font-size: 1rem;
       }
     }
   }

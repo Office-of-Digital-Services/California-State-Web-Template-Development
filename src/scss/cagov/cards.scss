@@ -69,24 +69,29 @@
   .panel-heading,
   .card-heading,
   .card-header {
-    @include clearfix;
-
-    // padding: 4px 5px 4px 15px;    // Makes header padding match original design
-
     h2,
     h3,
     h4,
     h5 {
-      @include h4; // Make all headings appear the same size as h4
-
-      font-weight: normal;
-      border: none; // Remove heading border decoration
+      font-family: var(--headings-font-family);
+      font-weight: var(--headings-font-weight, 400);
+      line-height: var(--headings-line-height);
+      color: var(--headings-color);
+      font-size: 1.25rem;
+      border: none;
       display: inline-block;
       margin: -8px 0 0;
 
-      span[class^="ca-gov-icon-"] {
-        @include font-size(2);
+      small,
+      .small {
+        font-weight: normal;
+        line-height: 1;
+        color: var(--headings-small-color);
+        font-size: 75%;
+      }
 
+      span[class^="ca-gov-icon-"] {
+        font-size: 2rem;
         position: relative; // Aligns icon with heading text
         top: 4px;
       }
@@ -97,7 +102,10 @@
       float: right;
 
       .btn {
-        @include btn-sm;
+        padding: var(--padding-small-vertical) var(--padding-small-horizontal);
+        font-size: var(--font-size-small);
+        line-height: var(--line-height-small);
+        border-radius: var(--btn-border-radius-small);
       }
     }
   }
@@ -145,28 +153,50 @@
 
   // CARD STYLES
   &.card-primary {
-    @include link-variant(var(--white, #fff), var(--color-s1, #eef8fb));
-    @include underline(var(--white, #fff), var(--color-s1, #eef8fb));
-    @include card-variant(
-      var(--color-p2, #046b99),
-      var(--color-p2, #046b99),
-      var(--white, #fff)
-    );
+    background-color: var(--color-p2, #046b99);
+    border-color: var(--color-p2, #046b99);
+    color: var(--white, #fff);
+
+    a:not(.btn) {
+      color: var(--white, #fff);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--color-s1, #eef8fb);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--color-s1, #eef8fb);
+        outline-offset: -2px;
+      }
+    }
   }
 
   /* stylelint-disable-next-line no-duplicate-selectors */
   &.card-inverted,
   &.card-inverse {
-    @include link-variant(
-      var(--color-s3, #4993b5),
-      var(--color-s3-dark, #507b97)
-    );
-    @include underline(var(--color-s3, #4993b5), var(--color-s3-dark, #507b97));
-    @include card-variant(
-      var(--gray-800, #4a4958),
-      var(--gray-500, #898891),
-      var(--white, #fff)
-    );
+    background-color: var(--gray-800, #4a4958);
+    border-color: var(--gray-500, #898891);
+    color: var(--white, #fff);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--color-s3, #4993b5);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--color-s3-dark, #507b97);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--color-s3-dark, #507b97);
+        outline-offset: -2px;
+      }
+    }
 
     .card-header {
       border-bottom: var(--card-border-width) solid rgb(255 255 255 / 20%);
@@ -178,46 +208,97 @@
   }
 
   &.card-success {
-    @include link-variant(var(--gray-900, #3b3a48), var(--black, #000000));
-    @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
-    @include card-variant(
-      var(--brand-success, #32852e),
-      var(--brand-success, #32852e),
-      var(--white, #fff)
-    );
+    background-color: var(--brand-success, #32852e);
+    border-color: var(--brand-success, #32852e);
+    color: var(--white, #fff);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--gray-900, #3b3a48);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--black, #000);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--black, #000);
+        outline-offset: -2px;
+      }
+    }
   }
 
   &.card-info {
-    @include link-variant(#fff, #fff);
-    @include underline(#fff, #fff);
-    @include card-variant(
-      var(--brand-info, #1c7db5),
-      var(--brand-info, #1c7db5),
-      var(--white, #fff)
-    );
+    background-color: var(--brand-info, #1c7db5);
+    border-color: var(--brand-info, #1c7db5);
+    color: var(--white, #fff);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--white, #fff);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--white, #fff);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--white, #fff);
+        outline-offset: -2px;
+      }
+    }
   }
 
   &.card-warning {
-    @include link-variant(var(--gray-900, #3b3a48), var(--black, #000000));
-    @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
-    @include card-variant(
-      var(--brand-warning, #c2570f),
-      var(--brand-warning, #c2570f),
-      var(--white, #fff)
-    );
+    background-color: var(--brand-warning, #c2570f);
+    border-color: var(--brand-warning, #c2570f);
+    color: var(--white, #fff);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--gray-900, #3b3a48);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--black, #000000);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--black, #000000);
+        outline-offset: -2px;
+      }
+    }
   }
 
   &.card-danger {
-    @include link-variant(var(--black, #000000), var(--black, #000000));
-    @include underline(var(--black, #000000), var(--black, #000000));
-    @include card-variant(
-      var(--brand-danger, #cd402d),
-      var(--brand-danger, #cd402d),
-      var(--white, #fff)
-    );
+    background-color: var(--brand-danger, #cd402d);
+    border-color: var(--brand-danger, #cd402d);
+    color: var(--white, #fff);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--black, #000);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--black, #000);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--black, #000);
+        outline-offset: -2px;
+      }
+    }
   }
 
-  // Remove .photo-left and .photo-right background images for mobile
   @media (max-width: $screen-xs-max) {
     .panel-body,
     .card-body {
@@ -317,6 +398,7 @@
   margin-top: 0;
   font-size: var(--font-size-h4);
 
+  /* stylelint-disable-next-line no-descending-specificity */
   a {
     text-decoration: none !important;
   }
@@ -326,14 +408,32 @@
 .card-default,
 .panel-default {
   border: 1px solid;
+  border-color: var(--gray-200, #d4d4d7);
 
-  // border, heading-text-color, heading-bg-color, heading-border
-  @include panel-variant(
-    var(--gray-200, #d4d4d7),
-    var(--gray-900, #3b3a48),
-    var(--gray-75, #f3f3f4),
-    var(--gray-200, #d4d4d7)
-  );
+  > .panel-heading,
+  > .card-heading {
+    color: var(--gray-900, #3b3a48);
+    background-color: var(--gray-75, #f3f3f4);
+    border-color: var(--gray-200, #d4d4d7);
+
+    + .panel-collapse > .panel-body,
+    + .card-collapse > .card-body {
+      border-top-color: var(--gray-200, #d4d4d7);
+    }
+
+    .badge {
+      color: var(--gray-75, #f3f3f4);
+      background-color: var(--gray-900, #3b3a48);
+    }
+  }
+
+  > .panel-footer,
+  > .card-footer {
+    + .panel-collapse > .panel-body,
+    + .card-collapse > .card-body {
+      border-bottom-color: var(--gray-200, #d4d4d7);
+    }
+  }
 
   .card-heading,
   .card-header,
@@ -359,14 +459,32 @@
 .card-overstated,
 .panel-overstated {
   border: 1px solid;
+  border-color: var(--gray-200, #d4d4d7);
 
-  // border, heading-text-color, heading-bg-color, heading-border
-  @include panel-variant(
-    var(--gray-200, #d4d4d7),
-    var(--white, #f5f5f5),
-    var(--color-p2, #046b99),
-    var(--color-p2, #046b99)
-  );
+  > .panel-heading,
+  > .card-heading {
+    color: var(--white, #f5f5f5);
+    background-color: var(--color-p2, #046b99);
+    border-color: var(--color-p2, #046b99);
+
+    + .panel-collapse > .panel-body,
+    + .card-collapse > .card-body {
+      border-top-color: var(--gray-200, #d4d4d7);
+    }
+
+    .badge {
+      color: var(--color-p2, #046b99);
+      background-color: var(--white, #f5f5f5);
+    }
+  }
+
+  > .panel-footer,
+  > .card-footer {
+    + .panel-collapse > .panel-body,
+    + .card-collapse > .card-body {
+      border-bottom-color: var(--gray-200, #d4d4d7);
+    }
+  }
 
   .card-heading,
   .card-header,
@@ -389,14 +507,22 @@
     background: var(--white, #fff);
     color: var(--gray-900, #3b3a48);
 
-    @include link-variant(
-      var(--link-color, #046b99),
-      var(--link-hover-color, #005a7f)
-    );
-    @include underline(
-      var(--link-color, #046b99),
-      var(--link-hover-color, #005a7f)
-    );
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--link-color, #046b99);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--link-hover-color, #005a7f);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--link-hover-color, #005a7f);
+        outline-offset: -2px;
+      }
+    }
   }
 }
 
@@ -404,14 +530,32 @@
 .card-understated,
 .panel-understated {
   border: 1px solid;
+  border-color: var(--gray-200, #d4d4d7);
 
-  // border, heading-text-color, heading-bg-color, heading-border
-  @include panel-variant(
-    var(--gray-200, #d4d4d7),
-    var(--gray-900, #3b3a48),
-    var(--color-s1, #eef8fb),
-    var(--color-s1, #eef8fb)
-  );
+  > .panel-heading,
+  > .card-heading {
+    color: var(--gray-900, #3b3a48);
+    background-color: var(--color-s1, #eef8fb);
+    border-color: var(--color-s1, #eef8fb);
+
+    + .panel-collapse > .panel-body,
+    + .card-collapse > .card-body {
+      border-top-color: var(--gray-200, #d4d4d7);
+    }
+
+    .badge {
+      color: var(--color-s1, #eef8fb);
+      background-color: var(--gray-900, #3b3a48);
+    }
+  }
+
+  > .panel-footer,
+  > .card-footer {
+    + .panel-collapse > .panel-body,
+    + .card-collapse > .card-body {
+      border-bottom-color: var(--gray-200, #d4d4d7);
+    }
+  }
 
   .card-heading,
   .card-header,
@@ -440,14 +584,32 @@
 .card-standout,
 .panel-standout {
   border: 1px solid;
+  border-color: var(--gray-200, #d4d4d7);
 
-  // border, heading-text-color, heading-bg-color, heading-border
-  @include panel-variant(
-    var(--gray-200, #d4d4d7),
-    var(--white, #fff),
-    var(--color-p3, #323a45),
-    var(--color-p3, #323a45)
-  );
+  > .panel-heading,
+  > .card-heading {
+    color: var(--white, #fff);
+    background-color: var(--color-p3, #323a45);
+    border-color: var(--color-p3, #323a45);
+
+    + .panel-collapse > .panel-body,
+    + .card-collapse > .card-body {
+      border-top-color: var(--gray-200, #d4d4d7);
+    }
+
+    .badge {
+      color: var(--color-p3, #323a45);
+      background-color: var(--white, #fff);
+    }
+  }
+
+  > .panel-footer,
+  > .card-footer {
+    + .panel-collapse > .panel-body,
+    + .card-collapse > .card-body {
+      border-bottom-color: var(--gray-200, #d4d4d7);
+    }
+  }
 
   .card-heading,
   .card-header,
@@ -470,14 +632,22 @@
     background: var(--white, #fff);
     color: var(--gray-900, #3b3a48);
 
-    @include link-variant(
-      var(--link-color, #046b99),
-      var(--link-hover-color, #005a7f)
-    );
-    @include underline(
-      var(--link-color, #046b99),
-      var(--link-hover-color, #005a7f)
-    );
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--link-color, #046b99);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--link-hover-color, #005a7f);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--link-hover-color, #005a7f);
+        outline-offset: -2px;
+      }
+    }
   }
 }
 
@@ -488,7 +658,13 @@
   .card-header,
   .panel-heading {
     .triangle {
-      @include triangle(down, 12px, var(--color-p3, #323a45));
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 12px solid var(--color-p3, #323a45);
     }
   }
 }
@@ -528,8 +704,7 @@
       position: relative;
 
       span[class^="ca-gov-icon-"] {
-        @include font-size(1.8);
-
+        font-size: 1.8rem;
         position: absolute;
         left: 10px;
       }

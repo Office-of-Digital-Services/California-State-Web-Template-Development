@@ -86,7 +86,7 @@
     }
 
     a:focus {
-      @include outline(2px);
+      outline: 2px solid var(--outline-default-color);
 
       outline-offset: -2px;
     }

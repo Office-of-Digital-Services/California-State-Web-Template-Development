@@ -4,17 +4,15 @@
 ----------------------------------------- */
 
 blockquote {
-  // @include font-size(1.125);
   font-size: var(--font-size-regular);
-
-  @include media-breakpoint-up(sm) {
-    font-size: calc(var(--font-size-regular) + var(--ratio));
-  }
-
   padding: 11px 22px;
   margin: 0 0 22px;
   border-left: 4px solid;
   border-color: var(--color-p2, #046b99);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-regular) + var(--ratio));
+  }
 
   &::before {
     content: "\ea29";

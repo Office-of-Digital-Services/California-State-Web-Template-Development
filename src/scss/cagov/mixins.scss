@@ -153,7 +153,7 @@
   }
 
   &:focus {
-    @include outline(2px);
+    outline: 2px solid var(--outline-default-color);
   }
 
   &:not(:disabled, .disabled):active,
@@ -395,8 +395,7 @@
   font-weight: var(--headings-font-weight, 400);
   line-height: var(--headings-line-height);
   color: var(--headings-color);
-
-  @include font-size(1.25);
+  font-size: 1.25rem;
 
   small,
   .small {
@@ -443,19 +442,16 @@
   margin-bottom: calc(var(--grid-gutter-width) / 2);
   position: relative;
 
-  @include clearfix;
-
   .header {
-    @include clearfix;
-
     margin-bottom: 0;
 
     .title {
       float: left;
       margin-right: calc(var(--grid-gutter-width) / 2);
-
-      @include font-size(1.5);
-      @include font-condensed;
+      font-size: 1.5rem;
+      font-family: "Arial Narrow", "Helvetica Narrow", Arial, Helvetica,
+        sans-serif;
+      font-stretch: condensed;
     }
 
     .filing-date {
@@ -469,17 +465,16 @@
   }
 
   .footer {
-    position: relative; // used in cases where footer has a published date
-
-    @include clearfix;
-
+    position: relative; // used in cases where footer has a published dat
     clear: both;
 
     a.btn {
       float: right;
       margin-top: calc(var(--line-height-computed) / 2);
-
-      @include btn-xs;
+      padding: var(--padding-xs-vertical) var(--padding-xs-horizontal);
+      font-size: var(--font-size-x-small);
+      line-height: var(--line-height-large);
+      border-radius: var(--btn-border-radius-small);
 
       @media (max-width: $screen-md-min) {
         float: left; // Float the button left $991 and below
@@ -773,16 +768,12 @@
   margin-left: auto;
   padding-left: floor(calc($gutter / 2));
   padding-right: ceil(calc($gutter / 2));
-
-  @include clearfix;
 }
 
 // Creates a wrapper for a series of columns
 @mixin make-row($gutter: var(--grid-gutter-width)) {
   margin-left: -1rem;
   margin-right: -1rem;
-
-  @include clearfix;
 }
 
 // Generate the extra small columns
