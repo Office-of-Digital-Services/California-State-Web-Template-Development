@@ -222,23 +222,6 @@
   }
 }
 
-// Custom Chart related Colors
-
-@mixin donut-color-variants(
-  $donut-background: var(--gray-600, #72717c),
-  $donut-halfmark: var(--gray-600, #72717c)
-) {
-  .half-gauge-chart {
-    .donut-background {
-      fill: $donut-background;
-    }
-
-    .donut-halfmark {
-      stroke: $donut-halfmark;
-    }
-  }
-}
-
 // REM's with px fallback
 // --------------------------------------------------
 

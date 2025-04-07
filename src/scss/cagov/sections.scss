@@ -111,245 +111,560 @@
 
     .btn-standout {
       // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        var(--white, #fff),
-        var(--color-p3, #323a45),
-        var(--white, #fff),
-        var(--white, #fff),
-        var(--color-p3-darker, #242830),
-        var(--white, #fff)
-      );
+
+      color: var(--white, #fff);
+      background-color: var(--color-p3, #323a45);
+      border-color: var(--white, #fff);
+      font-weight: var(--font-weight-6);
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: var(--color-p3-darker, #242830);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: var(--color-p3, #323a45) !important;
+          border-color: var(--white, #fff);
+        }
+      }
+
+      .badge {
+        color: var(--color-p3, #323a45);
+        background-color: var(--white, #fff);
+      }
     }
   }
 
   &-standout {
-    @include image-thumbnail(
-      var(--color-p3-lighter, #71757c),
-      var(--color-p3-darker, #242830)
-    );
+    background: var(--color-p3, #323a45);
+    color: var(--white, #fff);
 
-    @include link-variant(var(--white, #fff), var(--color-s2-darker, #f1f8fb));
-    @include underline(
-      var(--color-s3, #4993b5),
-      var(--color-s2-darker, #f1f8fb)
-    );
+    .img-thumbnail {
+      padding: 4px;
+      background-color: var(--color-p3-lighter, #71757c);
+      border: 1px solid var(--color-p3-darker, #242830);
+    }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     a:not(.btn) {
       color: var(--white, #fff);
 
       &:hover,
       &:focus {
-        text-decoration: underline;
         color: var(--color-p1, #fdb81e);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--white, #fff);
+        outline-offset: -2px;
       }
     }
 
-    @include donut-color-variants(
-      $donut-background: var(--gray-100, #ededef),
-      $donut-halfmark: var(--gray-50, #fafafa)
-    );
-
-    background: var(--color-p3, #323a45);
-    color: var(--white, #fff);
-
+    /* stylelint-disable-next-line no-descending-specificity */
     .btn-primary {
-      // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        var(--white, #fff),
-        var(--color-p2, #046b99),
-        var(--white, #fff),
-        var(--white, #fff),
-        var(--color-p2-darker, #214a68),
-        var(--white, #fff)
-      );
+      color: var(--white, #fff);
+      background-color: var(--color-p2, #046b99);
+      border-color: var(--white, #fff);
+      font-weight: var(--font-weight-6);
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: var(--color-p2-darker, #214a68);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: var(--color-p2, #046b99) !important;
+          border-color: var(--white, #fff);
+        }
+      }
+
+      .badge {
+        color: var(--color-p2, #046b99);
+        background-color: var(--white, #fff);
+      }
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     .btn-standout {
-      // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        var(--white, #fff),
-        var(--color-p3, #323a45),
-        var(--white, #fff),
-        var(--white, #fff),
-        var(--color-p3-darker, #242830),
-        var(--white, #fff)
-      );
+      color: var(--white, #fff);
+      background-color: var(--color-p3, #323a45);
+      border-color: var(--white, #fff);
+      font-weight: var(--font-weight-6);
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: var(--color-p3-darker, #242830);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: var(--color-p3, #323a45) !important;
+          border-color: var(--white, #fff);
+        }
+      }
+
+      .badge {
+        color: var(--color-p3, #323a45);
+        background-color: var(--white, #fff);
+      }
     }
   }
 
   &-impact {
-    @include image-thumbnail(
-      var(--color-p3-lighter, #71757c),
-      var(--color-p3-darker, #242830)
-    );
-
-    // SAME AS STANDOUT
-    // $link-color, $link-hover-color, $decoration: none, $hover-decoration: underline
-    @include link-variant(
-      var(--color-s3, #4993b5),
-      var(--color-s2-darker, #f1f8fb)
-    );
-    @include underline(
-      var(--color-s3, #4993b5),
-      var(--color-s2-darker, #f1f8fb)
-    );
-    @include donut-color-variants(
-      $donut-background: var(--gray-100, #ededef),
-      $donut-halfmark: var(--gray-50, #fafafa)
-    );
-
     background: var(--color-p3, #323a45);
     color: var(--white, #fff);
 
-    .btn-primary {
-      // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        var(--white, #fff),
-        var(--color-p2, #046b99),
-        var(--white, #fff),
-        var(--white, #fff),
-        var(--color-p2-darker, #214a68),
-        var(--white, #fff)
-      );
+    .img-thumbnail {
+      padding: 4px;
+      background-color: var(--color-p3-lighter, #71757c);
+      border: 1px solid var(--color-p3-darker, #242830);
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--white, #fff);
+
+      &:hover,
+      &:focus {
+        color: var(--color-p1, #fdb81e);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--white, #fff);
+        outline-offset: -2px;
+      }
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    .btn-primary {
+      color: var(--white, #fff);
+      background-color: var(--color-p2, #046b99);
+      border-color: var(--white, #fff);
+      font-weight: var(--font-weight-6);
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: var(--color-p2-darker, #214a68);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: var(--color-p2, #046b99) !important;
+          border-color: var(--white, #fff);
+        }
+      }
+
+      .badge {
+        color: var(--color-p2, #046b99);
+        background-color: var(--white, #fff);
+      }
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
     .btn-standout {
-      // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        var(--white, #fff),
-        var(--color-p3, #323a45),
-        var(--white, #fff),
-        var(--white, #fff),
-        var(--color-p3-darker, #242830),
-        var(--white, #fff)
-      );
+      color: var(--white, #fff);
+      background-color: var(--color-p3, #323a45);
+      border-color: var(--white, #fff);
+      font-weight: var(--font-weight-6);
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: var(--color-p3-darker, #242830);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: var(--color-p3, #323a45) !important;
+          border-color: var(--white, #fff);
+        }
+      }
+
+      .badge {
+        color: var(--color-p3, #323a45);
+        background-color: var(--white, #fff);
+      }
     }
 
     // SECTION THEME BUTTON COLORS
     .btn-default {
-      // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        #fff,
-        transparent,
-        var(--color-s2, #87b8ce),
-        #fff,
-        rgba(255, 255, 255, 0.2),
-        #fff
-      );
+      color: var(--white, #fff);
+      background-color: transparent;
+      border-color: var(--color-s2, #87b8ce);
+      font-weight: var(--font-weight-6);
 
-      margin-bottom: calc(var(--line-height-computed) / 2);
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
 
-      [class^="ca-gov-icon-"] {
-        color: var(--color-s2, #87b8ce);
-        padding: 0 5px;
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: rgb(255 255 255 / 20%);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: transparent !important;
+          border-color: var(--color-s2, #87b8ce);
+        }
+      }
+
+      .badge {
+        color: transparent;
+        background-color: var(--white, #fff);
       }
     }
   }
 
   &-primary {
-    @include image-thumbnail(
-      var(--color-p2-lightest, #a4c3d4),
-      var(--color-p2-darkest, #112a3c)
-    );
+    .img-thumbnail {
+      padding: 4px;
+      background-color: var(--color-p2-lightest, #a4c3d4);
+      border: 1px solid var(--color-p2-darkest, #112a3c);
+    }
 
-    @include link-variant(var(--white, #fff), var(--color-s1, #eef8fb));
-    @include underline(var(--white, #fff), var(--color-s1, #eef8fb));
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--white, #fff);
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: var(--color-s1, #eef8fb);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+        outline-offset: -2px;
+      }
+    }
 
     background: var(--color-p2, #046b99);
     color: var(--white, #fff);
 
+    /* stylelint-disable-next-line no-descending-specificity */
     .btn-primary {
-      // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        var(--white, #fff),
-        var(--color-p2, #046b99),
-        var(--white, #fff),
-        var(--white, #fff),
-        var(--color-p2-darker, #214a68),
-        var(--white, #fff)
-      );
+      color: var(--white, #fff);
+      background-color: var(--color-p2, #046b99);
+      border-color: var(--white, #fff);
+      font-weight: var(--font-weight-6);
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: var(--color-p2-darker, #214a68);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: var(--color-p2, #046b99) !important;
+          border-color: var(--white, #fff);
+        }
+      }
+
+      .badge {
+        color: var(--color-p2, #046b99);
+        background-color: var(--white, #fff);
+      }
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     .btn-standout {
-      // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        var(--white, #fff),
-        var(--color-p3, #323a45),
-        var(--white, #fff),
-        var(--white, #fff),
-        var(--color-p3-darker, #242830),
-        var(--white, #fff)
-      );
+      color: var(--white, #fff);
+      background-color: var(--color-p3, #323a45);
+      border-color: var(--white, #fff);
+      font-weight: var(--font-weight-6);
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: var(--color-p3-darker, #242830);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: var(--color-p3, #323a45) !important;
+          border-color: var(--white, #fff);
+        }
+      }
+
+      .badge {
+        color: var(--color-p3, #323a45);
+        background-color: var(--white, #fff);
+      }
     }
   }
 
   &-inverted {
-    @include image-thumbnail(var(--body-bg), var(--gray-200, #d4d4d7));
-
-    @include link-variant(
-      var(--color-s3, #4993b5),
-      var(--color-s3-dark, #507b97)
-    );
-    @include underline(var(--color-s3, #4993b5), var(--color-s3-dark, #507b97));
-
     background: var(--gray-900, #3b3a48);
     color: #fff;
 
-    .btn-primary {
-      // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        var(--white, #fff),
-        var(--color-p2, #046b99),
-        var(--white, #fff),
-        var(--white, #fff),
-        var(--color-p2-darker, #214a68),
-        var(--white, #fff)
-      );
+    .img-thumbnail {
+      padding: 4px;
+      background-color: var(--body-bg);
+      border: 1px solid var(--gray-200, #d4d4d7);
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--color-s3, #4993b5);
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: var(--color-s3-dark, #507b97);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+        outline-offset: -2px;
+      }
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    .btn-primary {
+      color: var(--white, #fff);
+      background-color: var(--color-p2, #046b99);
+      border-color: var(--white, #fff);
+      font-weight: var(--font-weight-6);
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: var(--color-p2-darker, #214a68);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: var(--color-p2, #046b99) !important;
+          border-color: var(--white, #fff);
+        }
+      }
+
+      .badge {
+        color: var(--color-p2, #046b99);
+        background-color: var(--white, #fff);
+      }
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
     .btn-standout {
-      // better-button = color; background; border, hover-color; hover-background; hover-border
-      @include better-button(
-        var(--white, #fff),
-        var(--color-p3, #323a45),
-        var(--white, #fff),
-        var(--white, #fff),
-        var(--color-p3-darker, #242830),
-        var(--white, #fff)
-      );
+      color: var(--white, #fff);
+      background-color: var(--color-p3, #323a45);
+      border-color: var(--white, #fff);
+      font-weight: var(--font-weight-6);
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      &:hover,
+      &:focus,
+      &:not(:disabled, .disabled):active,
+      &:not(:disabled, .disabled).active,
+      .show > .dropdown-toggle,
+      .open > .dropdown-toggle & {
+        color: var(--white, #fff);
+        background-color: var(--color-p3-darker, #242830);
+        border-color: var(--white, #fff);
+        box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+        background-image: none;
+      }
+
+      &.disabled,
+      &[disabled],
+      fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-color: var(--color-p3, #323a45) !important;
+          border-color: var(--white, #fff);
+        }
+      }
+
+      .badge {
+        color: var(--color-p3, #323a45);
+        background-color: var(--white, #fff);
+      }
     }
   }
 
   &-danger {
-    @include image-thumbnail(var(--body-bg), var(--gray-200, #d4d4d7));
-
     background: var(--brand-danger, #cd402d);
     color: var(--white, #fff);
+
+    .img-thumbnail {
+      padding: 4px;
+      background-color: var(--body-bg);
+      border: 1px solid var(--gray-200, #d4d4d7);
+    }
   }
 
   &-search {
     background: var(--gray-100, #ededef);
   }
-}
-
-// beta 5.0 addition
-.five {
-  width: 115px;
-}
-
-// beta 5.0 addition
-.four {
-  width: 145px;
-}
-
-// beta 5.0 addition
-.three {
-  width: 200px;
-}
-
-// beta 5.0 addition
-.two {
-  width: 307px;
 }
 
 // pre tag State Template styles
@@ -381,31 +696,70 @@ textarea.sourcecode {
 
 // background links / gradient links
 .bg-highlight {
-  @include link-variant(var(--gray-900, #3b3a48), var(--black, #000000));
-  @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
+  /* stylelint-disable-next-line no-descending-specificity */
+  a:not(.btn) {
+    color: var(--gray-900, #3b3a48);
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: var(--black, #000);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--outline-default-color);
+      outline-offset: -2px;
+    }
+  }
 }
 
 .bg-primary {
   color: var(--white, #fff);
 
-  @include link-variant(var(--white, #fff), var(--color-s1, #eef8fb));
-  @include underline(var(--white, #fff), var(--color-s1, #eef8fb));
+  /* stylelint-disable-next-line no-descending-specificity */
+  a:not(.btn) {
+    color: var(--white, #fff);
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: var(--white, #fff);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--outline-default-color);
+      outline-offset: -2px;
+    }
+  }
 }
 
 .bg-standout {
   color: var(--white, #fff);
 
-  @include link-variant(
-    var(--color-s3, #4993b5),
-    var(--color-s2-darker, #f1f8fb)
-  );
-  @include underline(var(--color-s3, #4993b5), var(--color-s2-darker, #f1f8fb));
+  /* stylelint-disable-next-line no-descending-specificity */
+  a:not(.btn) {
+    color: var(--color-s3, #4993b5);
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      color: var(--color-s3-darker, #507b97);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--outline-default-color);
+      outline-offset: -2px;
+    }
+  }
 }
 
 a.text-white:not(.btn) {
-  @include link-underline(var(--white, #fff));
+  text-decoration: underline;
 
   &:hover {
-    @include link-underline(var(--white, #fff));
+    text-decoration: underline;
   }
 }
