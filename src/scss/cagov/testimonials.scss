@@ -44,7 +44,7 @@
   }
 
   .thumbnail-top {
-    @include text-center;
+    text-align: center;
 
     .thumbnail-img {
       display: inherit;
@@ -75,15 +75,24 @@
   }
 
   &-overstated {
-    @include link-variant(
-      var(--gray-900, #3b3a48),
-      var(--black, #000000),
-      none
-    );
-    @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
-
     background: var(--color-s3, #4993b5);
     color: var(--gray-900, #3b3a48);
+
+    a:not(.btn) {
+      color: var(--gray-900, #3b3a48);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--black, #000000);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--color-s1, #eef8fb);
+        outline-offset: -2px;
+      }
+    }
 
     footer {
       color: var(--black, #000);
@@ -91,11 +100,25 @@
   }
 
   &-standout {
-    @include link-variant(var(--color-p1, #fdb81e), #fff, none);
-    @include underline(var(--color-p1, #fdb81e), var(--white, #fff));
-
     background: var(--color-p3, #323a45);
     color: var(--white, #fff);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--color-p1, #fdb81e);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--white, #fff);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--color-p1, #fdb81e);
+        outline-offset: -2px;
+      }
+    }
 
     footer {
       color: var(--white, #fff);
@@ -103,11 +126,25 @@
   }
 
   &-primary {
-    @include link-variant(var(--white, #fff), var(--color-s1, #eef8fb), none);
-    @include underline(var(--white, #fff), var(--color-s1, #eef8fb));
-
     background: var(--color-p2, #046b99);
     color: var(--white, #fff);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--white, #fff);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--color-s1, #eef8fb);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--white, #fff);
+        outline-offset: -2px;
+      }
+    }
 
     footer {
       color: var(--white, #fff);
@@ -115,15 +152,25 @@
   }
 
   &-highlight {
-    @include link-variant(
-      var(--gray-900, #3b3a48),
-      var(--black, #000000),
-      none
-    );
-    @include underline(var(--gray-900, #3b3a48), var(--black, #000000));
-
     background: var(--color-p1, #fdb81e);
     color: var(--gray-900, #3b3a48);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--gray-900, #3b3a48);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--black, #000);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--black, #000);
+        outline-offset: -2px;
+      }
+    }
 
     footer {
       color: var(--gray-900, #3b3a48);
@@ -131,11 +178,25 @@
   }
 
   &-inverted {
-    @include link-variant(var(--color-p1, #fdb81e), #fff, none);
-    @include underline(var(--color-p1, #fdb81e), var(--white, #fff));
-
     background: var(--gray-900, #3b3a48);
     color: #fff;
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--color-p1, #fdb81e);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--white, #fff);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--white, #fff);
+        outline-offset: -2px;
+      }
+    }
 
     footer {
       color: #fff;
@@ -143,11 +204,25 @@
   }
 
   &-danger {
-    @include link-variant(var(--black, #000000), var(--black, #000000));
-    @include underline(var(--black, #000000), var(--black, #000000));
-
     background: var(--brand-danger, #cd402d);
     color: #fff;
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--black, #000);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--black, #000);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--black, #000);
+        outline-offset: -2px;
+      }
+    }
 
     footer {
       color: #fff;

@@ -8,18 +8,6 @@ table.table {
   border-spacing: 0;
 }
 
-table.editor-table-default {
-  @include table;
-  @include table-default;
-}
-
-table.editor-table-striped {
-  @include table;
-  @include table-striped;
-}
-
-/* End Rich Text Editor */
-
 .table {
   color: var(--gray-900, #3b3a48);
 

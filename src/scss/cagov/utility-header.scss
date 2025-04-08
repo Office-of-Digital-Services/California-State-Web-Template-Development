@@ -11,13 +11,21 @@
   color: var(--black, #000);
 
   .half {
-    @include make-sm-column(6);
+    padding-top: 0;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    position: relative;
+    min-height: 1px;
+    float: unset;
+    width: 100%;
 
-    padding-top: 0; // beta 6.0 addition
-    padding-left: 15px; // beta 5.0 addition
+    @media (min-width: $screen-sm-min) {
+      float: left;
+      width: percentage(calc(6 / 12));
+    }
 
     @media (max-width: $screen-xs-max) {
-      padding-top: 2px; // beta 5.0 addition
+      padding-top: 2px;
       float: left;
 
       &:first-child {
@@ -49,10 +57,23 @@
 
   ul {
     padding-left: 0;
-    list-style: none;
-    @include list-inline;
-
     margin-bottom: 0;
+    margin-left: -5px;
+    list-style: none;
+
+    > li {
+      display: inline-block;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .list-inline-item {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
 
     li {
       padding: 0 8px;
@@ -81,11 +102,11 @@
 
   .settings-links {
     font-size: var(--font-size-base, 1rem);
+    text-align: right;
 
     @media (width >= 576px) {
       font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
     }
-    @include text-right;
   }
 
   [class^="ca-gov-icon-"] {
@@ -148,6 +169,7 @@
     }
 
     .social-media-links {
+      /* stylelint-disable-next-line no-descending-specificity */
       a {
         margin: 0 10px;
         color: var(--black, #000);

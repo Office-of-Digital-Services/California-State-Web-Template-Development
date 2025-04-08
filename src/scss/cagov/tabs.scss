@@ -12,7 +12,7 @@
   }
 
   > [class^="ca-gov-icon-"] {
-    @include hide;
+    display: none !important;
   }
 
   .nav-tabs {
@@ -92,46 +92,34 @@
   }
 }
 
-/* Responsive tabs bootstrap 4 fix */
-@mixin d-none {
-  display: none !important;
-}
-
-@mixin d-block {
-  display: block !important;
-}
-
-@mixin d-flex {
-  display: flex !important;
-}
-
 .panel-group {
   &.responsive {
     margin-bottom: 0;
 
     &.hidden-xs.hidden-sm {
-      @include media-breakpoint-down(sm) {
-        @include d-none;
+      @media (width <= 575px) {
+        display: none !important;
       }
 
-      @include media-breakpoint-up(md) {
-        @include d-block;
+      @media (width >= 768px) {
+        display: block !important;
       }
     }
 
     &.visible-xs.visible-sm {
-      @include media-breakpoint-down(sm) {
-        @include d-block;
+      @media (width <= 575px) {
+        display: block !important;
       }
 
-      @include media-breakpoint-up(md) {
-        @include d-none;
+      @media (width >= 768px) {
+        display: none !important;
       }
     }
   }
 }
 
 // In Tabs bootstap 4 uses active class in a elements (not parent li)
+/* stylelint-disable-next-line no-descending-specificity */
 .nav-tabs > li {
   margin-bottom: -1px;
   margin-left: 1px;
@@ -168,18 +156,16 @@
 
 .nav-tabs > li > a:focus {
   outline: 2px solid var(--outline-default-color);
-
   outline-offset: -2px;
 }
 
 .nav-tabs > li > a.active:focus {
   outline: 2px solid var(--outline-default-color);
-
   outline-offset: -2px;
 }
 
 // Rmoving :after content from bootstrap4 tabs.
-
+/* stylelint-disable-next-line no-descending-specificity */
 .nav-tabs {
   .nav-item {
     margin-left: 2px;
@@ -232,10 +218,12 @@
 
   .tabs {
     &.responsive {
+      /* stylelint-disable-next-line no-descending-specificity */
       .card-header {
         display: none;
       }
 
+      /* stylelint-disable-next-line no-descending-specificity */
       .collapse {
         display: block;
       }
@@ -271,8 +259,7 @@
         }
 
         &:focus {
-          @include outline(2);
-
+          outline: 2px solid var(--outline-default-color);
           outline-offset: -2px;
         }
 
@@ -332,6 +319,7 @@
     display: inline-block;
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   [role="tablist"] a {
     text-decoration: none;
     padding: 7px 15px;
@@ -340,7 +328,6 @@
 
     &:focus {
       outline: 2px solid var(--outline-default-color);
-
       outline-offset: -2px;
     }
   }
@@ -373,7 +360,6 @@
 
     &:focus {
       outline: 2px solid var(--outline-default-color);
-
       outline-offset: -2px;
     }
   }
