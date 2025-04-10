@@ -54,7 +54,7 @@
       }
     }
 
-    @media (max-width: $screen-xxs-max) {
+    @media (width <= 575px) {
       &.columns-2,
       &.columns-3 {
         columns: 1;

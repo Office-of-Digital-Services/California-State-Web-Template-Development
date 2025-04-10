@@ -101,6 +101,7 @@ header.nav-overlay {
     width: 2.75rem;
     height: 2.75rem;
 
+    /* stylelint-disable-next-line no-descending-specificity */
     span {
       background-color: var(--white, #fff);
       width: 30px;
@@ -132,7 +133,7 @@ header.nav-overlay {
     }
   }
 
-  @media (min-width: $screen-md-min) {
+  @media (width >= 992px) {
     display: none;
   }
 }
@@ -268,7 +269,6 @@ header.nav-overlay {
   color: var(--gray-600, #72717c);
 
   &.toggle-sub-nav {
-    // Dynamic element $toggleSubNav placed before each .sub-nav element
     position: absolute;
     top: 0;
     right: 2px;

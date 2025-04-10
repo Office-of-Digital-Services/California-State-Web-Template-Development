@@ -56,19 +56,17 @@ ul.list-overstated {
 }
 
 .list-primary {
-  $size: 1.5em; // reusable variable for .list-standout
-
   padding: 0;
   padding-left: 0.2em;
 
   li {
-    padding-left: $size;
+    padding-left: 1.5em;
 
     &::before {
       content: "\4b"; //  .ca-gov-icon-minus-mark
       font-family: CaGov;
-      width: $size;
-      margin-left: -$size;
+      width: 1.5em;
+      margin-left: -1.5em;
       vertical-align: 0.1em;
       font-size: 0.7em;
       display: inline-block;
@@ -82,24 +80,22 @@ ul.list-overstated {
 }
 
 .list-standout {
-  $size: 1.5em; // reusable variable for .list-standout
-
   padding: 0;
   padding-left: 1.5em;
   margin: 12px 0 10px;
   line-height: 1.5;
 
   li {
-    padding-left: $size;
+    padding-left: 1.5em;
     margin: 10px 0;
 
     &::before {
       content: "\35"; // ca-gov-icon-caret-right
       font-family: CaGov;
-      width: $size;
-      margin-left: -$size;
+      width: 1.5em;
+      margin-left: -1.5em;
       vertical-align: sub;
-      font-size: $size;
+      font-size: 1.5em;
       font-weight: 900;
       display: inline-block;
     }

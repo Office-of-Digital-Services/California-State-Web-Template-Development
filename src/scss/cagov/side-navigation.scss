@@ -85,9 +85,9 @@
       color: var(--gray-900, #3b3a48);
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     a:focus {
       outline: 2px solid var(--outline-default-color);
-
       outline-offset: -2px;
     }
 
@@ -98,6 +98,7 @@
       li {
         margin: 0;
 
+        /* stylelint-disable-next-line no-descending-specificity */
         a {
           padding-left: 2.5rem;
 
@@ -166,14 +167,14 @@
 }
 
 // desktop
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .sidenav-mobile-btn {
     display: none;
   }
 }
 
 // mobile
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .mobile-sidenav {
     max-height: 0;
     overflow: hidden;

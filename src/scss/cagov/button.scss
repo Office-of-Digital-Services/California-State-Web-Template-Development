@@ -33,7 +33,7 @@
   color: var(--white, #fff);
   background-color: var(--color-p2-darker, #214a68);
   border-color: var(--color-p2-darker, #214a68);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -82,7 +82,7 @@ fieldset[disabled] .btn-primary.active {
   color: var(--color-p2-darker, #214a68);
   background-color: var(--white, #fff);
   border-color: var(--color-p2-darker, #214a68);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -108,7 +108,7 @@ fieldset[disabled] .btn-outline-primary.active {
 /*  DEFAULT BUTTON */
 .btn-default {
   color: var(--gray-700, #5e5e6a);
-  background-color: rgba(255, 255, 255, 0.65);
+  background-color: rgba(255 255 255 / 65%);
   border-color: var(--gray-700, #5e5e6a);
   font-weight: var(--font-weight-6);
 
@@ -117,7 +117,7 @@ fieldset[disabled] .btn-outline-primary.active {
   }
 
   .badge {
-    color: rgba(255, 255, 255, 0.65);
+    color: rgb(255 255 255 / 65%);
     background-color: var(--gray-700, #5e5e6a);
   }
 }
@@ -129,9 +129,9 @@ fieldset[disabled] .btn-outline-primary.active {
 .btn-default .show > .dropdown-toggle,
 .open > .dropdown-toggle .btn-default {
   color: var(--black, #000);
-  background-color: rgb(255, 255, 255);
+  background-color: color(rgba 255 255 255);
   border-color: var(--black, #000);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -150,7 +150,7 @@ fieldset[disabled] .btn-default:hover,
 fieldset[disabled] .btn-default:focus,
 fieldset[disabled] .btn-default:active,
 fieldset[disabled] .btn-default.active {
-  background-color: rgba(255, 255, 255, 0.65) !important;
+  background-color: rgba(255 255 255 / 65%) !important;
   border-color: var(--gray-700, #5e5e6a);
 }
 
@@ -185,7 +185,7 @@ fieldset[disabled] .btn-default.active {
   color: var(--white, #fff);
   background-color: var(--color-p3-darker, #242830);
   border-color: var(--color-p3-darker, #242830);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -234,7 +234,7 @@ fieldset[disabled] .btn-standout.active {
   color: var(--color-p3-darker, #242830);
   background-color: var(--white, #fff);
   border-color: var(--color-p3-darker, #242830);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -283,7 +283,7 @@ fieldset[disabled] .btn-outline-standout.active {
   color: var(--gray-900, #3b3a48);
   background-color: var(--color-p1-lighter, #f5ce73);
   border-color: var(--color-p1-lighter, #f5ce73);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -332,7 +332,7 @@ fieldset[disabled] .btn-highlight.active {
   color: var(--gray-900, #3b3a48);
   background-color: var(--gray-50, #fafafa);
   border-color: var(--color-p1-lighter, #f5ce73);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -393,7 +393,7 @@ fieldset[disabled] .btn-outline-highlight.active {
   color: var(--link-hover-color, #005a7f);
   background-color: #fff;
   border-color: var(--black, #000);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -442,7 +442,7 @@ fieldset[disabled] .btn-secondary.active {
   color: var(--gray-900, #3b3a48);
   background-color: var(--white, #fff);
   border-color: var(--gray-900, #3b3a48);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -499,8 +499,8 @@ fieldset[disabled] .btn-outline-secondary.active {
 .open > .dropdown-toggle .btn-s1 {
   color: var(--black, #000);
   background-color: #fff;
-  border-color: var(--black, #000000);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-color: var(--black, #000);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -549,7 +549,7 @@ fieldset[disabled] .btn-s1.active {
   color: var(--black, #000);
   background-color: var(--gray-100, #f3f3f4);
   border-color: var(--gray-100, #f3f3f4);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -598,7 +598,7 @@ fieldset[disabled] .btn-light.active {
   color: var(--gray-100, #f3f3f4);
   background-color: transparent;
   border-color: var(--gray-100, #f3f3f4);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
 }
 
@@ -642,7 +642,7 @@ fieldset[disabled] .btn-outline-light.active {
   width: 100%;
   background-image: none;
   background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255 255 255 / 70%);
   font-size: 1.25rem;
 
   &:focus {
@@ -698,7 +698,7 @@ fieldset[disabled] .btn-more {
 // Justified mobile button groups in Site Settings
 // --------------------------------------------------
 
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   [role="group"].btn-group {
     margin-top: 10px;
     display: table;
@@ -726,7 +726,7 @@ fieldset[disabled] .btn-more {
 // Button Blocks for Mobile
 // --------------------------------------------------
 
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   .btn-block-xs {
     display: block !important;
     width: 100% !important;
@@ -734,7 +734,7 @@ fieldset[disabled] .btn-more {
   }
 }
 
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .btn-block-sm {
     display: block !important;
     width: 100% !important;
@@ -751,7 +751,7 @@ fieldset[disabled] .btn-more {
     margin-right: calc(var(--spacer, 1rem) * 0.5);
     margin-bottom: calc(var(--spacer, 1rem) * 0.5);
 
-    @media (max-width: $screen-xs-max) {
+    @media (width <= 767px) {
       margin-bottom: calc(var(--spacer, 1rem) * 0.5);
     }
   }

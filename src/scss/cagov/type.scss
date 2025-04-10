@@ -256,7 +256,7 @@ code {
   white-space: normal !important;
 }
 
-// LINKS NEED VISUAL INDICATORS OTHER THAN COLOR (USING UNDERLINE MIXING)
+// LINKS NEED VISUAL INDICATORS OTHER THAN COLOR
 .main-content {
   a:not(.btn) {
     text-decoration: underline;
@@ -294,6 +294,7 @@ svg ~,
   }
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .icon-abs-right .external-link-icon {
   position: absolute;
   right: 1.5rem;

@@ -2,21 +2,13 @@
    GLOBAL NAVIGATION - /source/scss/cagov/navigation.scss
 ----------------------------------------- */
 
-// MIXINS - MENU ONLY
-// --------------------------------------------------
-
-@mixin nav-columns($count: 3) {
-  column-count: $count;
-  column-gap: 0;
-}
-
 .navigation-search {
   border: none;
   position: relative;
   padding: 0;
   z-index: 26;
 
-  @media (max-width: $screen-sm-max) {
+  @media (width <= 991px) {
     position: fixed;
     top: 0;
     right: -100%;
@@ -69,7 +61,7 @@
   }
 }
 
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   .main-navigation {
     max-width: 100%;
   }
@@ -95,7 +87,7 @@
 .nav-item-search {
   &:hover,
   &:focus {
-    @media (min-width: $screen-sm-min) {
+    @media (width >= 768px) {
       background-color: var(--sub-nav-bg, #f1f8fb);
     }
 
@@ -116,6 +108,7 @@
     .first-level-link {
       color: var(--color-p2, #046b99);
 
+      /* stylelint-disable-next-line no-descending-specificity */
       > span[class^="ca-gov-icon"] {
         color: var(--gray-900, #3b3a48);
       }
@@ -129,7 +122,7 @@
     max-height: 1000px !important;
 
     // 991px
-    @media (max-width: $screen-sm-max) {
+    @media (width <= 991px) {
       max-height: 1000px;
       transition: max-height 0.5s ease-in-out;
     }
@@ -170,7 +163,7 @@
 }
 
 // Main Navigation with Icons
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .first-level-link,
   .first-level-btn {
     display: block;
@@ -281,7 +274,7 @@
 
       > span[class^="ca-gov-icon"]:not(.carrot) {
         // 992px
-        @media (min-width: $screen-md-min) {
+        @media (width >= 992px) {
           /* Navigation icons */
           display: inline;
           font-size: inherit;
@@ -330,7 +323,7 @@
 // TOP LEVEL NAVIGATION FOR DESKTOP
 // --------------------------------------------------
 // 992px
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   // show mobile logo in desktop view
 
   .main-navigation {
@@ -415,8 +408,9 @@
     }
   }
 
-  // shared styles megamenu and dropdown menu
+  /* stylelint-disable-next-line no-descending-specificity */
   .nav-item {
+    /* stylelint-disable-next-line no-descending-specificity */
     .sub-nav {
       position: absolute;
     }
@@ -478,8 +472,9 @@
       }
     }
 
+    /* stylelint-disable-next-line no-descending-specificity */
     .top-level-nav {
-      // min-height: 55px; // Beta 6.0 addition
+      /* stylelint-disable-next-line no-descending-specificity */
       .nav-item {
         .first-level-link,
         .first-level-btn {
@@ -509,7 +504,7 @@
 /* MOBILE NAVIGATION */
 // 991px
 
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .logo-nav {
     display: block;
   }
@@ -700,14 +695,14 @@
 }
 
 // 1200px
-@media (min-width: $screen-lg) {
+@media (width >= 1200px) {
   .main-navigation {
     padding-left: 350px;
   }
 }
 
 // 1200px and 992px
-@media (max-width: $screen-lg) and (min-width: $screen-md-min) {
+@media (width >= 992px) and (width < 1200px) {
   .main-navigation {
     padding-left: 250px;
 
@@ -720,7 +715,7 @@
 }
 
 // 1280px
-@media (min-width: $screen-xl) {
+@media (width >= 1280px) {
   .main-navigation {
     padding-left: 350px;
   }
@@ -734,14 +729,14 @@
   }
 
   // 992px
-  @media (min-width: $screen-md-min) {
+  @media (width >= 992px) {
     display: none; // Hide menu dropdown button from desktop view
   }
 }
 
 /* FULL WIDTH MENU WITH REGULAR UTILITY BAR */
 // 992px
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .full-width-nav .main-navigation {
     padding-left: 0;
     margin-top: 0;
@@ -817,6 +812,7 @@
 
         margin-top: 0;
 
+        /* stylelint-disable-next-line no-descending-specificity */
         #nav-item-search button.first-level-link {
           padding-top: 9px;
           padding-bottom: 8px;
@@ -833,7 +829,7 @@
 
 /* Navigation button mobile */
 // 991px
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .top-level-nav {
     width: 100%;
   }
@@ -861,7 +857,7 @@
 }
 
 // 991px
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .nav-item .first-level-link.has-sub .carrot {
     display: none !important;
   }
@@ -869,7 +865,7 @@
 
 // HAS SUB CARROT
 // 991px
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   /* button carrot */
   .first-level-btn[aria-expanded="false"] .rotate {
     display: block;
@@ -914,7 +910,7 @@
 
     border-bottom: 4px solid var(--white, #fff);
 
-    @media (max-width: $screen-xs-max) {
+    @media (width <= 767px) {
       border-bottom: 4px solid var(--white, #fff);
 
       &:hover,

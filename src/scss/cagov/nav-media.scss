@@ -39,7 +39,7 @@
     position: absolute;
     inset: 0;
 
-    @media (max-width: $screen-xs-max) {
+    @media (width <= 767px) {
       background-image: none !important;
     }
   }

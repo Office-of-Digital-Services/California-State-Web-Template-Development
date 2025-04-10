@@ -2,7 +2,7 @@
    FIXED-HEADER -  /source/scss/cagov/fixed-header.scss
 ----------------------------------------- */
 
-@media (min-width: $screen-sm-min) {
+@media (width >= 768px) {
   .ask-group.fixed-hide {
     visibility: hidden;
     opacity: 0;
@@ -50,7 +50,7 @@
   width: 100%;
   z-index: 3;
 
-  @media (min-width: $screen-md-min) {
+  @media (width >= 992px) {
     z-index: 7;
     position: sticky;
   }
@@ -64,7 +64,7 @@
 h2 {
   scroll-margin-top: 75px;
 
-  @media (min-width: $screen-md-min) {
+  @media (width >= 992px) {
     scroll-margin-top: 150px;
   }
 }

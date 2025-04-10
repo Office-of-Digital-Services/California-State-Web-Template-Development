@@ -32,14 +32,14 @@
   }
 }
 
-@media (min-width: $screen-xs-min) {
+@media (width >= 576px) {
   .dot-line::before,
   .dot-line::after {
     display: block;
   }
 }
 
-@media (max-width: $screen-xxs-max) {
+@media (width <= 575px) {
   .progress-text {
     text-align: left;
     position: relative;

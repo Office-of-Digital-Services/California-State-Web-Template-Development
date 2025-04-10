@@ -10,7 +10,7 @@
   transition: opacity 0.5s 0.7s;
   opacity: 0;
 
-  @media (min-width: $screen-sm-min) {
+  @media (width >= 768px) {
     /* position results container below search box */
     z-index: 6; //  _cs-shame.scss addition
     position: absolute;

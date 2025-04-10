@@ -38,7 +38,7 @@
   .section-default {
     background-color: var(--white, #fff);
 
-    @media (min-width: $screen-md-min) {
+    @media (width >= 992px) {
       border-bottom: 1px solid var(--gray-200, #d4d4d7);
     }
 
@@ -49,13 +49,13 @@
       width: 100%;
       left: 0;
 
-      @media (min-width: $screen-md-min) {
+      @media (width >= 992px) {
         border-bottom: none;
       }
     }
   }
 
-  @media (min-width: $screen-md-min) {
+  @media (width >= 992px) {
     border-bottom: 1px solid var(--gray-200, #d4d4d7);
 
     .section-default {

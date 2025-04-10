@@ -7,7 +7,7 @@
   border: none;
   background: var(--body-bg);
 
-  @media (max-width: $screen-xs-max) {
+  @media (width <= 767px) {
     border: none;
   }
 
@@ -65,7 +65,7 @@
   .tab-content {
     border: 1px solid var(--gray-200, #d4d4d7);
 
-    @media (max-width: $screen-xs-max) {
+    @media (width <= 767px) {
       border: none;
     }
   }
@@ -193,7 +193,7 @@
 }
 
 /* Responsive desctop view */
-@media (min-width: $screen-sm-min) {
+@media (width >= 768px) {
   .responsive {
     .nav-tabs {
       display: flex;
@@ -232,7 +232,7 @@
 }
 
 /* Responsive tabs mobile view */
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   .responsive .tab-pane {
     display: block !important;
     opacity: 1 !important;
@@ -350,7 +350,7 @@
   }
 
   [role="tabpanel"] {
-    border: 1px solid $nav-tabs-border-color;
+    border: 1px solid var(--gray-200, #d4d4d7);
     padding: 1.1rem;
     margin-top: -2px;
 
@@ -365,7 +365,7 @@
   }
 }
 
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   .tabs.responsive {
     [role="tabpanel"] {
       border: none;

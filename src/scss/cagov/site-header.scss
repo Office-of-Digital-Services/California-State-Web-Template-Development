@@ -11,7 +11,7 @@
   position: relative;
 
   // 992px
-  @media (min-width: $screen-md-min) {
+  @media (width >= 992px) {
     position: unset;
   }
 
@@ -20,7 +20,7 @@
     padding: 0.5rem 0 0.5rem 1rem;
 
     // 991px
-    @media (max-width: $screen-sm-max) {
+    @media (width <= 991px) {
       position: relative;
       max-width: 400px;
       margin-left: 1rem;
@@ -38,11 +38,11 @@
       object-fit: contain !important;
       object-position: left;
 
-      @media (max-width: $screen-md) and (min-width: $screen-sm-min) {
+      @media (768px <= width <= 992px) {
         max-width: 225px;
       }
 
-      @media (max-width: $screen-sm-max) {
+      @media (width <= 991px) {
         max-height: 44px;
       }
     }
@@ -87,7 +87,7 @@
             transition: all 0.3s;
             display: block;
 
-            @media (max-width: $screen-sm-max) {
+            @media (width <= 991px) {
               font-size: 0.78125rem;
             }
           }
@@ -102,20 +102,20 @@
             transition: all 0.3s;
             display: block;
 
-            @media (max-width: $screen-sm-max) {
+            @media (width <= 991px) {
               font-size: 1rem;
             }
           }
         }
 
-        // MOBILE 992px
-        @media (max-width: $screen-sm-max) {
+        // MOBILE
+        @media (width <= 991px) {
           min-height: auto;
         }
       }
 
-      // MOBILE 992px
-      @media (max-width: $screen-sm-max) {
+      // MOBILE
+      @media (width <= 991px) {
         min-width: 100%;
       }
     }
@@ -166,7 +166,7 @@
 // COMPACT MENU LOOK AND FEEL
 // --------------------------------------------------
 
-@media (min-width: $screen-sm-min) {
+@media (width >= 768px) {
   .fixed.compact {
     .header-organization-banner {
       height: 55px; // Beta 5.0 addition

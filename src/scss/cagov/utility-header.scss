@@ -19,12 +19,12 @@
     float: unset;
     width: 100%;
 
-    @media (min-width: $screen-sm-min) {
+    @media (width >= 768px) {
       float: left;
       width: percentage(calc(6 / 12));
     }
 
-    @media (max-width: $screen-xs-max) {
+    @media (width <= 767px) {
       padding-top: 2px;
       float: left;
 
@@ -212,7 +212,7 @@
         margin: 0 1rem 0 0;
         font-size: 0.95rem;
 
-        @media (max-width: $screen-xs-max) {
+        @media (width <= 767px) {
           margin-right: 0;
 
           .desktop-only {
@@ -228,13 +228,13 @@
   left: 27px;
   height: 1.7rem;
 
-  @media (max-width: $screen-md-max) {
+  @media (width <= 1139px) {
     left: 5px;
   }
 }
 
 /* Hide utilities in mobile */
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   button[aria-controls="siteSettings"] {
     display: none;
   }

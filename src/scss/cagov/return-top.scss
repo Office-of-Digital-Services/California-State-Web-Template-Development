@@ -54,7 +54,7 @@ html {
     }
   }
 
-  @media (min-width: $screen-md-min) {
+  @media (width >= 992px) {
     .sr-only {
       position: relative !important;
       width: unset !important;

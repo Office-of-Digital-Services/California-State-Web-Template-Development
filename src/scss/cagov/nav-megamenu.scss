@@ -3,7 +3,7 @@
    /source/scss/cagov/nav-megamenu.scss
 ----------------------------------------- */
 // 991px
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .main-navigation {
     margin-top: 0;
     padding: 0;
@@ -20,7 +20,7 @@
 
   // Remove border as rules are added to top level links
   // 991px
-  @media (max-width: $screen-xs-max) {
+  @media (width <= 767px) {
     border: none;
   }
 }
@@ -72,7 +72,7 @@
   right: initial;
 
   // 992px
-  @media (max-width: $screen-sm-max) {
+  @media (width <= 991px) {
     max-width: 100%;
   }
 }
@@ -88,7 +88,7 @@
     position: static;
 
     // 992px
-    @media (max-width: $screen-sm-max) {
+    @media (width <= 991px) {
       position: relative;
     }
 
@@ -102,7 +102,7 @@
 // Sub-menu open indicator
 // --------------------------------------------------
 // 991px
-@media (min-width: $screen-sm-max) {
+@media (width >= 992px) {
   /* Dynamic Element appended to each .sub-nav */
   .nav-arrow-container {
     display: block;
@@ -163,7 +163,7 @@ a.second-level-link {
   }
 
   // 991px
-  @media (max-width: $screen-sm-max) {
+  @media (width <= 991px) {
     // to make outline visible
     padding: 0.5rem 1rem 0.75rem 2rem !important;
     color: var(--white, #fff);
@@ -180,42 +180,40 @@ a.second-level-link {
 
 // Unit values for desktop only, mobile will collapse vertically.
 // 992px
-@media (min-width: $screen-md-min) {
-  $nav-unit-base: 65px;
-
+@media (width >= 992px) {
   .unit1 {
-    min-height: $nav-unit-base;
+    min-height: 65px;
   }
 
   .unit2 {
-    height: ($nav-unit-base * 2);
+    height: (65px * 2);
     overflow: hidden;
   }
 
   .unit3 {
-    height: ($nav-unit-base * 3);
+    height: (65px * 3);
     overflow: hidden;
   }
 
   .unit4 {
-    height: ($nav-unit-base * 4);
+    height: (65px * 4);
     overflow: hidden;
   }
 
   .unit5 {
-    height: ($nav-unit-base * 5);
+    height: (65px * 5);
     overflow: hidden;
   }
 
   .unit6 {
-    height: ($nav-unit-base * 6);
+    height: (65px * 6);
     overflow: hidden;
   }
 }
 
 /* Megamenu State Template v4 */
 // 992px
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .main-navigation.megadropdown.original {
     .second-level-nav {
       column-count: 3;
@@ -340,7 +338,7 @@ a.second-level-link {
 }
 
 // 991
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .main-navigation {
     overflow: hidden;
   }
@@ -366,7 +364,7 @@ a.second-level-link {
 }
 
 // 992
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .sub-nav {
     border-top: none;
   }
@@ -391,7 +389,7 @@ a.second-level-link {
 // Flex subnav desktop view
 
 // 992
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .second-level-nav.flex {
     display: flex;
     text-align: center;
@@ -431,7 +429,7 @@ a.second-level-link {
 // Flex subnav in mobile view
 
 // 991
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .second-level-nav.flex {
     display: block;
     text-align: left;

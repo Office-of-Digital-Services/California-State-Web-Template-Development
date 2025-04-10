@@ -10,7 +10,7 @@
   background: #000;
 }
 
-@media (min-width: $screen-sm-min) {
+@media (width >= 768px) {
   .header-slideshow-banner.enabled {
     display: block;
   }
@@ -28,7 +28,7 @@
   min-height: 100%;
   position: relative;
 
-  @media (max-width: $screen-xs-max) {
+  @media (width <= 767px) {
     height: unset;
     padding-top: 70px;
     padding-bottom: 80px;
@@ -45,7 +45,7 @@
 }
 
 // Beta 5.0 addition
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   .ask-group + .header-primary-banner,
   .ask-group + .header-large-banner,
   .ask-group + .header-slideshow-banner {

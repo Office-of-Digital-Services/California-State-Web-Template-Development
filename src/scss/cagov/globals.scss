@@ -865,7 +865,7 @@
 }
 
 // small
-@media (min-width: $screen-xs-min) {
+@media (width >= 576px) {
   .brd-sm-0 {
     border: none !important;
   }
@@ -893,7 +893,7 @@
 }
 
 // medium
-@media (min-width: $screen-sm-min) {
+@media (width >= 768px) {
   .brd-md-0 {
     border: none !important;
   }
@@ -921,7 +921,7 @@
 }
 
 // large
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .brd-lg-0 {
     border: none !important;
   }
@@ -1034,21 +1034,21 @@
   left: 0 !important;
 }
 
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   .top-sm-rel-40pct {
     position: relative;
     top: 40% !important;
   }
 }
 
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .top-md-rel-40pct {
     position: relative;
     top: 40% !important;
   }
 }
 
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .top-lg-rel-40pct {
     position: relative;
     top: 40% !important;
@@ -1060,21 +1060,21 @@
   top: 30% !important;
 }
 
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   .top-sm-rel-30pct {
     position: relative;
     top: 30% !important;
   }
 }
 
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .top-md-rel-30pct {
     position: relative;
     top: 30% !important;
   }
 }
 
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .top-lg-rel-30pct {
     position: relative;
     top: 30% !important;
@@ -1086,21 +1086,21 @@
   top: 20% !important;
 }
 
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   .top-sm-rel-20pct {
     position: relative;
     top: 20% !important;
   }
 }
 
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .top-md-rel-20pct {
     position: relative;
     top: 20% !important;
   }
 }
 
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .top-lg-rel-20pct {
     position: relative;
     top: 20% !important;
@@ -1112,21 +1112,21 @@
   top: 10% !important;
 }
 
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   .top-sm-rel-10pct {
     position: relative;
     top: 10% !important;
   }
 }
 
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .top-md-rel-10pct {
     position: relative;
     top: 10% !important;
   }
 }
 
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .top-lg-rel-10pct {
     position: relative;
     top: 10% !important;
@@ -1138,21 +1138,21 @@
   top: 5% !important;
 }
 
-@media (max-width: $screen-xs-max) {
+@media (width <= 767px) {
   .top-sm-rel-5pct {
     position: relative;
     top: 5% !important;
   }
 }
 
-@media (max-width: $screen-sm-max) {
+@media (width <= 991px) {
   .top-md-rel-5pct {
     position: relative;
     top: 5% !important;
   }
 }
 
-@media (min-width: $screen-md-min) {
+@media (width >= 992px) {
   .top-lg-rel-5pct {
     position: relative;
     top: 5% !important;

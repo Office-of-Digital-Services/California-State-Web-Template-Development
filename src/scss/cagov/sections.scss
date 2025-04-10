@@ -10,7 +10,7 @@
   position: relative; // position and overflow needed for parallax effect
   overflow: hidden;
 
-  @media (max-width: $screen-xs-max) {
+  @media (width <= 767px) {
     padding-top: var(--line-height-computed);
     padding-bottom: var(--line-height-computed);
   }
