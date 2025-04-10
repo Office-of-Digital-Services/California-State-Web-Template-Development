@@ -3,6 +3,9 @@
 ----------------------------------------- */
 
 :root {
+  // color variations are hardcoded for older browsers
+  // and color-mix is used for the newer browsers
+
   /* Highlight */
   --color-p1: #a5bdc5;
   --color-p1-dark: #99b4bd;
@@ -46,7 +49,14 @@
   --color-s3-light: #cad4d7;
   --color-s3-lighter: #dce2e4;
 
-  // color-mix for newer browsers
+  /* Megamenu sub navigation background */
+  --sub-nav-bg: var(--color-s1);
+
+  /* Mobile navigation drawer background */
+  --mobile-drawer: var(--color-p3);
+  --mobile-drawer-active: var(--color-p3-light);
+
+  // color-mix for the newer browsers
   @supports (color: color-mix) {
     // highlight
     --color-p1-dark: color-mix(in srgb, var(--color-p1), #000 15%);
@@ -84,12 +94,12 @@
     --color-s3-dark: color-mix(in srgb, var(--color-s3), #000 15%);
     --color-s3-light: color-mix(in srgb, var(--color-s3), #fff 45%);
     --color-s3-lighter: color-mix(in srgb, var(--color-s3), #fff 60%);
+
+    // Megamenu sub navigation background
+    --sub-nav-bg: var(--color-s1);
+
+    // Mobile navigation drawer background
+    --mobile-drawer: var(--color-p3);
+    --mobile-drawer-active: var(--color-p3-light);
   }
-
-  /* Megamenu sub navigation background */
-  --sub-nav-bg: var(--color-s1);
-
-  /* Mobile navigation drawer background */
-  --mobile-drawer: var(--color-p3);
-  --mobile-drawer-active: var(--color-p3-light);
 }
