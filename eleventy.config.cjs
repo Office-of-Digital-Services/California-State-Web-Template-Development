@@ -4,7 +4,6 @@ const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 const path = require("path");
 const postcss = require("postcss");
 const postcssNested = require("postcss-nested");
-const fs = require("fs");
 
 module.exports = function (
   /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
@@ -16,7 +15,9 @@ module.exports = function (
   });
 
   // Watch the ./src/css/ folder for changes
-  eleventyConfig.addWatchTarget("./src/css/*.**");
+  eleventyConfig.addWatchTarget("./src/css/**/*.**");
+  // Ignore this file that gets dynamically created
+  eleventyConfig.watchIgnores.add("./src/css/cagov/template-comments.css");
 
   //Sorted list of all the samples
   eleventyConfig.addFilter(
@@ -35,7 +36,7 @@ module.exports = function (
     (/** @type {string} */ content) =>
       content
         .replace(/="\/images\//g, `="${docSiteUrl}images/`)
-        .replace(/url\(\'\/images\//g, `url('${docSiteUrl}images/`)
+        .replace(/url\('\/images\//g, `url('${docSiteUrl}images/`)
   );
 
   //Start with default config, easier to configure 11ty later
@@ -97,7 +98,7 @@ module.exports = function (
      * @param {string} content
      * @param {string} outputPath
      */
-    async function (content, outputPath) {
+    async (content, outputPath) => {
       const basePath = config.dir.output;
 
       const relativePath = path
@@ -106,7 +107,7 @@ module.exports = function (
 
       return content
         .replace(/href="(.*\/)"/g, 'href="$1index.html"') // fixing any root path links
-        .replace(/=\"\//g, `="${relativePath}`); //Replace all ... ="/  ... with new path
+        .replace(/="\//g, `="${relativePath}`); //Replace all ... ="/  ... with new path
     }
   );
 
