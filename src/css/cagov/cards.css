@@ -204,8 +204,8 @@
   }
 
   &.card-success {
-    background-color: var(--brand-success, #32852e);
-    border-color: var(--brand-success, #32852e);
+    background-color: var(--brand-success, #30812c);
+    border-color: var(--brand-success, #30812c);
     color: var(--white, #fff);
 
     .card-header {
@@ -236,8 +236,8 @@
   }
 
   &.card-info {
-    background-color: var(--brand-info, #1c7db5);
-    border-color: var(--brand-info, #1c7db5);
+    background-color: var(--brand-info, #1c7ab0);
+    border-color: var(--brand-info, #1c7ab0);
     color: var(--white, #fff);
 
     .card-header {

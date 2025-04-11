@@ -531,11 +531,11 @@
 }
 
 .text-success {
-  color: var(--brand-success, #32852e) !important;
+  color: var(--brand-success, #30812c) !important;
 }
 
 .text-info {
-  color: var(--brand-info, #1c7db5) !important;
+  color: var(--brand-info, #1c7ab0) !important;
 }
 
 .text-muted {
@@ -1797,19 +1797,19 @@
 }
 
 .text-accent1 {
-  color: var(--color-a1, #1b79c0) !important;
+  color: var(--color-a1, #1b76bb) !important;
 }
 
 .text-accent2 {
-  color: var(--color-a2, #077cbb) !important;
+  color: var(--color-a2, #0779b6) !important;
 }
 
 .text-accent3 {
-  color: var(--color-a3, #258378) !important;
+  color: var(--color-a3, #247f75) !important;
 }
 
 .text-accent4 {
-  color: var(--color-a4, #32852e) !important;
+  color: var(--color-a4, #30812c) !important;
 }
 
 .text-accent5 {
@@ -1817,7 +1817,7 @@
 }
 
 .text-accent6 {
-  color: var(--color-a6, #be37cd) !important;
+  color: var(--color-a6, #b932c8) !important;
 }
 
 .text-accent7 {

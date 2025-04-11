@@ -103,8 +103,8 @@
   background-repeat: repeat-x;
   background-image: linear-gradient(
     225deg,
-    var(--brand-info, #1c7db5),
-    var(--brand-success, #32852e)
+    var(--brand-info, #1c7ab0),
+    var(--brand-success, #30812c)
   );
 }
 

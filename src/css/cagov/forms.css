@@ -20,8 +20,8 @@ label {
   border-radius: var(--border-radius-base);
 
   &.is-valid {
-    color: var(--brand-success, #32852e);
-    border-color: var(--brand-success, #32852e);
+    color: var(--brand-success, #30812c);
+    border-color: var(--brand-success, #30812c);
     background-color: var(--brand-success-lighter, #c6dac2);
   }
 
@@ -119,13 +119,13 @@ label {
   }
 
   .input-group-addon {
-    color: var(--brand-success, #32852e);
-    border-color: var(--brand-success, #32852e);
+    color: var(--brand-success, #30812c);
+    border-color: var(--brand-success, #30812c);
     background-color: var(--brand-success-lighter, #c6dac2);
   }
 
   .form-control {
-    border-color: var(--brand-success, #32852e);
+    border-color: var(--brand-success, #30812c);
   }
 }
 
@@ -343,7 +343,7 @@ input[type="radio"]:focus + .btn {
 }
 
 .valid-feedback {
-  color: var(--brand-success, #32852e);
+  color: var(--brand-success, #30812c);
 }
 
 /* Accessibilty focus */
