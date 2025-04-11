@@ -137,6 +137,15 @@
     border-color: var(--color-p2, #046b99);
     color: var(--white, #fff);
 
+    .card-header {
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: var(--white, #fff);
+      }
+    }
+
     a:not(.btn) {
       color: var(--white, #fff);
       text-decoration: none;
@@ -180,6 +189,13 @@
 
     .card-header {
       border-bottom: var(--card-border-width) solid rgb(255 255 255 / 20%);
+
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: var(--white, #fff);
+      }
     }
 
     .card-footer {
@@ -191,6 +207,15 @@
     background-color: var(--brand-success, #32852e);
     border-color: var(--brand-success, #32852e);
     color: var(--white, #fff);
+
+    .card-header {
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: var(--white, #fff);
+      }
+    }
 
     /* stylelint-disable-next-line no-descending-specificity */
     a:not(.btn) {
@@ -215,6 +240,15 @@
     border-color: var(--brand-info, #1c7db5);
     color: var(--white, #fff);
 
+    .card-header {
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: var(--white, #fff);
+      }
+    }
+
     /* stylelint-disable-next-line no-descending-specificity */
     a:not(.btn) {
       color: var(--white, #fff);
@@ -238,6 +272,15 @@
     border-color: var(--brand-warning, #c2570f);
     color: var(--white, #fff);
 
+    .card-header {
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: var(--white, #fff);
+      }
+    }
+
     /* stylelint-disable-next-line no-descending-specificity */
     a:not(.btn) {
       color: var(--gray-900, #3b3a48);
@@ -260,6 +303,15 @@
     background-color: var(--brand-danger, #cd402d);
     border-color: var(--brand-danger, #cd402d);
     color: var(--white, #fff);
+
+    .card-header {
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: var(--white, #fff);
+      }
+    }
 
     /* stylelint-disable-next-line no-descending-specificity */
     a:not(.btn) {
@@ -431,9 +483,15 @@
 
   > .panel-heading,
   > .card-heading {
-    color: var(--white, #f5f5f5);
     background-color: var(--color-p2, #046b99);
     border-color: var(--color-p2, #046b99);
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: var(--white, #fff);
+    }
 
     + .panel-collapse > .panel-body,
     + .card-collapse > .card-body {
@@ -556,9 +614,15 @@
 
   > .panel-heading,
   > .card-heading {
-    color: var(--white, #fff);
     background-color: var(--color-p3, #323a45);
     border-color: var(--color-p3, #323a45);
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: var(--white, #fff);
+    }
 
     + .panel-collapse > .panel-body,
     + .card-collapse > .card-body {
