@@ -272,17 +272,16 @@ code {
 }
 
 /* external link exeptions */
-img ~,
-svg ~,
-.cagov-card,
-.wp-block-button__link,
-*[class*="ca-gov-icon-"],
-[class*="ca-gov-icon-"] ~,
-.pdf-link-icon ~,
-.footer-social-links a {
-  .external-link-icon {
-    display: none;
-  }
+img ~ .external-link-icon,
+svg ~ .external-link-icon,
+.cagov-card .external-link-icon,
+.wp-block-button__link .external-link-icon,
+*[class*="ca-gov-icon-"] .external-link-icon,
+[class*="ca-gov-icon-"] ~ .external-link-icon,
+.pdf-link-icon ~ .external-link-icon,
+.footer-social-links a .external-link-icon,
+.socialsharer-container a .external-link-icon {
+  display: none;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
