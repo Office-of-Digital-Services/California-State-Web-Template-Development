@@ -4,6 +4,7 @@ const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 const path = require("path");
 const postcss = require("postcss");
 const postcssNested = require("postcss-nested");
+const fs = require("fs");
 
 module.exports = function (
   /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
@@ -13,6 +14,9 @@ module.exports = function (
     "sample_site/images": "images",
     "sample_site/siteRoot": "/"
   });
+
+  // Watch the ./src/css/ folder for changes
+  eleventyConfig.addWatchTarget("./src/css/*.**");
 
   //Sorted list of all the samples
   eleventyConfig.addFilter(
