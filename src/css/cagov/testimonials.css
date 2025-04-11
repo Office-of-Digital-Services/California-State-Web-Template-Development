@@ -61,167 +61,167 @@
     margin-top: 0;
     margin-bottom: 5px;
   }
+}
 
-  &-default {
-    background: var(--gray-50, #fafafa);
-  }
+.testimonial-default {
+  background: var(--gray-50, #fafafa);
+}
 
-  &-understated {
-    background: var(--color-s1, #eef8fb);
-  }
+.testimonial-understated {
+  background: var(--color-s1, #eef8fb);
+}
 
-  &-overstated {
-    background: var(--color-s3, #4993b5);
+.testimonial-overstated {
+  background: var(--color-s3, #4993b5);
+  color: var(--gray-900, #3b3a48);
+
+  a:not(.btn) {
     color: var(--gray-900, #3b3a48);
+    text-decoration: none;
 
-    a:not(.btn) {
-      color: var(--gray-900, #3b3a48);
-      text-decoration: none;
-
-      &:hover,
-      &:focus {
-        color: var(--black, #000);
-        text-decoration: underline;
-      }
-
-      &:focus {
-        outline: 2px solid var(--color-s1, #eef8fb);
-        outline-offset: -2px;
-      }
-    }
-
-    footer {
+    &:hover,
+    &:focus {
       color: var(--black, #000);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--color-s1, #eef8fb);
+      outline-offset: -2px;
     }
   }
 
-  &-standout {
-    background: var(--color-p3, #323a45);
+  footer {
+    color: var(--black, #000);
+  }
+}
+
+.testimonial-standout {
+  background: var(--color-p3, #323a45);
+  color: var(--white, #fff);
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  a:not(.btn) {
+    color: var(--color-p1, #fdb81e);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--white, #fff);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--color-p1, #fdb81e);
+      outline-offset: -2px;
+    }
+  }
+
+  footer {
     color: var(--white, #fff);
-
-    /* stylelint-disable-next-line no-descending-specificity */
-    a:not(.btn) {
-      color: var(--color-p1, #fdb81e);
-      text-decoration: none;
-
-      &:hover,
-      &:focus {
-        color: var(--white, #fff);
-        text-decoration: underline;
-      }
-
-      &:focus {
-        outline: 2px solid var(--color-p1, #fdb81e);
-        outline-offset: -2px;
-      }
-    }
-
-    footer {
-      color: var(--white, #fff);
-    }
   }
+}
 
-  &-primary {
-    background: var(--color-p2, #046b99);
+.testimonial-primary {
+  background: var(--color-p2, #046b99);
+  color: var(--white, #fff);
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  a:not(.btn) {
     color: var(--white, #fff);
+    text-decoration: none;
 
-    /* stylelint-disable-next-line no-descending-specificity */
-    a:not(.btn) {
-      color: var(--white, #fff);
-      text-decoration: none;
-
-      &:hover,
-      &:focus {
-        color: var(--color-s1, #eef8fb);
-        text-decoration: underline;
-      }
-
-      &:focus {
-        outline: 2px solid var(--white, #fff);
-        outline-offset: -2px;
-      }
+    &:hover,
+    &:focus {
+      color: var(--color-s1, #eef8fb);
+      text-decoration: underline;
     }
 
-    footer {
-      color: var(--white, #fff);
+    &:focus {
+      outline: 2px solid var(--white, #fff);
+      outline-offset: -2px;
     }
   }
 
-  &-highlight {
-    background: var(--color-p1, #fdb81e);
+  footer {
+    color: var(--white, #fff);
+  }
+}
+
+.testimonial-highlight {
+  background: var(--color-p1, #fdb81e);
+  color: var(--gray-900, #3b3a48);
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  a:not(.btn) {
     color: var(--gray-900, #3b3a48);
+    text-decoration: none;
 
-    /* stylelint-disable-next-line no-descending-specificity */
-    a:not(.btn) {
-      color: var(--gray-900, #3b3a48);
-      text-decoration: none;
-
-      &:hover,
-      &:focus {
-        color: var(--black, #000);
-        text-decoration: underline;
-      }
-
-      &:focus {
-        outline: 2px solid var(--black, #000);
-        outline-offset: -2px;
-      }
-    }
-
-    footer {
-      color: var(--gray-900, #3b3a48);
-    }
-  }
-
-  &-inverted {
-    background: var(--gray-900, #3b3a48);
-    color: #fff;
-
-    /* stylelint-disable-next-line no-descending-specificity */
-    a:not(.btn) {
-      color: var(--color-p1, #fdb81e);
-      text-decoration: none;
-
-      &:hover,
-      &:focus {
-        color: var(--white, #fff);
-        text-decoration: underline;
-      }
-
-      &:focus {
-        outline: 2px solid var(--white, #fff);
-        outline-offset: -2px;
-      }
-    }
-
-    footer {
-      color: #fff;
-    }
-  }
-
-  &-danger {
-    background: var(--brand-danger, #cd402d);
-    color: #fff;
-
-    /* stylelint-disable-next-line no-descending-specificity */
-    a:not(.btn) {
+    &:hover,
+    &:focus {
       color: var(--black, #000);
-      text-decoration: none;
-
-      &:hover,
-      &:focus {
-        color: var(--black, #000);
-        text-decoration: underline;
-      }
-
-      &:focus {
-        outline: 2px solid var(--black, #000);
-        outline-offset: -2px;
-      }
+      text-decoration: underline;
     }
 
-    footer {
-      color: #fff;
+    &:focus {
+      outline: 2px solid var(--black, #000);
+      outline-offset: -2px;
     }
+  }
+
+  footer {
+    color: var(--gray-900, #3b3a48);
+  }
+}
+
+.testimonial-inverted {
+  background: var(--gray-900, #3b3a48);
+  color: #fff;
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  a:not(.btn) {
+    color: var(--color-p1, #fdb81e);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--white, #fff);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--white, #fff);
+      outline-offset: -2px;
+    }
+  }
+
+  footer {
+    color: #fff;
+  }
+}
+
+.testimonial-danger {
+  background: var(--brand-danger, #cd402d);
+  color: #fff;
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  a:not(.btn) {
+    color: var(--black, #000);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: var(--black, #000);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: 2px solid var(--black, #000);
+      outline-offset: -2px;
+    }
+  }
+
+  footer {
+    color: #fff;
   }
 }

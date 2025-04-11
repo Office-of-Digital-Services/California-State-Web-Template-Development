@@ -1796,66 +1796,64 @@
   text-decoration: none !important;
 }
 
-.text {
-  &-accent1 {
-    color: var(--color-a1, #1b79c0) !important;
-  }
+.text-accent1 {
+  color: var(--color-a1, #1b79c0) !important;
+}
 
-  &-accent2 {
-    color: var(--color-a2, #077cbb) !important;
-  }
+.text-accent2 {
+  color: var(--color-a2, #077cbb) !important;
+}
 
-  &-accent3 {
-    color: var(--color-a3, #258378) !important;
-  }
+.text-accent3 {
+  color: var(--color-a3, #258378) !important;
+}
 
-  &-accent4 {
-    color: var(--color-a4, #32852e) !important;
-  }
+.text-accent4 {
+  color: var(--color-a4, #32852e) !important;
+}
 
-  &-accent5 {
-    color: var(--color-a5, #815ab4) !important;
-  }
+.text-accent5 {
+  color: var(--color-a5, #815ab4) !important;
+}
 
-  &-accent6 {
-    color: var(--color-a6, #be37cd) !important;
-  }
+.text-accent6 {
+  color: var(--color-a6, #be37cd) !important;
+}
 
-  &-accent7 {
-    color: var(--color-a7, #c93e2c) !important;
-  }
+.text-accent7 {
+  color: var(--color-a7, #c93e2c) !important;
+}
 
-  &-accent8 {
-    color: var(--color-a8, #bb520c) !important;
-  }
+.text-accent8 {
+  color: var(--color-a8, #bb520c) !important;
+}
 
-  &-accent9 {
-    color: var(--color-a9, #f7e455) !important;
-  }
+.text-accent9 {
+  color: var(--color-a9, #f7e455) !important;
+}
 
-  &-accent-p1 {
-    color: var(--color-p1, #fdb81e) !important;
-  }
+.text-accent-p1 {
+  color: var(--color-p1, #fdb81e) !important;
+}
 
-  &-accent-p2 {
-    color: var(--color-p2, #046b99) !important;
-  }
+.text-accent-p2 {
+  color: var(--color-p2, #046b99) !important;
+}
 
-  &-accent-p3 {
-    color: var(--color-p3, #323a45) !important;
-  }
+.text-accent-p3 {
+  color: var(--color-p3, #323a45) !important;
+}
 
-  &-accent-s1 {
-    color: var(--color-s1, #eef8fb) !important;
-  }
+.text-accent-s1 {
+  color: var(--color-s1, #eef8fb) !important;
+}
 
-  &-accent-s2 {
-    color: var(--color-s2, #87b8ce) !important;
-  }
+.text-accent-s2 {
+  color: var(--color-s2, #87b8ce) !important;
+}
 
-  &-accent-s3 {
-    color: var(--color-s3, #4993b5) !important;
-  }
+.text-accent-s3 {
+  color: var(--color-s3, #4993b5) !important;
 }
 
 .color-primary--hover:hover {
