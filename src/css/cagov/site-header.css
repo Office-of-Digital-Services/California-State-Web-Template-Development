@@ -129,6 +129,10 @@
 @media (width >= 992px) {
   .branding {
     max-width: var(--breakpoint-md);
+
+    .header-organization-banner a {
+      z-index: 27;
+    }
   }
 }
 @media (width >= 1200px) {
