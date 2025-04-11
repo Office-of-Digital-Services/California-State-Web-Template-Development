@@ -121,8 +121,9 @@
   }
 }
 
+/* blue */
 .timeline-dot {
-  left: -var(--spacer, 1rem);
+  left: calc(-1 * var(--spacer, 1rem));
   position: absolute;
   top: 2.25rem;
   transform: translateY(-50%);
