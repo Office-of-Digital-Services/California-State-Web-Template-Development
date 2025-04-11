@@ -1,0 +1,411 @@
+/* -----------------------------------------
+   MEGA MENU
+   /src/css/cagov/nav-megamenu.css
+----------------------------------------- */
+@media (width <= 991px) {
+  .main-navigation {
+    margin-top: 0;
+    padding: 0;
+  }
+}
+
+.sub-nav {
+  left: calc(var(--grid-gutter-width) / 2);
+  right: calc(var(--grid-gutter-width) / 2);
+  overflow: hidden;
+
+  @media (width <= 767px) {
+    border: none;
+  }
+}
+
+.link-description {
+  display: block;
+  font-size: var(--font-size-base, 1rem);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
+  }
+}
+
+.second-level-nav {
+  list-style: none;
+  padding: 0;
+
+  [class^="unit"] {
+    break-inside: avoid;
+    background: none;
+  }
+
+  [class^="unit"] a,
+  [class^="unit"] .link-description {
+    break-inside: avoid;
+  }
+}
+
+.dropdown {
+  .second-level-nav {
+    > li {
+      border-right: 0;
+    }
+  }
+
+  .sub-nav {
+    border-bottom: none;
+  }
+}
+
+.main-navigation.dropdown .sub-nav {
+  max-width: 250px;
+  min-width: 250px;
+  left: initial;
+  right: initial;
+
+  @media (width <= 991px) {
+    max-width: 100%;
+  }
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+.megadropdown .top-level-nav {
+  .nav-item {
+    position: static;
+
+    @media (width <= 991px) {
+      position: relative;
+    }
+
+    .no-js &:hover .sub-nav {
+      position: absolute;
+      display: block;
+    }
+  }
+}
+
+@media (width >= 992px) {
+  /* Dynamic Element appended to each .sub-nav */
+  .nav-arrow-container {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  /* Dynamic element contained in .nav-arrow-container */
+  .megadropdown .nav-arrow-down {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    height: 5px;
+    width: 100px;
+    margin-left: -65px;
+  }
+
+  .dropdown .nav-arrow-down {
+    height: 5px;
+    left: 0;
+    margin-left: 0;
+    position: absolute;
+    top: -5px;
+  }
+}
+
+a.second-level-link {
+  font-size: var(--font-size-regular);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-regular) + var(--ratio));
+  }
+
+  padding: 10px;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    text-decoration-thickness: from-font;
+  }
+
+  [class^="ca-gov-icon-"] {
+    display: inline-block;
+    font-size: 1.375rem;
+    vertical-align: -2px;
+    margin-right: 3px;
+  }
+
+  @media (width <= 991px) {
+    padding: 0.5rem 1rem 0.75rem 2rem !important;
+    color: var(--white, #fff);
+
+    &:hover,
+    &:focus {
+      color: var(--white, #fff);
+    }
+  }
+}
+
+@media (width >= 992px) {
+  .unit1 {
+    min-height: 65px;
+  }
+
+  .unit2 {
+    height: (65px * 2);
+    overflow: hidden;
+  }
+
+  .unit3 {
+    height: (65px * 3);
+    overflow: hidden;
+  }
+
+  .unit4 {
+    height: (65px * 4);
+    overflow: hidden;
+  }
+
+  .unit5 {
+    height: (65px * 5);
+    overflow: hidden;
+  }
+
+  .unit6 {
+    height: (65px * 6);
+    overflow: hidden;
+  }
+}
+
+/* Megamenu State Template v4 */
+@media (width >= 992px) {
+  .main-navigation.megadropdown.original {
+    .second-level-nav {
+      column-count: 3;
+      column-gap: 20px;
+    }
+
+    .sub-nav {
+      padding: 16px;
+
+      .sub-nav-decoration {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        background-position: 50% 50% !important;
+        background-size: cover !important;
+      }
+
+      &[class*="with-image-sm-"] {
+        .sub-nav-decoration {
+          width: 33.3333%;
+        }
+
+        > ul {
+          column-count: 2;
+          column-gap: 20px;
+        }
+      }
+
+      &[class*="with-image-md-"] {
+        .sub-nav-decoration {
+          width: 50%;
+        }
+
+        > ul {
+          column-count: 1;
+          column-gap: 20px;
+        }
+      }
+
+      &[class*="with-image-"] > ul > li {
+        padding-right: 16px !important;
+      }
+
+      &.with-image-sm-right > ul {
+        float: left;
+        width: 66.6667%;
+      }
+
+      &.with-image-sm-left > ul {
+        float: right;
+        width: 66.6667%;
+      }
+
+      &.with-image-md-right > ul {
+        float: left;
+        width: 50%;
+      }
+
+      &.with-image-md-left > ul {
+        float: right;
+        width: 50%;
+      }
+
+      &[class*="-left"] .sub-nav-decoration {
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+}
+
+.main-navigation.megadropdown.original {
+  .link-description {
+    font-size: 0.8em;
+  }
+
+  a.second-level-link {
+    padding: 0 !important;
+  }
+
+  .second-level-nav > li {
+    padding: 0.3em 0.7rem 0.4em 1rem;
+    border: none;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
+
+.sub-nav.open {
+  display: block;
+  max-height: 1000px;
+  overflow: auto;
+}
+
+.main-navigation.active {
+  max-height: 5000px;
+}
+
+.mobile-controls {
+  .toggle-menu {
+    border: none;
+    background: none;
+
+    &:focus {
+      outline: #2ea3f2 solid 2px;
+    }
+  }
+}
+
+@media (width <= 991px) {
+  .main-navigation {
+    overflow: hidden;
+  }
+
+  .sub-nav {
+    display: block;
+    top: 0;
+    left: 0;
+    position: relative;
+  }
+
+  .nav-item {
+    .toggle-sub-nav {
+      display: block;
+    }
+
+    display: block;
+  }
+
+  .second-level-nav > li {
+    border: none;
+  }
+}
+
+@media (width >= 992px) {
+  .sub-nav {
+    border-top: none;
+  }
+
+  .main-navigation {
+    margin-top: -82px;
+  }
+}
+
+.media-left,
+.media-right,
+.media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.media-left {
+  padding-right: 10px;
+}
+
+/* Flex Sub Nav */
+
+@media (width >= 992px) {
+  .second-level-nav.flex {
+    display: flex;
+    text-align: center;
+    padding: 0 40px;
+
+    a {
+      flex: 1;
+      border: none;
+      padding: 20px 15px 15px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      width: 100%;
+      height: auto;
+
+      &:hover {
+        background: #fff;
+      }
+    }
+
+    .sub-nav-link {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  .second-level-nav.flex.with-border a {
+    border-top: 2px dotted #ccc;
+    border-right: 2px dotted #ccc;
+    border-bottom: 2px dotted #ccc;
+
+    &:first-child {
+      border-left: 2px dotted #ccc;
+    }
+  }
+}
+
+@media (width <= 991px) {
+  .second-level-nav.flex {
+    display: block;
+    text-align: left;
+    padding: 0;
+
+    a {
+      display: block;
+      border-bottom: 1px solid #ccc;
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 100%;
+      height: auto;
+
+      &:hover {
+        background: #fff;
+      }
+    }
+
+    .sub-nav-link {
+      display: inline-block;
+      margin: 0 !important;
+    }
+
+    .image-icon {
+      width: 4rem;
+      margin-bottom: 5px !important;
+    }
+  }
+}

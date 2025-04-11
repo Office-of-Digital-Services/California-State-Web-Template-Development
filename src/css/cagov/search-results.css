@@ -1,0 +1,70 @@
+/* -----------------------------------------
+  SITE SEARCH RESULTS - /src/css/cagov/search-results.css
+----------------------------------------- */
+
+.search-results-container {
+  position: relative;
+  z-index: 5;
+  top: 0;
+  visibility: collapse;
+  transition: opacity 0.5s 0.7s;
+  opacity: 0;
+
+  @media (width >= 768px) {
+    z-index: 6;
+    position: absolute;
+    top: 155px;
+    width: 100%;
+  }
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .container {
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 5px;
+      line-height: 16px;
+      font-size: 59px;
+      display: none;
+    }
+  }
+
+  .search-results {
+    position: absolute;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+    background: #fff;
+
+    .search-results-header {
+      padding-top: 80px;
+    }
+
+    .search-tabs .btn {
+      margin: 0 10px;
+    }
+
+    .tab-content {
+      .button-list .btn {
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .results-list {
+    margin-top: calc(var(--spacer, 1rem) * 1.5) !important;
+    margin-bottom: calc(var(--spacer, 1rem) * 1.5) !important;
+  }
+}
+
+.compact + .search-results-container .search-results .search-results-header {
+  padding-top: 50px;
+}

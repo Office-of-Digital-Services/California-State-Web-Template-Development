@@ -19,4 +19,4 @@ Icon SVG creation
 1. In the downloaded folder find "styles.css"
 1. Inside find your custom icons styles. Change classes, so the first half of the class name would look like this .ca-gov-icon-
    (e.g. .ca-gov-icon-features:before {content: "\e993";} .ca-gov-icon-update:before {content: "\e993";}, etc.)
-1. Copy those new classes into /source/scss/cagov/icon-font.scss and generate core css files using gulp.
+1. Copy those new classes into /src/css/cagov/icon-font.scss and generate core css files using gulp.

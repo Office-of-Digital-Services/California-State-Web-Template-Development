@@ -1,0 +1,69 @@
+/* -----------------------------------------
+   MEDIA
+   /src/css/cagov/media.css
+----------------------------------------- */
+
+figure {
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  background-color: var(--white, #fff);
+  border-color: var(--gray-200, #d4d4d7);
+
+  img {
+    width: 100%;
+  }
+}
+
+figcaption {
+  font-size: 0.8rem;
+  padding: 10px;
+}
+
+.img-left {
+  float: left;
+  margin-right: calc(var(--grid-gutter-width) / 2);
+  margin-top: 4px;
+}
+
+.img-right {
+  float: right;
+  margin-left: calc(var(--grid-gutter-width) / 2);
+  margin-top: 4px;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.img-rounded {
+  border-radius: 5px;
+}
+
+.media {
+  .media-top {
+    text-align: center;
+
+    img,
+    span {
+      display: inherit;
+      margin-bottom: var(--line-height-computed);
+    }
+  }
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.img-fluid {
+  display: inline-block;
+}
+
+.progress {
+  font-size: 1rem;
+  height: unset;
+  min-height: 1.25rem;
+  border-radius: var(--border-radius-base);
+}

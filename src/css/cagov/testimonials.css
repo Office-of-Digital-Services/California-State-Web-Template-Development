@@ -1,0 +1,227 @@
+/* -----------------------------------------
+   TESTIMONIALS
+   /src/css/cagov/testimonials.css
+----------------------------------------- */
+
+.testimonial {
+  padding: var(--grid-gutter-width);
+  border: none;
+  margin-top: 15px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .thumbnail-img {
+    display: block;
+  }
+
+  .testimonial-body {
+    zoom: 1;
+    overflow: hidden;
+  }
+
+  .thumbnail-right,
+  .testimonial > .float-right {
+    display: table-cell;
+    padding-left: 10px;
+  }
+
+  .thumbnail-left,
+  .testimonial > .float-left {
+    display: table-cell;
+    padding-right: 10px;
+  }
+
+  .thumbnail-left,
+  .img-right,
+  .testimonial-body {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .thumbnail-top {
+    text-align: center;
+
+    .thumbnail-img {
+      display: inherit;
+      margin-bottom: var(--line-height-computed);
+    }
+  }
+
+  .thumbnail-middle {
+    vertical-align: middle;
+  }
+
+  .thumbnail-bottom {
+    vertical-align: bottom;
+  }
+
+  .testimonial-heading {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  &-default {
+    background: var(--gray-50, #fafafa);
+  }
+
+  &-understated {
+    background: var(--color-s1, #eef8fb);
+  }
+
+  &-overstated {
+    background: var(--color-s3, #4993b5);
+    color: var(--gray-900, #3b3a48);
+
+    a:not(.btn) {
+      color: var(--gray-900, #3b3a48);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--black, #000);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--color-s1, #eef8fb);
+        outline-offset: -2px;
+      }
+    }
+
+    footer {
+      color: var(--black, #000);
+    }
+  }
+
+  &-standout {
+    background: var(--color-p3, #323a45);
+    color: var(--white, #fff);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--color-p1, #fdb81e);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--white, #fff);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--color-p1, #fdb81e);
+        outline-offset: -2px;
+      }
+    }
+
+    footer {
+      color: var(--white, #fff);
+    }
+  }
+
+  &-primary {
+    background: var(--color-p2, #046b99);
+    color: var(--white, #fff);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--white, #fff);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--color-s1, #eef8fb);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--white, #fff);
+        outline-offset: -2px;
+      }
+    }
+
+    footer {
+      color: var(--white, #fff);
+    }
+  }
+
+  &-highlight {
+    background: var(--color-p1, #fdb81e);
+    color: var(--gray-900, #3b3a48);
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--gray-900, #3b3a48);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--black, #000);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--black, #000);
+        outline-offset: -2px;
+      }
+    }
+
+    footer {
+      color: var(--gray-900, #3b3a48);
+    }
+  }
+
+  &-inverted {
+    background: var(--gray-900, #3b3a48);
+    color: #fff;
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--color-p1, #fdb81e);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--white, #fff);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--white, #fff);
+        outline-offset: -2px;
+      }
+    }
+
+    footer {
+      color: #fff;
+    }
+  }
+
+  &-danger {
+    background: var(--brand-danger, #cd402d);
+    color: #fff;
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    a:not(.btn) {
+      color: var(--black, #000);
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: var(--black, #000);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: 2px solid var(--black, #000);
+        outline-offset: -2px;
+      }
+    }
+
+    footer {
+      color: #fff;
+    }
+  }
+}

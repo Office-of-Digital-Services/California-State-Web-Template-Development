@@ -1,0 +1,363 @@
+/* -----------------------------------------
+   TYPE STYLES - /src/css/cagov/type.css
+----------------------------------------- */
+
+body {
+  font: var(--font-size-regular) / var(--line-height-base)
+    var(--font-family-sans-serif);
+  color: var(--gray-900, #3b3a48);
+  overflow-y: scroll;
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-regular) + var(--ratio));
+  }
+}
+
+a {
+  color: var(--color-p2, #046b99);
+
+  &:hover,
+  &:focus {
+    color: var(--color-p2-darker, #214a68);
+  }
+
+  &:focus {
+    outline: 2px solid var(--outline-default-color);
+  }
+}
+
+.featured-narrative {
+  border-bottom: 1px solid #d6d6d6;
+  border-top: 1px solid #d6d6d6;
+  padding: 10px 10px 0;
+  margin-bottom: calc(var(--line-height-computed) / 2);
+  margin-left: 20px;
+}
+
+p {
+  margin-bottom: 0.7rem;
+
+  @media (width >= 576px) {
+    margin-bottom: calc(0.7rem + var(--ratio));
+  }
+}
+
+.lead {
+  font-size: var(--font-size-large);
+  margin-bottom: 1rem;
+  font-weight: var(--font-weight-4);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-large) + var(--ratio));
+    margin-bottom: calc(1rem + var(--ratio));
+  }
+}
+
+.small {
+  font-size: var(--font-size-base, 1rem);
+  margin-bottom: 0.65rem;
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
+    margin-bottom: calc(0.65rem + var(--ratio));
+  }
+}
+
+.btn {
+  font-size: var(--font-size-base, 1rem);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
+  }
+}
+
+.btn-lg {
+  font-size: 1.125rem;
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-regular) + var(--ratio));
+  }
+}
+
+.btn-sm {
+  font-size: 0.9rem;
+
+  @media (width >= 576px) {
+    font-size: calc(0.9rem + var(--ratio));
+  }
+}
+
+h1,
+.h1 {
+  span[class^="ca-gov-icon-"]:first-child {
+    display: none;
+  }
+
+  font-size: var(--font-size-h1);
+  margin-top: 3rem;
+  margin-bottom: 1.6rem;
+  font-weight: var(--font-weight-7);
+  line-height: var(--font-lineheight-1);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-h1) + var(--ratio-headers));
+    margin-top: calc(3rem + var(--ratio-headers));
+    margin-bottom: calc(1.6rem + var(--ratio-headers));
+  }
+
+  font-family: var(--headings-font-family);
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size-h2);
+  margin-top: 2.7rem;
+  margin-bottom: 1.4rem;
+  font-weight: var(--font-weight-7);
+  line-height: var(--font-lineheight-2);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-h2) + var(--ratio-headers));
+    margin-top: calc(2.7rem + var(--ratio-headers));
+    margin-bottom: calc(1.4rem + var(--ratio-headers));
+  }
+
+  font-family: var(--headings-font-family);
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size-h3);
+  margin-top: 2.4rem;
+  margin-bottom: 1.2rem;
+  font-weight: var(--font-weight-7);
+  line-height: var(--font-lineheight-3);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-h3) + var(--ratio-headers));
+    margin-top: calc(2.4rem + var(--ratio-headers));
+    margin-bottom: calc(1.2rem + var(--ratio-headers));
+  }
+
+  font-family: var(--headings-font-family);
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size-h4);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: var(--font-weight-7);
+  line-height: var(--font-lineheight-4);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-h4) + var(--ratio-headers));
+    margin-top: calc(2rem + var(--ratio-headers));
+    margin-bottom: calc(1rem + var(--ratio-headers));
+  }
+
+  font-family: var(--headings-font-family);
+}
+
+h5,
+.h5 {
+  font-size: var(--font-size-h5);
+  margin-top: 1.7rem;
+  margin-bottom: 0.8rem;
+  font-weight: var(--font-weight-7);
+  line-height: var(--font-lineheight-5);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-h5) + var(--ratio-headers));
+    margin-top: calc(1.7rem + var(--ratio-headers));
+    margin-bottom: calc(0.8rem + var(--ratio-headers));
+  }
+
+  font-family: var(--headings-font-family);
+}
+
+h6,
+.h6 {
+  font-size: var(--font-size-h6);
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-weight: var(--font-weight-7);
+  line-height: var(--font-lineheight-5);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-h6) + var(--ratio-headers));
+    margin-top: calc(1.4rem + var(--ratio-headers));
+    margin-bottom: calc(0.6rem + var(--ratio-headers));
+  }
+
+  font-family: var(--headings-font-family);
+}
+
+.ie9 p {
+  + h1,
+  + h2,
+  + h3,
+  + h4 {
+    padding-top: 10px;
+  }
+}
+
+.subtitle {
+  font-size: var(--font-size-large);
+  margin-bottom: 3rem;
+  font-weight: 600;
+  color: var(--gray-700, #5e5e6a);
+
+  @media (width >= 576px) {
+    font-size: calc(var(--font-size-large) + var(--ratio));
+    margin-bottom: calc(3rem + var(--ratio));
+  }
+}
+
+[class*="icon-"] {
+  &.big {
+    font-size: 1.94rem;
+  }
+
+  &.bigger {
+    font-size: 2.4rem;
+  }
+
+  &.biggest {
+    font-size: 3.5rem;
+  }
+}
+
+.serif {
+  font-family: var(--font-family-serif) !important;
+}
+
+.monospace {
+  font-family: var(--font-family-monospace) !important;
+}
+
+.heading {
+  font-family: var(--headings-font-family) !important;
+}
+
+code {
+  color: var(--code-color);
+}
+
+.wrap {
+  white-space: normal !important;
+}
+
+.main-content {
+  a:not(.btn) {
+    text-decoration: underline;
+  }
+}
+
+/* external link */
+
+/* External link icon */
+.external-link-icon {
+  display: inline-block;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: "\e9ed";
+    font-family: CaGov !important;
+    font-size: 75%;
+    margin-left: 3px;
+  }
+}
+
+/* external link exeptions */
+img ~,
+svg ~,
+.cagov-card,
+.wp-block-button__link,
+*[class*="ca-gov-icon-"],
+[class*="ca-gov-icon-"] ~,
+.pdf-link-icon ~,
+.footer-social-links a {
+  .external-link-icon {
+    display: none;
+  }
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.icon-abs-right .external-link-icon {
+  position: absolute;
+  right: 1.5rem;
+}
+
+.panel-heading a,
+.social a,
+.socialsharer-container a,
+.thumbnail a,
+.explore-invite a,
+.service-tile-content .panel-heading a,
+.accordion .panel-heading a,
+.tab-group .nav-tabs li > a,
+.main-content .btn,
+.panel-title,
+.btn-more,
+.accordion .panel-heading .panel-title a,
+.panel-group .panel-heading .panel-title a,
+.service-tile-content .panel-heading .panel-title a,
+.icon-link,
+.main-content a[role="button"],
+.main-content a[role="tab"],
+.gallery-item,
+.news-link,
+.news-icon {
+  text-decoration: none !important;
+  background-image: none !important;
+}
+
+/* Solution for links that are behind fixed Header */
+#main-content a,
+#main-content button {
+  scroll-margin-top: 140px !important;
+}
+
+.no-underline {
+  text-decoration: none !important;
+  background-image: none !important;
+}
+
+.list-group {
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.list-group-item {
+  padding: calc(var(--spacer, 1rem) * 0.75) calc(var(--spacer, 1rem) * 1.25)
+    calc(var(--spacer, 1rem) * 0.75) calc(var(--spacer, 1rem) * 1.25) !important;
+  margin-top: 0 !important;
+  background-image: none !important;
+  text-decoration: none !important;
+}
+
+a.list-group-item {
+  margin-bottom: 0 !important;
+}
+
+.tab.list-group-item {
+  margin-bottom: -1px !important;
+}
+
+.text-highlight,
+.text-highlight-primary,
+.text-highlight-warning,
+.text-highlight-dark {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-weight: 600;
+  line-height: 1;
+  font-size: 95%;
+  color: var(--black, #000);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+}

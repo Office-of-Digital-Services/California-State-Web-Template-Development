@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: "ca_state_template/css/colortheme-orangecounty.min.css"
+eleventyExcludeFromCollections: true
+---
+
+{%- set css -%}
+  {%- include "../../../src/css/colortheme/orangecounty.css" -%}
+{%- endset -%}
+{{- css | cssmin | safe -}}

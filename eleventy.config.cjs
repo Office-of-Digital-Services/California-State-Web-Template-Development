@@ -2,6 +2,8 @@
 const docSiteUrl = "https://template.webstandards.ca.gov/";
 const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 const path = require("path");
+const postcss = require("postcss");
+const postcssNested = require("postcss-nested");
 
 module.exports = function (
   /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
@@ -34,6 +36,39 @@ module.exports = function (
 
   //Start with default config, easier to configure 11ty later
   const config = defaultConfig(eleventyConfig);
+
+  /**
+   * @param {string} content
+   */
+  const minifyCSS = content =>
+    content
+      .replace(/\/\*(?:(?!\*\/)[\s\S])*\*\/|[\r\n\t]+/g, "")
+      .replace(/ {2,}/g, " ")
+      .replace(/ ([{:}]) /g, "$1")
+      .replace(/([{:}]) /g, "$1")
+      .replace(/([;,]) /g, "$1")
+      .replace(/ !/g, "!");
+
+  eleventyConfig.addNunjucksAsyncFilter(
+    "cssmin",
+    /**
+     *
+     * @param {string} code
+     * @param {(arg0: null, arg1: string) => void} callback
+     */
+
+    async (code, callback) => {
+      callback(null, minifyCSS(code));
+    }
+  );
+
+  // For making a non-nested fallback
+  eleventyConfig.addFilter("flattenCSS", async code => {
+    const result = await postcss([postcssNested]).process(code, {
+      from: undefined
+    });
+    return result.css;
+  });
 
   // allow nunjucks templating in .html files
   config.htmlTemplateEngine = "njk";

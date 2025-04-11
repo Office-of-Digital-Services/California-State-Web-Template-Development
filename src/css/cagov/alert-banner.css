@@ -1,0 +1,183 @@
+/* -----------------------------------------
+   ALERT BANNER
+   /src/css/cagov/alert-banner.css
+----------------------------------------- */
+
+.alert-level {
+  display: inline-block;
+  font-weight: bold;
+  padding: 0 5px;
+  margin: 0 5px;
+  font-size: 0.87rem;
+
+  [class^="ca-gov-icon-"] {
+    margin-right: 3px;
+  }
+}
+
+.alert-severe {
+  color: var(--gray-800, #4a4958) !important;
+  background-color: var(--color-p1, #fdb81e);
+
+  a:not(.btn),
+  .close {
+    color: var(--gray-800, #4a4958) !important;
+
+    &:focus,
+    &:hover {
+      color: var(--black, #000) !important;
+    }
+  }
+
+  .alert-level {
+    color: var(--black, #000);
+    background: rgb(0 0 0 / 15%);
+  }
+
+  .alert-text {
+    color: var(--black, #000);
+  }
+}
+
+.alert-banner {
+  margin-bottom: 0;
+  padding: 0.6rem 0 0.5rem;
+  border-radius: 0;
+  column-rule: var(--text-field-color);
+  transition: all 0.2s;
+  background-color: var(--color-p3, #323a45);
+  color: var(--white, #fff);
+
+  .alert-icon {
+    font-size: 1.6rem;
+    position: absolute;
+    top: 5px;
+  }
+
+  .alert-text {
+    position: relative;
+  }
+
+  .alert-icon ~ .alert-text {
+    margin-left: 2.5rem;
+  }
+
+  img,
+  .alert-img {
+    max-width: 28px;
+    max-height: 28px;
+    margin-right: 0.5rem;
+    margin-top: -3px;
+  }
+
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 0 10px;
+    text-shadow: none;
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    background: none;
+  }
+
+  a:not(.btn),
+  .close {
+    color: var(--white, #fff);
+
+    &:focus,
+    &:hover {
+      color: var(--color-p1, #fdb81e);
+    }
+  }
+
+  .container {
+    font-size: 1rem;
+    min-height: 30px;
+  }
+
+  .container::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+
+  .btn {
+    position: relative;
+    top: -1px;
+  }
+}
+
+.alert-warning {
+  color: var(--alert-warning-text);
+  background-color: var(--alert-warning-bg);
+
+  a:not(.btn),
+  .close {
+    color: var(--alert-warning-text);
+
+    &:focus,
+    &:hover {
+      color: color-mix(in srgb, var(--alert-warning-text), #000 15%);
+    }
+  }
+}
+
+.alert-info {
+  color: var(--alert-info-text);
+  background-color: var(--alert-info-bg);
+
+  a:not(.btn),
+  .close {
+    color: var(--alert-info-text);
+
+    &:focus,
+    &:hover {
+      color: color-mix(in srgb, var(--alert-info-text), #000 30%);
+    }
+  }
+}
+
+.alert-danger {
+  color: var(--alert-danger-text);
+  background-color: var(--alert-danger-bg);
+
+  a:not(.btn),
+  .close {
+    color: var(--alert-danger-text);
+
+    &:focus,
+    &:hover {
+      color: color-mix(in srgb, var(--alert-danger-text), #000 30%);
+    }
+  }
+}
+
+.alert-success {
+  color: var(--alert-success-text);
+  background-color: var(--alert-success-bg);
+
+  a:not(.btn),
+  .close {
+    color: var(--alert-success-text);
+
+    &:focus,
+    &:hover {
+      color: color-mix(in srgb, var(--alert-success-text), #000 30%);
+    }
+  }
+}
+
+.alert-link {
+  line-height: 1.2em;
+  float: right;
+  font-weight: 400;
+}
+
+.global-header.compact {
+  .alert-banner {
+    display: none;
+  }
+}

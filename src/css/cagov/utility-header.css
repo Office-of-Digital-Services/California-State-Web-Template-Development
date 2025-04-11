@@ -1,0 +1,237 @@
+/* -----------------------------------------
+   TOP NAVIGATION
+   /src/css/cagov/utility-header.css
+----------------------------------------- */
+
+.utility-header {
+  width: 100%;
+  min-height: 42px;
+  transition: all 0.3s ease;
+  background: var(--color-s1, #eef8fb);
+  color: var(--black, #000);
+
+  .half {
+    padding-top: 0;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    position: relative;
+    min-height: 1px;
+    float: unset;
+    width: 100%;
+
+    @media (width >= 768px) {
+      float: left;
+      width: percentage(calc(6 / 12));
+    }
+
+    @media (width <= 767px) {
+      padding-top: 2px;
+      float: left;
+
+      &:first-child {
+        padding-left: 15px;
+        padding-right: 0 !important;
+        width: 50%;
+      }
+
+      &:nth-child(2) {
+        padding-left: 0 !important;
+        width: 50%;
+      }
+    }
+  }
+
+  a {
+    display: inline-block;
+    padding: 0;
+    text-decoration: underline;
+    color: var(--black, #000);
+
+    &:hover,
+    &:focus,
+    &.hovered {
+      text-decoration: none;
+      color: var(--gray-800, #4a4958);
+    }
+  }
+
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    margin-left: -5px;
+    list-style: none;
+
+    > li {
+      display: inline-block;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .list-inline-item {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
+
+    li {
+      padding: 0 8px;
+
+      button {
+        font-size: 100%;
+        outline: none !important;
+        position: relative;
+        top: -1px;
+        background-color: transparent;
+        border: none;
+
+        span {
+          font-size: 100% !important;
+        }
+
+        &:hover,
+        &:focus {
+          color: var(--gray-800, #4a4958);
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+  }
+
+  .settings-links {
+    font-size: var(--font-size-base, 1rem);
+    text-align: right;
+
+    @media (width >= 576px) {
+      font-size: calc(var(--font-size-base, 1rem) + var(--ratio));
+    }
+  }
+
+  [class^="ca-gov-icon-"] {
+    font-size: 1.1rem;
+    vertical-align: -2px;
+    display: inline-block;
+    text-decoration: none;
+    padding-right: 4px;
+  }
+
+  .located-city-name {
+    margin-left: 5px;
+  }
+
+  .geo-zip-input {
+    margin-left: 5px;
+    width: 50%;
+    vertical-align: initial;
+    line-height: 120%;
+    background: white;
+    color: var(--black, #000);
+  }
+
+  .flex-row {
+    display: flex;
+
+    .settings-links {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: auto;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 38px;
+
+      a {
+        margin: 0;
+        margin-left: 1rem;
+        font-size: 0.95rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      button {
+        margin: 0;
+        padding-right: 0;
+        font-size: 0.95rem;
+        color: var(--black, #000);
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: var(--gray-800, #4a4958);
+        }
+      }
+    }
+
+    .social-media-links {
+      /* stylelint-disable-next-line no-descending-specificity */
+      a {
+        margin: 0 10px;
+        color: var(--black, #000);
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: var(--gray-800, #4a4958);
+        }
+      }
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      min-height: 38px;
+      align-items: center;
+
+      .header-cagov-logo {
+        margin-right: 0.5rem;
+
+        img {
+          left: 0;
+          height: 24px;
+          margin-top: 6px;
+          vertical-align: middle;
+        }
+
+        .ca-gov-logo-svg {
+          vertical-align: middle;
+        }
+
+        a {
+          margin: 0;
+          padding-top: 0;
+        }
+      }
+
+      .official-tag {
+        margin: 0 1rem 0 0;
+        font-size: 0.95rem;
+
+        @media (width <= 767px) {
+          margin-right: 0;
+
+          .desktop-only {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-cagov-logo svg {
+  left: 27px;
+  height: 1.7rem;
+
+  @media (width <= 1139px) {
+    left: 5px;
+  }
+}
+
+/* Hide utilities in mobile */
+@media (width <= 991px) {
+  button[aria-controls="siteSettings"] {
+    display: none;
+  }
+}

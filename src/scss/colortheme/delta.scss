@@ -3,8 +3,8 @@
 ----------------------------------------- */
 
 :root {
-  // color variations are hardcoded for older browsers
-  // and color-mix is used for the newer browsers
+  /* color variations are hardcoded for older browsers
+ color-mix is used for the newer browsers */
 
   /* Highlight */
   --color-p1: #a5bdc5;
@@ -56,7 +56,7 @@
   --mobile-drawer: var(--color-p3);
   --mobile-drawer-active: var(--color-p3-light);
 
-  // color-mix for the newer browsers
+  /*  color-mix for the newer browsers */
   @supports (color: color-mix) {
     // highlight
     --color-p1-dark: color-mix(in srgb, var(--color-p1), #000 15%);
