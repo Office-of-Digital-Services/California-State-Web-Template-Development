@@ -836,6 +836,11 @@
     transition: all 0.2s ease !important;
     color: var(--white, #fff) !important;
   }
+
+  /* Side nav second level active styles */
+  aside.mobile-sidenav .side-navigation ul.list-navigation li ul li a.active {
+    color: var(--white);
+  }
 }
 
 .nav-media {
