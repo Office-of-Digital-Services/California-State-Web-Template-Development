@@ -1,0 +1,13 @@
+/* -----------------------------------------
+   HORIZONTAL RULES - /src/css/cagov/horizontal-rules.css
+----------------------------------------- */
+
+hr.hr-understated {
+  border: none;
+  border-bottom: 2px dotted;
+}
+
+hr.hr-light {
+  border: none;
+  border-bottom: 1px solid #eee;
+}

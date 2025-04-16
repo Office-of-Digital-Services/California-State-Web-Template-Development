@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: "ca_state_template/css/colortheme-shasta.min.css"
+eleventyExcludeFromCollections: true
+---
+
+{%- set css -%} 
+{%- include "../../../src/css/colortheme/shasta.css" -%} 
+{%- endset -%} 
+{{- css | cssmin | safe -}}

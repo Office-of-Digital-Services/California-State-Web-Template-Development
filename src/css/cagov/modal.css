@@ -1,0 +1,7 @@
+/* -----------------------------------------
+   MODAL - /src/css/cagov/modal.css
+----------------------------------------- */
+
+div.modal-header > button.close {
+  margin-left: auto;
+}

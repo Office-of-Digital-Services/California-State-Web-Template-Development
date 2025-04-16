@@ -1,0 +1,11 @@
+/* -----------------------------------------
+   GRID
+   /src/css/cagov/grid.css
+----------------------------------------- */
+
+/* this is how wide website will go on desktop */
+@media (width >= 1200px) {
+  .container {
+    max-width: var(--breakpoint-lg);
+  }
+}

@@ -2,7 +2,8 @@
 
 /* EXTERNAL LINK ICON */
 window.addEventListener("load", () => {
-  const ext = '<span class="external-link-icon" aria-hidden="true"></span>';
+  const ext =
+    '<span class="external-link-icon" aria-hidden="true"></span><span class="sr-only">(external link)</span>';
 
   // Check if link is external function
   /**

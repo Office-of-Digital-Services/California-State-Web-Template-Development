@@ -1,6 +1,6 @@
 {
   "name": "cagov-template-development",
-  "version": "6.4.2",
+  "version": "6.4.3",
   "description": "CA State Web Template Development Project",
   "author": {
     "name": "Carter Medlin",
@@ -15,40 +15,12 @@
   "license": "MIT",
   "homepage": "https://template.webstandards.ca.gov/",
   "scripts": {
-    "start": "run-p watch:*",
+    "start": "cross-env MY_ENVIRONMENT=local run-p watch:js watch:eleventy",
     "build": "run-p build:*",
     "watch:js": "rollup --config rollup.config.js --watch",
     "watch:eleventy": "npx @11ty/eleventy --serve",
-    "watch:sass": "npx sass --no-source-map src/scss/cagov.core.scss:_site/ca_state_template/css/cagov.core.min.css --watch",
-    "watch:sass-oceanside": "npx sass --no-source-map src/scss/colortheme/oceanside.scss:_site/ca_state_template/css/colortheme-oceanside.min.css --watch",
     "build:js": "rollup --config rollup.config.js",
     "build:eleventy": "npx @11ty/eleventy",
-    "build:sass": "npx sass --no-source-map src/scss/cagov.core.scss:_site/ca_state_template/css/cagov.core.css",
-    "build:sass-min": "npx sass --no-source-map src/scss/cagov.core.scss:_site/ca_state_template/css/cagov.core.min.css --style compressed",
-    "build:sass-delta": "npx sass --no-source-map src/scss/colortheme/delta.scss:_site/ca_state_template/css/colortheme-delta.css",
-    "build:sass-delta-min": "npx sass --no-source-map src/scss/colortheme/delta.scss:_site/ca_state_template/css/colortheme-delta.min.css --style compressed",
-    "build:sass-eureka": "npx sass --no-source-map src/scss/colortheme/eureka.scss:_site/ca_state_template/css/colortheme-eureka.css",
-    "build:sass-eureka-min": "npx sass --no-source-map src/scss/colortheme/eureka.scss:_site/ca_state_template/css/colortheme-eureka.min.css --style compressed",
-    "build:sass-mono": "npx sass --no-source-map src/scss/colortheme/mono.scss:_site/ca_state_template/css/colortheme-mono.css",
-    "build:sass-mono-min": "npx sass --no-source-map src/scss/colortheme/mono.scss:_site/ca_state_template/css/colortheme-mono.min.css --style compressed",
-    "build:sass-oceanside": "npx sass --no-source-map src/scss/colortheme/oceanside.scss:_site/ca_state_template/css/colortheme-oceanside.css",
-    "build:sass-oceanside-min": "npx sass --no-source-map src/scss/colortheme/oceanside.scss:_site/ca_state_template/css/colortheme-oceanside.min.css --style compressed",
-    "build:sass-orangecounty": "npx sass --no-source-map src/scss/colortheme/orangecounty.scss:_site/ca_state_template/css/colortheme-orangecounty.css",
-    "build:sass-orangecounty-min": "npx sass --no-source-map src/scss/colortheme/orangecounty.scss:_site/ca_state_template/css/colortheme-orangecounty.min.css --style compressed",
-    "build:sass-pasorobles": "npx sass --no-source-map src/scss/colortheme/pasorobles.scss:_site/ca_state_template/css/colortheme-pasorobles.css",
-    "build:sass-pasorobles-min": "npx sass --no-source-map src/scss/colortheme/pasorobles.scss:_site/ca_state_template/css/colortheme-pasorobles.min.css --style compressed",
-    "build:sass-sacramento": "npx sass --no-source-map src/scss/colortheme/sacramento.scss:_site/ca_state_template/css/colortheme-sacramento.css",
-    "build:sass-sacramento-min": "npx sass --no-source-map src/scss/colortheme/sacramento.scss:_site/ca_state_template/css/colortheme-sacramento.min.css --style compressed",
-    "build:sass-santabarbara": "npx sass --no-source-map src/scss/colortheme/santabarbara.scss:_site/ca_state_template/css/colortheme-santabarbara.css",
-    "build:sass-santabarbara-min": "npx sass --no-source-map src/scss/colortheme/santabarbara.scss:_site/ca_state_template/css/colortheme-santabarbara.min.css --style compressed",
-    "build:sass-santacruz": "npx sass --no-source-map src/scss/colortheme/santacruz.scss:_site/ca_state_template/css/colortheme-santacruz.css",
-    "build:sass-santacruz-min": "npx sass --no-source-map src/scss/colortheme/santacruz.scss:_site/ca_state_template/css/colortheme-santacruz.min.css --style compressed",
-    "build:sass-shasta": "npx sass --no-source-map src/scss/colortheme/shasta.scss:_site/ca_state_template/css/colortheme-shasta.css",
-    "build:sass-shasta-min": "npx sass --no-source-map src/scss/colortheme/shasta.scss:_site/ca_state_template/css/colortheme-shasta.min.css --style compressed",
-    "build:sass-sierra": "npx sass --no-source-map src/scss/colortheme/sierra.scss:_site/ca_state_template/css/colortheme-sierra.css",
-    "build:sass-sierra-min": "npx sass --no-source-map src/scss/colortheme/sierra.scss:_site/ca_state_template/css/colortheme-sierra.min.css --style compressed",
-    "build:sass-trinity": "npx sass --no-source-map src/scss/colortheme/trinity.scss:_site/ca_state_template/css/colortheme-trinity.css",
-    "build:sass-trinity-min": "npx sass --no-source-map src/scss/colortheme/trinity.scss:_site/ca_state_template/css/colortheme-trinity.min.css --style compressed",
     "GIT cleanup": "git clean -fd",
     "stylelint-rules-prettier-check": "stylelint-config-prettier-scss-check",
     "stylelint run fix": "npx stylelint '**/*.{css,scss}' --fix"
@@ -61,7 +33,8 @@
     "npm-run-all": "^4.1.5",
     "rollup": "^2.52.2",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.38.1"
+    "postcss": "^8.4.47",
+    "postcss-nested": "^6.2.0"
   },
   "devDependencies": {
     "eslint": "8.56.0",
@@ -70,6 +43,7 @@
     "stylelint": "^15.10.2",
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-recommended-scss": "^12.0.0",
-    "stylelint-config-standard-scss": "^10.0.0"
+    "stylelint-config-standard-scss": "^10.0.0",
+    "cross-env": "^7.0.3"
   }
 }

@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: "ca_state_template/css/colortheme-sacramento.css"
+eleventyExcludeFromCollections: true
+---
+
+{%- set css -%}
+  {%- include "../../../src/css/colortheme/sacramento.css" -%}
+{%- endset -%}
+{{- css | safe -}}

@@ -1,0 +1,174 @@
+/* -----------------------------------------
+  SITE HEADER -  /src/css/cagov/site-header.scss (branding)
+----------------------------------------- */
+
+.branding {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+
+  @media (width >= 992px) {
+    position: unset;
+  }
+
+  .header-organization-banner {
+    transition: all 0.3s;
+    padding: 0.5rem 0 0.5rem 1rem;
+
+    @media (width <= 991px) {
+      position: relative;
+      max-width: 400px;
+      margin-left: 1rem;
+      margin-right: 20%;
+      padding-top: 0.5rem;
+      padding-left: 0;
+      padding-bottom: 0.5rem;
+      display: flex;
+      align-content: center;
+    }
+
+    img {
+      max-width: 300px;
+      max-height: 55px;
+      object-fit: contain !important;
+      object-position: left;
+
+      @media (768px <= width <= 992px) {
+        max-width: 225px;
+      }
+
+      @media (width <= 991px) {
+        max-height: 44px;
+      }
+    }
+
+    a {
+      position: relative;
+      text-decoration: none;
+      color: black;
+      background-image: none;
+      display: inline-block;
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+      }
+
+      .logo-assets {
+        display: flex;
+        flex-flow: wrap;
+        min-height: 4rem;
+        align-items: center;
+
+        .logo-img {
+          max-width: 100%;
+          min-height: auto;
+          height: 4rem;
+          display: inline-block;
+          transition: all 0.3s;
+        }
+
+        .logo-text {
+          padding-left: 5px;
+
+          .logo-state {
+            font: 1rem var(--font-family-sans-serif);
+            margin: 0;
+            padding: 0;
+            color: var(--gray-900, #3b3a48);
+            height: 20px;
+            line-height: 1.2em;
+            transition: all 0.3s;
+            display: block;
+
+            @media (width <= 991px) {
+              font-size: 0.78125rem;
+            }
+          }
+
+          .logo-dept {
+            font: 700 1.75rem var(--font-family-sans-serif);
+            margin: 0;
+            padding: 0;
+            color: var(--color-p3, #323a45);
+            height: 24px;
+            line-height: 1.2em;
+            transition: all 0.3s;
+            display: block;
+
+            @media (width <= 991px) {
+              font-size: 1rem;
+            }
+          }
+        }
+
+        @media (width <= 991px) {
+          min-height: auto;
+        }
+      }
+
+      @media (width <= 991px) {
+        min-width: 100%;
+      }
+    }
+  }
+}
+
+@media (width >= 576px) {
+  .branding {
+    max-width: var(--breakpoint-xm);
+  }
+}
+@media (width >= 768px) {
+  .branding {
+    max-width: var(--breakpoint-sm);
+  }
+}
+@media (width >= 992px) {
+  .branding {
+    max-width: var(--breakpoint-md);
+
+    .header-organization-banner a {
+      z-index: 27;
+    }
+  }
+}
+@media (width >= 1200px) {
+  .branding {
+    max-width: var(--breakpoint-lg);
+  }
+}
+
+.fixed.compact .branding .header-organization-banner {
+  .logo-assets {
+    .logo-text {
+      .logo-state {
+        font-size: 0.8rem;
+        line-height: 1em;
+        height: 16px;
+        min-width: 200px;
+      }
+
+      .logo-dept {
+        font-size: 1.2rem;
+        line-height: 1em;
+        min-width: 200px;
+      }
+    }
+  }
+}
+
+@media (width >= 768px) {
+  .fixed.compact {
+    .header-organization-banner {
+      height: 55px;
+      max-height: 45px;
+
+      a {
+        max-width: 225px;
+      }
+    }
+  }
+}

@@ -2,6 +2,8 @@
 const docSiteUrl = "https://template.webstandards.ca.gov/";
 const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 const path = require("path");
+const postcss = require("postcss");
+const postcssNested = require("postcss-nested");
 
 module.exports = function (
   /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
@@ -11,6 +13,11 @@ module.exports = function (
     "sample_site/images": "images",
     "sample_site/siteRoot": "/"
   });
+
+  // Watch the ./src/css/ folder for changes
+  eleventyConfig.addWatchTarget("./src/css/**/*.**");
+  // Ignore this file that gets dynamically created
+  eleventyConfig.watchIgnores.add("./src/css/cagov/template-comments.css");
 
   //Sorted list of all the samples
   eleventyConfig.addFilter(
@@ -29,11 +36,44 @@ module.exports = function (
     (/** @type {string} */ content) =>
       content
         .replace(/="\/images\//g, `="${docSiteUrl}images/`)
-        .replace(/url\(\'\/images\//g, `url('${docSiteUrl}images/`)
+        .replace(/url\('\/images\//g, `url('${docSiteUrl}images/`)
   );
 
   //Start with default config, easier to configure 11ty later
   const config = defaultConfig(eleventyConfig);
+
+  /**
+   * @param {string} content
+   */
+  const minifyCSS = content =>
+    content
+      .replace(/\/\*(?:(?!\*\/)[\s\S])*\*\/|[\r\n\t]+/g, "")
+      .replace(/ {2,}/g, " ")
+      .replace(/ ([{:}]) /g, "$1")
+      .replace(/([{:}]) /g, "$1")
+      .replace(/([;,]) /g, "$1")
+      .replace(/ !/g, "!");
+
+  eleventyConfig.addNunjucksAsyncFilter(
+    "cssmin",
+    /**
+     *
+     * @param {string} code
+     * @param {(arg0: null, arg1: string) => void} callback
+     */
+
+    async (code, callback) => {
+      callback(null, minifyCSS(code));
+    }
+  );
+
+  // For making a non-nested fallback
+  eleventyConfig.addFilter("flattenCSS", async code => {
+    const result = await postcss([postcssNested]).process(code, {
+      from: undefined
+    });
+    return result.css;
+  });
 
   // allow nunjucks templating in .html files
   config.htmlTemplateEngine = "njk";
@@ -58,7 +98,7 @@ module.exports = function (
      * @param {string} content
      * @param {string} outputPath
      */
-    async function (content, outputPath) {
+    async (content, outputPath) => {
       const basePath = config.dir.output;
 
       const relativePath = path
@@ -67,7 +107,7 @@ module.exports = function (
 
       return content
         .replace(/href="(.*\/)"/g, 'href="$1index.html"') // fixing any root path links
-        .replace(/=\"\//g, `="${relativePath}`); //Replace all ... ="/  ... with new path
+        .replace(/="\//g, `="${relativePath}`); //Replace all ... ="/  ... with new path
     }
   );
 

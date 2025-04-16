@@ -13,3 +13,4 @@ import "./cagov/external-link.js";
 import "./cagov/page-navigation.js";
 import "./cagov/pagination.js";
 import "./cagov/mobile-controls.js";
+import "./cagov/polyfills.js";

@@ -1,0 +1,82 @@
+/* -----------------------------------------
+   LAYOUTS -  /src/css/cagov/layout.css
+----------------------------------------- */
+
+/* Default layout is 1 column */
+.main-content {
+  background: #fff;
+  min-height: 400px;
+
+  > .section {
+    padding-bottom: var(--line-height-computed);
+  }
+}
+
+.decoration-last {
+  display: none;
+}
+
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  display: none !important;
+}
+
+.hidden-xs,
+.hidden-sm,
+.hidden-md,
+.hidden-lg {
+  display: block !important;
+}
+
+@media (0 <= width <= 767px) {
+  .visible-xs {
+    display: block !important;
+  }
+
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (768px <= width <= 991px) {
+  .visible-sm {
+    display: block !important;
+  }
+
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (992px <= width <= 1139px) {
+  .visible-md {
+    display: block !important;
+  }
+
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media (width >= 1200px) {
+  .visible-lg {
+    display: block !important;
+  }
+
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+@media print {
+  .print-p-t {
+    padding-top: 136px !important;
+  }
+
+  .global-header.fixed {
+    position: absolute !important;
+    top: 0 !important;
+  }
+}
