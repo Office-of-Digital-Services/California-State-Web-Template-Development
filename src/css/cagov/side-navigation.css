@@ -206,6 +206,11 @@
           color: var(--white, #fff);
           border-bottom-color: var(--mobile-drawer, #214a68);
 
+          &:focus {
+            outline: 2px solid var(--outline-dark-mode-color);
+            outline-offset: -2px;
+          }
+
           &:hover,
           &:focus {
             color: var(--white, #fff);

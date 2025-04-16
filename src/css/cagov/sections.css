@@ -74,10 +74,6 @@
     border-color: var(--white, #fff);
     font-weight: var(--font-weight-6);
 
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
-
     &:hover,
     &:focus,
     &:not(:disabled, .disabled):active,
@@ -115,10 +111,6 @@
     background-color: var(--color-p3, #323a45);
     border-color: var(--white, #fff);
     font-weight: var(--font-weight-6);
-
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
 
     &:hover,
     &:focus,
@@ -174,7 +166,7 @@
     }
 
     &:focus {
-      outline: 2px solid var(--white, #fff);
+      outline: 2px solid var(--outline-dark-mode-color, #85cbf9);
       outline-offset: -2px;
     }
   }
@@ -185,10 +177,6 @@
     background-color: var(--color-p2, #046b99);
     border-color: var(--white, #fff);
     font-weight: var(--font-weight-6);
-
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
 
     &:hover,
     &:focus,
@@ -228,10 +216,6 @@
     background-color: var(--color-p3, #323a45);
     border-color: var(--white, #fff);
     font-weight: var(--font-weight-6);
-
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
 
     &:hover,
     &:focus,
@@ -287,7 +271,7 @@
     }
 
     &:focus {
-      outline: 2px solid var(--white, #fff);
+      outline: 2px solid var(--outline-dark-mode-color, #85cbf9);
       outline-offset: -2px;
     }
   }
@@ -298,10 +282,6 @@
     background-color: var(--color-p2, #046b99);
     border-color: var(--white, #fff);
     font-weight: var(--font-weight-6);
-
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
 
     &:hover,
     &:focus,
@@ -342,10 +322,6 @@
     border-color: var(--white, #fff);
     font-weight: var(--font-weight-6);
 
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
-
     &:hover,
     &:focus,
     &:not(:disabled, .disabled):active,
@@ -383,10 +359,6 @@
     background-color: transparent;
     border-color: var(--color-s2, #87b8ce);
     font-weight: var(--font-weight-6);
-
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
 
     &:hover,
     &:focus,
@@ -440,7 +412,7 @@
     }
 
     &:focus {
-      outline: 2px solid var(--outline-default-color);
+      outline: 2px solid var(--outline-dark-mode-color);
       outline-offset: -2px;
     }
   }
@@ -454,10 +426,6 @@
     background-color: var(--color-p2, #046b99);
     border-color: var(--white, #fff);
     font-weight: var(--font-weight-6);
-
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
 
     &:hover,
     &:focus,
@@ -497,10 +465,6 @@
     background-color: var(--color-p3, #323a45);
     border-color: var(--white, #fff);
     font-weight: var(--font-weight-6);
-
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
 
     &:hover,
     &:focus,
@@ -557,7 +521,7 @@
     }
 
     &:focus {
-      outline: 2px solid var(--outline-default-color);
+      outline: 2px solid var(--outline-dark-mode-color);
       outline-offset: -2px;
     }
   }
@@ -568,10 +532,6 @@
     background-color: var(--color-p2, #046b99);
     border-color: var(--white, #fff);
     font-weight: var(--font-weight-6);
-
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
 
     &:hover,
     &:focus,
@@ -611,10 +571,6 @@
     background-color: var(--color-p3, #323a45);
     border-color: var(--white, #fff);
     font-weight: var(--font-weight-6);
-
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
-    }
 
     &:hover,
     &:focus,
@@ -703,7 +659,7 @@ textarea.sourcecode {
     }
 
     &:focus {
-      outline: 2px solid var(--outline-default-color);
+      outline: 2px solid var(--black, #000);
       outline-offset: -2px;
     }
   }
@@ -724,7 +680,7 @@ textarea.sourcecode {
     }
 
     &:focus {
-      outline: 2px solid var(--outline-default-color);
+      outline: 2px solid var(--outline-dark-mode-color);
       outline-offset: -2px;
     }
   }
@@ -745,7 +701,7 @@ textarea.sourcecode {
     }
 
     &:focus {
-      outline: 2px solid var(--outline-default-color);
+      outline: 2px solid var(--outline-dark-mode-color);
       outline-offset: -2px;
     }
   }

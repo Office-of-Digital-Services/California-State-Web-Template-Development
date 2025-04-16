@@ -555,6 +555,11 @@
         vertical-align: -2px;
       }
 
+      &:focus {
+        outline: 2px solid var(--outline-dark-mode-color);
+        outline-offset: -4px;
+      }
+
       &.active {
         background-color: var(--mobile-drawer-active, #046b99) !important;
         color: var(--white, #fff) !important;
@@ -605,6 +610,11 @@
 
       .second-level-link {
         background-color: var(--mobile-drawer, #214a68);
+
+        &:focus {
+          outline: 2px solid var(--outline-dark-mode-color);
+          outline-offset: -4px;
+        }
 
         &.active {
           background-color: var(--mobile-drawer-active, #046b99);

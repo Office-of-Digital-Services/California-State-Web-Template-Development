@@ -153,6 +153,10 @@
   outline: 2px solid var(--outline-default-color);
 }
 
+.outline-dark-mode-focus:focus {
+  outline: 2px solid var(--outline-dark-mode-color);
+}
+
 .outline-block-offset:focus {
   outline: 2px solid var(--outline-default-color);
   outline-offset: -2px;
@@ -545,7 +549,7 @@
 .outline-color,
 .outline-color:hover,
 .outline-color:focus {
-  color: var(--outline-default-color, #2ea3f2) !important;
+  color: var(--outline-default-color, #0b8ee5) !important;
 }
 
 .color-red {

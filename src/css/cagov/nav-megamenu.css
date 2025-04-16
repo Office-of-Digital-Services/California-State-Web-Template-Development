@@ -288,7 +288,7 @@ a.second-level-link {
     background: none;
 
     &:focus {
-      outline: #2ea3f2 solid 2px;
+      outline: solid 2px var(--outline-default-color, #0b8ee5);
     }
   }
 }

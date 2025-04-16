@@ -126,6 +126,10 @@ input[type="search"].search-textfield {
   .search-container & {
     @media (width <= 991px) {
       border-color: var(--white, #fff);
+
+      &:focus {
+        outline-offset: -4px;
+      }
     }
   }
 }
@@ -591,7 +595,7 @@ button.gsc-search-button {
 
     #Search {
       .gsc-search-button {
-        outline-offset: -2px;
+        outline-offset: -4px;
       }
 
       .close-search-btn {

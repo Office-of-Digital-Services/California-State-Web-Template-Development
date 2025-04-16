@@ -138,7 +138,7 @@
     }
 
     &:focus {
-      outline: 2px solid var(--white, #fff);
+      outline: 2px solid var(--outline-dark-mode-color, #85cbf9);
       outline-offset: -2px;
     }
   }
@@ -190,7 +190,7 @@
     }
 
     &:focus {
-      outline: 2px solid var(--white, #fff);
+      outline: 2px solid var(--outline-dark-mode-color, #85cbf9);
       outline-offset: -2px;
     }
   }

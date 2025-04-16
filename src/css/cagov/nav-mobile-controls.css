@@ -96,6 +96,10 @@ header.nav-overlay {
     width: 2.75rem;
     height: 2.75rem;
 
+    &:focus {
+      outline: 2px solid var(--outline-dark-mode-color);
+    }
+
     /* stylelint-disable-next-line no-descending-specificity */
     span {
       background-color: var(--white, #fff);
