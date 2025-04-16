@@ -454,6 +454,12 @@ button.gsc-search-button {
       right: 50px;
       background-color: var(--gray-600, #72717c);
       border-color: var(--gray-600, #72717c);
+      color: var(--white, #fff);
+
+      &:focus {
+        outline: 2px solid var(--outline-dark-mode-color);
+        outline-offset: -4px;
+      }
 
       &:hover,
       &:focus {

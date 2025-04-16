@@ -654,6 +654,12 @@
   .header-decoration {
     display: none;
   }
+
+  .nav-drawer + .search-container #Search .gsc-search-button {
+    &:focus {
+      outline: 2px solid var(--outline-default-color);
+    }
+  }
 }
 
 .nav-arrow-down {
