@@ -46,6 +46,9 @@
 }
 
 .section-overstated {
+  background: var(--color-p2, #046b99);
+  color: var(--white, #fff);
+
   .img-thumbnail {
     padding: 4px;
     background-color: var(--color-s3-lighter, #bdd3e0);
@@ -394,6 +397,9 @@
 }
 
 .section-primary {
+  background: var(--color-p2, #046b99);
+  color: var(--white, #fff);
+
   .img-thumbnail {
     padding: 4px;
     background-color: var(--color-p2-lightest, #a4c3d4);
@@ -416,9 +422,6 @@
       outline-offset: -2px;
     }
   }
-
-  background: var(--color-p2, #046b99);
-  color: var(--white, #fff);
 
   /* stylelint-disable-next-line no-descending-specificity */
   .btn-primary {
