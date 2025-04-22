@@ -110,7 +110,7 @@ fieldset[disabled] .btn-outline-primary.active {
 /*  DEFAULT BUTTON */
 .btn-default {
   color: var(--gray-700, #5e5e6a);
-  background-color: rgba(255 255 255 / 65%);
+  background-color: var(--gray-50, #fafafa);
   border-color: var(--gray-700, #5e5e6a);
   font-weight: var(--font-weight-6);
 
@@ -132,7 +132,7 @@ fieldset[disabled] .btn-outline-primary.active {
 .btn-default .show > .dropdown-toggle,
 .open > .dropdown-toggle .btn-default {
   color: var(--black, #000);
-  background-color: color(rgba 255 255 255);
+  background-color: var(--gray-75, #f8f9fa);
   border-color: var(--black, #000);
   box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
   background-image: none;
