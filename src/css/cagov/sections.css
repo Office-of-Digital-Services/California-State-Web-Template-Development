@@ -82,7 +82,7 @@
     &:not(:disabled, .disabled):active,
     &:not(:disabled, .disabled).active,
     .show > .dropdown-toggle,
-    .open > .dropdown-toggle & {
+    .open > .dropdown-toggle {
       color: var(--white, #fff);
       background-color: var(--color-p2-darker, #214a68);
       border-color: var(--white, #fff);
@@ -92,8 +92,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,
@@ -120,7 +119,7 @@
     &:not(:disabled, .disabled):active,
     &:not(:disabled, .disabled).active,
     .show > .dropdown-toggle,
-    .open > .dropdown-toggle & {
+    .open > .dropdown-toggle {
       color: var(--white, #fff);
       background-color: var(--color-p3-darker, #242830);
       border-color: var(--white, #fff);
@@ -130,8 +129,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,
@@ -186,7 +184,7 @@
     &:not(:disabled, .disabled):active,
     &:not(:disabled, .disabled).active,
     .show > .dropdown-toggle,
-    .open > .dropdown-toggle & {
+    .open > .dropdown-toggle {
       color: var(--white, #fff);
       background-color: var(--color-p2-darker, #214a68);
       border-color: var(--white, #fff);
@@ -196,8 +194,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,
@@ -235,8 +232,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,
@@ -291,7 +287,7 @@
     &:not(:disabled, .disabled):active,
     &:not(:disabled, .disabled).active,
     .show > .dropdown-toggle,
-    .open > .dropdown-toggle & {
+    .open > .dropdown-toggle {
       color: var(--white, #fff);
       background-color: var(--color-p2-darker, #214a68);
       border-color: var(--white, #fff);
@@ -301,8 +297,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,
@@ -330,7 +325,7 @@
     &:not(:disabled, .disabled):active,
     &:not(:disabled, .disabled).active,
     .show > .dropdown-toggle,
-    .open > .dropdown-toggle & {
+    .open > .dropdown-toggle {
       color: var(--white, #fff);
       background-color: var(--color-p3-darker, #242830);
       border-color: var(--white, #fff);
@@ -340,8 +335,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,
@@ -368,7 +362,7 @@
     &:not(:disabled, .disabled):active,
     &:not(:disabled, .disabled).active,
     .show > .dropdown-toggle,
-    .open > .dropdown-toggle & {
+    .open > .dropdown-toggle {
       color: var(--white, #fff);
       background-color: rgb(255 255 255 / 20%);
       border-color: var(--white, #fff);
@@ -378,8 +372,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,
@@ -435,7 +428,7 @@
     &:not(:disabled, .disabled):active,
     &:not(:disabled, .disabled).active,
     .show > .dropdown-toggle,
-    .open > .dropdown-toggle & {
+    .open > .dropdown-toggle {
       color: var(--white, #fff);
       background-color: var(--color-p2-darker, #214a68);
       border-color: var(--white, #fff);
@@ -445,8 +438,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,
@@ -474,7 +466,7 @@
     &:not(:disabled, .disabled):active,
     &:not(:disabled, .disabled).active,
     .show > .dropdown-toggle,
-    .open > .dropdown-toggle & {
+    .open > .dropdown-toggle {
       color: var(--white, #fff);
       background-color: var(--color-p3-darker, #242830);
       border-color: var(--white, #fff);
@@ -484,8 +476,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,
@@ -541,7 +532,7 @@
     &:not(:disabled, .disabled):active,
     &:not(:disabled, .disabled).active,
     .show > .dropdown-toggle,
-    .open > .dropdown-toggle & {
+    .open > .dropdown-toggle {
       color: var(--white, #fff);
       background-color: var(--color-p2-darker, #214a68);
       border-color: var(--white, #fff);
@@ -551,8 +542,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,
@@ -580,7 +570,7 @@
     &:not(:disabled, .disabled):active,
     &:not(:disabled, .disabled).active,
     .show > .dropdown-toggle,
-    .open > .dropdown-toggle & {
+    .open > .dropdown-toggle {
       color: var(--white, #fff);
       background-color: var(--color-p3-darker, #242830);
       border-color: var(--white, #fff);
@@ -590,8 +580,7 @@
 
     &.disabled,
     &[disabled],
-    fieldset[disabled] & {
-      &,
+    fieldset[disabled] {
       &:hover,
       &:focus,
       &:active,

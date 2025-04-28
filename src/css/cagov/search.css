@@ -123,7 +123,7 @@ input[type="search"].search-textfield {
   border: 1px solid #72717c;
   border-radius: 5px 0 0 5px;
 
-  .search-container & {
+  .search-container {
     @media (width <= 991px) {
       border-color: var(--white, #fff);
 
@@ -156,7 +156,7 @@ input[type="search"].search-textfield {
     width: 60%;
     left: 20%;
 
-    .flexbox & {
+    .flexbox {
       left: 0;
       right: 0;
       margin: 0 auto;

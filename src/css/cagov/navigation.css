@@ -329,8 +329,8 @@
       -moz-box-flex: 1;
       flex: 1 1 auto;
 
-      .noflex &,
-      .oldie & {
+      .noflex,
+      .oldie {
         display: table-cell;
       }
 
@@ -399,7 +399,7 @@
     .nav-item:hover .sub-nav {
       display: block;
 
-      .touch & {
+      .touch {
         display: none;
       }
     }
