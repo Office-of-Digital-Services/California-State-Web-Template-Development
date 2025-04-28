@@ -67,6 +67,13 @@ module.exports = function (
     }
   );
 
+  // Add regexReplace filter
+  const newLocal = "regexReplace";
+  eleventyConfig.addFilter(newLocal, (value, pattern, replacement) => {
+    const regex = new RegExp(pattern, "g");
+    return value.replace(regex, replacement);
+  });
+
   // For making a non-nested fallback
   eleventyConfig.addFilter("flattenCSS", async code => {
     const result = await postcss([postcssNested]).process(code, {

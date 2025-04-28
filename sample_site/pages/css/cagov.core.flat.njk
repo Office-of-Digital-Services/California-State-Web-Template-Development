@@ -61,10 +61,9 @@ eleventyExcludeFromCollections: true
   {%- include "../../../src/css/cagov/globals.css" -%}
 {%- endset -%}
 {{- css 
-  | replace('@media (width <=', '@media (max-width:') 
+ | replace('@media (width <=', '@media (max-width:') 
   | replace('@media (width >=', '@media (min-width:') 
-  | replace('@media (', '@media (min-width: ') 
-  | replace('<= width <=', ') and (max-width:') 
+  | regexReplace('@media \\((\\d+px) <= width <= (\\d+px)\\)', '@media (min-width: $1) and (max-width: $2)')
   | flattenCSS 
   | safe 
 -}}
