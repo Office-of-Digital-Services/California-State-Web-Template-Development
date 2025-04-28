@@ -41,7 +41,6 @@
         color: var(--link-color, #046b99);
         font-weight: 600;
 
-        &,
         &:hover {
           border: none;
           border-top: none !important;
@@ -148,10 +147,12 @@
   }
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .nav-tabs > li > a:hover {
   color: var(--brand-primary-darker, #29597f);
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .nav-tabs > li > a:focus {
   outline: 2px solid var(--outline-default-color);
   outline-offset: -2px;
@@ -323,6 +324,7 @@
     margin: 0;
     font-weight: 600;
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &:focus {
       outline: 2px solid var(--outline-default-color);
       outline-offset: -2px;
@@ -351,6 +353,7 @@
     padding: 1.1rem;
     margin-top: -2px;
 
+    /* stylelint-disable-next-line no-descending-specificity */
     a:focus {
       outline: 2px solid var(--outline-default-color);
     }

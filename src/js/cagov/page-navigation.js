@@ -50,4 +50,15 @@ window.addEventListener("load", () => {
     pagenav.appendChild(pagenavUL);
     pagenav.setAttribute("aria-labelledby", "on-this-page-navigation-label");
   }
+
+  // Scroll to hash solution
+  const hashLocation = window.location;
+  if (hashLocation.hash) {
+    // Trigger a hashchange to ensure hash scrolling works
+    setTimeout(() => {
+      const currentHash = hashLocation.hash;
+      hashLocation.hash += "_"; // Remove the hash temporarily
+      hashLocation.hash = currentHash; // Reapply the hash
+    }, 500);
+  }
 }); // call out the function on the page load

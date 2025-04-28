@@ -60,4 +60,10 @@ eleventyExcludeFromCollections: true
   {%- include "../../../src/css/cagov/feature-card.css" -%}
   {%- include "../../../src/css/cagov/globals.css" -%}
 {%- endset -%}
-{{- css | flattenCSS | safe -}}
+{{- css 
+ | replace('@media (width <=', '@media (max-width:') 
+  | replace('@media (width >=', '@media (min-width:') 
+  | regexReplace('@media \\((\\d+px) <= width <= (\\d+px)\\)', '@media (min-width: $1) and (max-width: $2)')
+  | flattenCSS 
+  | safe 
+-}}

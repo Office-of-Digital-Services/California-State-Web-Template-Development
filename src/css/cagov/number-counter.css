@@ -2,7 +2,7 @@
    Number Counter
 ----------------------------------------- */
 .number-counter {
-  .no-js & {
+  .no-js {
     visibility: visible;
   }
 }
