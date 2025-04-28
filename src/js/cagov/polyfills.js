@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
   const csscorelink = /** @type {HTMLcsscorelinkElement} */ (
-    document.querySelector("link[rel='stylesheet'][href*='cagov.core.min.css']")
+    document.querySelector("link[rel='stylesheet'][href*='cagov.core.']")
   );
 
   /**
@@ -28,7 +28,11 @@ window.addEventListener("DOMContentLoaded", () => {
   function loadAlternativeCSS() {
     if (csscorelink) {
       csscorelink.removeAttribute("integrity");
-      csscorelink.href = csscorelink.href.replace("min", "flat");
+      csscorelink.href = csscorelink.href.replace(
+        /cagov\.core(\.min)?\.css/,
+        "cagov.core.flat.css"
+      );
+      console.log(`POLYFILL: Using new CSS file - ${csscorelink.href}`);
     }
   }
 
@@ -39,12 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (!CSS.supports("selector(&)")) {
     console.log("POLYFILL: Nested CSS is not supported");
 
-    if (csscorelink) {
-      // Remove the integrity attribute to avoid CORS issues
-      csscorelink.removeAttribute("integrity");
-      loadAlternativeCSS();
-      console.log(`POLYFILL: Using new CSS file - ${csscorelink.href}`);
-    }
+    loadAlternativeCSS();
   }
 
   /**
@@ -54,11 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log(
       "POLYFILL: Media query range notation (<, <=, >, >=) is not supported."
     );
-    if (csscorelink) {
-      // Remove the integrity attribute to avoid CORS issues
-      csscorelink.removeAttribute("integrity");
-      loadAlternativeCSS();
-      console.log(`POLYFILL: Using new CSS file - ${csscorelink.href}`);
-    }
+
+    loadAlternativeCSS();
   }
 });
