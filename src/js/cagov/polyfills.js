@@ -4,13 +4,14 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log("POLYFILL: Nested CSS not supported");
     // If CSS nesting not supported load alternative CSS file
     const link = /** @type {HTMLLinkElement} */ (
-      document.querySelector(
-        "link[rel='stylesheet'][href*='cagov.core.min.css']"
-      )
+      document.querySelector("link[rel='stylesheet'][href*='cagov.core.']")
     );
     if (link) {
       link.removeAttribute("integrity");
-      link.href = link.href.replace("min", "flat");
+      link.href = link.href.replace(
+        /cagov\.core(\.min)?\.css/,
+        "cagov.core.flat.css"
+      );
 
       console.log(`POLYFILL: Using new CSS file - ${link.href}`);
     }
