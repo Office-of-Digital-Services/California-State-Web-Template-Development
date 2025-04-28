@@ -76,9 +76,11 @@ module.exports = function (
 
   // For making a non-nested fallback
   eleventyConfig.addFilter("flattenCSS", async code => {
-    const result = await postcss([postcssNested]).process(code, {
-      from: undefined
-    });
+    const result = await postcss([postcssNested])
+      .use(require("postcss-aspect-ratio-polyfill"))
+      .process(code, {
+        from: undefined
+      });
     return result.css;
   });
 
