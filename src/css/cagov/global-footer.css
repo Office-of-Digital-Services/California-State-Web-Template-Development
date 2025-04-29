@@ -19,8 +19,10 @@
     }
 
     .ca-gov-logo-svg {
-      height: 1.7rem;
-      width: auto;
+      vertical-align: middle;
+      aspect-ratio: 9 / 5;
+      display: inline-block;
+      width: 50px;
     }
   }
 

@@ -166,6 +166,12 @@
     }
 
     .social-media-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      min-height: 38px;
+      align-items: center;
+
       /* stylelint-disable-next-line no-descending-specificity */
       a {
         margin: 0 10px;
@@ -177,12 +183,6 @@
           color: var(--gray-800, #4a4958);
         }
       }
-
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      min-height: 38px;
-      align-items: center;
 
       .header-cagov-logo {
         margin-right: 0.5rem;
@@ -196,6 +196,9 @@
 
         .ca-gov-logo-svg {
           vertical-align: middle;
+          aspect-ratio: 9 / 5;
+          display: inline-block;
+          width: 45px;
         }
 
         a {
