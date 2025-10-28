@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
 
     // create on this page label
     const onthispage =
-      '<div id="on-this-page-navigation-label" class="label">On this page</div>';
+      '<div id="on-this-page-navigation-label" class="label" lang="en-US">On this page</div>';
     pagenav.innerHTML = onthispage;
 
     // add ul item to the nav and set aria labelledby
