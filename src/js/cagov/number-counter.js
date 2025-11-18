@@ -17,23 +17,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(".scroll-counter");
 
   elements.forEach(item => {
-    // Add new attributes to the elements with the '.scroll-counter' HTML class
-    item.counterAlreadyFired = false;
-    item.counterSpeed = Number(item.getAttribute("data-counter-time")) / 45;
-    item.counterTarget = +item.innerText;
-    item.counterCount = 0;
-    item.counterStep = item.counterTarget / item.counterSpeed;
+    const counterSpeed = Number(item.getAttribute("data-counter-time")) / 45;
+    const counterTarget = +item.textContent; // safer than innerText
+    let counterCount = 0;
+    const counterStep = counterTarget / counterSpeed;
 
-    item.updateCounter = () => {
-      item.counterCount += item.counterStep;
-      item.innerText = Math.ceil(item.counterCount).toLocaleString();
+    const updateCounter = () => {
+      counterCount += counterStep;
 
-      if (item.counterCount < item.counterTarget) {
-        window.setTimeout(item.updateCounter, item.counterSpeed);
+      if (counterCount < counterTarget) {
+        item.textContent = Math.ceil(counterCount).toLocaleString();
+        requestAnimationFrame(updateCounter); // sync with paint cycle
       } else {
-        item.innerText = item.counterTarget.toLocaleString();
+        item.textContent = counterTarget.toLocaleString();
       }
     };
+
+    // Kick off animation
+    requestAnimationFrame(updateCounter);
   });
 
   // Function to determine if an element is visible in the web page
