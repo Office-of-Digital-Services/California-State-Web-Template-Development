@@ -2,52 +2,52 @@
 
 /* sticky header / hiding official header on scroll */
 window.addEventListener("load", () => {
-  const doc = document.documentElement;
-
-  let prevScroll = window.scrollY || doc.scrollTop;
-  let curScroll;
-  let direction = 0;
-  let prevDirection = 0;
-
+  /** @type {HTMLElement} */
   const headerAlert = document.querySelector("header .alert");
+  /** @type {HTMLElement} */
   const header = document.querySelector(".utility-header");
   const mainheader = document.querySelector("header");
   if (!header || !mainheader) return;
 
-  window.addEventListener("scroll", () => {
+  let prevScroll = window.scrollY;
+  let prevDirection = 0;
+  let ticking = false;
+
+  const updateHeader = () => {
     /*
      ** Find the direction of scroll
      ** 0 - initial, 1 - up, 2 - down
      */
 
-    curScroll = window.scrollY || doc.scrollTop;
+    const curScroll = window.scrollY;
+    let direction = 0;
+
     if (curScroll > prevScroll) {
-      //scrolled up
-      direction = 2;
+      direction = 2; // down
     } else if (curScroll < prevScroll) {
-      //scrolled down
-      direction = 1;
+      direction = 1; // up
     }
 
     if (direction !== prevDirection) {
-      // Toggle Header
       if (direction === 2 && curScroll > 40) {
-        const hiddenheight =
-          header.clientHeight + (headerAlert?.clientHeight || 0);
-
-        mainheader.style.top = `-${hiddenheight}px`;
+        const hiddenHeight =
+          header.offsetHeight + (headerAlert?.offsetHeight || 0);
+        mainheader.style.transform = `translateY(-${hiddenHeight}px)`;
         prevDirection = direction;
       } else if (direction === 1 && curScroll < 40) {
-        // mainheader.classList.remove('scrolled');
-        // header.classList.remove('is-hidden');
-        // header.removeAttribute("style");
-        mainheader.style.removeProperty("top");
+        mainheader.style.transform = "";
         prevDirection = direction;
       }
     }
 
     prevScroll = curScroll;
+    ticking = false;
+  };
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
   });
 });
-
-// retain scroll position
