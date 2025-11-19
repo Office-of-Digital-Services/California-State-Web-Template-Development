@@ -2,14 +2,16 @@
 
 /* sticky header / hiding official header on scroll */
 window.addEventListener("load", () => {
-  /** @type {HTMLElement} */
+  const doc = document.documentElement;
+
   const headerAlert = document.querySelector("header .alert");
-  /** @type {HTMLElement} */
   const header = document.querySelector(".utility-header");
   const mainheader = document.querySelector("header");
   if (!header || !mainheader) return;
 
-  let prevScroll = 0;
+  let prevScroll;
+  let curScroll;
+  let direction = 0;
   let prevDirection = 0;
   let ticking = false;
 
@@ -19,23 +21,24 @@ window.addEventListener("load", () => {
      ** 0 - initial, 1 - up, 2 - down
      */
 
-    const curScroll = window.scrollY;
-    let direction = 0;
-
+    curScroll = window.scrollY || doc.scrollTop;
     if (curScroll > prevScroll) {
-      direction = 2; // down
+      //scrolled up
+      direction = 2;
     } else if (curScroll < prevScroll) {
-      direction = 1; // up
+      //scrolled down
+      direction = 1;
     }
 
     if (direction !== prevDirection) {
+      // Toggle Header
       if (direction === 2 && curScroll > 40) {
-        const hiddenHeight =
-          header.offsetHeight + (headerAlert?.offsetHeight || 0);
-        mainheader.style.transform = `translateY(-${hiddenHeight}px)`;
+        const hiddenheight =
+          header.clientHeight + (headerAlert?.clientHeight || 0);
+        mainheader.style.top = `-${hiddenheight}px`;
         prevDirection = direction;
       } else if (direction === 1 && curScroll < 40) {
-        mainheader.style.transform = "";
+        mainheader.style.removeProperty("top");
         prevDirection = direction;
       }
     }
