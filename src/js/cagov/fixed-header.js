@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
   const mainheader = document.querySelector("header");
   if (!header || !mainheader) return;
 
-  let prevScroll = window.scrollY;
+  let prevScroll = 0;
   let prevDirection = 0;
   let ticking = false;
 
