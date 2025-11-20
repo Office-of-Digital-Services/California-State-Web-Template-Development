@@ -87,34 +87,31 @@ window.addEventListener("load", () => {
     ".search-container:not(.featured-search)"
   ); // only on subpages, unique, same as #head-search
 
-  // header, contains nav, search form, etc, unique
-  const headerHeight = /** @type {HTMLElement} */ (
-    document.querySelector(".global-header")
-  )?.offsetHeight; // header height
+  const getSearchTop = () => {
+    /** @type {HTMLElement} */
+    const header = document.querySelector(".global-header");
+    /** @type {HTMLElement} */
+    const utility = document.querySelector(".utility-header");
+    /** @type {NodeListOf<HTMLElement>} */
+    const alertBanners = document.querySelectorAll(".alert-banner");
 
-  /** @type {HTMLElement | null} */
-  const utility = document.querySelector(".utility-header"); // utility header, unique
-  const utilityHeight = utility?.offsetHeight || 0;
-  // utility header height
+    const headerHeight = header?.offsetHeight || 0;
+    const utilityHeight = utility?.offsetHeight || 0;
+    const alertBannerHeight = Array.from(alertBanners).reduce(
+      (sum, banner) => sum + (banner.offsetHeight || 0),
+      0
+    );
 
-  /** @type {NodeListOf<HTMLElement>} */
-  const alertBanner = document.querySelectorAll(".alert-banner"); // page can have multiple
+    // contains navigation and search form, unique
+    // Full width navigation
+    const navigationHeight = document
+      .querySelector(".navigation-search")
+      ?.classList.contains("full-width-nav")
+      ? 82
+      : 0;
 
-  let alertbannerHeight = 0;
-  // taking into account multiple alert banners
-  alertBanner.forEach(oneBanner => {
-    alertbannerHeight += oneBanner.offsetHeight;
-  });
-
-  //const fullnav = document.querySelector(".top-level-nav"); // navigation ul tag, unique
-
-  // contains navigation and search form, unique
-  // Full width navigation
-  const navigationHeight = document
-    .querySelector(".navigation-search")
-    ?.classList.contains("full-width-nav")
-    ? 82
-    : 0;
+    return headerHeight - utilityHeight - alertBannerHeight - navigationHeight;
+  };
 
   if (searchText && searchContainer) {
     // Unfreeze search width when blured.
@@ -142,15 +139,12 @@ window.addEventListener("load", () => {
   }
 
   //  search box top position
-  // TODO: Really close to searchTop() except for top size
-  if (!mobileControlVisible()) {
+  const setSearchTop = () => {
     // calulation search box top position
-    const searchtop =
-      headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
     if (!mobileControlVisible() && searchbox) {
-      searchbox.style.top = `${Math.max(searchtop, 82)}px`;
+      searchbox.style.top = `${Math.max(getSearchTop(), 55)}px`;
     }
-  }
+  };
 
   // have the close button remove search results and the applied classes
   //resultsContainer.find('.close').on('click', removeSearchResults);
@@ -245,15 +239,6 @@ window.addEventListener("load", () => {
       setSearchAttr();
     }
   }
-
-  const setSearchTop = () => {
-    // calulation search box top position
-    const searchtop =
-      headerHeight - utilityHeight - alertbannerHeight - navigationHeight;
-    if (!mobileControlVisible() && searchbox) {
-      searchbox.style.top = `${Math.max(searchtop, 55)}px`;
-    }
-  };
 
   // on alert close event
   document.querySelectorAll(".alert-banner .close").forEach(oneClose => {
