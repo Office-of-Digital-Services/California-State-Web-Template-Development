@@ -468,118 +468,110 @@ title: Components and patterns
     }
 </style>
 <script>
-    class CagovUtilityMenuToggle {
-      constructor() {
-        this.menuButton = document.querySelector('.cagov-utility-menu-button');
-        this.menuContent = document.getElementById('cagov-utility-menu');
-        if (this.menuButton && this.menuContent) {
-          this.menuButton.addEventListener('click', () => this.toggleMenu());
+      class CagovUtilityMenuToggle {
+        constructor() {
+          this.menuButton = document.querySelector('.cagov-utility-menu-button');
+          this.menuContent = document.getElementById('cagov-utility-menu');
+          if (this.menuButton && this.menuContent) {
+            this.menuButton.addEventListener('click', () => this.toggleMenu());
+          }
+        }
+
+        toggleMenu() {
+          const expanded = this.menuButton.getAttribute('aria-expanded') === 'true';
+          this.menuButton.setAttribute('aria-expanded', !expanded);
+          this.menuContent.classList.toggle('d-none');
+          this.menuContent.setAttribute('aria-hidden', expanded ? 'true' : 'false');
         }
       }
 
-      toggleMenu() {
-        const expanded = this.menuButton.getAttribute('aria-expanded') === 'true';
-        this.menuButton.setAttribute('aria-expanded', !expanded);
-        this.menuContent.classList.toggle('d-none');
-        this.menuContent.setAttribute('aria-hidden', expanded ? 'true' : 'false');
-      }
-    }
+      document.addEventListener('DOMContentLoaded', () => {
+        new CagovUtilityMenuToggle();
+      });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      new CagovUtilityMenuToggle();
-    });
+      class CagovUtilitySearchToggle {
+        constructor() {
+          this.searchButton = document.querySelector('.cagov-utility-search-button');
+          this.searchContent = document.getElementById('cagov-utility-search');
+          if (this.searchButton && this.searchContent) {
+            this.searchButton.addEventListener('click', () => this.toggleSearch());
+          }
+        }
 
-    class CagovUtilitySearchToggle {
-      constructor() {
-        this.searchButton = document.querySelector('.cagov-utility-search-button');
-        this.searchContent = document.getElementById('cagov-utility-search');
-        if (this.searchButton && this.searchContent) {
-          this.searchButton.addEventListener('click', () => this.toggleSearch());
+        toggleSearch() {
+          const expanded = this.searchButton.getAttribute('aria-expanded') === 'true';
+          this.searchButton.setAttribute('aria-expanded', !expanded);
+          this.searchContent.classList.toggle('d-none');
+          this.searchContent.setAttribute('aria-hidden', expanded ? 'true' : 'false');
+    setTimeout(() => {
+      this.searchButton.classList.toggle('rotating');
+    }, 10);
         }
       }
 
-      toggleSearch() {
-        const expanded = this.searchButton.getAttribute('aria-expanded') === 'true';
-        this.searchButton.setAttribute('aria-expanded', !expanded);
-        this.searchContent.classList.toggle('d-none');
-        this.searchContent.setAttribute('aria-hidden', expanded ? 'true' : 'false');
-  setTimeout(() => {
-    this.searchButton.classList.toggle('rotating');
-  }, 10);
+      document.addEventListener('DOMContentLoaded', () => {
+        new CagovUtilitySearchToggle();
+      });
+
+
+      // Ensure only one collapsible is open at a time
+      const menuButton = document.querySelector('.cagov-utility-menu-button');
+      const menuContent = document.getElementById('cagov-utility-menu');
+      const searchButton = document.querySelector('.cagov-utility-search-button');
+      const searchContent = document.getElementById('cagov-utility-search');
+
+      function closeMenu() {
+        if (menuButton?.getAttribute('aria-expanded') === 'true') {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuContent?.classList.add('d-none');
+        menuContent?.setAttribute('aria-hidden', 'true');
+        }
       }
-    }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      new CagovUtilitySearchToggle();
-    });
-
-
-    // Ensure only one collapsible is open at a time
-    const menuButton = document.querySelector('.cagov-utility-menu-button');
-    const menuContent = document.getElementById('cagov-utility-menu');
-    const searchButton = document.querySelector('.cagov-utility-search-button');
-    const searchContent = document.getElementById('cagov-utility-search');
-
-    function closeMenu() {
-      if (menuButton?.getAttribute('aria-expanded') === 'true') {
-      menuButton.setAttribute('aria-expanded', 'false');
-      menuContent?.classList.add('d-none');
-      menuContent?.setAttribute('aria-hidden', 'true');
+      function closeSearch() {
+        if (searchButton?.getAttribute('aria-expanded') === 'true') {
+        searchButton.setAttribute('aria-expanded', 'false');
+        searchContent?.classList.add('d-none');
+        searchContent?.setAttribute('aria-hidden', 'true');
+        searchButton.classList.remove('rotating');
+        }
       }
-    }
 
-    function closeSearch() {
-      if (searchButton?.getAttribute('aria-expanded') === 'true') {
-      searchButton.setAttribute('aria-expanded', 'false');
-      searchContent?.classList.add('d-none');
-      searchContent?.setAttribute('aria-hidden', 'true');
-      searchButton.classList.remove('rotating');
+      // Ensure only one collapsible is open at a time
+      document.addEventListener('DOMContentLoaded', () => {
+        menuButton?.addEventListener('click', () => closeSearch());
+        searchButton?.addEventListener('click', () => closeMenu());
+      });
+
+      // Close menu when focus moves outside menuContent or menuButton
+      function handleMenuFocusOut(event) {
+        const relatedTarget = event.relatedTarget;
+        if (
+        menuContent &&
+        menuButton &&
+        !menuContent.contains(relatedTarget) &&
+        relatedTarget !== menuButton
+        ) {
+        closeMenu();
+        }
       }
-    }
 
-    // Ensure only one collapsible is open at a time
-    document.addEventListener('DOMContentLoaded', () => {
-      menuButton?.addEventListener('click', () => closeSearch());
-      searchButton?.addEventListener('click', () => closeMenu());
-    });
+      menuContent?.addEventListener('focusout', handleMenuFocusOut);
+      menuButton?.addEventListener('focusout', handleMenuFocusOut);
 
-    // Close menu when focus moves outside menuContent or menuButton
-    function handleMenuFocusOut(event) {
-      const relatedTarget = event.relatedTarget;
-      if (
-      menuContent &&
-      menuButton &&
-      !menuContent.contains(relatedTarget) &&
-      relatedTarget !== menuButton
-      ) {
-      closeMenu();
+  // Close search when focus moves outside searchContent or searchButton
+      function handleSearchFocusOut(event) {
+        const relatedTarget = event.relatedTarget;
+        if (
+          searchContent &&
+          searchButton &&
+          !searchContent.contains(relatedTarget) &&
+          relatedTarget !== searchButton
+        ) {
+          closeSearch();
+        }
       }
-    }
 
-    menuContent?.addEventListener('focusout', handleMenuFocusOut);
-    menuButton?.addEventListener('focusout', handleMenuFocusOut);
-
-
-    searchContent?.addEventListener('focusout', (event) => {
-      const relatedTarget = event.relatedTarget;
-      if (
-        searchContent &&
-        searchButton &&
-        !searchContent.contains(relatedTarget) &&
-        relatedTarget !== searchButton
-      ) {
-        closeSearch();
-      }
-    });
-    searchButton?.addEventListener('focusout', (event) => {
-      const relatedTarget = event.relatedTarget;
-      if (
-        searchContent &&
-        searchButton &&
-        !searchContent.contains(relatedTarget) &&
-        relatedTarget !== searchButton
-      ) {
-        closeSearch();
-      }
-    });
+      searchContent?.addEventListener('focusout', handleSearchFocusOut);
+      searchButton?.addEventListener('focusout', handleSearchFocusOut);
 </script>
