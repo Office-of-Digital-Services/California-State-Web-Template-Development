@@ -80,9 +80,9 @@ title: Components and patterns
 
         <!--cagov collapsible menu content-->
         <div
-          class="collapsible-content d-none"
+          class="collapsible-content"
           id="cagov-utility-menu"
-          aria-hidden="true">
+          hidden="hidden">
           <nav aria-label="ca.gov navigation">
             <ul>
               <li>
@@ -145,8 +145,9 @@ title: Components and patterns
 
         <!-- collapsible search content-->
         <div
-          class="collapsible-content cagov-search d-none"
-          id="cagov-utility-search">
+          class="collapsible-content cagov-search"
+          id="cagov-utility-search"
+          hidden="hidden">
           <form
             action="https://www.ca.gov/search/"
             method="get"
@@ -187,6 +188,8 @@ title: Components and patterns
   <!-- .cagov-utility -->
 </div>
 <!-- .cagov-header-shell -->
+
+<div style="height:50px; background-color: #046b99;"></div>
 
 <style>
         body {margin:0;padding:0;}
@@ -391,16 +394,6 @@ title: Components and patterns
         width: 100%;
         order: 1;
 
-        &[aria-hidden="true"] {
-          opacity: 0;
-          height: 0;
-        }
-
-        &[aria-hidden="false"] {
-          opacity: 1;
-          height: auto;
-        }
-
         /* Navigation styles */
         nav {
           ul {
@@ -468,110 +461,153 @@ title: Components and patterns
     }
 </style>
 <script>
-      class CagovUtilityMenuToggle {
-        constructor() {
-          this.menuButton = document.querySelector('.cagov-utility-menu-button');
-          this.menuContent = document.getElementById('cagov-utility-menu');
-          if (this.menuButton && this.menuContent) {
-            this.menuButton.addEventListener('click', () => this.toggleMenu());
+  class CagovUtilityMenuToggle {
+    constructor() {
+      this.menuButton = document.querySelector('.cagov-utility-menu-button');
+      this.menuContent = document.getElementById('cagov-utility-menu');
+      this.searchContent = document.getElementById('cagov-utility-search');
+      if (this.menuButton && this.menuContent) {
+        this.menuButton.addEventListener('click', () => this.toggleMenu());
+      }
+    }
+
+    toggleMenu() {
+      const expanded = this.menuButton.getAttribute('aria-expanded') === 'true';
+      this.menuButton.setAttribute('aria-expanded', !expanded);
+      if (expanded) {
+        this.menuContent.setAttribute('hidden', 'hidden');
+      } else {
+        this.menuContent.removeAttribute('hidden');
+        // Hide search if open
+        if (this.searchContent && !this.searchContent.hasAttribute('hidden')) {
+          this.searchContent.setAttribute('hidden', 'hidden');
+          const searchButton = document.querySelector('.cagov-utility-search-button');
+          if (searchButton) {
+            searchButton.setAttribute('aria-expanded', 'false');
+            searchButton.classList.remove('rotating');
           }
         }
-
-        toggleMenu() {
-          const expanded = this.menuButton.getAttribute('aria-expanded') === 'true';
-          this.menuButton.setAttribute('aria-expanded', !expanded);
-          this.menuContent.classList.toggle('d-none');
-          this.menuContent.setAttribute('aria-hidden', expanded ? 'true' : 'false');
-        }
       }
+    }
+  }
 
-      document.addEventListener('DOMContentLoaded', () => {
-        new CagovUtilityMenuToggle();
-      });
+  document.addEventListener('DOMContentLoaded', () => {
+    new CagovUtilityMenuToggle();
+  });
 
-      class CagovUtilitySearchToggle {
-        constructor() {
-          this.searchButton = document.querySelector('.cagov-utility-search-button');
-          this.searchContent = document.getElementById('cagov-utility-search');
-          if (this.searchButton && this.searchContent) {
-            this.searchButton.addEventListener('click', () => this.toggleSearch());
+  class CagovUtilitySearchToggle {
+    constructor() {
+      this.searchButton = document.querySelector('.cagov-utility-search-button');
+      this.searchContent = document.getElementById('cagov-utility-search');
+      this.menuContent = document.getElementById('cagov-utility-menu');
+      if (this.searchButton && this.searchContent) {
+        this.searchButton.addEventListener('click', () => this.toggleSearch());
+      }
+    }
+
+    toggleSearch() {
+      const expanded = this.searchButton.getAttribute('aria-expanded') === 'true';
+      this.searchButton.setAttribute('aria-expanded', !expanded);
+      if (expanded) {
+        this.searchContent.setAttribute('hidden', 'hidden');
+      } else {
+        this.searchContent.removeAttribute('hidden');
+        // Hide menu if open
+        if (this.menuContent && !this.menuContent.hasAttribute('hidden')) {
+          this.menuContent.setAttribute('hidden', 'hidden');
+          const menuButton = document.querySelector('.cagov-utility-menu-button');
+          if (menuButton) {
+            menuButton.setAttribute('aria-expanded', 'false');
           }
         }
+      }
+      setTimeout(() => {
+        this.searchButton.classList.toggle('rotating');
+      }, 10);
+    }
+  }
 
-        toggleSearch() {
-          const expanded = this.searchButton.getAttribute('aria-expanded') === 'true';
-          this.searchButton.setAttribute('aria-expanded', !expanded);
-          this.searchContent.classList.toggle('d-none');
-          this.searchContent.setAttribute('aria-hidden', expanded ? 'true' : 'false');
-    setTimeout(() => {
-      this.searchButton.classList.toggle('rotating');
-    }, 10);
-        }
+  document.addEventListener('DOMContentLoaded', () => {
+    new CagovUtilitySearchToggle();
+  });
+
+
+  class CagovUtilityMenuFocusOut {
+    constructor() {
+      this.menuButton = document.querySelector('.cagov-utility-menu-button');
+      this.menuContent = document.getElementById('cagov-utility-menu');
+      this.searchButton = document.querySelector('.cagov-utility-search-button');
+      if (this.menuContent && this.menuButton) {
+        this.menuContent.addEventListener('focusout', (e) => this.handleFocusOut(e));
+        this.menuButton.addEventListener('focusout', (e) => this.handleFocusOut(e));
+      }
+    }
+
+    handleFocusOut(event) {
+      const relatedTarget = event.relatedTarget;
+      // Get all focusable elements inside menuContent
+      const focusableSelectors = [
+        'a[href]', 'button:not([disabled])', 'input:not([disabled])',
+        'select:not([disabled])', 'textarea:not([disabled])', '[tabindex]:not([tabindex="-1"])'
+      ];
+      const focusableElements = Array.from(this.menuContent.querySelectorAll(focusableSelectors.join(',')))
+        .filter(el => el.offsetParent !== null);
+
+      // If focus moves outside menuButton, menuContent, or searchButton, close menu
+      if (
+        !this.menuButton.contains(relatedTarget) &&
+        !this.menuContent.contains(relatedTarget) &&
+        !this.searchButton.contains(relatedTarget)
+      ) {
+        this.menuContent.setAttribute('hidden', 'hidden');
+        this.menuButton.setAttribute('aria-expanded', 'false');
+        return;
       }
 
-      document.addEventListener('DOMContentLoaded', () => {
-        new CagovUtilitySearchToggle();
-      });
-
-
-      // Ensure only one collapsible is open at a time
-      const menuButton = document.querySelector('.cagov-utility-menu-button');
-      const menuContent = document.getElementById('cagov-utility-menu');
-      const searchButton = document.querySelector('.cagov-utility-search-button');
-      const searchContent = document.getElementById('cagov-utility-search');
-
-      function closeMenu() {
-        if (menuButton?.getAttribute('aria-expanded') === 'true') {
-        menuButton.setAttribute('aria-expanded', 'false');
-        menuContent?.classList.add('d-none');
-        menuContent?.setAttribute('aria-hidden', 'true');
-        }
-      }
-
-      function closeSearch() {
-        if (searchButton?.getAttribute('aria-expanded') === 'true') {
-        searchButton.setAttribute('aria-expanded', 'false');
-        searchContent?.classList.add('d-none');
-        searchContent?.setAttribute('aria-hidden', 'true');
-        searchButton.classList.remove('rotating');
-        }
-      }
-
-      // Ensure only one collapsible is open at a time
-      document.addEventListener('DOMContentLoaded', () => {
-        menuButton?.addEventListener('click', () => closeSearch());
-        searchButton?.addEventListener('click', () => closeMenu());
-      });
-
-      // Close menu when focus moves outside menuContent or menuButton
-      function handleMenuFocusOut(event) {
-        const relatedTarget = event.relatedTarget;
+      // If focus leaves the last focusable element in menuContent, close menu
+      if (focusableElements.length > 0 && event.target === focusableElements[focusableElements.length - 1]) {
         if (
-        menuContent &&
-        menuButton &&
-        !menuContent.contains(relatedTarget) &&
-        relatedTarget !== menuButton
+          !this.menuContent.contains(relatedTarget)
         ) {
-        closeMenu();
+          this.menuContent.setAttribute('hidden', 'hidden');
+          this.menuButton.setAttribute('aria-expanded', 'false');
         }
       }
+    }
+  }
 
-      menuContent?.addEventListener('focusout', handleMenuFocusOut);
-      menuButton?.addEventListener('focusout', handleMenuFocusOut);
+  document.addEventListener('DOMContentLoaded', () => {
+    new CagovUtilityMenuFocusOut();
+  });
 
-  // Close search when focus moves outside searchContent or searchButton
-      function handleSearchFocusOut(event) {
-        const relatedTarget = event.relatedTarget;
-        if (
-          searchContent &&
-          searchButton &&
-          !searchContent.contains(relatedTarget) &&
-          relatedTarget !== searchButton
-        ) {
-          closeSearch();
-        }
+
+  class CagovUtilitySearchFocusOut {
+    constructor() {
+      this.searchButton = document.querySelector('.cagov-utility-search-button');
+      this.searchContent = document.getElementById('cagov-utility-search');
+      this.menuButton = document.querySelector('.cagov-utility-menu-button');
+      if (this.searchContent && this.searchButton) {
+        this.searchContent.addEventListener('focusout', (e) => this.handleFocusOut(e));
+        this.searchButton.addEventListener('focusout', (e) => this.handleFocusOut(e));
       }
+    }
 
-      searchContent?.addEventListener('focusout', handleSearchFocusOut);
-      searchButton?.addEventListener('focusout', handleSearchFocusOut);
+    handleFocusOut(event) {
+      const relatedTarget = event.relatedTarget;
+      // Only keep open if focus moves to menu button or search button itself
+      if (
+        !this.menuButton.contains(relatedTarget) &&
+        !this.searchButton.contains(relatedTarget) &&
+        !this.searchContent.contains(relatedTarget)
+      ) {
+        this.searchContent.setAttribute('hidden', 'hidden');
+        this.searchButton.setAttribute('aria-expanded', 'false');
+        this.searchButton.classList.remove('rotating');
+      }
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    new CagovUtilitySearchFocusOut();
+  });
 </script>
