@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 
-.cagov-header-shell {
+div.cagov-header-shell {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -23,27 +23,6 @@ body {
   *::after {
     box-sizing: border-box;
     margin: 0;
-  }
-
-  .cagov-container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-
-    @media (min-width: 576px) {
-      max-width: 540px;
-    }
-    @media (min-width: 768px) {
-      max-width: 720px;
-    }
-    @media (min-width: 992px) {
-      max-width: 960px;
-    }
-    @media (min-width: 1200px) {
-      max-width: 1140px;
-    }
   }
 
   /* Global utility styles */
@@ -80,197 +59,218 @@ body {
     border: 0 !important;
   }
 
-  .cagov-utility {
+  > .cagov-utility {
     background-color: #f5f9fa;
     min-height: 42px;
     padding: 0.25rem 0;
 
-    .cagov-logo {
-      display: inline-block;
-      flex-grow: 1;
-      flex-shrink: 0;
-      align-self: center;
-    }
-
-    .cagov-utility-link svg {
-      vertical-align: middle;
-      aspect-ratio: 9 / 5;
-      display: inline-block;
-      width: 50px;
-    }
-
-    .cagov-utility-bar {
+    > .cagov-container {
       width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    .cagov-utility-menu-button {
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
       margin-left: auto;
-      background: none;
-      border: none;
-      color: #3b3a48;
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 0.35rem 0.5rem;
 
-      &::after {
-        content: "";
-        display: inline-block;
-        text-decoration: none;
-        position: relative;
-        width: 0.4rem;
-        height: 0.4rem;
-        border-top: 1px solid #000;
-        border-left: 1px solid #000;
-        transform: rotate(225deg);
-        vertical-align: middle;
-        margin-left: 3px;
-        transition: transform 0.3s;
+      @media (min-width: 576px) {
+        max-width: 540px;
+      }
+      @media (min-width: 768px) {
+        max-width: 720px;
+      }
+      @media (min-width: 992px) {
+        max-width: 960px;
+      }
+      @media (min-width: 1200px) {
+        max-width: 1140px;
       }
 
-      &[aria-expanded="true"]::after {
-        transform: rotate(45deg);
-        top: 2px;
-      }
+      > .cagov-utility-bar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
 
-      &:focus,
-      &:hover {
-        color: #000;
-        outline-offset: -2px;
-      }
-    }
+        > div.cagov-logo {
+          display: inline-block;
+          flex-grow: 1;
+          flex-shrink: 0;
+          align-self: center;
 
-    .cagov-utility-search-button {
-      background: none;
-      border: none;
-      color: #3b3a48;
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 0.2rem 0.35rem;
-      margin-left: 0;
-      position: relative;
-      left: 0.35rem;
-      top: 2px;
-      transition: color 0.2s;
-      width: 34px;
-      height: 30px;
-
-      &[aria-expanded="true"] svg {
-        display: none;
-      }
-
-      &[aria-expanded="true"]::after {
-        content: "";
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        margin-left: 0px;
-        position: relative;
-        top: 3px;
-      }
-
-      &[aria-expanded="true"]::before,
-      &[aria-expanded="true"]::after {
-        content: "";
-        position: absolute;
-        left: 5px;
-        top: 14px;
-        width: 24px;
-        height: 3px;
-        background: #3b3a48;
-        border-radius: 2px;
-        transition: transform 0.3s;
-      }
-
-      &[aria-expanded="true"]::before {
-        transform: rotate(45deg);
-      }
-
-      &[aria-expanded="true"]::after {
-        transform: rotate(-45deg);
-      }
-
-      &.rotating::before {
-        transform: rotate(135deg);
-      }
-
-      &.rotating::after {
-        transform: rotate(45deg);
-      }
-    }
-
-    /* Collapsible content styles */
-    .collapsible-content {
-      background-color: #f5f9fa;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      line-height: 1.5;
-      width: 100%;
-      order: 1;
-
-      /* Navigation styles */
-      nav {
-        ul {
-          list-style: none;
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          align-items: flex-end;
-          justify-content: flex-end;
-          padding: 0;
-          position: relative;
-          left: 0.35rem;
-
-          a {
-            padding: 0.35rem;
+          > .cagov-utility-link > svg {
+            vertical-align: middle;
+            aspect-ratio: 9 / 5;
+            display: inline-block;
+            width: 50px;
           }
         }
-      }
-    }
-  }
 
-  @media (min-width: 540px) {
-    .cagov-utility .collapsible-content nav ul {
-      flex-direction: row;
-      gap: 1.5rem;
-    }
-  }
+        > .cagov-utility-menu-button {
+          margin-left: auto;
+          background: none;
+          border: none;
+          color: #3b3a48;
+          font-size: 1rem;
+          cursor: pointer;
+          padding: 0.35rem 0.5rem;
 
-  /* Search styles */
-  .cagov-search {
-    form {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
+          &::after {
+            content: "";
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            transform: rotate(225deg);
+            vertical-align: middle;
+            margin-left: 3px;
+            transition: transform 0.3s;
+          }
 
-    input[type="search"] {
-      font-size: 1.1rem;
-      width: 100%;
-      max-height: 38px;
-      padding: 0 10px;
-      transition: border 0.4s;
-      border: 1px solid #72717c;
-      border-radius: 5px 0 0 5px;
-      height: 38px;
-      outline-offset: -2px;
-    }
+          &[aria-expanded="true"]::after {
+            transform: rotate(45deg);
+            top: 2px;
+          }
 
-    #cagov-search-button {
-      outline-offset: -4px;
-      outline-color: #85cbf9;
-      background-color: #72717c;
-      color: #fff;
-      border-radius: 0 5px 5px 0;
-      padding: 0 12px;
-      border: 1px solid #72717c;
-      min-height: 38px;
-      margin-left: -1px;
+          &:focus,
+          &:hover {
+            color: #000;
+            outline-offset: -2px;
+          }
+        }
 
-      svg path {
-        fill: #fff;
+        > .cagov-utility-search-button {
+          background: none;
+          border: none;
+          color: #3b3a48;
+          font-size: 1rem;
+          cursor: pointer;
+          padding: 0.2rem 0.35rem;
+          margin-left: 0;
+          position: relative;
+          left: 0.35rem;
+          top: 2px;
+          transition: color 0.2s;
+          width: 34px;
+          height: 30px;
+
+          &[aria-expanded="true"] svg {
+            display: none;
+          }
+
+          &[aria-expanded="true"]::after {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-left: 0px;
+            position: relative;
+            top: 3px;
+          }
+
+          &[aria-expanded="true"]::before,
+          &[aria-expanded="true"]::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 14px;
+            width: 24px;
+            height: 3px;
+            background: #3b3a48;
+            border-radius: 2px;
+            transition: transform 0.3s;
+          }
+
+          &[aria-expanded="true"]::before {
+            transform: rotate(45deg);
+          }
+
+          &[aria-expanded="true"]::after {
+            transform: rotate(-45deg);
+          }
+
+          &.rotating::before {
+            transform: rotate(135deg);
+          }
+
+          &.rotating::after {
+            transform: rotate(45deg);
+          }
+        }
+
+        /* Search styles */
+        > .cagov-search {
+          form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+          }
+
+          input[type="search"] {
+            font-size: 1.1rem;
+            width: 100%;
+            max-height: 38px;
+            padding: 0 10px;
+            transition: border 0.4s;
+            border: 1px solid #72717c;
+            border-radius: 5px 0 0 5px;
+            height: 38px;
+            outline-offset: -2px;
+          }
+
+          #cagov-search-button {
+            outline-offset: -4px;
+            outline-color: #85cbf9;
+            background-color: #72717c;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            padding: 0 12px;
+            border: 1px solid #72717c;
+            min-height: 38px;
+            margin-left: -1px;
+
+            svg path {
+              fill: #fff;
+            }
+          }
+        }
+
+        /* Collapsible content styles */
+        > .collapsible-content {
+          background-color: #f5f9fa;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          line-height: 1.5;
+          width: 100%;
+          order: 1;
+
+          /* Navigation styles */
+          nav {
+            ul {
+              list-style: none;
+              display: flex;
+              flex-direction: column;
+              gap: 0.5rem;
+              align-items: flex-end;
+              justify-content: flex-end;
+              padding: 0;
+              position: relative;
+              left: 0.35rem;
+
+              a {
+                padding: 0.35rem;
+              }
+            }
+          }
+
+          @media (width >= 540px) {
+            nav ul {
+              flex-direction: row;
+              gap: 1.5rem;
+            }
+          }
+        }
       }
     }
   }
