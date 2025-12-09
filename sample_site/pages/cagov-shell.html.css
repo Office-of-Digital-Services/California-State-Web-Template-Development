@@ -55,39 +55,42 @@ body {
 }
 
 /* global */
-summary {
-  list-style: none;
-  text-decoration: underline;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
+details {
+  > summary {
+    list-style: none;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
 
-  &:hover,
-  &:focus {
-    color: #000;
+    &:hover,
+    &:focus {
+      color: #000;
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      text-decoration: none;
+      position: relative;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-top: 1px solid #000;
+      border-left: 1px solid #000;
+      transform: rotate(225deg);
+      transition: 200ms;
+      vertical-align: middle;
+    }
   }
 
-  &::-webkit-details-marker {
-    display: none;
+  &[open] > summary::after {
+    transform: rotate(45deg);
+    top: 2px;
   }
-
-  &::after {
-    content: "";
-    display: inline-block;
-    text-decoration: none;
-    position: relative;
-    width: 0.4rem;
-    height: 0.4rem;
-    border-top: 1px solid #000;
-    border-left: 1px solid #000;
-    transform: rotate(225deg);
-    vertical-align: middle;
-  }
-}
-
-details[open] > summary::after {
-  transform: rotate(45deg);
-  top: 2px;
 }
 
 :focus {
@@ -125,34 +128,36 @@ a {
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 360px) {
+  @media (width >= 360px) {
     flex-direction: row;
     align-items: flex-start;
 
     > div:first-child {
       width: 62%;
     }
+
     > div:last-child {
       width: 38%;
     }
   }
-  @media (min-width: 450px) {
+  @media (width >= 450px) {
     flex-direction: row;
     align-items: flex-start;
 
     > div:first-child {
       width: 50%;
     }
+
     > div:last-child {
       width: 50%;
     }
   }
 }
 
-.cagov-collapsible-content {
+details.cagov-collapsible-content {
   font-size: 0.875rem;
 
-  summary {
+  > summary {
     position: relative;
     right: 0.5rem;
     width: fit-content;
@@ -164,7 +169,7 @@ a {
   }
 }
 
-.collapsible-content {
+details > div.collapsible-content {
   padding-top: 1rem;
   padding-bottom: 1rem;
   line-height: 1.5;
