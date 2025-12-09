@@ -27,71 +27,121 @@ body {
     padding: 0;
   }
 
-  > .cagov-utility {
+  div.cagov-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (width >= 576px) {
+      max-width: 540px;
+    }
+    @media (width >= 768px) {
+      max-width: 720px;
+    }
+    @media (width >= 992px) {
+      max-width: 960px;
+    }
+    @media (width >= 1200px) {
+      max-width: 1140px;
+    }
+  }
+
+  details {
+    > summary {
+      list-style: none;
+      text-decoration: underline;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+
+      &:hover,
+      &:focus {
+        color: #000;
+      }
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        text-decoration: none;
+        position: relative;
+        width: 0.4rem;
+        height: 0.4rem;
+        border-top: 1px solid #000;
+        border-left: 1px solid #000;
+        transform: rotate(225deg);
+        transition: 200ms;
+        vertical-align: middle;
+      }
+    }
+
+    &[open] > summary::after {
+      transform: rotate(45deg);
+      top: 2px;
+    }
+  }
+
+  > div.cagov-utility {
     background-color: #f5f9fa;
     min-height: 42px;
-  }
-}
 
-.cagov-container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+    > div.cagov-top-bar {
+      padding-top: 0.2rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
 
-  @media (width >= 576px) {
-    max-width: 540px;
-  }
-  @media (width >= 768px) {
-    max-width: 720px;
-  }
-  @media (width >= 992px) {
-    max-width: 960px;
-  }
-  @media (width >= 1200px) {
-    max-width: 1140px;
+      @media (width >= 360px) {
+        flex-direction: row;
+        align-items: flex-start;
+
+        > div:first-child {
+          width: 62%;
+        }
+
+        > div:last-child {
+          width: 38%;
+        }
+      }
+      @media (width >= 450px) {
+        flex-direction: row;
+        align-items: flex-start;
+
+        > div:first-child {
+          width: 50%;
+        }
+
+        > div:last-child {
+          width: 50%;
+        }
+      }
+
+      > div.cagov-official-content {
+        > details.cagov-collapsible-content {
+          font-size: 0.875rem;
+
+          > summary {
+            position: relative;
+            right: 0.5rem;
+            width: fit-content;
+            padding: 0.35rem 0.5rem;
+
+            &::after {
+              margin-left: 0.5rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 /* global */
-details {
-  > summary {
-    list-style: none;
-    text-decoration: underline;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-
-    &:hover,
-    &:focus {
-      color: #000;
-    }
-
-    &::-webkit-details-marker {
-      display: none;
-    }
-
-    &::after {
-      content: "";
-      display: inline-block;
-      text-decoration: none;
-      position: relative;
-      width: 0.4rem;
-      height: 0.4rem;
-      border-top: 1px solid #000;
-      border-left: 1px solid #000;
-      transform: rotate(225deg);
-      transition: 200ms;
-      vertical-align: middle;
-    }
-  }
-
-  &[open] > summary::after {
-    transform: rotate(45deg);
-    top: 2px;
-  }
-}
 
 :focus {
   outline: 2px solid #0b8ee5;
@@ -120,53 +170,6 @@ a {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
-}
-
-.cagov-top-bar {
-  padding-top: 0.2rem;
-  padding-bottom: 0.5rem;
-  display: flex;
-  flex-direction: column;
-
-  @media (width >= 360px) {
-    flex-direction: row;
-    align-items: flex-start;
-
-    > div:first-child {
-      width: 62%;
-    }
-
-    > div:last-child {
-      width: 38%;
-    }
-  }
-  @media (width >= 450px) {
-    flex-direction: row;
-    align-items: flex-start;
-
-    > div:first-child {
-      width: 50%;
-    }
-
-    > div:last-child {
-      width: 50%;
-    }
-  }
-}
-
-details.cagov-collapsible-content {
-  font-size: 0.875rem;
-
-  > summary {
-    position: relative;
-    right: 0.5rem;
-    width: fit-content;
-    padding: 0.35rem 0.5rem;
-
-    &::after {
-      margin-left: 0.5rem;
-    }
-  }
 }
 
 details > div.collapsible-content {
