@@ -220,6 +220,10 @@ div.cagov-header-shell {
               border: 1px solid #72717c;
               min-height: 38px;
               margin-left: -1px;
+
+              > svg {
+                fill: #fff;
+              }
             }
           }
         }
