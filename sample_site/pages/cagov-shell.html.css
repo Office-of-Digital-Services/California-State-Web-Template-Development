@@ -21,15 +21,15 @@ div.cagov-header-shell {
 
   /* global */
 
-  :focus {
+  & :focus {
     outline: 2px solid #0b8ee5;
   }
 
-  .bold {
+  & .bold {
     font-weight: 700;
   }
 
-  a {
+  & a {
     color: #046b99;
 
     &:hover,
@@ -38,7 +38,7 @@ div.cagov-header-shell {
     }
   }
 
-  .cagov-sr-only {
+  & .cagov-sr-only {
     position: absolute !important;
     width: 1px !important;
     height: 1px !important;
@@ -236,7 +236,7 @@ div.cagov-header-shell {
           }
         }
 
-        &.cagov-collapsible-content {
+        & .cagov-collapsible-content {
           font-size: 0.875rem;
 
           > summary {
@@ -245,7 +245,7 @@ div.cagov-header-shell {
           }
         }
 
-        &.cagov-collapsible-menu {
+        & .cagov-collapsible-menu {
           width: 100%;
           display: flex;
           flex-direction: column;
