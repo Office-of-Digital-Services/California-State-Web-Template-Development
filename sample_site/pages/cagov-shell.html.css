@@ -1,0 +1,311 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* cagov shell styles */
+div.cagov-header-shell {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    sans-serif;
+  color: #3b3a48;
+
+  /* global */
+
+  :focus {
+    outline: 2px solid #0b8ee5;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+
+  a {
+    color: #046b99;
+
+    &:hover,
+    &:focus {
+      color: #035376;
+    }
+  }
+
+  .cagov-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  > div.cagov-branding,
+  > div.cagov-utility {
+    > div.cagov-container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+
+      @media (width >= 576px) {
+        max-width: 540px;
+      }
+      @media (width >= 768px) {
+        max-width: 720px;
+      }
+      @media (width >= 992px) {
+        max-width: 960px;
+      }
+      @media (width >= 1200px) {
+        max-width: 1140px;
+      }
+    }
+  }
+
+  /* cagov branding styles */
+  > div.cagov-branding > div.cagov-header-branding {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @media (width >= 576px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    > a.cagov-logo-link {
+      display: inline-block;
+      padding: 0.5rem 0;
+
+      > svg {
+        max-width: 216px;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    /* Search styles */
+    > div.cagov-search > form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      max-width: 350px;
+
+      > input[type="search"] {
+        font-size: 1.1rem;
+        width: 100%;
+        max-height: 38px;
+        padding: 0 10px;
+        transition: border 0.4s;
+        border: 1px solid #72717c;
+        border-radius: 5px 0 0 5px;
+        height: 38px;
+        outline-offset: -2px;
+      }
+
+      > button#cagov-search-button {
+        outline-offset: -4px;
+        outline-color: #85cbf9;
+        background-color: #72717c;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        padding: 0 12px;
+        border: 1px solid #72717c;
+        min-height: 38px;
+        margin-left: -1px;
+
+        > svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  > div.cagov-utility {
+    background-color: #f5f9fa;
+    min-height: 42px;
+
+    > div.cagov-top-bar {
+      padding-top: 0.2rem;
+      padding-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
+
+      @media (width >= 360px) {
+        flex-direction: row;
+        align-items: flex-start;
+
+        > div:first-child {
+          width: 62%;
+        }
+
+        > div:last-child {
+          width: 38%;
+        }
+      }
+      @media (width >= 450px) {
+        flex-direction: row;
+        align-items: flex-start;
+
+        > div:first-child {
+          width: 50%;
+        }
+
+        > div:last-child {
+          width: 50%;
+        }
+      }
+
+      /* cagov menu styles */
+      > div.cagov-menu {
+        margin-left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @media (width >360px) {
+          margin-left: auto;
+          justify-content: flex-end;
+        }
+      }
+
+      > div.cagov-menu > details.cagov-collapsible-menu,
+      > div.cagov-official-content > details.cagov-collapsible-content {
+        > div.collapsible-content {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          line-height: 1.5;
+        }
+
+        > summary {
+          list-style: none;
+          text-decoration: underline;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          position: relative;
+          right: 0.5rem;
+
+          &:hover,
+          &:focus {
+            color: #000;
+          }
+
+          &::-webkit-details-marker {
+            display: none;
+          }
+
+          &::after {
+            margin-left: 0.5rem;
+            content: "";
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            transform: rotate(225deg);
+            transition: 200ms;
+            vertical-align: middle;
+          }
+        }
+
+        &.cagov-collapsible-content {
+          font-size: 0.875rem;
+
+          > summary {
+            width: fit-content;
+            padding: 0.35rem 0.5rem;
+          }
+        }
+
+        &.cagov-collapsible-menu {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+
+          > summary {
+            text-align: left;
+            padding: 0.35rem 0.5rem;
+
+            @media (width >= 360px) {
+              text-align: right;
+              width: fit-content;
+              align-self: flex-end;
+              right: 0;
+              left: 0.5rem;
+            }
+          }
+
+          > div.collapsible-content > nav > ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 0;
+
+            @media (width >= 991px) {
+              flex-direction: row;
+            }
+
+            > li {
+              text-align: left;
+
+              > a {
+                padding: 0;
+                outline-offset: 0.375rem;
+              }
+            }
+
+            @media (width >= 360px) {
+              gap: 1rem;
+              align-items: flex-end;
+              justify-content: flex-end;
+
+              > li {
+                text-align: right;
+
+                > a {
+                  padding: 0.5rem 0.35rem;
+                }
+              }
+            }
+          }
+        }
+
+        &[open] > summary::after {
+          transform: rotate(45deg);
+          top: 2px;
+        }
+      }
+    }
+  }
+}
