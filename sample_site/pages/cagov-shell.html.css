@@ -58,24 +58,27 @@ div.cagov-header-shell {
     padding: 0;
   }
 
-  div.cagov-container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+  > div.cagov-branding,
+  > div.cagov-utility {
+    > div.cagov-container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
 
-    @media (width >= 576px) {
-      max-width: 540px;
-    }
-    @media (width >= 768px) {
-      max-width: 720px;
-    }
-    @media (width >= 992px) {
-      max-width: 960px;
-    }
-    @media (width >= 1200px) {
-      max-width: 1140px;
+      @media (width >= 576px) {
+        max-width: 540px;
+      }
+      @media (width >= 768px) {
+        max-width: 720px;
+      }
+      @media (width >= 992px) {
+        max-width: 960px;
+      }
+      @media (width >= 1200px) {
+        max-width: 1140px;
+      }
     }
   }
 
@@ -178,23 +181,6 @@ div.cagov-header-shell {
         }
       }
 
-      > div.cagov-official-content {
-        > details.cagov-collapsible-content {
-          font-size: 0.875rem;
-
-          > summary {
-            position: relative;
-            right: 0.5rem;
-            width: fit-content;
-            padding: 0.35rem 0.5rem;
-
-            &::after {
-              margin-left: 0.5rem;
-            }
-          }
-        }
-      }
-
       /* cagov menu styles */
       > div.cagov-menu {
         margin-left: 0;
@@ -214,15 +200,8 @@ div.cagov-header-shell {
 
           > summary {
             text-align: left;
-            cursor: pointer;
             list-style: none;
-            position: relative;
-            right: 0.5rem;
             padding: 0.35rem 0.5rem;
-
-            &::after {
-              margin-left: 0.5rem;
-            }
 
             @media (width >= 360px) {
               text-align: right;
@@ -286,6 +265,8 @@ div.cagov-header-shell {
           cursor: pointer;
           display: inline-flex;
           align-items: center;
+          position: relative;
+          right: 0.5rem;
 
           &:hover,
           &:focus {
@@ -297,6 +278,7 @@ div.cagov-header-shell {
           }
 
           &::after {
+            margin-left: 0.5rem;
             content: "";
             display: inline-block;
             text-decoration: none;
@@ -314,6 +296,15 @@ div.cagov-header-shell {
         &[open] > summary::after {
           transform: rotate(45deg);
           top: 2px;
+        }
+
+        &.cagov-collapsible-content {
+          font-size: 0.875rem;
+
+          > summary {
+            width: fit-content;
+            padding: 0.35rem 0.5rem;
+          }
         }
       }
     }
