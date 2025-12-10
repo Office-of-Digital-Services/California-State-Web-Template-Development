@@ -79,44 +79,6 @@ div.cagov-header-shell {
     }
   }
 
-  details {
-    > summary {
-      list-style: none;
-      text-decoration: underline;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-
-      &:hover,
-      &:focus {
-        color: #000;
-      }
-
-      &::-webkit-details-marker {
-        display: none;
-      }
-
-      &::after {
-        content: "";
-        display: inline-block;
-        text-decoration: none;
-        position: relative;
-        width: 0.4rem;
-        height: 0.4rem;
-        border-top: 1px solid #000;
-        border-left: 1px solid #000;
-        transform: rotate(225deg);
-        transition: 200ms;
-        vertical-align: middle;
-      }
-    }
-
-    &[open] > summary::after {
-      transform: rotate(45deg);
-      top: 2px;
-    }
-  }
-
   /* cagov branding styles */
   > div.cagov-branding > div.cagov-header-branding {
     display: flex;
@@ -142,42 +104,40 @@ div.cagov-header-shell {
     }
 
     /* Search styles */
-    > div.cagov-search {
-      > form {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        max-width: 350px;
+    > div.cagov-search > form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      max-width: 350px;
 
-        > input[type="search"] {
-          font-size: 1.1rem;
-          width: 100%;
-          max-height: 38px;
-          padding: 0 10px;
-          transition: border 0.4s;
-          border: 1px solid #72717c;
-          border-radius: 5px 0 0 5px;
-          height: 38px;
-          outline-offset: -2px;
-        }
+      > input[type="search"] {
+        font-size: 1.1rem;
+        width: 100%;
+        max-height: 38px;
+        padding: 0 10px;
+        transition: border 0.4s;
+        border: 1px solid #72717c;
+        border-radius: 5px 0 0 5px;
+        height: 38px;
+        outline-offset: -2px;
+      }
 
-        > button#cagov-search-button {
-          outline-offset: -4px;
-          outline-color: #85cbf9;
-          background-color: #72717c;
-          color: #fff;
-          border-radius: 0 5px 5px 0;
-          padding: 0 12px;
-          border: 1px solid #72717c;
-          min-height: 38px;
-          margin-left: -1px;
+      > button#cagov-search-button {
+        outline-offset: -4px;
+        outline-color: #85cbf9;
+        background-color: #72717c;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        padding: 0 12px;
+        border: 1px solid #72717c;
+        min-height: 38px;
+        margin-left: -1px;
 
-          > svg {
-            fill: #fff;
-          }
+        > svg {
+          fill: #fff;
         }
       }
     }
@@ -218,12 +178,6 @@ div.cagov-header-shell {
         }
       }
 
-      details > div.collapsible-content {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        line-height: 1.5;
-      }
-
       > div.cagov-official-content {
         > details.cagov-collapsible-content {
           font-size: 0.875rem;
@@ -242,7 +196,7 @@ div.cagov-header-shell {
       }
 
       /* cagov menu styles */
-      div.cagov-menu {
+      > div.cagov-menu {
         margin-left: 0;
         display: flex;
         align-items: center;
@@ -295,7 +249,7 @@ div.cagov-header-shell {
             > li {
               text-align: left;
 
-              a {
+              > a {
                 padding: 0;
                 outline-offset: 0.375rem;
               }
@@ -309,12 +263,57 @@ div.cagov-header-shell {
               > li {
                 text-align: right;
 
-                a {
+                > a {
                   padding: 0.5rem 0.35rem;
                 }
               }
             }
           }
+        }
+      }
+
+      > div.cagov-menu > details.cagov-collapsible-menu,
+      > div.cagov-official-content > details.cagov-collapsible-content {
+        > div.collapsible-content {
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          line-height: 1.5;
+        }
+
+        > summary {
+          list-style: none;
+          text-decoration: underline;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+
+          &:hover,
+          &:focus {
+            color: #000;
+          }
+
+          &::-webkit-details-marker {
+            display: none;
+          }
+
+          &::after {
+            content: "";
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            transform: rotate(225deg);
+            transition: 200ms;
+            vertical-align: middle;
+          }
+        }
+
+        &[open] > summary::after {
+          transform: rotate(45deg);
+          top: 2px;
         }
       }
     }
