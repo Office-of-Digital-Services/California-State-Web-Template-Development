@@ -293,11 +293,6 @@ div.cagov-header-shell {
           }
         }
 
-        &[open] > summary::after {
-          transform: rotate(45deg);
-          top: 2px;
-        }
-
         &.cagov-collapsible-content {
           font-size: 0.875rem;
 
@@ -305,6 +300,11 @@ div.cagov-header-shell {
             width: fit-content;
             padding: 0.35rem 0.5rem;
           }
+        }
+
+        &[open] > summary::after {
+          transform: rotate(45deg);
+          top: 2px;
         }
       }
     }
