@@ -26,7 +26,7 @@ div.cagov-header-shell {
   }
 
   /* Global utility styles */
-  & :focus {
+  :focus {
     outline: 2px solid #0b8ee5;
   }
 
