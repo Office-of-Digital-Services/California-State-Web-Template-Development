@@ -89,59 +89,71 @@ div.cagov-header-shell {
         display: flex;
         flex-wrap: wrap;
 
-        > button.cagov-utility-menu-button {
-          margin-left: auto;
-          background: none;
-          border: none;
-          color: #3b3a48;
-          font-size: 1rem;
-          cursor: pointer;
-          padding: 0.35rem 0.5rem;
-
-          &::after {
-            content: "";
-            display: inline-block;
-            text-decoration: none;
+        > details.cagov-utility-menu-button {
+          > summary {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: #3b3a48;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.35rem 0.5rem;
+            list-style: none;
+            text-decoration: underline;
+            display: inline-flex;
+            align-items: center;
             position: relative;
-            width: 0.4rem;
-            height: 0.4rem;
-            border-top: 1px solid #000;
-            border-left: 1px solid #000;
-            transform: rotate(225deg);
-            vertical-align: middle;
-            margin-left: 3px;
-            transition: transform 0.3s;
+            right: 0.5rem;
+
+            &:hover,
+            &:focus {
+              color: #000;
+            }
+
+            &::-webkit-details-marker {
+              display: none;
+            }
+
+            &::after {
+              margin-left: 0.5rem;
+              content: "";
+              display: inline-block;
+              text-decoration: none;
+              position: relative;
+              width: 0.4rem;
+              height: 0.4rem;
+              border-top: 1px solid #000;
+              border-left: 1px solid #000;
+              transform: rotate(225deg);
+              transition: 200ms;
+              vertical-align: middle;
+            }
           }
 
-          &[aria-expanded="true"]::after {
+          &[open] > summary::after {
             transform: rotate(45deg);
             top: 2px;
           }
-
-          &:focus,
-          &:hover {
-            color: #000;
-            outline-offset: -2px;
-          }
         }
 
-        > button.cagov-utility-search-button {
-          background: none;
-          border: none;
-          color: #3b3a48;
-          font-size: 1rem;
-          cursor: pointer;
-          padding: 0.2rem 0.35rem;
-          margin-left: 0;
-          position: relative;
-          left: 0.35rem;
-          top: 2px;
-          transition: color 0.2s;
-          width: 34px;
-          height: 30px;
+        > details.cagov-utility-search-button {
+          > summary {
+            width: 40px;
+            height: 40px;
+            list-style: none;
+            text-decoration: underline;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            right: 0.5rem;
 
-          &[aria-expanded="true"] {
-            > svg {
+            &:hover,
+            &:focus {
+              color: #000;
+            }
+
+            &::-webkit-details-marker {
               display: none;
             }
 
@@ -156,6 +168,22 @@ div.cagov-header-shell {
               background: #3b3a48;
               border-radius: 2px;
               transition: transform 0.3s;
+              opacity: 0;
+            }
+
+            > svg {
+              transition: transform 0.3s;
+            }
+          }
+
+          &[open] > summary {
+            > svg {
+              transform: scale(0);
+            }
+
+            &::before,
+            &::after {
+              opacity: 1;
             }
 
             &::before {
@@ -165,14 +193,6 @@ div.cagov-header-shell {
             &::after {
               transform: rotate(-45deg);
             }
-          }
-
-          &.rotating::before {
-            transform: rotate(135deg);
-          }
-
-          &.rotating::after {
-            transform: rotate(45deg);
           }
         }
 

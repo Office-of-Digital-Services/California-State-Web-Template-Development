@@ -42,18 +42,12 @@ title: Components and patterns
         </div>
 
         <!--cagov menu-->
-        <button
-          class="cagov-utility-menu-button"
-          aria-expanded="false"
-          aria-controls="cagov-utility-menu">
-          <span class="underline">ca.gov menu</span>
-        </button>
+        <details class="cagov-utility-menu-button" name="buttongroup">
+          <summary class="underline">ca.gov menu</summary>
+        </details>
 
         <!--cagov collapsible menu content-->
-        <div
-          class="collapsible-content"
-          id="cagov-utility-menu"
-          hidden="hidden">
+        <div class="collapsible-content" id="cagov-utility-menu">
           <nav aria-label="ca.gov navigation">
             <ul>
               <li>
@@ -96,28 +90,25 @@ title: Components and patterns
         <!--end cagov menu-->
 
         <!--Search-->
-        <button
-          class="cagov-utility-search-button"
-          aria-expanded="false"
-          aria-controls="cagov-utility-search">
-          <span class="cagov-sr-only">CA.gov search</span>
-          <svg
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 2400 2400">
-            <path
-              d="M2253 1833l-71-59-224-181-317-262c65-116 99-245 99-376c0-195-75-390-226-541-147-147-342-219-541-219-411 0-760 349-760 760c0 414 343 764 757 764c154 0 308-46 439-136l326 270l223 180l77 64c38 31 93 26 124-12l106-128c31-37 26-93-12-124zm-945-546c-92 92-212 137-335 137-250 0-466-212-466-469c0-250 212-466 466-466c260 0 472 212 472 466c0 120-48 240-137 332z" />
-          </svg>
-        </button>
+
+        <details class="cagov-utility-search-button" name="buttongroup">
+          <summary>
+            <span class="cagov-sr-only">CA.gov search</span>
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 2400 2400">
+              <path
+                d="M2253 1833l-71-59-224-181-317-262c65-116 99-245 99-376c0-195-75-390-226-541-147-147-342-219-541-219-411 0-760 349-760 760c0 414 343 764 757 764c154 0 308-46 439-136l326 270l223 180l77 64c38 31 93 26 124-12l106-128c31-37 26-93-12-124zm-945-546c-92 92-212 137-335 137-250 0-466-212-466-469c0-250 212-466 466-466c260 0 472 212 472 466c0 120-48 240-137 332z" />
+            </svg>
+          </summary>
+        </details>
         <!--End search-->
 
         <!-- collapsible search content-->
-        <div
-          class="collapsible-content cagov-search"
-          id="cagov-utility-search"
-          hidden="hidden">
+        <div class="collapsible-content cagov-search">
           <form
             action="https://www.ca.gov/search/"
             method="get"
