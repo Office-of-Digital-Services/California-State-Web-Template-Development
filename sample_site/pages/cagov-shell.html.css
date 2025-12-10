@@ -23,7 +23,6 @@ div.cagov-header-shell {
 
   :focus {
     outline: 2px solid #0b8ee5;
-    background-color: red;
   }
 
   & .bold {
