@@ -89,6 +89,16 @@ div.cagov-header-shell {
         display: flex;
         flex-wrap: wrap;
 
+        > details[name="buttongroup"] {
+          + div {
+            display: none;
+          }
+
+          &[open] + div {
+            display: block;
+          }
+        }
+
         > details.cagov-utility-menu-button {
           > summary {
             margin-left: auto;
