@@ -30,7 +30,7 @@ div.cagov-header-shell {
     outline: 2px solid #0b8ee5;
   }
 
-  a {
+  & a {
     color: #046b99;
 
     &:hover,
@@ -39,15 +39,15 @@ div.cagov-header-shell {
     }
   }
 
-  .underline {
+  & .underline {
     text-decoration: underline;
   }
 
-  .d-none {
+  & .d-none {
     display: none;
   }
 
-  .cagov-sr-only {
+  & .cagov-sr-only {
     position: absolute !important;
     width: 1px !important;
     height: 1px !important;
