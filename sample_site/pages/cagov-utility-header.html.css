@@ -39,14 +39,6 @@ div.cagov-header-shell {
     }
   }
 
-  & .underline {
-    text-decoration: underline;
-  }
-
-  & .d-none {
-    display: none;
-  }
-
   & .cagov-sr-only {
     position: absolute !important;
     width: 1px !important;
@@ -177,6 +169,7 @@ div.cagov-header-shell {
               display: none;
             }
 
+            /* Draws the "X" icon lines */
             &::before,
             &::after {
               content: "";
