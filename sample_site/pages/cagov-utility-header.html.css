@@ -39,7 +39,7 @@ div.cagov-header-shell {
     }
   }
 
-  & .cagov-sr-only {
+  .cagov-sr-only {
     position: absolute !important;
     width: 1px !important;
     height: 1px !important;
