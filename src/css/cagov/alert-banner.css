@@ -62,7 +62,7 @@
     margin-left: 2.5rem;
   }
 
-  img,
+  & img,
   .alert-img {
     max-width: 28px;
     max-height: 28px;
@@ -83,7 +83,7 @@
     background: none;
   }
 
-  a:not(.btn),
+  & a:not(.btn),
   .close {
     color: var(--white, #fff);
 

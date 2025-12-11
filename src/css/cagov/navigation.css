@@ -143,7 +143,7 @@
   margin: 0;
   padding: 0;
 
-  a {
+  & a {
     text-decoration: none;
 
     &:focus {
@@ -549,7 +549,7 @@
       margin: 0 2px;
       text-decoration: none;
 
-      span[class^="ca-gov-icon"]:not(.carrot) {
+      & span[class^="ca-gov-icon"]:not(.carrot) {
         font-size: 1.5rem;
         display: inline-block;
         vertical-align: -2px;
@@ -717,8 +717,8 @@
         .unit1 {
           min-height: unset !important;
 
-          a.second-level-link:hover,
-          a.second-level-link:focus {
+          & a.second-level-link:hover,
+          & a.second-level-link:focus {
             background-color: var(--gray-50, #fafafa);
             text-decoration: none;
           }

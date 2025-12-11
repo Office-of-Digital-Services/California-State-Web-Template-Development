@@ -8,7 +8,7 @@
   transform: translateX(-50%);
   z-index: 999;
 
-  a {
+  & a {
     width: 1px;
     height: 1px;
     text-align: center;

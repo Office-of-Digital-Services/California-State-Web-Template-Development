@@ -41,7 +41,7 @@ header.nav-overlay {
   min-height: 1.75rem;
   margin: 0.4rem 0 0 auto;
 
-  span {
+  & span {
     height: 3px;
     width: 32px;
     display: block;
@@ -67,20 +67,20 @@ header.nav-overlay {
   }
 
   &[aria-expanded="true"] {
-    span:nth-child(1) {
+    & span:nth-child(1) {
       top: 12px;
       width: 0%;
     }
 
-    span:nth-child(2) {
+    & span:nth-child(2) {
       transform: rotate(45deg);
     }
 
-    span:nth-child(3) {
+    & span:nth-child(3) {
       transform: rotate(-45deg);
     }
 
-    span:nth-child(4) {
+    & span:nth-child(4) {
       top: 12px;
       width: 0%;
     }

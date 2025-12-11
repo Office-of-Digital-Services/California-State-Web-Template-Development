@@ -12,7 +12,7 @@
   border: none;
   background-color: var(--color-s1, #eef8fb);
 
-  img {
+  & img {
     max-width: 100px;
     max-height: 100px;
     border-radius: 50%;
@@ -25,7 +25,7 @@
     border-left: 1px solid var(--gray-900, #3b3a48);
   }
 
-  p,
+  & p,
   .executive-name {
     margin-top: 4px;
     margin-bottom: 4px;
