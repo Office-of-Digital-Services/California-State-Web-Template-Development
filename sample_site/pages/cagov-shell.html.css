@@ -58,9 +58,10 @@ div.cagov-header-shell {
     padding: 0;
   }
 
-  > div.cagov-branding,
-  > div.cagov-utility {
-    > div.cagov-container {
+  > div.cagov-header-shell__1-bottom-bar,
+  > div.cagov-header-shell__1-utility {
+    > div.cagov-header-shell__2-top-bar,
+    > div.cagov-header-shell__2-branding {
       width: 100%;
       padding-right: 15px;
       padding-left: 15px;
@@ -83,7 +84,7 @@ div.cagov-header-shell {
   }
 
   /* cagov branding styles */
-  > div.cagov-branding > div.cagov-header-branding {
+  > div.cagov-header-shell__1-bottom-bar > div.cagov-header-shell__2-branding {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -94,7 +95,7 @@ div.cagov-header-shell {
       justify-content: space-between;
     }
 
-    > a.cagov-logo-link {
+    > a.cagov-header-shell__3-logo-link {
       display: inline-block;
       padding: 0.5rem 0;
 
@@ -107,7 +108,7 @@ div.cagov-header-shell {
     }
 
     /* Search styles */
-    > div.cagov-search > form {
+    > div.cagov-header-shell__3-search > form {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -128,7 +129,7 @@ div.cagov-header-shell {
         outline-offset: -2px;
       }
 
-      > button#cagov-search-button {
+      > button[type="submit"] {
         outline-offset: -4px;
         outline-color: #85cbf9;
         background-color: #72717c;
@@ -146,11 +147,11 @@ div.cagov-header-shell {
     }
   }
 
-  > div.cagov-utility {
+  > div.cagov-header-shell__1-utility {
     background-color: #f5f9fa;
     min-height: 42px;
 
-    > div.cagov-top-bar {
+    > div.cagov-header-shell__2-top-bar {
       padding-top: 0.2rem;
       padding-bottom: 0.5rem;
       display: flex;
@@ -181,8 +182,17 @@ div.cagov-header-shell {
         }
       }
 
+      > div.cagov-header-shell__3-official-content > details {
+        font-size: 0.875rem;
+
+        > summary {
+          width: fit-content;
+          padding: 0.35rem 0.5rem;
+        }
+      }
+
       /* cagov menu styles */
-      > div.cagov-menu {
+      > div.cagov-header-shell__3-menu {
         margin-left: 0;
         display: flex;
         align-items: center;
@@ -192,118 +202,111 @@ div.cagov-header-shell {
           margin-left: auto;
           justify-content: flex-end;
         }
-      }
 
-      > div.cagov-official-content > details.cagov-collapsible-content {
-        font-size: 0.875rem;
-
-        > summary {
-          width: fit-content;
-          padding: 0.35rem 0.5rem;
-        }
-      }
-
-      > div.cagov-menu > details.cagov-collapsible-menu {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-
-        > summary {
-          text-align: left;
-          padding: 0.35rem 0.5rem;
-
-          @media (width >= 360px) {
-            text-align: right;
-            width: fit-content;
-            align-self: flex-end;
-            right: 0;
-            left: 0.5rem;
-          }
-        }
-
-        > div.collapsible-content > nav > ul {
-          list-style: none;
+        > details {
+          width: 100%;
           display: flex;
           flex-direction: column;
-          gap: 0.5rem;
-          align-items: flex-start;
-          justify-content: flex-start;
-          padding: 0;
 
-          @media (width >= 991px) {
-            flex-direction: row;
-          }
-
-          > li {
+          > summary {
             text-align: left;
+            padding: 0.35rem 0.5rem;
 
-            > a {
-              padding: 0;
-              outline-offset: 0.375rem;
+            @media (width >= 360px) {
+              text-align: right;
+              width: fit-content;
+              align-self: flex-end;
+              right: 0;
+              left: 0.5rem;
             }
           }
 
-          @media (width >= 360px) {
-            gap: 1rem;
-            align-items: flex-end;
-            justify-content: flex-end;
+          > div > nav > ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 0;
+
+            @media (width >= 991px) {
+              flex-direction: row;
+            }
 
             > li {
-              text-align: right;
+              text-align: left;
 
               > a {
-                padding: 0.5rem 0.35rem;
+                padding: 0;
+                outline-offset: 0.375rem;
+              }
+            }
+
+            @media (width >= 360px) {
+              gap: 1rem;
+              align-items: flex-end;
+              justify-content: flex-end;
+
+              > li {
+                text-align: right;
+
+                > a {
+                  padding: 0.5rem 0.35rem;
+                }
               }
             }
           }
         }
       }
 
-      > div.cagov-menu > details.cagov-collapsible-menu,
-      > div.cagov-official-content > details.cagov-collapsible-content {
-        > div.collapsible-content {
-          padding-top: 1rem;
-          padding-bottom: 1rem;
-          line-height: 1.5;
-        }
-
-        > summary {
-          list-style: none;
-          text-decoration: underline;
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
-          position: relative;
-          right: 0.5rem;
-
-          &:hover,
-          &:focus {
-            color: #000;
+      > div.cagov-header-shell__3-menu,
+      > div.cagov-header-shell__3-official-content {
+        > details {
+          > div {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            line-height: 1.5;
           }
 
-          &::-webkit-details-marker {
-            display: none;
-          }
-
-          &::after {
-            margin-left: 0.5rem;
-            content: "";
-            display: inline-block;
-            text-decoration: none;
+          > summary {
+            list-style: none;
+            text-decoration: underline;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
             position: relative;
-            width: 0.4rem;
-            height: 0.4rem;
-            border-top: 1px solid #000;
-            border-left: 1px solid #000;
-            transform: rotate(225deg);
-            transition: 200ms;
-            vertical-align: middle;
-          }
-        }
+            right: 0.5rem;
 
-        &[open] > summary::after {
-          transform: rotate(45deg);
-          top: 2px;
+            &:hover,
+            &:focus {
+              color: #000;
+            }
+
+            &::-webkit-details-marker {
+              display: none;
+            }
+
+            &::after {
+              margin-left: 0.5rem;
+              content: "";
+              display: inline-block;
+              text-decoration: none;
+              position: relative;
+              width: 0.4rem;
+              height: 0.4rem;
+              border-top: 1px solid #000;
+              border-left: 1px solid #000;
+              transform: rotate(225deg);
+              transition: 200ms;
+              vertical-align: middle;
+            }
+          }
+
+          &[open] > summary::after {
+            transform: rotate(45deg);
+            top: 2px;
+          }
         }
       }
     }

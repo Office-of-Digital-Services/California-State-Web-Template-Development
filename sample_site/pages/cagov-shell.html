@@ -8,12 +8,12 @@ title: Components and patterns
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 <div class="cagov-header-shell">
-  <div class="cagov-utility">
-    <div class="cagov-container cagov-top-bar">
-      <div class="cagov-official-content">
-        <details class="cagov-collapsible-content">
+  <div class="cagov-header-shell__1-utility">
+    <div class="cagov-header-shell__2-top-bar">
+      <div class="cagov-header-shell__3-official-content">
+        <details>
           <summary>Official California website</summary>
-          <div class="collapsible-content">
+          <div>
             <span class="bold">California government websites use .ca.gov </span
             ><br />
             A .ca.gov website is part of California’s government.
@@ -21,43 +21,25 @@ title: Components and patterns
         </details>
       </div>
 
-      <div class="cagov-menu">
-        <details class="cagov-collapsible-menu">
-          <summary>ca.gov menu</summary>
-          <div class="collapsible-content">
+      <div class="cagov-header-shell__3-menu">
+        <details>
+          <summary>CA.gov menu</summary>
+          <div>
             <nav aria-label="ca.gov navigation">
               <ul>
                 <li>
-                  <a
-                    href="https://www.ca.gov/services/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Services</a
-                  >
+                  <a href="https://www.ca.gov/services/">Services</a>
                 </li>
                 <li>
-                  <a
-                    href="https://www.ca.gov/departments/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Departments</a
-                  >
+                  <a href="https://www.ca.gov/departments/">Departments</a>
                 </li>
                 <li>
-                  <a
-                    href="https://www.ca.gov/about-california/"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <a href="https://www.ca.gov/about-california/"
                     >About California</a
                   >
                 </li>
                 <li>
-                  <a
-                    href="https://www.ca.gov/support/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Get help</a
-                  >
+                  <a href="https://www.ca.gov/support/">Get help</a>
                 </li>
               </ul>
             </nav>
@@ -66,17 +48,19 @@ title: Components and patterns
       </div>
       <!--end cagov-menu-->
     </div>
-    <!--end agov-top-bar cagov-container-->
+    <!--end cagov-top-bar -->
   </div>
-  <!--end top-bar-->
-  <div class="cagov-branding">
-    <div class="cagov-container cagov-header-branding">
+  <!--end cagov-header-shell__1-utility-->
+  <div class="cagov-header-shell__1-bottom-bar">
+    <div class="cagov-header-shell__2-branding">
       <a
         href="https://www.ca.gov/"
-        class="cagov-logo-link"
+        class="cagov-header-shell__3-logo-link"
         aria-label="Go to the California state government homepage">
-        <?xml version="1.0" encoding="UTF-8"?>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 837">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 3000 837"
+          title="CA.gov logo">
           <defs>
             <linearGradient
               id="grad0"
@@ -115,20 +99,20 @@ title: Components and patterns
             d="M1550 250l-28 -80l-28 80h-84l68 52l-24 80l68 -52l68 52l-24 -80l68 -52h-84Z" />
         </svg>
       </a>
-      <div class="cagov-search">
+      <div class="cagov-header-shell__3-search">
         <form
           action="https://www.ca.gov/search/"
           method="get"
           role="search"
-          aria-label="Search ca.gov">
+          aria-label="Search CA.gov">
           <label for="cagov-search-input" class="cagov-sr-only"
-            >Search ca.gov</label
+            >Search CA.gov</label
           >
           <input
             type="search"
             id="cagov-search-input"
             name="q"
-            placeholder="Search ca.gov"
+            placeholder="Search CA.gov"
             aria-describedby="cagov-search-button" />
           <button
             type="submit"
@@ -146,11 +130,11 @@ title: Components and patterns
           </button>
         </form>
       </div>
-      <!--end cagov-search-->
+      <!--end cagov-header-shell__3-search-->
     </div>
-    <!--end cagov-container-->
+    <!--end cagov-header-shell__2-branding-->
   </div>
-  <!--end cagov-branding-->
+  <!--end cagov-header-shell__1-bottom-bar-->
 </div>
 <!--end cagov-header-shell-->
 

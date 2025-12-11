@@ -12,17 +12,18 @@ title: Components and patterns
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 <div class="cagov-header-shell">
-  <div class="cagov-utility">
-    <div class="cagov-container">
-      <div class="cagov-utility-bar">
+  <div class="cagov-header-shell__1-utility">
+    <div class="cagov-header-shell__2-container">
+      <div class="cagov-header-shell__3-utility-bar">
         <!-- CA.gov Logo -->
-        <div class="cagov-logo">
-          <a href="https://www.ca.gov" class="cagov-utility-link"
-            ><span class="cagov-sr-only">CA.gov</span>
+        <div class="cagov-header-shell__4-logo">
+          <a href="https://www.ca.gov"
+            ><span class="cagov-sr-only" lang="en">CA.gov website</span>
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 531 300">
+              viewBox="0 0 531 300"
+              title="CA.gov Logo">
               <path
                 fill="#2F85B0"
                 d="M316 122h5c10 0 21 4 31 8c1 1 3 1 4 2c1 0 1 0 2 1l22-57l21 53h12c14 0 27 2 39 5L405 12h-51l-43 111c1-1 3-1 5-1z" />
@@ -42,45 +43,29 @@ title: Components and patterns
         </div>
 
         <!--cagov menu-->
-        <details class="cagov-utility-menu-button" name="buttongroup">
-          <summary class="underline">ca.gov menu</summary>
+        <details
+          class="cagov-header-shell__4-menu-button"
+          name="cagov-header-shell__buttongroup">
+          <summary lang="en">CA.gov menu</summary>
         </details>
 
         <!--cagov collapsible menu content-->
-        <div class="collapsible-content" id="cagov-utility-menu">
-          <nav aria-label="ca.gov navigation">
+        <div class="cagov-header-shell__4-utility-menu">
+          <nav aria-label="CA.gov navigation">
             <ul>
               <li>
-                <a
-                  href="https://www.ca.gov/services/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Services</a
-                >
+                <a href="https://www.ca.gov/services/">Services</a>
               </li>
               <li>
-                <a
-                  href="https://www.ca.gov/departments/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Departments</a
-                >
+                <a href="https://www.ca.gov/departments/">Departments</a>
               </li>
               <li>
-                <a
-                  href="https://www.ca.gov/about-california/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <a href="https://www.ca.gov/about-california/"
                   >About California</a
                 >
               </li>
               <li>
-                <a
-                  href="https://www.ca.gov/support/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Get help</a
-                >
+                <a href="https://www.ca.gov/support/">Get help</a>
               </li>
             </ul>
           </nav>
@@ -91,9 +76,11 @@ title: Components and patterns
 
         <!--Search-->
 
-        <details class="cagov-utility-search-button" name="buttongroup">
+        <details
+          class="cagov-header-shell__4-search-button"
+          name="cagov-header-shell__buttongroup">
           <summary>
-            <span class="cagov-sr-only">CA.gov search</span>
+            <span class="cagov-sr-only" lang="en">CA.gov search</span>
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -108,25 +95,26 @@ title: Components and patterns
         <!--End search-->
 
         <!-- collapsible search content-->
-        <div class="collapsible-content cagov-search">
+        <div class="cagov-header-shell__4-search">
           <form
             action="https://www.ca.gov/search/"
             method="get"
             role="search"
-            aria-label="Search ca.gov">
-            <label for="cagov-search-input" class="cagov-sr-only"
-              >Search ca.gov</label
+            aria-label="Search CA.gov">
+            <label
+              id="cagov-search-label"
+              for="cagov-search-input"
+              class="cagov-sr-only"
+              lang="en"
+              >Search CA.gov</label
             >
             <input
               type="search"
               id="cagov-search-input"
               name="q"
-              placeholder="Search ca.gov"
-              aria-describedby="cagov-search-button" />
-            <button
-              type="submit"
-              id="cagov-search-button"
-              aria-label="Submit search">
+              placeholder="Search CA.gov"
+              aria-describedby="cagov-search-label" />
+            <button type="submit" aria-label="Submit search">
               <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
