@@ -661,7 +661,7 @@ textarea.sourcecode {
   color: var(--white, #fff);
 
   /* stylelint-disable-next-line no-descending-specificity */
-  a:not(.btn) {
+  & a:not(.btn) {
     color: var(--white, #fff);
     text-decoration: underline;
 
