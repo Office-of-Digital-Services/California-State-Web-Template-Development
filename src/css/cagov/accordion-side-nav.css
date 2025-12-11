@@ -291,7 +291,7 @@ cagov-accordion.sidenav {
       }
 
       &[open] {
-        & summary {
+        > summary {
           color: var(--black, #000);
 
           &::after {
