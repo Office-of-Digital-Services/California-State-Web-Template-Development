@@ -447,7 +447,7 @@ button.gsc-search-button {
 
 /* ------------- Custom search box (not google) -------------- */
 .search-container {
-  #Search {
+  & #Search {
     display: flex;
 
     .gsc-search-button {
@@ -491,10 +491,10 @@ button.gsc-search-button {
       }
     }
 
-    .close-search-btn {
+    & .close-search-btn {
       display: block;
 
-      .sr-only {
+      & .sr-only {
         color: var(--color-p2, #046b99);
         text-decoration: underline;
 
@@ -583,7 +583,7 @@ button.gsc-search-button {
 }
 
 .featured-search {
-  div.gsc-clear-button {
+  & div.gsc-clear-button {
     width: 0;
 
     &::before {
@@ -596,15 +596,15 @@ button.gsc-search-button {
     margin-right: -60px;
   }
 
-  .container {
+  & .container {
     padding: 0 !important;
 
-    #Search {
-      .gsc-search-button {
+    & #Search {
+      & .gsc-search-button {
         outline-offset: -4px;
       }
 
-      .close-search-btn {
+      & .close-search-btn {
         display: none;
       }
     }
