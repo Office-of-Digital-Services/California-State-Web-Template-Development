@@ -6,13 +6,13 @@
 /* accordion component specific classes */
 
 /* initial styles */
-cagov-accordion details {
+cagov-accordion > details {
   margin-bottom: 0;
   min-height: 3rem;
   margin-top: 1rem;
   overflow: visible;
 
-  summary {
+  > summary {
     cursor: pointer;
     padding: 0.5rem 3rem 0.5rem 3.75rem;
     background-color: var(--gray-50, #fafafa);
@@ -82,52 +82,52 @@ cagov-accordion details {
 
 /* styles applied after custom element javascript runs */
 cagov-accordion:defined {
-  details {
+  > details {
     transition: height 0.2s;
     height: 3rem;
     overflow: visible;
-  }
 
-  summary::-webkit-details-marker {
-    display: none;
-  }
+    > summary {
+      list-style: none;
+      border-radius: 4px;
 
-  details summary {
-    list-style: none;
-    border-radius: 4px;
-
-    &:focus {
-      &::before {
-        background-color: var(--gray-100, #f3f3f4);
-      }
-
-      &::after {
-        outline: 2px solid var(--outline-default-color);
-        outline-offset: -2px;
-      }
-    }
-  }
-
-  details[open] {
-    height: auto;
-
-    .cagov-open-indicator {
-      &::before {
-        transform: rotate(90deg) translateY(-0.2rem);
-      }
-    }
-
-    summary {
-      border-radius: 4px 4px 0 0;
-
-      &::before {
-        border-radius: 3px 0 0;
-        background-color: var(--gray-100, #f3f3f4);
+      &::-webkit-details-marker {
+        display: none;
       }
 
       &:focus {
+        &::before {
+          background-color: var(--gray-100, #f3f3f4);
+        }
+
         &::after {
-          border-radius: 3px 3px 0 0;
+          outline: 2px solid var(--outline-default-color);
+          outline-offset: -2px;
+        }
+      }
+    }
+
+    &[open] {
+      height: auto;
+
+      .cagov-open-indicator {
+        &::before {
+          transform: rotate(90deg) translateY(-0.2rem);
+        }
+      }
+
+      > summary {
+        border-radius: 4px 4px 0 0;
+
+        &::before {
+          border-radius: 3px 0 0;
+          background-color: var(--gray-100, #f3f3f4);
+        }
+
+        &:focus {
+          &::after {
+            border-radius: 3px 3px 0 0;
+          }
         }
       }
     }
