@@ -157,7 +157,7 @@
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
-  a:not(.btn) {
+  & a:not(.btn) {
     color: var(--white, #fff);
 
     &:hover,
