@@ -283,7 +283,7 @@ a.second-level-link {
 }
 
 .mobile-controls {
-  .toggle-menu {
+  & .toggle-menu {
     border: none;
     background: none;
 
