@@ -18,7 +18,7 @@ title: Components and patterns
         <!-- CA.gov Logo -->
         <div class="cagov-header-shell__4-logo">
           <a href="https://www.ca.gov"
-            ><span class="cagov-sr-only">CA.gov</span>
+            ><span class="cagov-sr-only" lang="en">CA.gov</span>
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -42,45 +42,29 @@ title: Components and patterns
         </div>
 
         <!--cagov menu-->
-        <details class="cagov-header-shell__4-menu-button" name="buttongroup">
+        <details
+          class="cagov-header-shell__4-menu-button"
+          name="cagov-header-shell__buttongroup">
           <summary class="underline">ca.gov menu</summary>
         </details>
 
         <!--cagov collapsible menu content-->
-        <div class="cagov-utility-menu">
+        <div class="cagov-header-shell__4-utility-menu">
           <nav aria-label="ca.gov navigation">
             <ul>
               <li>
-                <a
-                  href="https://www.ca.gov/services/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Services</a
-                >
+                <a href="https://www.ca.gov/services/">Services</a>
               </li>
               <li>
-                <a
-                  href="https://www.ca.gov/departments/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Departments</a
-                >
+                <a href="https://www.ca.gov/departments/">Departments</a>
               </li>
               <li>
-                <a
-                  href="https://www.ca.gov/about-california/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <a href="https://www.ca.gov/about-california/"
                   >About California</a
                 >
               </li>
               <li>
-                <a
-                  href="https://www.ca.gov/support/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Get help</a
-                >
+                <a href="https://www.ca.gov/support/">Get help</a>
               </li>
             </ul>
           </nav>
@@ -91,9 +75,11 @@ title: Components and patterns
 
         <!--Search-->
 
-        <details class="cagov-utility-search-button" name="buttongroup">
+        <details
+          class="cagov-header-shell__4-search-button"
+          name="cagov-header-shell__buttongroup">
           <summary>
-            <span class="cagov-sr-only">CA.gov search</span>
+            <span class="cagov-sr-only" lang="en">CA.gov search</span>
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -108,13 +94,17 @@ title: Components and patterns
         <!--End search-->
 
         <!-- collapsible search content-->
-        <div class="cagov-search">
+        <div class="cagov-header-shell__4-search">
           <form
             action="https://www.ca.gov/search/"
             method="get"
             role="search"
             aria-label="Search ca.gov">
-            <label for="cagov-search-input" class="cagov-sr-only"
+            <label
+              id="cagov-search-label"
+              for="cagov-search-input"
+              class="cagov-sr-only"
+              lang="en"
               >Search ca.gov</label
             >
             <input
@@ -122,11 +112,8 @@ title: Components and patterns
               id="cagov-search-input"
               name="q"
               placeholder="Search ca.gov"
-              aria-describedby="cagov-search-button" />
-            <button
-              type="submit"
-              id="cagov-search-button"
-              aria-label="Submit search">
+              aria-describedby="cagov-search-label" />
+            <button type="submit" aria-label="Submit search">
               <svg
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"

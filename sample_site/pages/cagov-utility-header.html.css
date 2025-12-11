@@ -89,7 +89,7 @@ div.cagov-header-shell {
         display: flex;
         flex-wrap: wrap;
 
-        > details[name="buttongroup"] {
+        > details[name="cagov-header-shell__buttongroup"] {
           + div {
             display: none;
           }
@@ -160,7 +160,7 @@ div.cagov-header-shell {
           }
         }
 
-        > details.cagov-utility-search-button {
+        > details.cagov-header-shell__4-search-button {
           > summary {
             cursor: pointer;
             display: inline-flex;
@@ -217,8 +217,8 @@ div.cagov-header-shell {
         }
 
         /* Collapsible content styles */
-        > div.cagov-utility-menu,
-        > div.cagov-search {
+        > div.cagov-header-shell__4-utility-menu,
+        > div.cagov-header-shell__4-search {
           background-color: #f5f9fa;
           padding-top: 1rem;
           padding-bottom: 1rem;
@@ -228,7 +228,7 @@ div.cagov-header-shell {
         }
 
         /* Navigation styles */
-        > div.cagov-utility-menu > nav > ul {
+        > div.cagov-header-shell__4-utility-menu > nav > ul {
           list-style: none;
           display: flex;
           flex-direction: column;
@@ -250,7 +250,7 @@ div.cagov-header-shell {
         }
 
         /* Search styles */
-        > div.cagov-search > form {
+        > div.cagov-header-shell__4-search > form {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -268,7 +268,7 @@ div.cagov-header-shell {
             outline-offset: -2px;
           }
 
-          > button#cagov-search-button {
+          > button[type="submit"] {
             outline-offset: -4px;
             outline-color: #85cbf9;
             background-color: #72717c;
