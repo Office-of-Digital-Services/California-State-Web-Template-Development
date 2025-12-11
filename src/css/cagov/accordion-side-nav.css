@@ -5,7 +5,7 @@
 
 /* Side nav */
 .accordion-list.list-group {
-  .list-group-item {
+  & .list-group-item {
     cursor: pointer;
 
     &:focus {
@@ -21,13 +21,13 @@
     &.open {
       background-color: var(--gray-50, #fafafa);
 
-      .rotate {
+      & .rotate {
         transform: rotate(90deg) !important;
       }
     }
 
     /* stylelint-disable-next-line no-descending-specificity */
-    .rotate {
+    & .rotate {
       position: absolute;
       right: 0;
       top: 0;
@@ -44,11 +44,11 @@
 }
 
 .side-nav {
-  .accordion {
+  & .accordion {
     position: relative;
 
     /* stylelint-disable-next-line no-descending-specificity */
-    .list-group-item {
+    & .list-group-item {
       border-radius: 0;
 
       &:focus {
@@ -57,10 +57,10 @@
       }
     }
 
-    .accordion__heading {
+    & .accordion__heading {
       padding: 0 !important;
 
-      .accordion__trigger {
+      & .accordion__trigger {
         padding: 0.75rem 1.25rem !important;
         text-decoration: none;
         font-weight: 500;
@@ -89,7 +89,7 @@
       }
 
       &.active {
-        .accordion__trigger {
+        & .accordion__trigger {
           color: var(--white, #fff) !important;
           background-color: var(--color-p2, #046b99);
 
@@ -103,14 +103,14 @@
   }
 
   &.section-understated {
-    .accordion {
-      .accordion__heading {
-        .accordion__trigger {
+    & .accordion {
+      & .accordion__heading {
+        & .accordion__trigger {
           color: var(--gray-800, #4a4958);
         }
 
         &.active {
-          .accordion__trigger {
+          & .accordion__trigger {
             background-color: var(--color-p2, #046b99) !important;
 
             &:hover,
@@ -124,10 +124,10 @@
   }
 
   &.section-standout {
-    .accordion {
-      .accordion__heading {
+    & .accordion {
+      & .accordion__heading {
         &.active {
-          .accordion__trigger {
+          & .accordion__trigger {
             color: var(--gray-800, #4a4958) !important;
             background-color: var(--gray-50, #fafafa) !important;
 
@@ -143,10 +143,10 @@
   }
 
   &.section-primary {
-    .accordion {
-      .accordion__heading {
+    & .accordion {
+      & .accordion__heading {
         &.active {
-          .accordion__trigger {
+          & .accordion__trigger {
             color: var(--gray-800, #4a4958) !important;
             background-color: var(--gray-50, #fafafa) !important;
 
@@ -165,13 +165,13 @@
 .side-subnav {
   padding-left: 0;
 
-  li {
+  & li {
     margin: 0;
     padding-left: 0;
     list-style: none;
     font-size: 1.125rem;
 
-    a {
+    & a {
       position: relative;
       display: block;
       padding-top: 0.7rem;
@@ -222,12 +222,12 @@
 }
 
 cagov-accordion.sidenav {
-  details {
+  > details {
     border: none;
     min-height: 2rem;
     margin-top: 0;
 
-    summary {
+    > summary {
       border: none;
       background: var(--white, #fff);
       padding: 0.7rem 2rem 0.7rem 1rem;
@@ -291,7 +291,7 @@ cagov-accordion.sidenav {
       }
 
       &[open] {
-        summary {
+        & summary {
           color: var(--black, #000);
 
           &::after {
@@ -300,7 +300,7 @@ cagov-accordion.sidenav {
         }
       }
 
-      .cagov-open-indicator {
+      & .cagov-open-indicator {
         left: unset !important;
         right: 2.7rem;
         top: 0.6rem !important;
@@ -311,16 +311,16 @@ cagov-accordion.sidenav {
       }
     }
 
-    .accordion-body {
+    & .accordion-body {
       padding: 0;
       border: none;
       outline: none;
 
-      .side-subnav {
+      & .side-subnav {
         margin-bottom: 0;
         margin-left: 0;
 
-        li {
+        & li {
           &:first-child {
             margin-top: 0;
           }
