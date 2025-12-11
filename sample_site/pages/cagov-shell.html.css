@@ -58,9 +58,10 @@ div.cagov-header-shell {
     padding: 0;
   }
 
-  > div.cagov-branding,
-  > div.cagov-utility {
-    > div.cagov-container {
+  > div.cagov-header-shell__1-branding,
+  > div.cagov-header-shell__1-utility {
+    > div.cagov-header-shell__2-top-bar,
+    > div.cagov-header-branding {
       width: 100%;
       padding-right: 15px;
       padding-left: 15px;
@@ -83,7 +84,7 @@ div.cagov-header-shell {
   }
 
   /* cagov branding styles */
-  > div.cagov-branding > div.cagov-header-branding {
+  > div.cagov-header-shell__1-branding > div.cagov-header-branding {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -146,11 +147,11 @@ div.cagov-header-shell {
     }
   }
 
-  > div.cagov-utility {
+  > div.cagov-header-shell__1-utility {
     background-color: #f5f9fa;
     min-height: 42px;
 
-    > div.cagov-top-bar {
+    > div.cagov-header-shell__2-top-bar {
       padding-top: 0.2rem;
       padding-bottom: 0.5rem;
       display: flex;
@@ -194,7 +195,7 @@ div.cagov-header-shell {
         }
       }
 
-      > div.cagov-official-content > details.cagov-collapsible-content {
+      > div.cagov-official-content > details {
         font-size: 0.875rem;
 
         > summary {
@@ -203,7 +204,7 @@ div.cagov-header-shell {
         }
       }
 
-      > div.cagov-menu > details.cagov-collapsible-menu {
+      > div.cagov-menu > details {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -259,51 +260,53 @@ div.cagov-header-shell {
         }
       }
 
-      > div.cagov-menu > details.cagov-collapsible-menu,
-      > div.cagov-official-content > details.cagov-collapsible-content {
-        > div.collapsible-content {
-          padding-top: 1rem;
-          padding-bottom: 1rem;
-          line-height: 1.5;
-        }
-
-        > summary {
-          list-style: none;
-          text-decoration: underline;
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
-          position: relative;
-          right: 0.5rem;
-
-          &:hover,
-          &:focus {
-            color: #000;
+      > div.cagov-menu,
+      > div.cagov-official-content {
+        > details {
+          > div.collapsible-content {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            line-height: 1.5;
           }
 
-          &::-webkit-details-marker {
-            display: none;
-          }
-
-          &::after {
-            margin-left: 0.5rem;
-            content: "";
-            display: inline-block;
-            text-decoration: none;
+          > summary {
+            list-style: none;
+            text-decoration: underline;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
             position: relative;
-            width: 0.4rem;
-            height: 0.4rem;
-            border-top: 1px solid #000;
-            border-left: 1px solid #000;
-            transform: rotate(225deg);
-            transition: 200ms;
-            vertical-align: middle;
-          }
-        }
+            right: 0.5rem;
 
-        &[open] > summary::after {
-          transform: rotate(45deg);
-          top: 2px;
+            &:hover,
+            &:focus {
+              color: #000;
+            }
+
+            &::-webkit-details-marker {
+              display: none;
+            }
+
+            &::after {
+              margin-left: 0.5rem;
+              content: "";
+              display: inline-block;
+              text-decoration: none;
+              position: relative;
+              width: 0.4rem;
+              height: 0.4rem;
+              border-top: 1px solid #000;
+              border-left: 1px solid #000;
+              transform: rotate(225deg);
+              transition: 200ms;
+              vertical-align: middle;
+            }
+          }
+
+          &[open] > summary::after {
+            transform: rotate(45deg);
+            top: 2px;
+          }
         }
       }
     }
