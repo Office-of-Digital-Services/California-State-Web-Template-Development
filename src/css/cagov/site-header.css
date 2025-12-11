@@ -30,7 +30,7 @@
       align-content: center;
     }
 
-    img {
+    & img {
       max-width: 300px;
       max-height: 55px;
       object-fit: contain !important;
@@ -45,7 +45,7 @@
       }
     }
 
-    a {
+    & a {
       position: relative;
       text-decoration: none;
       color: black;
@@ -166,7 +166,7 @@
       height: 55px;
       max-height: 45px;
 
-      a {
+      & a {
         max-width: 225px;
       }
     }

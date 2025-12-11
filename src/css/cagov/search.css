@@ -583,7 +583,7 @@ button.gsc-search-button {
 }
 
 .featured-search {
-  div.gsc-clear-button {
+  & div.gsc-clear-button {
     width: 0;
 
     &::before {

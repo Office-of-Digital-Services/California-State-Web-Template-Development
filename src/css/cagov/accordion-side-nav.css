@@ -165,13 +165,13 @@
 .side-subnav {
   padding-left: 0;
 
-  li {
+  & li {
     margin: 0;
     padding-left: 0;
     list-style: none;
     font-size: 1.125rem;
 
-    a {
+    & a {
       position: relative;
       display: block;
       padding-top: 0.7rem;
@@ -222,12 +222,12 @@
 }
 
 cagov-accordion.sidenav {
-  details {
+  > details {
     border: none;
     min-height: 2rem;
     margin-top: 0;
 
-    summary {
+    > summary {
       border: none;
       background: var(--white, #fff);
       padding: 0.7rem 2rem 0.7rem 1rem;
@@ -291,7 +291,7 @@ cagov-accordion.sidenav {
       }
 
       &[open] {
-        summary {
+        > summary {
           color: var(--black, #000);
 
           &::after {
@@ -320,7 +320,7 @@ cagov-accordion.sidenav {
         margin-bottom: 0;
         margin-left: 0;
 
-        li {
+        & li {
           &:first-child {
             margin-top: 0;
           }

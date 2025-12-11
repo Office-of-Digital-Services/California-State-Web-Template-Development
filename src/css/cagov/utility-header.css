@@ -41,7 +41,7 @@
     }
   }
 
-  a {
+  & a {
     display: inline-block;
     padding: 0;
     text-decoration: underline;
@@ -55,7 +55,7 @@
     }
   }
 
-  ul {
+  & ul {
     padding-left: 0;
     margin-bottom: 0;
     margin-left: -5px;
@@ -75,10 +75,10 @@
       }
     }
 
-    li {
+    & li {
       padding: 0 8px;
 
-      button {
+      & button {
         font-size: 100%;
         outline: none !important;
         position: relative;
@@ -86,7 +86,7 @@
         background-color: transparent;
         border: none;
 
-        span {
+        & span {
           font-size: 100% !important;
         }
 
@@ -141,7 +141,7 @@
       justify-content: flex-end;
       min-height: 38px;
 
-      a {
+      & a {
         margin: 0;
         margin-left: 1rem;
         font-size: 0.95rem;
@@ -151,7 +151,7 @@
         }
       }
 
-      button {
+      & button {
         margin: 0;
         padding-right: 0;
         font-size: 0.95rem;
@@ -173,7 +173,7 @@
       align-items: center;
 
       /* stylelint-disable-next-line no-descending-specificity */
-      a {
+      & a {
         margin: 0 10px;
         color: var(--black, #000);
         text-decoration: none;
@@ -187,7 +187,7 @@
       .header-cagov-logo {
         margin-right: 0.5rem;
 
-        img {
+        & img {
           left: 0;
           height: 24px;
           margin-top: 6px;
@@ -201,7 +201,7 @@
           width: 45px;
         }
 
-        a {
+        & a {
           margin: 0;
           padding-top: 0;
         }
