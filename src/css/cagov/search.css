@@ -447,7 +447,7 @@ button.gsc-search-button {
 
 /* ------------- Custom search box (not google) -------------- */
 .search-container {
-  & #Search {
+  #Search {
     display: flex;
 
     .gsc-search-button {
