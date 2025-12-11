@@ -47,7 +47,7 @@ cagov-accordion > details {
       border-radius: 3px;
     }
 
-    & .cagov-open-indicator {
+    .cagov-open-indicator {
       position: absolute;
       left: 0.5rem;
       top: 0.4rem;
@@ -72,7 +72,7 @@ cagov-accordion > details {
     }
   }
 
-  & .accordion-body {
+  .accordion-body {
     padding: 1rem;
     border-radius: 0 0 4px 4px;
     border: 1px solid var(--gray-200, #d4d4d7);
@@ -110,7 +110,7 @@ cagov-accordion:defined {
     &[open] {
       height: auto;
 
-      & .cagov-open-indicator {
+      .cagov-open-indicator {
         &::before {
           transform: rotate(90deg) translateY(-0.2rem);
         }

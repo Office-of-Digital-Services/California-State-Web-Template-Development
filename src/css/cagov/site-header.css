@@ -14,7 +14,7 @@
     position: unset;
   }
 
-  & .header-organization-banner {
+  .header-organization-banner {
     transition: all 0.3s;
     padding: 0.5rem 0 0.5rem 1rem;
 
@@ -56,13 +56,13 @@
         outline: 2px solid var(--outline-default-color);
       }
 
-      & .logo-assets {
+      .logo-assets {
         display: flex;
         flex-flow: wrap;
         min-height: 4rem;
         align-items: center;
 
-        & .logo-img {
+        .logo-img {
           max-width: 100%;
           min-height: auto;
           height: 4rem;
@@ -70,10 +70,10 @@
           transition: all 0.3s;
         }
 
-        & .logo-text {
+        .logo-text {
           padding-left: 5px;
 
-          & .logo-state {
+          .logo-state {
             font: 1rem var(--font-family-sans-serif);
             margin: 0;
             padding: 0;
@@ -88,7 +88,7 @@
             }
           }
 
-          & .logo-dept {
+          .logo-dept {
             font: 700 1.75rem var(--font-family-sans-serif);
             margin: 0;
             padding: 0;
@@ -142,16 +142,16 @@
 }
 
 .fixed.compact .branding .header-organization-banner {
-  & .logo-assets {
-    & .logo-text {
-      & .logo-state {
+  .logo-assets {
+    .logo-text {
+      .logo-state {
         font-size: 0.8rem;
         line-height: 1em;
         height: 16px;
         min-width: 200px;
       }
 
-      & .logo-dept {
+      .logo-dept {
         font-size: 1.2rem;
         line-height: 1em;
         min-width: 200px;
@@ -162,7 +162,7 @@
 
 @media (width >= 768px) {
   .fixed.compact {
-    & .header-organization-banner {
+    .header-organization-banner {
       height: 55px;
       max-height: 45px;
 

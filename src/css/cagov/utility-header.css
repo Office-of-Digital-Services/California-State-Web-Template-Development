@@ -10,7 +10,7 @@
   background: var(--color-s1, #eef8fb);
   color: var(--black, #000);
 
-  & .half {
+  .half {
     padding-top: 0;
     padding-right: 1rem;
     padding-left: 1rem;
@@ -67,7 +67,7 @@
       padding-right: 5px;
     }
 
-    & .list-inline-item {
+    .list-inline-item {
       display: inline-block;
 
       &:not(:last-child) {
@@ -100,7 +100,7 @@
     }
   }
 
-  & .settings-links {
+  .settings-links {
     font-size: var(--font-size-base, 1rem);
     text-align: right;
 
@@ -117,11 +117,11 @@
     padding-right: 4px;
   }
 
-  & .located-city-name {
+  .located-city-name {
     margin-left: 5px;
   }
 
-  & .geo-zip-input {
+  .geo-zip-input {
     margin-left: 5px;
     width: 50%;
     vertical-align: initial;
@@ -130,10 +130,10 @@
     color: var(--black, #000);
   }
 
-  & .flex-row {
+  .flex-row {
     display: flex;
 
-    & .settings-links {
+    .settings-links {
       display: flex;
       flex-wrap: wrap;
       margin-left: auto;
@@ -165,7 +165,7 @@
       }
     }
 
-    & .social-media-links {
+    .social-media-links {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
@@ -184,7 +184,7 @@
         }
       }
 
-      & .header-cagov-logo {
+      .header-cagov-logo {
         margin-right: 0.5rem;
 
         & img {
@@ -194,7 +194,7 @@
           vertical-align: middle;
         }
 
-        & .ca-gov-logo-svg {
+        .ca-gov-logo-svg {
           vertical-align: middle;
           aspect-ratio: 9 / 5;
           display: inline-block;
@@ -207,7 +207,7 @@
         }
       }
 
-      & .official-tag {
+      .official-tag {
         margin: 0 1rem 0 0;
         font-size: 0.95rem;
 

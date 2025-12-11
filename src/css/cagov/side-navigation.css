@@ -127,7 +127,7 @@
   border-bottom: 1px solid var(--gray-200, #d4d4d7);
   background-color: var(--color-s1, #eef8fb);
 
-  & .container {
+  .container {
     display: flex;
     justify-content: flex-end;
   }
@@ -147,7 +147,7 @@
     color: var(--color-p2-darker, #214a68);
   }
 
-  & .ca-gov-icon-caret-down {
+  .ca-gov-icon-caret-down {
     font-size: 2rem;
     position: absolute;
     top: 0.3rem;
@@ -157,7 +157,7 @@
   }
 
   &[aria-expanded="true"] {
-    & .ca-gov-icon-caret-down {
+    .ca-gov-icon-caret-down {
       transform: rotate(180deg);
       top: 0.6rem;
     }
@@ -183,7 +183,7 @@
       overflow-y: auto;
     }
 
-    & .side-navigation {
+    .side-navigation {
       display: flex;
       flex-direction: column;
       padding: 1rem 0;
@@ -199,8 +199,8 @@
       }
     }
 
-    & .list-navigation,
-    & .side-navigation ul {
+    .list-navigation,
+    .side-navigation ul {
       & li {
         & a {
           color: var(--white, #fff);
@@ -326,8 +326,8 @@ a.sidenav {
 
 /* Bootstrap version side nav (subject to deprecation) */
 .list-group.section-standout {
-  & .list-group-item,
-  & .list-group-item > button {
+  .list-group-item,
+  .list-group-item > button {
     background-color: var(--color-p3, #323a45) !important;
     color: var(--white, #fff) !important;
 
@@ -353,8 +353,8 @@ a.sidenav {
 }
 
 .list-group.section-overstated {
-  & .list-group-item,
-  & .list-group-item > button {
+  .list-group-item,
+  .list-group-item > button {
     background: var(--color-p2, #046b99) !important;
     color: var(--white, #fff) !important;
 
@@ -380,8 +380,8 @@ a.sidenav {
 }
 
 .list-group.section-impact {
-  & .list-group-item,
-  & .list-group-item > button {
+  .list-group-item,
+  .list-group-item > button {
     background: var(--color-p3, #323a45) !important;
     color: var(--white, #fff) !important;
 
@@ -406,8 +406,8 @@ a.sidenav {
 }
 
 .list-group.section-primary {
-  & .list-group-item,
-  & .list-group-item > button {
+  .list-group-item,
+  .list-group-item > button {
     background: var(--color-p2, #046b99) !important;
     color: var(--white, #fff) !important;
 
@@ -433,8 +433,8 @@ a.sidenav {
 }
 
 .list-group.section-inverted {
-  & .list-group-item,
-  & .list-group-item > button {
+  .list-group-item,
+  .list-group-item > button {
     background: var(--gray-900, #3b3a48) !important;
     color: #fff !important;
 
@@ -460,8 +460,8 @@ a.sidenav {
 }
 
 .list-group.section-danger {
-  & .list-group-item,
-  & .list-group-item > button {
+  .list-group-item,
+  .list-group-item > button {
     background: var(--brand-danger, #cd402d) !important;
     color: #fff !important;
 
@@ -487,8 +487,8 @@ a.sidenav {
 }
 
 .list-group.section-understated {
-  & .list-group-item,
-  & .list-group-item > button {
+  .list-group-item,
+  .list-group-item > button {
     background: var(--color-s1, #eef8fb) !important;
 
     &:hover,
@@ -512,8 +512,8 @@ a.sidenav {
 }
 
 .list-group.section-default {
-  & .list-group-item,
-  & .list-group-item > button {
+  .list-group-item,
+  .list-group-item > button {
     background: var(--gray-50, #fafafa) !important;
 
     &:hover,

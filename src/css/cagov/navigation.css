@@ -70,7 +70,7 @@
   padding: 0;
   transition: all 0.3s;
 
-  & .nav-item {
+  .nav-item {
     position: relative;
     font-size: var(--font-size-base, 1rem);
 
@@ -112,7 +112,7 @@
     }
   }
 
-  & .sub-nav.open {
+  .sub-nav.open {
     display: block;
     overflow: hidden;
     opacity: 1;
@@ -124,12 +124,12 @@
     }
   }
 
-  & .sub-nav {
+  .sub-nav {
     display: block;
     opacity: 0;
   }
 
-  & .sub-nav-decoration {
+  .sub-nav-decoration {
     display: none;
   }
 }
@@ -152,7 +152,7 @@
   }
 
   & [class^="unit"] {
-    & .second-level-link {
+    .second-level-link {
       display: block;
     }
   }
@@ -184,7 +184,7 @@
       color: var(--gray-700, #5e5e6a);
     }
 
-    & .carrot {
+    .carrot {
       font-size: 1rem;
     }
   }
@@ -194,15 +194,15 @@
   }
 }
 
-& .full-width-nav {
-  & .nav-item {
+.full-width-nav {
+  .nav-item {
     &:hover,
     &:focus {
       background-color: transparent;
     }
 
-    & .first-level-link,
-    & .first-level-btn {
+    .first-level-link,
+    .first-level-btn {
       display: block;
       padding: 0.85rem 1rem 0.9rem;
       font-family: var(--headings-font-family);
@@ -256,7 +256,7 @@
         outline-offset: -2px;
       }
 
-      & .carrot {
+      .carrot {
         font-size: 1.7rem;
         position: absolute;
         display: inline-block;
@@ -273,7 +273,7 @@
     }
 
     &.active {
-      & .first-level-link,
+      .first-level-link,
       .first-level-btn {
         background-color: var(--gray-50, #fafafa);
         position: relative;
@@ -318,7 +318,7 @@
     table-layout: auto;
     display: flex;
 
-    & .nav-item {
+    .nav-item {
       padding: 0;
       margin-top: 0;
       background: none;
@@ -329,18 +329,18 @@
       -moz-box-flex: 1;
       flex: 1 1 auto;
 
-      & .noflex,
-      & .oldie {
+      .noflex,
+      .oldie {
         display: table-cell;
       }
 
-      & .sub-nav {
+      .sub-nav {
         top: 100%;
         border: solid 1px #ccc;
         box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
         background: var(--white, #fff);
 
-        & .second-level-nav {
+        .second-level-nav {
           > li {
             border: none;
 
@@ -350,12 +350,12 @@
             }
           }
 
-          & .link-description {
+          .link-description {
             color: var(--gray-700, #5e5e6a);
           }
         }
 
-        & .second-level-link {
+        .second-level-link {
           color: var(--color-p2, #046b99);
 
           & [class^="ca-gov-icon-"] {
@@ -378,7 +378,7 @@
       width: 100%;
     }
 
-    & .main-navigation.dropdown .nav-arrow-down {
+    .main-navigation.dropdown .nav-arrow-down {
       left: auto;
       margin-left: auto;
     }
@@ -387,7 +387,7 @@
   /* stylelint-disable-next-line no-descending-specificity */
   .nav-item {
     /* stylelint-disable-next-line no-descending-specificity */
-    & .sub-nav {
+    .sub-nav {
       position: absolute;
     }
   }
@@ -396,18 +396,18 @@
   .main-navigation.dropdown .dropdown,
   .no-js .main-navigation.dropdown,
   .no-js .main-navigation.megadropdown {
-    & .nav-item:hover .sub-nav {
+    .nav-item:hover .sub-nav {
       display: block;
 
-      & .touch {
+      .touch {
         display: none;
       }
     }
   }
 
   .no-icons {
-    & .top-level-nav {
-      & .nav-item {
+    .top-level-nav {
+      .nav-item {
         > a {
           min-height: 86px;
           padding-top: 2rem;
@@ -436,9 +436,9 @@
 
   /* FIXED */
   .fixed.compact {
-    & .no-icons {
-      & .top-level-nav {
-        & .nav-item {
+    .no-icons {
+      .top-level-nav {
+        .nav-item {
           > a {
             padding-top: 12px;
           }
@@ -447,25 +447,25 @@
     }
 
     /* stylelint-disable-next-line no-descending-specificity */
-    & .top-level-nav {
+    .top-level-nav {
       /* stylelint-disable-next-line no-descending-specificity */
-      & .nav-item {
-        & .first-level-link,
-        & .first-level-btn {
-          & .carrot {
+      .nav-item {
+        .first-level-link,
+        .first-level-btn {
+          .carrot {
             bottom: 0;
           }
         }
       }
     }
 
-    & .main-navigation {
+    .main-navigation {
       margin-top: -55px;
       min-height: 55px;
     }
 
-    & .first-level-link [class^="ca-gov-icon-"],
-    & .first-level-btn [class^="ca-gov-icon-"]:not(.carrot) {
+    .first-level-link [class^="ca-gov-icon-"],
+    .first-level-btn [class^="ca-gov-icon-"]:not(.carrot) {
       display: none;
     }
   }
@@ -511,9 +511,9 @@
     overflow-y: hidden;
   }
 
-  & .top-level-nav .nav-item {
+  .top-level-nav .nav-item {
     &.active {
-      & .first-level-btn {
+      .first-level-btn {
         background-color: var(--mobile-drawer-active, #046b99) !important;
         color: var(--white, #fff) !important;
 
@@ -541,7 +541,7 @@
       border-top: 1px solid var(--gray-200, #d4d4d7);
     }
 
-    & .first-level-link,
+    .first-level-link,
     .first-level-btn {
       color: var(--white, #fff);
       display: block;
@@ -583,12 +583,12 @@
       }
     }
 
-    & .first-level-link.has-sub,
+    .first-level-link.has-sub,
     .first-level-btn.has-sub {
       padding-right: 82px;
     }
 
-    & .sub-nav {
+    .sub-nav {
       display: block;
       transition: max-height 0.5s ease-in-out;
       border-left: none;
@@ -596,7 +596,7 @@
       border-top: none;
       border-bottom: none;
 
-      & .second-level-nav {
+      .second-level-nav {
         > li {
           border: none;
           border-top: 1px solid var(--gray-200, #d4d4d7);
@@ -608,7 +608,7 @@
         }
       }
 
-      & .second-level-link {
+      .second-level-link {
         background-color: var(--mobile-drawer, #214a68);
 
         &:focus {
@@ -680,8 +680,8 @@
   .main-navigation {
     padding-left: 250px;
 
-    & .top-level-nav {
-      & .nav-item {
+    .top-level-nav {
+      .nav-item {
         font-size: 1rem;
       }
     }
@@ -713,8 +713,8 @@
     min-height: 55px;
 
     &.dropdown {
-      & .second-level-nav {
-        & .unit1 {
+      .second-level-nav {
+        .unit1 {
           min-height: unset !important;
 
           & a.second-level-link:hover,
@@ -726,10 +726,10 @@
       }
     }
 
-    & .top-level-nav {
-      & .first-level-btn {
+    .top-level-nav {
+      .first-level-btn {
         &.has-sub {
-          & .carrot {
+          .carrot {
             position: absolute;
             right: 0.75rem;
             top: 0.35rem;
@@ -738,7 +738,7 @@
         }
 
         &[aria-expanded="true"] {
-          & .carrot {
+          .carrot {
             transform: rotate(180deg);
             top: 0.6rem;
           }
@@ -755,14 +755,14 @@
   }
 
   .fixed.compact {
-    & .full-width-nav {
-      & .main-navigation {
-        & .nav-item {
-          & .first-level-link {
+    .full-width-nav {
+      .main-navigation {
+        .nav-item {
+          .first-level-link {
             padding-top: 17px;
           }
 
-          & .first-level-btn {
+          .first-level-btn {
             padding-top: 10px;
           }
 
@@ -862,7 +862,7 @@
 .nav-media {
   background: var(--sub-nav-media-bg);
 
-  & .media {
+  .media {
     &:hover {
       background: #fff;
     }
