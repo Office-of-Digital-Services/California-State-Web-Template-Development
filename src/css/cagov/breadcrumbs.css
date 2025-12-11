@@ -12,12 +12,12 @@
     font-size: calc(var(--font-size-small) + var(--ratio));
   }
 
-  li {
+  & li {
     position: relative;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
 
-    a {
+    & a {
       padding: 0.375rem 0;
     }
 
