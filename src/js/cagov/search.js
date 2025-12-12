@@ -245,27 +245,6 @@ window.addEventListener("load", () => {
     oneClose.addEventListener("click", setSearchTop);
   });
 
-  // Calculation search box top property on the scroll for the fixed nav
-  window.addEventListener("scroll", () => {
-    if (!mobileControlVisible()) {
-      // setting timeout before calculating the search box top property otherwise it can take into account transitional values.
-      setTimeout(setSearchTop, 400);
-
-      // remove featured search on scroll in desktop
-      const FeaturedSearch = document.querySelector("nav ~ #head-search");
-      if (FeaturedSearch) {
-        if (
-          document.body.scrollTop >= 100 ||
-          document.documentElement.scrollTop >= 100
-        ) {
-          FeaturedSearch.classList.add("hidden-up");
-        } else {
-          FeaturedSearch.classList.remove("hidden-up");
-        }
-      }
-    }
-  });
-
   //  search box top position if browser window is resized
   window.addEventListener("resize", () => {
     setSearchTop();

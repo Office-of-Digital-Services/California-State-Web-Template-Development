@@ -159,6 +159,22 @@
   display: block;
 }
 
+.outline-offset-2:focus {
+  outline-offset: -2px !important;
+}
+
+.outline-offset-3:focus {
+  outline-offset: -3px !important;
+}
+
+.outline-offset-4:focus {
+  outline-offset: -4px !important;
+}
+
+.outline-offset-5:focus {
+  outline-offset: -5px !important;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
