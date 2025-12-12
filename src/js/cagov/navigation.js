@@ -592,11 +592,11 @@
         el.classList.add("has-sub");
 
         const carrot = document.createElement("span");
-        carrot.classList.add("ca-gov-icon-caret-down", "carrot");
+        carrot.classList.add("carrot");
         carrot.ariaHidden = "true";
 
         const toggleSubNav = document.createElement("div");
-        toggleSubNav.classList.add("ca-gov-icon-caret-right", "rotate");
+        toggleSubNav.classList.add("rotate");
         toggleSubNav.ariaHidden = "true";
         toggleSubNav.style.display = mobileView() ? "block" : "none";
 

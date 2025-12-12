@@ -731,9 +731,23 @@
         &.has-sub {
           .carrot {
             position: absolute;
-            right: 0.75rem;
+            right: 1.2rem;
             top: 0.35rem;
             transition: all 0.5s cubic-bezier(0.57, 0.2, 0.21, 0.89);
+
+            &::after {
+              content: "";
+              display: inline-block;
+              text-decoration: none;
+              position: relative;
+              width: 0.55rem;
+              height: 0.55rem;
+              border-top: 2px solid var(--color-p2, #046b99);
+              border-left: 2px solid var(--color-p2, #046b99);
+              transform: rotate(225deg);
+              vertical-align: middle;
+              top: -2px;
+            }
           }
         }
 
@@ -823,34 +837,41 @@
   }
 
   /* button carrot */
-  .first-level-btn[aria-expanded="false"] .rotate {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 1.5rem !important;
-    line-height: 3.2rem !important;
-    width: 55px !important;
-    height: 55px !important;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    transition: all 0.2s ease !important;
-    color: var(--white, #fff) !important;
-  }
+  .first-level-btn {
+    &[aria-expanded="false"] .rotate,
+    &[aria-expanded="true"] .rotate {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 55px !important;
+      height: 55px !important;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease !important;
+      color: var(--white, #fff) !important;
 
-  .first-level-btn[aria-expanded="true"] .rotate {
-    transform: rotate(90deg) !important;
-    position: absolute;
-    width: 55px !important;
-    height: 55px !important;
-    line-height: 3rem !important;
-    font-size: 1.5rem !important;
-    top: 0;
-    right: 0;
-    text-align: center;
-    transition: all 0.2s ease !important;
-    color: var(--white, #fff) !important;
+      &::after {
+        content: "";
+        display: inline-block;
+        text-decoration: none;
+        position: absolute;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-top: 2px solid #fff;
+        border-left: 2px solid #fff;
+        vertical-align: middle;
+        top: 50%;
+        transform: translateY(-50%) rotate(135deg);
+        right: 1.5rem;
+        margin-left: 0.5rem;
+      }
+    }
+
+    &[aria-expanded="true"] .rotate {
+      transform: rotate(90deg) !important;
+    }
   }
 
   /* Side nav second level active styles */

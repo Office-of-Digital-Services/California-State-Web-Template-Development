@@ -27,12 +27,19 @@
   }
 
   &::after {
-    font-family: CaGov;
-    content: "5";
     position: absolute;
-    top: 0.8rem;
-    right: 0.7rem;
-    font-size: 1.6rem;
+    content: "";
+    display: inline-block;
+    text-decoration: none;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-top: 2px solid var(--color-p2, #046b99);
+    border-left: 2px solid var(--color-p2, #046b99);
+    vertical-align: middle;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+    right: 1.5rem;
+    margin-left: 0.5rem;
   }
 }
 
@@ -57,6 +64,11 @@
 .bg-p3 {
   .link-grid {
     border-color: var(--white, #fff);
+
+    &::after {
+      border-top-color: var(--white, #fff);
+      border-left-color: var(--white, #fff);
+    }
   }
 }
 
