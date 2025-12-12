@@ -12,8 +12,7 @@
     <header role="banner" id="header" class="global-header fixed">
       <div id="skip-to-content">
         <a href="#main-content">Skip to Main Content</a>
-      </div>
-      {% if alert -%} {%- include alert -%} {%- endif -%} {%- include
+      </div> {%- include "../alert.njk" -%} {%- include
       "../utility-header.njk" -%} {%- include "../site-header.njk" -%} {%-
       include "../mobile-controls.njk" -%}
       <div class="navigation-search full-width-nav container">

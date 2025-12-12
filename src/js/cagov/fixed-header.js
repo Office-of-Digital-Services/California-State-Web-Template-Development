@@ -4,7 +4,7 @@
 window.addEventListener("load", () => {
   const doc = document.documentElement;
 
-  const headerAlert = document.querySelector("header .alert");
+  const headerAlert = document.querySelectorAll("header .alert");
   const header = document.querySelector(".utility-header");
   const mainheader = document.querySelector("header");
   if (!header || !mainheader) return;
@@ -33,8 +33,13 @@ window.addEventListener("load", () => {
     if (direction !== prevDirection) {
       // Toggle Header
       if (direction === 2 && curScroll > 40) {
-        const hiddenheight =
-          header.clientHeight + (headerAlert?.clientHeight || 0);
+        // Add all the alert heights to the hidden height
+        let alertHeight = 0;
+        headerAlert.forEach(alert => {
+          alertHeight += alert.clientHeight;
+        });
+
+        const hiddenheight = header.clientHeight + alertHeight;
         mainheader.style.top = `-${hiddenheight}px`;
         prevDirection = direction;
       } else if (direction === 1 && curScroll < 40) {
