@@ -11,12 +11,12 @@ title: Components and patterns
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-<div class="cagov-header-shell">
-  <div class="cagov-header-shell__1-utility">
-    <div class="cagov-header-shell__2-container">
-      <div class="cagov-header-shell__3-utility-bar">
+<div class="cagov-utility-header">
+  <div class="cagov-utility-header__1-utility">
+    <div class="cagov-utility-header__2-container">
+      <div class="cagov-utility-header__3-utility-bar">
         <!-- CA.gov Logo -->
-        <div class="cagov-header-shell__4-logo">
+        <div class="cagov-utility-header__4-logo">
           <a href="https://www.ca.gov"
             ><span class="cagov-sr-only" lang="en">CA.gov website</span>
             <svg
@@ -44,13 +44,13 @@ title: Components and patterns
 
         <!--cagov menu-->
         <details
-          class="cagov-header-shell__4-menu-button"
-          name="cagov-header-shell__buttongroup">
+          class="cagov-utility-header__4-menu-button"
+          name="cagov-utility-header__buttongroup">
           <summary lang="en">CA.gov menu</summary>
         </details>
 
         <!--cagov collapsible menu content-->
-        <div class="cagov-header-shell__4-utility-menu">
+        <div class="cagov-utility-header__4-utility-menu">
           <nav aria-label="CA.gov navigation">
             <ul>
               <li>
@@ -77,8 +77,8 @@ title: Components and patterns
         <!--Search-->
 
         <details
-          class="cagov-header-shell__4-search-button"
-          name="cagov-header-shell__buttongroup">
+          class="cagov-utility-header__4-search-button"
+          name="cagov-utility-header__buttongroup">
           <summary>
             <span class="cagov-sr-only" lang="en">CA.gov search</span>
             <svg
@@ -95,7 +95,7 @@ title: Components and patterns
         <!--End search-->
 
         <!-- collapsible search content-->
-        <div class="cagov-header-shell__4-search">
+        <div class="cagov-utility-header__4-search">
           <form
             action="https://www.ca.gov/search/"
             method="get"
@@ -135,7 +135,7 @@ title: Components and patterns
   </div>
   <!-- .cagov-utility -->
 </div>
-<!-- .cagov-header-shell -->
+<!-- .cagov-utility-header -->
 
 {% set script %} {% include "./cagov-utility-header.html.js" %} {% endset %}
 <script>
