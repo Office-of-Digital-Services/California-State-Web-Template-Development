@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div.cagov-utility-header {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    sans-serif;
+  color: #3b3a48;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  /* Global utility styles */
+  :focus {
+    outline: 2px solid #0b8ee5;
+  }
+
+  & a {
+    color: #046b99;
+
+    &:hover,
+    &:focus {
+      color: #035376;
+    }
+  }
+
+  .cagov-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  > div.cagov-utility-header__1-utility {
+    background-color: #f5f9fa;
+    min-height: 42px;
+    padding: 0.25rem 0;
+
+    > div.cagov-utility-header__2-container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+
+      @media (width >= 576px) {
+        max-width: 540px;
+      }
+      @media (width >= 768px) {
+        max-width: 720px;
+      }
+      @media (width >= 992px) {
+        max-width: 960px;
+      }
+      @media (width >= 1200px) {
+        max-width: 1140px;
+      }
+
+      > div.cagov-utility-header__3-utility-bar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        > details[name="cagov-utility-header__buttongroup"] {
+          + div {
+            display: none;
+          }
+
+          &[open] + div {
+            display: block;
+          }
+        }
+
+        > div.cagov-utility-header__4-logo {
+          display: inline-block;
+          flex-grow: 1;
+          flex-shrink: 0;
+          align-self: center;
+
+          > a > svg {
+            vertical-align: middle;
+            aspect-ratio: 9 / 5;
+            display: inline-block;
+            width: 50px;
+          }
+        }
+
+        > details.cagov-utility-header__4-menu-button {
+          > summary {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: #3b3a48;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.35rem 0.5rem;
+            list-style: none;
+            text-decoration: underline;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            right: 0.5rem;
+            min-height: 1.875rem;
+
+            &:hover,
+            &:focus {
+              color: #000;
+            }
+
+            &::-webkit-details-marker {
+              display: none;
+            }
+
+            &::after {
+              margin-left: 0.5rem;
+              content: "";
+              display: inline-block;
+              text-decoration: none;
+              position: relative;
+              width: 0.4rem;
+              height: 0.4rem;
+              border-top: 1px solid #000;
+              border-left: 1px solid #000;
+              transform: rotate(225deg);
+              transition: 200ms;
+              vertical-align: middle;
+            }
+          }
+
+          &[open] > summary::after {
+            transform: rotate(45deg);
+            top: 2px;
+          }
+        }
+
+        > details.cagov-utility-header__4-search-button {
+          > summary {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            min-height: 1.875rem;
+
+            &:hover,
+            &:focus {
+              color: #000;
+            }
+
+            &::-webkit-details-marker {
+              /* for Safari */
+              display: none;
+            }
+
+            /* Draws the "X" icon lines */
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 3px;
+              background: #3b3a48;
+              border-radius: 2px;
+              transition:
+                transform 0.3s,
+                opacity 0.3s;
+              opacity: 0;
+            }
+
+            > svg {
+              transition: transform 0.3s;
+            }
+          }
+
+          &[open] > summary {
+            > svg {
+              transform: scale(0);
+            }
+
+            &::before,
+            &::after {
+              opacity: 1;
+            }
+
+            &::before {
+              transform: rotate(45deg);
+            }
+
+            &::after {
+              transform: rotate(-45deg);
+            }
+          }
+        }
+
+        /* Collapsible content styles */
+        > div.cagov-utility-header__4-utility-menu,
+        > div.cagov-utility-header__4-search {
+          background-color: #f5f9fa;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          line-height: 1.5;
+          width: 100%;
+          order: 1;
+        }
+
+        /* Navigation styles */
+        > div.cagov-utility-header__4-utility-menu > nav > ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding: 0;
+          position: relative;
+          left: 0.35rem;
+
+          > li > a {
+            padding: 0.35rem;
+          }
+
+          @media (width >= 540px) {
+            flex-direction: row;
+            gap: 1.5rem;
+          }
+        }
+
+        /* Search styles */
+        > div.cagov-utility-header__4-search > form {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+
+          > input[type="search"] {
+            font-size: 1.1rem;
+            width: 100%;
+            max-height: 38px;
+            padding: 0 10px;
+            transition: border 0.4s;
+            border: 1px solid #72717c;
+            border-radius: 5px 0 0 5px;
+            height: 38px;
+            outline-offset: -2px;
+          }
+
+          > button[type="submit"] {
+            outline-offset: -4px;
+            outline-color: #85cbf9;
+            background-color: #72717c;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            padding: 0 12px;
+            border: 1px solid #72717c;
+            min-height: 38px;
+            margin-left: -1px;
+
+            > svg {
+              fill: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

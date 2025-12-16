@@ -16,6 +16,8 @@ module.exports = function (
 
   // Watch the ./src/css/ folder for changes
   eleventyConfig.addWatchTarget("./src/**/*");
+  eleventyConfig.addWatchTarget("./sample_site/**/*.html.*");
+
   // Ignore this file that gets dynamically created
   eleventyConfig.watchIgnores.add("./src/css/cagov/template-comments.css");
 
