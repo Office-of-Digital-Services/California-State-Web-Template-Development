@@ -140,8 +140,10 @@ window.addEventListener("load", () => {
 
   //  search box top position
   const setSearchTop = () => {
+    if (!searchbox) return;
+
     // calulation search box top position
-    if (!mobileControlVisible() && searchbox) {
+    if (!mobileControlVisible()) {
       searchbox.style.top = `${Math.max(getSearchTop(), 55)}px`;
     }
   };
@@ -245,11 +247,13 @@ window.addEventListener("load", () => {
     oneClose.addEventListener("click", setSearchTop);
   });
 
-  //  search box top position if browser window is resized
-  window.addEventListener("resize", () => {
-    setSearchTop();
-    setSearchContainerAriaHidden();
-  });
+  if (searchContainer || searchbox) {
+    //  search box top position if browser window is resized
+    window.addEventListener("resize", () => {
+      setSearchTop();
+      setSearchContainerAriaHidden();
+    });
+  }
 
   setSearchContainerAriaHidden();
 });
