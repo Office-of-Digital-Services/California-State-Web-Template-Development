@@ -126,6 +126,7 @@ window.addEventListener("load", () => {
     navSearchCont.classList.remove("not-visible");
     document.body.classList.add("overflow-hidden");
     navToggleBtn.ariaExpanded = "true";
+    navToggleBtn.setAttribute("aria-label", "Closes the navigation menu");
     setOpen();
     // Hide all the website areas (add aria-hidden)
     mainElements.forEach(x => (x.ariaHidden = "true"));
@@ -145,6 +146,7 @@ window.addEventListener("load", () => {
       navToggleBtn.ariaExpanded !== "false"
     ) {
       navToggleBtn.ariaExpanded = "false";
+      navToggleBtn.setAttribute("aria-label", "Opens the navigation menu");
     }
   };
 
@@ -165,9 +167,14 @@ window.addEventListener("load", () => {
   const setClosed = () => {
     if (navToggleBtn.ariaExpanded !== "false") {
       navToggleBtn.ariaExpanded = "false";
+      navToggleBtn.setAttribute("aria-label", "Opens the navigation menu");
     }
     if (navMobileMenuToggleBtn.ariaExpanded !== "false") {
       navMobileMenuToggleBtn.ariaExpanded = "false";
+      navMobileMenuToggleBtn.setAttribute(
+        "aria-label",
+        "Opens the navigation menu"
+      );
     }
     if (mainNav) document.body.classList.remove("overflow-hidden");
 
