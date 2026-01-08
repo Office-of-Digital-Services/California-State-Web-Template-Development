@@ -1,8 +1,6 @@
 //@ts-check
 
 window.addEventListener("load", () => {
-  const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
-
   /** @type {HTMLButtonElement} */
   const navToggleBtn = document.querySelector(".toggle-menu");
   if (!navToggleBtn) return;
@@ -45,6 +43,7 @@ window.addEventListener("load", () => {
 
   // reset navigation function
   const NavReset = () => {
+    const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
     //RESET
     document
       .querySelectorAll(".first-level-btn")
@@ -160,10 +159,7 @@ window.addEventListener("load", () => {
 
     navSearchCont.classList.add("not-visible");
 
-    setClosed();
-  };
-
-  const setClosed = () => {
+    // Begin SetClosed
     if (navToggleBtn.ariaExpanded !== "false") {
       navToggleBtn.ariaExpanded = "false";
     }
@@ -179,6 +175,7 @@ window.addEventListener("load", () => {
     regularHeader?.classList.remove("nav-overlay");
 
     NavReset();
+    // End SetClosed
   };
 
   // Button Click event
@@ -205,6 +202,7 @@ window.addEventListener("load", () => {
 
     if (!searchInput.classList.contains("is-in-focus")) {
       NavReset();
+      const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
       // desktop
       if (isDesktopWidth()) {
         getAllFirstLevelNavLinks().forEach(el =>
