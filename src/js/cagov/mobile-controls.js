@@ -122,15 +122,8 @@ window.addEventListener("load", () => {
     navSearchCont.classList.remove("not-visible");
     document.body.classList.add("overflow-hidden");
     navToggleBtn.ariaExpanded = "true";
-    setOpen();
-    // Hide all the website areas (add aria-hidden)
-    mainElements.forEach(x => (x.ariaHidden = "true"));
 
-    regularHeader?.classList.add("nav-overlay");
-    navMobileMenuToggleBtn.focus();
-  };
-
-  const setOpen = () => {
+    // Begin SetOpen
     navMobileMenuToggleBtn.ariaExpanded = "true";
     navSearchCont.ariaHidden = null;
     // make links focusable
@@ -146,6 +139,13 @@ window.addEventListener("load", () => {
     ) {
       navToggleBtn.ariaExpanded = "false";
     }
+    // End SetOpen
+
+    // Hide all the website areas (add aria-hidden)
+    mainElements.forEach(x => (x.ariaHidden = "true"));
+
+    regularHeader?.classList.add("nav-overlay");
+    navMobileMenuToggleBtn.focus();
   };
 
   // Button click close menu function
