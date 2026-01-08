@@ -170,7 +170,6 @@ window.addEventListener("load", () => {
 
     if (!searchInput.classList.contains("is-in-focus")) {
       NavReset();
-
       // desktop
       if (isDesktopWidth()) {
         getAllFirstLevelNavLinks().forEach(el =>
