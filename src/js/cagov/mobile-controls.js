@@ -95,8 +95,6 @@ window.addEventListener("load", () => {
     navSearchCont.classList.remove("not-visible");
     document.body.classList.add("overflow-hidden");
     navToggleBtn.ariaExpanded = "true";
-
-    // Begin SetOpen
     navMobileMenuToggleBtn.ariaExpanded = "true";
     navSearchCont.ariaHidden = null;
     // make links focusable
@@ -112,7 +110,6 @@ window.addEventListener("load", () => {
     ) {
       navToggleBtn.ariaExpanded = "false";
     }
-    // End SetOpen
 
     // Hide all the website areas (add aria-hidden)
     mainElements.forEach(x => (x.ariaHidden = "true"));
@@ -132,7 +129,6 @@ window.addEventListener("load", () => {
 
     navSearchCont.classList.add("not-visible");
 
-    // Begin SetClosed
     if (navToggleBtn.ariaExpanded !== "false") {
       navToggleBtn.ariaExpanded = "false";
     }
@@ -148,7 +144,6 @@ window.addEventListener("load", () => {
     regularHeader?.classList.remove("nav-overlay");
 
     NavReset();
-    // End SetClosed
   };
 
   const mobileCheck = () => {
