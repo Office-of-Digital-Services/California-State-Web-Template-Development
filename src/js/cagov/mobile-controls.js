@@ -44,7 +44,6 @@ window.addEventListener("load", () => {
     getComputedStyle(document.documentElement)
       .getPropertyValue("--is-mobile")
       .trim() === "0";
-
   // reset navigation function
   const NavReset = () => {
     //RESET
