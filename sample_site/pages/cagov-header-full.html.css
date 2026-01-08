@@ -153,11 +153,6 @@ div.cagov-header-full {
           }
         }
 
-        &[open] > summary::after {
-          transform: rotate(45deg);
-          top: 2px;
-        }
-
         + div {
           display: none;
           width: 100%;
@@ -172,8 +167,15 @@ div.cagov-header-full {
           }
         }
 
-        &[open] + div {
-          display: block;
+        &[open] {
+          > summary::after {
+            transform: rotate(45deg);
+            top: 2px;
+          }
+
+          + div {
+            display: block;
+          }
         }
       }
 
