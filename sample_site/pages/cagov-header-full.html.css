@@ -115,16 +115,14 @@ div.cagov-header-full {
         }
       }
 
-      > details.cagov-header-full__3-menu-button {
-        > summary {
-          font-size: 0.95rem;
-          padding: 0.35rem 0.5rem;
-          right: 0.5rem;
+      > details.cagov-header-full__3-menu-button > summary {
+        font-size: 0.95rem;
+        padding: 0.35rem 0.5rem;
+        right: 0.5rem;
 
-          @media (width >= 436px) {
-            left: 0.2rem;
-            padding: 0.35rem 0.3rem;
-          }
+        @media (width >= 436px) {
+          left: 0.2rem;
+          padding: 0.35rem 0.3rem;
         }
       }
 
