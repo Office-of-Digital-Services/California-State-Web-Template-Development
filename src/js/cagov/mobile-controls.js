@@ -35,9 +35,6 @@ window.addEventListener("load", () => {
   if (!navSearchCont) return;
 
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
-  const mobileControlsDisplay = mobileCntls
-    ? window.getComputedStyle(mobileCntls).display
-    : "";
 
   //Used for hiding/showing main elements
   const mainElements = document.querySelectorAll(
@@ -140,6 +137,10 @@ window.addEventListener("load", () => {
     // make links focusable
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     // desktop
+
+    const mobileControlsDisplay = mobileCntls
+      ? window.getComputedStyle(mobileCntls).display
+      : "";
     if (
       mobileControlsDisplay !== "block" &&
       navToggleBtn.ariaExpanded !== "false"
