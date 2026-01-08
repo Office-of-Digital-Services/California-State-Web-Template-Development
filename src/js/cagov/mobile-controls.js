@@ -7,7 +7,6 @@ window.addEventListener("load", () => {
   /** @type {HTMLDivElement} */
   const navSearchCont = document.querySelector(".navigation-search");
   if (!navSearchCont) return;
-
   /** @type {HTMLElement} */
   const mainNav = document.querySelector(".main-navigation");
   // create container for drawer mobile nav items
