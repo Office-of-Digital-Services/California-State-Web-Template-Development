@@ -419,45 +419,45 @@ div.cagov-header-full {
           display: block;
           order: 0;
         }
-      }
 
-      > div.cagov-header-full__3-search > form {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        > form {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
 
-        @media (width >= 576px) {
-          max-width: 350px;
-        }
+          @media (width >= 576px) {
+            max-width: 350px;
+          }
 
-        > input[type="search"] {
-          font-size: 1.1rem;
-          width: 100%;
-          max-height: 38px;
-          padding: 0 10px;
-          transition: border 0.4s;
-          border: 1px solid #72717c;
-          border-radius: 5px 0 0 5px;
-          height: 38px;
-          outline-offset: -2px;
-        }
+          > input[type="search"] {
+            font-size: 1.1rem;
+            width: 100%;
+            max-height: 38px;
+            padding: 0 10px;
+            transition: border 0.4s;
+            border: 1px solid #72717c;
+            border-radius: 5px 0 0 5px;
+            height: 38px;
+            outline-offset: -2px;
+          }
 
-        > button[type="submit"] {
-          outline-offset: -4px;
-          outline-color: #85cbf9;
-          background-color: #72717c;
-          color: #fff;
-          border-radius: 0 5px 5px 0;
-          padding: 0 12px;
-          border: 1px solid #72717c;
-          min-height: 38px;
-          margin-left: -1px;
+          > button[type="submit"] {
+            outline-offset: -4px;
+            outline-color: #85cbf9;
+            background-color: #72717c;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            padding: 0 12px;
+            border: 1px solid #72717c;
+            min-height: 38px;
+            margin-left: -1px;
 
-          > svg {
-            fill: #fff;
+            > svg {
+              fill: #fff;
+            }
           }
         }
       }
