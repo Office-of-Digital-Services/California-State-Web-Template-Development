@@ -4,6 +4,10 @@ window.addEventListener("load", () => {
   /** @type {HTMLButtonElement} */
   const navToggleBtn = document.querySelector(".toggle-menu");
   if (!navToggleBtn) return;
+  /** @type {HTMLDivElement} */
+  const navSearchCont = document.querySelector(".navigation-search");
+  if (!navSearchCont) return;
+
   /** @type {HTMLElement} */
   const mainNav = document.querySelector(".main-navigation");
   // create container for drawer mobile nav items
@@ -27,11 +31,6 @@ window.addEventListener("load", () => {
   navMobileMenuToggleBtn.append(...navCloseBtnSpans);
   mobileItemsCont.append(navMobileMenuToggleBtn);
 
-  // VARIABLES
-  /** @type {HTMLDivElement} */
-  const navSearchCont = document.querySelector(".navigation-search");
-  if (!navSearchCont) return;
-
   const mobileCntls = document.querySelector(".global-header .mobile-controls");
 
   //Used for hiding/showing main elements
@@ -40,6 +39,8 @@ window.addEventListener("load", () => {
   );
 
   const regularHeader = document.querySelector("header");
+
+  // Begin Function Definitions
 
   // reset navigation function
   const NavReset = () => {
@@ -85,16 +86,6 @@ window.addEventListener("load", () => {
       )
     );
 
-  // Escape key event listener
-  document.addEventListener("keydown", e => {
-    if (navSearchCont.classList.contains("visible")) {
-      if (e.key === "Escape") {
-        e.stopPropagation();
-        closeMenu();
-      }
-    }
-  });
-
   const checkIfMobileView = () => {
     const mobileElement = document.querySelector(
       ".global-header .mobile-controls"
@@ -103,18 +94,6 @@ window.addEventListener("load", () => {
       ? getComputedStyle(mobileElement)["display"] !== "none"
       : false;
   };
-
-  // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
-  navSearchCont.addEventListener("focusout", e => {
-    if (checkIfMobileView()) {
-      const child = /** @type {Node} **/ (e.relatedTarget);
-      const parent = /** @type {Node} **/ (e.currentTarget);
-
-      if (child && !parent.contains(child)) {
-        closeMenu();
-      }
-    }
-  });
 
   // Button click open menu function
   const openMenu = () => {
@@ -178,11 +157,6 @@ window.addEventListener("load", () => {
     // End SetClosed
   };
 
-  // Button Click event
-  navToggleBtn.addEventListener("click", openMenu);
-  // Button Click event
-  navMobileMenuToggleBtn.addEventListener("click", closeMenu);
-
   const mobileCheck = () => {
     const searchInput = document.querySelector(".search-textfield");
     if (!searchInput) return;
@@ -216,6 +190,35 @@ window.addEventListener("load", () => {
       }
     }
   };
+
+  // End Function Definitions
+
+  // Escape key event listener
+  document.addEventListener("keydown", e => {
+    if (navSearchCont.classList.contains("visible")) {
+      if (e.key === "Escape") {
+        e.stopPropagation();
+        closeMenu();
+      }
+    }
+  });
+
+  // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
+  navSearchCont.addEventListener("focusout", e => {
+    if (checkIfMobileView()) {
+      const child = /** @type {Node} **/ (e.relatedTarget);
+      const parent = /** @type {Node} **/ (e.currentTarget);
+
+      if (child && !parent.contains(child)) {
+        closeMenu();
+      }
+    }
+  });
+
+  // Button Click event
+  navToggleBtn.addEventListener("click", openMenu);
+  // Button Click event
+  navMobileMenuToggleBtn.addEventListener("click", closeMenu);
 
   // Close mobile nav if click outside of nav
   regularHeader.addEventListener("mouseup", e => {
