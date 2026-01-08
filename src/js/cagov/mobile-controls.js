@@ -30,8 +30,6 @@ window.addEventListener("load", () => {
   navMobileMenuToggleBtn.append(...navCloseBtnSpans);
   mobileItemsCont.append(navMobileMenuToggleBtn);
 
-  const mobileCntls = document.querySelector(".global-header .mobile-controls");
-
   //Used for hiding/showing main elements
   const mainElements = document.querySelectorAll(
     ".main-content, footer, .site-footer, .utility-header, .branding"
@@ -98,13 +96,8 @@ window.addEventListener("load", () => {
     // make links focusable
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     // desktop
-    const mobileControlsDisplay = mobileCntls
-      ? window.getComputedStyle(mobileCntls).display
-      : "";
-    if (
-      mobileControlsDisplay !== "block" &&
-      navToggleBtn.ariaExpanded !== "false"
-    ) {
+
+    if (isDesktopWidth() && navToggleBtn.ariaExpanded !== "false") {
       navToggleBtn.ariaExpanded = "false";
     }
     // Hide all the website areas (add aria-hidden)
