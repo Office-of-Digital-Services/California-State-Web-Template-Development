@@ -4,6 +4,11 @@
 ----------------------------------------- */
 
 window.addEventListener("load", () => {
+  const isDesktopWidth = () =>
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--is-mobile")
+      .trim() === "0";
+
   const setSearchContainerAriaHidden = () => {
     if (searchContainer) {
       if (featuredsearch) {
@@ -16,18 +21,6 @@ window.addEventListener("load", () => {
       } else {
         searchContainer.setAttribute("aria-hidden", "true");
       }
-    }
-  };
-
-  const mobileControlVisible = () => {
-    const mobileElement = document.querySelector(
-      ".global-header .mobile-controls"
-    );
-
-    if (mobileElement) {
-      return getComputedStyle(mobileElement)["display"] !== "none";
-    } else {
-      return false; // or whatever is supposed to be returned when there is no header
     }
   };
 
@@ -59,7 +52,7 @@ window.addEventListener("load", () => {
 
     //        document.dispatchEvent('cagov.searchresults.hide'); // ???
 
-    if (mobileControlVisible()) setSearchContainerAriaHidden();
+    if (!isDesktopWidth()) setSearchContainerAriaHidden();
   };
 
   /** @type {HTMLInputElement | null} */
@@ -143,7 +136,7 @@ window.addEventListener("load", () => {
     if (!searchbox) return;
 
     // calulation search box top position
-    if (!mobileControlVisible()) {
+    if (isDesktopWidth()) {
       searchbox.style.top = `${Math.max(getSearchTop(), 55)}px`;
     }
   };

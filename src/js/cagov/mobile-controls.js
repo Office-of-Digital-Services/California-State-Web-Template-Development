@@ -1,11 +1,12 @@
 //@ts-check
 
 window.addEventListener("load", () => {
-  const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
-
   /** @type {HTMLButtonElement} */
   const navToggleBtn = document.querySelector(".toggle-menu");
   if (!navToggleBtn) return;
+  /** @type {HTMLDivElement} */
+  const navSearchCont = document.querySelector(".navigation-search");
+  if (!navSearchCont) return;
   /** @type {HTMLElement} */
   const mainNav = document.querySelector(".main-navigation");
   // create container for drawer mobile nav items
@@ -29,16 +30,6 @@ window.addEventListener("load", () => {
   navMobileMenuToggleBtn.append(...navCloseBtnSpans);
   mobileItemsCont.append(navMobileMenuToggleBtn);
 
-  // VARIABLES
-  /** @type {HTMLDivElement} */
-  const navSearchCont = document.querySelector(".navigation-search");
-  if (!navSearchCont) return;
-
-  const mobileCntls = document.querySelector(".global-header .mobile-controls");
-  const mobileControlsDisplay = mobileCntls
-    ? window.getComputedStyle(mobileCntls).display
-    : "";
-
   //Used for hiding/showing main elements
   const mainElements = document.querySelectorAll(
     ".main-content, footer, .site-footer, .utility-header, .branding"
@@ -46,6 +37,11 @@ window.addEventListener("load", () => {
 
   const regularHeader = document.querySelector("header");
 
+  // Begin Function Definitions
+  const isDesktopWidth = () =>
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--is-mobile")
+      .trim() === "0";
   // reset navigation function
   const NavReset = () => {
     //RESET
@@ -89,63 +85,26 @@ window.addEventListener("load", () => {
       )
     );
 
-  // Escape key event listener
-  document.addEventListener("keydown", e => {
-    if (navSearchCont.classList.contains("visible")) {
-      if (e.key === "Escape") {
-        e.stopPropagation();
-        closeMenu();
-      }
-    }
-  });
-
-  const checkIfMobileView = () => {
-    const mobileElement = document.querySelector(
-      ".global-header .mobile-controls"
-    );
-    return mobileElement
-      ? getComputedStyle(mobileElement)["display"] !== "none"
-      : false;
-  };
-
-  // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
-  navSearchCont.addEventListener("focusout", e => {
-    if (checkIfMobileView()) {
-      const child = /** @type {Node} **/ (e.relatedTarget);
-      const parent = /** @type {Node} **/ (e.currentTarget);
-
-      if (child && !parent.contains(child)) {
-        closeMenu();
-      }
-    }
-  });
-
   // Button click open menu function
   const openMenu = () => {
     navSearchCont.classList.add("visible");
     navSearchCont.classList.remove("not-visible");
     document.body.classList.add("overflow-hidden");
     navToggleBtn.ariaExpanded = "true";
-    setOpen();
-    // Hide all the website areas (add aria-hidden)
-    mainElements.forEach(x => (x.ariaHidden = "true"));
-
-    regularHeader?.classList.add("nav-overlay");
-    navMobileMenuToggleBtn.focus();
-  };
-
-  const setOpen = () => {
     navMobileMenuToggleBtn.ariaExpanded = "true";
     navSearchCont.ariaHidden = null;
     // make links focusable
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     // desktop
-    if (
-      mobileControlsDisplay !== "block" &&
-      navToggleBtn.ariaExpanded !== "false"
-    ) {
+
+    if (isDesktopWidth() && navToggleBtn.ariaExpanded !== "false") {
       navToggleBtn.ariaExpanded = "false";
     }
+    // Hide all the website areas (add aria-hidden)
+    mainElements.forEach(x => (x.ariaHidden = "true"));
+
+    regularHeader?.classList.add("nav-overlay");
+    navMobileMenuToggleBtn.focus();
   };
 
   // Button click close menu function
@@ -159,10 +118,6 @@ window.addEventListener("load", () => {
 
     navSearchCont.classList.add("not-visible");
 
-    setClosed();
-  };
-
-  const setClosed = () => {
     if (navToggleBtn.ariaExpanded !== "false") {
       navToggleBtn.ariaExpanded = "false";
     }
@@ -179,11 +134,6 @@ window.addEventListener("load", () => {
 
     NavReset();
   };
-
-  // Button Click event
-  navToggleBtn.addEventListener("click", openMenu);
-  // Button Click event
-  navMobileMenuToggleBtn.addEventListener("click", closeMenu);
 
   const mobileCheck = () => {
     const searchInput = document.querySelector(".search-textfield");
@@ -218,10 +168,37 @@ window.addEventListener("load", () => {
     }
   };
 
+  // End Function Definitions
+
+  // Escape key event listener
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && navSearchCont.classList.contains("visible")) {
+      e.stopPropagation();
+      closeMenu();
+    }
+  });
+
+  // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
+  navSearchCont.addEventListener("focusout", e => {
+    if (!isDesktopWidth()) {
+      const child = /** @type {Node} **/ (e.relatedTarget);
+      const parent = /** @type {Node} **/ (e.currentTarget);
+
+      if (child && !parent.contains(child)) {
+        closeMenu();
+      }
+    }
+  });
+
+  // Button Click event
+  navToggleBtn.addEventListener("click", openMenu);
+  // Button Click event
+  navMobileMenuToggleBtn.addEventListener("click", closeMenu);
+
   // Close mobile nav if click outside of nav
   regularHeader.addEventListener("mouseup", e => {
     // if the target of the click isn't the navigation container nor a descendant of the navigation
-    if (checkIfMobileView()) {
+    if (!isDesktopWidth()) {
       if (
         navSearchCont !== e.target &&
         !navSearchCont?.contains(/**@type {Node} */ (e.target))
