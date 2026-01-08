@@ -100,7 +100,6 @@ window.addEventListener("load", () => {
     // make links focusable
     getAllNavLinks().forEach(el => el.removeAttribute("tabindex"));
     // desktop
-
     const mobileControlsDisplay = mobileCntls
       ? window.getComputedStyle(mobileCntls).display
       : "";
@@ -110,7 +109,6 @@ window.addEventListener("load", () => {
     ) {
       navToggleBtn.ariaExpanded = "false";
     }
-
     // Hide all the website areas (add aria-hidden)
     mainElements.forEach(x => (x.ariaHidden = "true"));
 
