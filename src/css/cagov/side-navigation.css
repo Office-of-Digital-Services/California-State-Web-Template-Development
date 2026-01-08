@@ -2,18 +2,19 @@
    SIDE NAVIGATION - /src/css/cagov/side-navigation.css
 ----------------------------------------- */
 
-.list-navigation,
-.side-navigation ul {
+ul.list-navigation,
+nav.side-navigation > ul {
   margin-left: 0;
   padding-left: 0;
 
   & li {
+    /* any LI inside list-navigation or side-navigation */
     list-style: none;
     margin: 0;
     font-size: calc(1rem + var(--ratio));
     padding-left: 0;
 
-    & a {
+    > a {
       position: relative;
       display: block;
       text-decoration: none !important;
@@ -31,8 +32,6 @@
         font-weight: var(--font-weight-7);
 
         &.active {
-          background-color: var(--gray-75, #f3f3f4);
-
           &:hover,
           &:focus {
             background-color: var(--gray-100, #f3f3f4);
@@ -53,13 +52,11 @@
       }
 
       &.active {
-        color: var(--gray-800, #4a4958);
         text-decoration: none;
         background-color: var(--gray-75, #f3f3f4);
 
         &:hover,
         &:focus {
-          color: var(--black, #000);
           text-decoration: none;
           background-color: var(--gray-100, #f3f3f4);
         }
@@ -76,33 +73,29 @@
           border-radius: 0;
         }
       }
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-color: var(--gray-50, #fafafa);
+      }
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+        outline-offset: -2px;
+      }
     }
 
-    & a:hover,
-    & a:focus {
-      text-decoration: none;
-      background-color: var(--gray-50, #fafafa);
-      color: var(--gray-900, #3b3a48);
-    }
-
-    /* stylelint-disable-next-line no-descending-specificity */
-    & a:focus {
-      outline: 2px solid var(--outline-default-color);
-      outline-offset: -2px;
-    }
-
-    & ul {
+    > ul {
       padding-left: 0;
 
-      & li {
+      > li {
         margin: 0;
 
-        /* stylelint-disable-next-line no-descending-specificity */
-        & a {
+        > a {
           padding-left: 2.5rem;
 
           &.active {
-            color: var(--gray-800, #4a4958);
             text-decoration: none;
 
             &:hover,
@@ -118,6 +111,8 @@
         }
       }
     }
+
+    /* moved above > a for specificity order */
   }
 }
 
