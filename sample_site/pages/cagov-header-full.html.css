@@ -320,25 +320,29 @@ div.cagov-header-full {
           }
         }
 
-        &[open] > summary::before,
-        &[open] > summary::after {
-          opacity: 1;
-        }
+        &[open] {
+          + div {
+            display: block;
+          }
 
-        &[open] > summary::before {
-          transform: rotate(45deg);
-        }
+          > summary {
+            &::before,
+            &::after {
+              opacity: 1;
+            }
 
-        &[open] > summary::after {
-          transform: rotate(-45deg);
-        }
+            &::before {
+              transform: rotate(45deg);
+            }
 
-        &[open] > summary > svg {
-          transform: scale(0);
-        }
+            &::after {
+              transform: rotate(-45deg);
+            }
 
-        &[open] + div {
-          display: block;
+            > svg {
+              transform: scale(0);
+            }
+          }
         }
       }
 
