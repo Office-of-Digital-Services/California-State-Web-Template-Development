@@ -172,11 +172,9 @@ window.addEventListener("load", () => {
 
   // Escape key event listener
   document.addEventListener("keydown", e => {
-    if (navSearchCont.classList.contains("visible")) {
-      if (e.key === "Escape") {
-        e.stopPropagation();
-        closeMenu();
-      }
+    if (e.key === "Escape" && navSearchCont.classList.contains("visible")) {
+      e.stopPropagation();
+      closeMenu();
     }
   });
 
