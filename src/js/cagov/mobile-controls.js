@@ -89,15 +89,6 @@ window.addEventListener("load", () => {
       )
     );
 
-  const checkIfMobileView = () => {
-    const mobileElement = document.querySelector(
-      ".global-header .mobile-controls"
-    );
-    return mobileElement
-      ? getComputedStyle(mobileElement)["display"] !== "none"
-      : false;
-  };
-
   // Button click open menu function
   const openMenu = () => {
     navSearchCont.classList.add("visible");
@@ -208,7 +199,7 @@ window.addEventListener("load", () => {
 
   // Close menu on focusout (tabbing out) event (if target is outside of mobile menu and ignore if focus target is navToggleBtn button)
   navSearchCont.addEventListener("focusout", e => {
-    if (checkIfMobileView()) {
+    if (!isDesktopWidth()) {
       const child = /** @type {Node} **/ (e.relatedTarget);
       const parent = /** @type {Node} **/ (e.currentTarget);
 
@@ -226,7 +217,7 @@ window.addEventListener("load", () => {
   // Close mobile nav if click outside of nav
   regularHeader.addEventListener("mouseup", e => {
     // if the target of the click isn't the navigation container nor a descendant of the navigation
-    if (checkIfMobileView()) {
+    if (!isDesktopWidth()) {
       if (
         navSearchCont !== e.target &&
         !navSearchCont?.contains(/**@type {Node} */ (e.target))

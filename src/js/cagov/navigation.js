@@ -16,9 +16,9 @@
       .trim() === "0";
 
   /**
-   * @param {Object} obj
-   * @param {String} key
-   * @param {String | Number} value
+   * @param {object} obj
+   * @param {string} key
+   * @param {string | number} value
    */
   const _defineProperty = (obj, key, value) => {
     if (key in obj) {
@@ -38,8 +38,8 @@
     const CACHE = {};
 
     /**
-     * @param {String | Number} id
-     * @param {Object} config
+     * @param {string | number} id
+     * @param {object} config
      */
     const set = (id, config) => {
       CACHE[id] = config;
@@ -47,7 +47,7 @@
 
     /**
      *
-     * @param {String | Number} id
+     * @param {string | number} id
      */
     const get = id => {
       return CACHE[id];
@@ -55,7 +55,7 @@
 
     /**
      *
-     * @param {String | Number} id
+     * @param {string | number} id
      */
     const remove = id => {
       return CACHE[id];
@@ -72,10 +72,11 @@
 
   const pluginConfig = loadConfig();
 
-  /** Find an element based on an Id
-   * @param  {String} id Id to find
-   * @param  {String} hash hash id (not mandatory)
-   * @return {Element | null} the element with the specified id
+  /**
+   * Find an element based on an Id
+   * @param  {string} id Id to find
+   * @param  {string} hash hash id (not mandatory)
+   * @returns {Element | null} the element with the specified id
    */
   const findById = (id, hash) =>
     document.querySelector(`#${id}[${DATA_HASH_ID}="${hash}"]`);
@@ -90,10 +91,11 @@
     });
   };
 
-  /** search if element is or is contained in another element with attribute data-nav-id
+  /**
+   * search if element is or is contained in another element with attribute data-nav-id
    * @param  {Element | null} el element (node)
-   * @param  {String} hashId the attribute data-hashtooltip-id
-   * @return {String | null} the value of attribute data-hashtooltip-id
+   * @param  {string} hashId the attribute data-hashtooltip-id
+   * @returns {string | null} the value of attribute data-hashtooltip-id
    */
   const searchParentHashId = (el, hashId) => {
     let parentElement = el;
@@ -109,8 +111,8 @@
 
   /**
    * @param {Element | null} el
-   * @param {String} parentClass
-   * @param {String} hashId
+   * @param {string} parentClass
+   * @param {string} hashId
    */
   const searchParent = (el, parentClass, hashId) => {
     let parentElement = el;
@@ -125,16 +127,6 @@
       }
     }
     return "";
-  };
-
-  const mobileView = () => {
-    const mobileElement = document.querySelector(
-      ".global-header .mobile-controls"
-    );
-
-    return mobileElement
-      ? getComputedStyle(mobileElement)["display"] !== "none"
-      : false;
   };
 
   /**
@@ -234,7 +226,7 @@
         // Init attributes accordion
         accordion_node.setAttribute(
           CONFIG.ATTR_MULTISELECTABLE,
-          mobileView() ? "true" : "false"
+          !isDesktopWidth() ? "true" : "false"
         );
 
         accordion_node.setAttribute(DATA_HASH_ID, HASH_ID);
@@ -439,7 +431,7 @@
                       );
                   }
 
-                  if (!mobileView()) {
+                  if (isDesktopWidth()) {
                     accordionAllHeaders.forEach(header_node => {
                       //Close all the other panels
 
@@ -601,7 +593,7 @@
         const toggleSubNav = document.createElement("div");
         toggleSubNav.classList.add("rotate");
         toggleSubNav.ariaHidden = "true";
-        toggleSubNav.style.display = mobileView() ? "block" : "none";
+        toggleSubNav.style.display = isDesktopWidth() ? "none" : "block";
 
         el.appendChild(toggleSubNav);
         el.appendChild(carrot);
