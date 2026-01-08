@@ -198,6 +198,10 @@ div.cagov-header-full {
           gap: 0.3rem;
           padding: 0.2rem 0;
 
+          > svg {
+            width: 1.3rem;
+          }
+
           @media (width >= 436px) {
             padding: 0.2rem 0.3rem;
           }
@@ -207,10 +211,6 @@ div.cagov-header-full {
             color: #000;
           }
         }
-      }
-
-      > div.cagov-header-full__3-links > a > svg {
-        width: 1.3rem;
       }
 
       > div.cagov-header-full__3-utility-menu > nav > ul {
