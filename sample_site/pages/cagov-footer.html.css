@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* cagov footer styles */
+footer.cagov-footer {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    sans-serif;
+  color: #3b3a48;
+  background-color: #fafafa;
+  border-top: 1px solid #d4d4d7;
+
+  /* global */
+
+  :focus {
+    outline: 2px solid #0b8ee5;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+
+  & a {
+    color: #046b99;
+
+    &:hover,
+    &:focus {
+      color: #035376;
+    }
+  }
+
+  .cagov-sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  > div.cagov-footer__1-container {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (width >= 576px) {
+      max-width: 540px;
+    }
+    @media (width >= 768px) {
+      max-width: 720px;
+    }
+    @media (width >= 992px) {
+      max-width: 960px;
+    }
+    @media (width >= 1200px) {
+      max-width: 1140px;
+    }
+
+    > div.cagov-footer__2-footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding: 1rem 0;
+
+      @media (width >= 992px) {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      > a.cagov-footer__3-footer-logo {
+        display: inline-block;
+        height: 28px;
+        margin-right: 1.5rem;
+
+        > svg {
+          height: 100%;
+          width: auto;
+          display: block;
+        }
+      }
+
+      > ul.cagov-footer__4-legal-links {
+        list-style: none;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        > li {
+          @media (width >= 992px) {
+            display: inline-block;
+          }
+
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
+
+          > a {
+            text-decoration: none;
+            color: #3b3a48;
+
+            &:hover,
+            &:focus {
+              color: #000;
+            }
+          }
+        }
+      }
+
+      > div.cagov-footer__5-copyright {
+        margin-top: 1rem;
+        font-size: 1rem;
+        line-height: 1.5;
+
+        @media (width >= 992px) {
+          margin-top: 0;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
