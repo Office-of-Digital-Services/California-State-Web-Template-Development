@@ -10,7 +10,10 @@
  * License MIT: https://github.com/nico3333fr/van11y-accessible-accordion-aria/blob/master/LICENSE
  */
 (() => {
-  const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
+  const isDesktopWidth = () =>
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--is-mobile")
+      .trim() === "0";
 
   /**
    * @param {Object} obj

@@ -41,10 +41,13 @@ window.addEventListener("load", () => {
   const regularHeader = document.querySelector("header");
 
   // Begin Function Definitions
+  const isDesktopWidth = () =>
+    getComputedStyle(document.documentElement)
+      .getPropertyValue("--is-mobile")
+      .trim() === "0";
 
   // reset navigation function
   const NavReset = () => {
-    const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
     //RESET
     document
       .querySelectorAll(".first-level-btn")
@@ -176,7 +179,7 @@ window.addEventListener("load", () => {
 
     if (!searchInput.classList.contains("is-in-focus")) {
       NavReset();
-      const isDesktopWidth = () => window.innerWidth > 991; //Maximum px for mobile width
+
       // desktop
       if (isDesktopWidth()) {
         getAllFirstLevelNavLinks().forEach(el =>
