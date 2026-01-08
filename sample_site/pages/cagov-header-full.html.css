@@ -327,22 +327,24 @@ div.cagov-header-full {
           }
         }
 
-        &[open] > summary > span.cagov-header-full__4-main-menu-hamburger {
-          background-color: #fff;
-
-          &::before {
-            transform: rotate(45deg);
-            top: 0;
+        &[open] {
+          + div {
+            display: block;
           }
 
-          &::after {
-            transform: rotate(-45deg);
-            top: 0;
-          }
-        }
+          > summary > span.cagov-header-full__4-main-menu-hamburger {
+            background-color: #fff;
 
-        &[open] + div {
-          display: block;
+            &::before {
+              transform: rotate(45deg);
+              top: 0;
+            }
+
+            &::after {
+              transform: rotate(-45deg);
+              top: 0;
+            }
+          }
         }
       }
 
