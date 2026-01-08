@@ -111,8 +111,6 @@ nav.side-navigation > ul {
         }
       }
     }
-
-    /* moved above > a for specificity order */
   }
 }
 
