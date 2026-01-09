@@ -2,18 +2,19 @@
    SIDE NAVIGATION - /src/css/cagov/side-navigation.css
 ----------------------------------------- */
 
-.list-navigation,
-.side-navigation ul {
+ul.list-navigation,
+nav.side-navigation > ul {
   margin-left: 0;
   padding-left: 0;
 
-  & li {
+  > li,
+  > li > ul > li {
     list-style: none;
     margin: 0;
     font-size: calc(1rem + var(--ratio));
     padding-left: 0;
 
-    & a {
+    > a {
       position: relative;
       display: block;
       text-decoration: none !important;
@@ -23,46 +24,8 @@
       padding-left: 1rem;
       border-bottom: 1px solid var(--gray-100, #f3f3f4);
 
-      &:hover {
-        color: var(--gray-900, #3b3a48);
-      }
-
-      &.landing {
-        font-weight: var(--font-weight-7);
-
-        &.active {
-          background-color: var(--gray-75, #f3f3f4);
-
-          &:hover,
-          &:focus {
-            background-color: var(--gray-100, #f3f3f4);
-          }
-        }
-
-        &.back {
-          padding-left: 1.5rem;
-
-          &::after {
-            content: "\e668";
-            position: absolute;
-            font-family: CaGov;
-            left: 0;
-            top: 0.65rem;
-          }
-        }
-      }
-
       &.active {
-        color: var(--gray-800, #4a4958);
-        text-decoration: none;
         background-color: var(--gray-75, #f3f3f4);
-
-        &:hover,
-        &:focus {
-          color: var(--black, #000);
-          text-decoration: none;
-          background-color: var(--gray-100, #f3f3f4);
-        }
 
         &::before {
           content: "";
@@ -76,46 +39,50 @@
           border-radius: 0;
         }
       }
-    }
 
-    & a:hover,
-    & a:focus {
-      text-decoration: none;
-      background-color: var(--gray-50, #fafafa);
-      color: var(--gray-900, #3b3a48);
-    }
+      &:hover {
+        color: var(--gray-900, #3b3a48);
+      }
 
-    /* stylelint-disable-next-line no-descending-specificity */
-    & a:focus {
-      outline: 2px solid var(--outline-default-color);
-      outline-offset: -2px;
-    }
+      /* stylelint-disable-next-line no-descending-specificity */
+      &:focus {
+        outline: 2px solid var(--outline-default-color);
+        outline-offset: -2px;
+      }
 
-    & ul {
-      padding-left: 0;
-
-      & li {
-        margin: 0;
+      &:focus,
+      &:hover {
+        background-color: var(--gray-50, #fafafa);
 
         /* stylelint-disable-next-line no-descending-specificity */
-        & a {
-          padding-left: 2.5rem;
+        &.active {
+          background-color: var(--gray-100, #f3f3f4);
+        }
+      }
 
-          &.active {
-            color: var(--gray-800, #4a4958);
-            text-decoration: none;
+      &.landing {
+        font-weight: var(--font-weight-7);
 
-            &:hover,
-            &:focus {
-              color: var(--black, #000);
-              text-decoration: none;
-            }
+        &.back {
+          padding-left: 1.5rem;
 
-            ::before {
-              border-left-color: var(--color-p1, #fdb81e);
-            }
+          &::after {
+            content: "\e668";
+            position: absolute;
+            font-family: CaGov;
+            left: 0;
+            top: 0.65rem;
           }
         }
+      }
+    }
+
+    > ul {
+      padding-left: 0;
+
+      /* stylelint-disable-next-line no-descending-specificity */
+      > li > a {
+        padding-left: 2.5rem;
       }
     }
   }
