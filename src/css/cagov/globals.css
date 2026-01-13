@@ -503,7 +503,7 @@
 .gray-500,
 .gray-500-hover:hover,
 .gray-500-hover:focus {
-  color: var(--gray-50, #fafafa) !important;
+  color: var(--gray-500, #898891) !important;
 }
 
 .gray-600,
