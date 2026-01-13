@@ -48,6 +48,10 @@
   background-color: var(--color-p3, #323a45);
   color: var(--white, #fff);
 
+  &.alert-dismissible {
+    padding-right: 3rem;
+  }
+
   .alert-icon {
     font-size: 1.6rem;
     position: absolute;
