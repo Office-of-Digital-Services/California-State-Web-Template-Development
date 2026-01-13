@@ -52,13 +52,14 @@ window.addEventListener("load", () => {
   }
 
   // Scroll to hash solution
-  const hashLocation = window.location;
-  if (hashLocation.hash) {
-    // Trigger a hashchange to ensure hash scrolling works
-    setTimeout(() => {
-      const currentHash = hashLocation.hash;
-      hashLocation.hash += "_"; // Remove the hash temporarily
-      hashLocation.hash = currentHash; // Reapply the hash
-    }, 500);
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ block: "start" });
+        });
+      });
+    }
   }
 }); // call out the function on the page load
