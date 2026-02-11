@@ -4,35 +4,74 @@
 window.addEventListener("load", () => {
   const ext =
     '<span class="external-link-icon" aria-hidden="true"></span><span class="sr-only">(external link)</span>';
-
-  // Check if link is external function
   /**
+   * Check if link is external
    * @param {HTMLAnchorElement} linkElement
    */
   function linkIsExternal(linkElement) {
     return window.location.host.indexOf(linkElement.host) > -1;
   }
 
-  // Add any exceptions to not render here
   const cssExceptions = `:not(code *):not(.cagov-logo)`;
 
-  // Looping thru all links inside of the main content body, agency footer and statewide footer
-  /** @type {NodeListOf<HTMLAnchorElement>} */
-  const externalLink = document.querySelectorAll(
-    `main a${cssExceptions}, .agency-footer a${cssExceptions}, .site-footer a${cssExceptions}, footer a${cssExceptions}`
-  );
-  externalLink.forEach(element => {
-    const anchorLink = element.href.indexOf("#") === 0;
-    const localHost = element.href.indexOf("localhost") > -1;
-    const localEmail = element.href.indexOf("@") > -1;
-    const linkElement = element;
+  /**
+   * Decorate a single link if needed
+   * @param {HTMLAnchorElement} linkElement
+   */
+  function decorateLink(linkElement) {
+    const href = linkElement.getAttribute("href") || "";
+    const anchorLink = href.startsWith("#");
+    const localHost = href.includes("localhost");
+    const localEmail = href.includes("@");
+
+    // only decorate if the ext icon isn't already present.
+    if (linkElement.querySelector(".external-link-icon")) {
+      //return;
+    }
+
     if (
-      linkIsExternal(linkElement) === false &&
+      !linkIsExternal(linkElement) &&
       !anchorLink &&
       !localEmail &&
       !localHost
     ) {
-      linkElement.innerHTML += ext; // += concatenates to external links
+      console.log("decorateLink", {
+        href,
+        anchorLink,
+        localHost,
+        localEmail
+      });
+      linkElement.insertAdjacentHTML("beforeend", ext);
+    }
+  }
+
+  /** Initial run */
+  /** @type {NodeListOf<HTMLAnchorElement>} */
+  (
+    document.querySelectorAll(
+      `main a${cssExceptions}, .agency-footer a${cssExceptions}, .site-footer a${cssExceptions}, footer a${cssExceptions}`
+    )
+  ).forEach(decorateLink);
+
+  /** Observe DOM changes for AJAX / dynamic content */
+  const observer = new MutationObserver(mutations => {
+    for (const mutation of mutations) {
+      mutation.addedNodes.forEach(node => {
+        if (!(node instanceof HTMLElement)) return;
+
+        if (node instanceof HTMLAnchorElement) {
+          decorateLink(node);
+          return;
+        }
+
+        node.querySelectorAll("a").forEach(link => {
+          if (link instanceof HTMLAnchorElement) {
+            decorateLink(link);
+          }
+        });
+      });
     }
   });
+
+  observer.observe(document.body, { childList: true, subtree: true });
 });
