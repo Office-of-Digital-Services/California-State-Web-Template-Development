@@ -6,7 +6,6 @@
   /**
    * Check for developer override attributes.
    * @param {HTMLAnchorElement} link
-   * @returns {"skip"|"force"|null}
    */
   function getOverride(link) {
     const val = link.dataset.cagovExternal;
@@ -16,7 +15,6 @@
   /**
    * Determine whether a link points to an external origin.
    * @param {HTMLAnchorElement} link
-   * @returns {boolean}
    */
   function isExternalLink(link) {
     const href = link.href;
@@ -32,7 +30,6 @@
   /**
    * Check whether a link contains elements that should prevent decoration.
    * @param {HTMLAnchorElement} link
-   * @returns {boolean}
    */
   const hasForbiddenChildren = link =>
     !!link.querySelector("img, [class*='ca-gov-logo'], [class*='ca-gov-icon']");
@@ -60,19 +57,12 @@
     link.appendChild(sr);
   }
 
-  /**
-   * Scan a DOM subtree for links and decorate them.
-   * @param {ParentNode} [root]
-   */
-  function scanForExternalLinks(root = document) {
-    root
+  const scanForExternalLinks = () =>
+    document
       .querySelectorAll(`a[href]:not(.${externalClass})`)
       .forEach(decorateExternalLink);
-  }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    scanForExternalLinks();
-  });
+  document.addEventListener("DOMContentLoaded", scanForExternalLinks);
 
   let scanScheduled = false;
 
