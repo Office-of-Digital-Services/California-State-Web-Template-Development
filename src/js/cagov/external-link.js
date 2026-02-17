@@ -2,6 +2,17 @@
 /* EXTERNAL LINK ICON DECORATION */
 (function () {
   /**
+   * Check for developer override attributes.
+   * @param {HTMLAnchorElement} link
+   * @returns {"skip"|"force"|null}
+   */
+  function getOverride(link) {
+    const val = link.dataset.cagovExternal;
+    if (val === "skip" || val === "force") return val;
+    return null;
+  }
+
+  /**
    * Determine whether a link points to an external origin.
    * @param {HTMLAnchorElement} link
    * @returns {boolean}
@@ -34,16 +45,24 @@
   }
 
   /**
-   * Decorate a single external link by:
-   * - Adding a CSS class for the decorative SVG icon
-   * - Appending a screen‑reader‑only span containing translatable text
-   *
-   * Decoration is idempotent and will not run twice.
+   * Decorate a single external link.
    * @param {HTMLAnchorElement} link
    */
   function decorateExternalLink(link) {
     if (link.dataset.cagovExternalDecorated === "true") return;
-    if (!isExternalLink(link)) return;
+
+    const override = getOverride(link);
+
+    // Developer override: skip decoration
+    if (override === "skip") return;
+
+    // Developer override: force decoration
+    const treatAsExternal = override === "force";
+
+    // Normal detection
+    const isExternal = treatAsExternal || isExternalLink(link);
+
+    if (!isExternal) return;
     if (hasForbiddenChildren(link)) return;
 
     link.classList.add("cagov-external-link");
