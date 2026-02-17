@@ -4,7 +4,7 @@
 ----------------------------------------- */
 
 :root {
-  --cagov-external-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 3h7v7h-2V6.4l-9 9-1.4-1.4 9-9H14V3M5 5h5V3H5c-1 0-2 1-2 2v14c0 1 1 2 2 2h14c1 0 2-1 2-2v-5h-2v5H5V5'/%3E%3C/svg%3E");
+  --cagov-external-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 3h7v7h-2V7l-9 9-2-2 9-9H14V3M5 5h5V3H5c-1 0-2 1-2 2v14c0 1 1 2 2 2h14c1 0 2-1 2-2v-5h-2v5H5V5'/%3E%3C/svg%3E");
 }
 
 a.cagov-external-link {
