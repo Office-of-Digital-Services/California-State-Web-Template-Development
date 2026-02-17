@@ -1,77 +1,79 @@
 //@ts-check
 
 /* EXTERNAL LINK ICON */
-window.addEventListener("load", () => {
-  const ext =
-    '<span class="external-link-icon" aria-hidden="true"></span><span class="sr-only">(external link)</span>';
-  /**
-   * Check if link is external
-   * @param {HTMLAnchorElement} linkElement
-   */
-  function linkIsExternal(linkElement) {
-    return window.location.host.indexOf(linkElement.host) > -1;
-  }
-
-  const cssExceptions = `:not(code *):not(.cagov-logo)`;
-
-  /**
-   * Decorate a single link if needed
-   * @param {HTMLAnchorElement} linkElement
-   */
-  function decorateLink(linkElement) {
-    const href = linkElement.getAttribute("href") || "";
-    const anchorLink = href.startsWith("#");
-    const localHost = href.includes("localhost");
-    const localEmail = href.includes("@");
-
-    // only decorate if the ext icon isn't already present.
-    if (linkElement.querySelector(".external-link-icon")) {
-      //return;
-    }
-
-    if (
-      !linkIsExternal(linkElement) &&
-      !anchorLink &&
-      !localEmail &&
-      !localHost
-    ) {
-      console.log("decorateLink", {
-        href,
-        anchorLink,
-        localHost,
-        localEmail
-      });
-      linkElement.insertAdjacentHTML("beforeend", ext);
+(function () {
+  function isExternalLink(link) {
+    const href = link.getAttribute("href");
+    if (!href) return false;
+    try {
+      const url = new URL(href, window.location.origin);
+      return url.origin !== window.location.origin;
+    } catch {
+      return false;
     }
   }
 
-  /** Initial run */
-  /** @type {NodeListOf<HTMLAnchorElement>} */
-  (
-    document.querySelectorAll(
-      `main a${cssExceptions}, .agency-footer a${cssExceptions}, .site-footer a${cssExceptions}, footer a${cssExceptions}`
-    )
-  ).forEach(decorateLink);
+  function hasForbiddenChildren(link) {
+    // Skip if the link contains an <img>
+    if (link.querySelector("img")) return true;
 
-  /** Observe DOM changes for AJAX / dynamic content */
+    // Skip if the link contains any .ca-gov-logo* or .ca-gov-icon*
+    if (link.querySelector("[class^='ca-gov-logo'], [class^='ca-gov-icon']")) {
+      return true;
+    }
+
+    return false;
+  }
+
+  function decorateExternalLink(link) {
+    if (link.dataset.cagovExternalDecorated === "true") return;
+    if (!isExternalLink(link)) return;
+
+    // NEW: skip links with forbidden children
+    if (hasForbiddenChildren(link)) return;
+
+    // Add class for CSS icon
+    link.classList.add("cagov-external-link");
+
+    // Add screen-reader text (translatable)
+    const sr = document.createElement("span");
+    sr.classList.add("sr-only");
+    sr.textContent = "(external link)";
+    link.appendChild(sr);
+
+    link.dataset.cagovExternalDecorated = "true";
+  }
+
+  function scanForExternalLinks(root = document) {
+    root.querySelectorAll("a[href]").forEach(decorateExternalLink);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    scanForExternalLinks();
+  });
+
+  // MutationObserver for AJAX/React/Eleventy
   const observer = new MutationObserver(mutations => {
     for (const mutation of mutations) {
       mutation.addedNodes.forEach(node => {
-        if (!(node instanceof HTMLElement)) return;
+        if (node.nodeType !== Node.ELEMENT_NODE) return;
 
-        if (node instanceof HTMLAnchorElement) {
-          decorateLink(node);
-          return;
+        if (node.tagName === "A") {
+          decorateExternalLink(node);
         }
 
-        node.querySelectorAll("a").forEach(link => {
-          if (link instanceof HTMLAnchorElement) {
-            decorateLink(link);
-          }
-        });
+        node.querySelectorAll?.("a[href]").forEach(decorateExternalLink);
       });
     }
   });
 
-  observer.observe(document.body, { childList: true, subtree: true });
-});
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+
+  // Optional event hook for frameworks
+  window.addEventListener("cagov:content-updated", () => {
+    scanForExternalLinks();
+  });
+})();
