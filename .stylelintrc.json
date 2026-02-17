@@ -36,6 +36,7 @@
       {
         "ignoreProperties": ["appearance"]
       }
-    ]
+    ],
+    "value-keyword-case": ["lower", { "ignoreKeywords": ["currentColor"] }]
   }
 }
