@@ -18,11 +18,12 @@
    * @returns {boolean}
    */
   function isExternalLink(link) {
-    const href = link.getAttribute("href");
+    const href = link.href;
     if (!href) return false;
     try {
       const url = new URL(href, window.location.origin);
-      return url.origin !== window.location.origin;
+
+      return url.origin != "null" && url.origin !== window.location.origin;
     } catch {
       return false;
     }

@@ -1,17 +1,33 @@
+<h2>External</h2>
+
 <ul>
   <li><a href="https://www.google.com">External link Google</a></li>
-  <li><a href="/">Internal link Home</a></li>
-  <li><a href="#anchor">Internal Anchor link</a></li>
   <li>
     <a href="/" data-cagov-external="force"
-      >Internal (data-cagov-external="force")</a
+      >Internal with data-cagov-external="force"</a
     >
   </li>
+
+  <li style="background-color: black;">
+    <a href="https://www.google.com" style="color:yellow;"
+      >External Alternate color</a
+    >
+  </li>
+</ul>
+
+<h2>Internal</h2>
+
+<ul>
+  <li><a href="/">Internal link Home</a></li>
+  <li><a href="#anchor">Internal Anchor link</a></li>
+
   <li>
     <a href="https://www.google.com" data-cagov-external="skip"
-      >External (data-cagov-external="skip")</a
+      >External with data-cagov-external="skip"</a
     >
   </li>
+
+  <li><a>No HREF</a></li>
 </ul>
 
 <h2 id="anchor">Anchor target</h2>
