@@ -19,7 +19,7 @@ a.cagov-external-link {
 
     /* Icon color follows the link text color */
     background-color: currentColor;
-    vertical-align: baseline;
+    vertical-align: text-bottom;
 
     /* Safari 13.1 requires prefixed mask properties */
     -webkit-mask-image: var(--cagov-external-icon);
