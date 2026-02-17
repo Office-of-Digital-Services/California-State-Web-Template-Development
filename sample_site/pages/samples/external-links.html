@@ -39,6 +39,31 @@
 
   <li><a>No HREF</a></li>
 </ul>
+<h2>Dynamic Adds</h2>
+<button id="add-link-btn">Add external link</button>
+
+<ul id="test-list"></ul>
 
 <h2 id="anchor">Anchor target</h2>
 <p>This is the target of the anchor link.</p>
+
+<script>
+  (function () {
+    // Prevent duplicate bindings on Eleventy refresh
+    if (window.__cagovAddLinkBound) return;
+    window.__cagovAddLinkBound = true;
+
+    document.getElementById("add-link-btn").addEventListener("click", () => {
+      const ul = document.getElementById("test-list");
+
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+
+      a.href = "https://example.com/" + Math.floor(Math.random() * 1000);
+      a.textContent = "Dynamic external link";
+
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+  })();
+</script>
