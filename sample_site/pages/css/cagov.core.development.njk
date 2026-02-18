@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: "/development/cagov.core.development.css"
+eleventyExcludeFromCollections: true
+---
+
+{%- set css -%} 
+  {% include "../../../src/css/cagov/_all.njk" %}
+{%- endset -%} 
+{{- css | replace('/fonts/CaGov.woff2', '/ca_state_template/fonts/CaGov.woff2') | purgeCSS | safe -}}

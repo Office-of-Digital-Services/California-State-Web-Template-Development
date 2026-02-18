@@ -7,4 +7,4 @@ eleventyExcludeFromCollections: true
 {%- set css -%} 
   {% include "../../../src/css/cagov/_all.njk" %}
 {%- endset -%} 
-{{- css | purgeCSS | safe -}}
+{{- css | safe -}}
