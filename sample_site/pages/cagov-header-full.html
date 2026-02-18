@@ -217,3 +217,7 @@ title: Components and patterns
 <style>
   {% include "./cagov-header-full.html.css" %}
 </style>
+{% set script %} {% include "./cagov-header-full.html.js" %} {% endset %}
+<script>
+  {{ script | safe }}
+</script>

@@ -58,8 +58,8 @@ div.cagov-utility-header {
 
     > div.cagov-utility-header__2-container {
       width: 100%;
-      padding-right: 15px;
-      padding-left: 15px;
+      padding-right: 12px;
+      padding-left: 12px;
       margin-right: auto;
       margin-left: auto;
 
@@ -73,7 +73,7 @@ div.cagov-utility-header {
         max-width: 960px;
       }
       @media (width >= 1200px) {
-        max-width: 1140px;
+        max-width: 1176px;
       }
 
       > div.cagov-utility-header__3-utility-bar {
