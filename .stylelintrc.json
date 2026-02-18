@@ -34,8 +34,15 @@
     "property-no-vendor-prefix": [
       true,
       {
-        "ignoreProperties": ["appearance"]
+        "ignoreProperties": [
+          "appearance",
+          "mask-image",
+          "mask-repeat",
+          "mask-size",
+          "mask-position"
+        ]
       }
-    ]
+    ],
+    "value-keyword-case": ["lower", { "ignoreKeywords": ["currentColor"] }]
   }
 }

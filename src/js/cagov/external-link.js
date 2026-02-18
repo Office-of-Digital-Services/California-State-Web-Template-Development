@@ -1,38 +1,85 @@
 //@ts-check
+/* EXTERNAL LINK ICON DECORATION */
+(function () {
+  const externalClass = "cagov-external-link";
 
-/* EXTERNAL LINK ICON */
-window.addEventListener("load", () => {
-  const ext =
-    '<span class="external-link-icon" aria-hidden="true"></span><span class="sr-only">(external link)</span>';
-
-  // Check if link is external function
   /**
-   * @param {HTMLAnchorElement} linkElement
+   * Check for developer override attributes.
+   * @param {HTMLAnchorElement} link
    */
-  function linkIsExternal(linkElement) {
-    return window.location.host.indexOf(linkElement.host) > -1;
+  function getOverride(link) {
+    const val = link.dataset.cagovExternal;
+    return val === "skip" || val === "force" ? val : null;
   }
 
-  // Add any exceptions to not render here
-  const cssExceptions = `:not(code *):not(.cagov-logo)`;
+  /**
+   * Determine whether a link points to an external origin.
+   * @param {HTMLAnchorElement} link
+   */
+  function isExternalLink(link) {
+    const href = link.href;
+    if (!href) return false;
+    try {
+      const url = new URL(href, window.location.origin);
+      return url.origin !== "null" && url.origin !== window.location.origin;
+    } catch {
+      return false;
+    }
+  }
 
-  // Looping thru all links inside of the main content body, agency footer and statewide footer
-  /** @type {NodeListOf<HTMLAnchorElement>} */
-  const externalLink = document.querySelectorAll(
-    `main a${cssExceptions}, .agency-footer a${cssExceptions}, .site-footer a${cssExceptions}, footer a${cssExceptions}`
-  );
-  externalLink.forEach(element => {
-    const anchorLink = element.href.indexOf("#") === 0;
-    const localHost = element.href.indexOf("localhost") > -1;
-    const localEmail = element.href.indexOf("@") > -1;
-    const linkElement = element;
-    if (
-      linkIsExternal(linkElement) === false &&
-      !anchorLink &&
-      !localEmail &&
-      !localHost
-    ) {
-      linkElement.innerHTML += ext; // += concatenates to external links
+  /**
+   * Check whether a link contains elements that should prevent decoration.
+   * @param {HTMLAnchorElement} link
+   */
+  const hasForbiddenChildren = link =>
+    !!link.querySelector("img, [class*='ca-gov-logo'], [class*='ca-gov-icon']");
+
+  /**
+   * Decorate a single external link.
+   * @param {HTMLAnchorElement} link
+   */
+  function decorateExternalLink(link) {
+    const override = getOverride(link);
+
+    if (override === "skip") return;
+
+    const treatAsExternal = override === "force";
+    const isExternal = treatAsExternal || isExternalLink(link);
+
+    if (!isExternal || hasForbiddenChildren(link)) return;
+
+    link.classList.add(externalClass);
+
+    const sr = document.createElement("span");
+    sr.classList.add("sr-only");
+    sr.lang = "en-US";
+    sr.textContent = "(external link)";
+    link.appendChild(sr);
+  }
+
+  const scanForExternalLinks = () =>
+    document
+      .querySelectorAll(`a[href]:not(.${externalClass})`)
+      .forEach(decorateExternalLink);
+
+  document.addEventListener("DOMContentLoaded", scanForExternalLinks);
+
+  let scanScheduled = false;
+
+  const observer = new MutationObserver(() => {
+    if (!scanScheduled) {
+      scanScheduled = true;
+      queueMicrotask(() => {
+        scanScheduled = false;
+        scanForExternalLinks();
+      });
     }
   });
-});
+
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    characterData: true
+  });
+})();

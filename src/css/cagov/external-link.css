@@ -1,0 +1,36 @@
+/* -----------------------------------------
+   EXTERNAL LINKS
+   /src/css/cagov/external-link.css
+----------------------------------------- */
+
+:root {
+  --cagov-external-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M14 3h7v7h-2V7l-9 9-2-2 9-9H14V3M5 5h5V3H5c-1 0-2 1-2 2v14c0 1 1 2 2 2h14c1 0 2-1 2-2v-5h-2v5H5V5'/></svg>");
+}
+
+a.cagov-external-link {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: 0.25em;
+
+    /* Icon color follows the link text color */
+    background-color: currentColor;
+    vertical-align: text-bottom;
+
+    /* Safari 13.1 requires prefixed mask properties */
+    -webkit-mask-image: var(--cagov-external-icon);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: center;
+
+    /* Standard mask */
+    mask-image: var(--cagov-external-icon);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-position: center;
+  }
+}
