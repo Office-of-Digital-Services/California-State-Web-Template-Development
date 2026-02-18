@@ -63,8 +63,8 @@ div.cagov-header-full {
     > div.cagov-header-full__2-top-bar,
     > div.cagov-header-full__2-branding {
       width: 100%;
-      padding-right: 15px;
-      padding-left: 15px;
+      padding-right: 12px;
+      padding-left: 12px;
       margin-right: auto;
       margin-left: auto;
 
@@ -78,7 +78,7 @@ div.cagov-header-full {
         max-width: 960px;
       }
       @media (width >= 1200px) {
-        max-width: 1140px;
+        max-width: 1176px;
       }
     }
   }
