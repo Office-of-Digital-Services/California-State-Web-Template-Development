@@ -5,7 +5,7 @@ eleventyExcludeFromCollections: true
 ---
 
 {%- set css -%}
-  {% include "../../../sample_site/_includes/cagov.core.all.njk" %}
+  {% include "../../../src/css/cagov/_all.njk" %}
 {%- endset -%}
 {{- css 
  | replace('@media (width <=', '@media (max-width:') 
