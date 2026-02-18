@@ -5,61 +5,7 @@ eleventyExcludeFromCollections: true
 ---
 
 {%- set css -%}
-  {%- include "../../../src/css/cagov/template-comments.css" -%}
-  {%- include "../../../node_modules/bootstrap/dist/css/bootstrap.css" -%}
-  {%- include "../../../src/css/variables.css" -%}
-  {%- include "../../../src/css/colortheme/oceanside.css" -%}
-  {%- include "../../../src/css/cagov/reset.css" -%}
-  {%- include "../../../src/css/cagov/icon-font.css" -%}
-  {%- include "../../../src/css/cagov/type.css" -%}
-  {%- include "../../../src/css/cagov/grid.css" -%}
-  {%- include "../../../src/css/cagov/socialsharer.css" -%}
-  {%- include "../../../src/css/cagov/layout.css" -%}
-  {%- include "../../../src/css/cagov/global-header.css" -%}
-  {%- include "../../../src/css/cagov/header-banner.css" -%}
-  {%- include "../../../src/css/cagov/fixed-header.css" -%}
-  {%- include "../../../src/css/cagov/site-header.css" -%}
-  {%- include "../../../src/css/cagov/global-footer.css" -%}
-  {%- include "../../../src/css/cagov/search.css" -%}
-  {%- include "../../../src/css/cagov/search-results.css" -%}
-  {%- include "../../../src/css/cagov/search-google-cse.css" -%}
-  {%- include "../../../src/css/cagov/navigation.css" -%}
-  {%- include "../../../src/css/cagov/nav-megamenu.css" -%}
-  {%- include "../../../src/css/cagov/nav-media.css" -%}
-  {%- include "../../../src/css/cagov/nav-mobile-controls.css" -%}
-  {%- include "../../../src/css/cagov/utility-header.css" -%}
-  {%- include "../../../src/css/cagov/sections.css" -%}
-  {%- include "../../../src/css/cagov/spacing.css" -%}
-  {%- include "../../../src/css/cagov/return-top.css" -%}
-  {%- include "../../../src/css/cagov/alert-banner.css" -%}
-  {%- include "../../../src/css/cagov/tabs.css" -%}
-  {%- include "../../../src/css/cagov/accordion.css" -%}
-  {%- include "../../../src/css/cagov/accordion-list.css" -%}
-  {%- include "../../../src/css/cagov/accordion-side-nav.css" -%}
-  {%- include "../../../src/css/cagov/breadcrumbs.css" -%}
-  {%- include "../../../src/css/cagov/horizontal-rules.css" -%}
-  {%- include "../../../src/css/cagov/profiles.css" -%}
-  {%- include "../../../src/css/cagov/media.css" -%}
-  {%- include "../../../src/css/cagov/modal.css" -%}
-  {%- include "../../../src/css/cagov/youtube.css" -%}
-  {%- include "../../../src/css/cagov/forms.css" -%}
-  {%- include "../../../src/css/cagov/cards.css" -%}
-  {%- include "../../../src/css/cagov/tables.css" -%}
-  {%- include "../../../src/css/cagov/lists.css" -%}
-  {%- include "../../../src/css/cagov/testimonials.css" -%}
-  {%- include "../../../src/css/cagov/blockquote.css" -%}
-  {%- include "../../../src/css/cagov/button.css" -%}
-  {%- include "../../../src/css/cagov/external-link.css" -%}
-  {%- include "../../../src/css/cagov/number-counter.css" -%}
-  {%- include "../../../src/css/cagov/page-navigation.css" -%}
-  {%- include "../../../src/css/cagov/progress-bar.css" -%}
-  {%- include "../../../src/css/cagov/progress-block.css" -%}
-  {%- include "../../../src/css/cagov/gradient-backgrounds.css" -%}
-  {%- include "../../../src/css/cagov/side-navigation.css" -%}
-  {%- include "../../../src/css/cagov/step-list.css" -%}
-  {%- include "../../../src/css/cagov/link-grid.css" -%}
-  {%- include "../../../src/css/cagov/feature-card.css" -%}
-  {%- include "../../../src/css/cagov/globals.css" -%}
+  {% include "../../../sample_site/_includes/cagov.core.all.njk" %}
 {%- endset -%}
 {{- css 
  | replace('@media (width <=', '@media (max-width:') 
