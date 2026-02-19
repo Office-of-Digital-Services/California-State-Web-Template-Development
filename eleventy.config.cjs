@@ -4,6 +4,7 @@ const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 const path = require("path");
 const postcss = require("postcss");
 const postcssNested = require("postcss-nested");
+const PurgeCSS = require("@fullhuman/postcss-purgecss");
 
 module.exports = function (
   /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
@@ -66,6 +67,42 @@ module.exports = function (
 
     async (code, callback) => {
       callback(null, minifyCSS(code));
+    }
+  );
+
+  // PurgeCSS filter to extract only used CSS
+  eleventyConfig.addFilter(
+    "purgeCSS",
+    async (
+      /** @type {string} */ css,
+      contentPaths = [
+        "./sample_site/**/*.html",
+        "./sample_site/**/*.njk",
+        "./src/css/**/*.css",
+        "./src/js/**/*.js",
+        "./src/_includes/**/*.html"
+      ]
+    ) => {
+      const isFullCSS = process.env.FULL_CSS_BUILD === "true";
+
+      // Skip PurgeCSS entirely in fullCSS mode
+      if (isFullCSS) {
+        console.log("📦 FULL CSS BUILD: Skipping PurgeCSS");
+        return css; // Return unminified CSS, since we'll run it through minifyCSS filter later
+      }
+
+      // Normal dev build → run PurgeCSS
+      const result = await postcss([
+        // @ts-ignore
+        PurgeCSS({
+          content: contentPaths,
+          safelist: [":focus", /focus/, "focus-visible", "focus-within"],
+          defaultExtractor: (/** @type {string} */ content) =>
+            content.match(/[\w-/:]+(?<!:)/g) || []
+        })
+      ]).process(css, { from: undefined });
+
+      return result.css;
     }
   );
 

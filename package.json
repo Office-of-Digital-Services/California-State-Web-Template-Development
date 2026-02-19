@@ -17,6 +17,7 @@
   "scripts": {
     "start": "cross-env MY_ENVIRONMENT=local run-p watch:js watch:eleventy",
     "build": "run-p build:*",
+    "buildFullCSS": "FULL_CSS_BUILD=true run-p build:*",
     "watch:js": "rollup --config rollup.config.js --watch",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "build:js": "rollup --config rollup.config.js",
@@ -45,6 +46,7 @@
     "stylelint": "^15.10.2",
     "stylelint-config-prettier-scss": "^1.0.0",
     "stylelint-config-recommended-scss": "^12.0.0",
-    "stylelint-config-standard-scss": "^10.0.0"
+    "stylelint-config-standard-scss": "^10.0.0",
+    "@fullhuman/postcss-purgecss": "^5.0.0"
   }
 }
