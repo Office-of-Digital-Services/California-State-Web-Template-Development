@@ -70,6 +70,42 @@ module.exports = function (
     }
   );
 
+  // PurgeCSS filter to extract only used CSS
+  eleventyConfig.addFilter(
+    "purgeCSS",
+    async (
+      /** @type {string} */ css,
+      contentPaths = [
+        "./sample_site/**/*.html",
+        "./sample_site/**/*.njk",
+        "./src/css/**/*.css",
+        "./src/js/**/*.js",
+        "./src/_includes/**/*.html"
+      ]
+    ) => {
+      const isFullCSS = process.env.FULL_CSS_BUILD === "true";
+
+      // Skip PurgeCSS entirely in fullCSS mode
+      if (isFullCSS) {
+        console.log("📦 FULL CSS BUILD: Skipping PurgeCSS");
+        return css; // Return unminified CSS, since we'll run it through minifyCSS filter later
+      }
+
+      // Normal dev build → run PurgeCSS
+      const result = await postcss([
+        // @ts-ignore
+        PurgeCSS({
+          content: contentPaths,
+          safelist: [":focus", /focus/, "focus-visible", "focus-within"],
+          defaultExtractor: (/** @type {string} */ content) =>
+            content.match(/[\w-/:]+(?<!:)/g) || []
+        })
+      ]).process(css, { from: undefined });
+
+      return result.css;
+    }
+  );
+
   // Add regexReplace filter
   const newLocal = "regexReplace";
   eleventyConfig.addFilter(newLocal, (value, pattern, replacement) => {
@@ -120,33 +156,6 @@ module.exports = function (
       return content
         .replace(/href="(.*\/)"/g, 'href="$1index.html"') // fixing any root path links
         .replace(/="\//g, `="${relativePath}`); //Replace all ... ="/  ... with new path
-    }
-  );
-
-  // PurgeCSS filter to extract only used CSS
-  eleventyConfig.addFilter(
-    "purgeCSS",
-    async (
-      /** @type {string} */ css,
-      contentPaths = [
-        "./sample_site/**/*.html",
-        "./sample_site/**/*.njk",
-        "./src/css/**/*.css",
-        "./src/js/**/*.js",
-        "./src/_includes/**/*.html"
-      ]
-    ) => {
-      const result = await postcss([
-        // @ts-ignore
-        PurgeCSS({
-          content: contentPaths,
-          safelist: [":focus", /focus/, "focus-visible", "focus-within"],
-          defaultExtractor: (/** @type {string} */ content) =>
-            content.match(/[\w-/:]+(?<!:)/g) || []
-        })
-      ]).process(css, { from: undefined });
-      // Minify the purged CSS
-      return minifyCSS(result.css);
     }
   );
 
