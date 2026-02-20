@@ -79,8 +79,7 @@ module.exports = function (/** @type {EleventyConfig} **/ eleventyConfig) {
         "./sample_site/**/*.njk",
         "./src/css/**/*.css",
         "./src/js/**/*.js",
-        "./src/js/**/*.js",
-        "./node_modules/node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+        "./src/js/**/*.js"
       ]
     ) => {
       const isFullCSS = process.env.FULL_CSS_BUILD === "true";
