@@ -6,8 +6,8 @@ const postcssNested = require("postcss-nested");
 const PurgeCSS = require("@fullhuman/postcss-purgecss");
 
 /**
- * @typedef {import("@11ty/eleventy/src/defaultConfig.js").defaultConfig} EleventyDefaultConfig
- * @typedef {import("@11ty/eleventy/src/UserConfig.js").default} EleventyConfig
+ * @typedef {import("@11ty/eleventy/src/defaultConfig").defaultConfig} EleventyDefaultConfig
+ * @typedef {import("@11ty/eleventy/src/UserConfig").default} EleventyConfig
  */
 
 module.exports = function (/** @type {EleventyConfig} **/ eleventyConfig) {
