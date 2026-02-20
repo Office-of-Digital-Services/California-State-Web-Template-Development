@@ -79,7 +79,8 @@ module.exports = function (/** @type {EleventyConfig} **/ eleventyConfig) {
         "./sample_site/**/*.njk",
         "./src/css/**/*.css",
         "./src/js/**/*.js",
-        "./src/_includes/**/*.html"
+        "./src/js/**/*.js",
+        "./node_modules/node_modules/bootstrap/dist/js/bootstrap.bundle.js"
       ]
     ) => {
       const isFullCSS = process.env.FULL_CSS_BUILD === "true";
@@ -95,7 +96,15 @@ module.exports = function (/** @type {EleventyConfig} **/ eleventyConfig) {
         // @ts-ignore
         PurgeCSS({
           content: contentPaths,
-          safelist: [":focus", /focus/, "focus-visible", "focus-within"],
+          safelist: [
+            ":nth-child",
+            ":hover",
+            ":focus",
+            /focus/,
+            "focus-visible",
+            "focus-within",
+            /^modal-backdrop/
+          ],
           defaultExtractor: (/** @type {string} */ content) =>
             content.match(/[\w-/:]+(?<!:)/g) || []
         })
