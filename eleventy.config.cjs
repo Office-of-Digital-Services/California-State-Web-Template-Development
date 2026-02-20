@@ -10,9 +10,7 @@ const PurgeCSS = require("@fullhuman/postcss-purgecss");
  * @typedef {import("./node_modules/@11ty/eleventy/src/UserConfig.js").default} EleventyConfig
  */
 
-module.exports = function (
-  /** @type {import("./node_modules/@11ty/eleventy/src/UserConfig.js").default} **/ eleventyConfig
-) {
+module.exports = function (/** @type {EleventyConfig} **/ eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "src/fonts": "ca_state_template/fonts",
     "sample_site/images": "images",
