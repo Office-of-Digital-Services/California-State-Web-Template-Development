@@ -1,5 +1,9 @@
 //@ts-check
 /* EXTERNAL LINK ICON DECORATION */
+/**
+ * use data-cagov-external="skip" to prevent decoration of a link
+ * use data-cagov-external="force" to force decoration of a link
+ */
 (function () {
   const externalClass = "cagov-external-link";
 
