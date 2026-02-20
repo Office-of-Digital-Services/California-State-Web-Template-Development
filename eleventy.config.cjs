@@ -1,13 +1,17 @@
 //@ts-check
 const docSiteUrl = "https://template.webstandards.ca.gov/";
-const defaultConfig = require("@11ty/eleventy/src/defaultConfig");
 const path = require("path");
 const postcss = require("postcss");
 const postcssNested = require("postcss-nested");
 const PurgeCSS = require("@fullhuman/postcss-purgecss");
 
+/**
+ * @typedef {import("./node_modules/@11ty/eleventy/src/defaultConfig.js").defaultConfig} EleventyDefaultConfig
+ * @typedef {import("./node_modules/@11ty/eleventy/src/UserConfig.js").default} EleventyConfig
+ */
+
 module.exports = function (
-  /** @type {import("@11ty/eleventy").UserConfig} **/ eleventyConfig
+  /** @type {import("./node_modules/@11ty/eleventy/src/UserConfig.js").default} **/ eleventyConfig
 ) {
   eleventyConfig.addPassthroughCopy({
     "src/fonts": "ca_state_template/fonts",
@@ -41,9 +45,6 @@ module.exports = function (
         .replace(/="\/images\//g, `="${docSiteUrl}images/`)
         .replace(/url\('\/images\//g, `url('${docSiteUrl}images/`)
   );
-
-  //Start with default config, easier to configure 11ty later
-  const config = defaultConfig(eleventyConfig);
 
   /**
    * @param {string} content
@@ -123,20 +124,25 @@ module.exports = function (
     return result.css;
   });
 
-  // allow nunjucks templating in .html files
-  config.htmlTemplateEngine = "njk";
-  config.markdownTemplateEngine = "njk";
-  config.templateFormats = ["html", "njk", "11ty.js", "md"];
-
-  config.dir = {
-    // site content pages
-    input: "sample_site/pages",
-    // site structure pages (path is realtive to input directory)
-    data: "../_data",
-    includes: "../_includes",
-    layouts: "../_includes/layouts",
-    // site final outpuut directory
-    output: "_site"
+  //Start with default config, easier to configure 11ty later
+  /** @type {EleventyDefaultConfig} */
+  const config = {
+    // allow nunjucks templating in .html files
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+    templateFormats: ["html", "njk", "11ty.js", "md"],
+    keys: {},
+    dir: {
+      // site content pages
+      input: "sample_site/pages",
+      // site structure pages (path is realtive to input directory)
+      data: "../_data",
+      includes: "../_includes",
+      // @ts-ignore
+      layouts: "../_includes/layouts",
+      // site final outpuut directory
+      output: "_site"
+    }
   };
 
   //Adding a transform to make the output work as non-server static files
