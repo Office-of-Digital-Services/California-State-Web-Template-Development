@@ -1,0 +1,39 @@
+---
+landing: Components
+permalink: template-banner.html
+title: Components and patterns
+---
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<div class="template-banner__component bg-primary-gradient">
+  <div class="template-banner__image-container">
+    <img
+      src="https://www.ca.gov/images/about-tree.webp"
+      alt="Banner Image"
+      class="image-fade-left" />
+  </div>
+  <div class="template-banner__content">
+    <div class="template-banner__col-6">
+      <h1 class="template-banner__title font-weight-200">
+        State template banner heading
+      </h1>
+      <p class="template-banner__description">
+        This is a description of the banner. It should be concise and
+        informative, providing context for the user about the content or purpose
+        of the page.
+      </p>
+      <div class="template-banner__actions">
+        <a href="#" class="template-banner__action">Primary Action</a>
+        <a href="#" class="template-banner__action-secondary"
+          >Secondary Action</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  {% include "./template-banner.html.css" %}
+</style>
