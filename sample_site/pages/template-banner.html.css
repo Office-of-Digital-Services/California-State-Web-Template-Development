@@ -1,0 +1,194 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div.template-banner__component {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family:
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    sans-serif;
+  color: #3b3a48;
+  position: relative;
+
+  &.bg-understated {
+    background-color: #eef8fb;
+    color: #3b3a48;
+  }
+
+  &.bg-primary {
+    background-color: #046b99;
+    color: #fff;
+  }
+
+  & .h2 {
+    font-size: calc(2.3175rem + 0.1vw) !important;
+  }
+
+  & .font-weight-400 {
+    font-weight: 400 !important;
+  }
+
+  & .font-weight-200 {
+    font-weight: 200 !important;
+  }
+
+  &.bg-primary-gradient {
+    background: linear-gradient(180deg, #01395e 20.31%, #046b99 66.15%);
+    color: #fff;
+  }
+
+  &.bg-standout {
+    background-color: #323a45;
+    color: #fff;
+  }
+
+  > div.template-banner__image-container {
+    position: relative;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    order: 1;
+
+    @media (width >= 1200px) {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    > img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      object-position: center;
+      margin-left: auto;
+      aspect-ratio: 37 / 25;
+
+      @media (width >= 1200px) {
+        width: auto;
+        max-height: 100%;
+        object-fit: contain;
+        object-position: right center;
+        margin-left: auto;
+      }
+
+      &.image-fade-left {
+        /* For Chrome, Safari, Edge */
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 30%);
+        mask-image: linear-gradient(to bottom, transparent, black 30%);
+
+        @media (width >= 1200px) {
+          /* For Chrome, Safari, Edge */
+          -webkit-mask-image: linear-gradient(to right, transparent, black 30%);
+          mask-image: linear-gradient(to right, transparent, black 30%);
+        }
+      }
+    }
+  }
+
+  > div.template-banner__content {
+    order: 0;
+    padding: 0 12px 3rem;
+    margin: 0 auto;
+    position: relative;
+
+    @media (width >= 576px) {
+      max-width: 540px;
+    }
+    @media (width >= 768px) {
+      max-width: 720px;
+    }
+    @media (width >= 992px) {
+      max-width: 960px;
+    }
+    @media (width >= 1200px) {
+      max-width: 1176px;
+    }
+
+    > div.template-banner__col-6 {
+      width: 100%;
+
+      @media (width >= 1200px) {
+        width: 50%;
+      }
+
+      > .template-banner__title {
+        font-size: calc(2.9375rem + 0.1vw);
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 2rem;
+        line-height: 1.15;
+        text-wrap: pretty;
+      }
+
+      > .template-banner__description {
+        font-size: calc(1.5rem + 0.1vw);
+        margin-bottom: 1.5rem;
+      }
+
+      > .template-banner__actions {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding-top: 1.5rem;
+        gap: 1rem;
+
+        > .template-banner__action,
+        > .template-banner__action-secondary {
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          border-radius: 4px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: calc(1rem + 0.1vw);
+          transition:
+            background 0.2s,
+            color 0.2s;
+        }
+
+        > .template-banner__action {
+          background: #f2c45a;
+          color: #3b3a48;
+          border: none;
+        }
+
+        > .template-banner__action:hover,
+        > .template-banner__action:focus {
+          background: #f5ce73;
+          color: #000;
+          box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
+        }
+
+        > .template-banner__action-secondary {
+          background-color: #046b99;
+          color: #fff;
+          border: 1px solid #fff;
+        }
+
+        > .template-banner__action-secondary:hover,
+        > .template-banner__action-secondary:focus {
+          background-color: #035376;
+          color: #fff;
+          box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
+        }
+      }
+    }
+  }
+}
