@@ -1,0 +1,38 @@
+---
+landing: Components
+permalink: template-card.html
+title: Components and patterns
+---
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<div
+  class="template-card__component rounded box-shadow scale-on-hover transition">
+  <img
+    class="template-card__image"
+    src="https://www.ca.gov/images/about-tree.webp"
+    alt="Placeholder image" />
+  <div class="template-card__content">
+    <div class="template-card__icon">
+      <img
+        src="https://digitalidstrategy.cdt.ca.gov/images/pro-services.svg"
+        alt="California State icon" />
+    </div>
+    <div class="template-card__info">
+      <h2 class="template-card__heading">
+        <a href="javascript:void(0)">Template card heading</a>
+      </h2>
+      <p class="template-card__description">
+        This is a description of the card.
+      </p>
+      <ul>
+        <li><strong>Placeholder:</strong> item 1</li>
+        <li><strong>Placeholder:</strong> item 2</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<style>
+  {% include "./template-card.html.css" %}
+</style>
