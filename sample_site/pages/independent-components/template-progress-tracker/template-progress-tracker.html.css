@@ -1,6 +1,9 @@
-body {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 div.template-progress-tracker__component {
@@ -116,6 +119,10 @@ div.template-progress-tracker__component {
 
       &.step-border-gray {
         border-color: #ededef;
+      }
+
+      &.step-border-transparent {
+        border-color: transparent;
       }
     }
   }
