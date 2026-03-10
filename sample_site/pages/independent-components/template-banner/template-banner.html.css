@@ -1,6 +1,9 @@
-body {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 div.template-banner__component {
@@ -78,7 +81,6 @@ div.template-banner__component {
       object-fit: cover;
       object-position: center;
       margin-left: auto;
-      aspect-ratio: 37 / 25;
 
       @media (width >= 1200px) {
         width: auto;
@@ -103,10 +105,12 @@ div.template-banner__component {
   }
 
   > div.template-banner__content {
+    box-sizing: border-box;
     order: 0;
     padding: 0 12px 3rem;
     margin: 0 auto;
     position: relative;
+    width: 100%;
 
     @media (width >= 576px) {
       max-width: 540px;
