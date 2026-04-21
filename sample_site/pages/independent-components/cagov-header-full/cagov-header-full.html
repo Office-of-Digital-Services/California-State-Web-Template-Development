@@ -8,20 +8,27 @@ title: Components and patterns
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 <div class="cagov-header-full">
-  <div class="cagov-header-full__1-utility">
-    <div class="cagov-header-full__2-top-bar">
+  <!-- START > div:first-child (Utility Bar) -->
+  <div>
+    <!-- START > div:first-child > div -->
+    <div>
+      <!-- START > details:first-of-type (Official CA.gov Button) -->
       <details
-        name="cagov-header-full__buttongroup"
-        class="cagov-header-full_official-button">
+        name="cagov-header-full__buttongroup">
         <summary>Official California website</summary>
       </details>
+      <!-- END > details:first-of-type (Official CA.gov Button) -->
+
+      <!-- START > details:first-of-type + div (Official CA.gov Content) -->
       <div>
         <span class="bold">California government websites use .ca.gov </span
         ><br />
         A .ca.gov website is part of California’s government.
       </div>
+      <!-- END > details:first-of-type + div (Official CA.gov Content) -->
 
-      <div class="cagov-header-full__3-links">
+      <!-- START > div:nth-of-type(2) (Login Link) -->
+      <div>
         <a href="https://www.ca.gov/support/"
           >Login
           <svg
@@ -36,16 +43,17 @@ title: Components and patterns
           </svg>
         </a>
       </div>
+      <!-- END > div:nth-of-type(2) (Login Link) -->
 
-      <!--utility menu-->
+      <!-- START > details:last-of-type (Utility Menu Button) -->
       <details
-        class="cagov-header-full__3-menu-button"
         name="cagov-header-full__buttongroup">
         <summary lang="en">Utility menu</summary>
       </details>
+      <!-- END > details:last-of-type (Utility Menu Button) -->
 
-      <!-- utility menu content-->
-      <div class="cagov-header-full__3-utility-menu">
+      <!-- START > div:last-of-type (Utility Menu Content) -->
+      <div>
         <nav aria-label="Utility navigation">
           <ul>
             <li>
@@ -63,22 +71,22 @@ title: Components and patterns
           </ul>
         </nav>
       </div>
-      <!--end cagov collapsible menu content-->
-      <!--end cagov-menu-->
+      <!-- END > div:last-of-type (Utility Menu Content) -->
     </div>
-    <!--end cagov-top-bar -->
+    <!-- END > div:first-child > div -->
   </div>
-  <!--end cagov-header-full__1-utility-->
-  <div class="cagov-header-full__1-bottom-bar">
-    <div class="cagov-header-full__2-branding">
-      <!--CA.gov logo-->
-      <div class="cagov-header-full__3-logo">
+  <!-- END > div:first-child (Utility Bar) -->
+
+  <!-- START > div:last-child (Bottom Bar / Branding) -->
+  <div>
+    <!-- START > div:last-child > div -->
+    <div>
+      <!-- START > div:first-of-type (CA.gov Logo) -->
+      <div>
         <a
           href="https://www.ca.gov/"
-          class="cagov-header-full__3-logo-link"
           aria-label="Go to the California state government homepage">
           <svg
-            class="cagov-logo"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 3000 837"
             title="CA.gov logo">
@@ -121,13 +129,13 @@ title: Components and patterns
           </svg>
         </a>
       </div>
+      <!-- END > div:first-of-type (CA.gov Logo) -->
 
-      <!--ca.gov search-->
+      <!-- START > details:first-of-type (Search Button) -->
       <details
-        class="cagov-header-full__3-search-button"
         name="cagov-header-full__buttongroup">
         <summary>
-          <span class="cagov-sr-only" lang="en">CA.gov search</span>
+          <span lang="en">CA.gov search</span>
           <svg
             alt=""
             aria-hidden="true"
@@ -141,14 +149,16 @@ title: Components and patterns
           </svg>
         </summary>
       </details>
+      <!-- END > details:first-of-type (Search Button) -->
 
-      <div class="cagov-header-full__3-search">
+      <!-- START > div:nth-of-type(2) (Search Form) -->
+      <div>
         <form
           action="https://www.ca.gov/search/"
           method="get"
           role="search"
           aria-label="Search CA.gov">
-          <label for="cagov-search-input" class="cagov-sr-only"
+          <label for="cagov-search-input"
             >Search CA.gov</label
           >
           <input
@@ -173,21 +183,21 @@ title: Components and patterns
           </button>
         </form>
       </div>
-      <!--end cagov-header-full__3-search-->
+      <!-- END > div:nth-of-type(2) (Search Form) -->
 
-      <!--main menu-->
+      <!-- START > details:last-of-type (Main Menu Button) -->
       <details
-        class="cagov-header-full__3-main-menu-button"
         name="cagov-header-full__buttongroup">
         <summary lang="en">
-          <span class="cagov-sr-only">Main menu</span>
+          <span>Main menu</span>
           <span
-            aria-hidden="true"
-            class="cagov-header-full__4-main-menu-hamburger"></span>
+            aria-hidden="true"></span>
         </summary>
       </details>
+      <!-- END > details:last-of-type (Main Menu Button) -->
 
-      <div class="cagov-header-full__3-main-menu">
+      <!-- START > div:last-of-type (Main Menu Content) -->
+      <div>
         <nav aria-label="Main navigation">
           <ul>
             <li>
@@ -207,12 +217,13 @@ title: Components and patterns
           </ul>
         </nav>
       </div>
+      <!-- END > div:last-of-type (Main Menu Content) -->
     </div>
-    <!--end cagov-header-full__2-branding-->
+    <!-- END > div:last-child > div -->
   </div>
-  <!--end cagov-header-full__1-bottom-bar-->
+  <!-- END > div:last-child (Bottom Bar / Branding) -->
 </div>
-<!--end cagov-header-full-->
+<!-- END div.cagov-header-full -->
 
 <style>
   {% include "./cagov-header-full.html.css" %}

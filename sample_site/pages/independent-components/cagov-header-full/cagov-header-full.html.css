@@ -61,10 +61,8 @@ div.cagov-header-full {
     padding: 0;
   }
 
-  > div.cagov-header-full__1-bottom-bar,
-  > div.cagov-header-full__1-utility {
-    > div.cagov-header-full__2-top-bar,
-    > div.cagov-header-full__2-branding {
+  > div {
+    > div {
       width: 100%;
       padding-right: 12px;
       padding-left: 12px;
@@ -86,470 +84,508 @@ div.cagov-header-full {
     }
   }
 
-  /* cagov official styles */
-  > div.cagov-header-full__1-utility {
+  > div:first-child {
     background-color: #f5f9fa;
     min-height: 42px;
+  }
 
-    > div.cagov-header-full__2-top-bar {
+  > div:last-child {
+    border-bottom: 2px solid #e2e2e3;
+  }
+
+  /* UTILITY BAR */
+  > div:first-child > div {
+    display: flex;
+    gap: 0.5rem;
+    flex-flow: column wrap;
+    width: 100%;
+    align-items: start;
+    padding-top: 0.2rem;
+    padding-bottom: 0.5rem;
+
+    @media (width >= 300px) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    > div:nth-of-type(2) {
       display: flex;
-      gap: 0.5rem;
-      flex-flow: column wrap;
-      width: 100%;
-      align-items: start;
-      padding-top: 0.2rem;
-      padding-bottom: 0.5rem;
+      flex-direction: column;
+      gap: 0.2rem;
+      position: relative;
+      left: 0;
+      margin-right: 0.5rem;
 
-      @media (width >= 300px) {
+      @media (width >= 436px) {
+        left: 0.3rem;
         flex-direction: row;
-        align-items: center;
+        margin-right: 0;
       }
 
-      > details.cagov-header-full_official-button {
-        flex-grow: 1;
-        flex-shrink: 0;
-
-        > summary {
-          font-size: 0.875rem;
-          display: inline-block;
-          width: fit-content;
-          padding: 0.35rem 0.5rem 0.2rem;
-          right: 0.5rem;
-        }
-      }
-
-      > details.cagov-header-full__3-menu-button > summary {
+      > a {
+        color: #3b3a48;
         font-size: 0.95rem;
-        padding: 0.35rem 0.5rem;
-        right: 0.5rem;
+        display: flex;
+        gap: 0.3rem;
+        padding: 0.2rem 0;
+
+        > svg {
+          width: 1.3rem;
+        }
 
         @media (width >= 436px) {
-          left: 0.2rem;
-          padding: 0.35rem 0.3rem;
+          padding: 0.2rem 0.3rem;
+        }
+
+        &:hover,
+        &:focus {
+          color: #000;
+        }
+      }
+    }
+
+    > div:last-of-type > nav > ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 0;
+      position: relative;
+      left: 0.35rem;
+      font-size: 0.95rem;
+
+      > li > a {
+        padding: 0.35rem 0;
+      }
+
+      @media (width >= 436px) {
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        > li > a {
+          padding: 0.35rem;
         }
       }
 
-      > details.cagov-header-full_official-button,
-      > details.cagov-header-full__3-menu-button {
-        > summary {
-          list-style: none;
-          text-decoration: underline;
-          cursor: pointer;
-          position: relative;
+      @media (width >= 540px) {
+        flex-direction: row;
+        gap: 1.5rem;
+      }
+    }
 
-          &::after {
-            margin-left: 0.5rem;
-            content: "";
-            display: inline-block;
-            text-decoration: none;
-            position: relative;
-            top: -2px;
-            width: 0.4rem;
-            height: 0.4rem;
-            border-top: 1px solid #000;
-            border-left: 1px solid #000;
-            transform: rotate(225deg);
-            transition: 200ms;
-            vertical-align: middle;
-          }
+    > details:first-of-type {
+      flex-grow: 1;
+      flex-shrink: 0;
+
+      > summary {
+        font-size: 0.875rem;
+        display: inline-block;
+        width: fit-content;
+        padding: 0.35rem 0.5rem 0.2rem;
+        right: 0.5rem;
+      }
+    }
+
+    > details:last-of-type > summary {
+      font-size: 0.95rem;
+      padding: 0.35rem 0.5rem;
+      right: 0.5rem;
+
+      @media (width >= 436px) {
+        left: 0.2rem;
+        padding: 0.35rem 0.3rem;
+      }
+    }
+
+    > details:first-of-type,
+    > details:last-of-type {
+      > summary {
+        list-style: none;
+        text-decoration: underline;
+        cursor: pointer;
+        position: relative;
+
+        &::after {
+          margin-left: 0.5rem;
+          content: "";
+          display: inline-block;
+          text-decoration: none;
+          position: relative;
+          top: -2px;
+          width: 0.4rem;
+          height: 0.4rem;
+          border-top: 1px solid #000;
+          border-left: 1px solid #000;
+          transform: rotate(225deg);
+          transition: 200ms;
+          vertical-align: middle;
+        }
+      }
+
+      + div {
+        display: none;
+        width: 100%;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        line-height: 1.5;
+        font-size: 0.875rem;
+        order: 0;
+
+        @media (width >= 436px) {
+          order: 1;
+        }
+      }
+
+      &[open] {
+        > summary::after {
+          transform: rotate(45deg);
+          top: 2px;
         }
 
         + div {
-          display: none;
-          width: 100%;
-          padding-top: 0.5rem;
-          padding-bottom: 0.5rem;
-          line-height: 1.5;
-          font-size: 0.875rem;
-          order: 0;
-
-          @media (width >= 436px) {
-            order: 1;
-          }
-        }
-
-        &[open] {
-          > summary::after {
-            transform: rotate(45deg);
-            top: 2px;
-          }
-
-          + div {
-            display: block;
-          }
-        }
-      }
-
-      > div.cagov-header-full__3-links {
-        display: flex;
-        flex-direction: column;
-        gap: 0.2rem;
-        position: relative;
-        left: 0;
-        margin-right: 0.5rem;
-
-        @media (width >= 436px) {
-          left: 0.3rem;
-          flex-direction: row;
-          margin-right: 0;
-        }
-
-        > a {
-          color: #3b3a48;
-          font-size: 0.95rem;
-          display: flex;
-          gap: 0.3rem;
-          padding: 0.2rem 0;
-
-          > svg {
-            width: 1.3rem;
-          }
-
-          @media (width >= 436px) {
-            padding: 0.2rem 0.3rem;
-          }
-
-          &:hover,
-          &:focus {
-            color: #000;
-          }
-        }
-      }
-
-      > div.cagov-header-full__3-utility-menu > nav > ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 0;
-        position: relative;
-        left: 0.35rem;
-        font-size: 0.95rem;
-
-        > li > a {
-          padding: 0.35rem 0;
-        }
-
-        @media (width >= 436px) {
-          align-items: flex-end;
-          justify-content: flex-end;
-
-          > li > a {
-            padding: 0.35rem;
-          }
-        }
-
-        @media (width >= 540px) {
-          flex-direction: row;
-          gap: 1.5rem;
+          display: block;
         }
       }
     }
   }
 
-  /* bottom bar/branding styles */
-  > div.cagov-header-full__1-bottom-bar {
-    border-bottom: 2px solid #e2e2e3;
+  /* BOTTOM BAR/BRANDING */
+  /* stylelint-disable no-descending-specificity */
+  > div:last-child > div {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    width: 100%;
 
-    > div.cagov-header-full__2-branding {
-      display: flex;
-      justify-content: flex-start;
-      flex-flow: column wrap;
+    @media (width >= 300px) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    > div:first-of-type {
+      flex-grow: 1;
+      flex-shrink: 0;
       width: 100%;
 
-      @media (width >= 300px) {
-        flex-direction: row;
+      @media (width >= 336px) {
+        width: auto;
+      }
+
+      > a {
+        display: inline-block;
+
+        > svg {
+          padding: 1rem 0;
+          max-width: 216px;
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+
+    > div:nth-of-type(2) {
+      display: none;
+      width: 100%;
+      order: 1;
+
+      @media (width >= 576px) {
+        width: auto;
+        display: block;
+        order: 0;
+      }
+
+      > form {
+        display: flex;
         align-items: center;
-      }
+        justify-content: center;
+        position: relative;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
-      > div.cagov-header-full__3-logo {
-        flex-grow: 1;
-        flex-shrink: 0;
-        width: 100%;
-
-        @media (width >= 336px) {
-          width: auto;
+        @media (width >= 576px) {
+          max-width: 350px;
         }
 
-        > a.cagov-header-full__3-logo-link {
-          display: inline-block;
+        > label {
+          position: absolute !important;
+          width: 1px !important;
+          height: 1px !important;
+          padding: 0 !important;
+          margin: -1px !important;
+          overflow: hidden !important;
+          clip: rect(0, 0, 0, 0) !important;
+          white-space: nowrap !important;
+          border: 0 !important;
+        }
 
-          > svg.cagov-logo {
-            padding: 1rem 0;
-            max-width: 216px;
-            width: 100%;
-            height: auto;
-            display: block;
+        > input[type="search"] {
+          font-size: 1.1rem;
+          width: 100%;
+          max-height: 38px;
+          padding: 0 10px;
+          transition: border 0.4s;
+          border: 1px solid #72717c;
+          border-radius: 5px 0 0 5px;
+          height: 38px;
+          outline-offset: -2px;
+        }
+
+        > button[type="submit"] {
+          outline-offset: -4px;
+          outline-color: #85cbf9;
+          background-color: #72717c;
+          color: #fff;
+          border-radius: 0 5px 5px 0;
+          padding: 0 12px;
+          border: 1px solid #72717c;
+          min-height: 38px;
+          margin-left: -1px;
+          line-height: 0;
+
+          > svg {
+            fill: #fff;
           }
         }
       }
+    }
 
-      /* Main menu styles */
-      > details.cagov-header-full__3-main-menu-button {
-        > summary {
+    > div:last-of-type {
+      display: none;
+      width: 100%;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 1000%;
+        height: 0;
+        outline: 1px solid #e2e2e3;
+        box-shadow: none;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      &::before {
+        right: 50%;
+      }
+
+      &::after {
+        left: 50%;
+      }
+
+      @media (width >= 576px) {
+        display: block;
+      }
+
+      > nav {
+        position: relative;
+
+        @media (width >= 576px) {
+          left: -1rem;
+        }
+
+        > ul {
           list-style: none;
-          padding: 0.5rem;
-          position: relative;
-          left: 0.5rem;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
 
           @media (width >= 576px) {
-            display: none;
+            flex-direction: row;
           }
 
-          > span.cagov-header-full__4-main-menu-hamburger {
-            position: relative;
-            display: block;
-            width: 34px;
-            height: 5px;
-            border-radius: 4px;
-            background-color: #035376;
-            transition: 0.4s;
-            margin: 10px 0;
+          > li {
+            > a {
+              font-size: 1.1rem;
+              padding: 0.85rem 1rem 0.9rem;
+              display: block;
+              text-decoration: none;
+              margin-left: -1rem;
+              margin-right: -1rem;
+              border-top: 1px solid #d4d4d7;
 
-            &::before,
-            &::after {
-              content: "";
-              position: absolute;
-              left: 0;
-              width: 34px;
-              height: 5px;
-              border-radius: 4px;
-              background-color: #035376;
-              transition: 0.3s;
+              &:hover,
+              &:focus {
+                background-color: #fafafa;
+              }
+
+              &:focus {
+                outline-offset: -2px;
+              }
+
+              @media (width >= 576px) {
+                margin-left: 0;
+                margin-right: 0;
+              }
+
+              @media (width >= 768px) {
+                font-size: 1.125rem;
+              }
             }
 
-            &::before {
-              top: -12px;
-            }
-
-            &::after {
-              top: 12px;
-            }
-          }
-        }
-
-        &[open] {
-          + div {
-            display: block;
-          }
-
-          > summary > span.cagov-header-full__4-main-menu-hamburger {
-            background-color: #fff;
-
-            &::before {
-              transform: rotate(45deg);
-              top: 0;
-            }
-
-            &::after {
-              transform: rotate(-45deg);
-              top: 0;
+            &:first-child > a {
+              border-top: none;
             }
           }
         }
       }
+    }
 
-      /* Search styles */
-      > details.cagov-header-full__3-search-button {
-        height: 2.5rem;
+    /* Main menu styles */
+    > details:last-of-type {
+      > summary {
+        list-style: none;
+        padding: 0.5rem;
+        position: relative;
+        left: 0.5rem;
 
-        > summary {
-          cursor: pointer;
-          display: inline-flex;
-          align-items: center;
+        @media (width >= 576px) {
+          display: none;
+        }
+
+        > span:first-child {
+          position: absolute !important;
+          width: 1px !important;
+          height: 1px !important;
+          padding: 0 !important;
+          margin: -1px !important;
+          overflow: hidden !important;
+          clip: rect(0, 0, 0, 0) !important;
+          white-space: nowrap !important;
+          border: 0 !important;
+        }
+
+        > span:last-child {
           position: relative;
-
-          @media (width >= 576px) {
-            display: none;
-          }
+          display: block;
+          width: 34px;
+          height: 5px;
+          border-radius: 4px;
+          background-color: #035376;
+          transition: 0.4s;
+          margin: 10px 0;
 
           &::before,
           &::after {
             content: "";
             position: absolute;
-            width: 100%;
+            left: 0;
+            width: 34px;
             height: 5px;
-            background: #035376;
-            border-radius: 32px;
-            transition:
-              transform 0.3s,
-              opacity 0.3s;
-            opacity: 0;
+            border-radius: 4px;
+            background-color: #035376;
+            transition: 0.3s;
           }
 
-          > svg {
-            width: 2.5rem;
-            height: 2.5rem;
-            transition: transform 0.3s;
-
-            > path {
-              fill: #035376;
-            }
-          }
-        }
-
-        &[open] {
-          + div {
-            display: block;
+          &::before {
+            top: -12px;
           }
 
-          > summary {
-            &::before,
-            &::after {
-              opacity: 1;
-            }
-
-            &::before {
-              transform: rotate(45deg);
-            }
-
-            &::after {
-              transform: rotate(-45deg);
-            }
-
-            > svg {
-              transform: scale(0);
-            }
+          &::after {
+            top: 12px;
           }
         }
       }
 
-      > div.cagov-header-full__3-search {
-        display: none;
-        width: 100%;
-        order: 1;
+      &[open] {
+        + div {
+          display: block;
+        }
+
+        > summary > span:last-child {
+          background-color: #fff;
+
+          &::before {
+            transform: rotate(45deg);
+            top: 0;
+          }
+
+          &::after {
+            transform: rotate(-45deg);
+            top: 0;
+          }
+        }
+      }
+    }
+
+    /* Search styles */
+    > details:first-of-type {
+      height: 2.5rem;
+
+      > summary {
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        position: relative;
 
         @media (width >= 576px) {
-          width: auto;
-          display: block;
-          order: 0;
+          display: none;
         }
 
-        > form {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          padding-top: 1rem;
-          padding-bottom: 1rem;
-
-          @media (width >= 576px) {
-            max-width: 350px;
-          }
-
-          > input[type="search"] {
-            font-size: 1.1rem;
-            width: 100%;
-            max-height: 38px;
-            padding: 0 10px;
-            transition: border 0.4s;
-            border: 1px solid #72717c;
-            border-radius: 5px 0 0 5px;
-            height: 38px;
-            outline-offset: -2px;
-          }
-
-          > button[type="submit"] {
-            outline-offset: -4px;
-            outline-color: #85cbf9;
-            background-color: #72717c;
-            color: #fff;
-            border-radius: 0 5px 5px 0;
-            padding: 0 12px;
-            border: 1px solid #72717c;
-            min-height: 38px;
-            margin-left: -1px;
-
-            > svg {
-              fill: #fff;
-            }
-          }
+        > span {
+          position: absolute !important;
+          width: 1px !important;
+          height: 1px !important;
+          padding: 0 !important;
+          margin: -1px !important;
+          overflow: hidden !important;
+          clip: rect(0, 0, 0, 0) !important;
+          white-space: nowrap !important;
+          border: 0 !important;
         }
-      }
-
-      > div.cagov-header-full__3-main-menu {
-        display: none;
-        width: 100%;
-        position: relative;
 
         &::before,
         &::after {
           content: "";
           position: absolute;
-          top: 0;
           width: 100%;
-          height: 0;
-          outline: 1px solid #e2e2e3;
-          box-shadow: none;
-          z-index: 1;
-          pointer-events: none;
+          height: 5px;
+          background: #035376;
+          border-radius: 32px;
+          transition:
+            transform 0.3s,
+            opacity 0.3s;
+          opacity: 0;
         }
 
-        &::before {
-          left: -50%;
-        }
+        > svg {
+          width: 2.5rem;
+          height: 2.5rem;
+          transition: transform 0.3s;
 
-        &::after {
-          right: -50%;
+          > path {
+            fill: #035376;
+          }
         }
+      }
 
-        @media (width >= 576px) {
+      &[open] {
+        + div {
           display: block;
         }
 
-        > nav {
-          position: relative;
-
-          @media (width >= 576px) {
-            left: -1rem;
+        > summary {
+          &::before,
+          &::after {
+            opacity: 1;
           }
 
-          > ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
+          &::before {
+            transform: rotate(45deg);
+          }
 
-            @media (width >= 576px) {
-              flex-direction: row;
-            }
+          &::after {
+            transform: rotate(-45deg);
+          }
 
-            > li {
-              > a {
-                font-size: 1.1rem;
-                padding: 0.85rem 1rem 0.9rem;
-                display: block;
-                text-decoration: none;
-                margin-left: -1rem;
-                margin-right: -1rem;
-                border-top: 1px solid #d4d4d7;
-
-                &:hover,
-                &:focus {
-                  background-color: #fafafa;
-                }
-
-                &:focus {
-                  outline-offset: -2px;
-                }
-
-                @media (width >= 576px) {
-                  margin-left: 0;
-                  margin-right: 0;
-                }
-
-                @media (width >= 768px) {
-                  font-size: 1.125rem;
-                }
-              }
-
-              &:first-child > a {
-                border-top: none;
-              }
-            }
+          > svg {
+            transform: scale(0);
           }
         }
       }
