@@ -43,18 +43,6 @@ footer.cagov-footer {
     }
   }
 
-  .cagov-sr-only {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
-  }
-
   *,
   *::before,
   *::after {
@@ -63,7 +51,7 @@ footer.cagov-footer {
     padding: 0;
   }
 
-  > div.cagov-footer__1-container {
+  > div {
     width: 100%;
     padding-right: 12px;
     padding-left: 12px;
@@ -83,7 +71,7 @@ footer.cagov-footer {
       max-width: 1176px;
     }
 
-    > div.cagov-footer__2-footer-links {
+    > div {
       display: flex;
       flex-direction: column;
       align-items: start;
@@ -94,10 +82,22 @@ footer.cagov-footer {
         align-items: center;
       }
 
-      > a.cagov-footer__3-footer-logo {
+      > a {
         display: inline-block;
         height: 28px;
         margin-right: 1.5rem;
+
+        > span {
+          position: absolute !important;
+          width: 1px !important;
+          height: 1px !important;
+          padding: 0 !important;
+          margin: -1px !important;
+          overflow: hidden !important;
+          clip: rect(0, 0, 0, 0) !important;
+          white-space: nowrap !important;
+          border: 0 !important;
+        }
 
         > svg {
           height: 100%;
@@ -106,7 +106,7 @@ footer.cagov-footer {
         }
       }
 
-      > ul.cagov-footer__4-legal-links {
+      > ul {
         list-style: none;
         font-size: 1.1rem;
         line-height: 1.5;
@@ -136,7 +136,7 @@ footer.cagov-footer {
         }
       }
 
-      > div.cagov-footer__5-copyright {
+      > div {
         margin-top: 1rem;
         font-size: 1rem;
         line-height: 1.5;
