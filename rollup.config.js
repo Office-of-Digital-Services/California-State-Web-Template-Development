@@ -1,4 +1,4 @@
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 
 const publishPackageJsonVersion = require("./publish/package.json").version;
 //const projectPackageJsonVersion = process.env.npm_package_version;
