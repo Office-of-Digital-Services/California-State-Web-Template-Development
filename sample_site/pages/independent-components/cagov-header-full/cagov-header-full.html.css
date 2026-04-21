@@ -334,6 +334,9 @@ div.cagov-header-full {
         }
 
         > button[type="submit"] {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           outline-offset: -4px;
           outline-color: #85cbf9;
           background-color: #72717c;
@@ -343,7 +346,6 @@ div.cagov-header-full {
           border: 1px solid #72717c;
           min-height: 38px;
           margin-left: -1px;
-          line-height: 0;
 
           > svg {
             fill: #fff;
@@ -520,8 +522,9 @@ div.cagov-header-full {
 
       > summary {
         cursor: pointer;
-        display: inline-flex;
+        display: flex;
         align-items: center;
+        justify-content: center;
         position: relative;
 
         @media (width >= 576px) {
