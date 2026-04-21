@@ -54,12 +54,14 @@ div.cagov-utility-header {
     border: 0 !important;
   }
 
-  > div.cagov-utility-header__1-utility {
+  /* Utility Wrapper */
+  > div {
     background-color: #f5f9fa;
     min-height: 42px;
     padding: 0.25rem 0;
 
-    > div.cagov-utility-header__2-container {
+    /* Container */
+    > div {
       width: 100%;
       padding-right: 12px;
       padding-left: 12px;
@@ -79,23 +81,17 @@ div.cagov-utility-header {
         max-width: 1176px;
       }
 
-      > div.cagov-utility-header__3-utility-bar {
+      /* Utility Bar */
+      > div {
         width: 100%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
 
-        > details[name="cagov-utility-header__buttongroup"] {
-          + div {
-            display: none;
-          }
 
-          &[open] + div {
-            display: block;
-          }
-        }
 
-        > div.cagov-utility-header__4-logo {
+        /* CA.gov Logo */
+        > div:first-of-type {
           display: inline-block;
           flex-grow: 1;
           flex-shrink: 0;
@@ -109,7 +105,8 @@ div.cagov-utility-header {
           }
         }
 
-        > details.cagov-utility-header__4-menu-button {
+        /* CA.gov Menu Button */
+        > details:first-of-type {
           > summary {
             margin-left: auto;
             background: none;
@@ -157,7 +154,8 @@ div.cagov-utility-header {
           }
         }
 
-        > details.cagov-utility-header__4-search-button {
+        /* Search Button */
+        > details:last-of-type {
           > summary {
             cursor: pointer;
             display: inline-flex;
@@ -216,8 +214,8 @@ div.cagov-utility-header {
         }
 
         /* Collapsible content styles */
-        > div.cagov-utility-header__4-utility-menu,
-        > div.cagov-utility-header__4-search {
+        > div:nth-of-type(2),
+        > div:last-of-type {
           background-color: #f5f9fa;
           padding-top: 1rem;
           padding-bottom: 1rem;
@@ -226,8 +224,20 @@ div.cagov-utility-header {
           order: 1;
         }
 
-        /* Navigation styles */
-        > div.cagov-utility-header__4-utility-menu > nav > ul {
+        /* Collapsible content toggles */
+        > details:first-of-type,
+        > details:last-of-type {
+          + div {
+            display: none;
+          }
+
+          &[open] + div {
+            display: block;
+          }
+        }
+
+        /* Navigation styles (CA.gov Menu Content) */
+        > div:nth-of-type(2) > nav > ul {
           list-style: none;
           display: flex;
           flex-direction: column;
@@ -248,8 +258,8 @@ div.cagov-utility-header {
           }
         }
 
-        /* Search styles */
-        > div.cagov-utility-header__4-search > form {
+        /* Search styles (Search Content) */
+        > div:last-of-type > form {
           display: flex;
           align-items: center;
           justify-content: center;

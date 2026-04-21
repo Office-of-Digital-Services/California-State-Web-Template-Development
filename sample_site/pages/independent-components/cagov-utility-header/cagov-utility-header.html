@@ -12,11 +12,14 @@ title: Components and patterns
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 <div class="cagov-utility-header">
-  <div class="cagov-utility-header__1-utility">
-    <div class="cagov-utility-header__2-container">
-      <div class="cagov-utility-header__3-utility-bar">
-        <!-- CA.gov Logo -->
-        <div class="cagov-utility-header__4-logo">
+  <!-- START > div (Utility Wrapper) -->
+  <div>
+    <!-- START > div > div (Container) -->
+    <div>
+      <!-- START > div > div > div (Utility Bar) -->
+      <div>
+        <!-- START > div:first-of-type (CA.gov Logo) -->
+        <div>
           <a href="https://www.ca.gov"
             ><span class="cagov-sr-only" lang="en">CA.gov website</span>
             <svg
@@ -38,19 +41,19 @@ title: Components and patterns
                 d="M150 299c32 0 55-6 76-18l5-11c-7 1-14 2-20 2h-3l-2-1c-5-1-12-5-19-11-3-2-7-6-11-11-8 2-16 3-26 3-60 1-103-42-103-102C47 92 92 47 150 47c32 0 61 13 87 39l19-47c-29-24-66-38-104-38C110 1 73 15 45 42C16 69 0 107 0 150c0 87 62 149 150 149z" />
               <path
                 fill="#326130"
-                d="M150 299c32 0 55-6 76-18l5-11c-7 1-14 2-20 2h-3l-2-1c-5-1-12-5-19-11-3-2-7-6-11-11-8 2-16 3-26 3-42 0-74-20-91-51H8c19 60 72 98 142 98z" /></svg></a
-          ><!-- end CA.gov Logo -->
+                d="M150 299c32 0 55-6 76-18l5-11c-7 1-14 2-20 2h-3l-2-1c-5-1-12-5-19-11-3-2-7-6-11-11-8 2-16 3-26 3-42 0-74-20-91-51H8c19 60 72 98 142 98z" /></svg></a>
         </div>
+        <!-- END > div:first-of-type (CA.gov Logo) -->
 
-        <!--cagov menu-->
+        <!-- START > details:first-of-type (CA.gov Menu Button) -->
         <details
-          class="cagov-utility-header__4-menu-button"
           name="cagov-utility-header__buttongroup">
           <summary lang="en">CA.gov menu</summary>
         </details>
+        <!-- END > details:first-of-type (CA.gov Menu Button) -->
 
-        <!--cagov collapsible menu content-->
-        <div class="cagov-utility-header__4-utility-menu">
+        <!-- START > div:nth-of-type(2) (CA.gov Menu Content) -->
+        <div>
           <nav aria-label="CA.gov navigation">
             <ul>
               <li>
@@ -70,14 +73,10 @@ title: Components and patterns
             </ul>
           </nav>
         </div>
-        <!--end cagov collapsible menu content-->
+        <!-- END > div:nth-of-type(2) (CA.gov Menu Content) -->
 
-        <!--end cagov menu-->
-
-        <!--Search-->
-
+        <!-- START > details:last-of-type (Search Button) -->
         <details
-          class="cagov-utility-header__4-search-button"
           name="cagov-utility-header__buttongroup">
           <summary>
             <span class="cagov-sr-only" lang="en">CA.gov search</span>
@@ -92,10 +91,10 @@ title: Components and patterns
             </svg>
           </summary>
         </details>
-        <!--End search-->
+        <!-- END > details:last-of-type (Search Button) -->
 
-        <!-- collapsible search content-->
-        <div class="cagov-utility-header__4-search">
+        <!-- START > div:last-of-type (Search Content) -->
+        <div>
           <form
             action="https://www.ca.gov/search/"
             method="get"
@@ -127,15 +126,15 @@ title: Components and patterns
             </button>
           </form>
         </div>
-        <!-- end collapsible search content-->
+        <!-- END > div:last-of-type (Search Content) -->
       </div>
-      <!-- .cagov-utility-bar -->
+      <!-- END > div > div > div (Utility Bar) -->
     </div>
-    <!-- .cagov-container -->
+    <!-- END > div > div (Container) -->
   </div>
-  <!-- .cagov-utility -->
+  <!-- END > div (Utility Wrapper) -->
 </div>
-<!-- .cagov-utility-header -->
+<!-- END div.cagov-utility-header -->
 
 {% set script %} {% include "./cagov-utility-header.html.js" %} {% endset %}
 <script>
