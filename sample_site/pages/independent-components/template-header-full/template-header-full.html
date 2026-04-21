@@ -8,10 +8,12 @@ title: Components and patterns
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 <div class="template-header-full">
-  <div class="template-header-full__1-utility">
-    <div class="template-header-full__2-top-bar">
-      <!-- end CA.gov Logo -->
-      <div class="template-header-full__3-logo">
+  <!-- START > div:first-child (Utility Bar) -->
+  <div>
+    <!-- START > div:first-child > div -->
+    <div>
+      <!-- START > div:first-of-type (CA.gov Logo & Official) -->
+      <div>
         <a href="https://www.ca.gov">
           <span class="template-sr-only" lang="en">CA.gov website</span>
           <svg
@@ -37,35 +39,40 @@ title: Components and patterns
           </svg>
         </a>
 
-        <div class="template-header-full__3-official">
-          <span class="template-header-full__3-desktop-only"
+        <!-- START > div:first-of-type > div -->
+        <div>
+          <!-- START > div:first-of-type > div > span -->
+          <span
             >Official website of the</span
           >
+          <!-- END > div:first-of-type > div > span -->
           State of California
         </div>
+        <!-- END > div:first-of-type > div -->
       </div>
+      <!-- END > div:first-of-type (CA.gov Logo & Official) -->
 
-      <div class="template-header-full__3-links">
+      <!-- START > div:nth-of-type(2) (Links) -->
+      <div>
         <a href="https://www.ca.gov/support/">Español</a>
       </div>
-
-      <!--end cagov collapsible menu content-->
-      <!--end template-menu-->
+      <!-- END > div:nth-of-type(2) (Links) -->
     </div>
-    <!--end template-top-bar -->
+    <!-- END > div:first-child > div -->
   </div>
-  <!--end template-header-full__1-utility-->
+  <!-- END > div:first-child (Utility Bar) -->
 
-  <!-- site branding -->
-  <div class="template-header-full__1-bottom-bar">
-    <div class="template-header-full__2-branding">
-      <!--Site logo-->
-      <div class="template-header-full__3-logo">
+  <!-- START > div:last-child (Bottom Bar / Branding) -->
+  <div>
+    <!-- START > div:last-child > div -->
+    <div>
+      <!-- START > div:first-of-type (Site Logo) -->
+      <div>
         <a
           href="/"
-          class="template-header-full__3-logo-link"
           aria-label="Go to the California state government homepage">
-          <div class="template-header-full__3-logo-assets">
+          <!-- START > div:first-of-type > a > div -->
+          <div>
             <svg
               alt="State Template Logo"
               style="aspect-ratio: 1 / 1"
@@ -84,26 +91,32 @@ title: Components and patterns
               </g>
             </svg>
 
-            <div class="template-header-full__3-logo-text">
-              <span class="template-header-full__3-logo-text-state"
+            <!-- START > div:first-of-type > a > div > div -->
+            <div>
+              <!-- START > div:first-of-type > a > div > div > span:first-of-type -->
+              <span
                 >State of California</span
               >
-              <span class="template-header-full__3-logo-text-dept"
+              <!-- END > div:first-of-type > a > div > div > span:first-of-type -->
+              <!-- START > div:first-of-type > a > div > div > span:last-of-type -->
+              <span
                 >Web Template</span
               >
+              <!-- END > div:first-of-type > a > div > div > span:last-of-type -->
             </div>
+            <!-- END > div:first-of-type > a > div > div -->
           </div>
+          <!-- END > div:first-of-type > a > div -->
         </a>
       </div>
+      <!-- END > div:first-of-type (Site Logo) -->
 
-      <!--ca.gov search-->
+      <!-- START > details:first-of-type (Search Button) -->
       <details
-        class="template-header-full__3-search-button"
         name="template-header-full__buttongroup">
         <summary>
           <span class="template-sr-only" lang="en">CA.gov search</span>
           <svg
-            class="template-header-full__3-search-icon"
             alt=""
             aria-hidden="true"
             version="1.1"
@@ -116,8 +129,10 @@ title: Components and patterns
           </svg>
         </summary>
       </details>
+      <!-- END > details:first-of-type (Search Button) -->
 
-      <div class="template-header-full__3-search">
+      <!-- START > div:nth-of-type(2) (Search Form) -->
+      <div>
         <form
           action="https://www.ca.gov/search/"
           method="get"
@@ -137,7 +152,6 @@ title: Components and patterns
             id="template-search-button"
             aria-label="Submit search">
             <svg
-              class="template-header-full__3-search-form-icon"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -149,21 +163,21 @@ title: Components and patterns
           </button>
         </form>
       </div>
-      <!--end template-header-full__3-search-->
+      <!-- END > div:nth-of-type(2) (Search Form) -->
 
-      <!--main menu-->
+      <!-- START > details:last-of-type (Main Menu Button) -->
       <details
-        class="template-header-full__3-main-menu-button"
         name="template-header-full__buttongroup">
         <summary lang="en">
           <span class="template-sr-only">Main menu</span>
           <span
-            aria-hidden="true"
-            class="template-header-full__4-main-menu-hamburger"></span>
+            aria-hidden="true"></span>
         </summary>
       </details>
+      <!-- END > details:last-of-type (Main Menu Button) -->
 
-      <div class="template-header-full__3-main-menu">
+      <!-- START > div:last-of-type (Main Menu Content) -->
+      <div>
         <nav aria-label="Main navigation">
           <ul>
             <li>
@@ -183,12 +197,13 @@ title: Components and patterns
           </ul>
         </nav>
       </div>
+      <!-- END > div:last-of-type (Main Menu Content) -->
     </div>
-    <!--end template-header-full__2-branding-->
+    <!-- END > div:last-child > div -->
   </div>
-  <!--end template-header-full__1-bottom-bar-->
+  <!-- END > div:last-child (Bottom Bar / Branding) -->
 </div>
-<!--end template-header-full-->
+<!-- END div.template-header-full -->
 
 <style>
   {% include "./template-header-full.html.css" %}
