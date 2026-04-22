@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+/* 
+ * Banner Component 
+ * Root element that dictates the overarching layout and colors.
+ */
 div.template-banner__component {
   box-sizing: border-box;
   margin: 0;
@@ -25,6 +29,8 @@ div.template-banner__component {
   color: #3b3a48;
   position: relative;
 
+  /* --- Background Options (`data-bg`) --- */
+
   &[data-bg="understated"] {
     background-color: #eef8fb;
     color: #3b3a48;
@@ -34,6 +40,18 @@ div.template-banner__component {
     background-color: #046b99;
     color: #fff;
   }
+
+  &[data-bg="primary-gradient"] {
+    background: linear-gradient(180deg, #01395e 20.31%, #046b99 66.15%);
+    color: #fff;
+  }
+
+  &[data-bg="standout"] {
+    background-color: #323a45;
+    color: #fff;
+  }
+
+  /* --- Typography Modifiers --- */
 
   & [data-h2] {
     font-size: calc(2.3175rem + 0.1vw) !important;
@@ -47,16 +65,7 @@ div.template-banner__component {
     font-weight: 200 !important;
   }
 
-  &[data-bg="primary-gradient"] {
-    background: linear-gradient(180deg, #01395e 20.31%, #046b99 66.15%);
-    color: #fff;
-  }
-
-  &[data-bg="standout"] {
-    background-color: #323a45;
-    color: #fff;
-  }
-
+  /* --- 1st Child: Image Container --- */
   > div:first-of-type {
     position: relative;
     top: 0;
@@ -90,6 +99,7 @@ div.template-banner__component {
         margin-left: auto;
       }
 
+      /* Image Modifiers (`data-image`) */
       &[data-image="fade-left"] {
         /* For Chrome, Safari, Edge */
         -webkit-mask-image: linear-gradient(to bottom, transparent, black 30%);
@@ -104,6 +114,7 @@ div.template-banner__component {
     }
   }
 
+  /* --- 2nd Child: Content Container --- */
   > div:last-of-type {
     box-sizing: border-box;
     order: 0;
@@ -125,6 +136,7 @@ div.template-banner__component {
       max-width: 1176px;
     }
 
+    /* Content Column Wrapper */
     > div {
       width: 100%;
 
@@ -132,6 +144,7 @@ div.template-banner__component {
         width: 50%;
       }
 
+      /* Heading element */
       > :is(h1, h2, h3, h4, h5, h6) {
         font-size: calc(2.9375rem + 0.1vw);
         font-weight: 700;
@@ -142,11 +155,13 @@ div.template-banner__component {
         text-wrap: pretty;
       }
 
+      /* Description */
       > p {
         font-size: calc(1.5rem + 0.1vw);
         margin-bottom: 1.5rem;
       }
 
+      /* Actions Container */
       > div {
         display: flex;
         justify-content: flex-start;
@@ -166,6 +181,7 @@ div.template-banner__component {
             color 0.2s;
         }
 
+        /* Primary Action (Default - No data-action) */
         > a:not([data-action="secondary"]) {
           background: #f2c45a;
           color: #3b3a48;
@@ -179,6 +195,7 @@ div.template-banner__component {
           box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
         }
 
+        /* Secondary Action (`data-action="secondary"`) */
         > a[data-action="secondary"] {
           background-color: #046b99;
           color: #fff;

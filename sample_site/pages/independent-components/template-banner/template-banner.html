@@ -7,24 +7,44 @@ title: Components and patterns
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<!-- 
+  Banner Root 
+  data-bg options: "understated", "primary", "primary-gradient", "standout"
+-->
 <div class="template-banner__component" data-bg="primary-gradient">
+  
+  <!-- Image Container -->
   <div>
+    <!-- data-image options: "fade-left" -->
     <img
       src="https://www.ca.gov/images/about-tree.webp"
       alt="Banner Image"
       data-image="fade-left" />
   </div>
+  
+  <!-- Content Container -->
   <div>
+    <!-- Content Column Wrapper -->
     <div>
+      <!-- 
+        Heading 
+        data-font-weight options: "200", "400" 
+        data-h2 option: boolean (add data-h2 attribute without value to match h2 size)
+      -->
       <h1 data-font-weight="200">
         State template banner heading
       </h1>
+      
+      <!-- Description -->
       <p>
         This is a description of the banner. It should be concise and
         informative, providing context for the user about the content or purpose
         of the page.
       </p>
+      
+      <!-- Actions Container -->
       <div>
+        <!-- data-action options: "secondary" (default is primary action) -->
         <a href="#">Primary Action</a>
         <a href="#" data-action="secondary">Secondary Action</a>
       </div>
