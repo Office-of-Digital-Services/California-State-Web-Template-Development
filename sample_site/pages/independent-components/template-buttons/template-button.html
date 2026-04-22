@@ -7,43 +7,23 @@ title: Components and patterns
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-<a href="javascript:void(0);" class="template-button-component__primary"
-  >Primary color</a
->
-<a href="javascript:void(0);" class="template-button-component__highlight"
-  >Highlight color</a
->
-<a href="javascript:void(0);" class="template-button-component__standout"
-  >Standout color</a
->
-<a
-  href="javascript:void(0);"
-  class="template-button-component__outline-primary"
-  role="button"
-  >Primary color</a
->
-<a
-  href="javascript:void(0);"
-  class="template-button-component__outline-highlight"
-  role="button"
-  >Highlight color</a
->
-<a
-  href="javascript:void(0);"
-  class="template-button-component__outline-standout btn-sm"
-  role="button"
-  >Standout color small</a
->
-<a
-  href="javascript:void(0);"
-  class="template-button-component__default btn-xs"
-  role="button"
-  >Default button extra small</a
->
 
-<button class="template-button-component__default btn-lg" role="button">
-  Default large button
-</button>
+
+<!--
+  data-btn-bg options: "primary", "highlight", "standout", "default"
+  data-btn-variant options: "outline" (optional)
+  data-btn-size options: "lg", "sm", "xs" (optional)
+-->
+
+<a href="javascript:void(0);" data-btn-bg="primary">Primary color</a>
+<a href="javascript:void(0);" data-btn-bg="highlight">Highlight color</a>
+<a href="javascript:void(0);" data-btn-bg="standout">Standout color</a>
+<a href="javascript:void(0);" data-btn-bg="primary" data-btn-variant="outline">Primary color</a>
+<a href="javascript:void(0);" data-btn-bg="highlight" data-btn-variant="outline">Highlight color</a>
+<a href="javascript:void(0);" data-btn-bg="standout" data-btn-variant="outline" data-btn-size="sm">Standout color small</a>
+<a href="javascript:void(0);" data-btn-bg="default" data-btn-size="xs">Default button extra small</a>
+
+<button data-btn-bg="default" data-btn-size="lg">Default large button</button>
 
 <style>
   {% include "./template-button.html.css" %}
