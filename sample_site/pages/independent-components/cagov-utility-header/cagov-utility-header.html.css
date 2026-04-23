@@ -1,3 +1,42 @@
+:root {
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
+  --font-family-sans-serif:
+    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Noto Sans", sans-serif;
+  --gray-900: #3b3a48;
+  --gray-700: #5e5e6a;
+  --gray-500: #72717c;
+  --gray-200: #d4d4d7;
+  --gray-150: #e2e2e3;
+  --gray-100: #ededef;
+  --gray-75: #f8f9fa;
+  --gray-50: #fafafa;
+  --black: #000;
+  --white: #fff;
+  --color-p1: #fdb81e;
+  --color-p1-lighter: #fed478;
+  --color-p1-soft: #f2c45a;
+  --color-p1-softer: #f5ce73;
+  --color-p2: #046b99;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #01395e;
+  --color-p2-light: #6db7d8;
+  --color-p2-pale: #eef8fb;
+  --color-p2-soft: #f5f9fa;
+  --color-p2-muted: #87b8ce;
+  --color-p3: #323a45;
+  --color-p3-darker: #232930;
+  --outline-default-color: #0b8ee5;
+  --outline-dark-mode-color: #85cbf9;
+  --ratio: 0.1vw;
+  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
+  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+
 *,
 *::before,
 *::after {
@@ -10,7 +49,8 @@ div.cagov-utility-header {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:
+  font-family: var(
+    --font-family-sans-serif,
     "Public Sans",
     system-ui,
     -apple-system,
@@ -18,8 +58,9 @@ div.cagov-utility-header {
     Roboto,
     "Helvetica Neue",
     "Noto Sans",
-    sans-serif;
-  color: #3b3a48;
+    sans-serif
+  );
+  color: var(--gray-900, #3b3a48);
 
   *,
   *::before,
@@ -30,15 +71,15 @@ div.cagov-utility-header {
 
   /* Global utility styles */
   :focus {
-    outline: 2px solid #0b8ee5;
+    outline: 2px solid var(--outline-default-color, #0b8ee5);
   }
 
   & a {
-    color: #046b99;
+    color: var(--color-p2, #046b99);
 
     &:hover,
     &:focus {
-      color: #035376;
+      color: var(--color-p2-darker, #035376);
     }
   }
 
@@ -56,7 +97,7 @@ div.cagov-utility-header {
 
   /* Utility Wrapper */
   > div {
-    background-color: #f5f9fa;
+    background-color: var(--color-p2-soft, #f5f9fa);
     min-height: 42px;
     padding: 0.25rem 0;
 
@@ -111,7 +152,7 @@ div.cagov-utility-header {
             margin-left: auto;
             background: none;
             border: none;
-            color: #3b3a48;
+            color: var(--gray-900, #3b3a48);
             font-size: 1rem;
             cursor: pointer;
             padding: 0.35rem 0.5rem;
@@ -125,7 +166,7 @@ div.cagov-utility-header {
 
             &:hover,
             &:focus {
-              color: #000;
+              color: var(--black, #000);
             }
 
             &::-webkit-details-marker {
@@ -140,8 +181,8 @@ div.cagov-utility-header {
               position: relative;
               width: 0.4rem;
               height: 0.4rem;
-              border-top: 1px solid #000;
-              border-left: 1px solid #000;
+              border-top: 1px solid var(--black, #000);
+              border-left: 1px solid var(--black, #000);
               transform: rotate(225deg);
               transition: 200ms;
               vertical-align: middle;
@@ -165,7 +206,7 @@ div.cagov-utility-header {
 
             &:hover,
             &:focus {
-              color: #000;
+              color: var(--black, #000);
             }
 
             &::-webkit-details-marker {
@@ -180,7 +221,7 @@ div.cagov-utility-header {
               position: absolute;
               width: 100%;
               height: 3px;
-              background: #3b3a48;
+              background: var(--gray-900, #3b3a48);
               border-radius: 2px;
               transition:
                 transform 0.3s,
@@ -216,7 +257,7 @@ div.cagov-utility-header {
         /* Collapsible content styles */
         > div:nth-of-type(2),
         > div:last-of-type {
-          background-color: #f5f9fa;
+          background-color: var(--color-p2-soft, #f5f9fa);
           padding-top: 1rem;
           padding-bottom: 1rem;
           line-height: 1.5;
@@ -271,7 +312,7 @@ div.cagov-utility-header {
             max-height: 38px;
             padding: 0 10px;
             transition: border 0.4s;
-            border: 1px solid #72717c;
+            border: 1px solid var(--gray-500, #72717c);
             border-radius: 5px 0 0 5px;
             height: 38px;
             outline-offset: -2px;
@@ -279,17 +320,17 @@ div.cagov-utility-header {
 
           > button[type="submit"] {
             outline-offset: -4px;
-            outline-color: #85cbf9;
-            background-color: #72717c;
-            color: #fff;
+            outline-color: var(--outline-dark-mode-color, #85cbf9);
+            background-color: var(--gray-500, #72717c);
+            color: var(--white, #fff);
             border-radius: 0 5px 5px 0;
             padding: 0 12px;
-            border: 1px solid #72717c;
+            border: 1px solid var(--gray-500, #72717c);
             min-height: 38px;
             margin-left: -1px;
 
             > svg {
-              fill: #fff;
+              fill: var(--white, #fff);
             }
           }
         }

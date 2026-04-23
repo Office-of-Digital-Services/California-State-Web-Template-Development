@@ -1,3 +1,42 @@
+:root {
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
+  --font-family-sans-serif:
+    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Noto Sans", sans-serif;
+  --gray-900: #3b3a48;
+  --gray-700: #5e5e6a;
+  --gray-500: #72717c;
+  --gray-200: #d4d4d7;
+  --gray-150: #e2e2e3;
+  --gray-100: #ededef;
+  --gray-75: #f8f9fa;
+  --gray-50: #fafafa;
+  --black: #000;
+  --white: #fff;
+  --color-p1: #fdb81e;
+  --color-p1-lighter: #fed478;
+  --color-p1-soft: #f2c45a;
+  --color-p1-softer: #f5ce73;
+  --color-p2: #046b99;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #01395e;
+  --color-p2-light: #6db7d8;
+  --color-p2-pale: #eef8fb;
+  --color-p2-soft: #f5f9fa;
+  --color-p2-muted: #87b8ce;
+  --color-p3: #323a45;
+  --color-p3-darker: #232930;
+  --outline-default-color: #0b8ee5;
+  --outline-dark-mode-color: #85cbf9;
+  --ratio: 0.1vw;
+  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
+  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+
 *,
 *::before,
 *::after {
@@ -11,7 +50,8 @@ div.template-card {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:
+  font-family: var(
+    --font-family-sans-serif,
     "Public Sans",
     system-ui,
     -apple-system,
@@ -19,10 +59,11 @@ div.template-card {
     Roboto,
     "Helvetica Neue",
     "Noto Sans",
-    sans-serif;
-  color: #3b3a48;
-  background-color: #fafafa;
-  border: 1px solid #ededef;
+    sans-serif
+  );
+  color: var(--gray-900, #3b3a48);
+  background-color: var(--gray-50, #fafafa);
+  border: 1px solid var(--gray-100, #ededef);
   position: relative;
   line-height: 1.5;
 
@@ -33,7 +74,7 @@ div.template-card {
   }
 
   &[data-card-shadow="box-shadow"] {
-    box-shadow: 0 3px 5px 0 rgb(0 0 0 / 10%);
+    box-shadow: var(--shadow-card, 0 3px 5px 0 rgb(0 0 0 / 10%));
   }
 
   &[data-card-interaction*="scale-on-hover"] {
@@ -99,7 +140,7 @@ div.template-card {
       /* Card Heading */
       > h2,
       & [data-card-h2] {
-        font-size: calc(1.4375rem + 0.1vw);
+        font-size: calc(var(--font-size-large, 1.4375rem) + var(--ratio));
         font-weight: 700;
         margin-top: 0;
         margin-bottom: 1rem;
@@ -109,7 +150,7 @@ div.template-card {
 
         > a {
           font-weight: 600;
-          color: #046b99;
+          color: var(--color-p2, #046b99);
           text-decoration: none;
           margin-bottom: 0.5rem;
 
@@ -131,7 +172,7 @@ div.template-card {
 
       /* Card Description */
       > p {
-        font-size: calc(1.125rem + 0.1vw);
+        font-size: calc(var(--font-size-regular, 1.125rem) + var(--ratio));
         margin-bottom: 1.5rem;
         margin-top: 0;
       }
