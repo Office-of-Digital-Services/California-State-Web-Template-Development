@@ -1,3 +1,42 @@
+:root {
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
+  --font-family-sans-serif:
+    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Noto Sans", sans-serif;
+  --gray-900: #3b3a48;
+  --gray-700: #5e5e6a;
+  --gray-500: #72717c;
+  --gray-200: #d4d4d7;
+  --gray-150: #e2e2e3;
+  --gray-100: #ededef;
+  --gray-75: #f8f9fa;
+  --gray-50: #fafafa;
+  --black: #000;
+  --white: #fff;
+  --color-p1: #fdb81e;
+  --color-p1-lighter: #fed478;
+  --color-p1-soft: #f2c45a;
+  --color-p1-softer: #f5ce73;
+  --color-p2: #046b99;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #01395e;
+  --color-p2-light: #6db7d8;
+  --color-p2-pale: #eef8fb;
+  --color-p2-soft: #f5f9fa;
+  --color-p2-muted: #87b8ce;
+  --color-p3: #323a45;
+  --color-p3-darker: #232930;
+  --outline-default-color: #0b8ee5;
+  --outline-dark-mode-color: #85cbf9;
+  --ratio: 0.1vw;
+  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
+  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+
 *,
 *::before,
 *::after {
@@ -11,7 +50,8 @@ div.template-progress-tracker {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:
+  font-family: var(
+    --font-family-sans-serif,
     "Public Sans",
     system-ui,
     -apple-system,
@@ -19,7 +59,8 @@ div.template-progress-tracker {
     Roboto,
     "Helvetica Neue",
     "Noto Sans",
-    sans-serif;
+    sans-serif
+  );
   position: relative;
   line-height: 1.5;
 
@@ -48,13 +89,13 @@ div.template-progress-tracker {
     /* Progress Step */
     > div {
       border-left: solid 6px;
-      border-color: #87b8ce;
+      border-color: var(--color-p2-muted, #87b8ce);
       position: relative;
       display: flex;
 
       /* --- Options --- */
       &[data-progress-step-border="gray"] {
-        border-color: #ededef;
+        border-color: var(--gray-100, #ededef);
       }
 
       &[data-progress-step-border="transparent"] {
@@ -75,7 +116,7 @@ div.template-progress-tracker {
           height: 30px;
           border-radius: 50%;
           border: none !important;
-          background-color: #87b8ce;
+          background-color: var(--color-p2-muted, #87b8ce);
 
           &::before {
             content: "";
@@ -86,25 +127,25 @@ div.template-progress-tracker {
             height: 12px;
             transform: translate(-50%, -50%);
             border-radius: 50%;
-            background-color: #fff;
+            background-color: var(--white, #fff);
           }
         }
 
         /* Dot Variants */
         &[data-progress-dot="primary"] > span::before {
-          background-color: #046b99;
+          background-color: var(--color-p2, #046b99);
         }
 
         &[data-progress-dot="primary-full"] > span {
-          background-color: #046b99;
+          background-color: var(--color-p2, #046b99);
         }
 
         &[data-progress-dot="primary-full"] > span::before {
-          background-color: #046b99;
+          background-color: var(--color-p2, #046b99);
         }
 
         &[data-progress-dot="gray"] > span {
-          background-color: #ededef;
+          background-color: var(--gray-100, #ededef);
         }
       }
 
@@ -114,18 +155,18 @@ div.template-progress-tracker {
 
         /* Heading */
         > h2 {
-          font-size: calc(1.4375rem + 0.1vw);
+          font-size: calc(var(--font-size-large, 1.4375rem) + var(--ratio));
           margin-top: -0.2rem;
         }
 
         /* Description */
         & p {
-          font-size: calc(1.125rem + 0.1vw);
+          font-size: calc(var(--font-size-regular, 1.125rem) + var(--ratio));
         }
 
         /* Progress List */
         & ul {
-          font-size: calc(1.125rem + 0.1vw);
+          font-size: calc(var(--font-size-regular, 1.125rem) + var(--ratio));
           margin-top: 0.5rem;
           margin-bottom: 0.5rem;
           list-style-type: disc;
