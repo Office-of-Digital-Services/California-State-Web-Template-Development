@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-div.template-card__component {
+/* Card Component Base */
+div.template-card {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -25,31 +26,36 @@ div.template-card__component {
   position: relative;
   line-height: 1.5;
 
-  &.rounded {
+  /* --- Options --- */
+
+  &[data-card-corners="rounded"] {
     border-radius: 10px;
   }
 
-  &.box-shadow {
+  &[data-card-shadow="box-shadow"] {
     box-shadow: 0 3px 5px 0 rgb(0 0 0 / 10%);
   }
 
-  &.transition {
+  &[data-card-interaction*="scale-on-hover"] {
     transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
   }
 
-  &.scale-on-hover:hover {
-    transform: scale3d(1.05, 1.05, 1.05);
-  }
-
-  & .font-weight-400 {
+  & [data-card-font-weight="400"] {
     font-weight: 400 !important;
   }
 
-  & .font-weight-200 {
+  & [data-card-font-weight="200"] {
     font-weight: 200 !important;
   }
 
-  > img.template-card__image {
+  /* --- Regions --- */
+
+  /* Card Image */
+  > img {
     width: 100%;
     height: auto;
     display: block;
@@ -58,7 +64,8 @@ div.template-card__component {
     aspect-ratio: 20 / 11;
   }
 
-  > div.template-card__content {
+  /* Card Content */
+  > div {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -69,7 +76,8 @@ div.template-card__component {
       gap: 1.5rem;
     }
 
-    > div.template-card__icon {
+    /* Card Icon */
+    > div:first-child {
       width: 80px;
       height: 80px;
       margin-bottom: 1rem;
@@ -83,11 +91,14 @@ div.template-card__component {
       }
     }
 
-    > div.template-card__info {
+    /* Card Info */
+    > div:last-child {
       display: flex;
       flex-direction: column;
 
-      > .template-card__heading {
+      /* Card Heading */
+      > h2,
+      & [data-card-h2] {
         font-size: calc(1.4375rem + 0.1vw);
         font-weight: 700;
         margin-top: 0;
@@ -118,7 +129,8 @@ div.template-card__component {
         }
       }
 
-      > .template-card__description {
+      /* Card Description */
+      > p {
         font-size: calc(1.125rem + 0.1vw);
         margin-bottom: 1.5rem;
         margin-top: 0;

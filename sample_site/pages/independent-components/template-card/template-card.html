@@ -7,25 +7,45 @@ title: Components and patterns
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<!-- 
+  Card Component 
+  data-card-corners options: "rounded"
+  data-card-shadow options: "box-shadow"
+  data-card-interaction options: "scale-on-hover"
+-->
 <div
-  class="template-card__component rounded box-shadow scale-on-hover transition">
+  class="template-card"
+  data-card-corners="rounded"
+  data-card-shadow="box-shadow"
+  data-card-interaction="scale-on-hover">
+  <!-- Card Image -->
   <img
-    class="template-card__image"
     src="https://www.ca.gov/images/about-tree.webp"
     alt="Placeholder image" />
-  <div class="template-card__content">
-    <div class="template-card__icon">
+  <!-- Card Content -->
+  <div>
+    <!-- Card Icon -->
+    <div>
       <img
         src="https://digitalidstrategy.cdt.ca.gov/images/pro-services.svg"
         alt="California State icon" />
     </div>
-    <div class="template-card__info">
-      <h2 class="template-card__heading">
+    <!-- Card Info -->
+    <div>
+      <!-- 
+        Card Heading 
+        data-card-font-weight options: "200", "400" 
+        data-card-h2 option: boolean (add data-card-h2 attribute without value to match h2 size)
+        NOTE: Adding a hyperlink inside of the heading will make entire card linkable.
+      -->
+      <h2>
         <a href="javascript:void(0)">Template card heading</a>
       </h2>
-      <p class="template-card__description">
-        This is a description of the card.
-      </p>
+      <!-- 
+        Card Description 
+        Consists of paragraphs, unordered lists (ul), or ordered lists (ol).
+      -->
+      <p>This is a description of the card.</p>
       <ul>
         <li><strong>Placeholder:</strong> item 1</li>
         <li><strong>Placeholder:</strong> item 2</li>
