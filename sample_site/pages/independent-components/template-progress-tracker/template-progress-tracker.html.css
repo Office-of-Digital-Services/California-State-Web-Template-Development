@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-div.template-progress-tracker__component {
+/* Progress Tracker Component */
+div.template-progress-tracker {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -22,7 +23,10 @@ div.template-progress-tracker__component {
   position: relative;
   line-height: 1.5;
 
-  > div.template-progress-tracker__content {
+  /* --- Regions --- */
+
+  /* Content Container */
+  > div {
     padding: 1rem 12px;
     padding-left: 1.5rem;
     margin: 0 auto;
@@ -41,18 +45,30 @@ div.template-progress-tracker__component {
       max-width: 1176px;
     }
 
-    > div.template-progress-tracker__step {
+    /* Progress Step */
+    > div {
       border-left: solid 6px;
       border-color: #87b8ce;
       position: relative;
       display: flex;
 
-      > div.template-progress-tracker__timeline-dot {
+      /* --- Options --- */
+      &[data-progress-step-border="gray"] {
+        border-color: #ededef;
+      }
+
+      &[data-progress-step-border="transparent"] {
+        border-color: transparent;
+      }
+
+      /* Timeline Dot Container */
+      > div:first-child {
         left: -1.12rem;
         top: 0;
         position: relative;
 
-        > .template-progress-tracker__dot-inner {
+        /* Dot Inner */
+        > span {
           position: relative;
           display: inline-block;
           width: 30px;
@@ -74,55 +90,53 @@ div.template-progress-tracker__component {
           }
         }
 
-        &.dot-primary > .template-progress-tracker__dot-inner::before {
+        /* Dot Variants */
+        &[data-progress-dot="primary"] > span::before {
           background-color: #046b99;
         }
 
-        &.dot-primary-full > .template-progress-tracker__dot-inner {
+        &[data-progress-dot="primary-full"] > span {
           background-color: #046b99;
         }
 
-        &.dot-primary-full > .template-progress-tracker__dot-inner::before {
+        &[data-progress-dot="primary-full"] > span::before {
           background-color: #046b99;
         }
 
-        &.dot-gray > .template-progress-tracker__dot-inner {
+        &[data-progress-dot="gray"] > span {
           background-color: #ededef;
         }
       }
 
-      > div.template-progress-tracker__step-content {
+      /* Step Content */
+      > div:last-child {
         padding-bottom: 1.5rem;
 
-        > .template-progress-tracker__heading {
+        /* Heading */
+        > h2 {
           font-size: calc(1.4375rem + 0.1vw);
           margin-top: -0.2rem;
         }
 
-        & .template-progress-tracker__description {
+        /* Description */
+        & p {
           font-size: calc(1.125rem + 0.1vw);
         }
 
+        /* Progress List */
         & ul {
           font-size: calc(1.125rem + 0.1vw);
           margin-top: 0.5rem;
           margin-bottom: 0.5rem;
           list-style-type: disc;
           padding-left: 2rem;
+
+          /* List Variants */
+          &[data-progress-list="unstyled"] {
+            padding-left: 0;
+            list-style: none;
+          }
         }
-
-        & ul.list-unstyled {
-          padding-left: 0;
-          list-style: none;
-        }
-      }
-
-      &.step-border-gray {
-        border-color: #ededef;
-      }
-
-      &.step-border-transparent {
-        border-color: transparent;
       }
     }
   }
