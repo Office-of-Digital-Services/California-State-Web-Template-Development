@@ -7,23 +7,36 @@ title: Components and patterns
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-<div class="template-progress-tracker__component">
-  <div class="template-progress-tracker__content">
-    <div class="template-progress-tracker__step">
-      <div class="template-progress-tracker__timeline-dot dot-primary-full">
-        <span class="template-progress-tracker__dot-inner"></span>
+<!-- 
+  Progress Tracker Component 
+  data-progress-step-border options: "gray", "transparent"
+-->
+<div class="template-progress-tracker">
+  <!-- Progress Tracker Content -->
+  <div>
+    <!-- Progress Tracker Step -->
+    <div>
+      <!-- 
+        Timeline Dot 
+        data-progress-dot options: "primary", "primary-full", "gray"
+      -->
+      <div data-progress-dot="primary-full">
+        <span></span>
       </div>
-      <div class="template-progress-tracker__step-content">
-        <h2 class="template-progress-tracker__heading">
-          Progress tracker timelline heading
-        </h2>
-        <p class="template-progress-tracker__description">
+      <!-- Step Content -->
+      <div>
+        <h2>Progress tracker timelline heading</h2>
+        <p>
           Keep the message clear and concise. The description should provide
           additional information about the timeline event, but it should not be
           too long. If the description is too long, it may be difficult for
           users to read and understand the message.
         </p>
-        <ul class="list-unstyled">
+        <!-- 
+          Progress List 
+          data-progress-list options: "unstyled"
+        -->
+        <ul data-progress-list="unstyled">
           <li>
             Do not link to more information from the tracker.
             <ul>
@@ -33,21 +46,21 @@ title: Components and patterns
         </ul>
       </div>
     </div>
-    <div class="template-progress-tracker__step">
-      <div class="template-progress-tracker__timeline-dot dot-primary">
-        <span class="template-progress-tracker__dot-inner"></span>
+
+    <!-- Progress Tracker Step -->
+    <div>
+      <div data-progress-dot="primary">
+        <span></span>
       </div>
-      <div class="template-progress-tracker__step-content">
-        <h2 class="template-progress-tracker__heading">
-          Progress tracker timelline heading
-        </h2>
-        <p class="template-progress-tracker__description">
+      <div>
+        <h2>Progress tracker timelline heading</h2>
+        <p>
           Keep the message clear and concise. The description should provide
           additional information about the timeline event, but it should not be
           too long. If the description is too long, it may be difficult for
           users to read and understand the message.
         </p>
-        <ul class="list-unstyled">
+        <ul data-progress-list="unstyled">
           <li>
             Do not link to more information from the tracker.
             <ul>
@@ -57,21 +70,21 @@ title: Components and patterns
         </ul>
       </div>
     </div>
-    <div class="template-progress-tracker__step step-border-gray">
-      <div class="template-progress-tracker__timeline-dot">
-        <span class="template-progress-tracker__dot-inner"></span>
+
+    <!-- Progress Tracker Step -->
+    <div data-progress-step-border="gray">
+      <div>
+        <span></span>
       </div>
-      <div class="template-progress-tracker__step-content">
-        <h2 class="template-progress-tracker__heading">
-          Progress tracker timelline heading
-        </h2>
-        <p class="template-progress-tracker__description">
+      <div>
+        <h2>Progress tracker timelline heading</h2>
+        <p>
           Keep the message clear and concise. The description should provide
           additional information about the timeline event, but it should not be
           too long. If the description is too long, it may be difficult for
           users to read and understand the message.
         </p>
-        <ul class="list-unstyled">
+        <ul data-progress-list="unstyled">
           <li>
             Do not link to more information from the tracker.
             <ul>
@@ -81,9 +94,11 @@ title: Components and patterns
         </ul>
       </div>
     </div>
-    <div class="template-progress-tracker__step step-border-transparent">
-      <div class="template-progress-tracker__timeline-dot dot-gray">
-        <span class="template-progress-tracker__dot-inner"></span>
+
+    <!-- Progress Tracker Step -->
+    <div data-progress-step-border="transparent">
+      <div data-progress-dot="gray">
+        <span></span>
       </div>
     </div>
   </div>

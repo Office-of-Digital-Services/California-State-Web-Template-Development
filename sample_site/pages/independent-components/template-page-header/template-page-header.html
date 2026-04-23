@@ -7,10 +7,18 @@ title: Components and patterns
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-<div class="template-page-header__component bg-understated-gradient">
-  <div class="template-page-header__content">
+<!-- 
+  Page Header Component 
+  data-page-header-bg options: "understated", "understated-gradient", "primary", "primary-gradient", "standout"
+-->
+<div
+  class="template-page-header"
+  data-page-header-bg="understated-gradient">
+  <!-- Content Container -->
+  <div>
     <h1>State template page header</h1>
-    <p class="template-page-header__description">
+    <!-- Description -->
+    <p>
       This is a description of the page header.
     </p>
   </div>
