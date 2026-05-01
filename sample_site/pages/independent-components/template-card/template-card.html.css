@@ -118,7 +118,7 @@ div.template-card {
     }
 
     /* Card Icon */
-    > div:first-child {
+    > div:first-child:not(:last-child) {
       width: 80px;
       height: 80px;
       margin-bottom: 1rem;
@@ -133,6 +133,7 @@ div.template-card {
     }
 
     /* Card Info */
+    /* stylelint-disable-next-line no-descending-specificity */
     > div:last-child {
       display: flex;
       flex-direction: column;
@@ -155,8 +156,9 @@ div.template-card {
           margin-bottom: 0.5rem;
 
           &:hover,
+          /* stylelint-disable-next-line no-descending-specificity */
           &:focus {
-            color: #034a6f;
+            color: var(--color-p2-darker, #034a6f);
           }
         }
 
