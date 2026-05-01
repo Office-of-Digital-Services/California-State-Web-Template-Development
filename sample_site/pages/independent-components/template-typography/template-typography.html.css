@@ -277,6 +277,10 @@ p {
   }
 }
 
+.bold {
+  font-weight: var(--font-weight-7) !important;
+}
+
 .btn {
   font-size: var(--font-size-base, 1rem);
 
