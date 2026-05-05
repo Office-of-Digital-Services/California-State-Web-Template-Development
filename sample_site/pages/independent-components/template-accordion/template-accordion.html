@@ -1,0 +1,71 @@
+---
+landing: Components
+permalink: template-accordion.html
+title: Components and patterns
+---
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+<!--
+  Accordion Component
+  data-open options: "single"
+-->
+<section class="template-accordion">
+  <details>
+    <summary>Add a short, descriptive heading for your topic</summary>
+    <div>
+      <p>
+        Once open, the content within the accordion should describe the topic in
+        more detail. It should not repeat the heading.
+      </p>
+      <p>
+        This part of the accordion is a great place to link to other resources.
+        Remember, important information and calls to action should live outside
+        of the accordion.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      If your heading must be longer, the accordion will wrap to multiple lines
+      within the container like this
+    </summary>
+    <div>
+      <p>
+        Once open, the content within the accordion should describe the topic in
+        more detail. It should not repeat the heading.
+      </p>
+      <p>
+        This part of the accordion is a great place to link to other resources.
+        Remember, important information and calls to action should live outside
+        of the accordion.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>This heading tells users what's inside the accordion</summary>
+    <div>
+      <p>
+        Once open, the content within the accordion should describe the topic in
+        more detail. It should not repeat the heading.
+      </p>
+      <p>
+        This part of the accordion is a great place to link to other resources.
+        Remember, important information and calls to action should live outside
+        of the accordion.
+      </p>
+    </div>
+  </details>
+</section>
+
+<style>
+  {% include "./template-accordion.html.css" %}
+</style>
+{% set script %} {% include "./template-accordion.html.js" %} {% endset %}
+<script>
+  {{ script | safe }}
+</script>
