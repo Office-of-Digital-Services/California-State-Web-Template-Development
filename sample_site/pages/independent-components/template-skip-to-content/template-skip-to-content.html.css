@@ -1,3 +1,11 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 div#template-skip-to-content {
   position: relative;
   left: 50% !important;
@@ -30,7 +38,7 @@ div#template-skip-to-content {
     &:focus {
       width: 250px;
       height: 27px;
-      padding: 0.5rem 0;
+      padding: 0;
       outline: 2px solid #0b8ee5;
     }
   }
