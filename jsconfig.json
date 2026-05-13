@@ -4,6 +4,7 @@
     "target": "es2020",
     "strict": false,
     "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
     "resolveJsonModule": true
   },
   "exclude": ["node_modules", "_site", "**/node_modules/*"]
