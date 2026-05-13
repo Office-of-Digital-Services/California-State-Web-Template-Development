@@ -29,7 +29,7 @@ window.addEventListener("load", () => {
       // trigger the opening and closing height change animation on summary click
 
       this.setHeight();
-      this.detailsEl.addEventListener("toggle", this.setHeight.bind(this));
+      this.detailsEl.addEventListener("toggle", this.handleToggle.bind(this));
       this.summaryEl.insertAdjacentHTML(
         "beforeend",
         `<div class="cagov-open-indicator" aria-hidden="true" />`
@@ -39,6 +39,34 @@ window.addEventListener("load", () => {
         "resize",
         this.debounce(this.setHeight).bind(this)
       );
+    }
+
+    handleToggle() {
+      if (this.detailsEl.open) {
+        this.closeGroupedDetails();
+      }
+
+      this.setHeight();
+    }
+
+    closeGroupedDetails() {
+      const groupName = this.detailsEl.getAttribute("name");
+
+      if (!groupName) {
+        return;
+      }
+
+      document.querySelectorAll("details[name]").forEach(otherDetailsEl => {
+        const otherDetails = /** @type {HTMLDetailsElement} */ (otherDetailsEl);
+
+        if (
+          otherDetails !== this.detailsEl &&
+          otherDetails.open &&
+          otherDetails.getAttribute("name") === groupName
+        ) {
+          otherDetails.open = false;
+        }
+      });
     }
 
     setHeight() {
