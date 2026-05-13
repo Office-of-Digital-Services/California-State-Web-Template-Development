@@ -55,11 +55,20 @@ cagov-accordion > details {
       height: 0;
 
       &::before {
-        font-family: CaGov;
-        content: "5";
+        content: "";
+        display: inline-block;
+        text-decoration: none;
         position: absolute;
-        font-size: 1.6rem;
-        transition: transform 0.2s;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-top: 2px solid var(--gray-900, #3b3a48);
+        border-left: 2px solid var(--gray-900, #3b3a48);
+        left: 0.55rem;
+        top: 1rem;
+        vertical-align: middle;
+        transform-origin: center;
+        transform: translateY(-50%) rotate(135deg);
+        transition: transform 300ms ease-in-out;
       }
     }
 
@@ -112,7 +121,7 @@ cagov-accordion:defined {
 
       .cagov-open-indicator {
         &::before {
-          transform: rotate(90deg) translateY(-0.2rem);
+          transform: translate(0.125rem, -50%) rotate(225deg);
         }
       }
 

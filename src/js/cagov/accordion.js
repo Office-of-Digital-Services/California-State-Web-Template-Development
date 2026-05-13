@@ -19,21 +19,54 @@ window.addEventListener("load", () => {
   class CaGovAccordion extends HTMLElement {
     connectedCallback() {
       this.summaryEl = this.querySelector("summary");
+      this.detailsEl = this.querySelector("details");
+      this.bodyEl = this.querySelector(".accordion-body");
+
+      if (!this.summaryEl || !this.detailsEl || !this.bodyEl) {
+        return;
+      }
+
       // trigger the opening and closing height change animation on summary click
 
       this.setHeight();
-      this.summaryEl.addEventListener("click", this.listen.bind(this));
+      this.detailsEl.addEventListener("toggle", this.handleToggle.bind(this));
       this.summaryEl.insertAdjacentHTML(
         "beforeend",
         `<div class="cagov-open-indicator" aria-hidden="true" />`
       );
-      this.detailsEl = this.querySelector("details");
-      this.bodyEl = this.querySelector(".accordion-body");
 
       window.addEventListener(
         "resize",
         this.debounce(this.setHeight).bind(this)
       );
+    }
+
+    handleToggle() {
+      if (this.detailsEl.open) {
+        this.closeGroupedDetails();
+      }
+
+      this.setHeight();
+    }
+
+    closeGroupedDetails() {
+      const groupName = this.detailsEl.getAttribute("name");
+
+      if (!groupName) {
+        return;
+      }
+
+      document.querySelectorAll("details[name]").forEach(otherDetailsEl => {
+        const otherDetails = /** @type {HTMLDetailsElement} */ (otherDetailsEl);
+
+        if (
+          otherDetails !== this.detailsEl &&
+          otherDetails.open &&
+          otherDetails.getAttribute("name") === groupName
+        ) {
+          otherDetails.open = false;
+        }
+      });
     }
 
     setHeight() {
@@ -42,32 +75,15 @@ window.addEventListener("load", () => {
         this.closedHeightInt = this.summaryEl.scrollHeight + 2;
         this.closedHeight = `${this.closedHeightInt}px`;
 
-        // apply initial height
+        // Apply the height that matches the current open state.
         if (this.detailsEl.hasAttribute("open")) {
-          // if open get scrollHeight
           this.detailsEl.style.height = `${
             this.bodyEl.scrollHeight + this.closedHeightInt
           }px`;
         } else {
-          // else apply closed height
           this.detailsEl.style.height = this.closedHeight;
         }
       });
-    }
-
-    listen() {
-      if (this.detailsEl.hasAttribute("open")) {
-        // was open, now closing
-        this.detailsEl.style.height = this.closedHeight;
-      } else {
-        // was closed, opening
-        window.requestAnimationFrame(() => {
-          // delay so the desired height is readable in all browsers
-          this.detailsEl.style.height = `${
-            this.bodyEl.scrollHeight + this.closedHeightInt
-          }px`;
-        });
-      }
     }
 
     /**
