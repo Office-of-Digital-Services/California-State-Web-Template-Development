@@ -99,6 +99,11 @@
   --main-nav-color-active-hover: var(--text-color);
   --main-nav-bg-active: var(--color-p2-darkest);
   --main-nav-bg-active-hover: var(--color-p2-darkest);
+
+  /* global footer */
+  --global-footer-bg: var(--color-p3);
+  --footer-links-color: var(--white);
+  --footer-links-color-hover: var(--color-p1);
 }
 
 /* footer */

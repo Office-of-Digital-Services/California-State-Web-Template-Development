@@ -178,7 +178,13 @@
   --main-nav-color-active-hover: var(--gray-800);
   --main-nav-bg-active: var(--gray-50);
   --main-nav-bg-active-hover: var(--gray-100);
+
+  /* global footer */
+  --global-footer-bg: var(--gray-50);
+  --footer-links-color: var(--black);
+  --footer-links-color-hover: var(--gray-800);
 }
+
 @media (width <= 991px) {
   :root {
     --is-mobile: 1;

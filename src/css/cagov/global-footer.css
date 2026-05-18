@@ -3,8 +3,8 @@
 ----------------------------------------- */
 
 .global-footer {
-  background-color: var(--gray-50, #fafafa);
-  border-top: 1px solid var(--gray-200, #d4d4d7);
+  background-color: var(--global-footer-bg, var(--gray-50, #fafafa));
+  border-top: 1px solid var(--border-color-default, var(--gray-200, #d4d4d7));
   padding-top: 1rem;
 
   .container .d-flex {
@@ -63,11 +63,11 @@
       margin-right: 20px;
 
       & a {
-        color: var(--black, #000);
+        color: var(--footer-links-color, var(--black, #000));
         text-decoration: none;
 
         &:hover {
-          color: var(--gray-800, #4a4958);
+          color: var(--footer-links-color-hover, var(--gray-800, #4a4958));
         }
       }
     }
