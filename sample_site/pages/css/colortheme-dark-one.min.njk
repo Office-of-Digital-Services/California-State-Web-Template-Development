@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: "ca_state_template/css/colortheme-la-night.min.css"
+eleventyExcludeFromCollections: true
+---
+
+{%- set css -%}
+  {%- include "../../../src/css/colortheme/la-night.css" -%}
+{%- endset -%}
+{{- css | cssmin | safe -}}

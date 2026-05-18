@@ -16,7 +16,8 @@
     left: 50% !important;
     transform: translateX(-50%);
     clip: unset;
-    background-color: white;
+    background-color: var(--body-bg, #fff);
+    color: var(--text-color, #292b2c);
     border-radius: 0 0 7px 7px;
     overflow: hidden;
 
@@ -31,31 +32,30 @@
   position: relative;
   z-index: 1;
   padding: 0;
-  background: var(--white, #fff);
+  background: var(--body-bg, #fff);
   width: auto;
 
   .section-default {
-    background-color: var(--white, #fff);
+    background-color: var(--body-bg, #fff);
 
     @media (width >= 992px) {
-      border-bottom: 1px solid var(--gray-200, #d4d4d7);
+      border-bottom: 1px solid var(--border-color-default, #d4d4d7);
     }
 
     &::after {
       content: "";
-      border-bottom: 1px solid var(--gray-200, #d4d4d7);
+      border-bottom: 1px solid var(--border-color-default, #d4d4d7);
       position: absolute;
       width: 100%;
       left: 0;
-
-      @media (width >= 992px) {
+      ` @media (width >= 992px) {
         border-bottom: none;
       }
     }
   }
 
   @media (width >= 992px) {
-    border-bottom: 1px solid var(--gray-200, #d4d4d7);
+    border-bottom: 1px solid var(--border-color-default, #d4d4d7);
 
     .section-default {
       &::after {

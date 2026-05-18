@@ -7,8 +7,8 @@
   width: 100%;
   min-height: 42px;
   transition: all 0.3s ease;
-  background: var(--color-s1, #eef8fb);
-  color: var(--black, #000);
+  background: var(--utility-header-background, var(--color-s1, #eef8fb));
+  color: var(--text-color, #000);
 
   .half {
     padding-top: 0;
@@ -45,13 +45,13 @@
     display: inline-block;
     padding: 0;
     text-decoration: underline;
-    color: var(--black, #000);
+    color: var(--utility-link, #000);
 
     &:hover,
     &:focus,
     &.hovered {
       text-decoration: none;
-      color: var(--gray-800, #4a4958);
+      color: var(--utility-link-hover, #4a4958);
     }
   }
 
@@ -92,7 +92,7 @@
 
         &:hover,
         &:focus {
-          color: var(--gray-800, #4a4958);
+          color: var(--utility-link-hover, #4a4958);
           background-color: transparent;
           border: none;
         }
@@ -127,7 +127,7 @@
     vertical-align: initial;
     line-height: 120%;
     background: white;
-    color: var(--black, #000);
+    color: var(--text-color, #000);
   }
 
   .flex-row {
@@ -155,12 +155,12 @@
         margin: 0;
         padding-right: 0;
         font-size: 0.95rem;
-        color: var(--black, #000);
+        color: var(--utility-link, #000);
 
         &:hover,
         &:focus {
           text-decoration: none;
-          color: var(--gray-800, #4a4958);
+          color: var(--utility-link-hover, #4a4958);
         }
       }
     }
@@ -175,12 +175,12 @@
       /* stylelint-disable-next-line no-descending-specificity */
       & a {
         margin: 0 10px;
-        color: var(--black, #000);
+        color: var(--link-color, #000);
         text-decoration: none;
 
         &:hover,
         &:focus {
-          color: var(--gray-800, #4a4958);
+          color: var(--link-hover-color, #4a4958);
         }
       }
 
@@ -210,6 +210,7 @@
       .official-tag {
         margin: 0 1rem 0 0;
         font-size: 0.95rem;
+        color: var(--text-color, #3b3a48);
 
         @media (width <= 767px) {
           margin-right: 0;

@@ -50,7 +50,7 @@ header.nav-overlay {
     opacity: 1;
     transform: rotate(0deg);
     transition: 0.25s ease-in-out;
-    background-color: var(--color-p2, #046b99);
+    background-color: var(--mobile-menu-icon-color, #046b99);
 
     &:nth-child(1) {
       top: 12px;
@@ -97,11 +97,11 @@ header.nav-overlay {
     height: 2.75rem;
 
     &:focus {
-      outline: 2px solid var(--outline-dark-mode-color);
+      outline: 2px solid var(--outline-for-dark-bg);
     }
 
     /* stylelint-disable-next-line no-descending-specificity */
-    span {
+    & span {
       background-color: var(--white, #fff);
       width: 30px;
 
@@ -115,7 +115,7 @@ header.nav-overlay {
     border: none;
 
     &[aria-expanded="false"] {
-      span {
+      & span {
         &:nth-child(1) {
           top: 15px;
         }
@@ -168,7 +168,7 @@ header.nav-overlay {
     display: flex;
     flex-direction: column;
 
-    span.ca-gov-icon-search {
+    & span.ca-gov-icon-search {
       position: relative;
       font-size: 1.4rem;
       display: block;
@@ -180,13 +180,13 @@ header.nav-overlay {
     }
   }
 
-  a {
+  & a {
     color: var(--gray-600, #72717c);
     text-decoration: none;
   }
 
   &.toggle-sub-nav {
-    color: var(--color-p2, #046b99);
+    color: var(--mobile-menu-icon-color, #046b99);
     background-color: color-mix(in srgb, var(--color-s1), #000 6%);
 
     &:hover,
@@ -221,7 +221,7 @@ header.nav-overlay {
 .navigation-search .settings-links {
   padding: 1rem;
 
-  a {
+  & a {
     position: relative;
     color: var(--white, #fff);
     margin-left: 1rem;
@@ -233,7 +233,7 @@ header.nav-overlay {
     }
   }
 
-  a::before {
+  & a::before {
     content: "";
     color: var(--white, #fff);
     border: none;
@@ -247,7 +247,7 @@ header.nav-overlay {
     left: -1.95rem;
   }
 
-  a:first-child::before {
+  & a:first-child::before {
     display: none;
   }
 }

@@ -55,6 +55,10 @@
   /* Mobile navigation drawer background */
   --mobile-drawer: var(--color-p2-darker);
   --mobile-drawer-active: var(--color-p2);
+
+  /* Global */
+  --link-color: var(--color-p2);
+  --link-hover-color: var(--color-p2-darker);
 }
 
 /* color-mix is used for the newer browsers */

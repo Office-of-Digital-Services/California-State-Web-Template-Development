@@ -4,7 +4,7 @@
 
 /* Default layout is 1 column */
 .main-content {
-  background: #fff;
+  background: var(--body-bg, #fff);
   min-height: 400px;
 
   > .section {
