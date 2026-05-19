@@ -63,6 +63,7 @@
   --link-color: var(--brand-primary, #046b99);
   --link-hover-color: var(--brand-primary-darkest, #005a7f);
   --body-bg: var(--white);
+  --default-bg: var(--gray-50);
   --outline-default-color: #0b8ee5;
   --outline-dark-mode-color: #85cbf9;
   --outline-for-dark-bg: #85cbf9;

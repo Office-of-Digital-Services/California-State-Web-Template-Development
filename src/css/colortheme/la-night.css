@@ -48,6 +48,7 @@
 
   /* Override semantic variables (which affects side-nav and more) */
   --body-bg: var(--color-p2);
+  --default-bg: var(--color-p3);
   --text-color: #fafafa;
   --text-muted: #fafafa;
   --link-color: var(--color-p1, #ffb300);
@@ -104,9 +105,119 @@
   --global-footer-bg: var(--color-p3);
   --footer-links-color: var(--white);
   --footer-links-color-hover: var(--color-p1);
-}
 
-/* footer */
-.global-footer {
-  border-top: 1px solid var(--gray-800);
+  /* BUTTONS */
+
+  /* Primary Button */
+  --primary-btn-color: var(--gray-800);
+  --primary-btn-bg: var(--white);
+  --primary-btn-border-color: var(--white);
+  --primary-btn-color-hover: var(--black);
+  --primary-btn-bg-hover: var(--gray-75);
+  --primary-btn-border-color-hover: var(--gray-100);
+  --primary-btn-color-disabled: var(--gray-700);
+  --btn-hover-primary-bg: var(--white);
+  --btn-hover-primary-overlay: var(--gray-100);
+  --outline-primary-btn: var(--outline-for-light-bg);
+
+  /* Primary Outline Button */
+  --primary-outline-btn-color: var(--white);
+  --primary-outline-btn-bg: var(--body-bg);
+  --primary-outline-btn-border-color: var(--white);
+  --primary-outline-btn-color-hover: var(--black);
+  --primary-outline-btn-bg-hover: var(--white);
+  --primary-outline-btn-border-color-hover: var(--white);
+  --primary-outline-btn-color-disabled: var(--gray-200);
+  --outline-primary-outline-btn: var(--outline-for-light-bg);
+
+  /* Default Button */
+  --default-btn-color: var(--text-color);
+  --default-btn-bg: var(--color-p3);
+  --default-btn-border-color: var(--gray-200);
+  --default-btn-color-hover: var(--white);
+  --default-btn-bg-hover: var(--color-p3-lightest);
+  --default-btn-border-color-hover: var(--white);
+  --btn-hover-default-bg: var(--color-p3);
+  --btn-hover-default-overlay: var(--color-p3-darkest);
+  --outline-default-btn: var(--outline-for-dark-bg);
+
+  /* Standout Button */
+  --standout-btn-color: var(--black);
+  --standout-btn-bg: var(--gray-200);
+  --standout-btn-border-color: var(--gray-200);
+  --standout-btn-color-hover: var(--gray-700);
+  --standout-btn-bg-hover: var(--white);
+  --standout-btn-border-color-hover: var(--white);
+  --btn-hover-standout-bg: var(--gray-200);
+  --btn-hover-standout-overlay: var(--white);
+  --outline-standout-btn: var(--outline-for-light-bg);
+
+  /* Standout Outline Button */
+  --standout-outline-btn-color: var(--gray-75);
+  --standout-outline-btn-bg: transparent;
+  --standout-outline-btn-border-color: var(--gray-75);
+  --standout-outline-btn-color-hover: var(--black);
+  --standout-outline-btn-bg-hover: var(--gray-75);
+  --standout-outline-btn-border-color-hover: var(--gray-75);
+  --outline-standout-outline-btn: var(--outline-dark-mode-color);
+
+  /* Highlight Button */
+  --highlight-btn-color: var(--gray-900);
+  --highlight-btn-bg: var(--color-p1);
+  --highlight-btn-border-color: var(--color-p1);
+  --highlight-btn-color-hover: var(--black);
+  --highlight-btn-bg-hover: var(--white);
+  --highlight-btn-border-color-hover: var(--white);
+  --highlight-btn-color-disabled: var(--gray-900);
+  --btn-hover-highlight-bg: var(--color-p1);
+  --btn-hover-highlight-overlay: var(--white);
+  --outline-highlight-btn: var(--outline-for-light-bg);
+
+  /* Highlight Outline Button */
+  --highlight-outline-btn-color: var(--color-p1);
+  --highlight-outline-btn-bg: transparent;
+  --highlight-outline-btn-border-color: var(--color-p1);
+  --highlight-outline-btn-color-hover: var(--black);
+  --highlight-outline-btn-bg-hover: var(--color-p1);
+  --highlight-outline-btn-border-color-hover: var(--color-p1);
+  --highlight-outline-btn-color-disabled: var(--color-p1);
+  --outline-highlight-outline-btn: var(--outline-dark-mode-color);
+
+  /* Secondary Button */
+  --secondary-btn-color: var(--text-color);
+  --secondary-btn-bg: var(--color-s1);
+  --secondary-btn-border-color: var(--color-s1);
+  --secondary-btn-color-hover: var(--white);
+  --secondary-btn-bg-hover: var(--color-s1-lighter);
+  --secondary-btn-border-color-hover: var(--color-s1-lighter);
+  --btn-hover-secondary-bg: var(--color-s1);
+  --btn-hover-secondary-overlay: var(--color-s1-darker);
+  --outline-secondary-btn: var(--outline-for-dark-bg);
+
+  /* Secondary Outline Button */
+  --secondary-outline-btn-color: var(--gray-100);
+  --secondary-outline-btn-bg: transparent;
+  --secondary-outline-btn-border-color: var(--gray-300);
+  --secondary-outline-btn-color-hover: var(--white);
+  --secondary-outline-btn-bg-hover: var(--color-s1);
+  --secondary-outline-btn-border-color-hover: var(--gray-300);
+  --outline-secondary-outline-btn: var(--outline-for-dark-bg);
+
+  /* S1 Button */
+  --s1-btn-color: var(--text-color);
+  --s1-btn-bg: var(--color-s2);
+  --s1-btn-border-color: var(--color-s2);
+  --s1-btn-color-hover: var(--white);
+  --s1-btn-bg-hover: var(--color-s2-dark);
+  --s1-btn-border-color-hover: var(--color-s2-dark);
+  --outline-s1-btn: var(--outline-dark-mode-color);
+
+  /* Light Outline Button */
+  --light-outline-btn-color: var(--white);
+  --light-outline-btn-bg: transparent;
+  --light-outline-btn-border-color: var(--white);
+  --light-outline-btn-color-hover: var(--black);
+  --light-outline-btn-bg-hover: var(--white);
+  --light-outline-btn-border-color-hover: var(--white);
+  --outline-light-outline-btn: var(--outline-dark-mode-color);
 }

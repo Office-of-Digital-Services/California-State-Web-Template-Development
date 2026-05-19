@@ -32,7 +32,7 @@
 }
 
 .section-default {
-  background: var(--gray-50, #fafafa);
+  background: var(--default-bg, var(--gray-50, #fafafa));
 }
 
 .section-understated {
