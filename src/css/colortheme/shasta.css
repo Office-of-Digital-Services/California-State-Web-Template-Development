@@ -58,7 +58,7 @@
 
   /* Global */
   --link-color: var(--color-p1);
-  --link-hover-color: var(--color-p1-darker);
+  --link-color-hover: var(--color-p1-darker);
 }
 
 /* color-mix is used for the newer browsers */

@@ -60,7 +60,7 @@
   z-index: 2;
 
   &:hover {
-    color: var(--link-hover-color, #005a7f);
+    color: var(--link-color-hover, #005a7f);
   }
 }
 

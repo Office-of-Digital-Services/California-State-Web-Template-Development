@@ -59,11 +59,13 @@
   --share-github: #25292e;
   --btn-default-color: var(--gray-900);
   --text-color: var(--gray-900, #3b3a48);
+  --text-color-hover: var(--black, #000);
   --text-muted: var(--gray-700, #5e5e6a);
   --link-color: var(--brand-primary, #046b99);
-  --link-hover-color: var(--brand-primary-darkest, #005a7f);
+  --link-color-hover: var(--brand-primary-darkest, #005a7f);
   --body-bg: var(--white);
   --default-bg: var(--gray-50);
+  --default-bg-hover: var(--gray-100);
   --outline-default-color: #0b8ee5;
   --outline-dark-mode-color: #85cbf9;
   --outline-for-dark-bg: #85cbf9;

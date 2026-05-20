@@ -35,6 +35,11 @@
   background: var(--default-bg, var(--gray-50, #fafafa));
 }
 
+.section-default-hover:hover,
+.section-default-hover:focus {
+  background: var(--default-bg-hover, var(--gray-100, #f3f3f4));
+}
+
 .section-understated {
   background: var(--color-s1, #eef8fb);
 

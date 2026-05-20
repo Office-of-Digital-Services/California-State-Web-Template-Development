@@ -180,7 +180,7 @@
 
         &:hover,
         &:focus {
-          color: var(--link-hover-color, #4a4958);
+          color: var(--link-color-hover, #4a4958);
         }
       }
 

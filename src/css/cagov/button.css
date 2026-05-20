@@ -508,7 +508,7 @@ fieldset[disabled] .btn-outline-highlight.active {
 .btn-secondary:not(:disabled, .disabled).active,
 .btn-secondary .show > .dropdown-toggle,
 .open > .dropdown-toggle .btn-secondary {
-  color: var(--secondary-btn-color-hover, var(--link-hover-color, #005a7f));
+  color: var(--secondary-btn-color-hover, var(--link-color-hover, #005a7f));
   background-color: var(--secondary-btn-bg-hover, #fff);
   border-color: var(--secondary-btn-border-color-hover, var(--black, #000));
   box-shadow: 0 2px 4px rgba(0 0 0 / 50%);
