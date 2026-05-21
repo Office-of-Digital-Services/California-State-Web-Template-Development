@@ -37,7 +37,7 @@
 
 .section-default-hover:hover,
 .section-default-hover:focus {
-  background: var(--default-bg-hover, var(--gray-100, #f3f3f4));
+  background: var(--default-bg-hover, var(--gray-75, #f2f2f2));
 }
 
 .section-understated {

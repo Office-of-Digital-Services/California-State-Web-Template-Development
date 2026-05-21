@@ -590,6 +590,23 @@
   background-color: var(--white, #fff) !important;
 }
 
+.bg-default {
+  background-color: var(--default-bg, var(--gray-50, #fafafa)) !important;
+}
+
+.bg-default-hover:hover,
+.bg-default-hover:focus {
+  background-color: var(--default-bg-hover, var(--gray-75, #f3f3f4)) !important;
+}
+
+.bg-default-hover-darker:hover,
+.bg-default-hover-darker:focus {
+  background-color: var(
+    --default-bg-hover-darker,
+    var(--gray-100, #ededef)
+  ) !important;
+}
+
 .bg-outline-color,
 .bg-outline-color:hover,
 .bg-outline-color:focus {

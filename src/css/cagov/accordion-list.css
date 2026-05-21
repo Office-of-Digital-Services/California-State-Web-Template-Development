@@ -67,7 +67,7 @@
 .accordion__trigger::before {
   border-left: 0.3em solid transparent;
   border-right: 0.3em solid transparent;
-  border-top: 0.3em solid #222;
+  border-top: 0.3em solid var(--text-color, #3b3a48);
   bottom: 0;
   content: "";
   height: 0;
