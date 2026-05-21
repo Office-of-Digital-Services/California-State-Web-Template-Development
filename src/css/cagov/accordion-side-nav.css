@@ -90,7 +90,7 @@
 
       &.active {
         .accordion__trigger {
-          color: var(--body-bg, var(--white, #fff)) !important;
+          color: var(--base-light, var(--white, #fff)) !important;
           background-color: var(--link-color, var(--color-p2, #046b99));
 
           &:hover,
@@ -114,6 +114,7 @@
 
         &.active {
           .accordion__trigger {
+            color: var(--base-light, var(--white, #fff)) !important;
             background-color: var(
               --link-color,
               var(--color-p2, #046b99)
@@ -161,18 +162,20 @@
     .accordion {
       .accordion__heading {
         &.active {
+          border: 1px solid var(--base-dark, var(--black, #000)) !important;
+
           .accordion__trigger {
-            color: var(--text-color, var(--gray-800, #4a4958)) !important;
+            color: var(--base-dark, var(--gray-800, #4a4958)) !important;
             background-color: var(
-              --default-bg,
-              var(--gray-50, #fafafa)
+              --sidenav-active-bg,
+              var(--gray-75, #f2f2f2)
             ) !important;
 
             &:hover,
             &:focus {
               color: var(--text-color-hover, var(--black, #000)) !important;
               background-color: var(
-                --default-bg-hover,
+                --sidenav-active-hover-bg,
                 var(--gray-100, #f3f3f4)
               ) !important;
             }
