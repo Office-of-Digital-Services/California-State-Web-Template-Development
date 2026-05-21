@@ -48,12 +48,15 @@
 
   /* Override semantic variables (which affects side-nav and more) */
   --body-bg: var(--color-p2);
+  --base-light: var(--black);
+  --base-dark: var(--white);
   --default-bg: var(--color-p3);
   --default-bg-hover: var(--color-p3-dark);
   --default-bg-hover-darker: var(--color-p3-darker);
   --text-color: #fafafa;
   --text-color-hover: #fff;
   --text-muted: #fafafa;
+  --blockquote-small-color: #ededef;
   --link-color: var(--color-p1, #ffb300);
   --link-color-hover: var(--color-p1-lighter, #fbde84);
   --outline-default-color: #85cbf9;

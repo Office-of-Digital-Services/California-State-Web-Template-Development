@@ -64,6 +64,8 @@
   --link-color: var(--brand-primary, #046b99);
   --link-color-hover: var(--brand-primary-darkest, #005a7f);
   --body-bg: var(--white);
+  --base-light: var(--white);
+  --base-dark: var(--black);
   --default-bg: var(--gray-50);
   --default-bg-hover: var(--gray-75);
   --default-bg-hover-darker: var(--gray-100);
