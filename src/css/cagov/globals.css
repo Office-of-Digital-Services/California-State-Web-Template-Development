@@ -586,7 +586,25 @@
   color: var(--brand-danger, #cd402d) !important;
 }
 
+.bg-base-light {
+  background-color: var(--base-light, #fff) !important;
+}
+
+.bg-body {
+  background-color: var(--body-bg, #fff) !important;
+}
+
+.bg-base-light-hover:hover,
+.bg-base-light-hover:focus {
+  background-color: var(--base-light, #fff) !important;
+}
+
 .bg-white {
+  background-color: var(--white, #fff) !important;
+}
+
+.bg-white-hover:hover,
+.bg-white-hover:focus {
   background-color: var(--white, #fff) !important;
 }
 
@@ -611,11 +629,6 @@
 .bg-outline-color:hover,
 .bg-outline-color:focus {
   background-color: var(--outline-default-color, #2ea3f2) !important;
-}
-
-.bg-white-hover:hover,
-.bg-white-hover:focus {
-  background-color: var(--white, #fff) !important;
 }
 
 .bg-gray-light,
@@ -720,6 +733,15 @@
 .bg-gray-900-hover:hover,
 .bg-gray-900-hover:focus {
   background-color: var(--gray-900, #3b3a48) !important;
+}
+
+.bg-base-dark {
+  background-color: var(--base-dark, #000) !important;
+}
+
+.bg-base-dark-hover:hover,
+.bg-base-dark-hover:focus {
+  background-color: var(--base-dark, #000) !important;
 }
 
 .bg-none {
@@ -1705,15 +1727,21 @@
 
 /* border colors */
 .brd-primary {
-  border-color: var(--color-p2, #046b99) !important;
+  border-color: var(--color-primary, var(--color-p2, #046b99)) !important;
 }
 
 .brd-primary-light {
-  border-color: var(--color-p2-lightest, #a4c3d4) !important;
+  border-color: var(
+    --color-primary-light,
+    var(--color-p2-lightest, #a4c3d4)
+  ) !important;
 }
 
 .brd-primary-dark {
-  border-color: var(--color-p2-darker, #214a68) !important;
+  border-color: var(
+    --color-primary-dark,
+    var(--color-p2-darker, #214a68)
+  ) !important;
 }
 
 .brd-standout {

@@ -2,6 +2,22 @@
    FORMS - /src/css/cagov/forms.css
 ----------------------------------------- */
 
+input[type="search"],
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+textarea {
+  background-color: var(--body-bg, #fff);
+}
+
+/* placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-color, var(--gray-900), #3b3a48);
+  opacity: 0.9;
+}
+
 .form-control,
 .custom-file-label,
 .custom-select {
