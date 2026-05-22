@@ -60,6 +60,7 @@
   --btn-default-color: var(--gray-900);
   --text-color: var(--gray-900, #3b3a48);
   --text-color-hover: var(--black, #000);
+  --text-secondary: var(--gray-800, #4a4958);
   --text-muted: var(--gray-700, #5e5e6a);
   --link-color: var(--brand-primary, #046b99);
   --link-color-hover: var(--brand-primary-darkest, #005a7f);

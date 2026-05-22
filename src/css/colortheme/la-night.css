@@ -71,7 +71,8 @@
   --default-bg-hover-darker: var(--color-p3-darkest);
   --text-color: #fafafa;
   --text-color-hover: #fff;
-  --text-muted: #fafafa;
+  --text-muted: #bababa;
+  --text-secondary: #d1d1d1;
   --blockquote-small-color: #ededef;
   --link-color: var(--color-p1, #ffb300);
   --link-color-hover: var(--color-p1-lighter, #fbde84);
