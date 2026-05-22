@@ -1566,9 +1566,9 @@
   color: var(--color-p2, #046b99) !important;
 }
 
-.color-p2:hover,
-.color-p2:focus {
-  color: var(--color-p2, #046b99) !important;
+.color-p2-hover:hover,
+.color-p2-hover:focus {
+  color: var(--color-p2-darker, #214a68) !important;
 }
 
 .color-primary {
