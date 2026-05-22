@@ -70,6 +70,7 @@
     no-repeat;
   --text-field-bg-color: var(--body-bg);
   --text-field-color: var(--text-color);
+  --brand-danger: #e28579;
 
   /* utility header */
   --utility-link: var(--white);
@@ -87,8 +88,6 @@
   --yellow-lightest: #feeaad;
   --yellow-dark: #efa903;
   --yellow-darker: #dd9c03;
-  --bs-form-check-bg-image-checked: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23000'/%3e%3c/svg%3e");
-  --bs-form-checkbox-image-checked: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
   --bs-body-bg: var(--color-p2);
 
   /* Target custom side-nav variables that have no semantic mapping */
@@ -99,6 +98,12 @@
   --sidenav-active-hover-color: var(--color-p1-light);
   --border-color-muted: var(--gray-800);
   --border-color-default: var(--gray-600);
+
+  /* Custom form check SVG icons for dark mode */
+  --cagov-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+  --cagov-form-radio-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23000'/%3e%3c/svg%3e");
+  --cagov-form-indeterminate-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
+  --cagov-form-select-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path fill='%23fff' d='M17.087 10.35l-4.337 4.336-4.337-4.336c-0.293-0.293-0.768-0.293-1.060 0s-0.293 0.768 0 1.060l4.864 4.864c0.147 0.147 0.341 0.221 0.533 0.219 0.194 0 0.386-0.072 0.533-0.219l4.865-4.864c0.293-0.293 0.293-0.768 0-1.060s-0.768-0.293-1.061 0z'/></svg>");
 
   /* Main navigation */
   --mobile-menu-icon-color: var(--text-color);
