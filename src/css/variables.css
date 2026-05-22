@@ -68,6 +68,7 @@
   --base-light: var(--white);
   --base-dark: var(--black);
   --default-bg: var(--gray-50);
+  --default-bg-darker: var(--gray-100);
   --default-bg-hover: var(--gray-75);
   --default-bg-hover-darker: var(--gray-100);
   --outline-default-color: #0b8ee5;

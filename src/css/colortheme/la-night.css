@@ -67,6 +67,7 @@
   --base-light: var(--black);
   --base-dark: var(--white);
   --default-bg: var(--color-p3);
+  --default-bg-darker: var(--color-p3-lighter);
   --default-bg-hover: var(--color-p3-dark);
   --default-bg-hover-darker: var(--color-p3-darkest);
   --text-color: #fafafa;

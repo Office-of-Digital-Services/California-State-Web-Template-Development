@@ -1,6 +1,11 @@
 /* -----------------------------------------
    PROGRESS BAR - /src/css/cagov/progress-bar.css
 ----------------------------------------- */
+
+.progress {
+  background-color: var(--default-bg-darker, #d4d4d7);
+}
+
 .progress-pointer {
   position: absolute;
   bottom: 100%;
