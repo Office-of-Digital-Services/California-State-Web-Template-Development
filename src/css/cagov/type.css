@@ -284,6 +284,12 @@ svg ~ .external-link-icon,
   display: none;
 }
 
+.socialsharer-container a.cagov-external-link::after,
+a[class*="ca-gov-icon-"].cagov-external-link::after {
+  content: none;
+  display: none;
+}
+
 /* stylelint-disable-next-line no-descending-specificity */
 .icon-abs-right .external-link-icon {
   position: absolute;

@@ -62,6 +62,27 @@
   --color-a7: #e48c81;
   --color-a8: #f17827;
 
+  /* social media brand colors */
+  --share-facebook: var(--gray-200);
+  --share-facebook-hover: color-mix(in srgb, var(--share-facebook), #000 15%);
+  --share-twitter: var(--gray-200);
+  --share-twitter-hover: color-mix(in srgb, var(--share-twitter), #000 15%);
+  --share-googleplus: var(--gray-200);
+  --share-googleplus-hover: color-mix(
+    in srgb,
+    var(--share-googleplus),
+    #000 15%
+  );
+  --share-flickr: var(--gray-200);
+  --share-linkedin: var(--gray-200);
+  --share-instagram: var(--gray-200);
+  --share-snapchat: var(--gray-200);
+  --share-youtube: var(--gray-200);
+  --share-pinterest: var(--gray-200);
+  --share-vimeo: var(--gray-200);
+  --share-email: var(--gray-200);
+  --share-github: var(--gray-200);
+
   /* Override semantic variables (which affects side-nav and more) */
   --body-bg: var(--color-p2);
   --base-light: var(--black);
