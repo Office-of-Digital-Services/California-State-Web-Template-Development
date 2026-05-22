@@ -51,6 +51,17 @@
   --color-primary-dark: var(--color-p1-darker);
   --color-primary-light: var(--color-p1-lighter);
 
+  /* Accent colors */
+  --code-color: #eb5c9c;
+  --color-a1: #5aaae7;
+  --color-a2: #3ab5f8;
+  --color-a3: #31afa0;
+  --color-a4: #42af3c;
+  --color-a5: #ac92ce;
+  --color-a6: #d274dc;
+  --color-a7: #e48c81;
+  --color-a8: #f17827;
+
   /* Override semantic variables (which affects side-nav and more) */
   --body-bg: var(--color-p2);
   --base-light: var(--black);
