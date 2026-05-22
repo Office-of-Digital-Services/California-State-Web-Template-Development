@@ -259,7 +259,7 @@ a.second-level-link {
     font-size: 0.8em;
   }
 
-  a.second-level-link {
+  & a.second-level-link {
     padding: 0 !important;
   }
 
@@ -347,7 +347,7 @@ a.second-level-link {
     text-align: center;
     padding: 0 40px;
 
-    a {
+    & a {
       flex: 1;
       border: none;
       padding: 20px 15px 15px;
@@ -357,7 +357,7 @@ a.second-level-link {
       height: auto;
 
       &:hover {
-        background: #fff;
+        background: var(--main-nav-bg-hover, #fff);
       }
     }
 
@@ -365,17 +365,25 @@ a.second-level-link {
       display: block;
       margin: 0;
     }
+
+    .image-icon {
+      width: 6rem;
+    }
   }
 
   .second-level-nav.flex.with-border a {
-    border-top: 2px dotted #ccc;
-    border-right: 2px dotted #ccc;
-    border-bottom: 2px dotted #ccc;
+    border-top: 2px dotted var(--border-color-default, #ccc);
+    border-right: 2px dotted var(--border-color-default, #ccc);
+    border-bottom: 2px dotted var(--border-color-default, #ccc);
 
-    &:first-child {
-      border-left: 2px dotted #ccc;
+    &:first-of-type {
+      border-left: 2px dotted var(--border-color-default, #ccc);
     }
   }
+
+  /* .second-level-nav.flex.with-border a:first-of-type {
+    border-left: 2px dotted var(--border-color-default, #ccc);
+  } */
 }
 
 @media (width <= 991px) {
@@ -384,9 +392,9 @@ a.second-level-link {
     text-align: left;
     padding: 0;
 
-    a {
+    & a {
       display: block;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid var(--border-color-default, #ccc);
       padding: 0;
       margin-top: 0;
       margin-bottom: 0;
@@ -394,7 +402,7 @@ a.second-level-link {
       height: auto;
 
       &:hover {
-        background: #fff;
+        background: var(--main-nav-bg-hover, #fff);
       }
     }
 

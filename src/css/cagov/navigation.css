@@ -361,7 +361,7 @@
           }
 
           .link-description {
-            color: var(--gray-700, #5e5e6a);
+            color: var(--text-muted, var(--gray-700, #5e5e6a));
           }
         }
 
@@ -369,7 +369,7 @@
           color: var(--main-nav-color, var(--color-p2, #046b99));
 
           [class^="ca-gov-icon-"] {
-            color: var(--gray-700, #5e5e6a);
+            color: var(--text-muted, var(--gray-700, #5e5e6a));
           }
         }
       }

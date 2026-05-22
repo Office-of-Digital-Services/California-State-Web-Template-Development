@@ -97,6 +97,8 @@ module.exports = function (/** @type {EleventyConfig} **/ eleventyConfig) {
           content: contentPaths,
           safelist: [
             ":nth-child",
+            ":first-of-type",
+            ":first-child",
             ":hover",
             ":focus",
             /focus/,
