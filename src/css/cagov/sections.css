@@ -405,18 +405,18 @@
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
-  a:not(.btn) {
-    color: var(--white, #fff);
+  & a:not(.btn) {
+    color: var(--dark-section-link-color, var(--white, #fff));
     text-decoration: underline;
 
     &:hover,
     &:focus {
-      color: var(--color-s1, #eef8fb);
+      color: var(--dark-section-link-color-hover, var(--color-s1, #eef8fb));
       text-decoration: underline;
     }
 
     &:focus {
-      outline: 2px solid var(--outline-dark-mode-color);
+      outline: 2px solid var(--outline-for-dark-bg);
       outline-offset: -2px;
     }
   }
