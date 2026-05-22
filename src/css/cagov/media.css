@@ -4,12 +4,12 @@
 ----------------------------------------- */
 
 figure {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color-default, #d4d4d7);
   margin-bottom: 15px;
-  background-color: var(--white, #fff);
-  border-color: var(--gray-200, #d4d4d7);
+  background-color: var(--base-light, var(--white, #fff));
+  border-color: var(--border-color-default, var(--gray-200, #d4d4d7));
 
-  img {
+  & > img {
     width: 100%;
   }
 }
@@ -43,8 +43,8 @@ figcaption {
   .media-top {
     text-align: center;
 
-    img,
-    span {
+    & > img,
+    & > span {
       display: inherit;
       margin-bottom: var(--line-height-computed);
     }
