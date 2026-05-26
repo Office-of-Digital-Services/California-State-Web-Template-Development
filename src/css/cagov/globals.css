@@ -668,6 +668,11 @@
   ) !important;
 }
 
+.bg-gray-lighter,
+.bg-grey-lighter {
+  background-color: var(--default-bg-hover, var(--gray-75, #f3f3f4)) !important;
+}
+
 .bg-gray-lightest,
 .bg-grey-lightest {
   background-color: var(--default-bg, var(--gray-50, #fafafa)) !important;
@@ -832,6 +837,10 @@
     --border-color-default,
     var(--gray-200, #d4d4d7)
   ) !important;
+}
+
+.brd-color-muted {
+  border-color: var(--border-color-muted, var(--gray-100, #f3f3f4)) !important;
 }
 
 .brd-gray-100 {

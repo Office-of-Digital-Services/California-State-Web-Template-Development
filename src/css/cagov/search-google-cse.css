@@ -24,34 +24,53 @@
 }
 
 .gs-result {
-  a.gs-title,
-  a.gs-title b {
-    color: var(--color-p2, #046b99) !important;
+  & a.gs-title,
+  & a.gs-title b {
+    color: var(--link-color, #046b99) !important;
+
+    &:hover,
+    &:focus {
+      color: var(--link-hover-color, #005a7f) !important;
+    }
   }
 
   .gsc-url-top {
     .gs-visibleUrl-breadcrumb span {
-      color: var(--gray-600, #72717c) !important;
+      color: var(--text-muted, #72717c) !important;
     }
   }
 
   .gs-snippet {
-    color: var(--gray-900, #3b3a48) !important;
+    color: var(--text-color, #3b3a48) !important;
   }
 }
 
 .gsc-cursor-box {
   .gsc-cursor {
     .gsc-cursor-page {
-      color: var(--color-p3, #323a45) !important;
+      color: var(--text-color, #3b3a48) !important;
     }
 
     .gsc-cursor-current-page {
-      color: var(--color-p3, #323a45) !important;
+      color: var(--text-color, #3b3a48) !important;
     }
   }
 }
 
 .gcsc-find-more-on-google {
-  color: var(--color-p2, #046b99) !important;
+  color: var(--link-color, #046b99) !important;
+}
+
+.gcsc-find-more-on-google-magnifier {
+  fill: var(--link-color, #046b99) !important;
+}
+
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+  background-color: var(--body-bg, #fff) !important;
+  color: var(--link-color, #046b99) !important;
+}
+
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+  color: var(--text-color, #3b3a48) !important;
+  background-color: var(--body-bg, #fff) !important;
 }

@@ -146,6 +146,22 @@
 .cse .gsc-control-cse,
 .gsc-control-cse {
   padding: 0 !important;
+  background-color: var(--body-bg, #fff) !important;
+  border-color: var(--body-bg, #fff) !important;
+}
+
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+  background-color: var(--body-bg, #fff) !important;
+  border-color: var(--body-bg, #fff) !important;
+}
+
+.gsc-result-info-container .gsc-result-info {
+  color: var(--text-muted, #5e5e6a);
+}
+
+.gsc-orderby-container .gsc-orderby-label {
+  color: var(--text-muted, #5e5e6a);
 }
 
 /* Large Search Animation and Styling */
@@ -260,7 +276,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 ----------------------------------------- */
 
 .gsc-control-searchbox-only {
-  form.gsc-search-box {
+  & form.gsc-search-box {
     margin-bottom: 0;
   }
 
@@ -312,7 +328,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
     position: relative;
   }
 
-  td.gsc-search-button {
+  & td.gsc-search-button {
     width: 0 !important;
     margin-right: 0 !important;
     margin-left: 0 !important;
