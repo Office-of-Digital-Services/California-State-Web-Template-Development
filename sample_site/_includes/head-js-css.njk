@@ -36,12 +36,14 @@ https://template.webstandards.ca.gov/cdn.html
   href="/ca_state_template/css/cagov.core.min.css" />
 
 <!-- Oceanside theme is default. You can replace color theme with diferent one. 
-There are 12 light and 2 dark mode color themes. 
-Below is commented link to the dark mode theme color. 
-To switch to dark mode, uncomment the line below.-->
-<!--<link
+There are 12 light and 2 dark mode color themes. -->
+
+<!-- System dark mode switch: loads Ukiah Night theme if the operating system prefers dark mode -->
+<link
   rel="stylesheet"
-  href="/ca_state_template/css/colortheme-ventura-night.min.css" /> -->
+  href="/ca_state_template/css/colortheme-ukiah-night.min.css"
+  media="(prefers-color-scheme: dark)" />
+
 
 <!-- State Template Core JavaScript -->
 <script src="/ca_state_template/js/cagov.core.min.js"></script>

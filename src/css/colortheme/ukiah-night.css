@@ -173,12 +173,12 @@
   --primary-btn-bg: var(--white);
   --primary-btn-border-color: var(--white);
   --primary-btn-color-hover: var(--black);
-  --primary-btn-bg-hover: var(--gray-75);
-  --primary-btn-border-color-hover: var(--gray-100);
+  --primary-btn-bg-hover: var(--gray-200);
+  --primary-btn-border-color-hover: var(--gray-200);
   --primary-btn-color-disabled: var(--gray-700);
   --btn-hover-primary-bg: var(--white);
   --btn-hover-primary-overlay: var(--gray-100);
-  --outline-primary-btn: var(--outline-for-light-bg);
+  --outline-primary-btn: var(--black);
 
   /* Primary Outline Button */
   --primary-outline-btn-color: var(--white);
