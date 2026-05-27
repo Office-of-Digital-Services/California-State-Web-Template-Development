@@ -68,3 +68,16 @@
 .compact + .search-results-container .search-results .search-results-header {
   padding-top: 50px;
 }
+
+div.search-results-header {
+  & form {
+    .search-textfield {
+      outline-offset: -4px;
+    }
+
+    .gsc-search-button {
+      display: block !important;
+      outline-offset: -4px;
+    }
+  }
+}

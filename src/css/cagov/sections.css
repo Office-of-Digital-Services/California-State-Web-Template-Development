@@ -6,7 +6,7 @@
 .section {
   padding-top: 25px;
   padding-bottom: 25px;
-  background: var(--white, #fff);
+  background: var(--body-bg, #fff);
   position: relative;
   overflow: hidden;
 
@@ -32,7 +32,12 @@
 }
 
 .section-default {
-  background: var(--gray-50, #fafafa);
+  background: var(--default-bg, var(--gray-50, #fafafa));
+}
+
+.section-default-hover:hover,
+.section-default-hover:focus {
+  background: var(--default-bg-hover, var(--gray-75, #f2f2f2));
 }
 
 .section-understated {
@@ -400,18 +405,18 @@
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
-  a:not(.btn) {
-    color: var(--white, #fff);
+  & a:not(.btn) {
+    color: var(--dark-section-link-color, var(--white, #fff));
     text-decoration: underline;
 
     &:hover,
     &:focus {
-      color: var(--color-s1, #eef8fb);
+      color: var(--dark-section-link-color-hover, var(--color-s1, #eef8fb));
       text-decoration: underline;
     }
 
     &:focus {
-      outline: 2px solid var(--outline-dark-mode-color);
+      outline: 2px solid var(--outline-for-dark-bg);
       outline-offset: -2px;
     }
   }

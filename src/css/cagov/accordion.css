@@ -15,23 +15,24 @@ cagov-accordion > details {
   > summary {
     cursor: pointer;
     padding: 0.5rem 3rem 0.5rem 3.75rem;
-    background-color: var(--gray-50, #fafafa);
+    background-color: var(--default-bg, var(--gray-50, #fafafa));
     position: relative;
     line-height: 2rem;
     margin: 0;
-    color: var(--gray-800, #4a4958);
+    color: var(--text-color, var(--gray-900, #3b3a48));
     font-size: 1.125rem;
     font-weight: bold;
-    border: 1px solid var(--gray-200, #d4d4d7);
+    border: 1px solid var(--border-color-default, var(--gray-200, #d4d4d7));
 
     &::before {
       position: absolute;
       height: 100%;
       width: 2.75rem;
-      border-right: 1px solid var(--gray-200, #d4d4d7);
+      border-right: 1px solid
+        var(--border-color-default, var(--gray-200, #d4d4d7));
       top: 0;
       left: 0;
-      background-color: var(--gray-50, #fafafa);
+      background-color: var(--default-bg, var(--gray-50, #fafafa));
       border-radius: 3px 0 0 3px;
       content: "";
     }
@@ -61,8 +62,8 @@ cagov-accordion > details {
         position: absolute;
         width: 0.5rem;
         height: 0.5rem;
-        border-top: 2px solid var(--gray-900, #3b3a48);
-        border-left: 2px solid var(--gray-900, #3b3a48);
+        border-top: 2px solid var(--text-color, var(--gray-900, #3b3a48));
+        border-left: 2px solid var(--text-color, var(--gray-900, #3b3a48));
         left: 0.55rem;
         top: 1rem;
         vertical-align: middle;
@@ -73,10 +74,13 @@ cagov-accordion > details {
     }
 
     &:hover {
-      color: black;
+      color: var(--text-color-hover, black);
 
       &::before {
-        background-color: var(--gray-100, #f3f3f4);
+        background-color: var(
+          --default-bg-hover-darker,
+          var(--gray-100, #f3f3f4)
+        );
       }
     }
   }
@@ -106,7 +110,10 @@ cagov-accordion:defined {
 
       &:focus {
         &::before {
-          background-color: var(--gray-100, #f3f3f4);
+          background-color: var(
+            --default-bg-hover-darker,
+            var(--gray-100, #f3f3f4)
+          );
         }
 
         &::after {
@@ -130,7 +137,10 @@ cagov-accordion:defined {
 
         &::before {
           border-radius: 3px 0 0;
-          background-color: var(--gray-100, #f3f3f4);
+          background-color: var(
+            --default-bg-hover-darker,
+            var(--gray-100, #f3f3f4)
+          );
         }
 
         &:focus {

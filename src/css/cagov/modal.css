@@ -5,3 +5,16 @@
 div.modal-header > button.close {
   margin-left: auto;
 }
+
+.modal-body,
+.modal-title {
+  color: var(--text-color);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border-color-default);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--border-color-default);
+}

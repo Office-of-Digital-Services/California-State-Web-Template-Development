@@ -91,7 +91,7 @@
     > a,
     .first-level-btn,
     .first-level-link {
-      color: var(--color-p2, #046b99);
+      color: var(--main-nav-color, var(--color-p2, #046b99));
 
       > span[class^="ca-gov-icon"] {
         color: var(--gray-900, #3b3a48);
@@ -103,7 +103,7 @@
     > a,
     .first-level-btn,
     .first-level-link {
-      color: var(--color-p2, #046b99);
+      color: var(--main-nav-color, var(--color-p2, #046b99));
 
       /* stylelint-disable-next-line no-descending-specificity */
       > span[class^="ca-gov-icon"] {
@@ -166,11 +166,11 @@
     position: relative;
     text-align: center;
     text-decoration: none;
-    color: var(--color-p2, #046b99);
+    color: var(--main-nav-color, var(--color-p2, #046b99));
 
     &:hover,
     &:focus {
-      color: var(--gray-900, #3b3a48);
+      color: var(--main-nav-color-hover, var(--gray-900, #3b3a48));
     }
 
     &:focus {
@@ -214,18 +214,21 @@
 
       &:hover,
       &:focus {
-        background-color: var(--gray-50, #fafafa);
+        background-color: var(--main-nav-bg-hover, var(--gray-50, #fafafa));
       }
 
       &.active {
-        background-color: var(--gray-50, #fafafa);
+        background-color: var(--main-nav-bg-active, var(--gray-50, #fafafa));
         position: relative;
-        color: var(--black, #000);
+        color: var(--main-nav-color-active, var(--black, #000));
 
         &:hover,
         &:focus {
-          color: var(--gray-800, #4a4958);
-          background-color: var(--gray-100, #f3f3f4);
+          color: var(--main-nav-color-active-hover, var(--gray-800, #4a4958));
+          background-color: var(
+            --main-nav-bg-active-hover,
+            var(--gray-100, #f3f3f4)
+          );
         }
 
         &::before {
@@ -234,7 +237,8 @@
           top: 0;
           left: 0;
           height: 100%;
-          border-left: 1px solid var(--gray-200, #d4d4d7);
+          border-left: 1px solid
+            var(--main-nav-border-color, var(--gray-200, #d4d4d7));
         }
 
         &::after {
@@ -243,7 +247,8 @@
           top: 0;
           right: 0;
           height: 100%;
-          border-left: 1px solid var(--gray-200, #d4d4d7);
+          border-left: 1px solid
+            var(--main-nav-border-color, var(--gray-200, #d4d4d7));
         }
       }
 
@@ -275,14 +280,17 @@
     &.active {
       .first-level-link,
       .first-level-btn {
-        background-color: var(--gray-50, #fafafa);
+        background-color: var(--main-nav-bg-active, var(--gray-50, #fafafa));
         position: relative;
-        color: var(--black, #000);
+        color: var(--main-nav-color-active, var(--black, #000));
 
         &:hover,
         &:focus {
-          color: var(--gray-800, #4a4958);
-          background-color: var(--gray-100, #f3f3f4);
+          color: var(--main-nav-color-active-hover, var(--gray-800, #4a4958));
+          background-color: var(
+            --main-nav-bg-active-hover,
+            var(--gray-100, #f3f3f4)
+          );
         }
 
         &::before {
@@ -291,7 +299,8 @@
           top: 0;
           left: 0;
           height: 100%;
-          border-left: 1px solid var(--gray-200, #d4d4d7);
+          border-left: 1px solid
+            var(--main-nav-border-color, var(--gray-200, #d4d4d7));
         }
 
         &::after {
@@ -300,7 +309,8 @@
           top: 0;
           right: 0;
           height: 100%;
-          border-left: 1px solid var(--gray-200, #d4d4d7);
+          border-left: 1px solid
+            var(--main-nav-border-color, var(--gray-200, #d4d4d7));
         }
       }
     }
@@ -336,9 +346,9 @@
 
       .sub-nav {
         top: 100%;
-        border: solid 1px #ccc;
+        border: solid 1px var(--main-nav-border-color, #ccc);
         box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
-        background: var(--white, #fff);
+        background: var(--main-nav-bg, var(--white, #fff));
 
         .second-level-nav {
           > li {
@@ -346,20 +356,20 @@
 
             &:hover,
             &:focus {
-              background: #fff;
+              background: var(--main-nav-bg-hover, #fff);
             }
           }
 
           .link-description {
-            color: var(--gray-700, #5e5e6a);
+            color: var(--text-muted, var(--gray-700, #5e5e6a));
           }
         }
 
         .second-level-link {
-          color: var(--color-p2, #046b99);
+          color: var(--main-nav-color, var(--color-p2, #046b99));
 
           [class^="ca-gov-icon-"] {
-            color: var(--gray-700, #5e5e6a);
+            color: var(--text-muted, var(--gray-700, #5e5e6a));
           }
         }
       }
@@ -556,7 +566,7 @@
       }
 
       &:focus {
-        outline: 2px solid var(--outline-dark-mode-color);
+        outline: 2px solid var(--outline-for-dark-bg);
         outline-offset: -4px;
       }
 
@@ -612,7 +622,7 @@
         background-color: var(--mobile-drawer, #214a68);
 
         &:focus {
-          outline: 2px solid var(--outline-dark-mode-color);
+          outline: 2px solid var(--outline-for-dark-bg);
           outline-offset: -4px;
         }
 
@@ -655,9 +665,17 @@
     display: none;
   }
 
-  .nav-drawer + .search-container #Search .gsc-search-button {
-    &:focus {
-      outline: 2px solid var(--outline-default-color);
+  .nav-drawer + .search-container #Search {
+    .search-textfield {
+      border-color: var(--white, #fff);
+    }
+
+    .gsc-search-button {
+      border-color: var(--white, #fff);
+
+      &:focus {
+        outline: 2px solid var(--outline-for-light-bg, #0b8ee5);
+      }
     }
   }
 }
@@ -719,7 +737,7 @@
 
           & a.second-level-link:hover,
           & a.second-level-link:focus {
-            background-color: var(--gray-50, #fafafa);
+            background-color: var(--main-nav-bg-hover, var(--gray-50, #fafafa));
             text-decoration: none;
           }
         }
@@ -742,8 +760,8 @@
               position: relative;
               width: 0.55rem;
               height: 0.55rem;
-              border-top: 2px solid var(--color-p2, #046b99);
-              border-left: 2px solid var(--color-p2, #046b99);
+              border-top: 2px solid var(--main-nav-color, #046b99);
+              border-left: 2px solid var(--main-nav-color, #046b99);
               transform: rotate(225deg);
               vertical-align: middle;
               top: -2px;

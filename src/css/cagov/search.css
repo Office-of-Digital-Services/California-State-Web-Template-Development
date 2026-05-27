@@ -29,7 +29,7 @@
       color: var(--white, #fff);
 
       &:focus {
-        outline: 2px solid var(--outline-dark-mode-color);
+        outline: 2px solid var(--outline-for-dark-bg);
         outline-offset: -4px;
       }
 
@@ -45,7 +45,7 @@
 
       @media (width <= 991px) {
         background-color: var(--white, #fff);
-        border-color: var(--white, #fff);
+        border-color: var(--gray-600, #72717c);
 
         .ca-gov-icon-search {
           color: var(--gray-700, #5e5e6a);
@@ -54,7 +54,8 @@
         &:hover,
         &:focus {
           background-color: var(--gray-50, #fafafa);
-          border-color: var(--gray-50, #fafafa);
+          outline: var(--outline-for-light-bg, #0b8ee5);
+          outline-offset: -2px;
 
           .ca-gov-icon-search {
             color: var(--gray-900, #3b3a48);
@@ -72,7 +73,7 @@
     transition: border 0.4s;
 
     &::placeholder {
-      color: var(--black, #000);
+      color: var(--text-field-color, #000);
       opacity: 1;
     }
 
@@ -88,7 +89,7 @@
     height: 40px;
     transition: all 0.5s 0.1s;
 
-    button {
+    & button {
       float: left;
       transition: all 0.5s 0.1s;
       background: none;
@@ -123,17 +124,15 @@
   }
 }
 
-input[type="search"].search-textfield {
+& input[type="search"].search-textfield {
   -webkit-appearance: none;
-  background-color: canvas;
-  border: 1px solid #72717c;
+  background-color: var(--text-field-bg-color, #fff);
+  border: 1px solid var(--gray-600, #72717c);
   border-radius: 5px 0 0 5px;
 }
 
 @media (width <= 991px) {
   input[type="search"].search-textfield {
-    border-color: var(--white, #fff);
-
     &:focus {
       outline-offset: -4px;
     }
@@ -147,6 +146,22 @@ input[type="search"].search-textfield {
 .cse .gsc-control-cse,
 .gsc-control-cse {
   padding: 0 !important;
+  background-color: var(--body-bg, #fff) !important;
+  border-color: var(--body-bg, #fff) !important;
+}
+
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+  background-color: var(--body-bg, #fff) !important;
+  border-color: var(--body-bg, #fff) !important;
+}
+
+.gsc-result-info-container .gsc-result-info {
+  color: var(--text-muted, #5e5e6a);
+}
+
+.gsc-orderby-container .gsc-orderby-label {
+  color: var(--text-muted, #5e5e6a);
 }
 
 /* Large Search Animation and Styling */
@@ -170,7 +185,7 @@ input[type="search"].search-textfield {
       width: 55px;
       transition: all 0.4s;
 
-      button {
+      & button {
         transition: all 0.4s;
         font-size: 2.5rem;
         width: 60px;
@@ -216,7 +231,7 @@ input[type="search"].search-textfield {
   }
 }
 
-button.gsc-search-button {
+& button.gsc-search-button {
   border-radius: 0 5px 5px 0;
   padding: 0 12px;
   border: 1px solid;
@@ -261,14 +276,14 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 ----------------------------------------- */
 
 .gsc-control-searchbox-only {
-  form.gsc-search-box {
+  & form.gsc-search-box {
     margin-bottom: 0;
   }
 
-  table.gsc-search-box {
+  & table.gsc-search-box {
     margin-bottom: 0;
 
-    td.gsc-input {
+    & td.gsc-input {
       padding-right: 0 !important;
       width: 100% !important;
     }
@@ -280,7 +295,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
     height: 100%;
   }
 
-  input.gsc-input {
+  & input.gsc-input {
     background-color: rgb(255 255 255 / 100%);
     border-radius: 0;
     border: 3px solid transparent;
@@ -293,8 +308,8 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
     background-position-x: 7px !important;
   }
 
-  input.gsc-search-button,
-  button.gsc-search-button {
+  & input.gsc-search-button,
+  & button.gsc-search-button {
     opacity: 0;
     width: 55px;
     height: 51px;
@@ -304,7 +319,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
     z-index: 55;
   }
 
-  td.gsc-clear-button {
+  & td.gsc-clear-button {
     width: 1px !important;
     margin-right: 0 !important;
     margin-left: 0 !important;
@@ -313,7 +328,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
     position: relative;
   }
 
-  td.gsc-search-button {
+  & td.gsc-search-button {
     width: 0 !important;
     margin-right: 0 !important;
     margin-left: 0 !important;
@@ -322,7 +337,7 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
     position: relative;
   }
 
-  div.gsc-clear-button {
+  & div.gsc-clear-button {
     padding-left: 0 !important;
     background-image: none !important;
     margin-left: 0;
@@ -356,12 +371,12 @@ GOOGLE CUSTOM SEARCH CUSTOMIZATION OVERRIDES
 .search-results-header .gsc-control-searchbox-only {
   margin-bottom: 20px;
 
-  td.gsc-clear-button {
+  & td.gsc-clear-button {
     display: none;
   }
 }
 
-table.gsc-search-box table td div {
+& table.gsc-search-box table td div {
   padding: 0 !important;
 }
 
@@ -371,7 +386,7 @@ table.gsc-search-box table td div {
   border: none !important;
 }
 
-table.gsc-search-box td {
+& table.gsc-search-box td {
   padding: 0 !important;
 }
 
@@ -399,22 +414,22 @@ table.gsc-search-box td {
 }
 
 /* clears the ‘X’ from Internet Explorer */
-input[type="search"]::-ms-clear {
+& input[type="search"]::-ms-clear {
   display: none;
   width: 0;
   height: 0;
 }
 
-input[type="search"]::-ms-reveal {
+& input[type="search"]::-ms-reveal {
   display: none;
   width: 0;
   height: 0;
 }
 
 /* clears the ‘X’ from Chrome */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
+& input[type="search"]::-webkit-search-decoration,
+& input[type="search"]::-webkit-search-cancel-button,
+& input[type="search"]::-webkit-search-results-button,
+& input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }

@@ -11,15 +11,15 @@
     &:focus {
       outline: 2px solid var(--outline-default-color);
       outline-offset: -2px;
-      background-color: var(--gray-50, #fafafa);
+      background-color: var(--default-bg, (--gray-50, #fafafa));
     }
 
     &:hover {
-      background-color: var(--gray-50, #fafafa);
+      background-color: var(--default-bg, (--gray-50, #fafafa));
     }
 
     &.open {
-      background-color: var(--gray-50, #fafafa);
+      background-color: var(--default-bg, (--gray-50, #fafafa));
 
       .rotate {
         transform: rotate(90deg) !important;
@@ -64,11 +64,11 @@
         padding: 0.75rem 1.25rem !important;
         text-decoration: none;
         font-weight: 500;
-        color: var(--gray-800, #4a4958);
+        color: var(--text-color, var(--gray-800, #4a4958));
 
         &:hover,
         &:focus {
-          background-color: #f8f9fa;
+          background-color: var(--sidenav-hover-bg, var(--gray-50, #fafafa));
         }
 
         &::before {
@@ -90,12 +90,15 @@
 
       &.active {
         .accordion__trigger {
-          color: var(--white, #fff) !important;
-          background-color: var(--color-p2, #046b99);
+          color: var(--base-light, var(--white, #fff)) !important;
+          background-color: var(--link-color, var(--color-p2, #046b99));
 
           &:hover,
           &:focus {
-            background-color: var(--color-p2-darker, #214a68) !important;
+            background-color: var(
+              --link-color-hover,
+              var(--color-p2-darker, #214a68)
+            ) !important;
           }
         }
       }
@@ -106,16 +109,23 @@
     .accordion {
       .accordion__heading {
         .accordion__trigger {
-          color: var(--gray-800, #4a4958);
+          color: var(--text-color, var(--gray-800, #4a4958));
         }
 
         &.active {
           .accordion__trigger {
-            background-color: var(--color-p2, #046b99) !important;
+            color: var(--base-light, var(--white, #fff)) !important;
+            background-color: var(
+              --link-color,
+              var(--color-p2, #046b99)
+            ) !important;
 
             &:hover,
             &:focus {
-              background-color: var(--color-p2-darker, #214a68) !important;
+              background-color: var(
+                --link-color-hover,
+                var(--color-p2-darker, #214a68)
+              ) !important;
             }
           }
         }
@@ -128,13 +138,19 @@
       .accordion__heading {
         &.active {
           .accordion__trigger {
-            color: var(--gray-800, #4a4958) !important;
-            background-color: var(--gray-50, #fafafa) !important;
+            color: var(--text-color, var(--gray-800, #4a4958)) !important;
+            background-color: var(
+              --default-bg,
+              var(--gray-50, #fafafa)
+            ) !important;
 
             &:hover,
             &:focus {
-              color: var(--black, #000) !important;
-              background-color: var(--gray-100, #f3f3f4) !important;
+              color: var(--text-color-hover, var(--black, #000)) !important;
+              background-color: var(
+                --default-bg-hover,
+                var(--gray-100, #f3f3f4)
+              ) !important;
             }
           }
         }
@@ -146,14 +162,22 @@
     .accordion {
       .accordion__heading {
         &.active {
+          border: 1px solid var(--base-dark, var(--black, #000)) !important;
+
           .accordion__trigger {
-            color: var(--gray-800, #4a4958) !important;
-            background-color: var(--gray-50, #fafafa) !important;
+            color: var(--base-dark, var(--gray-800, #4a4958)) !important;
+            background-color: var(
+              --sidenav-active-bg,
+              var(--gray-75, #f2f2f2)
+            ) !important;
 
             &:hover,
             &:focus {
-              color: var(--black, #000) !important;
-              background-color: var(--gray-100, #f3f3f4) !important;
+              color: var(--text-color-hover, var(--black, #000)) !important;
+              background-color: var(
+                --sidenav-active-hover-bg,
+                var(--gray-100, #f3f3f4)
+              ) !important;
             }
           }
         }
@@ -178,14 +202,15 @@
       padding-bottom: 0.7rem;
       padding-left: 2.5rem;
       text-decoration: none !important;
-      border-bottom: 1px solid var(--gray-100, #f3f3f4);
-      color: var(--gray-800, #4a4958);
+      border-bottom: 1px solid
+        var(--border-color-muted, var(--gray-100, #f3f3f4));
+      color: var(--text-color, var(--gray-800, #4a4958));
 
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: var(--gray-50, #fafafa);
-        color: var(--black, #000);
+        background-color: var(--sidenav-hover-bg, var(--gray-50, #fafafa));
+        color: var(--text-color-hover, var(--black, #000));
       }
 
       &:focus {
@@ -194,9 +219,9 @@
       }
 
       &.active {
-        color: var(--gray-700, #5e5e6a);
+        color: var(--sidenav-active-color, var(--gray-700, #5e5e6a));
         text-decoration: none;
-        background-color: var(--gray-75, #f3f3f4);
+        background-color: var(--sidenav-active-bg, var(--gray-75, #f2f2f2));
 
         &::before {
           content: "";
@@ -212,9 +237,12 @@
 
         &:hover,
         &:focus {
-          color: var(--black, #000);
+          color: var(--text-color-hover, var(--black, #000));
           text-decoration: none;
-          background-color: var(--gray-100, #f3f3f4);
+          background-color: var(
+            --default-bg-hover-darker,
+            var(--gray-100, #ededef)
+          );
         }
       }
     }
@@ -229,13 +257,14 @@ cagov-accordion.sidenav {
 
     > summary {
       border: none;
-      background: var(--white, #fff);
+      background: var(--body-bg, var(--white, #fff));
       padding: 0.7rem 2rem 0.7rem 1rem;
       font-size: calc(1rem + var(--ratio));
       font-weight: 400;
       text-decoration: none;
-      border-bottom: 1px solid var(--gray-100, #f3f3f4);
-      color: var(--gray-700, #5e5e6a);
+      border-bottom: 1px solid
+        var(--border-color-muted, var(--gray-100, #f3f3f4));
+      color: var(--text-muted, var(--gray-700, #5e5e6a));
 
       &::before {
         border: none !important;
@@ -250,8 +279,8 @@ cagov-accordion.sidenav {
       &:hover,
       &:focus {
         text-decoration: none;
-        background-color: var(--gray-50, #fafafa);
-        color: var(--gray-700, #5e5e6a);
+        background-color: var(--sidenav-hover-bg, var(--gray-50, #fafafa));
+        color: var(--text-color-hover, var(--black, #000));
 
         &::before {
           border: none;
@@ -265,9 +294,9 @@ cagov-accordion.sidenav {
       }
 
       &.active {
-        color: var(--gray-700, #5e5e6a) !important;
+        color: var(--sidenav-active-color, var(--gray-700, #5e5e6a)) !important;
         text-decoration: none;
-        background-color: var(--gray-75, #f3f3f4);
+        background-color: var(--sidenav-active-bg, var(--gray-75, #f2f2f2));
         font-weight: 400;
 
         &::before {
@@ -279,9 +308,12 @@ cagov-accordion.sidenav {
 
         &:hover,
         &:focus {
-          color: var(--black, #000) !important;
+          color: var(--text-color-hover, var(--black, #000)) !important;
           text-decoration: none;
-          background-color: var(--gray-100, #f3f3f4);
+          background-color: var(
+            --sidenav-active-hover-bg,
+            var(--gray-100, #ededef)
+          );
         }
 
         &:focus {
@@ -292,7 +324,7 @@ cagov-accordion.sidenav {
 
       &[open] {
         > summary {
-          color: var(--black, #000);
+          color: var(--text-color-hover, var(--black, #000));
 
           &::after {
             display: none;

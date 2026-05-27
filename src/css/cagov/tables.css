@@ -3,14 +3,16 @@
 ----------------------------------------- */
 
 /* Adding the explicit classes below so that they are available in Rich Text Editor */
+.table > :not(caption) > * > * {
+  color: var(--text-color, #3b3a48);
+  border-color: var(--border-color-default, #d4d4d7);
+}
 
 table.table {
   border-spacing: 0;
 }
 
 .table {
-  color: var(--gray-900, #3b3a48);
-
   &.table-default {
     border: none;
 
@@ -20,8 +22,9 @@ table.table {
       > tr {
         > th,
         > td {
-          background: #f3f3f4;
-          border: 2px solid #fff;
+          background: var(--default-bg, #fafafa);
+          border: 2px solid var(--body-bg, #fff);
+          color: var(--text-color, #3b3a48);
         }
       }
     }
@@ -29,13 +32,17 @@ table.table {
     > thead > tr {
       > th,
       > td {
-        background: #d9d9d9;
-        border: 2px solid #fff;
+        background: var(--default-bg-darker, #d9d9d9);
+        border: 2px solid var(--body-bg, #fff);
       }
     }
   }
 }
 
 .table-striped > tbody > tr:nth-of-type(2n + 1) > * {
-  color: var(--gray-900, #3b3a48);
+  color: var(--text-color, #3b3a48);
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background: var(--default-bg, #fafafa);
 }

@@ -18,14 +18,16 @@ nav.side-navigation > ul {
       position: relative;
       display: block;
       text-decoration: none !important;
-      color: var(--gray-700, #5e5e6a);
+      color: var(--text-muted, var(--gray-700, #5e5e6a));
       padding-bottom: 0.7rem;
       padding-top: 0.7rem;
       padding-left: 1rem;
-      border-bottom: 1px solid var(--gray-100, #f3f3f4);
+      border-bottom: 1px solid
+        var(--border-color-muted, var(--gray-100, #f3f3f4));
 
       &.active {
-        background-color: var(--gray-75, #f3f3f4);
+        background-color: var(--sidenav-active-bg, var(--gray-75, #f3f3f4));
+        color: var(--sidenav-active-color, inherit);
 
         &::before {
           content: "";
@@ -41,7 +43,7 @@ nav.side-navigation > ul {
       }
 
       &:hover {
-        color: var(--gray-900, #3b3a48);
+        color: var(--text-color, var(--gray-900, #3b3a48));
       }
 
       /* stylelint-disable-next-line no-descending-specificity */
@@ -52,11 +54,14 @@ nav.side-navigation > ul {
 
       &:focus,
       &:hover {
-        background-color: var(--gray-50, #fafafa);
+        background-color: var(--sidenav-hover-bg, var(--gray-50, #fafafa));
 
         /* stylelint-disable-next-line no-descending-specificity */
         &.active {
-          background-color: var(--gray-100, #f3f3f4);
+          background-color: var(
+            --sidenav-active-hover-bg,
+            var(--gray-100, #f3f3f4)
+          );
         }
       }
 
@@ -107,11 +112,11 @@ nav.side-navigation > ul {
   position: relative;
   right: 0;
   padding-right: 2.3rem;
-  color: var(--color-p2, #046b99);
+  color: var(--link-color, var(--color-p2, #046b99));
 
   &:hover,
   &:focus {
-    color: var(--color-p2-darker, #214a68);
+    color: var(--link-color-hover, var(--color-p2-darker, #214a68));
   }
 
   .ca-gov-icon-caret-down {
@@ -217,15 +222,15 @@ a.sidenav {
   padding-left: 1rem;
   position: relative;
   text-decoration: none !important;
-  color: var(--gray-700, #5e5e6a);
-  border-bottom: 1px solid var(--gray-100, #f3f3f4);
-  background-color: var(--white, #fff);
+  color: var(--text-muted, var(--gray-700, #5e5e6a));
+  border-bottom: 1px solid var(--border-color-muted, var(--gray-100, #f3f3f4));
+  background-color: var(--body-bg, var(--white, #fff));
 
   &:hover,
   &:focus {
     text-decoration: none;
-    background-color: var(--gray-50, #fafafa);
-    color: var(--gray-900, #3b3a48);
+    background-color: var(--sidenav-hover-bg, var(--gray-50, #fafafa));
+    color: var(--text-color, var(--gray-900, #3b3a48));
   }
 
   &:focus {
@@ -233,15 +238,18 @@ a.sidenav {
   }
 
   &.active {
-    color: var(--gray-700, #5e5e6a);
+    color: var(--sidenav-active-color, var(--gray-700, #5e5e6a));
     text-decoration: none;
-    background-color: var(--gray-75, #f3f3f4);
+    background-color: var(--sidenav-active-bg, var(--gray-75, #f3f3f4));
 
     &:hover,
     &:focus {
       text-decoration: none !important;
-      color: var(--black, #000);
-      background-color: var(--gray-100, #f3f3f4);
+      color: var(--sidenav-active-hover-color, var(--black, #000));
+      background-color: var(
+        --sidenav-active-hover-bg,
+        var(--gray-100, #f3f3f4)
+      );
     }
 
     &::before {

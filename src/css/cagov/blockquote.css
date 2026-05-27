@@ -8,7 +8,7 @@ blockquote {
   padding: 11px 22px;
   margin: 0 0 22px;
   border-left: 4px solid;
-  border-color: var(--color-p2, #046b99);
+  border-color: var(--link-color, var(--color-p2, #046b99));
 
   @media (width >= 576px) {
     font-size: calc(var(--font-size-regular) + var(--ratio));
@@ -19,10 +19,10 @@ blockquote {
     font-family: CaGov;
     font-size: 3rem;
     line-height: 2rem;
-    color: var(--color-p2, #046b99);
+    color: var(--link-color, var(--color-p2, #046b99));
   }
 
-  footer {
+  & footer {
     display: block;
     font-size: 80%;
     color: var(--blockquote-small-color);
@@ -44,8 +44,8 @@ blockquote {
   &.prominent {
     text-align: center;
 
-    p,
-    footer {
+    & p,
+    & footer {
       text-align: left;
     }
 
@@ -55,13 +55,13 @@ blockquote {
   &.prominent {
     border-radius: 1rem;
     padding: 2rem;
-    background-color: var(--color-p2, #046b99);
-    color: var(--white, #fff);
+    background-color: var(--link-color, var(--color-p2, #046b99));
+    color: var(--base-light, var(--white, #fff));
 
-    p,
-    footer,
+    & p,
+    & footer,
     &::before {
-      color: var(--white, #fff);
+      color: var(--base-light, var(--white, #fff));
     }
   }
 
@@ -72,9 +72,9 @@ blockquote {
     border-left: 0;
     text-align: right;
 
-    footer,
-    small,
-    .small {
+    & footer,
+    & small,
+    & .small {
       &::before {
         content: "";
       }

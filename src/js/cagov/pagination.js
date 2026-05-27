@@ -120,16 +120,16 @@ cagov-pagination .cagov-pagination__item {
 cagov-pagination .cagov-pagination__item a {
   padding: 6px 14px;
   display: inline-block;
-  color: #4a4958;
+  color: var(--text-secondary, #4a4958);
 }
 cagov-pagination .cagov-pagination__item a:hover, cagov-pagination .cagov-pagination__item a:focus {
-  box-shadow: inset 0 0 0 3px #d4d4d7;
+  box-shadow: inset 0 0 0 3px var(--border-color-default, #d4d4d7);
 }
 cagov-pagination .cagov-pagination__item.cagov-pagination-current {
  font-weight:700;
 }
 cagov-pagination .cagov-pagination__item.cagov-pagination-current a {
-  box-shadow: inset 0 0 0 1px #d4d4d7;
+  box-shadow: inset 0 0 0 1px var(--border-color-default, #d4d4d7);
 }
 cagov-pagination .cagov-pagination__item.cagov-pagination__overflow {
   border: none;

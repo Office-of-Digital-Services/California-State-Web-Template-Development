@@ -2,6 +2,35 @@
    FORMS - /src/css/cagov/forms.css
 ----------------------------------------- */
 
+input[type="search"],
+input[type="search"].form-control,
+input[type="text"],
+input[type="text"].form-control,
+input[type="number"],
+input[type="number"].form-control,
+input[type="email"],
+input[type="email"].form-control,
+input[type="password"],
+input[type="password"].form-control,
+textarea,
+textarea.form-control,
+textarea.form-control:focus {
+  background-color: var(--body-bg, #fff);
+  color: var(--text-color, var(--gray-900, #3b3a48));
+}
+
+/* placeholder styling */
+input::placeholder,
+input.form-control::placeholder,
+textarea::placeholder {
+  color: var(--text-color, var(--gray-900, #3b3a48));
+  opacity: 0.8;
+}
+
+input[type="file"] {
+  color: var(--text-color, var(--gray-900, #3b3a48));
+}
+
 .form-control,
 .custom-file-label,
 .custom-select {
@@ -76,7 +105,7 @@ label {
   min-width: 38px;
   background-color: transparent;
   border: 1px solid;
-  border-color: #ccc;
+  border-color: var(--border-color-default, #d4d4d7);
   transition: border-color 0.15s ease-in-out 0s;
   -moz-box-align: center;
   align-items: center;
@@ -84,7 +113,7 @@ label {
   vertical-align: middle;
   white-space: nowrap;
 
-  i {
+  & i {
     margin: 0 auto;
   }
 
@@ -162,10 +191,10 @@ label {
   font-size: 12px;
   border: 1px solid;
   border-radius: 50%;
-  color: var(--color-p2, #046b99);
-  border-color: var(--color-p2, #046b99);
+  color: var(--link-color, var(--color-p2, #046b99));
+  border-color: var(--link-color, var(--color-p2, #046b99));
 
-  i {
+  & i {
     border-radius: 50%;
     height: 10px;
     width: 10px;
@@ -194,11 +223,11 @@ label {
   width: 18px;
   height: 18px;
   font-size: 12px;
-  color: var(--white, #fff);
+  color: var(--base-light, var(--white, #fff));
   border: 1px solid;
-  border-color: var(--color-p2, #046b99);
+  border-color: var(--link-color, var(--color-p2, #046b99));
 
-  i {
+  & i {
     display: block;
     height: 100%;
     left: 50%;
@@ -222,13 +251,13 @@ input[type="radio"]:checked + i,
 input[type="checkbox"]:checked + * i,
 input[type="radio"]:checked + * i {
   color: #fff;
-  background-color: var(--color-p2, #046b99);
-  border-color: var(--color-p2, #046b99);
+  background-color: var(--link-color, var(--color-p2, #046b99));
+  border-color: var(--link-color, var(--color-p2, #046b99));
 }
 
 .bg-primary--checked.checked,
 .checked .bg-primary--checked {
-  background-color: var(--color-p2, #046b99) !important;
+  background-color: var(--link-color, var(--color-p2, #046b99)) !important;
 }
 
 /* primary Color */
@@ -236,7 +265,7 @@ input[type="checkbox"]:checked + .bg-primary--checked,
 input[type="radio"]:checked + .bg-primary--checked,
 input[type="checkbox"]:checked + * .bg-primary--checked,
 input[type="radio"]:checked + * .bg-primary--checked {
-  background-color: var(--color-p2, #046b99);
+  background-color: var(--link-color, var(--color-p2, #046b99));
 }
 
 /* highlight Color */
@@ -259,26 +288,42 @@ input[type="radio"]:focus + div {
   }
 
   .custom-control-input:checked ~ .custom-control-label::before {
-    background-color: var(--color-p2, #046b99);
+    background-color: var(--link-color, var(--color-p2, #046b99));
     border-radius: var(--border-radius-base);
   }
 }
 
 .custom-radio {
   .custom-control-input:checked ~ .custom-control-label::before {
-    background-color: var(--color-p2, #046b99);
+    background-color: var(--link-color, var(--color-p2, #046b99));
   }
+}
+
+.form-check-input:focus {
+  outline: 2px solid var(--outline-default-color);
+  box-shadow: none;
+  outline-offset: 2px;
 }
 
 .form-check-input:checked,
 .custom-control-input:checked {
-  background-color: var(--color-p2, #046b99);
-  border-color: var(--color-p2, #046b99);
+  background-color: var(--link-color, var(--color-p2, #046b99));
+  border-color: var(--link-color, var(--color-p2, #046b99));
 }
 
 .form-select {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path d='M17.087 10.35l-4.337 4.336-4.337-4.336c-0.293-0.293-0.768-0.293-1.060 0s-0.293 0.768 0 1.060l4.864 4.864c0.147 0.147 0.341 0.221 0.533 0.219 0.194 0 0.386-0.072 0.533-0.219l4.865-4.864c0.293-0.293 0.293-0.768 0-1.060s-0.768-0.293-1.061 0z'/></svg>");
+  background-image: var(
+    --cagov-form-select-bg-image,
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'><path d='M17.087 10.35l-4.337 4.336-4.337-4.336c-0.293-0.293-0.768-0.293-1.060 0s-0.293 0.768 0 1.060l4.864 4.864c0.147 0.147 0.341 0.221 0.533 0.219 0.194 0 0.386-0.072 0.533-0.219l4.865-4.864c0.293-0.293 0.293-0.768 0-1.060s-0.768-0.293-1.061 0z'/></svg>")
+  );
   background-size: 20px 20px;
+  color: var(--text-color);
+
+  &:focus {
+    outline: 2px solid var(--outline-default-color);
+    outline-offset: 2px;
+    box-shadow: none;
+  }
 }
 
 .select {
@@ -289,7 +334,7 @@ input[type="radio"]:focus + div {
   position: relative;
   display: block;
 
-  select {
+  & select {
     height: 40px;
     border: 0;
     width: 100%;
@@ -305,7 +350,7 @@ input[type="radio"]:focus + div {
     position: absolute;
     right: 0;
     top: 0;
-    background: var(--white, #fff);
+    background: var(--base-light, var(--white, #fff));
     z-index: 3;
     text-align: center;
     width: 30px;
@@ -325,7 +370,7 @@ input[type="text"]::-ms-clear {
 .check {
   position: relative;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color-default, #d4d4d7);
   min-width: 100px;
 }
 
@@ -334,7 +379,7 @@ input[type="checkbox"]:checked + .color-white--checked,
 input[type="radio"]:checked + .color-white--checked,
 input[type="checkbox"]:checked + * .color-white--checked,
 input[type="radio"]:checked + * .color-white--checked {
-  color: #fff !important;
+  color: var(--base-light, var(--white, #fff)) !important;
 }
 
 input[type="checkbox"]:focus + .btn,
@@ -348,10 +393,16 @@ input[type="radio"]:focus + .btn {
 
 /* Accessibilty focus */
 input:focus,
+input.form-control:focus,
 textarea:focus,
+textarea.form-control:focus,
 button:focus,
-select:focus {
+button.form-control:focus,
+select:focus,
+select.form-control:focus {
   outline: 2px solid var(--outline-default-color);
+  outline-offset: 2px;
+  box-shadow: none;
 }
 
 /* bootstrap 4.4.1 adjustments */
@@ -361,4 +412,27 @@ select:focus {
 
 .invalid-feedback {
   font-size: 0.75em;
+  color: var(--brand-danger, #d62929);
+}
+
+/* Custom Checkmark Variables Mapping */
+.form-check-input:checked[type="checkbox"] {
+  --bs-form-check-bg-image: var(
+    --cagov-form-check-bg-image,
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e")
+  );
+}
+
+.form-check-input:checked[type="radio"] {
+  --bs-form-check-bg-image: var(
+    --cagov-form-radio-bg-image,
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e")
+  );
+}
+
+.form-check-input[type="checkbox"]:indeterminate {
+  --bs-form-check-bg-image: var(
+    --cagov-form-indeterminate-bg-image,
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e")
+  );
 }

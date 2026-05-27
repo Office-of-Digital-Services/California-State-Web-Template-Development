@@ -5,7 +5,7 @@
 body {
   font: var(--font-size-regular) / var(--line-height-base)
     var(--font-family-sans-serif);
-  color: var(--gray-900, #3b3a48);
+  color: var(--text-color, #3b3a48);
   overflow-y: scroll;
 
   @media (width >= 576px) {
@@ -14,11 +14,11 @@ body {
 }
 
 a {
-  color: var(--color-p2, #046b99);
+  color: var(--link-color, #046b99);
 
   &:hover,
   &:focus {
-    color: var(--color-p2-darker, #214a68);
+    color: var(--link-color-hover, #214a68);
   }
 
   &:focus {
@@ -281,6 +281,12 @@ svg ~ .external-link-icon,
 .pdf-link-icon ~ .external-link-icon,
 .footer-social-links a .external-link-icon,
 .socialsharer-container a .external-link-icon {
+  display: none;
+}
+
+.socialsharer-container a.cagov-external-link::after,
+a[class*="ca-gov-icon-"].cagov-external-link::after {
+  content: none;
   display: none;
 }
 
