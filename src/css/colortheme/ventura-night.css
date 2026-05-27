@@ -119,11 +119,6 @@
   /* Mobile navigation drawer */
   --mobile-drawer: var(--color-p3);
   --mobile-drawer-active: var(--color-p3-light);
-  --yellow: #ffb300;
-  --yellow-lighter: #fbde84;
-  --yellow-lightest: #feeaad;
-  --yellow-dark: #efa903;
-  --yellow-darker: #dd9c03;
   --bs-body-bg: var(--color-p2);
 
   /* Target custom side-nav variables that have no semantic mapping */
