@@ -132,7 +132,7 @@
   /* Mobile navigation drawer */
   --mobile-drawer: var(--color-p3);
   --mobile-drawer-active: var(--color-p3-light);
-  --bs-body-bg: var(--color-p2);
+  --bs-body-bg: var(--body-bg);
 
   /* Target custom side-nav variables that have no semantic mapping */
   --sidenav-active-bg: var(--color-s1);
