@@ -19,7 +19,7 @@
   color: var(--gray-800, #4a4958) !important;
   background-color: var(--color-p1, #fdb81e);
 
-  a:not(.btn),
+  & a:not(.btn),
   .close {
     color: var(--gray-800, #4a4958) !important;
 
@@ -43,7 +43,7 @@
   margin-bottom: 0;
   padding: 0.6rem 0 0.5rem;
   border-radius: 0;
-  column-rule: var(--text-field-color);
+  column-rule: rgba(255 255 255 / 80%);
   transition: all 0.2s;
   background-color: var(--color-p3, #323a45);
   color: var(--white, #fff);
@@ -118,7 +118,7 @@
   color: var(--alert-warning-text);
   background-color: var(--alert-warning-bg);
 
-  a:not(.btn),
+  & a:not(.btn),
   .close {
     color: var(--alert-warning-text);
 
@@ -133,7 +133,7 @@
   color: var(--alert-info-text);
   background-color: var(--alert-info-bg);
 
-  a:not(.btn),
+  & a:not(.btn),
   .close {
     color: var(--alert-info-text);
 
@@ -148,7 +148,7 @@
   color: var(--alert-danger-text);
   background-color: var(--alert-danger-bg);
 
-  a:not(.btn),
+  & a:not(.btn),
   .close {
     color: var(--alert-danger-text);
 
@@ -163,7 +163,7 @@
   color: var(--alert-success-text);
   background-color: var(--alert-success-bg);
 
-  a:not(.btn),
+  & a:not(.btn),
   .close {
     color: var(--alert-success-text);
 
