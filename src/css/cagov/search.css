@@ -73,7 +73,7 @@
     transition: border 0.4s;
 
     &::placeholder {
-      color: var(--text-field-color, #000);
+      color: var(--text-color, #000);
       opacity: 1;
     }
 
@@ -94,7 +94,7 @@
       transition: all 0.5s 0.1s;
       background: none;
       color: var(--gray-600, #72717c);
-      border-color: var(--text-field-color);
+      border-color: var(--text-color);
       border-width: 3px 3px 3px 0;
       border-style: solid;
       width: 40px + (2 * 3px);
