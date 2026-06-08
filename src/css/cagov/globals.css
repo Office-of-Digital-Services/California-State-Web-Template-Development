@@ -674,7 +674,11 @@
 }
 
 .bg-gray-lightest,
-.bg-grey-lightest {
+.bg-grey-lightest,
+.bg-grey-lightest-hover:hover,
+.bg-grey-lightest-hover:focus,
+.bg-gray-lightest-hover:hover,
+.bg-gray-lightest-hover:focus {
   background-color: var(--default-bg, var(--gray-50, #fafafa)) !important;
 }
 
