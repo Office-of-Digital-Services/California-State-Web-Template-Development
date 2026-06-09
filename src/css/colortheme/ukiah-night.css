@@ -22,13 +22,13 @@
   --color-p2-lightest: #00405d;
 
   /* Standout */
-  --color-p3: #001c2a;
-  --color-p3-dark: #00141e;
-  --color-p3-darker: #000e14;
-  --color-p3-darkest: #00090f;
-  --color-p3-light: #002939;
-  --color-p3-lighter: #042c3c;
-  --color-p3-lightest: #093240;
+  --color-p3: #002939;
+  --color-p3-dark: #001d29;
+  --color-p3-darker: #00111a;
+  --color-p3-darkest: #000a0f;
+  --color-p3-light: #003447;
+  --color-p3-lighter: #004057;
+  --color-p3-lightest: #004b66;
 
   /* Secondary 1 */
   --color-s1: #014a72;
@@ -162,7 +162,7 @@
   --main-nav-bg-active-hover: var(--color-p2-lighter);
 
   /* global footer */
-  --global-footer-bg: var(--color-p3);
+  --global-footer-bg: var(--color-p3-dark);
   --footer-links-color: var(--white);
   --footer-links-color-hover: var(--color-p1);
 
