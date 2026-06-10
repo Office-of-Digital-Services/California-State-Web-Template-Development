@@ -442,26 +442,36 @@
 /* ------------------------------------
   colors and backgrounds
 ------------------------------------ */
-.color-black {
-  color: var(--black, #000) !important;
-}
-
+.color-black,
 .color-black-hover:hover,
 .color-black-hover:focus {
   color: var(--black, #000) !important;
 }
 
-.color-white {
-  color: var(--white, #fff) !important;
-}
-
+.color-white,
 .color-white-hover:hover,
 .color-white-hover:focus {
   color: var(--white, #fff) !important;
 }
 
+.color-base-light,
+.color-base-light-hover:hover,
+.color-base-light-hover:focus {
+  color: var(--base-light, #fff) !important;
+}
+
+.color-base-dark,
+.color-base-dark-hover:hover,
+.color-base-dark-hover:focus {
+  color: var(--base-dark, #000) !important;
+}
+
 .color-gray-dark,
-.color-grey-dark {
+.color-grey-dark,
+.color-gray-dark-hover:hover,
+.color-gray-dark-hover:focus,
+.color-grey-dark-hover:hover,
+.color-grey-dark-hover:focus {
   color: var(--text-color, var(--gray-900, #3b3a48));
 }
 
