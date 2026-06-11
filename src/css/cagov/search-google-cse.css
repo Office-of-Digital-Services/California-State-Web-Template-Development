@@ -30,7 +30,7 @@
 
     &:hover,
     &:focus {
-      color: var(--link-hover-color, #005a7f) !important;
+      color: var(--link-color-hover, #005a7f) !important;
     }
   }
 

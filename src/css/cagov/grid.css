@@ -5,6 +5,10 @@
 
 /* this is how wide website will go on desktop */
 @media (width >= 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
   .container {
     max-width: var(--breakpoint-lg);
   }
