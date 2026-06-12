@@ -120,6 +120,7 @@
   --text-field-bg-color: var(--body-bg);
   --text-field-color: var(--text-color);
   --brand-danger: #e28579;
+  --brand-primary-darker: var(--color-p1-lighter);
 
   /* utility header */
   --utility-link: var(--white);
