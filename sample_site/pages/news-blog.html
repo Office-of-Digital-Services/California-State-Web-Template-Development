@@ -23,29 +23,37 @@ landing: Components
   <div class="row">
     <div class="col-lg-3 pe-lg-5" role="complementary">
       <!-- Side navigation -->
-
-      <nav aria-label="list navigation" class="side-navigation">
-        <ul>
-          <li>
-            <a href="/about/news/index.html" class="landing">Newsroom</a>
-          </li>
-          <li>
-            <a href="/about/news/articles.html">News articles</a>
-          </li>
-          <li>
-            <a href="/about/news/press-releases.html">Press releases</a>
-          </li>
-          <li><a href="/about/news/blog.html" class="active">Blog</a></li>
-          <li>
-            <a href="/about/news/subscription-services.html"
-              >Subscription services</a
-            >
-          </li>
-          <li>
-            <a href="/about/news/press-information.html">Press information</a>
-          </li>
-        </ul>
-      </nav>
+      <details
+        class="side-navigation-toggle"
+        aria-label="Toggle side navigation">
+        <summary>
+          <span class="container d-block">Side navigation</span>
+        </summary>
+      </details>
+      <div class="container">
+        <nav aria-label="list navigation" class="side-navigation">
+          <ul>
+            <li>
+              <a href="/about/news/index.html" class="landing">Newsroom</a>
+            </li>
+            <li>
+              <a href="/about/news/articles.html">News articles</a>
+            </li>
+            <li>
+              <a href="/about/news/press-releases.html">Press releases</a>
+            </li>
+            <li><a href="/about/news/blog.html" class="active">Blog</a></li>
+            <li>
+              <a href="/about/news/subscription-services.html"
+                >Subscription services</a
+              >
+            </li>
+            <li>
+              <a href="/about/news/press-information.html">Press information</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
     <div class="col-lg-9 p-b-lg">
       <h1 class="m-t-0">Blog</h1>
