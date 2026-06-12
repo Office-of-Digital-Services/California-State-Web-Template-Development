@@ -30,24 +30,34 @@ landing: Components
   <div class="row">
     <div class="col-lg-3 pe-lg-5" role="complementary">
       <!-- Side navigation -->
-
-      <nav aria-label="list navigation" class="side-navigation">
-        <ul>
-          <li>
-            <a href="/about/news/press-releases.html" class="landing back"
-              >Press releases</a
-            >
-          </li>
-          <li>
-            <a href="/about/news/press-release-title1.html" class="active"
-              >Release title 1</a
-            >
-          </li>
-          <li>
-            <a href="/about/news/press-release-title2.html">Release title 2</a>
-          </li>
-        </ul>
-      </nav>
+      <details
+        class="side-navigation-toggle"
+        aria-label="Toggle side navigation">
+        <summary>
+          <span class="container d-block">Side navigation</span>
+        </summary>
+      </details>
+      <div class="container">
+        <nav aria-label="list navigation" class="side-navigation">
+          <ul>
+            <li>
+              <a href="/about/news/press-releases.html" class="landing back"
+                >Press releases</a
+              >
+            </li>
+            <li>
+              <a href="/about/news/press-release-title1.html" class="active"
+                >Release title 1</a
+              >
+            </li>
+            <li>
+              <a href="/about/news/press-release-title2.html"
+                >Release title 2</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
     <div class="col-lg-9 p-b-lg">
       <!--News Article-->
@@ -115,22 +125,22 @@ landing: Components
       <p>(916) 000-0000</p>
       <div class="socialsharer-container m-y-lg float-none">
         <a
-          class="ca-gov-icon-facebook gray-700 gray-900-hover m-r"
+          class="ca-gov-icon-facebook color-muted color-muted-hover m-r"
           title="Facebook Link"
           href="javascript:;"
           aria-disabled="true"></a>
         <a
-          class="ca-gov-icon-twitter gray-700 gray-900-hover m-r"
+          class="ca-gov-icon-twitter color-muted color-muted-hover m-r"
           title="Twitter Link"
           href="javascript:;"
           aria-disabled="true"></a>
         <a
-          class="ca-gov-icon-email gray-700 gray-900-hover m-r"
+          class="ca-gov-icon-email color-muted color-muted-hover m-r"
           title="Email Link"
           href="javascript:;"
           aria-disabled="true"></a>
         <a
-          class="ca-gov-icon-link gray-700 gray-900-hover m-r"
+          class="ca-gov-icon-link color-muted color-muted-hover m-r"
           title="Page Link"
           href="javascript:;"
           aria-disabled="true"></a>
