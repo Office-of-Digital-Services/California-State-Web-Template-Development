@@ -43,7 +43,7 @@
     }
 
     /* White Color */
-    span.has-black-color,
+    & span.has-black-color,
     .cagov-step-list-content {
       margin-top: 1rem;
       padding-bottom: 1.75rem;
