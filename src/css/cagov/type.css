@@ -89,7 +89,7 @@ p {
 
 h1,
 .h1 {
-  span[class^="ca-gov-icon-"]:first-child {
+  & span[class^="ca-gov-icon-"]:first-child {
     display: none;
   }
 
@@ -249,7 +249,7 @@ code {
 }
 
 .main-content {
-  a:not(.btn) {
+  & a:not(.btn) {
     text-decoration: underline;
   }
 }

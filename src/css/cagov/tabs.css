@@ -20,14 +20,14 @@
     border-bottom: none;
     background: var(--gray-75, #f3f3f4);
 
-    li:first-child a,
-    li:first-child a:hover,
-    li:first-child a:focus,
-    li:first-child a:active {
+    & li:first-child a,
+    & li:first-child a:hover,
+    & li:first-child a:focus,
+    & li:first-child a:active {
       border-left: 0 !important;
     }
 
-    li {
+    & li {
       &.active {
         border-top: 0;
       }
@@ -241,7 +241,7 @@
       padding: 0;
       background: none;
 
-      a {
+      & a {
         display: block;
         width: 100%;
         padding: 0.5rem 1rem;

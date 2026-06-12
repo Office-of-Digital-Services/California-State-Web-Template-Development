@@ -17,14 +17,14 @@
 ul.list-overstated {
   padding: 0;
 
-  a {
+  & a {
     font-weight: bold;
   }
 }
 
 .list-overstated,
 .list-understated {
-  li {
+  & li {
     list-style: none;
     position: relative;
     padding: 0 0 14px 18px;
@@ -58,7 +58,7 @@ ul.list-overstated {
   padding: 0;
   padding-left: 0.2em;
 
-  li {
+  & li {
     padding-left: 1.5em;
 
     &::before {
@@ -84,7 +84,7 @@ ul.list-overstated {
   margin: 12px 0 10px;
   line-height: 1.5;
 
-  li {
+  & li {
     padding-left: 1.5em;
     margin: 10px 0;
 
@@ -104,11 +104,11 @@ ul.list-overstated {
     }
   }
 
-  ul li::before {
+  & ul li::before {
     content: none;
   }
 
-  ul.list-standout li::before {
+  & ul.list-standout li::before {
     content: "\35";
   }
 }
@@ -117,7 +117,7 @@ ul.list-overstated {
   height: 350px;
   overflow-y: auto;
 
-  li {
+  & li {
     border-top: 1px solid var(--gray-100, #ededef);
     padding-top: 10px;
     padding-bottom: 10px;
@@ -148,8 +148,8 @@ ul.list-overstated {
 .list-overstated,
 .list-understated,
 .list-standout {
-  ul li,
-  ol li {
+  & ul li,
+  & ol li {
     background: none;
     padding-left: 0;
   }

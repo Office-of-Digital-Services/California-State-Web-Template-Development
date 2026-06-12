@@ -40,14 +40,14 @@
       border-left-color: var(--white, #fff);
     }
 
-    p,
+    & p,
     .executive-name,
-    a {
+    & a {
       color: var(--white, #fff);
     }
 
-    a:hover,
-    a:focus {
+    & a:hover,
+    & a:focus {
       color: var(--color-p1, #fdb81e);
     }
   }
