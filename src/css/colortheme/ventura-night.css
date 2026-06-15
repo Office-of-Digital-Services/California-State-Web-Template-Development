@@ -50,6 +50,11 @@
   --color-primary: var(--color-p1);
   --color-primary-dark: var(--color-p1-darker);
   --color-primary-light: var(--color-p1-lighter);
+  --color-standout: var(--gray-100);
+  --text-accent-s1: var(--color-p1-dark);
+  --text-accent-s2: var(--color-p1);
+  --text-accent-s3: var(--color-p1-light);
+  --text-highlight-primary: var(--color-p1);
 
   /* Accent colors */
   --code-color: #eb5c9c;
@@ -106,7 +111,9 @@
     no-repeat;
   --text-field-bg-color: var(--body-bg);
   --text-field-color: var(--text-color);
-  --brand-danger: #e28579;
+  --brand-danger: #ff757c;
+  --brand-info: #3da5e1;
+  --brand-success: #43b33d;
   --brand-primary-darker: var(--color-p1-lighter);
 
   /* utility header */
