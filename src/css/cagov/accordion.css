@@ -88,7 +88,7 @@ cagov-accordion > details {
   .accordion-body {
     padding: 1rem;
     border-radius: 0 0 4px 4px;
-    border: 1px solid var(--gray-200, #d4d4d7);
+    border: 1px solid var(--border-color-default, var(--gray-200, #d4d4d7));
     border-top: none;
   }
 }
