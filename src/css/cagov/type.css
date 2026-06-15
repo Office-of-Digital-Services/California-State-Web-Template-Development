@@ -206,7 +206,7 @@ h6,
   font-size: var(--font-size-large);
   margin-bottom: 3rem;
   font-weight: 600;
-  color: var(--gray-700, #5e5e6a);
+  color: var(--color-muted, #5e5e6a);
 
   @media (width >= 576px) {
     font-size: calc(var(--font-size-large) + var(--ratio));

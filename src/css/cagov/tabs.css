@@ -196,6 +196,7 @@
     .nav-tabs {
       display: flex;
       background-color: transparent !important;
+      border-bottom: 1px solid var(--border-color-default);
     }
 
     &.tab-group .card {

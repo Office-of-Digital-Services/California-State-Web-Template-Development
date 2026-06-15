@@ -620,8 +620,8 @@
 pre {
   word-break: break-all;
   word-wrap: break-word;
-  background-color: var(--gray-50, #fafafa);
-  border: 1px solid var(--gray-100, #ededef);
+  background-color: var(--default-bg, var(--gray-50, #fafafa));
+  border: 1px solid var(--default-bg-darker, var(--gray-100, #ededef));
   padding: var(--spacer, 1rem);
 }
 
