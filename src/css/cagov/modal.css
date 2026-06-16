@@ -18,3 +18,7 @@ div.modal-header > button.close {
 .modal-footer {
   border-top: 1px solid var(--border-color-default);
 }
+
+.modal-content {
+  border-color: var(--border-color-default);
+}
