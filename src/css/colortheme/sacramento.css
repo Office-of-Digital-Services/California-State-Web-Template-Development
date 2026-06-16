@@ -57,8 +57,8 @@
   --mobile-drawer-active: var(--color-p2-light);
 
   /* Global */
-  --link-color: var(--color-p1);
-  --link-color-hover: var(--color-p1-darker);
+  --link-color: var(--color-p2);
+  --link-color-hover: var(--color-p2-darker);
 }
 
 /* color-mix is used for the newer browsers */
