@@ -108,7 +108,7 @@
   --default-bg: var(--color-p3);
   --default-bg-darker: var(--color-p3-light);
   --default-bg-hover: var(--color-p3-light);
-  --default-bg-hover-darker: var(--color-p3-darkest);
+  --default-bg-hover-darker: var(--color-p3-lighter);
   --text-color: #fafafa;
   --text-color-hover: #fff;
   --text-muted: #bababa;
