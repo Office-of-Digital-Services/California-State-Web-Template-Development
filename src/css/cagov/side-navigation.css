@@ -146,12 +146,20 @@ nav.side-navigation > ul {
         &.back {
           padding-left: 1.5rem;
 
-          &::after {
-            content: "\e668";
+          &::before {
+            content: "";
+            display: inline-block;
+            text-decoration: none;
             position: absolute;
-            font-family: CaGov;
-            left: 0;
-            top: 0.65rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-top: 2px solid var(--text-muted, var(--gray-700, #5e5e6a));
+            border-left: 2px solid var(--text-muted, var(--gray-700, #5e5e6a));
+            left: 0.45rem;
+            top: 50%;
+            vertical-align: middle;
+            transform-origin: center;
+            transform: translateY(-50%) rotate(-45deg);
           }
         }
       }
@@ -231,12 +239,20 @@ a.sidenav {
   &.back {
     padding-left: 1.5rem;
 
-    &::after {
-      content: "\e668";
+    &::before {
+      content: "";
+      display: inline-block;
+      text-decoration: none;
       position: absolute;
-      font-family: CaGov;
-      left: 0;
-      top: 0.65rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-top: 2px solid var(--text-muted, var(--gray-700, #5e5e6a));
+      border-left: 2px solid var(--text-muted, var(--gray-700, #5e5e6a));
+      left: 0.45rem;
+      top: 50%;
+      vertical-align: middle;
+      transform-origin: center;
+      transform: translateY(-50%) rotate(-45deg);
     }
   }
 }
