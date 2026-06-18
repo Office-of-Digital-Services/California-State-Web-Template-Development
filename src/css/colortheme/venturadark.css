@@ -3,6 +3,8 @@
 ----------------------------------------- */
 
 :root {
+  color-scheme: dark;
+
   /* Highlight */
   --color-p1: #ffb300;
   --color-p1-dark: #efa903;
