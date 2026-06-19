@@ -8,29 +8,29 @@
 }
 
 a.cagov-external-link {
-  position: relative;
+  & span.external-link-icon {
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0.9em;
+      height: 0.9em;
+      margin-left: 0.25em;
 
-  &::after {
-    content: "";
-    display: inline-block;
-    width: 0.9em;
-    height: 0.9em;
-    margin-left: 0.25em;
+      /* Icon color follows the link text color */
+      background-color: currentColor;
+      vertical-align: text-bottom;
 
-    /* Icon color follows the link text color */
-    background-color: currentColor;
-    vertical-align: text-bottom;
+      /* Safari 13.1 requires prefixed mask properties */
+      -webkit-mask-image: var(--cagov-external-icon);
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      -webkit-mask-position: center;
 
-    /* Safari 13.1 requires prefixed mask properties */
-    -webkit-mask-image: var(--cagov-external-icon);
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    -webkit-mask-position: center;
-
-    /* Standard mask */
-    mask-image: var(--cagov-external-icon);
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-position: center;
+      /* Standard mask */
+      mask-image: var(--cagov-external-icon);
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      mask-position: center;
+    }
   }
 }
