@@ -54,6 +54,11 @@
 
     link.classList.add(externalClass);
 
+    const icon = document.createElement("span");
+    icon.classList.add("external-link-icon");
+    icon.setAttribute("aria-hidden", "true");
+    link.appendChild(icon);
+
     const sr = document.createElement("span");
     sr.classList.add("sr-only");
     sr.lang = "en-US";

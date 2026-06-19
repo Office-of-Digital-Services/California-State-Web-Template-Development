@@ -262,13 +262,6 @@ code {
   padding: 0;
   position: relative;
   text-decoration: none;
-
-  &::after {
-    content: "\e9ed";
-    font-family: CaGov !important;
-    font-size: 75%;
-    margin-left: 3px;
-  }
 }
 
 /* external link exeptions */
