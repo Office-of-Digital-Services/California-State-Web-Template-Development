@@ -3,6 +3,8 @@
 ----------------------------------------- */
 
 :root {
+  color-scheme: dark;
+
   /* Highlight */
   --color-p1: #ffb300;
   --color-p1-dark: #efa903;
@@ -13,7 +15,7 @@
   --color-p1-lightest: #feeaad;
 
   /* Primary */
-  --color-p2: #191919;
+  --color-p2: #1c1c1c;
   --color-p2-dark: #101010;
   --color-p2-darker: #080808;
   --color-p2-darkest: #000;
@@ -41,8 +43,8 @@
   --color-s2-darker: #0f0e0f;
 
   /* Secondary 3 */
-  --color-s3: #191919;
-  --color-s3-dark: #0f0f0f;
+  --color-s3: #201f21;
+  --color-s3-dark: #171618;
   --color-s3-light: #474747;
   --color-s3-lighter: #757575;
 
