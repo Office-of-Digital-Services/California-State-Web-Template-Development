@@ -49,6 +49,10 @@
   --color-s3-light: #f0eaea;
   --color-s3-lighter: #f5f1f1;
 
+  /* Main nav */
+  --mobile-menu-icon-color: var(--color-p2);
+  --main-nav-color: var(--color-p2);
+
   /* Megamenu sub navigation background */
   --sub-nav-bg: var(--color-s1);
 
