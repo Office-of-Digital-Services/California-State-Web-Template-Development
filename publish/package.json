@@ -1,6 +1,6 @@
 {
   "name": "@cagovweb/state-template",
-  "version": "6.6.0-beta11",
+  "version": "6.6.0-beta12",
   "description": "California State Web Template NPM Package",
   "repository": {
     "type": "git",
@@ -46,7 +46,7 @@
     "NPM publish": "npm publish",
     "NPM set latest": "npm dist-tag add @cagovweb/state-template@6.6.0-beta latest",
     "NPM remove beta tag": "npm dist-tag rm @cagovweb/state-template beta",
-    "NPM deprecate old version": "npm deprecate @cagovweb/state-template@6.6.0-beta10 \"Version no longer supported. Upgrade to @latest\"",
+    "NPM deprecate old version": "npm deprecate @cagovweb/state-template@6.6.0-beta11 \"Version no longer supported. Upgrade to @latest\"",
     "prepack": "mkdir -p dist && cp -r ../_site/ca_state_template/* ./dist",
     "postpack": "rm -rf ./dist"
   },
