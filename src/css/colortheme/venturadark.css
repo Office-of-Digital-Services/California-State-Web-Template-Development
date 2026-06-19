@@ -91,7 +91,7 @@
   --share-github: var(--gray-200);
 
   /* Override semantic variables (which affects side-nav and more) */
-  --body-bg: var(--color-p2);
+  --body-bg: #141414;
   --base-light: var(--black);
   --base-dark: var(--white);
   --default-bg: var(--color-p3);
@@ -159,7 +159,7 @@
   --main-nav-bg-active-hover: var(--color-p2-darkest);
 
   /* global footer */
-  --global-footer-bg: var(--color-p3);
+  --global-footer-bg: var(--color-p3-light);
   --footer-links-color: var(--white);
   --footer-links-color-hover: var(--color-p1);
 

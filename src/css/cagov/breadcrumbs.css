@@ -28,7 +28,7 @@ nav.breadcrumbs {
 
       &::after {
         content: "";
-        color: var(--gray-900, #3b3a48);
+        color: var(--text-muted, #3b3a48);
         border: none;
         margin: 0 calc(var(--grid-gutter-width) / 2);
         font-size: 1.125rem;
