@@ -66,7 +66,27 @@ window.addEventListener("load", () => {
     });
   };
 
+  /**
+   * Toggle aria-expanded attribute on details element
+   */
+  function accessibilityToggle() {
+    const detailsToggle = document.querySelector(".side-navigation-toggle");
+    if (!detailsToggle) return;
+
+    // Check if aria-expanded exists, if not, set it to false
+    if (!detailsToggle.hasAttribute("aria-expanded")) {
+      detailsToggle.setAttribute("aria-expanded", "false");
+    }
+
+    // Listen for toggle event and update aria-expanded
+    detailsToggle.addEventListener("toggle", () => {
+      const isOpen = detailsToggle.hasAttribute("open");
+      detailsToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+
   // ONLOAD
+  accessibilityToggle();
   sidenavOverflow();
   addActiveClass();
 });
