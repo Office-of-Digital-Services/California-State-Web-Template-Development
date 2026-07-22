@@ -4,9 +4,11 @@ permalink: cagov-header.html
 title: Components and patterns
 ---
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<!-- This meta tag is for responsive design and ensures the page scales correctly on different devices. 
+ Omit it if your site has a different method for handling responsive design. -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Components start-->
 <div class="cagov-header">
   <div>
     <div>
@@ -104,9 +106,7 @@ title: Components and patterns
           method="get"
           role="search"
           aria-label="Search CA.gov">
-          <label for="cagov-search-input"
-            >Search CA.gov</label
-          >
+          <label for="cagov-search-input">Search CA.gov</label>
           <input
             type="search"
             id="cagov-search-input"
