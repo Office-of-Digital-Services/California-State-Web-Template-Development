@@ -32,4 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   // End details.name polyfill
+
+  /**
+   * Toggle aria-expanded attribute on all details elements in the button group
+   */
+  function accessibilityToggle() {
+    const detailsToggles = document.querySelectorAll(
+      'details[name="cagov-utility-header__buttongroup"]'
+    );
+
+    detailsToggles.forEach(detailsToggle => {
+      detailsToggle.setAttribute("aria-expanded", "false");
+
+      detailsToggle.addEventListener("toggle", () => {
+        const isOpen = detailsToggle.hasAttribute("open");
+        detailsToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    });
+  }
+
+  accessibilityToggle();
 });

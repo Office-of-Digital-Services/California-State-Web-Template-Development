@@ -4,9 +4,11 @@ permalink: template-header-full.html
 title: Components and patterns
 ---
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<!-- This meta tag is for responsive design and ensures the page scales correctly on different devices. 
+ Omit it if your site has a different method for handling responsive design. -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Component start -->
 <div class="template-header-full">
   <!-- START > div:first-child (Utility Bar) -->
   <div>
@@ -104,7 +106,10 @@ title: Components and patterns
       <!-- END > div:first-of-type (Site Logo) -->
 
       <!-- START > details:first-of-type (Search Button) -->
-      <details name="template-header-full__buttongroup">
+      <details
+        name="template-header-full__buttongroup"
+        aria-expanded="false"
+        aria-controls="template-header-full__cagov-search">
         <summary>
           <span class="template-sr-only" lang="en">CA.gov search</span>
           <svg
@@ -123,7 +128,7 @@ title: Components and patterns
       <!-- END > details:first-of-type (Search Button) -->
 
       <!-- START > div:nth-of-type(2) (Search Form) -->
-      <div>
+      <div id="template-header-full__cagov-search">
         <form
           action="https://www.ca.gov/search/"
           method="get"
@@ -157,7 +162,10 @@ title: Components and patterns
       <!-- END > div:nth-of-type(2) (Search Form) -->
 
       <!-- START > details:last-of-type (Main Menu Button) -->
-      <details name="template-header-full__buttongroup">
+      <details
+        name="template-header-full__buttongroup"
+        aria-expanded="false"
+        aria-controls="template-header-full__main-menu">
         <summary lang="en">
           <span class="template-sr-only">Main menu</span>
           <span aria-hidden="true"></span>
@@ -166,7 +174,7 @@ title: Components and patterns
       <!-- END > details:last-of-type (Main Menu Button) -->
 
       <!-- START > div:last-of-type (Main Menu Content) -->
-      <div>
+      <div id="template-header-full__main-menu">
         <nav aria-label="Main navigation">
           <ul>
             <li>

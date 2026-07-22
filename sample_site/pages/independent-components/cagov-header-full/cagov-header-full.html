@@ -4,9 +4,11 @@ permalink: cagov-header-full.html
 title: Components and patterns
 ---
 
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<!-- This meta tag is for responsive design and ensures the page scales correctly on different devices. 
+ Omit it if your site has a different method for handling responsive design. -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Components start-->
 <div class="cagov-header-full">
   <!-- START > div:first-child (Utility Bar) -->
   <div>
@@ -14,13 +16,15 @@ title: Components and patterns
     <div>
       <!-- START > details:first-of-type (Official CA.gov Button) -->
       <details
-        name="cagov-header-full__buttongroup">
+        name="cagov-header-full__buttongroup"
+        aria-controls="cagov-header-full__official-ca-gov"
+        aria-expanded="false">
         <summary>Official California website</summary>
       </details>
       <!-- END > details:first-of-type (Official CA.gov Button) -->
 
       <!-- START > details:first-of-type + div (Official CA.gov Content) -->
-      <div>
+      <div id="cagov-header-full__official-ca-gov">
         <span class="bold">California government websites use .ca.gov </span
         ><br />
         A .ca.gov website is part of California’s government.
@@ -47,13 +51,15 @@ title: Components and patterns
 
       <!-- START > details:last-of-type (Utility Menu Button) -->
       <details
-        name="cagov-header-full__buttongroup">
+        name="cagov-header-full__buttongroup"
+        aria-controls="cagov-header-full__utility-menu"
+        aria-expanded="false">
         <summary lang="en">Utility menu</summary>
       </details>
       <!-- END > details:last-of-type (Utility Menu Button) -->
 
       <!-- START > div:last-of-type (Utility Menu Content) -->
-      <div>
+      <div id="cagov-header-full__utility-menu">
         <nav aria-label="Utility navigation">
           <ul>
             <li>
@@ -133,7 +139,9 @@ title: Components and patterns
 
       <!-- START > details:first-of-type (Search Button) -->
       <details
-        name="cagov-header-full__buttongroup">
+        name="cagov-header-full__buttongroup"
+        aria-expanded="false"
+        aria-controls="cagov-header-full__search-form">
         <summary>
           <span lang="en">CA.gov search</span>
           <svg
@@ -152,15 +160,13 @@ title: Components and patterns
       <!-- END > details:first-of-type (Search Button) -->
 
       <!-- START > div:nth-of-type(2) (Search Form) -->
-      <div>
+      <div id="cagov-header-full__search-form">
         <form
           action="https://www.ca.gov/search/"
           method="get"
           role="search"
           aria-label="Search CA.gov">
-          <label for="cagov-search-input"
-            >Search CA.gov</label
-          >
+          <label for="cagov-search-input">Search CA.gov</label>
           <input
             type="search"
             id="cagov-search-input"
@@ -187,17 +193,18 @@ title: Components and patterns
 
       <!-- START > details:last-of-type (Main Menu Button) -->
       <details
-        name="cagov-header-full__buttongroup">
+        name="cagov-header-full__buttongroup"
+        aria-controls="cagov-header-full__main-menu-content"
+        aria-expanded="false">
         <summary lang="en">
           <span>Main menu</span>
-          <span
-            aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </summary>
       </details>
       <!-- END > details:last-of-type (Main Menu Button) -->
 
       <!-- START > div:last-of-type (Main Menu Content) -->
-      <div>
+      <div id="cagov-header-full__main-menu-content">
         <nav aria-label="Main navigation">
           <ul>
             <li>
