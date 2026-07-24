@@ -1,0 +1,137 @@
+:root {
+  --font-size-base: 1rem;
+  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
+  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
+  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
+  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
+  --font-family-sans-serif:
+    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
+    "Helvetica Neue", "Noto Sans", sans-serif;
+  --gray-900: #3b3a48;
+  --gray-700: #5e5e6a;
+  --gray-500: #72717c;
+  --gray-200: #d4d4d7;
+  --gray-150: #e2e2e3;
+  --gray-100: #ededef;
+  --gray-75: #f8f9fa;
+  --gray-50: #fafafa;
+  --black: #000;
+  --white: #fff;
+  --color-p1: #fdb81e;
+  --color-p1-lighter: #fed478;
+  --color-p1-soft: #f2c45a;
+  --color-p1-softer: #f5ce73;
+  --color-p2: #046b99;
+  --color-p2-darker: #035376;
+  --color-p2-darkest: #01395e;
+  --color-p2-light: #6db7d8;
+  --color-p2-pale: #eef8fb;
+  --color-p2-soft: #f5f9fa;
+  --color-p2-muted: #87b8ce;
+  --color-p3: #323a45;
+  --color-p3-darker: #232930;
+  --outline-default-color: #0b8ee5;
+  --outline-dark-mode-color: #85cbf9;
+  --ratio: 0.1vw;
+  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
+  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------
+   Executive Profile Component
+   Variants:
+     Default:     figure.template-executive-profile
+     Transparent: figure.template-executive-profile[data-variant="transparent"]
+     Dark:        figure.template-executive-profile[data-variant="dark"]
+---------------------------------------- */
+
+figure.template-executive-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  margin: 0 0 1rem;
+  font-family: var(--font-family-sans-serif);
+  font-size: var(--font-size-base, 1rem);
+  border: none;
+  background-color: var(--color-p2-pale, #eef8fb);
+
+  /* START > img (Profile Photo) */
+  > img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  /* START > div[data-role="executive-profile-body"] (Profile Details) */
+  > [data-role="executive-profile-body"] {
+    padding-left: 1rem;
+    border-left: 1px solid var(--text-muted, var(--gray-700, #5e5e6a));
+
+    /* Title / Agency paragraphs */
+    > p,
+    > [data-role="executive-name"] {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    /* Name heading */
+    > [data-role="executive-name"] {
+      font-size: var(--font-size-large, 1.4375rem);
+    }
+
+    /* Bio / contact link */
+    > p > a {
+      color: var(--link-color, var(--color-p2, #046b99));
+
+      &:hover,
+      &:focus {
+        color: var(--link-color-hover, var(--color-p2-darker, #035376));
+      }
+
+      &:focus {
+        outline: 2px solid var(--outline-default-color, #0b8ee5);
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  /* Transparent variant: removes background color */
+  &[data-variant="transparent"] {
+    background-color: transparent;
+  }
+
+  /* Dark variant: white text and border on dark backgrounds */
+  &[data-variant="dark"] {
+    background-color: var(--color-p3, #323a45);
+
+    > [data-role="executive-profile-body"] {
+      border-left-color: var(--white, #fff);
+
+      > p,
+      > [data-role="executive-name"] {
+        color: var(--white, #fff);
+      }
+
+      > p > a {
+        color: var(--white, #fff);
+
+        &:hover,
+        &:focus {
+          color: var(--color-p1, #fdb81e);
+        }
+      }
+    }
+  }
+}
