@@ -38,7 +38,9 @@ details.side-navigation-toggle {
       display: none;
     }
 
-    > span {
+    > span[data-role="side-navigation-toggle"] {
+      display: block;
+
       &::after {
         margin-left: 0.5rem;
         content: "";
