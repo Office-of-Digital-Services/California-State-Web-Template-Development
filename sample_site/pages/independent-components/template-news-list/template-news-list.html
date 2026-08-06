@@ -1,0 +1,38 @@
+---
+landing: Components
+permalink: template-news-list.html
+title: Components and patterns
+---
+
+<!-- This meta tag is for responsive design and ensures the page scales correctly on different devices. 
+ Omit it if your site has a different method for handling responsive design. -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- 
+  News list component
+-->
+<div class="template-news-list">
+  <!-- News list  -->
+  <h2>Latest news</h2>
+  <hr />
+  <h3 data-link="news-article">
+    <a href="javascript:;"> News Article Title 1 </a>
+  </h3>
+  <p data-date="published">Month 00, 0000 | News</p>
+  <hr />
+  <h3 data-link="news-article">
+    <a href="javascript:;"> News Article Title 2 </a>
+  </h3>
+  <p data-date="published">Month 00, 0000 | News</p>
+  <hr />
+  <h3 data-link="news-article">
+    <a href="javascript:;"> News Article Title 3 </a>
+  </h3>
+  <p data-date="published">Month 00, 0000 | News</p>
+  <hr />
+  <!-- End News list  -->
+  <p data-link="all"><a href="javascript:;">View all</a></p>
+</div>
+<style>
+  {% include "./template-news-list.html.css" %}
+</style>
