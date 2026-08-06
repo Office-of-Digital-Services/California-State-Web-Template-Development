@@ -1,93 +1,55 @@
-# Template Card Component
+# Template Link Grid Component
 
-The Template Card component is a flexible, highly visual element designed for highlighting content with a combination of images, icons, and structured information. It features a class-root architecture (`.template-card`) combined with data attributes and tag-based descendant selectors for variants and state management.
+The Template Link Grid component displays a set of prominent links as bordered cards in a responsive grid. It uses the `.template-link-grid` root class and strict direct-child selectors, so the HTML structure must remain consistent.
 
-## Initial Structure
+## Features
 
-The component's HTML structure must remain consistent, as the CSS utilizes descendant selectors (`>`) based on this exact nesting to apply styles.
+- Card-style links with border, rounded corners, bottom accent border, and arrow indicator.
+- Hover and focus states for accessibility and visual feedback.
+- Bootstrap-like responsive layout behavior based on number of items.
+- Supports exactly 2, 3, or 4 direct child items for column sizing rules.
+
+## Required HTML Structure
+
+Use this exact nesting pattern:
 
 ```html
-<!--
-  Card Component
-  data-card-corners options: "rounded"
-  data-card-shadow options: "box-shadow"
-  data-card-interaction options: "scale-on-hover"
--->
-<div
-  class="template-card"
-  data-card-corners="rounded"
-  data-card-shadow="box-shadow"
-  data-card-interaction="scale-on-hover">
-  <!-- Card Image -->
-  <img
-    src="path/to/image.webp"
-    alt="Card Image" />
-
-  <!-- Card Content Container -->
+<div class="template-link-grid">
   <div>
-    <!-- Card Icon (Optional) -->
-    <div>
-      <img
-        src="path/to/icon.svg"
-        alt="Icon" />
-    </div>
-
-    <!-- Card Info Container -->
-    <div>
-      <!--
-        Card Heading
-        data-card-font-weight options: "200", "400"
-        data-card-h2 option: boolean (add data-card-h2 attribute without value to match h2 size)
-        NOTE: Adding a hyperlink inside of the heading will make entire card linkable.
-      -->
-      <h2>
-        <a href="#">Template card heading</a>
-      </h2>
-
-      <!--
-        Card Description
-        Consists of paragraphs, unordered lists (ul), or ordered lists (ol).
-      -->
-      <p>This is a description of the card.</p>
-      <ul>
-        <li>List item 1</li>
-        <li>List item 2</li>
-      </ul>
-    </div>
+    <a href="javascript:;">Short link 1</a>
+  </div>
+  <div>
+    <a href="javascript:;">Short link 2</a>
+  </div>
+  <div>
+    <a href="javascript:;">Short link 3</a>
   </div>
 </div>
 ```
 
-## Data Attribute Selectors and Features
+Notes:
 
-Instead of utility classes, this component leverages specific `data-card-*` attributes for modifiers and styling overrides.
+- The root wrapper must be `.template-link-grid`.
+- Each grid item must be a direct child `div`.
+- Each direct child `div` must contain a direct child `a` element.
 
-### Corner Style (`data-card-corners`)
+## Responsive Grid Behavior
 
-Applied to the root `.template-card` element.
+At small widths, each item is full width.
 
-- `data-card-corners="rounded"`: Applies a `10px` border-radius to the card and its top image.
+At `@media (width >= 768px)`, columns are assigned by child count:
 
-### Shadow Effects (`data-card-shadow`)
+- 2 items: each item is 50% width (`col-md-6` equivalent).
+- 3 items: each item is 33.33333% width (`col-md-4` equivalent).
+- 4 items: each item is 25% width (`col-md-3` equivalent).
 
-Applied to the root `.template-card` element.
+## Limitations
 
-- `data-card-shadow="box-shadow"`: Applies a subtle outer shadow to the card.
+- 5 or more columns are not supported by the current layout rules.
+- If you use a different child count, custom width rules should be added.
 
-### Interactions (`data-card-interaction`)
+## Styling Notes
 
-Applied to the root `.template-card` element.
-
-- `data-card-interaction="scale-on-hover"`: Automatically adds a smooth transition and scales the card slightly (1.05x) when hovered.
-
-### Typography & Headings
-
-Applied to elements within the info container.
-
-- `data-card-h2`: Forces the font size and styling of an element to match an `h2` scale (`calc(1.4375rem + 0.1vw)`).
-- `data-card-font-weight="400"`: Forces the font weight to normal/400.
-- `data-card-font-weight="200"`: Forces the font weight to light/200.
-
-## Card Linkability
-
-Adding a hyperlink (`<a>`) inside of the **Card Heading** will automatically make the entire card linkable. This is achieved via a CSS pseudo-element (`::before`) on the link that expands to cover the full dimensions of the card root.
+- Link styles are applied to `.template-link-grid > div > a`.
+- Arrow icon is rendered with the link `::after` pseudo-element.
+- Focus outlines use `--outline-default-color` for accessibility.
