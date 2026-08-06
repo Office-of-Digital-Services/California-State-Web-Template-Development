@@ -1,0 +1,29 @@
+---
+landing: Components
+permalink: template-link-grid.html
+title: Components and patterns
+---
+
+<!-- This meta tag is for responsive design and ensures the page scales correctly on different devices. 
+ Omit it if your site has a different method for handling responsive design. -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- 
+  Link grid component
+  Supports 2, 3, or 4 columns based on the number of direct child div elements.
+  5 and more columns are not supported by this component layout.
+-->
+<div class="template-link-grid">
+  <div>
+    <a href="javascript:;">Short link 1</a>
+  </div>
+  <div>
+    <a href="javascript:;">Short link 2</a>
+  </div>
+  <div>
+    <a href="javascript:;">Short link 3</a>
+  </div>
+</div>
+<style>
+  {% include "./template-link-grid.html.css" %}
+</style>
