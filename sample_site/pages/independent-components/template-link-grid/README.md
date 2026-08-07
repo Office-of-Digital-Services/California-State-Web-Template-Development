@@ -15,7 +15,7 @@ The Template Link Grid component displays a set of prominent links as bordered c
 Use this exact nesting pattern:
 
 ```html
-<div class="template-link-grid" data-columns="3">
+<div class="template-link-grid">
   <div>
     <a href="javascript:;">Short link 1</a>
   </div>
