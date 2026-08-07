@@ -11,7 +11,9 @@ title: Components and patterns
 <!-- 
   Link grid component
   Supports 2, 3, or 4 columns based on the number of direct child div elements.
-  5 and more columns are not supported by this component layout.
+  5 or more items are rendered in a 4-column layout.
+  Optional override: set data-columns="2", data-columns="3", or data-columns="4"
+  on .template-link-grid to force that layout even with many child items.
 -->
 <div class="template-link-grid">
   <div>
