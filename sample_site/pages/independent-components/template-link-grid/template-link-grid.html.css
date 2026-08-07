@@ -124,22 +124,45 @@ div.template-link-grid {
   /* Bootstrap md breakpoint equivalent */
   @media (width >= 768px) {
     /* 2 children -> col-md-6 */
-    > div:first-child:nth-last-child(2),
-    > div:first-child:nth-last-child(2) ~ div {
+    &:not([data-columns]) > div:first-child:nth-last-child(2),
+    &:not([data-columns]) > div:first-child:nth-last-child(2) ~ div {
       flex: 0 0 50%;
       max-width: 50%;
     }
 
     /* 3 children -> col-md-4 */
-    > div:first-child:nth-last-child(3),
-    > div:first-child:nth-last-child(3) ~ div {
+    &:not([data-columns]) > div:first-child:nth-last-child(3),
+    &:not([data-columns]) > div:first-child:nth-last-child(3) ~ div {
       flex: 0 0 33.33333%;
       max-width: 33.33333%;
     }
 
     /* 4 children -> col-md-3 */
-    > div:first-child:nth-last-child(4),
-    > div:first-child:nth-last-child(4) ~ div {
+    &:not([data-columns]) > div:first-child:nth-last-child(4),
+    &:not([data-columns]) > div:first-child:nth-last-child(4) ~ div {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+
+    /* 5+ children -> keep 4-column layout (col-md-3) */
+    &:not([data-columns]) > div:first-child:nth-last-child(n + 5),
+    &:not([data-columns]) > div:first-child:nth-last-child(n + 5) ~ div {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+
+    /* Force column layout via data-columns on the grid wrapper */
+    &[data-columns="2"] > div {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    &[data-columns="3"] > div {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+
+    &[data-columns="4"] > div {
       flex: 0 0 25%;
       max-width: 25%;
     }
