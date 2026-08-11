@@ -1,0 +1,34 @@
+---
+landing: Components
+permalink: template-form-textfield.html
+title: Components and patterns
+---
+
+<!-- This meta tag is for responsive design and ensures the page scales correctly on different devices. 
+ Omit it if your site has a different method for handling responsive design. -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- 
+  Form textfield component
+  
+  Attributes:
+  - data-required="true": Adds a red asterisk (*) before the label to indicate a required field
+  - data-border-dark="true": Changes the border color to a darker gray (--gray-700) instead of default
+  - required: HTML5 required attribute to enforce validation
+-->
+<label
+  class="template-form-textfield-label"
+  data-required="true"
+  for="InputName"
+  >Full name</label
+>
+<input
+  type="text"
+  class="template-form-textfield-input"
+  id="InputName"
+  placeholder="Full name"
+  data-border-dark="true"
+  required />
+<style>
+  {% include "./template-form-textfield.html.css" %}
+</style>
