@@ -1,0 +1,58 @@
+---
+landing: Components
+permalink: template-form-checkbox.html
+title: Components and patterns
+---
+
+<!-- This meta tag is for responsive design and ensures the page scales correctly on different devices. 
+ Omit it if your site has a different method for handling responsive design. -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- 
+  Form checkboxes component
+  
+  Structure:
+  - Uses <fieldset> with <legend> for semantic grouping (accessible to screen readers)
+  - Each checkbox is wrapped in a div with class template-form-checkbox
+  - Checkbox and label are associated via id/for attributes
+  
+  Attributes:
+  - value: Unique identifier for each checkbox option (required for form submission)
+  - data-border-dark="true": Changes the checkbox border color to darker gray (--gray-700) instead of default
+-->
+<fieldset class="template-form-fieldset">
+  <legend>Pick one or more of these items:</legend>
+  <div class="template-form-checkbox">
+    <input
+      type="checkbox"
+      value="option1"
+      id="CheckOption1"
+      data-border-dark="true" />
+    <label class="template-form-checkbox-label" for="CheckOption1"
+      >Option 1</label
+    >
+  </div>
+  <div class="template-form-checkbox">
+    <input
+      type="checkbox"
+      value="option2"
+      id="CheckOption2"
+      data-border-dark="true" />
+    <label class="template-form-checkbox-label" for="CheckOption2"
+      >Option 2</label
+    >
+  </div>
+  <div class="template-form-checkbox">
+    <input
+      type="checkbox"
+      value="option3"
+      id="CheckOption3"
+      data-border-dark="true" />
+    <label class="template-form-checkbox-label" for="CheckOption3"
+      >Option 3</label
+    >
+  </div>
+</fieldset>
+<style>
+  {% include "./template-form-checkbox.html.css" %}
+</style>

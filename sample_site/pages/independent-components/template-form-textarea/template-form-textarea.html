@@ -1,0 +1,32 @@
+---
+landing: Components
+permalink: template-form-textarea.html
+title: Components and patterns
+---
+
+<!-- This meta tag is for responsive design and ensures the page scales correctly on different devices. 
+ Omit it if your site has a different method for handling responsive design. -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- 
+  Form textarea component
+  
+  Attributes:
+  - data-required="true": Adds a red asterisk (*) before the label to indicate a required field
+  - data-border-dark="true": Changes the border color to a darker gray (--gray-700) instead of default
+  - required: HTML5 required attribute to enforce validation
+-->
+<label
+  class="template-form-textarea-label"
+  data-required="true"
+  for="exampleInputComment"
+  >Your message</label
+>
+<textarea
+  class="template-form-textarea-input"
+  id="exampleInputComment"
+  data-border-dark="true"
+  required></textarea>
+<style>
+  {% include "./template-form-textarea.html.css" %}
+</style>

@@ -1,0 +1,34 @@
+---
+landing: Components
+permalink: template-form-file-input.html
+title: Components and patterns
+---
+
+<!-- This meta tag is for responsive design and ensures the page scales correctly on different devices. 
+ Omit it if your site has a different method for handling responsive design. -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- 
+  Form file input component
+  
+  Features:
+  - Bootstrap-like file input styling
+  - "Choose File" button that extends to full input height
+  - Proper spacing between button and feedback text
+  - Consistent styling across all browsers (Chrome, Safari, Firefox, Edge)
+  - Accessible focus and hover states
+  - Support for dark border variant via data-border-dark attribute
+  - Required field indicator support
+-->
+<label
+  for="inputFile"
+  class="template-form-input-file-label"
+  data-required="true"
+  >Upload your file</label
+>
+<div class="template-form-input-file">
+  <input type="file" id="inputFile" required data-border-dark="true" />
+</div>
+<style>
+  {% include "./template-form-file-input.html.css" %}
+</style>
