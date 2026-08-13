@@ -1,45 +1,24 @@
-:root {
-  --font-size-base: 1rem;
-  --font-size-regular: calc(var(--font-size-base, 1rem) * 1.125);
-  --font-size-large: calc(var(--font-size-base, 1rem) * 1.4375);
-  --font-size-h1: calc(var(--font-size-base, 1rem) * 2.9375);
-  --font-size-h2: calc(var(--font-size-base, 1rem) * 2.3175);
-  --font-family-sans-serif:
-    "Public Sans", system-ui, -apple-system, "Segoe UI", "Roboto",
-    "Helvetica Neue", "Noto Sans", sans-serif;
-  --gray-900: #3b3a48;
-  --gray-700: #5e5e6a;
-  --gray-500: #72717c;
-  --gray-200: #d4d4d7;
-  --gray-150: #e2e2e3;
-  --gray-100: #ededef;
-  --gray-75: #f8f9fa;
-  --gray-50: #fafafa;
-  --black: #000;
-  --white: #fff;
-  --color-p1: #fdb81e;
-  --color-p1-lighter: #fed478;
-  --color-p1-soft: #f2c45a;
-  --color-p1-softer: #f5ce73;
-  --color-p2: #046b99;
-  --color-p2-darker: #035376;
-  --color-p2-darkest: #01395e;
-  --color-p2-light: #6db7d8;
-  --color-p2-pale: #eef8fb;
-  --color-p2-soft: #f5f9fa;
-  --color-p2-muted: #87b8ce;
-  --color-p3: #323a45;
-  --color-p3-darker: #232930;
-  --outline-default-color: #0b8ee5;
-  --outline-dark-mode-color: #85cbf9;
-  --ratio: 0.1vw;
-  --shadow-strong: 0 2px 4px rgba(0 0 0 / 50%);
-  --shadow-card: 0 3px 5px 0 rgb(0 0 0 / 10%);
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .template-accordion {
   background-color: white;
-  font-family: var(--font-family-sans-serif);
+  font-family: var(
+    --font-family-sans-serif,
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue",
+    "Noto Sans",
+    sans-serif
+  );
 
   & summary {
     cursor: pointer;
@@ -49,7 +28,10 @@
     line-height: 2rem;
     margin: 0;
     color: var(--gray-900, #3b3a48);
-    font-size: var(--font-size-regular);
+    font-size: var(
+      --font-size-regular,
+      calc(var(--font-size-base, 1rem) * 1.125)
+    );
     font-weight: bold;
     list-style: none;
     border: 1px solid var(--gray-200, #d4d4d7);
@@ -110,26 +92,26 @@
 
     &:focus {
       outline: none;
-      box-shadow: inset 0 0 0 2px var(--outline-default-color);
+      box-shadow: inset 0 0 0 2px var(--outline-default-color, #0b8ee5);
     }
 
     &:focus::before {
       box-shadow:
-        inset 2px 0 0 0 var(--outline-default-color),
-        inset 0 2px 0 0 var(--outline-default-color),
-        inset 0 -2px 0 0 var(--outline-default-color);
+        inset 2px 0 0 0 var(--outline-default-color, #0b8ee5),
+        inset 0 2px 0 0 var(--outline-default-color, #0b8ee5),
+        inset 0 -2px 0 0 var(--outline-default-color, #0b8ee5);
     }
 
     &:focus-visible {
       outline: none;
-      box-shadow: inset 0 0 0 2px var(--outline-default-color);
+      box-shadow: inset 0 0 0 2px var(--outline-default-color, #0b8ee5);
     }
 
     &:focus-visible::before {
       box-shadow:
-        inset 2px 0 0 0 var(--outline-default-color),
-        inset 0 2px 0 0 var(--outline-default-color),
-        inset 0 -2px 0 0 var(--outline-default-color);
+        inset 2px 0 0 0 var(--outline-default-color, #0b8ee5),
+        inset 0 2px 0 0 var(--outline-default-color, #0b8ee5),
+        inset 0 -2px 0 0 var(--outline-default-color, #0b8ee5);
     }
   }
 
@@ -141,8 +123,18 @@
 
     > div {
       padding: 1rem;
-      font-family: var(--font-family-sans-serif);
-      font-size: var(--font-size-base);
+      font-family: var(
+        --font-family-sans-serif,
+        "Public Sans",
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        "Roboto",
+        "Helvetica Neue",
+        "Noto Sans",
+        sans-serif
+      );
+      font-size: var(--font-size-base, 1rem);
       border: 1px solid var(--gray-200, #d4d4d7);
       border-top: 0;
       border-radius: 0 0 4px 4px;
