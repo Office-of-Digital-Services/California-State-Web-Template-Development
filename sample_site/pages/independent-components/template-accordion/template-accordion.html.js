@@ -111,14 +111,38 @@ class TemplateAccordion {
   }
 }
 
-(() => {
+/**
+ * Initialize template accordion instances.
+ */
+function initTemplateAccordion() {
   const els = document.getElementsByClassName("template-accordion");
 
   for (let i = 0; i < els.length; i++) {
+    const accordionElement = /** @type {HTMLElement} */ (els[i]);
+
+    // Prevent duplicate listeners if init runs multiple times.
+    if (accordionElement.dataset.templateAccordionInitialized === "true") {
+      continue;
+    }
+
     const isSingle = els[i].getAttribute("data-open") === "single";
-    const details = new TemplateAccordion(els[i], {
+    new TemplateAccordion(els[i], {
       speed: 300,
       one_visible: isSingle
     });
+    accordionElement.dataset.templateAccordionInitialized = "true";
   }
-})();
+}
+
+// Initialize when DOM is ready.
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initTemplateAccordion);
+} else {
+  // DOM already loaded (framework hydration, dynamic insertion, etc.)
+  initTemplateAccordion();
+}
+
+// Export for framework usage (e.g., React, Vue).
+if (typeof window !== "undefined") {
+  window.initTemplateAccordion = initTemplateAccordion;
+}
