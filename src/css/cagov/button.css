@@ -87,7 +87,8 @@ fieldset[disabled] .btn-primary.active {
   font-weight: var(--font-weight-6);
 
   &:focus {
-    outline: solid 2px var(--outline-primary-outline-btn, var(--white, #fff)) !important;
+    outline: solid 2px
+      var(--outline-primary-outline-btn, var(--outline-default-color)) !important;
     outline-offset: -4px;
   }
 
